@@ -58,6 +58,7 @@ export function App() {
 
   // Launch practice quest directly from Public Handbook
   const handleLaunchPracticeQuest = (practiceQuest) => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setActiveWorksheetQuest(null);
     setActiveStudentQuestId(practiceQuest.id);
     localStorage.setItem(`mathquest_practice_${practiceQuest.id}`, JSON.stringify(practiceQuest));
@@ -65,11 +66,13 @@ export function App() {
 
   // Open printable worksheet
   const handlePrintQuest = (quest) => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setActiveWorksheetQuest(quest);
   };
 
   // Return to home / default view
   const handleBackToHome = () => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setActiveStudentQuestId(null);
     setActiveWorksheetQuest(null);
     navigateTo('/');
@@ -125,18 +128,8 @@ export function App() {
           {/* Right Header Navigation & Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
             
-            {/* If in Student Quest or Worksheet mode, show back button */}
-            {(activeStudentQuestId || activeWorksheetQuest) ? (
-              <button 
-                id="btn-nav-back-home"
-                className="btn btn-outline"
-                style={{ fontSize: '0.825rem', padding: '0.4rem 0.8rem' }}
-                onClick={handleBackToHome}
-              >
-                <BookOpen size={15} />
-                Ke Portal Publik
-              </button>
-            ) : isTeacherRoute ? (
+            {/* In Worksheet or Student Quest view, control bar already has 'Kembali ke Beranda', so no redundant navbar button */}
+            {(activeStudentQuestId || activeWorksheetQuest) ? null : isTeacherRoute ? (
               // On /teacher Route
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 {isTeacherLoggedIn && (

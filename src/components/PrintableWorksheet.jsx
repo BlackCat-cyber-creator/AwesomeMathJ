@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import { MathText } from './MathRenderer';
 import { QuestionVisual } from './QuestionVisual';
 import { Printer, ArrowLeft, Edit3 } from 'lucide-react';
@@ -11,8 +11,14 @@ import { Printer, ArrowLeft, Edit3 } from 'lucide-react';
 export function PrintableWorksheet({ quest, onBack }) {
   const [tutoringName, setTutoringName] = useState("AwesomeMathJ");
   const [teacherName, setTeacherName] = useState("Studio Guru Matematika");
+  const [studentName, setStudentName] = useState(quest?.studentName || "Lembar Siswa");
   const [timeAlloc, setTimeAlloc] = useState("20 Menit");
   const [isEditingHeader, setIsEditingHeader] = useState(false);
+
+  // Otomatis scroll ke paling atas saat lembar kerja dibuka
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  }, []);
 
   if (!quest) return null;
 
@@ -27,11 +33,12 @@ export function PrintableWorksheet({ quest, onBack }) {
 
         <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
           <button 
+            id="btn-toggle-customize-header"
             className="btn btn-subtle"
             onClick={() => setIsEditingHeader(!isEditingHeader)}
           >
             <Edit3 size={15} />
-            {isEditingHeader ? "Tutup Pengaturan Header" : "Atur Nama Bimbel & Durasi"}
+            {isEditingHeader ? "Tutup Pengaturan Header" : "Atur Nama Bimbel, Guru & Siswa"}
           </button>
           <button 
             id="btn-trigger-print"
@@ -50,7 +57,7 @@ export function PrintableWorksheet({ quest, onBack }) {
           <h4 style={{ fontSize: '0.95rem', marginBottom: '0.75rem', color: 'var(--primary-navy)' }}>
             Kustomisasi Header Lembar Ujian:
           </h4>
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.75rem' }}>
             <div className="form-group" style={{ margin: 0 }}>
               <label className="form-label" style={{ fontSize: '0.8rem' }}>Nama Bimbel / Sekolah:</label>
               <input 
@@ -67,6 +74,16 @@ export function PrintableWorksheet({ quest, onBack }) {
                 className="form-input" 
                 value={teacherName} 
                 onChange={(e) => setTeacherName(e.target.value)} 
+              />
+            </div>
+            <div className="form-group" style={{ margin: 0 }}>
+              <label className="form-label" style={{ fontSize: '0.8rem' }}>Nama Siswa:</label>
+              <input 
+                type="text" 
+                className="form-input" 
+                value={studentName} 
+                onChange={(e) => setStudentName(e.target.value)} 
+                placeholder="Contoh: Lembar Siswa / Nama Murid"
               />
             </div>
             <div className="form-group" style={{ margin: 0 }}>
@@ -151,7 +168,7 @@ export function PrintableWorksheet({ quest, onBack }) {
           }}>
             <div style={{ padding: '0.5rem 0.75rem', borderRight: '1px solid #D1D5DB' }}>
               <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', display: 'block' }}>NAMA SISWA:</span>
-              <strong>{quest.studentName}</strong>
+              <strong>{studentName || "Lembar Siswa"}</strong>
             </div>
             <div style={{ padding: '0.5rem 0.75rem', borderRight: '1px solid #D1D5DB' }}>
               <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', display: 'block' }}>KELAS / JENJANG:</span>
