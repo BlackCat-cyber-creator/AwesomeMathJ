@@ -1,0 +1,645 @@
+/* ==========================================================================
+   MathQuest: Classy Minimalist Editorial Design System
+   Inspirasi: Buku Cetak Matematika Akademik Premium, Notion, Substack, defantri.com
+   ========================================================================== */
+
+:root {
+  /* Surface & Paper Palette */
+  --bg-paper: #F9FAFB;
+  --bg-surface: #FFFFFF;
+  --bg-surface-elevated: #F3F4F6;
+  --bg-surface-subtle: #F8FAFC;
+  
+  /* Borders & Dividers */
+  --border-subtle: #E5E7EB;
+  --border-medium: #D1D5DB;
+  --border-strong: #9CA3AF;
+  --border-focus: #2563EB;
+  
+  /* Charcoal Ink Typography */
+  --text-primary: #111827;      /* Tinta abu-abu arang pekat */
+  --text-secondary: #374151;    /* Teks bodi sekunder */
+  --text-muted: #6B7280;        /* Keterangan & petunjuk halus */
+  --text-subtle: #9CA3AF;       /* Batas & placeholder */
+
+  /* Academic Accents */
+  --primary-navy: #1E3A8A;      /* Deep Academic Navy */
+  --primary-blue: #2563EB;      /* Classic Royal Blue */
+  --primary-hover: #1D4ED8;
+  --primary-light: #EFF6FF;     /* Highlight biru lembut */
+  --primary-subtle: #DBEAFE;
+  
+  /* Status Colors */
+  --status-emerald: #059669;    /* Hijau Zamrud Lembut untuk Benar */
+  --status-emerald-light: #ECFDF5;
+  --status-emerald-border: #A7F3D0;
+  
+  --status-brick: #DC2626;      /* Merah Bata Lembut untuk Koreksi */
+  --status-brick-light: #FEF2F2;
+  --status-brick-border: #FECACA;
+  
+  --accent-amber: #D97706;      /* Kuning Keemasan untuk Hint & Streak */
+  --accent-amber-light: #FFFBEB;
+  --accent-amber-border: #FDE68A;
+  
+  --whatsapp-green: #16A34A;
+  --whatsapp-light: #F0FDF4;
+
+  /* Typography Fonts */
+  --font-body: 'Plus Jakarta Sans', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-editorial: 'Inter', -apple-system, BlinkMacSystemFont, 'Segoe UI', Roboto, sans-serif;
+  --font-mono: 'JetBrains Mono', 'Fira Code', Consolas, monospace;
+
+  /* Spacing & Radii */
+  --radius-xs: 4px;
+  --radius-sm: 8px;
+  --radius-md: 12px;
+  --radius-lg: 16px;
+  --radius-xl: 20px;
+  --radius-full: 9999px;
+
+  /* Subtle Clean Shadows (Tanpa efek glow neon) */
+  --shadow-subtle: 0 1px 3px rgba(0, 0, 0, 0.05), 0 1px 2px rgba(0, 0, 0, 0.03);
+  --shadow-card: 0 4px 6px -1px rgba(0, 0, 0, 0.05), 0 2px 4px -2px rgba(0, 0, 0, 0.03);
+  --shadow-elevated: 0 10px 15px -3px rgba(0, 0, 0, 0.06), 0 4px 6px -4px rgba(0, 0, 0, 0.03);
+}
+
+/* Reset & Global Base */
+* {
+  box-sizing: border-box;
+  margin: 0;
+  padding: 0;
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: var(--font-body);
+  background-color: var(--bg-paper);
+  color: var(--text-primary);
+  min-height: 100vh;
+  line-height: 1.65;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Typography Scale */
+h1, h2, h3, h4, h5, h6 {
+  font-family: var(--font-editorial);
+  color: var(--text-primary);
+  font-weight: 700;
+  line-height: 1.3;
+  letter-spacing: -0.015em;
+}
+
+h1 { font-size: 2rem; font-weight: 800; }
+h2 { font-size: 1.5rem; font-weight: 700; }
+h3 { font-size: 1.25rem; font-weight: 600; }
+h4 { font-size: 1.05rem; font-weight: 600; }
+
+p {
+  color: var(--text-secondary);
+}
+
+/* Academic Paper Cards */
+.editorial-card {
+  background: var(--bg-surface);
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  box-shadow: var(--shadow-subtle);
+  transition: border-color 0.2s ease, box-shadow 0.2s ease;
+}
+
+.editorial-card-interactive:hover {
+  border-color: var(--border-medium);
+  box-shadow: var(--shadow-card);
+}
+
+/* Top Navbar */
+.top-navbar {
+  position: sticky;
+  top: 0;
+  z-index: 50;
+  background: #FFFFFF;
+  border-bottom: 1px solid var(--border-subtle);
+  padding: 0.75rem 1.5rem;
+  box-shadow: 0 1px 2px rgba(0, 0, 0, 0.03);
+}
+
+.nav-container {
+  max-width: 1240px;
+  margin: 0 auto;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+}
+
+.brand-logo {
+  display: flex;
+  align-items: center;
+  gap: 0.85rem;
+  text-decoration: none;
+  color: var(--text-primary);
+}
+
+.brand-icon-wrapper {
+  width: 38px;
+  height: 38px;
+  border-radius: var(--radius-sm);
+  background: var(--primary-navy);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: #FFFFFF;
+  box-shadow: var(--shadow-subtle);
+}
+
+/* Navigation Pills */
+.nav-pill-group {
+  display: inline-flex;
+  background: var(--bg-surface-elevated);
+  padding: 4px;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  gap: 4px;
+}
+
+.nav-pill {
+  padding: 0.5rem 1rem;
+  border-radius: var(--radius-sm);
+  border: none;
+  background: transparent;
+  color: var(--text-muted);
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  cursor: pointer;
+  display: inline-flex;
+  align-items: center;
+  gap: 0.45rem;
+  transition: all 0.15s ease;
+}
+
+.nav-pill:hover {
+  color: var(--text-primary);
+}
+
+.nav-pill.active {
+  background: #FFFFFF;
+  color: var(--primary-navy);
+  box-shadow: 0 1px 3px rgba(0, 0, 0, 0.08);
+  font-weight: 700;
+}
+
+/* Badges & Tags */
+.badge {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.25rem 0.65rem;
+  border-radius: var(--radius-xs);
+  font-size: 0.75rem;
+  font-weight: 700;
+  letter-spacing: 0.02em;
+  text-transform: uppercase;
+}
+
+.badge-sd {
+  background: #FEF3C7;
+  color: #92400E;
+  border: 1px solid #FDE68A;
+}
+
+.badge-smp {
+  background: #E0E7FF;
+  color: #3730A3;
+  border: 1px solid #C7D2FE;
+}
+
+.badge-sma {
+  background: #EDE9FE;
+  color: #5B21B6;
+  border: 1px solid #DDD6FE;
+}
+
+.badge-streak {
+  background: #FEF3C7;
+  color: #B45309;
+  border: 1px solid #FDE68A;
+}
+
+.badge-category {
+  font-size: 0.7rem;
+  padding: 0.2rem 0.55rem;
+  border-radius: var(--radius-xs);
+  font-weight: 700;
+  border: 1px solid transparent;
+}
+
+.badge-cat-uh {
+  background: #F0FDF4;
+  color: #166534;
+  border-color: #BBF7D0;
+}
+
+.badge-cat-pas {
+  background: #EFF6FF;
+  color: #1E40AF;
+  border-color: #BFDBFE;
+}
+
+.badge-cat-sma-fav {
+  background: #FAF5FF;
+  color: #6B21A8;
+  border-color: #E9D5FF;
+}
+
+
+.badge-cat-hots {
+  background: #FEF2F2;
+  color: #991B1B;
+  border-color: #FECACA;
+}
+
+/* Buttons */
+.btn {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  padding: 0.6rem 1.15rem;
+  border-radius: var(--radius-sm);
+  font-family: var(--font-body);
+  font-size: 0.9rem;
+  font-weight: 600;
+  cursor: pointer;
+  border: 1px solid transparent;
+  transition: all 0.15s ease;
+  text-decoration: none;
+  line-height: 1.4;
+}
+
+.btn-primary {
+  background: var(--primary-navy);
+  color: #FFFFFF;
+  border-color: var(--primary-navy);
+}
+
+.btn-primary:hover {
+  background: var(--primary-hover);
+  border-color: var(--primary-hover);
+}
+
+.btn-royal {
+  background: var(--primary-blue);
+  color: #FFFFFF;
+  border-color: var(--primary-blue);
+}
+
+.btn-royal:hover {
+  background: #1D4ED8;
+}
+
+.btn-emerald {
+  background: var(--status-emerald);
+  color: #FFFFFF;
+  border-color: var(--status-emerald);
+}
+
+.btn-emerald:hover {
+  background: #047857;
+}
+
+.btn-outline {
+  background: #FFFFFF;
+  color: var(--text-secondary);
+  border-color: var(--border-medium);
+}
+
+.btn-outline:hover {
+  background: var(--bg-surface-elevated);
+  color: var(--text-primary);
+  border-color: var(--border-strong);
+}
+
+.btn-subtle {
+  background: var(--bg-surface-elevated);
+  color: var(--text-secondary);
+  border-color: var(--border-subtle);
+}
+
+.btn-subtle:hover {
+  background: #E5E7EB;
+  color: var(--text-primary);
+}
+
+.btn-whatsapp {
+  background: var(--whatsapp-green);
+  color: #FFFFFF;
+  border-color: var(--whatsapp-green);
+}
+
+.btn-whatsapp:hover {
+  background: #15803D;
+}
+
+/* Form Controls */
+.form-group {
+  margin-bottom: 1.15rem;
+}
+
+.form-label {
+  display: block;
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 0.4rem;
+}
+
+.form-select, .form-input, .form-textarea {
+  width: 100%;
+  padding: 0.65rem 0.9rem;
+  font-family: var(--font-body);
+  font-size: 0.925rem;
+  color: var(--text-primary);
+  background: #FFFFFF;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  outline: none;
+  transition: border-color 0.15s ease, box-shadow 0.15s ease;
+}
+
+.form-select:focus, .form-input:focus, .form-textarea:focus {
+  border-color: var(--primary-blue);
+  box-shadow: 0 0 0 3px rgba(37, 99, 235, 0.12);
+}
+
+/* KaTeX Custom High-Contrast Styling */
+.katex {
+  font-size: 1.05em;
+  color: var(--text-primary) !important;
+  max-width: 100% !important;
+}
+
+.katex-display {
+  max-width: 100% !important;
+  overflow-x: auto !important;
+  overflow-y: hidden !important;
+  -webkit-overflow-scrolling: touch;
+  padding: 4px 0 !important;
+  margin: 0.35rem 0 !important;
+}
+
+.math-rendered-content {
+  color: var(--text-primary);
+  line-height: 1.75;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.math-formula-box {
+  background: var(--bg-surface-subtle);
+  border: 1px solid var(--border-subtle);
+  border-left: 3px solid var(--primary-navy);
+  padding: 0.85rem 1rem;
+  border-radius: var(--radius-sm);
+  margin: 0.5rem 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+.formula-card-container {
+  min-width: 0;
+  max-width: 100%;
+  overflow-x: auto;
+}
+
+/* Defantri Dual-Method Solution Box */
+.dual-method-container {
+  background: #FFFFFF;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  margin-top: 1rem;
+}
+
+.dual-method-header {
+  display: flex;
+  background: var(--bg-surface-elevated);
+  border-bottom: 1px solid var(--border-subtle);
+}
+
+.dual-method-tab {
+  flex: 1;
+  padding: 0.75rem 1rem;
+  border: none;
+  background: transparent;
+  font-family: var(--font-body);
+  font-size: 0.875rem;
+  font-weight: 600;
+  color: var(--text-muted);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 0.5rem;
+  transition: all 0.15s ease;
+  border-bottom: 2px solid transparent;
+}
+
+.dual-method-tab:hover {
+  color: var(--text-primary);
+  background: rgba(255, 255, 255, 0.6);
+}
+
+.dual-method-tab.active-school {
+  background: #FFFFFF;
+  color: var(--primary-navy);
+  border-bottom: 2px solid var(--primary-navy);
+  font-weight: 700;
+}
+
+.dual-method-tab.active-defantri {
+  background: #FFFFFF;
+  color: var(--status-emerald);
+  border-bottom: 2px solid var(--status-emerald);
+  font-weight: 700;
+}
+
+.dual-method-content {
+  padding: 1.25rem;
+  font-size: 0.925rem;
+  line-height: 1.7;
+}
+
+/* Interactive Option Button for Student */
+.option-btn {
+  width: 100%;
+  padding: 1rem 1.25rem;
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  background: #FFFFFF;
+  color: var(--text-primary);
+  cursor: pointer;
+  display: flex;
+  align-items: center;
+  gap: 1rem;
+  text-align: left;
+  font-size: 1.05rem;
+  transition: all 0.15s ease;
+  box-shadow: var(--shadow-subtle);
+}
+
+.option-btn:hover:not(:disabled) {
+  border-color: var(--primary-blue);
+  background: var(--primary-light);
+}
+
+.option-btn.selected {
+  border: 2px solid var(--primary-blue);
+  background: var(--primary-light);
+}
+
+.option-btn.correct {
+  border: 2px solid var(--status-emerald);
+  background: var(--status-emerald-light);
+}
+
+.option-btn.incorrect {
+  border: 2px solid var(--status-brick);
+  background: var(--status-brick-light);
+}
+
+.option-circle {
+  width: 34px;
+  height: 34px;
+  border-radius: 50%;
+  border: 1px solid var(--border-medium);
+  background: #FFFFFF;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-weight: 700;
+  font-size: 0.95rem;
+  color: var(--text-secondary);
+  flex-shrink: 0;
+  transition: all 0.15s ease;
+}
+
+.option-btn.selected .option-circle {
+  background: var(--primary-blue);
+  border-color: var(--primary-blue);
+  color: #FFFFFF;
+}
+
+.option-btn.correct .option-circle {
+  background: var(--status-emerald);
+  border-color: var(--status-emerald);
+  color: #FFFFFF;
+}
+
+.option-btn.incorrect .option-circle {
+  background: var(--status-brick);
+  border-color: var(--status-brick);
+  color: #FFFFFF;
+}
+
+/* Flame animation */
+.flame-animated {
+  animation: flamePulse 2s infinite ease-in-out;
+}
+
+@keyframes flamePulse {
+  0%, 100% { transform: scale(1); filter: brightness(1); }
+  50% { transform: scale(1.1); filter: brightness(1.2); }
+}
+
+/* Modal Backdrop */
+.modal-overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  right: 0;
+  bottom: 0;
+  background: rgba(17, 24, 39, 0.5);
+  backdrop-filter: blur(4px);
+  z-index: 100;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  padding: 1rem;
+}
+
+/* ==========================================================================
+   PRINT STYLESHEET: LEMBAR KERJA UJIAN RESMI CETAK A4
+   ========================================================================== */
+@media print {
+  body {
+    background: #FFFFFF !important;
+    color: #000000 !important;
+    font-size: 11pt;
+    line-height: 1.5;
+  }
+
+  .top-navbar,
+  .no-print,
+  button:not(.allow-print),
+  .nav-pill-group,
+  .brand-logo,
+  .floating-scratchpad-btn {
+    display: none !important;
+  }
+
+  .printable-page {
+    width: 100% !important;
+    max-width: 100% !important;
+    margin: 0 !important;
+    padding: 0 !important;
+    box-shadow: none !important;
+    border: none !important;
+  }
+
+  .editorial-card {
+    border: 1px solid #D1D5DB !important;
+    box-shadow: none !important;
+    break-inside: avoid;
+  }
+
+  .print-header {
+    border-bottom: 2px solid #000000 !important;
+    padding-bottom: 12pt;
+    margin-bottom: 16pt;
+  }
+
+  .page-break-after {
+    page-break-after: always;
+  }
+}
+
+/* Responsive adjustments */
+@media (max-width: 768px) {
+  .top-navbar {
+    padding: 0.75rem 1rem;
+  }
+  
+  .nav-container {
+    flex-direction: column;
+    gap: 0.75rem;
+    align-items: stretch;
+  }
+
+  .nav-pill-group {
+    width: 100%;
+    justify-content: center;
+  }
+
+  .nav-pill {
+    flex: 1;
+    justify-content: center;
+    font-size: 0.8rem;
+    padding: 0.5rem 0.6rem;
+  }
+}

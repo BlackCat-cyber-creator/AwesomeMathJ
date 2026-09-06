@@ -1,0 +1,177 @@
+=== Page 6 ===
+vi
+Daftar Isi  
+Kata Pengantar  ....................................................................................................... iii
+Prakata  ...................................................................................................................... iv
+Daftar Isi  ................................................................................................................... vi
+Daftar Gambar  ......................................................................................................... viii
+Daftar Tabel  .............................................................................................................. x
+Petunjuk Penggunaan Buku  ................................................................................. xi 
+Bab  1 Barisan dan Deret 1
+ A. Barisan  ..................................................................  3
+  1. Barisan Aritmetika  ....................................  3
+  2.  Barisan Geometri  ....................................... 11
+ B. Deret  ...................................................................... 19
+  1.  Deret Aritmetika  ........................................  20
+  2.  Deret Geometri  ...........................................  25
+  3.  Deret Geometri Tak Hingga  ..................... 28
+ C. Bunga Tunggal  .................................................... 30
+Bab  2 Investasi dan Pinjaman 35
+ A. Suku Bunga Tunggal  ......................................... 37
+ B. Investasi Bunga Majemuk  ............................... 40
+ C. Investasi Anuitas  ................................................ 45
+ D. Pinjaman Bunga Majemuk  .............................. 55
+ E. Pinjaman dengan Anuitas  ...............................  59
+ F. Parameter Investasi dan Pinjaman  ............... 71
+Bab 1Bab 1
+Barisan dan DeretBarisan dan Deret
+Kamu memiliki suatu tanaman yang tumbuh dengan pola pertumbuhan tinggi 
+teratur setiap minggu. Jika tinggi tanaman pada minggu pertama 2 cm, minggu 
+kedua 4 cm, dan minggu ketiga 6 cm, kira-kira berapa tinggi tanamanmu pada 
+minggu ke-7?
+Apakah pola tinggi tanaman tersebut dapat diprediksi? 
+?
+KEMENTERIAN PENDIDIKAN DASAR DAN MENENGAH
+REPUBLIK INDONESIA, 2025
+Matematika untuk SMA/MA/SMK/MAK Kelas XII (Edisi Revisi)
+Penulis: Mohammad Tohir, dkk 
+ISBN: 978-634-00-3118-8 (jil.3 PDF)
+Bayangkan kamu memiliki sejumlah uang atau aset dan kamu ingin uang atau 
+aset tersebut bertumbuh seiring waktu. Apa saja pilihan yang kamu miliki?
+?
+Bab 2Bab 2
+Investasi dan PinjamanInvestasi dan Pinjaman
+KEMENTERIAN PENDIDIKAN DASAR DAN MENENGAH
+REPUBLIK INDONESIA, 2025
+Matematika untuk SMA/MA/SMK/MAK Kelas XII (Edisi Revisi)
+Penulis: Mohammad Tohir, dkk 
+ISBN: 978-634-00-3118-8 (jil.3 PDF)
+
+=== Page 7 ===
+vii
+Bab  3 Kaidah Pencacahan 81
+ A. Aturan Pengisian Tempat  ................................ 83
+ B. Permutasi  .............................................................  91
+  1. Permutasi n Item dari n objek  ................  93
+  2. Permutasi dengan Objek yang Sama  ....  95
+  3. Permutasi Siklis  ..........................................  97
+ C. Kombinasi  ............................................................ 102
+ D. Penerapan Permutasi dan Kombinasi  .........  113
+Bab  4 Peluang 123
+ A. Peluang Suatu Kejadian  ...................................  125
+  1. Ruang Sampel  .............................................  132
+  2. Peluang Suatu Kejadian  ...........................  132
+ B. Peluang Kejadian Majemuk  ............................  138
+  1. Kejadian Majemuk  ..................................... 140
+  2. Frekuensi Harapan dari Kejadian 
+   Majemuk .......................................................  141
+  3. Peluang Kejadian Majemuk  ....................  142
+  4. Peluang Kejadian Majemuk Saling 
+   Lepas  .............................................................  144
+  5.  Peluang Kejadian Majemuk Saling 
+   Bebas  ............................................................. 151
+  6. Peluang Kejadian Majemuk Saling 
+   Bebas Bersyarat  .......................................... 158
+Glosarium  ................................................................................................................. 172
+Daftar Pustaka  ......................................................................................................... 178
+Indeks  ........................................................................................................................ 182
+Üro˛Ȃ ÜeȂőkʗ ÜerŵʗkʗőȚ  ....................................................................................... 184
+Bab 3Bab 3
+Kaidah PencacahanKaidah Pencacahan
+Ketika kamu ingin membuka kunci pengaman, mengatur posisi duduk, 
+atau memilih teman dalam kelompok, mengapa cara menghitung jumlah 
+kemungkinan susunannya bisa berbeda-beda? Kapan kamu perlu 
+memperhatikan urutan atau tidak?
+?
+KEMENTERIAN PENDIDIKAN DASAR DAN MENENGAH
+REPUBLIK INDONESIA, 2025
+Matematika untuk SMA/MA/SMK/MAK Kelas XII (Edisi Revisi)
+Penulis: Mohammad Tohir, dkk 
+ISBN: 978-634-00-3118-8 (jil.3 PDF)
+Bab 4Bab 4
+PeluangPeluang
+Konsep peluang dapat digunakan untuk menyusun strategi dalam 
+pertandingan sepak bola. Bagaimana cara seorang pelatih menggunakan 
+konsep peluang dalam menyusun strategi untuk melawan tim lawan? 
+?
+KEMENTERIAN PENDIDIKAN DASAR DAN MENENGAH
+REPUBLIK INDONESIA, 2025
+Matematika untuk SMA/MA/SMK/MAK Kelas XII (Edisi Revisi)
+Penulis: Mohammad Tohir, dkk 
+ISBN: 978-634-00-3118-8 (jil.3 PDF)
+
+=== Page 8 ===
+viii
+Daftar Gambar  
+Gambar 1. 1  Susunan Kursi ...................................................................................... 3
+Gambar 1.2  Susunan Bola  ...................................................................................... 3
+Gambar 1.3  Susunan Mangkok .............................................................................. 4
+Gambar 1.4  Susunan Batu Bata Bertingkat ........................................................ 6
+Gambar 1.5  Menjatuhkan Bola dari Balkon Rumah  ........................................ 11
+Gambar 1.6  Pilar-Pilar Kuno ................................................................................... 17
+Gambar 1.7  Carl Friedrich Gauss  .......................................................................... 20
+Gambar 2. 1  Koperasi Simpan Pinjam  .................................................................. 37
+Gambar 2.2  Deposito  ............................................................................................... 40
+Gambar 2.3  Menabung di Bank  ............................................................................. 46
+Gambar 2.4 Leonardo da Pisa  ............................................................................... 61
+Gambar 2.5  Grafik Angsuran Pokok dan Bunga Angsuran  .............................. 62
+Gambar 2.6  Grafik Hubungan Suku Bunga dengan Dana  ............................... 72
+Gambar 2.7  Grafik Hubungan Periode Pembayaran dengan Nilai Akhir ..... 74
+Gambar 3. 1  Susunan Buku di Rak  ........................................................................ 83
+Gambar 3.2  Barcode UPC (Universal Product Code)  ......................................... 88
+Gambar 3.3  Struktur Pengurus Kelas  .................................................................. 91
+Gambar 3.4  Denah Perumahan Bunga Indah  .................................................... 95
+Gambar 3.5  Posisi duduk melingkar pada meja bundar.  ............................... 97
+Gambar 3.6  Bagan Pemain Futsal  ......................................................................... 102
+Gambar 3.7 Ahmad dan eranǿang Buah  ........................................................... 106
+Gambar 4. 1  Blaise Pascal (1623–1662 M)  ............................................................. 126
+Gambar 4.2  Dua Anak ¡enggunakan omɢuʋer  ............................................... 127
+Gambar 4.3  Koin Uang Logam  ............................................................................... 128
+Gambar 4.4  Tiga Kelereng  ...................................................................................... 128
+Gambar 4.5  Dadu Bilangan  .................................................................................... 128
+Gambar 4.6  Dua Koin Uang Logam ....................................................................... 132
+
+=== Page 9 ===
+ix
+Gambar 4.7  Kelerang dalam Kotak  ...................................................................... 133
+Gambar 4.8  Permainan Spin  .................................................................................. 138
+Gambar 4.9  Satu Set Dadu dan Koin  ................................................................... 139
+Gambar 4. 10  Koin dan Dadu  .................................................................................... 141
+Gambar 4. 11  Telepon Berdering  ............................................................................. 144
+Gambar 4. 12  Pelemparan Fastball  ......................................................................... 145
+Gambar 4. 13  eranǿang Aɢel  ................................................................................... 147
+Gambar 4. 14  Tiga Kelereng dan Kantong  ............................................................. 151
+Gambar 4. 15  Dua Dadu  ............................................................................................. 153
+Gambar 4. 16 Pintu Rahasia  ...................................................................................... 158
+Gambar 4. 17  B  ........................................... 159
+Gambar 4. 18 Kumpulan Kartu  ................................................................................. 159
+
+=== Page 10 ===
+x
+Daftar Tabel  
+Tabel 1. 1 Banyak Susunan ¡angkok  ..................................................................... 4
+Tabel 1.2  Banyak iɢaʋan dan Bagian Sama Besar yang þerbenʋuk Pada 
+ Kertas  .......................................................................................................... 12
+Tabel 1.3  Bulan  .. 25
+Tabel 1.4  Proses Menganalisis Rumus Jumlah Deret Geometri  ...................... 26
+Tabel 1.5  Perhiʋungan Nilai þabungan Angga  ..................................................... 31
+Tabel 2. 1  Perhitungan Bunga Tunggal  .................................................................. 41
+Tabel 2.2  Perhitungan Bunga Majemuk  ................................................................ 42
+Tabel 2.3  Perinƃian þabungan Deɢosiʋo Aǉǉan  .................................................... 47
+Tabel 2.4  egiaʋan Anuiʋas  ...................................................................................... 48
+Tabel 2.5 Angsuran Pinǿaman  ................................................................................. 56
+Tabel 2.6 þabel Angsuran Pak Andi ɢer Bulan  .................................................... 58
+Tabel 2.7  ¡ekanisme Pembayaran Anuiʋas  ......................................................... 60
+Tabel 2.8  Rencana Pelunasan  ................................................................................. 62
+Tabel 2.9  Rencana Pelunasan  ................................................................................. 63
+Tabel 2. 10  Bunga Majemuk KPR  ............................................................................... 69
+Tabel 3. 1  Pengelompokan Kriteria Buku  .............................................................. 83
+Tabel 3.2  Pasangan Kemeja dan Celana  ............................................................... 85
+Tabel 3.3  Banyak -ara Susunan Pengurus  ........................................................... 92
+Tabel 3.4  Kemungkinan Pilihan Buah  ................................................................... 107
+Tabel 4. 1  Hasil Perƃobaan oin  .............................................................................. 129
+Tabel 4.2  Hasil Perƃobaan elereng  ...................................................................... 129
+Tabel 4.3  Hasil Perƃobaan Dadu  ............................................................................. 130
+Tabel 4.4  Pelemparan Satu Koin dan Satu Set Dadu  ........................................ 139
+Tabel 4.5  Formasi Manajer  ....................................................................................... 162
+
