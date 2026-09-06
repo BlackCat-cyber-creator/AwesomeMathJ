@@ -1,4 +1,5 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
+import confetti from 'canvas-confetti';
 import { CURRICULUM_DATA } from '../data/curriculumData';
 import { MathText } from './MathRenderer';
 import { 
@@ -17,16 +18,17 @@ import {
   AlertTriangle,
   FileText,
   Compass,
-  XCircle
+  XCircle,
+  RotateCcw
 } from 'lucide-react';
 import { QuestionVisual } from './QuestionVisual';
 
 /**
  * PublicHandbook:
  * Portal Terbuka untuk Publik (Public Math Handbook & Knowledge Hub)
- * Seluruh materi matematika (Kelas 4 SD s/d 12 SMA & UTBK)
+ * Seluruh materi matematika (Kelas 4 SD s/d 12 SMA)
  * dapat diakses bebas oleh siapa saja secara mandiri tanpa login.
- * Bersih dari label ujian (UH/HOTS) dan fokus pada pemahaman konsep murni.
+ * Dilengkapi mode pengerjaan latihan mandiri dengan tombol Selesai untuk evaluasi.
  */
 export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
   const [selectedGrade, setSelectedGrade] = useState(4);
@@ -38,9 +40,19 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
   const [revealedSolutions, setRevealedSolutions] = useState({}); // { [qId]: boolean }
   const [revealedHints, setRevealedHints] = useState({}); // { [qId]: boolean }
   const [selectedAnswers, setSelectedAnswers] = useState({}); // { [qId]: optionKey }
+  const [isQuizSubmitted, setIsQuizSubmitted] = useState(false);
   const [copiedLinkNotification, setCopiedLinkNotification] = useState(false);
 
+  // Reset quiz & answers state when switching chapter or grade
+  useEffect(() => {
+    setSelectedAnswers({});
+    setIsQuizSubmitted(false);
+    setRevealedSolutions({});
+    setRevealedHints({});
+  }, [selectedGrade, selectedChapterId]);
+
   const handleSelectOption = (qId, optionKey) => {
+    if (isQuizSubmitted) return; // Locked once evaluated; can be retried with "Ulangi Latihan"
     setSelectedAnswers(prev => ({
       ...prev,
       [qId]: optionKey
@@ -48,6 +60,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
   };
 
   const handleResetAnswer = (qId) => {
+    if (isQuizSubmitted) return;
     setSelectedAnswers(prev => {
       const next = { ...prev };
       delete next[qId];
@@ -76,6 +89,44 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
     const found = displayedChapters.find((c) => c.id === selectedChapterId);
     return found || displayedChapters[0] || currentGradeData.chapters[0];
   }, [currentGradeData, displayedChapters, selectedChapterId]);
+
+  // Quiz progress and evaluation for current chapter
+  const answeredCount = useMemo(() => {
+    if (!currentChapter?.questions) return 0;
+    return currentChapter.questions.filter((q) => selectedAnswers[q.id] !== undefined).length;
+  }, [currentChapter, selectedAnswers]);
+
+  const { correctCount, quizScore } = useMemo(() => {
+    if (!currentChapter?.questions) return { correctCount: 0, quizScore: 0 };
+    const total = currentChapter.questions.length;
+    if (total === 0) return { correctCount: 0, quizScore: 0 };
+    let correct = 0;
+    currentChapter.questions.forEach((q) => {
+      if (selectedAnswers[q.id] === q.correctAnswer) correct++;
+    });
+    const score = Math.round((correct / total) * 100);
+    return { correctCount: correct, quizScore: score };
+  }, [currentChapter, selectedAnswers]);
+
+  const handleSubmitQuiz = () => {
+    setIsQuizSubmitted(true);
+    if (quizScore >= 60) {
+      try {
+        confetti({
+          particleCount: 85,
+          spread: 70,
+          origin: { y: 0.6 }
+        });
+      } catch {}
+    }
+  };
+
+  const handleResetQuiz = () => {
+    setSelectedAnswers({});
+    setIsQuizSubmitted(false);
+    setRevealedSolutions({});
+    setRevealedHints({});
+  };
 
   // Global Search Results across all grades & chapters
   const searchResults = useMemo(() => {
@@ -727,32 +778,62 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                     <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem', marginBottom: '0.75rem' }}>
                       {q.options.map((opt) => {
                         const isSelected = selectedAnswers[q.id] === opt.key;
-                        const isAnswered = selectedAnswers[q.id] !== undefined;
                         const isCorrectKey = opt.key === q.correctAnswer;
-                        const isCorrectSelected = isSelected && isCorrectKey;
-                        const isIncorrectSelected = isSelected && !isCorrectKey;
                         const showCorrectHighlight = isSolOpen && isCorrectKey;
 
                         let borderColor = 'var(--border-subtle)';
                         let bgColor = '#F9FAFB';
                         let circleBg = '#E5E7EB';
                         let circleColor = 'var(--text-primary)';
+                        let opacity = 1;
+                        let trailingIndicator = null;
 
-                        if (isCorrectSelected || showCorrectHighlight) {
-                          borderColor = 'var(--status-emerald)';
-                          bgColor = 'var(--status-emerald-light)';
-                          circleBg = 'var(--status-emerald)';
-                          circleColor = '#FFFFFF';
-                        } else if (isIncorrectSelected) {
-                          borderColor = 'var(--status-brick)';
-                          bgColor = 'var(--status-brick-light)';
-                          circleBg = 'var(--status-brick)';
-                          circleColor = '#FFFFFF';
-                        } else if (isSelected) {
-                          borderColor = 'var(--primary-blue)';
-                          bgColor = 'var(--primary-light)';
-                          circleBg = 'var(--primary-blue)';
-                          circleColor = '#FFFFFF';
+                        if (!isQuizSubmitted) {
+                          // BEFORE SUBMISSION: Neutral selection styling only! Never show right/wrong yet!
+                          if (isSelected) {
+                            borderColor = 'var(--primary-blue)';
+                            bgColor = 'var(--primary-light)';
+                            circleBg = 'var(--primary-blue)';
+                            circleColor = '#FFFFFF';
+                          }
+                          if (showCorrectHighlight) {
+                            borderColor = 'var(--status-emerald)';
+                            bgColor = 'var(--status-emerald-light)';
+                            circleBg = 'var(--status-emerald)';
+                            circleColor = '#FFFFFF';
+                            trailingIndicator = <CheckCircle2 size={18} color="var(--status-emerald)" style={{ flexShrink: 0 }} />;
+                          }
+                        } else {
+                          // AFTER SUBMISSION: Full evaluation colors & indicators
+                          const isCorrectSelected = isSelected && isCorrectKey;
+                          const isIncorrectSelected = isSelected && !isCorrectKey;
+
+                          if (isCorrectSelected) {
+                            borderColor = 'var(--status-emerald)';
+                            bgColor = 'var(--status-emerald-light)';
+                            circleBg = 'var(--status-emerald)';
+                            circleColor = '#FFFFFF';
+                            trailingIndicator = <CheckCircle2 size={18} color="var(--status-emerald)" style={{ flexShrink: 0 }} />;
+                          } else if (isIncorrectSelected) {
+                            borderColor = 'var(--status-brick)';
+                            bgColor = 'var(--status-brick-light)';
+                            circleBg = 'var(--status-brick)';
+                            circleColor = '#FFFFFF';
+                            trailingIndicator = <XCircle size={18} color="var(--status-brick)" style={{ flexShrink: 0 }} />;
+                          } else if (isCorrectKey) {
+                            // Correct answer that was not chosen by user
+                            borderColor = 'var(--status-emerald)';
+                            bgColor = '#F0FDF4';
+                            circleBg = '#BBF7D0';
+                            circleColor = '#166534';
+                            trailingIndicator = (
+                              <span style={{ fontSize: '0.72rem', fontWeight: 700, color: 'var(--status-emerald)', backgroundColor: '#DCFCE7', padding: '0.15rem 0.5rem', borderRadius: '4px', flexShrink: 0 }}>
+                                Kunci Jawaban
+                              </span>
+                            );
+                          } else {
+                            opacity = 0.55;
+                          }
                         }
 
                         return (
@@ -760,6 +841,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                             key={opt.key}
                             type="button"
                             onClick={() => handleSelectOption(q.id, opt.key)}
+                            disabled={isQuizSubmitted}
                             style={{
                               display: 'flex',
                               alignItems: 'center',
@@ -768,8 +850,9 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                               borderRadius: 'var(--radius-sm)',
                               border: `2px solid ${borderColor}`,
                               backgroundColor: bgColor,
+                              opacity: opacity,
                               fontSize: '0.925rem',
-                              cursor: 'pointer',
+                              cursor: isQuizSubmitted ? 'default' : 'pointer',
                               textAlign: 'left',
                               width: '100%',
                               transition: 'all 0.15s ease',
@@ -796,19 +879,14 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                             <div style={{ flex: 1, color: 'var(--text-primary)' }}>
                               <MathText text={opt.text} />
                             </div>
-                            {(isCorrectSelected || showCorrectHighlight) && (
-                              <CheckCircle2 size={18} color="var(--status-emerald)" style={{ flexShrink: 0 }} />
-                            )}
-                            {isIncorrectSelected && (
-                              <XCircle size={18} color="var(--status-brick)" style={{ flexShrink: 0 }} />
-                            )}
+                            {trailingIndicator}
                           </button>
                         );
                       })}
                     </div>
 
-                    {/* Instant Feedback when option is clicked */}
-                    {selectedAnswers[q.id] && (
+                    {/* Evaluation feedback shown ONLY after user clicks "Selesai" */}
+                    {isQuizSubmitted && (
                       <div style={{ marginTop: '0.4rem', marginBottom: '0.75rem' }}>
                         {selectedAnswers[q.id] === q.correctAnswer ? (
                           <div style={{
@@ -822,18 +900,20 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                             color: 'var(--status-emerald)'
                           }}>
                             <span style={{ fontWeight: 700, fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                              <CheckCircle2 size={17} /> Jawabanmu Benar! Mantap! 🎉
+                              <CheckCircle2 size={17} /> Jawaban Anda Benar (Pilihan {q.correctAnswer})! 🎉
                             </span>
-                            <button
-                              type="button"
-                              onClick={() => handleResetAnswer(q.id)}
-                              className="btn btn-subtle"
-                              style={{ padding: '0.2rem 0.6rem', fontSize: '0.75rem' }}
-                            >
-                              Ulangi
-                            </button>
+                            {!isSolOpen && (
+                              <button
+                                type="button"
+                                onClick={() => toggleSolution(q.id)}
+                                className="btn btn-subtle"
+                                style={{ padding: '0.2rem 0.6rem', fontSize: '0.75rem' }}
+                              >
+                                Pembahasan
+                              </button>
+                            )}
                           </div>
-                        ) : (
+                        ) : selectedAnswers[q.id] ? (
                           <div style={{
                             display: 'flex',
                             alignItems: 'center',
@@ -845,16 +925,43 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                             color: 'var(--status-brick)'
                           }}>
                             <span style={{ fontWeight: 700, fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                              <AlertTriangle size={17} /> Belum tepat. Coba pilih opsi lain atau buka petunjuk!
+                              <XCircle size={17} /> Jawaban Anda: Pilihan {selectedAnswers[q.id]} • Kunci Jawaban: Pilihan {q.correctAnswer}
                             </span>
-                            <button
-                              type="button"
-                              onClick={() => handleResetAnswer(q.id)}
-                              className="btn btn-subtle"
-                              style={{ padding: '0.2rem 0.6rem', fontSize: '0.75rem' }}
-                            >
-                              Coba Lagi
-                            </button>
+                            {!isSolOpen && (
+                              <button
+                                type="button"
+                                onClick={() => toggleSolution(q.id)}
+                                className="btn btn-subtle"
+                                style={{ padding: '0.2rem 0.6rem', fontSize: '0.75rem' }}
+                              >
+                                Buka Pembahasan
+                              </button>
+                            )}
+                          </div>
+                        ) : (
+                          <div style={{
+                            display: 'flex',
+                            alignItems: 'center',
+                            justifyContent: 'space-between',
+                            padding: '0.65rem 0.95rem',
+                            borderRadius: 'var(--radius-sm)',
+                            backgroundColor: '#F3F4F6',
+                            border: '1px solid var(--border-subtle)',
+                            color: 'var(--text-secondary)'
+                          }}>
+                            <span style={{ fontWeight: 600, fontSize: '0.875rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                              <AlertTriangle size={17} color="var(--text-muted)" /> Soal ini belum dijawab • Kunci Jawaban: Pilihan {q.correctAnswer}
+                            </span>
+                            {!isSolOpen && (
+                              <button
+                                type="button"
+                                onClick={() => toggleSolution(q.id)}
+                                className="btn btn-subtle"
+                                style={{ padding: '0.2rem 0.6rem', fontSize: '0.75rem' }}
+                              >
+                                Buka Pembahasan
+                              </button>
+                            )}
                           </div>
                         )}
                       </div>
@@ -891,6 +998,164 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                   </div>
                 );
               })}
+
+              {/* ======================================================== */}
+              {/* BOTTOM PANEL: TOMBOL SELESAI & EVALUASI SKOR LATIHAN     */}
+              {/* ======================================================== */}
+              {currentChapter.questions && currentChapter.questions.length > 0 && (
+                !isQuizSubmitted ? (
+                  <div 
+                    className="editorial-card" 
+                    style={{ 
+                      padding: '1.5rem', 
+                      marginTop: '1.5rem', 
+                      backgroundColor: '#FFFFFF',
+                      border: '2px solid var(--border-subtle)',
+                      borderRadius: 'var(--radius-md)',
+                      display: 'flex',
+                      alignItems: 'center',
+                      justifyContent: 'space-between',
+                      flexWrap: 'wrap',
+                      gap: '1rem',
+                      boxShadow: '0 4px 14px rgba(0,0,0,0.04)'
+                    }}
+                  >
+                    <div>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', marginBottom: '0.35rem' }}>
+                        <span style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--primary-navy)' }}>
+                          Lembar Jawaban Latihan
+                        </span>
+                        <span className="badge badge-primary" style={{ fontSize: '0.75rem', fontWeight: 700 }}>
+                          {answeredCount} / {currentChapter.questions.length} Terjawab
+                        </span>
+                      </div>
+                      <p style={{ margin: 0, fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
+                        {answeredCount === currentChapter.questions.length 
+                          ? 'Semua soal sudah dijawab. Silakan klik tombol "Selesai & Periksa Jawaban" untuk mengecek hasil.' 
+                          : answeredCount === 0 
+                            ? 'Pilih jawaban A, B, C, atau D pada soal-soal di atas, lalu tekan tombol "Selesai" untuk memeriksa.'
+                            : `Masih ada ${currentChapter.questions.length - answeredCount} soal belum dijawab. Kamu bisa melengkapi dulu atau langsung memeriksa.`
+                        }
+                      </p>
+                    </div>
+
+                    <div style={{ display: 'flex', gap: '0.75rem', alignItems: 'center' }}>
+                      {answeredCount > 0 && (
+                        <button
+                          type="button"
+                          onClick={() => setSelectedAnswers({})}
+                          className="btn btn-subtle"
+                          style={{ fontSize: '0.85rem' }}
+                        >
+                          Reset Pilihan
+                        </button>
+                      )}
+                      <button
+                        id="btn-submit-quiz-chapter"
+                        type="button"
+                        onClick={handleSubmitQuiz}
+                        disabled={answeredCount === 0}
+                        className="btn btn-royal"
+                        style={{ 
+                          padding: '0.75rem 1.5rem', 
+                          fontSize: '0.95rem', 
+                          fontWeight: 700,
+                          opacity: answeredCount === 0 ? 0.5 : 1,
+                          cursor: answeredCount === 0 ? 'not-allowed' : 'pointer',
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.5rem'
+                        }}
+                      >
+                        <CheckCircle2 size={18} />
+                        Selesai & Periksa Jawaban
+                      </button>
+                    </div>
+                  </div>
+                ) : (
+                  <div 
+                    className="editorial-card" 
+                    style={{ 
+                      padding: '1.75rem 2rem', 
+                      marginTop: '1.5rem', 
+                      background: quizScore >= 80 
+                        ? 'linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%)' 
+                        : quizScore >= 60 
+                          ? 'linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)' 
+                          : 'linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%)',
+                      border: `2px solid ${quizScore >= 80 ? 'var(--status-emerald)' : quizScore >= 60 ? 'var(--primary-blue)' : '#F59E0B'}`,
+                      borderRadius: 'var(--radius-md)',
+                      boxShadow: '0 4px 16px rgba(0,0,0,0.06)'
+                    }}
+                  >
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.25rem' }}>
+                      <div>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.4rem' }}>
+                          <span className="badge badge-primary" style={{ fontWeight: 800 }}>
+                            HASIL EVALUASI LATIHAN
+                          </span>
+                          <span style={{ fontSize: '0.85rem', fontWeight: 700, color: 'var(--primary-navy)' }}>
+                            {currentChapter.title}
+                          </span>
+                        </div>
+                        <div style={{ fontSize: '1.15rem', fontWeight: 800, color: 'var(--primary-navy)', marginBottom: '0.3rem' }}>
+                          {quizScore >= 80 
+                            ? '🎉 Luar Biasa! Pemahaman konsepmu pada materi ini sudah sangat matang!' 
+                            : quizScore >= 60 
+                              ? '👍 Bagus! Sebagian besar soal latihan berhasil kamu selesaikan.' 
+                              : '💪 Terus Semangat! Pelajari pembahasan pada setiap soal untuk mendalami konsep.'}
+                        </div>
+                        <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                          Total Benar: <strong style={{ color: 'var(--status-emerald)' }}>{correctCount}</strong> dari <strong>{currentChapter.questions.length}</strong> soal • Skor Akhir: <strong>{quizScore} / 100</strong>
+                        </div>
+                      </div>
+
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '1rem' }}>
+                        {/* Score Badge */}
+                        <div style={{
+                          display: 'flex',
+                          flexDirection: 'column',
+                          alignItems: 'center',
+                          justifyContent: 'center',
+                          minWidth: '90px',
+                          padding: '0.6rem 1.1rem',
+                          borderRadius: 'var(--radius-sm)',
+                          backgroundColor: '#FFFFFF',
+                          border: '1px solid rgba(0,0,0,0.1)',
+                          boxShadow: '0 2px 6px rgba(0,0,0,0.05)'
+                        }}>
+                          <span style={{ fontSize: '0.7rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase' }}>
+                            Skor Kamu
+                          </span>
+                          <span style={{ 
+                            fontSize: '1.85rem', 
+                            fontWeight: 900, 
+                            color: quizScore >= 80 ? 'var(--status-emerald)' : quizScore >= 60 ? 'var(--primary-blue)' : '#D97706',
+                            lineHeight: 1.1
+                          }}>
+                            {quizScore}
+                          </span>
+                          <span style={{ fontSize: '0.7rem', color: 'var(--text-muted)' }}>
+                            / 100
+                          </span>
+                        </div>
+
+                        {/* Reset Button */}
+                        <button
+                          id="btn-retry-quiz"
+                          type="button"
+                          onClick={handleResetQuiz}
+                          className="btn btn-royal"
+                          style={{ padding: '0.75rem 1.25rem', fontSize: '0.9rem', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.45rem' }}
+                        >
+                          <RotateCcw size={16} />
+                          Ulangi Latihan
+                        </button>
+                      </div>
+                    </div>
+                  </div>
+                )
+              )}
             </div>
           </div>
         ) : (
