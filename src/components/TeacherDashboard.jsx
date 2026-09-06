@@ -246,7 +246,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
   };
 
   return (
-    <div style={{ maxWidth: 1240, margin: '0 auto', padding: '1.5rem 1rem 4rem' }}>
+    <div className="handbook-container">
       
       {/* Top Editorial Banner */}
       <div 
@@ -266,13 +266,13 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.35rem', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '1.5rem' }}>📐</span>
             <h2 style={{ color: 'var(--primary-navy)', fontSize: '1.45rem' }}>
-              Teacher Command Center & CRM • Sir Jevon
+              Studio Guru Matematika • Sir Jevon
             </h2>
             <span className="badge" style={{ backgroundColor: '#ECFDF5', color: '#047857', border: '1px solid #A7F3D0', fontSize: '0.72rem' }}>
-              ● Autentikasi Aktif (Sir Jevon)
+              ● Sesi Aktif
             </span>
           </div>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.925rem' }}>
+          <p style={{ color: 'var(--text-secondary)', fontSize: '0.925rem', margin: 0 }}>
             Kelola murid privat, generate PR 5-soal otomatis, distribusikan ke WhatsApp dengan 1-klik, dan pantau rekap pengerjaan *real-time*.
           </p>
         </div>
@@ -343,7 +343,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
       {/* TAB 1: GENERATOR PR 5 SOAL & WHATSAPP DISTRIBUTION     */}
       {/* ======================================================== */}
       {activeTab === 'generator' && (
-        <div style={{ display: 'grid', gridTemplateColumns: 'minmax(340px, 460px) 1fr', gap: '1.5rem', alignItems: 'start' }}>
+        <div className="teacher-generator-grid">
           
           {/* LEFT: GENERATOR CONTROLS */}
           <div className="editorial-card" style={{ padding: '1.75rem' }}>
@@ -691,7 +691,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
           )}
 
           {/* Student Cards Grid */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(360px, 1fr))', gap: '1.25rem', marginBottom: '2rem' }}>
+          <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fill, minmax(min(100%, 320px), 1fr))', gap: '1.25rem', marginBottom: '2rem' }}>
             {students.map((student) => {
               const badgeClass = student.level === "SD" ? "badge-sd" : student.level === "SMP" ? "badge-smp" : "badge-sma";
               const studentQuests = quests.filter((q) => q.studentId === student.id);
@@ -1174,7 +1174,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
           )}
 
           {/* Two-Column Syllabus Explorer */}
-          <div style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 340px) 1fr', gap: '1.5rem', alignItems: 'start' }}>
+          <div className="handbook-explorer-grid">
             {/* Chapters List */}
             <div className="editorial-card" style={{ padding: '1.25rem' }}>
               <h3 style={{ fontSize: '1.05rem', color: 'var(--primary-navy)', marginBottom: '0.85rem' }}>

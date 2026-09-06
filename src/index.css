@@ -925,5 +925,27 @@ img, svg {
     width: 100% !important;
     justify-content: center !important;
   }
+
+  .teacher-generator-grid {
+    grid-template-columns: 1fr !important;
+    gap: 1.25rem !important;
+  }
 }
+
+/* Teacher Dashboard Layout Styles */
+.teacher-generator-grid {
+  display: grid;
+  grid-template-columns: minmax(340px, 440px) 1fr;
+  gap: 1.5rem;
+  align-items: start;
+}
+
+.teacher-students-table-wrapper {
+  width: 100%;
+  overflow-x: auto;
+  -webkit-overflow-scrolling: touch;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-subtle);
+}
+
 

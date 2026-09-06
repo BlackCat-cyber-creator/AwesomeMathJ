@@ -3,14 +3,15 @@ import { TeacherDashboard } from './components/TeacherDashboard';
 import { StudentQuestView } from './components/StudentQuestView';
 import { PrintableWorksheet } from './components/PrintableWorksheet';
 import { PublicHandbook } from './components/PublicHandbook';
-import { TeacherAuthModal } from './components/TeacherAuthModal';
+import { TeacherLoginView } from './components/TeacherLoginView';
 import { isTeacherAuthenticated, setTeacherAuthenticated } from './utils/storage';
 import { 
   GraduationCap, 
   Lock, 
   ShieldCheck, 
   BookOpen, 
-  LogOut
+  LogOut,
+  ArrowLeft
 } from 'lucide-react';
 
 export function App() {
@@ -20,16 +21,27 @@ export function App() {
     return params.get("questId");
   };
 
+  const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [activeStudentQuestId, setActiveStudentQuestId] = useState(getUrlQuestId());
   const [activeWorksheetQuest, setActiveWorksheetQuest] = useState(null);
   const [isTeacherLoggedIn, setIsTeacherLoggedIn] = useState(isTeacherAuthenticated());
-  const [viewMode, setViewMode] = useState(isTeacherAuthenticated() ? "teacher" : "public"); // 'public' or 'teacher'
   const [activeTeacherTab, setActiveTeacherTab] = useState("generator"); // "generator", "students", "syllabus"
-  const [isAuthModalOpen, setIsAuthModalOpen] = useState(false);
+
+  // Check if current route is dedicated to teacher portal (/teacher)
+  const isTeacherRoute = currentPath === '/teacher' || currentPath.startsWith('/teacher/');
+
+  // Seamless client-side navigation
+  const navigateTo = (path) => {
+    window.history.pushState({ path }, '', path);
+    setCurrentPath(path);
+    setActiveStudentQuestId(getUrlQuestId());
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   // Listen to popstate (browser back/forward button)
   useEffect(() => {
     const handlePopState = () => {
+      setCurrentPath(window.location.pathname);
       setActiveStudentQuestId(getUrlQuestId());
     };
     window.addEventListener('popstate', handlePopState);
@@ -46,10 +58,8 @@ export function App() {
 
   // Launch practice quest directly from Public Handbook
   const handleLaunchPracticeQuest = (practiceQuest) => {
-    // When practicing a chapter from public handbook, open in student quest view
     setActiveWorksheetQuest(null);
     setActiveStudentQuestId(practiceQuest.id);
-    // Temporary cache in storage if needed
     localStorage.setItem(`mathquest_practice_${practiceQuest.id}`, JSON.stringify(practiceQuest));
   };
 
@@ -62,23 +72,21 @@ export function App() {
   const handleBackToHome = () => {
     setActiveStudentQuestId(null);
     setActiveWorksheetQuest(null);
-    const cleanUrl = window.location.pathname;
-    window.history.pushState({ path: cleanUrl }, '', cleanUrl);
+    navigateTo('/');
   };
 
   // Successful Teacher Login
   const handleAuthSuccess = () => {
     setTeacherAuthenticated(true);
     setIsTeacherLoggedIn(true);
-    setViewMode("teacher");
-    setIsAuthModalOpen(false);
+    navigateTo('/teacher');
   };
 
   // Teacher Sign Out
   const handleSignOut = () => {
     setTeacherAuthenticated(false);
     setIsTeacherLoggedIn(false);
-    setViewMode("public");
+    navigateTo('/teacher');
   };
 
   return (
@@ -105,7 +113,7 @@ export function App() {
                 </span>
               </div>
               <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500 }}>
-                {viewMode === "teacher" && isTeacherLoggedIn ? (
+                {isTeacherRoute ? (
                   <>Studio Guru Matematika</>
                 ) : (
                   <>Buku Panduan & Latihan Matematika Mandiri</>
@@ -128,69 +136,73 @@ export function App() {
                 <BookOpen size={15} />
                 Ke Portal Publik
               </button>
-            ) : viewMode === "teacher" && isTeacherLoggedIn ? (
-              // Teacher Mode active in header
+            ) : isTeacherRoute ? (
+              // On /teacher Route
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                <div 
-                  style={{ 
-                    display: 'flex', 
-                    alignItems: 'center', 
-                    gap: '0.4rem', 
-                    backgroundColor: '#ECFDF5', 
-                    padding: '0.35rem 0.75rem', 
-                    borderRadius: 'var(--radius-sm)', 
-                    border: '1px solid #A7F3D0', 
-                    fontSize: '0.8rem' 
-                  }}
-                >
-                  <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'var(--status-emerald)', display: 'inline-block' }}></span>
-                  <span style={{ color: '#065F46', fontWeight: 700 }}>Studio Guru: Sir Jevon</span>
-                </div>
+                {isTeacherLoggedIn && (
+                  <div 
+                    style={{ 
+                      display: 'flex', 
+                      alignItems: 'center', 
+                      gap: '0.4rem', 
+                      backgroundColor: '#ECFDF5', 
+                      padding: '0.35rem 0.75rem', 
+                      borderRadius: 'var(--radius-sm)', 
+                      border: '1px solid #A7F3D0', 
+                      fontSize: '0.8rem' 
+                    }}
+                  >
+                    <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'var(--status-emerald)', display: 'inline-block' }}></span>
+                    <span style={{ color: '#065F46', fontWeight: 700 }}>Studio Guru</span>
+                  </div>
+                )}
 
                 <button
                   id="btn-nav-switch-public"
                   className="btn btn-outline"
                   style={{ fontSize: '0.8rem', padding: '0.35rem 0.75rem' }}
-                  onClick={() => setViewMode("public")}
-                  title="Lihat Handbook Publik"
+                  onClick={() => navigateTo('/')}
+                  title="Kembali ke Buku Panduan Publik"
                 >
                   <BookOpen size={14} />
                   Portal Publik
                 </button>
 
-                <button
-                  id="btn-nav-signout"
-                  className="btn btn-subtle"
-                  style={{ fontSize: '0.8rem', padding: '0.35rem 0.65rem', color: 'var(--status-brick)' }}
-                  onClick={handleSignOut}
-                  title="Keluar dari sesi guru"
-                >
-                  <LogOut size={14} />
-                  Keluar
-                </button>
+                {isTeacherLoggedIn && (
+                  <button
+                    id="btn-nav-signout"
+                    className="btn btn-subtle"
+                    style={{ fontSize: '0.8rem', padding: '0.35rem 0.65rem', color: 'var(--status-brick)' }}
+                    onClick={handleSignOut}
+                    title="Keluar dari sesi guru"
+                  >
+                    <LogOut size={14} />
+                    Keluar
+                  </button>
+                )}
               </div>
             ) : (
-              // Public Mode in header
+              // On / (Public Route)
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                 {isTeacherLoggedIn ? (
                   <button
                     id="btn-nav-open-teacher-studio"
                     className="btn btn-royal"
                     style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
-                    onClick={() => setViewMode("teacher")}
+                    onClick={() => navigateTo('/teacher')}
                   >
                     <ShieldCheck size={15} />
-                    Studio Guru Sir Jevon
+                    Studio Guru
                   </button>
                 ) : (
                   <button
                     id="btn-nav-teacher-signin"
                     className="btn btn-royal"
                     style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
-                    onClick={() => setIsAuthModalOpen(true)}
+                    onClick={() => navigateTo('/teacher')}
                   >
                     <Lock size={14} />
-                    Sign In Guru
+                    Portal Guru
                   </button>
                 )}
               </div>
@@ -212,30 +224,30 @@ export function App() {
             questId={activeStudentQuestId}
             onBackToDashboard={handleBackToHome}
           />
-        ) : viewMode === "teacher" && isTeacherLoggedIn ? (
-          <TeacherDashboard 
-            onLaunchQuest={handleLaunchQuest}
-            onPrintQuest={handlePrintQuest}
-            activeTab={activeTeacherTab}
-            setActiveTab={setActiveTeacherTab}
-            onBackToPublic={() => setViewMode("public")}
-            onSignOut={handleSignOut}
-          />
+        ) : isTeacherRoute ? (
+          isTeacherLoggedIn ? (
+            <TeacherDashboard 
+              onLaunchQuest={handleLaunchQuest}
+              onPrintQuest={handlePrintQuest}
+              activeTab={activeTeacherTab}
+              setActiveTab={setActiveTeacherTab}
+              onBackToPublic={() => navigateTo('/')}
+              onSignOut={handleSignOut}
+            />
+          ) : (
+            <TeacherLoginView 
+              onBack={() => navigateTo('/')}
+              onSuccess={handleAuthSuccess}
+            />
+          )
         ) : (
           <PublicHandbook 
-            onOpenAuth={() => setIsAuthModalOpen(true)}
+            onOpenAuth={() => navigateTo('/teacher')}
             onLaunchPractice={handleLaunchPracticeQuest}
             onPrintQuest={handlePrintQuest}
           />
         )}
       </main>
-
-      {/* Teacher Authentication Modal */}
-      <TeacherAuthModal 
-        isOpen={isAuthModalOpen}
-        onClose={() => setIsAuthModalOpen(false)}
-        onSuccess={handleAuthSuccess}
-      />
     </div>
   );
 }
