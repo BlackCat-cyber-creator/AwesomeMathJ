@@ -38,13 +38,13 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
   const [quests, setQuests] = useState(getQuests());
   
   // Curriculum browser state
-  const [selectedGrade, setSelectedGrade] = useState(8);
-  const [selectedChapterId, setSelectedChapterId] = useState("smp8-spldv");
+  const [selectedGrade, setSelectedGrade] = useState(4);
+  const [selectedChapterId, setSelectedChapterId] = useState("sd4-bab1-bilangan-cacah");
   
   // Quest Generator state - default to 5 questions
   const [targetStudentId, setTargetStudentId] = useState(students[0]?.id || "");
-  const [generatorGrade, setGeneratorGrade] = useState(8);
-  const [generatorChapterId, setGeneratorChapterId] = useState("smp8-spldv");
+  const [generatorGrade, setGeneratorGrade] = useState(4);
+  const [generatorChapterId, setGeneratorChapterId] = useState("sd4-bab1-bilangan-cacah");
   const [questionCount, setQuestionCount] = useState(5);
   const [deadline, setDeadline] = useState(getDefaultDeadlineDate());
   const [copiedNotification, setCopiedNotification] = useState(false);
@@ -53,7 +53,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
   // New Student modal/form state
   const [showAddStudent, setShowAddStudent] = useState(false);
   const [newStudentName, setNewStudentName] = useState("");
-  const [newStudentGrade, setNewStudentGrade] = useState(8);
+  const [newStudentGrade, setNewStudentGrade] = useState(4);
   const [newStudentParentPhone, setNewStudentParentPhone] = useState("");
   const [newStudentNotes, setNewStudentNotes] = useState("");
 

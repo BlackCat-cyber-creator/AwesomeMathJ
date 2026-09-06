@@ -29,8 +29,8 @@ import { QuestionVisual } from './QuestionVisual';
  * Bersih dari label ujian (UH/HOTS) dan fokus pada pemahaman konsep murni.
  */
 export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
-  const [selectedGrade, setSelectedGrade] = useState(8);
-  const [selectedChapterId, setSelectedChapterId] = useState("smp8-spldv");
+  const [selectedGrade, setSelectedGrade] = useState(4);
+  const [selectedChapterId, setSelectedChapterId] = useState("sd4-bab1-bilangan-cacah");
   const [selectedTrackFilter, setSelectedTrackFilter] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");
   
