@@ -42,6 +42,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
   const [selectedAnswers, setSelectedAnswers] = useState({}); // { [qId]: optionKey }
   const [isQuizSubmitted, setIsQuizSubmitted] = useState(false);
   const [copiedLinkNotification, setCopiedLinkNotification] = useState(false);
+  const [isMobileChaptersOpen, setIsMobileChaptersOpen] = useState(false);
 
   // Reset quiz & answers state when switching chapter or grade
   useEffect(() => {
@@ -49,6 +50,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
     setIsQuizSubmitted(false);
     setRevealedSolutions({});
     setRevealedHints({});
+    setIsMobileChaptersOpen(false);
   }, [selectedGrade, selectedChapterId]);
 
   const handleSelectOption = (qId, optionKey) => {
@@ -255,21 +257,12 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
   };
 
   return (
-    <div style={{ maxWidth: 1240, margin: '0 auto', padding: '1.5rem 1rem 4rem' }}>
+    <div className="handbook-container">
       
       {/* ======================================================== */}
       {/* HERO SECTION: Clean, Independent & Academic             */}
       {/* ======================================================== */}
-      <div 
-        className="editorial-card" 
-        style={{ 
-          padding: '2.25rem 2rem', 
-          marginBottom: '2rem', 
-          background: 'linear-gradient(135deg, #FFFFFF 0%, #F8FAFC 100%)',
-          borderLeft: '5px solid var(--primary-navy)',
-          position: 'relative'
-        }}
-      >
+      <div className="editorial-card handbook-hero">
         <div style={{ maxWidth: 880 }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.75rem', flexWrap: 'wrap' }}>
             <span className="badge badge-primary" style={{ fontWeight: 700, letterSpacing: '0.04em' }}>
@@ -280,11 +273,11 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
             </span>
           </div>
 
-          <h1 style={{ color: 'var(--primary-navy)', fontSize: '2rem', lineHeight: 1.25, marginBottom: '0.65rem' }}>
+          <h1 className="handbook-hero-title">
             AwesomeMathJ • Ensiklopedia & Latihan Matematika
           </h1>
 
-          <p style={{ fontSize: '1rem', color: 'var(--text-secondary)', lineHeight: 1.6, margin: 0 }}>
+          <p className="handbook-hero-desc">
             Platform panduan belajar matematika lengkap dan terstruktur mulai dari jenjang SD, SMP, hingga SMA.
             Setiap bab memuat ringkasan konsep inti, kotak rumus teruji, tips cara cepat, serta kumpulan latihan soal 
             terbimbing untuk memperkuat pemahaman konsep secara mandiri.
@@ -295,7 +288,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
       {/* ======================================================== */}
       {/* SEARCH BAR & SHARE                                       */}
       {/* ======================================================== */}
-      <div className="editorial-card" style={{ padding: '1.25rem 1.5rem', marginBottom: '1.75rem' }}>
+      <div className="editorial-card handbook-search-card">
         <div style={{ display: 'flex', gap: '1rem', alignItems: 'center', flexWrap: 'wrap' }}>
           {/* Search Input */}
           <div style={{ flex: '1 1 320px', position: 'relative' }}>
@@ -412,7 +405,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
           </span>
         </div>
 
-        <div style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', paddingBottom: '0.5rem' }}>
+        <div className="handbook-grade-pills">
           {CURRICULUM_DATA.map((gradeObj) => {
             const isSelected = Number(selectedGrade) === gradeObj.grade;
             const label = `Kelas ${gradeObj.grade} ${gradeObj.level}`;
@@ -427,12 +420,12 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                     setSelectedChapterId(gradeObj.chapters[0].id);
                   }
                   setSelectedTrackFilter("ALL");
+                  setIsMobileChaptersOpen(false);
                 }}
-                className={`btn ${isSelected ? 'btn-royal' : 'btn-outline'}`}
+                className={`btn ${isSelected ? 'btn-royal' : 'btn-outline'} handbook-grade-btn`}
                 style={{
                   padding: '0.5rem 0.9rem',
                   fontSize: '0.825rem',
-                  whiteSpace: 'nowrap',
                   fontWeight: isSelected ? 700 : 500
                 }}
               >
@@ -483,10 +476,31 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
       {/* ======================================================== */}
       {/* MAIN CHAPTER EXPLORER LAYOUT                             */}
       {/* ======================================================== */}
-      <div style={{ display: 'grid', gridTemplateColumns: 'minmax(280px, 340px) 1fr', gap: '1.5rem', alignItems: 'start' }}>
+      <div className="handbook-explorer-grid">
         
+        {/* MOBILE QUICK CHAPTER BAR (Visible on mobile/tablet screens) */}
+        <div className="mobile-chapter-bar">
+          <button
+            type="button"
+            className="mobile-chapter-btn"
+            onClick={() => setIsMobileChaptersOpen(!isMobileChaptersOpen)}
+          >
+            <div style={{ textAlign: 'left', flex: 1, minWidth: 0 }}>
+              <div style={{ fontSize: '0.72rem', color: 'var(--text-muted)', fontWeight: 600 }}>
+                Bab {displayedChapters.findIndex(c => c.id === currentChapter?.id) + 1} dari {displayedChapters.length} • Kelas {currentGradeData.grade}
+              </div>
+              <div style={{ fontSize: '0.92rem', fontWeight: 800, color: 'var(--primary-navy)', whiteSpace: 'nowrap', overflow: 'hidden', textOverflow: 'ellipsis' }}>
+                {currentChapter?.title}
+              </div>
+            </div>
+            <span className="btn btn-outline" style={{ fontSize: '0.75rem', padding: '0.35rem 0.75rem', flexShrink: 0 }}>
+              {isMobileChaptersOpen ? "Tutup Bab ▴" : "Ganti Bab ▾"}
+            </span>
+          </button>
+        </div>
+
         {/* LEFT COLUMN: CHAPTERS LIST */}
-        <div className="editorial-card" style={{ padding: '1.25rem' }}>
+        <div className={`editorial-card chapter-sidebar-wrapper ${isMobileChaptersOpen ? 'mobile-open' : ''}`} style={{ padding: '1.25rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.85rem' }}>
             <h3 style={{ fontSize: '1.05rem', color: 'var(--primary-navy)', display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
               <BookOpen size={17} />
@@ -506,7 +520,10 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                 <button
                   key={chapter.id}
                   id={`btn-select-chapter-${chapter.id}`}
-                  onClick={() => setSelectedChapterId(chapter.id)}
+                  onClick={() => {
+                    setSelectedChapterId(chapter.id);
+                    setIsMobileChaptersOpen(false);
+                  }}
                   style={{
                     display: 'flex',
                     flexDirection: 'column',
@@ -545,9 +562,9 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
 
         {/* RIGHT COLUMN: CHAPTER CONTENT & QUESTIONS */}
         {currentChapter ? (
-          <div>
+          <div className="chapter-content-wrapper">
             {/* CHAPTER HEADER BANNER */}
-            <div className="editorial-card" style={{ padding: '1.75rem', marginBottom: '1.5rem', borderTop: '4px solid var(--primary-navy)' }}>
+            <div className="editorial-card chapter-header-banner">
               <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.85rem' }}>
                 <div>
                   <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', marginBottom: '0.35rem', flexWrap: 'wrap' }}>
@@ -560,7 +577,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                       </span>
                     )}
                   </div>
-                  <h2 style={{ color: 'var(--primary-navy)', fontSize: '1.45rem', marginTop: '0.25rem' }}>
+                  <h2 className="chapter-banner-title">
                     {currentChapter.title}
                   </h2>
                 </div>
@@ -735,7 +752,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                 const isHintOpen = !!revealedHints[q.id];
 
                 return (
-                  <div key={q.id} className="editorial-card" style={{ padding: '1.5rem', position: 'relative' }}>
+                  <div key={q.id} className="editorial-card question-card">
                     {/* Question Header */}
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -775,7 +792,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                     <QuestionVisual question={q} />
 
                     {/* Interactive Options List (Clickable A, B, C, D) */}
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(240px, 1fr))', gap: '0.65rem', marginBottom: '0.75rem' }}>
+                    <div className="question-options-grid">
                       {q.options.map((opt) => {
                         const isSelected = selectedAnswers[q.id] === opt.key;
                         const isCorrectKey = opt.key === q.correctAnswer;
@@ -1004,22 +1021,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
               {/* ======================================================== */}
               {currentChapter.questions && currentChapter.questions.length > 0 && (
                 !isQuizSubmitted ? (
-                  <div 
-                    className="editorial-card" 
-                    style={{ 
-                      padding: '1.5rem', 
-                      marginTop: '1.5rem', 
-                      backgroundColor: '#FFFFFF',
-                      border: '2px solid var(--border-subtle)',
-                      borderRadius: 'var(--radius-md)',
-                      display: 'flex',
-                      alignItems: 'center',
-                      justifyContent: 'space-between',
-                      flexWrap: 'wrap',
-                      gap: '1rem',
-                      boxShadow: '0 4px 14px rgba(0,0,0,0.04)'
-                    }}
-                  >
+                  <div className="editorial-card quiz-bottom-panel">
                     <div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: '0.55rem', marginBottom: '0.35rem' }}>
                         <span style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--primary-navy)' }}>
@@ -1074,18 +1076,14 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                   </div>
                 ) : (
                   <div 
-                    className="editorial-card" 
+                    className="editorial-card quiz-result-card" 
                     style={{ 
-                      padding: '1.75rem 2rem', 
-                      marginTop: '1.5rem', 
                       background: quizScore >= 80 
                         ? 'linear-gradient(135deg, #F0FDF4 0%, #DCFCE7 100%)' 
                         : quizScore >= 60 
                           ? 'linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%)' 
                           : 'linear-gradient(135deg, #FFFBEB 0%, #FEF3C7 100%)',
                       border: `2px solid ${quizScore >= 80 ? 'var(--status-emerald)' : quizScore >= 60 ? 'var(--primary-blue)' : '#F59E0B'}`,
-                      borderRadius: 'var(--radius-md)',
-                      boxShadow: '0 4px 16px rgba(0,0,0,0.06)'
                     }}
                   >
                     <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '1.25rem' }}>
