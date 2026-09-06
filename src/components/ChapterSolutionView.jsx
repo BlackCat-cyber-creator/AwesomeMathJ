@@ -7,8 +7,7 @@ import {
   BookOpen, 
   Lightbulb, 
   Check, 
-  GraduationCap, 
-  Sparkles
+  GraduationCap 
 } from 'lucide-react';
 
 /**
@@ -18,8 +17,7 @@ import {
  */
 export function ChapterSolutionView({ 
   chapterData, 
-  onBack, 
-  onLaunchPractice 
+  onBack 
 }) {
   // Pastikan saat dibuka langsung scroll ke paling atas
   useEffect(() => {
@@ -49,7 +47,7 @@ export function ChapterSolutionView({
   return (
     <div style={{ maxWidth: 860, margin: '1.5rem auto 5rem', padding: '0 1rem' }}>
       {/* Top Nav Control */}
-      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.75rem' }}>
+      <div style={{ marginBottom: '1.5rem' }}>
         <button 
           id="btn-back-from-solution" 
           className="btn btn-outline" 
@@ -58,27 +56,6 @@ export function ChapterSolutionView({
           <ArrowLeft size={16} />
           Kembali ke Beranda
         </button>
-
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-          {onLaunchPractice && (
-            <button 
-              id="btn-try-practice-from-solution"
-              className="btn btn-royal"
-              onClick={() => onLaunchPractice({
-                id: `practice-${chapterData.id}`,
-                title: `Latihan Mandiri: ${chapterData.title}`,
-                grade: chapterData.grade,
-                chapterId: chapterData.id,
-                chapterTitle: chapterData.title,
-                questions: chapterData.questions,
-                studentName: "Siswa Mandiri"
-              })}
-            >
-              <Sparkles size={15} />
-              Coba Latihan Interaktif
-            </button>
-          )}
-        </div>
       </div>
 
       {/* Header Banner */}
@@ -344,28 +321,11 @@ export function ChapterSolutionView({
         <p style={{ margin: '0 0 1.25rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
           Jelajahi seluruh materi matematika kelas 4 sampai 12 secara mandiri di AwesomeMathJ.
         </p>
-        <div style={{ display: 'flex', justifyContent: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-          <button className="btn btn-outline" onClick={onBack}>
+        <div style={{ display: 'flex', justifyContent: 'center' }}>
+          <button className="btn btn-royal" onClick={onBack} style={{ padding: '0.65rem 1.5rem' }}>
             <ArrowLeft size={16} />
-            Kembali ke Buku Panduan
+            Kembali ke Beranda
           </button>
-          {onLaunchPractice && (
-            <button 
-              className="btn btn-royal"
-              onClick={() => onLaunchPractice({
-                id: `practice-${chapterData.id}`,
-                title: `Latihan Mandiri: ${chapterData.title}`,
-                grade: chapterData.grade,
-                chapterId: chapterData.id,
-                chapterTitle: chapterData.title,
-                questions: chapterData.questions,
-                studentName: "Siswa Mandiri"
-              })}
-            >
-              <Sparkles size={16} />
-              Kerjakan Ulang Secara Interaktif
-            </button>
-          )}
         </div>
       </div>
     </div>

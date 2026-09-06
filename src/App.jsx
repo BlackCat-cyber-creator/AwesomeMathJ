@@ -259,7 +259,6 @@ export function App() {
           <ChapterSolutionView
             chapterData={activeSolutionData}
             onBack={handleBackToHome}
-            onLaunchPractice={handleLaunchPracticeQuest}
           />
         ) : activeStudentQuestId ? (
           <StudentQuestView 
