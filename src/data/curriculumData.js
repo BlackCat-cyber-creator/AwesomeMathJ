@@ -32,3 +32,20 @@ export const CURRICULUM_DATA = [
   grade11Data,
   grade12Data
 ];
+
+/**
+ * Mencari data bab lengkap beserta kunci & pembahasan berdasarkan grade & chapterId
+ */
+export function getChapterSolutionData(grade, chapterId) {
+  if (!grade || !chapterId) return null;
+  const gradeObj = CURRICULUM_DATA.find((g) => String(g.grade) === String(grade));
+  if (!gradeObj || !gradeObj.chapters) return null;
+  const chapter = gradeObj.chapters.find((ch) => ch.id === chapterId);
+  if (!chapter) return null;
+  return {
+    ...chapter,
+    grade: gradeObj.grade,
+    level: gradeObj.level,
+    phase: gradeObj.phase
+  };
+}

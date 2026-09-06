@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { QRCodeSVG } from 'qrcode.react';
 import { MathText } from './MathRenderer';
 import { QuestionVisual } from './QuestionVisual';
 import { Printer, ArrowLeft, Edit3 } from 'lucide-react';
@@ -21,6 +22,11 @@ export function PrintableWorksheet({ quest, onBack }) {
   }, []);
 
   if (!quest) return null;
+
+  // URL solusi online dinamis untuk QR code yang bisa discan kamera smartphone
+  const solutionUrl = typeof window !== 'undefined'
+    ? `${window.location.origin}/?pembahasan=1&grade=${quest.grade}&chapter=${encodeURIComponent(quest.chapterId || quest.id || '')}`
+    : `/?pembahasan=1&grade=${quest.grade}&chapter=${encodeURIComponent(quest.chapterId || quest.id || '')}`;
 
   return (
     <div style={{ maxWidth: 880, margin: '1.5rem auto 4rem', padding: '0 1rem' }}>
@@ -116,42 +122,30 @@ export function PrintableWorksheet({ quest, onBack }) {
               </div>
             </div>
 
-            {/* QR Code Simulation & Online Access Badge */}
+            {/* Scannable Vector QR Code & Online Access Badge */}
             <div style={{ 
               display: 'flex', 
               flexDirection: 'column', 
               alignItems: 'center', 
-              border: '1px dashed #9CA3AF', 
-              padding: '0.45rem 0.65rem', 
-              borderRadius: '6px',
-              backgroundColor: '#FAFAFA',
-              minWidth: '105px'
+              border: '1px solid #CBD5E1', 
+              padding: '0.45rem 0.6rem', 
+              borderRadius: '8px',
+              backgroundColor: '#FFFFFF',
+              minWidth: '105px',
+              textAlign: 'center'
             }}>
-              {/* Minimal SVG QR pattern */}
-              <svg width="68" height="68" viewBox="0 0 100 100" fill="#1E3A8A">
-                <rect width="100" height="100" fill="#FFFFFF" />
-                <rect x="5" y="5" width="30" height="30" fill="#1E3A8A" />
-                <rect x="10" y="10" width="20" height="20" fill="#FFFFFF" />
-                <rect x="15" y="15" width="10" height="10" fill="#1E3A8A" />
-                <rect x="65" y="5" width="30" height="30" fill="#1E3A8A" />
-                <rect x="70" y="10" width="20" height="20" fill="#FFFFFF" />
-                <rect x="75" y="15" width="10" height="10" fill="#1E3A8A" />
-                <rect x="5" y="65" width="30" height="30" fill="#1E3A8A" />
-                <rect x="10" y="70" width="20" height="20" fill="#FFFFFF" />
-                <rect x="15" y="75" width="10" height="10" fill="#1E3A8A" />
-                <rect x="42" y="10" width="8" height="8" />
-                <rect x="52" y="18" width="6" height="6" />
-                <rect x="40" y="32" width="6" height="6" />
-                <rect x="25" y="45" width="8" height="8" />
-                <rect x="45" y="45" width="10" height="10" />
-                <rect x="65" y="45" width="8" height="8" />
-                <rect x="80" y="55" width="8" height="8" />
-                <rect x="42" y="65" width="8" height="8" />
-                <rect x="60" y="72" width="8" height="8" />
-                <rect x="78" y="78" width="8" height="8" />
-              </svg>
-              <span style={{ fontSize: '0.65rem', fontWeight: 700, color: 'var(--primary-navy)', marginTop: '0.2rem', textAlign: 'center' }}>
+              <QRCodeSVG 
+                value={solutionUrl} 
+                size={70} 
+                level="M" 
+                fgColor="#1E3A8A"
+                bgColor="#FFFFFF"
+              />
+              <span style={{ fontSize: '0.62rem', fontWeight: 800, color: 'var(--primary-navy)', marginTop: '0.3rem', letterSpacing: '0.02em', textAlign: 'center' }}>
                 KUNCI & PEMBAHASAN ONLINE
+              </span>
+              <span style={{ fontSize: '0.55rem', color: 'var(--text-muted)', marginTop: '0.1rem' }}>
+                Pindai dengan Kamera HP
               </span>
             </div>
           </div>

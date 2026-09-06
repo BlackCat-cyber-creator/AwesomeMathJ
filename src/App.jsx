@@ -1,10 +1,12 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useMemo } from 'react';
 import { TeacherDashboard } from './components/TeacherDashboard';
 import { StudentQuestView } from './components/StudentQuestView';
 import { PrintableWorksheet } from './components/PrintableWorksheet';
+import { ChapterSolutionView } from './components/ChapterSolutionView';
 import { PublicHandbook } from './components/PublicHandbook';
 import { TeacherLoginView } from './components/TeacherLoginView';
-import { isTeacherAuthenticated, setTeacherAuthenticated } from './utils/storage';
+import { isTeacherAuthenticated, setTeacherAuthenticated, getQuestById } from './utils/storage';
+import { getChapterSolutionData } from './data/curriculumData';
 import { 
   GraduationCap, 
   Lock, 
@@ -17,12 +19,28 @@ import {
 export function App() {
   // Check URL parameters directly on initial load (e.g. ?questId=...)
   const getUrlQuestId = () => {
+    if (typeof window === 'undefined') return null;
     const params = new URLSearchParams(window.location.search);
     return params.get("questId");
   };
 
+  // Check URL parameters for online solution/pembahasan (e.g. ?pembahasan=1&grade=4&chapter=...)
+  const getUrlSolutionParams = () => {
+    if (typeof window === 'undefined') return null;
+    const params = new URLSearchParams(window.location.search);
+    if (params.get("pembahasan") || params.get("solution")) {
+      return {
+        grade: params.get("grade"),
+        chapter: params.get("chapter"),
+        questId: params.get("questId")
+      };
+    }
+    return null;
+  };
+
   const [currentPath, setCurrentPath] = useState(window.location.pathname);
   const [activeStudentQuestId, setActiveStudentQuestId] = useState(getUrlQuestId());
+  const [solutionParams, setSolutionParams] = useState(getUrlSolutionParams());
   const [activeWorksheetQuest, setActiveWorksheetQuest] = useState(null);
   const [isTeacherLoggedIn, setIsTeacherLoggedIn] = useState(isTeacherAuthenticated());
   const [activeTeacherTab, setActiveTeacherTab] = useState("generator"); // "generator", "students", "syllabus"
@@ -30,12 +48,35 @@ export function App() {
   // Check if current route is dedicated to teacher portal (/teacher)
   const isTeacherRoute = currentPath === '/teacher' || currentPath.startsWith('/teacher/');
 
+  // Ambil data kunci & pembahasan secara instan sesuai grade & chapterId
+  const activeSolutionData = useMemo(() => {
+    if (!solutionParams) return null;
+    if (solutionParams.grade && solutionParams.chapter) {
+      const data = getChapterSolutionData(solutionParams.grade, solutionParams.chapter);
+      if (data) return data;
+    }
+    if (solutionParams.questId) {
+      const quest = getQuestById(solutionParams.questId);
+      if (quest) {
+        return {
+          id: quest.id,
+          title: quest.chapterTitle || quest.title,
+          grade: quest.grade,
+          questions: quest.questions,
+          level: quest.trackLabel || ""
+        };
+      }
+    }
+    return null;
+  }, [solutionParams]);
+
   // Seamless client-side navigation
   const navigateTo = (path) => {
     window.history.pushState({ path }, '', path);
     setCurrentPath(path);
     setActiveStudentQuestId(getUrlQuestId());
-    window.scrollTo({ top: 0, behavior: 'smooth' });
+    setSolutionParams(getUrlSolutionParams());
+    window.scrollTo({ top: 0, behavior: 'instant' });
   };
 
   // Listen to popstate (browser back/forward button)
@@ -43,6 +84,7 @@ export function App() {
     const handlePopState = () => {
       setCurrentPath(window.location.pathname);
       setActiveStudentQuestId(getUrlQuestId());
+      setSolutionParams(getUrlSolutionParams());
     };
     window.addEventListener('popstate', handlePopState);
     return () => window.removeEventListener('popstate', handlePopState);
@@ -75,6 +117,7 @@ export function App() {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setActiveStudentQuestId(null);
     setActiveWorksheetQuest(null);
+    setSolutionParams(null);
     navigateTo('/');
   };
 
@@ -128,8 +171,8 @@ export function App() {
           {/* Right Header Navigation & Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
             
-            {/* In Worksheet or Student Quest view, control bar already has 'Kembali ke Beranda', so no redundant navbar button */}
-            {(activeStudentQuestId || activeWorksheetQuest) ? null : isTeacherRoute ? (
+            {/* In Worksheet, Solution, or Student Quest view, control bar already has 'Kembali ke Beranda', so no redundant navbar button */}
+            {(activeStudentQuestId || activeWorksheetQuest || activeSolutionData) ? null : isTeacherRoute ? (
               // On /teacher Route
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 {isTeacherLoggedIn && (
@@ -211,6 +254,12 @@ export function App() {
           <PrintableWorksheet
             quest={activeWorksheetQuest}
             onBack={handleBackToHome}
+          />
+        ) : activeSolutionData ? (
+          <ChapterSolutionView
+            chapterData={activeSolutionData}
+            onBack={handleBackToHome}
+            onLaunchPractice={handleLaunchPracticeQuest}
           />
         ) : activeStudentQuestId ? (
           <StudentQuestView 
