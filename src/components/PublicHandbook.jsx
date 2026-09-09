@@ -1,11 +1,11 @@
-import React, { useState, useMemo, useEffect } from 'react';
+import React, { useState, useMemo, useEffect, useRef } from 'react';
 import confetti from 'canvas-confetti';
 import { CURRICULUM_DATA } from '../data/curriculumData';
 import { MathText } from './MathRenderer';
 import { 
   BookOpen, 
   Search, 
-  Sparkles, 
+  Zap, 
   Printer, 
   Lightbulb, 
   HelpCircle, 
@@ -19,9 +19,11 @@ import {
   FileText,
   Compass,
   XCircle,
-  RotateCcw
+  RotateCcw,
+  PenTool
 } from 'lucide-react';
 import { QuestionVisual } from './QuestionVisual';
+import { AccordionSection } from './AccordionSection';
 
 /**
  * PublicHandbook:
@@ -597,89 +599,50 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                 </div>
               </div>
 
-              {/* 1. PENJELASAN PENGANTAR & KONTEKS MATERI */}
+              {/* ═══════════════════════════════════════════════ */}
+              {/* ZONE 1: RINGKASAN KILAT + FORMULA STRIP        */}
+              {/* ═══════════════════════════════════════════════ */}
+
+              {/* Ringkasan Kilat — 2-sentence TL;DR from overview */}
               {currentChapter.summary?.overview && (
-                <div style={{ marginTop: '1.25rem', backgroundColor: '#F8FAFC', padding: '1.25rem', borderRadius: 'var(--radius-sm)', borderLeft: '4px solid var(--primary-blue)', borderTop: '1px solid var(--border-subtle)', borderRight: '1px solid var(--border-subtle)', borderBottom: '1px solid var(--border-subtle)' }}>
-                  <h4 style={{ fontSize: '0.95rem', color: 'var(--primary-navy)', marginBottom: '0.5rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                    <Compass size={17} color="var(--primary-blue)" />
-                    Pengantar & Konteks Konsep:
-                  </h4>
-                  <div style={{ fontSize: '0.925rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
-                    <MathText text={currentChapter.summary.overview} />
+                <div className="ringkasan-kilat-card" style={{ marginTop: '1.25rem' }}>
+                  <div className="rk-title">
+                    <Zap size={14} />
+                    Ringkasan Kilat
                   </div>
+                  <p className="rk-text">
+                    <MathText text={
+                      currentChapter.summary.overview
+                        .split(/[.!?]\s/)
+                        .filter(s => s.trim().length > 10)
+                        .slice(0, 2)
+                        .join('. ')
+                        .replace(/\n/g, ' ')
+                        .trim() + '.'
+                    } />
+                  </p>
                 </div>
               )}
 
-              {/* 2. KONSEP KUNCI & TEOREMA INTI */}
-              {currentChapter.summary?.coreConcepts && (
-                <div style={{ marginTop: '1rem', backgroundColor: '#FFFFFF', padding: '1.25rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)', boxShadow: 'var(--shadow-subtle)' }}>
-                  <h4 style={{ fontSize: '0.95rem', color: 'var(--primary-navy)', marginBottom: '0.65rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                    <Layers size={17} color="var(--primary-navy)" />
-                    Konsep Kunci & Pemahaman Teori:
-                  </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
-                    {currentChapter.summary.coreConcepts.map((concept, cIdx) => (
-                      <div key={cIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
-                        <span style={{ color: 'var(--primary-blue)', fontWeight: 700, marginTop: '2px' }}>•</span>
-                        <div style={{ flex: 1 }}>
-                          <MathText text={concept} />
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* 3. CONTOH SOAL TERBIMBING (WORKED EXAMPLES) */}
-              {currentChapter.summary?.workedExamples && currentChapter.summary.workedExamples.length > 0 && (
-                <div style={{ marginTop: '1rem', backgroundColor: '#F9FAFB', padding: '1.25rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
-                  <h4 style={{ fontSize: '0.95rem', color: 'var(--primary-navy)', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                    <FileText size={17} color="var(--primary-navy)" />
-                    Contoh Soal Terbimbing & Analisis Langkah:
-                  </h4>
-                  <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                    {currentChapter.summary.workedExamples.map((ex, exIdx) => (
-                      <div 
-                        key={exIdx} 
-                        style={{ 
-                          backgroundColor: '#FFFFFF', 
-                          padding: '1rem 1.15rem', 
-                          borderRadius: 'var(--radius-xs)', 
-                          border: '1px solid var(--border-medium)' 
-                        }}
-                      >
-                        <div style={{ fontWeight: 700, fontSize: '0.875rem', color: 'var(--primary-navy)', marginBottom: '0.35rem' }}>
-                          Contoh #{exIdx + 1}: {ex.title}
-                        </div>
-                        <div style={{ fontSize: '0.9rem', color: 'var(--text-primary)', marginBottom: '0.65rem' }}>
-                          <MathText text={ex.problem} />
-                        </div>
-                        <div style={{ backgroundColor: '#F0FDF4', padding: '0.75rem 0.95rem', borderRadius: 'var(--radius-xs)', borderLeft: '3px solid var(--status-emerald)', fontSize: '0.85rem', color: '#14532D', lineHeight: 1.6 }}>
-                          <strong>💡 Langkah Analisis & Penyelesaian:</strong>
-                          <div style={{ marginTop: '0.35rem' }}>
-                            <MathText text={formatSolutionText(ex.solution)} />
-                          </div>
-                        </div>
-                      </div>
-                    ))}
-                  </div>
-                </div>
-              )}
-
-              {/* 4. FORMULA SHEET / RUMUS KUNCI KATEX */}
+              {/* Formula Strip — Key formulas ALWAYS visible at top */}
               {currentChapter.summary?.keyFormulas && currentChapter.summary.keyFormulas.length > 0 && (
-                <div style={{ marginTop: '1rem', backgroundColor: '#FFFFFF', padding: '1.25rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-medium)', maxWidth: '100%', overflow: 'hidden' }}>
-                  <h4 style={{ fontSize: '0.95rem', color: 'var(--primary-navy)', marginBottom: '0.75rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
-                    <Bookmark size={17} color="var(--primary-navy)" />
-                    Kotak Rumus Inti (Formula Sheet):
-                  </h4>
-                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.85rem', maxWidth: '100%' }}>
+                <div style={{ backgroundColor: '#FFFFFF', padding: '1rem 1.15rem', borderRadius: 'var(--radius-md)', border: '1px solid var(--border-medium)', maxWidth: '100%', overflow: 'hidden' }}>
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.65rem' }}>
+                    <Bookmark size={15} color="var(--primary-navy)" />
+                    <span style={{ fontSize: '0.8rem', fontWeight: 800, color: 'var(--primary-navy)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                      Rumus Kunci
+                    </span>
+                    <span style={{ fontSize: '0.72rem', color: 'var(--text-muted)' }}>
+                      ({currentChapter.summary.keyFormulas.length} rumus)
+                    </span>
+                  </div>
+                  <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(200px, 1fr))', gap: '0.65rem', maxWidth: '100%' }}>
                     {currentChapter.summary.keyFormulas.map((kf, kfIdx) => (
                       <div 
                         key={kfIdx}
                         style={{
                           backgroundColor: '#F8FAFC',
-                          padding: '0.85rem',
+                          padding: '0.65rem 0.75rem',
                           borderRadius: 'var(--radius-xs)',
                           border: '1px solid var(--border-subtle)',
                           textAlign: 'center',
@@ -688,10 +651,10 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                           overflowX: 'auto'
                         }}
                       >
-                        <div style={{ fontSize: '0.78rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '0.3rem' }}>
+                        <div style={{ fontSize: '0.7rem', fontWeight: 600, color: 'var(--text-muted)', marginBottom: '0.2rem' }}>
                           {kf.label}
                         </div>
-                        <div style={{ fontSize: '1rem', color: 'var(--primary-navy)', maxWidth: '100%', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
+                        <div style={{ fontSize: '0.95rem', color: 'var(--primary-navy)', maxWidth: '100%', overflowX: 'auto', WebkitOverflowScrolling: 'touch' }}>
                           <MathText text={`$$${kf.formula}$$`} />
                         </div>
                       </div>
@@ -700,44 +663,144 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                 </div>
               )}
 
-              {/* 5. AWAS TERJEBAK: MISKONSEPSI UMUM */}
-              {currentChapter.summary?.misconceptions && currentChapter.summary.misconceptions.length > 0 && (
-                <div style={{ marginTop: '1rem', backgroundColor: '#FEF2F2', padding: '1rem 1.15rem', borderRadius: 'var(--radius-sm)', border: '1px solid #FECACA', display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <AlertTriangle size={20} color="#DC2626" style={{ flexShrink: 0, marginTop: '0.15rem' }} />
-                  <div>
-                    <strong style={{ fontSize: '0.85rem', color: '#991B1B', display: 'block', marginBottom: '0.35rem' }}>
-                      Awas Terjebak! Miskonsepsi yang Sering Terjadi:
-                    </strong>
-                    <ul style={{ paddingLeft: '1.15rem', margin: 0, fontSize: '0.85rem', color: '#7F1D1D', lineHeight: 1.5 }}>
+              {/* ═══════════════════════════════════════════════ */}
+              {/* ZONE 2: PAHAMI — Collapsible Accordions         */}
+              {/* ═══════════════════════════════════════════════ */}
+              <div className="pillar-stack">
+                <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', marginBottom: '0.15rem' }}>
+                  <Layers size={15} color="var(--text-muted)" />
+                  <span style={{ fontSize: '0.78rem', fontWeight: 700, color: 'var(--text-muted)', textTransform: 'uppercase', letterSpacing: '0.04em' }}>
+                    Pahami Materi
+                  </span>
+                </div>
+
+                {/* Pengantar & Konteks (full overview) */}
+                {currentChapter.summary?.overview && (
+                  <AccordionSection
+                    id="pillar-overview"
+                    icon={<Compass size={16} />}
+                    title="Pengantar & Konteks Konsep"
+                    accentColor="#2563EB"
+                    accentBg="#EFF6FF"
+                    defaultOpen={false}
+                    preview={currentChapter.summary.overview.split('\n')[0]}
+                  >
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)', lineHeight: 1.65 }}>
+                      <MathText text={currentChapter.summary.overview} />
+                    </div>
+                  </AccordionSection>
+                )}
+
+                {/* Konsep Kunci & Teori */}
+                {currentChapter.summary?.coreConcepts && (
+                  <AccordionSection
+                    id="pillar-concepts"
+                    icon={<Layers size={16} />}
+                    title="Konsep Kunci & Pemahaman Teori"
+                    accentColor="#7C3AED"
+                    accentBg="#F5F3FF"
+                    defaultOpen={false}
+                    preview={currentChapter.summary.coreConcepts[0]}
+                  >
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '0.6rem' }}>
+                      {currentChapter.summary.coreConcepts.map((concept, cIdx) => (
+                        <div key={cIdx} style={{ display: 'flex', alignItems: 'flex-start', gap: '0.5rem', fontSize: '0.88rem', color: 'var(--text-secondary)', lineHeight: 1.6 }}>
+                          <span style={{ color: '#7C3AED', fontWeight: 700, marginTop: '2px', flexShrink: 0 }}>•</span>
+                          <div style={{ flex: 1 }}>
+                            <MathText text={concept} />
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionSection>
+                )}
+
+                {/* Contoh Soal Terbimbing */}
+                {currentChapter.summary?.workedExamples && currentChapter.summary.workedExamples.length > 0 && (
+                  <AccordionSection
+                    id="pillar-examples"
+                    icon={<FileText size={16} />}
+                    title={`Contoh Soal Terbimbing (${currentChapter.summary.workedExamples.length})`}
+                    accentColor="#059669"
+                    accentBg="#ECFDF5"
+                    defaultOpen={false}
+                    preview={currentChapter.summary.workedExamples[0]?.title || ''}
+                  >
+                    <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
+                      {currentChapter.summary.workedExamples.map((ex, exIdx) => (
+                        <div 
+                          key={exIdx} 
+                          style={{ 
+                            backgroundColor: '#FFFFFF', 
+                            padding: '1rem 1.15rem', 
+                            borderRadius: 'var(--radius-xs)', 
+                            border: '1px solid var(--border-medium)' 
+                          }}
+                        >
+                          <div style={{ fontWeight: 700, fontSize: '0.85rem', color: 'var(--primary-navy)', marginBottom: '0.35rem' }}>
+                            Contoh #{exIdx + 1}: {ex.title}
+                          </div>
+                          <div style={{ fontSize: '0.88rem', color: 'var(--text-primary)', marginBottom: '0.65rem' }}>
+                            <MathText text={ex.problem} />
+                          </div>
+                          <div style={{ backgroundColor: '#F0FDF4', padding: '0.75rem 0.95rem', borderRadius: 'var(--radius-xs)', borderLeft: '3px solid var(--status-emerald)', fontSize: '0.85rem', color: '#14532D', lineHeight: 1.6 }}>
+                            <strong>💡 Langkah Penyelesaian:</strong>
+                            <div style={{ marginTop: '0.35rem' }}>
+                              <MathText text={formatSolutionText(ex.solution)} />
+                            </div>
+                          </div>
+                        </div>
+                      ))}
+                    </div>
+                  </AccordionSection>
+                )}
+
+                {/* Awas Jebakan! (Miskonsepsi) */}
+                {currentChapter.summary?.misconceptions && currentChapter.summary.misconceptions.length > 0 && (
+                  <AccordionSection
+                    id="pillar-misconceptions"
+                    icon={<AlertTriangle size={16} />}
+                    title="Awas Jebakan! Miskonsepsi Umum"
+                    accentColor="#DC2626"
+                    accentBg="#FEF2F2"
+                    defaultOpen={false}
+                    preview={currentChapter.summary.misconceptions[0]}
+                  >
+                    <ul style={{ paddingLeft: '1.15rem', margin: 0, fontSize: '0.85rem', color: '#7F1D1D', lineHeight: 1.55 }}>
                       {currentChapter.summary.misconceptions.map((misc, mIdx) => (
-                        <li key={mIdx} style={{ marginBottom: '0.25rem' }}>
+                        <li key={mIdx} style={{ marginBottom: '0.3rem' }}>
                           <MathText text={misc} />
                         </li>
                       ))}
                     </ul>
-                  </div>
-                </div>
-              )}
+                  </AccordionSection>
+                )}
 
-              {/* 6. TIPS & CARA CEPAT EFEKTIF */}
-              {currentChapter.summary?.tutorTip && (
-                <div style={{ marginTop: '1rem', backgroundColor: '#FFFBEB', padding: '1rem 1.15rem', borderRadius: 'var(--radius-sm)', border: '1px solid #FDE68A', display: 'flex', gap: '0.75rem', alignItems: 'flex-start' }}>
-                  <Lightbulb size={20} color="#D97706" style={{ flexShrink: 0, marginTop: '0.15rem' }} />
-                  <div>
-                    <strong style={{ fontSize: '0.85rem', color: '#92400E', display: 'block', marginBottom: '0.2rem' }}>
-                      Tips & Cara Berpikir Efektif:
-                    </strong>
-                    <div style={{ fontSize: '0.875rem', color: '#78350F' }}>
+                {/* Tips Cepat */}
+                {currentChapter.summary?.tutorTip && (
+                  <AccordionSection
+                    id="pillar-tips"
+                    icon={<Lightbulb size={16} />}
+                    title="Tips & Cara Cepat"
+                    accentColor="#D97706"
+                    accentBg="#FFFBEB"
+                    defaultOpen={true}
+                    preview={currentChapter.summary.tutorTip}
+                  >
+                    <div style={{ fontSize: '0.875rem', color: '#78350F', lineHeight: 1.55 }}>
                       <MathText text={formatTipText(currentChapter.summary.tutorTip)} />
                     </div>
-                  </div>
-                </div>
-              )}
+                  </AccordionSection>
+                )}
+              </div>
             </div>
 
-            {/* 4. LATIHAN SOAL & PEMAHAMAN KONSEP (TANPA LABEL UH/HOTS) */}
+            {/* ═══════════════════════════════════════════════ */}
+            {/* ZONE 3: LATIHAN SOAL — The Main Event           */}
+            {/* ═══════════════════════════════════════════════ */}
             <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
-              <h3 style={{ fontSize: '1.15rem', color: 'var(--primary-navy)' }}>
+              <h3 style={{ fontSize: '1.15rem', color: 'var(--primary-navy)', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+                <PenTool size={18} color="var(--primary-blue)" />
                 Latihan Soal & Pemahaman Konsep
               </h3>
               <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>

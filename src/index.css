@@ -948,4 +948,373 @@ img, svg {
   border: 1px solid var(--border-subtle);
 }
 
+/* ==========================================================================
+   ACCORDION SECTION COMPONENT
+   ========================================================================== */
+.accordion-section {
+  border-radius: var(--radius-md);
+  border: 1px solid var(--border-subtle);
+  overflow: hidden;
+  transition: background-color 0.25s ease, border-color 0.25s ease, box-shadow 0.25s ease;
+}
 
+.accordion-section:hover {
+  border-color: var(--border-medium);
+}
+
+.accordion-section.accordion-open {
+  box-shadow: var(--shadow-card);
+  border-color: var(--border-medium);
+}
+
+.accordion-header {
+  width: 100%;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  gap: 0.75rem;
+  padding: 0.85rem 1.15rem;
+  background: transparent;
+  border: none;
+  cursor: pointer;
+  font-family: var(--font-body);
+  text-align: left;
+  transition: background-color 0.15s ease;
+}
+
+.accordion-header:hover {
+  background-color: rgba(0, 0, 0, 0.015);
+}
+
+.accordion-header-left {
+  display: flex;
+  align-items: flex-start;
+  gap: 0.65rem;
+  flex: 1;
+  min-width: 0;
+}
+
+.accordion-icon {
+  flex-shrink: 0;
+  margin-top: 2px;
+  display: flex;
+  align-items: center;
+}
+
+.accordion-title-group {
+  display: flex;
+  flex-direction: column;
+  gap: 0.2rem;
+  min-width: 0;
+}
+
+.accordion-title {
+  font-size: 0.9rem;
+  font-weight: 700;
+  color: var(--primary-navy);
+  line-height: 1.3;
+}
+
+.accordion-preview {
+  font-size: 0.8rem;
+  color: var(--text-muted);
+  line-height: 1.4;
+  overflow: hidden;
+  text-overflow: ellipsis;
+  white-space: nowrap;
+  max-width: 100%;
+}
+
+.accordion-chevron {
+  flex-shrink: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  color: var(--text-muted);
+  transition: transform 0.3s cubic-bezier(0.4, 0, 0.2, 1);
+}
+
+.accordion-body {
+  overflow: hidden;
+  transition: max-height 0.35s cubic-bezier(0.4, 0, 0.2, 1), opacity 0.25s ease;
+}
+
+.accordion-body-inner {
+  padding: 0 1.15rem 1rem;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.65;
+}
+
+/* ==========================================================================
+   RINGKASAN KILAT (Quick Summary) CARD
+   ========================================================================== */
+.ringkasan-kilat-card {
+  background: linear-gradient(135deg, #EFF6FF 0%, #DBEAFE 100%);
+  border: 1px solid #BFDBFE;
+  border-radius: var(--radius-md);
+  padding: 1rem 1.25rem;
+  margin-bottom: 1rem;
+}
+
+.ringkasan-kilat-card .rk-title {
+  display: flex;
+  align-items: center;
+  gap: 0.45rem;
+  font-size: 0.8rem;
+  font-weight: 800;
+  color: var(--primary-navy);
+  text-transform: uppercase;
+  letter-spacing: 0.04em;
+  margin-bottom: 0.4rem;
+}
+
+.ringkasan-kilat-card .rk-text {
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+  line-height: 1.6;
+  margin: 0;
+}
+
+/* ==========================================================================
+   PETA MATERI (Chapter Map) CHIP NAV
+   ========================================================================== */
+.peta-materi-nav {
+  display: flex;
+  gap: 0.45rem;
+  flex-wrap: wrap;
+  margin-bottom: 1rem;
+}
+
+.peta-chip {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.35rem 0.75rem;
+  border-radius: var(--radius-full);
+  font-size: 0.75rem;
+  font-weight: 600;
+  border: 1px solid var(--border-subtle);
+  background: #FFFFFF;
+  color: var(--text-secondary);
+  cursor: pointer;
+  transition: all 0.15s ease;
+  white-space: nowrap;
+}
+
+.peta-chip:hover {
+  border-color: var(--primary-blue);
+  color: var(--primary-blue);
+  background: var(--primary-light);
+}
+
+.peta-chip .peta-dot {
+  width: 7px;
+  height: 7px;
+  border-radius: 50%;
+  flex-shrink: 0;
+}
+
+/* Pillar accent colors */
+.pillar-overview { --pillar-color: #2563EB; --pillar-bg: #EFF6FF; }
+.pillar-concepts { --pillar-color: #7C3AED; --pillar-bg: #F5F3FF; }
+.pillar-examples { --pillar-color: #059669; --pillar-bg: #ECFDF5; }
+.pillar-formulas { --pillar-color: #1E3A8A; --pillar-bg: #EFF6FF; }
+.pillar-misconceptions { --pillar-color: #DC2626; --pillar-bg: #FEF2F2; }
+.pillar-tips { --pillar-color: #D97706; --pillar-bg: #FFFBEB; }
+
+/* ==========================================================================
+   PILLAR SECTIONS STACK (vertical spacing between accordions)
+   ========================================================================== */
+.pillar-stack {
+  display: flex;
+  flex-direction: column;
+  gap: 0.65rem;
+  margin-top: 1rem;
+}
+
+/* ==========================================================================
+   MICRO-ANIMATIONS
+   ========================================================================== */
+@keyframes fadeInUp {
+  from { opacity: 0; transform: translateY(8px); }
+  to { opacity: 1; transform: translateY(0); }
+}
+
+.fade-in-up {
+  animation: fadeInUp 0.3s ease-out;
+}
+
+/* Button press feedback */
+.btn:active {
+  transform: scale(0.97);
+}
+
+/* Card hover lift */
+.editorial-card-lift:hover {
+  transform: translateY(-1px);
+  box-shadow: var(--shadow-elevated);
+}
+
+/* ==========================================================================
+   DARK MODE SUPPORT
+   ========================================================================== */
+@media (prefers-color-scheme: dark) {
+  :root {
+    --bg-paper: #0F172A;
+    --bg-surface: #1E293B;
+    --bg-surface-elevated: #334155;
+    --bg-surface-subtle: #1E293B;
+
+    --border-subtle: #334155;
+    --border-medium: #475569;
+    --border-strong: #64748B;
+
+    --text-primary: #F1F5F9;
+    --text-secondary: #CBD5E1;
+    --text-muted: #94A3B8;
+    --text-subtle: #64748B;
+
+    --primary-navy: #93C5FD;
+    --primary-blue: #60A5FA;
+    --primary-hover: #3B82F6;
+    --primary-light: #1E3A5F;
+    --primary-subtle: #1E3A5F;
+
+    --status-emerald: #34D399;
+    --status-emerald-light: #064E3B;
+    --status-emerald-border: #065F46;
+
+    --status-brick: #F87171;
+    --status-brick-light: #450A0A;
+    --status-brick-border: #7F1D1D;
+
+    --accent-amber: #FBBF24;
+    --accent-amber-light: #451A03;
+    --accent-amber-border: #78350F;
+
+    --whatsapp-green: #4ADE80;
+    --whatsapp-light: #064E3B;
+  }
+
+  .top-navbar {
+    background: #1E293B;
+    border-bottom-color: #334155;
+  }
+
+  .brand-icon-wrapper {
+    background: #3B82F6;
+  }
+
+  .accordion-header:hover {
+    background-color: rgba(255, 255, 255, 0.03);
+  }
+
+  .accordion-section {
+    border-color: #334155;
+  }
+
+  .ringkasan-kilat-card {
+    background: linear-gradient(135deg, #1E3A5F 0%, #1E293B 100%);
+    border-color: #334155;
+  }
+
+  .peta-chip {
+    background: #1E293B;
+    border-color: #475569;
+    color: #CBD5E1;
+  }
+
+  .peta-chip:hover {
+    background: #1E3A5F;
+    color: #93C5FD;
+    border-color: #60A5FA;
+  }
+
+  .nav-pill-group {
+    background: #334155;
+    border-color: #475569;
+  }
+
+  .nav-pill.active {
+    background: #1E293B;
+    color: #93C5FD;
+  }
+
+  .btn-outline {
+    background: #1E293B;
+    color: #CBD5E1;
+    border-color: #475569;
+  }
+
+  .btn-outline:hover {
+    background: #334155;
+    color: #F1F5F9;
+  }
+
+  .btn-subtle {
+    background: #334155;
+    color: #CBD5E1;
+    border-color: #475569;
+  }
+
+  .form-select, .form-input, .form-textarea {
+    background: #1E293B;
+    color: #F1F5F9;
+    border-color: #475569;
+  }
+
+  .katex {
+    color: #F1F5F9 !important;
+  }
+
+  .handbook-hero {
+    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
+  }
+
+  /* Override inline backgrounds in dark mode for accordion content */
+  .pillar-overview .accordion-body-inner,
+  .pillar-concepts .accordion-body-inner,
+  .pillar-examples .accordion-body-inner,
+  .pillar-formulas .accordion-body-inner {
+    color: #CBD5E1;
+  }
+}
+
+/* ==========================================================================
+   MOBILE ACCORDION ADJUSTMENTS
+   ========================================================================== */
+@media (max-width: 768px) {
+  .accordion-header {
+    padding: 0.75rem 0.85rem;
+  }
+
+  .accordion-body-inner {
+    padding: 0 0.85rem 0.85rem;
+  }
+
+  .accordion-title {
+    font-size: 0.825rem;
+  }
+
+  .accordion-preview {
+    font-size: 0.72rem;
+  }
+
+  .peta-materi-nav {
+    gap: 0.35rem;
+  }
+
+  .peta-chip {
+    font-size: 0.68rem;
+    padding: 0.3rem 0.6rem;
+  }
+
+  .ringkasan-kilat-card {
+    padding: 0.85rem 1rem;
+  }
+
+  .pillar-stack {
+    gap: 0.5rem;
+  }
+}

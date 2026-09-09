@@ -1,4 +1,4 @@
-import React, { useState, useMemo } from 'react';
+import React, { useState, useMemo, useEffect } from 'react';
 import { CURRICULUM_DATA } from '../data/curriculumData';
 import { 
   getStudents, 
@@ -13,11 +13,24 @@ import {
 } from '../utils/storage';
 import { MathText } from './MathRenderer';
 import { QuestionVisual } from './QuestionVisual';
+import { MateriSekarangCard, SemesterBadge } from './AcademicTimeline';
+import { getRecommendedChapter } from '../data/academicCalendar';
+
+// Helper to find recommended chapter ID for a given grade based on academic calendar
+function getDefaultChapterForGrade(grade) {
+  const grObj = CURRICULUM_DATA.find((g) => g.grade === Number(grade));
+  if (!grObj || !grObj.chapters?.length) return "sd4-bab1-bilangan-cacah";
+  const rec = getRecommendedChapter(Number(grade));
+  if (rec && grObj.chapters[rec.chapterIndex]) {
+    return grObj.chapters[rec.chapterIndex].id;
+  }
+  return grObj.chapters[0].id;
+}
 import { 
   BookOpen, 
   Send, 
   Users, 
-  Sparkles, 
+
   Flame, 
   Clock, 
   Copy, 
@@ -30,21 +43,20 @@ import {
   Trash2, 
   Phone, 
   Eye, 
-  X 
+  X,
+  Wand2,
+  PenTool,
+  ClipboardList
 } from 'lucide-react';
 
 export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setActiveTab, onBackToPublic, onSignOut }) {
   const [students, setStudents] = useState(getStudents());
   const [quests, setQuests] = useState(getQuests());
   
-  // Curriculum browser state
-  const [selectedGrade, setSelectedGrade] = useState(4);
-  const [selectedChapterId, setSelectedChapterId] = useState("sd4-bab1-bilangan-cacah");
-  
-  // Quest Generator state - default to 5 questions
+  // Quest Generator state - default to 5 questions and recommended chapter for the first student
   const [targetStudentId, setTargetStudentId] = useState(students[0]?.id || "");
-  const [generatorGrade, setGeneratorGrade] = useState(4);
-  const [generatorChapterId, setGeneratorChapterId] = useState("sd4-bab1-bilangan-cacah");
+  const [generatorGrade, setGeneratorGrade] = useState(students[0]?.grade || 4);
+  const [generatorChapterId, setGeneratorChapterId] = useState(() => getDefaultChapterForGrade(students[0]?.grade || 4));
   const [questionCount, setQuestionCount] = useState(5);
   const [deadline, setDeadline] = useState(getDefaultDeadlineDate());
   const [copiedNotification, setCopiedNotification] = useState(false);
@@ -63,33 +75,16 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
   // Inspecting Quest Answers Modal state
   const [inspectingQuest, setInspectingQuest] = useState(null);
 
-  // Track filter state for Grade 11 and 12 (Matematika Utama vs Tingkat Lanjut)
-  const [selectedTrackFilter, setSelectedTrackFilter] = useState("ALL");
-
-  // Grade data for syllabus
-  const currentGradeData = useMemo(() => {
-    return CURRICULUM_DATA.find((g) => g.grade === Number(selectedGrade)) || CURRICULUM_DATA[0];
-  }, [selectedGrade]);
-
-  // Filtered chapters for Grade 11 & 12 tracks
-  const displayedChapters = useMemo(() => {
-    if (!currentGradeData?.chapters) return [];
-    if (currentGradeData.grade !== 11 && currentGradeData.grade !== 12) {
-      return currentGradeData.chapters;
+  // Automatically sync generatorGrade and recommended chapter whenever the target student changes
+  useEffect(() => {
+    if (targetStudentId) {
+      const student = students.find((s) => s.id === targetStudentId);
+      if (student) {
+        setGeneratorGrade(student.grade);
+        setGeneratorChapterId(getDefaultChapterForGrade(student.grade));
+      }
     }
-    if (selectedTrackFilter === "ALL") return currentGradeData.chapters;
-    return currentGradeData.chapters.filter((c) => c.track === selectedTrackFilter);
-  }, [currentGradeData, selectedTrackFilter]);
-
-  const currentChapter = useMemo(() => {
-    if (!currentGradeData?.chapters?.length) return null;
-    const found = displayedChapters.find((c) => c.id === selectedChapterId);
-    return found || displayedChapters[0] || currentGradeData.chapters[0];
-  }, [currentGradeData, displayedChapters, selectedChapterId]);
-
-  const filteredChapterQuestions = useMemo(() => {
-    return currentChapter?.questions || [];
-  }, [currentChapter]);
+  }, [targetStudentId, students]);
 
   // Generator Grade data
   const genGradeData = useMemo(() => {
@@ -101,18 +96,43 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
     return ch || genGradeData.chapters[0];
   }, [genGradeData, generatorChapterId]);
 
-  // Handle student selection change in generator -> auto-match grade
+  // Recommended chapter for current generator grade according to academic calendar
+  const recChapterForGen = useMemo(() => {
+    const rec = getRecommendedChapter(generatorGrade);
+    if (!rec || !genGradeData?.chapters?.[rec.chapterIndex]) return null;
+    const ch = genGradeData.chapters[rec.chapterIndex];
+    return {
+      ...rec,
+      chapter: ch,
+      title: ch.title,
+      id: ch.id,
+      babNumber: rec.chapterIndex + 1,
+      timeLabel: rec.pacing?.label || "Bulan Ini"
+    };
+  }, [generatorGrade, genGradeData]);
+
+  // Handle student selection change in generator -> auto-match grade and recommended chapter
   const handleStudentChange = (e) => {
     const studentId = e.target.value;
     setTargetStudentId(studentId);
     const student = students.find((s) => s.id === studentId);
     if (student) {
       setGeneratorGrade(student.grade);
-      const gradeObj = CURRICULUM_DATA.find((g) => g.grade === student.grade);
-      if (gradeObj && gradeObj.chapters.length > 0) {
-        setGeneratorChapterId(gradeObj.chapters[0].id);
-      }
+      setGeneratorChapterId(getDefaultChapterForGrade(student.grade));
     }
+  };
+
+  // Quick-assign homework for a student (auto-fills student, grade, and recommended chapter)
+  const handleAssignToStudent = (student, specificChapterId = null) => {
+    setTargetStudentId(student.id);
+    setGeneratorGrade(student.grade);
+    setQuestionCount(5);
+    if (specificChapterId) {
+      setGeneratorChapterId(specificChapterId);
+    } else {
+      setGeneratorChapterId(getDefaultChapterForGrade(student.grade));
+    }
+    setActiveTab('generator');
   };
 
   // Handle Create Quest (5 questions by default)
@@ -252,62 +272,28 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
       <div 
         className="editorial-card" 
         style={{ 
-          padding: '1.5rem 2rem', 
+          padding: '1.25rem 1.75rem', 
           marginBottom: '1.5rem', 
-          display: 'flex', 
-          justifyContent: 'space-between', 
-          alignItems: 'center', 
-          flexWrap: 'wrap', 
-          gap: '1rem', 
           borderLeft: '5px solid var(--primary-navy)' 
         }}
       >
-        <div>
-          <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.35rem', flexWrap: 'wrap' }}>
-            <span style={{ fontSize: '1.5rem' }}>📐</span>
-            <h2 style={{ color: 'var(--primary-navy)', fontSize: '1.45rem' }}>
-              Studio Guru Matematika • Sir Jevon
-            </h2>
-            <span className="badge" style={{ backgroundColor: '#ECFDF5', color: '#047857', border: '1px solid #A7F3D0', fontSize: '0.72rem' }}>
-              ● Sesi Aktif
-            </span>
-          </div>
-          <p style={{ color: 'var(--text-secondary)', fontSize: '0.925rem', margin: 0 }}>
-            Kelola murid privat, generate PR 5-soal otomatis, distribusikan ke WhatsApp dengan 1-klik, dan pantau rekap pengerjaan *real-time*.
-          </p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginBottom: '0.35rem', flexWrap: 'wrap' }}>
+          <span style={{ fontSize: '1.5rem' }}>📐</span>
+          <h2 style={{ color: 'var(--primary-navy)', fontSize: '1.45rem' }}>
+            Studio Guru Matematika • Sir Jevon
+          </h2>
+          <span className="badge" style={{ backgroundColor: '#ECFDF5', color: '#047857', border: '1px solid #A7F3D0', fontSize: '0.72rem' }}>
+            ● Sesi Aktif
+          </span>
         </div>
-
-        <div style={{ display: 'flex', gap: '0.6rem', alignItems: 'center', flexWrap: 'wrap' }}>
-          <button 
-            id="btn-switch-to-public"
-            className="btn btn-outline"
-            style={{ fontSize: '0.85rem' }}
-            onClick={onBackToPublic}
-            title="Buka Math Handbook Publik"
-          >
-            <BookOpen size={16} />
-            Portal Publik
-          </button>
-          
-          <button 
-            id="btn-quick-generate-banner"
-            className="btn btn-royal" 
-            style={{ fontSize: '0.85rem' }}
-            onClick={() => setActiveTab("generator")}
-          >
-            <Sparkles size={16} />
-            Buat PR 5 Soal
-          </button>
-
-          <button
-            id="btn-teacher-logout"
-            className="btn btn-subtle"
-            style={{ fontSize: '0.825rem', color: 'var(--status-brick)' }}
-            onClick={onSignOut}
-            title="Keluar dari sesi guru"
-          >
-            Keluar
-          </button>
+        <p style={{ color: 'var(--text-secondary)', fontSize: '0.925rem', margin: 0 }}>
+          Kelola murid privat, generate PR 5-soal otomatis, distribusikan ke WhatsApp dengan 1-klik, dan pantau rekap pengerjaan *real-time*.
+        </p>
+        <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', marginTop: '0.5rem', flexWrap: 'wrap' }}>
+          <SemesterBadge />
+          <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>
+            Kalender Akademik Kurikulum Merdeka • Rekomendasi materi aktif
+          </span>
         </div>
       </div>
 
@@ -329,14 +315,6 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
           <Users size={17} />
           CRM Murid Privat ({students.length})
         </button>
-        <button 
-          id="tab-btn-syllabus"
-          className={`nav-pill ${activeTab === 'syllabus' ? 'active' : ''}`}
-          onClick={() => setActiveTab('syllabus')}
-        >
-          <BookOpen size={17} />
-          Peta Kurikulum & Rumus (4–12)
-        </button>
       </div>
 
       {/* ======================================================== */}
@@ -348,7 +326,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
           {/* LEFT: GENERATOR CONTROLS */}
           <div className="editorial-card" style={{ padding: '1.75rem' }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '1.25rem', color: 'var(--primary-navy)' }}>
-              <Sparkles size={20} />
+              <Wand2 size={20} />
               <h3 style={{ fontSize: '1.2rem' }}>Susun PR Otomatis (5 Soal)</h3>
             </div>
 
@@ -383,10 +361,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
                 onChange={(e) => {
                   const gr = Number(e.target.value);
                   setGeneratorGrade(gr);
-                  const grObj = CURRICULUM_DATA.find((g) => g.grade === gr);
-                  if (grObj && grObj.chapters.length > 0) {
-                    setGeneratorChapterId(grObj.chapters[0].id);
-                  }
+                  setGeneratorChapterId(getDefaultChapterForGrade(gr));
                 }}
               >
                 {CURRICULUM_DATA.map((g) => (
@@ -417,6 +392,46 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
                   );
                 })}
               </select>
+
+              {/* Smart Academic Calendar Recommendation Badge */}
+              {recChapterForGen && (
+                <div 
+                  style={{ 
+                    display: 'flex', 
+                    alignItems: 'center', 
+                    justifyContent: 'space-between', 
+                    padding: '0.55rem 0.85rem', 
+                    borderRadius: 'var(--radius-sm)', 
+                    backgroundColor: '#F0FDF4', 
+                    border: '1px solid #BBF7D0', 
+                    marginTop: '0.5rem', 
+                    fontSize: '0.8rem',
+                    gap: '0.5rem',
+                    flexWrap: 'wrap'
+                  }}
+                >
+                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', color: '#166534', minWidth: 0 }}>
+                    <Clock size={14} style={{ flexShrink: 0 }} />
+                    <span style={{ fontSize: '0.78rem' }}>
+                      <strong>Rekomendasi Kalender ({recChapterForGen.timeLabel}):</strong> {recChapterForGen.title.startsWith('Bab') ? recChapterForGen.title : `Bab ${recChapterForGen.babNumber}: ${recChapterForGen.title}`}
+                    </span>
+                  </div>
+                  {generatorChapterId !== recChapterForGen.id ? (
+                    <button
+                      type="button"
+                      className="btn btn-outline"
+                      style={{ padding: '0.2rem 0.6rem', fontSize: '0.72rem', borderColor: '#16a34a', color: '#16a34a', backgroundColor: '#FFFFFF', fontWeight: 600 }}
+                      onClick={() => setGeneratorChapterId(recChapterForGen.id)}
+                    >
+                      Gunakan Bab Ini
+                    </button>
+                  ) : (
+                    <span style={{ fontSize: '0.72rem', color: '#166534', fontWeight: 700, display: 'flex', alignItems: 'center', gap: '0.2rem' }}>
+                      ✓ Bab Ini Terpilih
+                    </span>
+                  )}
+                </div>
+              )}
             </div>
 
 
@@ -462,7 +477,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
               style={{ width: '100%', justifyContent: 'center', padding: '0.75rem' }}
               onClick={handleCreateQuest}
             >
-              <Sparkles size={17} />
+              <Wand2 size={17} />
               Generate Paket PR Sekarang
             </button>
           </div>
@@ -576,7 +591,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
               </div>
             ) : (
               <div className="editorial-card" style={{ padding: '3.5rem 2rem', textAlign: 'center' }}>
-                <Sparkles size={36} color="var(--primary-blue)" style={{ margin: '0 auto 1rem', display: 'block', opacity: 0.8 }} />
+                <ClipboardList size={36} color="var(--primary-blue)" style={{ margin: '0 auto 1rem', display: 'block', opacity: 0.8 }} />
                 <h3 style={{ fontSize: '1.2rem', color: 'var(--primary-navy)', marginBottom: '0.4rem' }}>
                   Belum Ada Paket PR yang Dibuat
                 </h3>
@@ -728,6 +743,22 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
                       </div>
                     </div>
 
+                    {/* Academic Calendar: Materi Sekarang */}
+                    {(() => {
+                      const gData = CURRICULUM_DATA.find(g => g.grade === student.grade);
+                      if (gData) {
+                        return (
+                          <MateriSekarangCard 
+                            grade={student.grade} 
+                            chapters={gData.chapters} 
+                            compact={true} 
+                            onAssign={(info) => handleAssignToStudent(student, info.chapterId)}
+                          />
+                        );
+                      }
+                      return null;
+                    })()}
+
                     {/* Latest Quest Status */}
                     <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', marginBottom: '0.75rem' }}>
                       <span style={{ fontSize: '0.78rem', color: 'var(--text-muted)' }}>Status Terakhir:</span>
@@ -756,18 +787,10 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
                       id={`btn-assign-pr-${student.id}`}
                       className="btn btn-royal" 
                       style={{ flex: 1, fontSize: '0.825rem', justifyContent: 'center' }}
-                      onClick={() => {
-                        setTargetStudentId(student.id);
-                        setGeneratorGrade(student.grade);
-                        setQuestionCount(5);
-                        const gData = CURRICULUM_DATA.find((g) => g.grade === student.grade);
-                        if (gData && gData.chapters.length > 0) {
-                          setGeneratorChapterId(gData.chapters[0].id);
-                        }
-                        setActiveTab('generator');
-                      }}
+                      onClick={() => handleAssignToStudent(student)}
+                      title="Susun PR 5 soal untuk siswa ini (otomatis bab kalender)"
                     >
-                      <Sparkles size={14} />
+                      <PenTool size={14} />
                       Buat PR 5 Soal
                     </button>
 
@@ -1099,227 +1122,6 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
             </div>
           )}
 
-        </div>
-      )}
-
-      {/* ======================================================== */}
-      {/* TAB 3: PETA KURIKULUM & RUMUS LENGKAP (4–12)           */}
-      {/* ======================================================== */}
-      {activeTab === 'syllabus' && (
-        <div>
-          {/* Grade Selector Row */}
-          <div style={{ display: 'flex', gap: '0.5rem', overflowX: 'auto', paddingBottom: '0.75rem', marginBottom: '1.25rem' }}>
-            {CURRICULUM_DATA.map((gradeObj) => {
-              const isSelected = Number(selectedGrade) === gradeObj.grade;
-              const label = `Kelas ${gradeObj.grade} ${gradeObj.level}`;
-              const phaseTag = gradeObj.phase ? `(${gradeObj.phase})` : "";
-
-              return (
-                <button
-                  key={gradeObj.grade}
-                  id={`btn-grade-${gradeObj.grade}`}
-                  onClick={() => {
-                    setSelectedGrade(gradeObj.grade);
-                    if (gradeObj.chapters.length > 0) {
-                      setSelectedChapterId(gradeObj.chapters[0].id);
-                    }
-                    setSelectedTrackFilter("ALL");
-                  }}
-                  className={`btn ${isSelected ? 'btn-royal' : 'btn-outline'}`}
-                  style={{
-                    padding: '0.5rem 0.9rem',
-                    fontSize: '0.825rem',
-                    whiteSpace: 'nowrap'
-                  }}
-                >
-                  <span>{label}</span>
-                  <span style={{ opacity: 0.75, fontSize: '0.72rem' }}>{phaseTag}</span>
-                </button>
-              );
-            })}
-          </div>
-
-          {/* Track Filter for Grade 11 & 12 */}
-          {(currentGradeData.grade === 11 || currentGradeData.grade === 12) && (
-            <div className="editorial-card" style={{ padding: '0.75rem 1.25rem', marginBottom: '1.25rem', backgroundColor: '#F8FAFC' }}>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '0.825rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
-                  Filter Jurusan / Jalur:
-                </span>
-                <div className="nav-pill-group" style={{ margin: 0 }}>
-                  <button
-                    className={`nav-pill ${selectedTrackFilter === 'ALL' ? 'active' : ''}`}
-                    style={{ padding: '0.35rem 0.8rem', fontSize: '0.8rem' }}
-                    onClick={() => setSelectedTrackFilter('ALL')}
-                  >
-                    Semua ({currentGradeData.chapters.length})
-                  </button>
-                  <button
-                    className={`nav-pill ${selectedTrackFilter === 'WAJIB' ? 'active' : ''}`}
-                    style={{ padding: '0.35rem 0.8rem', fontSize: '0.8rem' }}
-                    onClick={() => setSelectedTrackFilter('WAJIB')}
-                  >
-                    📘 Matematika Utama (Wajib)
-                  </button>
-                  <button
-                    className={`nav-pill ${selectedTrackFilter === 'LANJUT' ? 'active' : ''}`}
-                    style={{ padding: '0.35rem 0.8rem', fontSize: '0.8rem' }}
-                    onClick={() => setSelectedTrackFilter('LANJUT')}
-                  >
-                    🔬 Matematika Tingkat Lanjut (Pilihan)
-                  </button>
-                </div>
-              </div>
-            </div>
-          )}
-
-          {/* Two-Column Syllabus Explorer */}
-          <div className="handbook-explorer-grid">
-            {/* Chapters List */}
-            <div className="editorial-card" style={{ padding: '1.25rem' }}>
-              <h3 style={{ fontSize: '1.05rem', color: 'var(--primary-navy)', marginBottom: '0.85rem' }}>
-                Daftar Bab ({displayedChapters.length})
-              </h3>
-              <div style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem', maxHeight: '720px', overflowY: 'auto' }}>
-                {displayedChapters.map((chapter, idx) => {
-                  const isSelected = currentChapter?.id === chapter.id;
-                  const isLanjut = chapter.track === "LANJUT";
-
-                  return (
-                    <button
-                      key={chapter.id}
-                      onClick={() => setSelectedChapterId(chapter.id)}
-                      style={{
-                        display: 'flex',
-                        flexDirection: 'column',
-                        alignItems: 'flex-start',
-                        textAlign: 'left',
-                        padding: '0.75rem 0.9rem',
-                        borderRadius: 'var(--radius-sm)',
-                        border: `1px solid ${isSelected ? 'var(--primary-navy)' : 'var(--border-subtle)'}`,
-                        backgroundColor: isSelected ? 'var(--primary-light)' : '#FFFFFF',
-                        cursor: 'pointer'
-                      }}
-                    >
-                      <div style={{ display: 'flex', justifyContent: 'space-between', width: '100%', alignItems: 'center', marginBottom: '0.2rem' }}>
-                        <span style={{ fontSize: '0.72rem', fontWeight: 700, color: isSelected ? 'var(--primary-navy)' : 'var(--text-muted)' }}>
-                          Bab {idx + 1}
-                        </span>
-                        {chapter.trackLabel && (
-                          <span className={`badge ${isLanjut ? 'badge-cat-hots' : 'badge-subtle'}`} style={{ fontSize: '0.62rem' }}>
-                            {isLanjut ? 'Lanjut' : 'Wajib'}
-                          </span>
-                        )}
-                      </div>
-                      <span style={{ fontSize: '0.88rem', fontWeight: isSelected ? 700 : 500, color: isSelected ? 'var(--primary-navy)' : 'var(--text-primary)' }}>
-                        {chapter.title}
-                      </span>
-                    </button>
-                  );
-                })}
-              </div>
-            </div>
-
-            {/* Chapter Detail View */}
-            {currentChapter && (
-              <div className="editorial-card" style={{ padding: '1.75rem' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  <div>
-                    <div style={{ display: 'flex', gap: '0.4rem', marginBottom: '0.35rem' }}>
-                      <span className="badge badge-sd">Kelas {currentGradeData.grade}</span>
-                      <span className="badge badge-subtle">{currentGradeData.phase}</span>
-                      {currentChapter.trackLabel && (
-                        <span className="badge badge-cat-pas">{currentChapter.trackLabel}</span>
-                      )}
-                    </div>
-                    <h2 style={{ color: 'var(--primary-navy)', fontSize: '1.4rem' }}>
-                      {currentChapter.title}
-                    </h2>
-                  </div>
-
-                  <button 
-                    className="btn btn-royal"
-                    style={{ fontSize: '0.825rem' }}
-                    onClick={() => {
-                      setGeneratorGrade(currentGradeData.grade);
-                      setGeneratorChapterId(currentChapter.id);
-                      setActiveTab('generator');
-                    }}
-                  >
-                    <Sparkles size={15} />
-                    Buat PR Bab Ini
-                  </button>
-                </div>
-
-                {/* Concepts */}
-                {currentChapter.summary?.coreConcepts && (
-                  <div style={{ backgroundColor: '#F9FAFB', padding: '1.15rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)', marginBottom: '1rem' }}>
-                    <h4 style={{ fontSize: '0.925rem', color: 'var(--primary-navy)', marginBottom: '0.5rem' }}>
-                      Konsep Kunci & Pemahaman Materi:
-                    </h4>
-                    <ul style={{ paddingLeft: '1.25rem', margin: 0, fontSize: '0.88rem', color: 'var(--text-secondary)' }}>
-                      {currentChapter.summary.coreConcepts.map((c, i) => (
-                        <li key={i} style={{ marginBottom: '0.3rem' }}><MathText text={c} /></li>
-                      ))}
-                    </ul>
-                  </div>
-                )}
-
-                {/* Formulas */}
-                {currentChapter.summary?.keyFormulas && (
-                  <div style={{ backgroundColor: '#FFFFFF', padding: '1.15rem', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-medium)', marginBottom: '1rem', maxWidth: '100%', overflow: 'hidden' }}>
-                    <h4 style={{ fontSize: '0.925rem', color: 'var(--primary-navy)', marginBottom: '0.65rem' }}>
-                      Kotak Rumus Inti (KaTeX):
-                    </h4>
-                    <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(220px, 1fr))', gap: '0.75rem', maxWidth: '100%' }}>
-                      {currentChapter.summary.keyFormulas.map((f, i) => (
-                        <div key={i} style={{ backgroundColor: '#F8FAFC', padding: '0.75rem', borderRadius: 'var(--radius-xs)', border: '1px solid var(--border-subtle)', textAlign: 'center', minWidth: 0, maxWidth: '100%', overflowX: 'auto' }}>
-                          <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', marginBottom: '0.2rem' }}>{f.label}</div>
-                          <div style={{ maxWidth: '100%', overflowX: 'auto' }}>
-                            <MathText text={`$$${f.formula}$$`} />
-                          </div>
-                        </div>
-                      ))}
-                    </div>
-                  </div>
-                )}
-
-                {/* Tutor Tip */}
-                {currentChapter.summary?.tutorTip && (
-                  <div style={{ backgroundColor: '#FFFBEB', padding: '1rem', borderRadius: 'var(--radius-sm)', border: '1px solid #FDE68A', display: 'flex', gap: '0.75rem', alignItems: 'flex-start', marginBottom: '1.5rem' }}>
-                    <Lightbulb size={20} color="#D97706" style={{ flexShrink: 0, marginTop: '0.15rem' }} />
-                    <div>
-                      <strong style={{ fontSize: '0.85rem', color: '#92400E' }}>Metode Simpel & Efektif Tutor:</strong>
-                      <div style={{ fontSize: '0.875rem', color: '#78350F' }}>
-                        <MathText text={currentChapter.summary.tutorTip} />
-                      </div>
-                    </div>
-                  </div>
-                )}
-
-                {/* Questions Preview */}
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                  <h4 style={{ fontSize: '1.05rem', color: 'var(--primary-navy)' }}>
-                    Latihan Soal Materi Ini:
-                  </h4>
-                  <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                    {filteredChapterQuestions.length} Butir Soal
-                  </span>
-                </div>
-                <div style={{ display: 'flex', flexDirection: 'column', gap: '1rem' }}>
-                  {filteredChapterQuestions.map((q, qIdx) => (
-                    <div key={q.id} style={{ padding: '1rem', backgroundColor: '#F9FAFB', borderRadius: 'var(--radius-sm)', border: '1px solid var(--border-subtle)' }}>
-                      <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: '0.4rem', fontSize: '0.825rem' }}>
-                        <strong style={{ color: 'var(--primary-navy)' }}>Soal #{qIdx + 1}</strong>
-                      </div>
-                      <MathText text={q.question} />
-                      <QuestionVisual question={q} />
-                    </div>
-                  ))}
-                </div>
-              </div>
-            )}
-          </div>
         </div>
       )}
 
