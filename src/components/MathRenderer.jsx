@@ -13,10 +13,19 @@ export function MathText({ text = "", className = "" }) {
   const renderedElements = useMemo(() => {
     if (!text || typeof text !== "string") return null;
 
+    let processedText = text;
+    // Auto-detect: Jika teks mengandung perintah LaTeX umum dan tidak memiliki $
+    const latexPatterns = [/\\frac/, /\\times/, /\\sum/, /\\int/, /\\sqrt/, /\\alpha/, /\\beta/, /\\gamma/, /\\theta/];
+    const hasDelimiters = /\$[\s\S]*?\$|\$\$[\s\S]*?\$\$/.test(processedText);
+    
+    if (!hasDelimiters && latexPatterns.some(p => p.test(processedText))) {
+      processedText = `$${processedText}$`;
+    }
+
     // Pisahkan teks berdasarkan pola $...$ atau $$...$$
     // Regex menangkap $$...$$ atau $...$
     const regex = /(\$\$[\s\S]*?\$\$|\$[^$\n]+?\$)/g;
-    const parts = text.split(regex);
+    const parts = processedText.split(regex);
 
     return parts.map((part, index) => {
       if (!part) return null;
