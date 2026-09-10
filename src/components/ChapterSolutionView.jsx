@@ -169,11 +169,9 @@ export function ChapterSolutionView({
                     }}>
                       Soal #{idx + 1}
                     </span>
-                    {q.difficulty && (
-                      <span className="badge badge-subtle" style={{ fontSize: '0.72rem' }}>
-                        Tingkat: {q.difficulty}
-                      </span>
-                    )}
+                    <span className="badge badge-subtle" style={{ fontSize: '0.72rem' }}>
+                      Paket {Math.floor(idx / 5) + 1}
+                    </span>
                   </div>
 
                   {/* Kunci Jawaban Badge */}

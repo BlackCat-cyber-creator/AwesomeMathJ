@@ -45,6 +45,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
   const [isQuizSubmitted, setIsQuizSubmitted] = useState(false);
   const [copiedLinkNotification, setCopiedLinkNotification] = useState(false);
   const [isMobileChaptersOpen, setIsMobileChaptersOpen] = useState(false);
+  const [selectedPacketFilter, setSelectedPacketFilter] = useState('ALL');
 
   // Reset quiz & answers state when switching chapter or grade
   useEffect(() => {
@@ -53,6 +54,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
     setRevealedSolutions({});
     setRevealedHints({});
     setIsMobileChaptersOpen(false);
+    setSelectedPacketFilter('ALL');
   }, [selectedGrade, selectedChapterId]);
 
   const handleSelectOption = (qId, optionKey) => {
@@ -798,31 +800,102 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
             {/* ═══════════════════════════════════════════════ */}
             {/* ZONE 3: LATIHAN SOAL — The Main Event           */}
             {/* ═══════════════════════════════════════════════ */}
-            <div style={{ marginBottom: '1rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
-              <h3 style={{ fontSize: '1.15rem', color: 'var(--primary-navy)', display: 'flex', alignItems: 'center', gap: '0.45rem' }}>
+            {/* LATIHAN SOAL DENGAN FILTER 4 PAKET SEGMEN       */}
+            {/* ═══════════════════════════════════════════════ */}
+            <div style={{ marginBottom: '0.85rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
+              <h3 style={{ fontSize: '1.15rem', color: 'var(--primary-navy)', display: 'flex', alignItems: 'center', gap: '0.45rem', margin: 0 }}>
                 <PenTool size={18} color="var(--primary-blue)" />
                 Latihan Soal & Pemahaman Konsep
               </h3>
               <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-                {currentChapter.questions?.length || 0} Soal Latihan Mandiri
+                {currentChapter.questions?.length || 0} Soal Lengkap (4 Paket)
               </span>
+            </div>
+
+            {/* Packet Filter Tabs */}
+            <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
+              <button
+                type="button"
+                id="filter-packet-all"
+                className={`btn ${selectedPacketFilter === 'ALL' ? 'btn-royal' : 'btn-outline'}`}
+                style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+                onClick={() => setSelectedPacketFilter('ALL')}
+              >
+                Semua ({currentChapter.questions?.length || 0} Soal)
+              </button>
+              <button
+                type="button"
+                id="filter-packet-1"
+                className={`btn ${selectedPacketFilter === 1 ? 'btn-royal' : 'btn-outline'}`}
+                style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+                onClick={() => setSelectedPacketFilter(1)}
+              >
+                Paket 1 (Soal 1–5: Dasar)
+              </button>
+              <button
+                type="button"
+                id="filter-packet-2"
+                className={`btn ${selectedPacketFilter === 2 ? 'btn-royal' : 'btn-outline'}`}
+                style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+                onClick={() => setSelectedPacketFilter(2)}
+              >
+                Paket 2 (Soal 6–10: Sedang)
+              </button>
+              <button
+                type="button"
+                id="filter-packet-3"
+                className={`btn ${selectedPacketFilter === 3 ? 'btn-royal' : 'btn-outline'}`}
+                style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+                onClick={() => setSelectedPacketFilter(3)}
+              >
+                Paket 3 (Soal 11–15: Terapan)
+              </button>
+              <button
+                type="button"
+                id="filter-packet-4"
+                className={`btn ${selectedPacketFilter === 4 ? 'btn-royal' : 'btn-outline'}`}
+                style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+                onClick={() => setSelectedPacketFilter(4)}
+              >
+                Paket 4 (Soal 16–20: Tantangan)
+              </button>
             </div>
 
             {/* Question Cards List */}
             <div style={{ display: 'flex', flexDirection: 'column', gap: '1.25rem' }}>
-              {(currentChapter.questions || []).map((q, qIndex) => {
-                const isSolOpen = !!revealedSolutions[q.id];
-                const isHintOpen = !!revealedHints[q.id];
+              {(() => {
+                const allQuestions = currentChapter.questions || [];
+                const filteredQuestions = selectedPacketFilter === 'ALL'
+                  ? allQuestions
+                  : allQuestions.slice((selectedPacketFilter - 1) * 5, selectedPacketFilter * 5);
 
-                return (
-                  <div key={q.id} className="editorial-card question-card">
-                    {/* Question Header */}
-                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
-                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
-                        <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--primary-navy)' }}>
-                          Latihan #{qIndex + 1}
-                        </span>
-                      </div>
+                if (filteredQuestions.length === 0) {
+                  return (
+                    <div className="editorial-card" style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+                      Belum ada butir soal untuk paket ini.
+                    </div>
+                  );
+                }
+
+                return filteredQuestions.map((q, qIndex) => {
+                  const isSolOpen = !!revealedSolutions[q.id];
+                  const isHintOpen = !!revealedHints[q.id];
+                  const originalIndex = allQuestions.findIndex(item => item.id === q.id);
+                  const qNum = originalIndex !== -1 ? originalIndex + 1 : qIndex + 1;
+                  const packetNum = Math.floor((qNum - 1) / 5) + 1;
+
+                  return (
+                    <div key={q.id} className="editorial-card question-card">
+                      {/* Question Header */}
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
+                        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                          <span className="badge badge-subtle" style={{ fontSize: '0.72rem' }}>
+                            Paket {packetNum}
+                          </span>
+                          <span style={{ fontWeight: 700, fontSize: '0.95rem', color: 'var(--primary-navy)' }}>
+                            Latihan #{qNum}
+                          </span>
+                        </div>
 
                       <div style={{ display: 'flex', gap: '0.4rem' }}>
                         {q.hint && (
@@ -1077,7 +1150,8 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                     )}
                   </div>
                 );
-              })}
+              });
+            })()}
 
               {/* ======================================================== */}
               {/* BOTTOM PANEL: TOMBOL SELESAI & EVALUASI SKOR LATIHAN     */}

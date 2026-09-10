@@ -156,6 +156,438 @@ export const grade5Data = {
           "correctAnswer": "A",
           "hint": "Hitung total harga pupuk ($25 \\times 32.000 = 800.000$), total uang bayar ($9 \\times 100.000 = 900.000$), lalu kurangkan keduanya.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total harga belanja: $25 \\times 32.000 = 800.000$.\n2. Uang pembayaran: $9 \\times 100.000 = 900.000$.\n3. Uang kembalian: $900.000 - 800.000 = \\text{Rp}100.000,00$.\nUang kembalian yang diterima adalah **Rp100.000,00** (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Nilai angka 7 pada bilangan 74.825 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "70.000"
+            },
+            {
+              "key": "B",
+              "text": "7.000"
+            },
+            {
+              "key": "C",
+              "text": "700"
+            },
+            {
+              "key": "D",
+              "text": "70"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Angka 7 menempati posisi puluhan ribu.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nAngka 7 menempati nilai tempat puluh ribuan, sehingga bernilai **70.000** (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil dari operasi $45.670 + 28.450$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "74.120"
+            },
+            {
+              "key": "B",
+              "text": "73.120"
+            },
+            {
+              "key": "C",
+              "text": "74.020"
+            },
+            {
+              "key": "D",
+              "text": "73.020"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jumlahkan dengan cara bersusun pendek mulai dari satuan.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$45.670 + 28.450 = 74.120$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil pengurangan $62.500 - 37.850$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "24.650"
+            },
+            {
+              "key": "B",
+              "text": "25.650"
+            },
+            {
+              "key": "C",
+              "text": "24.750"
+            },
+            {
+              "key": "D",
+              "text": "25.750"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kurangkan secara bersusun dengan teknik meminjam.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$62.500 - 37.850 = 24.650$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bentuk perkalian $350 \\times 40$ menghasilkan nilai...",
+          "options": [
+            {
+              "key": "A",
+              "text": "14.000"
+            },
+            {
+              "key": "B",
+              "text": "140.000"
+            },
+            {
+              "key": "C",
+              "text": "1.400"
+            },
+            {
+              "key": "D",
+              "text": "12.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$35 \\times 4 = 140$, lalu tambahkan dua angka nol di belakangnya.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$350 \\times 40 = 14.000$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil pembagian $48.000 : 60$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "800"
+            },
+            {
+              "key": "B",
+              "text": "80"
+            },
+            {
+              "key": "C",
+              "text": "8.000"
+            },
+            {
+              "key": "D",
+              "text": "600"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Coret satu nol: $4.800 : 6 = 800$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$48.000 : 60 = 800$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bilangan 68.742 jika dibulatkan ke ribuan terdekat menjadi...",
+          "options": [
+            {
+              "key": "A",
+              "text": "69.000"
+            },
+            {
+              "key": "B",
+              "text": "68.000"
+            },
+            {
+              "key": "C",
+              "text": "70.000"
+            },
+            {
+              "key": "D",
+              "text": "68.700"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Lihat angka ratusan yaitu 7 ($7 \\ge 5$), maka bulatkan ke atas.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nKarena angka ratusannya 7, maka dibulatkan ke atas menjadi **69.000** (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Koperasi sekolah memiliki modal Rp85.000,00. Koperasi membeli buku seharga Rp47.500,00 dan alat tulis seharga Rp22.500,00. Sisa modal koperasi sekarang adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Rp15.000,00"
+            },
+            {
+              "key": "B",
+              "text": "Rp16.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp14.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp17.500,00"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Total belanja $= 47.500 + 22.500 = 70.000$. Sisa $= 85.000 - 70.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$85.000 - (47.500 + 22.500) = 85.000 - 70.000 = \\text{Rp}15.000,00$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah truk mengangkut 45 karung beras. Setiap karung beras memiliki berat 25 kg. Total berat seluruh beras yang diangkut truk tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "1.125 kg"
+            },
+            {
+              "key": "B",
+              "text": "1.100 kg"
+            },
+            {
+              "key": "C",
+              "text": "1.150 kg"
+            },
+            {
+              "key": "D",
+              "text": "1.225 kg"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kalikan banyak karung dengan berat tiap karung: $45 \\times 25$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$45 \\times 25 = 1.125\\text{ kg}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Urutan bilangan berikut dari yang terkecil hingga terbesar adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "34.500, 34.800, 35.100, 35.400"
+            },
+            {
+              "key": "B",
+              "text": "35.400, 35.100, 34.800, 34.500"
+            },
+            {
+              "key": "C",
+              "text": "34.800, 34.500, 35.100, 35.400"
+            },
+            {
+              "key": "D",
+              "text": "34.500, 35.100, 34.800, 35.400"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Bandingkan nilai tempat puluhan ribu, ribuan, lalu ratusan.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nUrutan dari terkecil: **34.500 < 34.800 < 35.100 < 35.400** (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil operasi hitung campuran $15.000 + 4.000 \\times 5 - 8.000$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "27.000"
+            },
+            {
+              "key": "B",
+              "text": "87.000"
+            },
+            {
+              "key": "C",
+              "text": "25.000"
+            },
+            {
+              "key": "D",
+              "text": "30.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Dahulukan operasi perkalian: $4.000 \\times 5 = 20.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$15.000 + 20.000 - 8.000 = 35.000 - 8.000 = 27.000$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah pabrik roti memproduksi 1.250 bungkus roti setiap hari. Berapa banyak roti yang diproduksi pabrik tersebut dalam 24 hari?",
+          "options": [
+            {
+              "key": "A",
+              "text": "30.000 bungkus"
+            },
+            {
+              "key": "B",
+              "text": "28.000 bungkus"
+            },
+            {
+              "key": "C",
+              "text": "32.000 bungkus"
+            },
+            {
+              "key": "D",
+              "text": "25.000 bungkus"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kalikan $1.250 \\times 24$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$1.250 \\times 24 = 30.000\\text{ bungkus}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah yayasan sosial menerima sumbangan Rp75.000.000,00. Uang tersebut dibagikan kepada 30 panti asuhan secara merata. Setiap panti asuhan membagikan lagi uang yang diterima kepada 25 anak asuhnya sama rata. Berapakah uang yang diterima setiap anak asuh?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Rp100.000,00"
+            },
+            {
+              "key": "B",
+              "text": "Rp125.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp80.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp150.000,00"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Tiap panti $= 75.000.000 / 30 = 2.500.000$. Tiap anak $= 2.500.000 / 25$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. Per panti: $75.000.000 : 30 = 2.500.000$\\n2. Per anak: $2.500.000 : 25 = \\text{Rp}100.000,00$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Nilai $n$ yang memenuhi persamaan $n - 18.750 = 34.250 + 12.000$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "65.000"
+            },
+            {
+              "key": "B",
+              "text": "64.000"
+            },
+            {
+              "key": "C",
+              "text": "66.000"
+            },
+            {
+              "key": "D",
+              "text": "63.500"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sederhanakan ruas kanan: $46.250$, lalu tambahkan $18.750$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$n = 46.250 + 18.750 = 65.000$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dalam suatu perayaan hari kemerdekaan, panitia menyiapkan 64 kotak air mineral. Setiap kotak berisi 48 botol. Jika 2.500 botol air telah dibagikan kepada peserta, berapa botol air mineral yang masih tersisa?",
+          "options": [
+            {
+              "key": "A",
+              "text": "572 botol"
+            },
+            {
+              "key": "B",
+              "text": "562 botol"
+            },
+            {
+              "key": "C",
+              "text": "582 botol"
+            },
+            {
+              "key": "D",
+              "text": "602 botol"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Total botol $= 64 \\times 48 = 3.072$. Sisa $= 3.072 - 2.500$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$64 \\times 48 - 2.500 = 3.072 - 2.500 = 572\\text{ botol}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Selisih nilai angka 8 pada bilangan 84.815 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "79.200"
+            },
+            {
+              "key": "B",
+              "text": "79.000"
+            },
+            {
+              "key": "C",
+              "text": "80.800"
+            },
+            {
+              "key": "D",
+              "text": "72.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Angka 8 pertama bernilai 80.000 dan angka 8 kedua bernilai 800.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$80.000 - 800 = 79.200$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b1-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah toko grosir menjual beras kemasan 5 kg seharga Rp65.000,00 dan kemasan 10 kg seharga Rp125.000,00. Jika seorang pembeli ingin membeli 30 kg beras dengan harga paling hemat, berapakah uang yang harus ia bayar?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Rp375.000,00"
+            },
+            {
+              "key": "B",
+              "text": "Rp390.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp380.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp400.000,00"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Opsi 1: $3 \\times 10\\text{ kg} = 3 \\times 125.000 = 375.000$. Opsi 2: $6 \\times 5\\text{ kg} = 6 \\times 65.000 = 390.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nPaling hemat membeli 3 karung kemasan 10 kg: $$3 \\times 125.000 = \\text{Rp}375.000,00$$ (Opsi A)."
         }
       ]
     },
@@ -306,6 +738,438 @@ export const grade5Data = {
           "correctAnswer": "A",
           "hint": "Gunakan FPB dari 30 dan 45 untuk mencari banyak kantong paling banyak.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Faktorisasi prima:\n- $30 = 2 \\times 3 \\times 5$\n- $45 = 3^2 \\times 5$\n2. $\\text{FPB} = 3 \\times 5 = 15$.\nBanyak kantong plastik paling banyak adalah **15 kantong** (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Faktor persekutuan terbesar (FPB) dari 12 dan 18 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "6"
+            },
+            {
+              "key": "B",
+              "text": "4"
+            },
+            {
+              "key": "C",
+              "text": "3"
+            },
+            {
+              "key": "D",
+              "text": "2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Faktor 12: 1, 2, 3, 4, 6, 12. Faktor 18: 1, 2, 3, 6, 9, 18. Yang terbesar adalah 6.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nFPB(12, 18) = **6** (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Kelipatan persekutuan terkecil (KPK) dari 15 dan 20 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "60"
+            },
+            {
+              "key": "B",
+              "text": "30"
+            },
+            {
+              "key": "C",
+              "text": "45"
+            },
+            {
+              "key": "D",
+              "text": "120"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "KPK diperoleh dari perkalian faktor prima pangkat tertinggi: $2^2 \\times 3 \\times 5$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$15 = 3 \\times 5, \\quad 20 = 2^2 \\times 5 \\implies \\text{KPK} = 4 \\times 3 \\times 5 = 60$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Faktorisasi prima dari bilangan 72 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "2^3 \\times 3^2"
+            },
+            {
+              "key": "B",
+              "text": "2^2 \\times 3^3"
+            },
+            {
+              "key": "C",
+              "text": "2^4 \\times 3"
+            },
+            {
+              "key": "D",
+              "text": "2 \\times 3^3"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Bagi 72 dengan bilangan prima berturut-turut: $72 : 2 = 36 : 2 = 18 : 2 = 9 : 3 = 3$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$72 = 2^3 \\times 3^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "FPB dari 24, 36, dan 48 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "12"
+            },
+            {
+              "key": "B",
+              "text": "6"
+            },
+            {
+              "key": "C",
+              "text": "8"
+            },
+            {
+              "key": "D",
+              "text": "24"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Faktor prima yang sama berpangkat terendah: $2^2 \\times 3 = 12$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nFPB(24, 36, 48) = **12** (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "KPK dari 12, 18, dan 24 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "72"
+            },
+            {
+              "key": "B",
+              "text": "48"
+            },
+            {
+              "key": "C",
+              "text": "96"
+            },
+            {
+              "key": "D",
+              "text": "144"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Faktor prima: $12 = 2^2 \\times 3, 18 = 2 \\times 3^2, 24 = 2^3 \\times 3$. KPK $= 2^3 \\times 3^2 = 72$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\text{KPK} = 8 \\times 9 = 72$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Lampu A menyala setiap 6 detik sekali dan lampu B menyala setiap 8 detik sekali. Jika kedua lampu menyala bersamaan pada detik ke-0, pada detik ke berapa kedua lampu akan menyala bersamaan lagi untuk pertama kali?",
+          "options": [
+            {
+              "key": "A",
+              "text": "24"
+            },
+            {
+              "key": "B",
+              "text": "48"
+            },
+            {
+              "key": "C",
+              "text": "14"
+            },
+            {
+              "key": "D",
+              "text": "18"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Cari KPK dari 6 dan 8.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\text{KPK}(6, 8) = 24\\text{ detik}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Ibu memiliki 30 kue bolu dan 45 kue sus. Kue tersebut akan dimasukkan ke dalam beberapa piring sama banyak. Berapa piring paling banyak yang dibutuhkan ibu?",
+          "options": [
+            {
+              "key": "A",
+              "text": "15 piring"
+            },
+            {
+              "key": "B",
+              "text": "10 piring"
+            },
+            {
+              "key": "C",
+              "text": "5 piring"
+            },
+            {
+              "key": "D",
+              "text": "9 piring"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Cari FPB dari 30 dan 45.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\text{FPB}(30, 45) = 15\\text{ piring}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Beni berenang setiap 4 hari sekali dan Danu berenang setiap 6 hari sekali di kolam yang sama. Jika mereka berenang bersama pada hari Senin, pada hari apa mereka akan berenang bersama lagi berikutnya?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Sabtu"
+            },
+            {
+              "key": "B",
+              "text": "Jumat"
+            },
+            {
+              "key": "C",
+              "text": "Minggu"
+            },
+            {
+              "key": "D",
+              "text": "Senin"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "KPK(4, 6) = 12 hari. Senin + 12 hari = Senin + 5 hari = Sabtu.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. KPK(4, 6) = 12 hari\\n2. 12 hari setelah Senin: Senin + 7 hari (Senin) + 5 hari = **Sabtu** (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Seorang guru memiliki 24 buku tulis dan 36 pulpen untuk dibagikan kepada siswanya sama rata. Berapakah banyak buku tulis yang diterima setiap siswa jika dibagikan ke siswa sebanyak-banyaknya?",
+          "options": [
+            {
+              "key": "A",
+              "text": "2 buku tulis"
+            },
+            {
+              "key": "B",
+              "text": "3 buku tulis"
+            },
+            {
+              "key": "C",
+              "text": "4 buku tulis"
+            },
+            {
+              "key": "D",
+              "text": "6 buku tulis"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Banyak siswa $= \\text{FPB}(24, 36) = 12$. Buku per siswa $= 24 : 12 = 2$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$24 : \\text{FPB}(24, 36) = 24 : 12 = 2\\text{ buku tulis}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bilangan prima yang terletak di antara 20 dan 30 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "23 dan 29"
+            },
+            {
+              "key": "B",
+              "text": "21 dan 27"
+            },
+            {
+              "key": "C",
+              "text": "23 dan 27"
+            },
+            {
+              "key": "D",
+              "text": "21 dan 29"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Bilangan prima hanya memiliki 2 faktor (1 dan dirinya sendiri).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nBilangan prima antara 20 dan 30 adalah **23 dan 29** (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "KPK dan FPB dari bilangan 36 dan 60 berturut-turut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "180 dan 12"
+            },
+            {
+              "key": "B",
+              "text": "120 dan 12"
+            },
+            {
+              "key": "C",
+              "text": "180 dan 6"
+            },
+            {
+              "key": "D",
+              "text": "360 dan 12"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$36 = 2^2 \\times 3^2$, $60 = 2^2 \\times 3 \\times 5$. KPK $= 180$, FPB $= 12$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nKPK = 180 dan FPB = 12 (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Tiga buah jam weker berdering bersamaan pada pukul 07.00. Weker pertama berdering setiap 15 menit, weker kedua setiap 20 menit, dan weker ketiga setiap 30 menit. Pada pukul berapakah ketiga weker akan berdering bersamaan lagi untuk kedua kalinya?",
+          "options": [
+            {
+              "key": "A",
+              "text": "08.00"
+            },
+            {
+              "key": "B",
+              "text": "08.30"
+            },
+            {
+              "key": "C",
+              "text": "09.00"
+            },
+            {
+              "key": "D",
+              "text": "07.45"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "KPK(15, 20, 30) = 60 menit (1 jam). Pukul 07.00 + 1 jam = 08.00.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\text{KPK}(15, 20, 30) = 60\\text{ menit} = 1\\text{ jam} \\implies 07.00 + 1\\text{ jam} = 08.00$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Pak Ahmad memiliki 48 bibit mangga, 72 bibit jeruk, dan 96 bibit rambutan. Bibit tersebut akan ditanam di beberapa petak kebun dengan jumlah bibit tiap jenis sama banyak. Berapa jumlah seluruh bibit di setiap petak kebun?",
+          "options": [
+            {
+              "key": "A",
+              "text": "9 bibit"
+            },
+            {
+              "key": "B",
+              "text": "8 bibit"
+            },
+            {
+              "key": "C",
+              "text": "10 bibit"
+            },
+            {
+              "key": "D",
+              "text": "12 bibit"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Banyak petak $= \\text{FPB}(48, 72, 96) = 24$. Total bibit per petak $= (48 + 72 + 96) : 24 = 216 : 24 = 9$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. FPB(48, 72, 96) = 24 petak\\n2. Tiap petak: $\\frac{48 + 72 + 96}{24} = \\frac{216}{24} = 9\\text{ bibit}$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dua bilangan memiliki FPB 14 dan KPK 84. Jika salah satu bilangan adalah 28, maka bilangan yang lainnya adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "42"
+            },
+            {
+              "key": "B",
+              "text": "56"
+            },
+            {
+              "key": "C",
+              "text": "36"
+            },
+            {
+              "key": "D",
+              "text": "48"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Gunakan sifat: Bilangan $A \\times B = \\text{FPB} \\times \\text{KPK}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$B = \\frac{\\text{FPB} \\times \\text{KPK}}{A} = \\frac{14 \\times 84}{28} = \\frac{84}{2} = 42$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Toko sembako menerima kiriman telur setiap 8 hari, minyak goreng setiap 12 hari, dan gula pasir setiap 16 hari. Pada tanggal 1 Maret mereka menerima ketiga barang bersamaan. Pada tanggal berapa mereka akan menerima ketiga barang bersamaan lagi?",
+          "options": [
+            {
+              "key": "A",
+              "text": "18 April"
+            },
+            {
+              "key": "B",
+              "text": "25 April"
+            },
+            {
+              "key": "C",
+              "text": "1 Mei"
+            },
+            {
+              "key": "D",
+              "text": "24 April"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "KPK(8, 12, 16) = 48 hari. Maret ada 31 hari. Sisa hari Maret: $31 - 1 = 30$ hari. April: $48 - 30 = 18$ April.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. KPK(8, 12, 16) = 48 hari\\n2. Tanggal: 1 Maret + 48 hari = 18 April (Opsi A)."
+        },
+        {
+          "id": "sd5-b2-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Ibu membuat 54 kue lemper, 72 kue lapis, dan 90 kue pastel untuk disajikan dalam beberapa piring. Berapa selisih banyaknya kue pastel dan kue lemper pada masing-masing piring?",
+          "options": [
+            {
+              "key": "A",
+              "text": "2 buah"
+            },
+            {
+              "key": "B",
+              "text": "3 buah"
+            },
+            {
+              "key": "C",
+              "text": "1 buah"
+            },
+            {
+              "key": "D",
+              "text": "4 buah"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Piring $= \\text{FPB}(54, 72, 90) = 18$. Pastel $= 90 / 18 = 5$. Lemper $= 54 / 18 = 3$. Selisih $= 5 - 3 = 2$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. FPB(54, 72, 90) = 18 piring\\n2. Pastel per piring: $90 : 18 = 5$\\n3. Lemper per piring: $54 : 18 = 3$\\n4. Selisih $= 5 - 3 = 2\\text{ buah}$ (Opsi A)."
         }
       ]
     },
@@ -456,6 +1320,438 @@ export const grade5Data = {
           "correctAnswer": "A",
           "hint": "Kurangkan: $4\\frac{1}{2} - \\frac{1}{2} = 4$, lalu $4 - 1\\frac{3}{4} = 2\\frac{1}{4}$.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Selesaikan pengurangan mudah: $4\\frac{1}{2} - \\frac{1}{2} = 4\\text{ meter}$.\n2. Kurangkan potongan kedua: $4 - 1\\frac{3}{4} = 2\\frac{1}{4}\\text{ meter}$.\nSisa panjang pita adalah **$2\\frac{1}{4}$ meter** (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Bentuk persen dari pecahan $\\frac{3}{4}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "75%"
+            },
+            {
+              "key": "B",
+              "text": "50%"
+            },
+            {
+              "key": "C",
+              "text": "25%"
+            },
+            {
+              "key": "D",
+              "text": "80%"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kalikan dengan 100%: $\\frac{3}{4} \\times 100\\% = 75\\%$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{3}{4} \\times 100\\% = 75\\%$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil penjumlahan $\\frac{2}{3} + \\frac{1}{4}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{11}{12}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{3}{7}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{5}{12}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{7}{12}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Samakan penyebut dengan KPK dari 3 dan 4 yaitu 12: $\\frac{8}{12} + \\frac{3}{12}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{8 + 3}{12} = \\frac{11}{12}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil pengurangan $2\\frac{1}{2} - 1\\frac{1}{3}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "1\\frac{1}{6}"
+            },
+            {
+              "key": "B",
+              "text": "1\\frac{1}{5}"
+            },
+            {
+              "key": "C",
+              "text": "1\\frac{2}{3}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{5}{6}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Ubah ke pecahan biasa: $\\frac{5}{2} - \\frac{4}{3} = \\frac{15 - 8}{6} = \\frac{7}{6} = 1\\frac{1}{6}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$2\\frac{1}{2} - 1\\frac{1}{3} = \\frac{15 - 8}{6} = 1\\frac{1}{6}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil perkalian $\\frac{3}{5} \\times \\frac{10}{9}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{2}{3}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{1}{2}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{3}{4}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{5}{6}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sederhanakan silang: $3$ dengan $9$, $10$ dengan $5$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{3 \\times 10}{5 \\times 9} = \\frac{30}{45} = \\frac{2}{3}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil pembagian $\\frac{4}{7} : \\frac{2}{21}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "6"
+            },
+            {
+              "key": "B",
+              "text": "4"
+            },
+            {
+              "key": "C",
+              "text": "8"
+            },
+            {
+              "key": "D",
+              "text": "3"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Ubah menjadi perkalian dengan kebalikan pecahan kedua: $\\frac{4}{7} \\times \\frac{21}{2}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{4}{7} \\times \\frac{21}{2} = 2 \\times 3 = 6$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bentuk pecahan desimal dari $\\frac{5}{8}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "0,625"
+            },
+            {
+              "key": "B",
+              "text": "0,58"
+            },
+            {
+              "key": "C",
+              "text": "0,65"
+            },
+            {
+              "key": "D",
+              "text": "0,375"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Bagi 5 dengan 8 secara bersusun: $5 : 8 = 0{,}625$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{5}{8} = 0{,}625$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Ibu membeli gula pasir seberat $3\\frac{1}{4}\\text{ kg}$. Ibu menggunakan $1\\frac{1}{2}\\text{ kg}$ untuk membuat sirup. Sisa gula pasir ibu adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "1\\frac{3}{4}\\text{ kg}"
+            },
+            {
+              "key": "B",
+              "text": "1\\frac{1}{4}\\text{ kg}"
+            },
+            {
+              "key": "C",
+              "text": "2\\frac{1}{4}\\text{ kg}"
+            },
+            {
+              "key": "D",
+              "text": "1\\frac{1}{2}\\text{ kg}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$3\\frac{1}{4} - 1\\frac{2}{4} = 2\\frac{5}{4} - 1\\frac{2}{4} = 1\\frac{3}{4}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$3\\frac{1}{4} - 1\\frac{2}{4} = 1\\frac{3}{4}\\text{ kg}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Pak Doni memiliki sebidang tanah seluas 600 meter persegi. $\\frac{2}{5}$ bagian ditanami jagung dan sisanya ditanami kedelai. Luas tanah yang ditanami kedelai adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "360 m^2"
+            },
+            {
+              "key": "B",
+              "text": "240 m^2"
+            },
+            {
+              "key": "C",
+              "text": "300 m^2"
+            },
+            {
+              "key": "D",
+              "text": "400 m^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Bagian kedelai $= 1 - 2/5 = 3/5$. Luas $= \\frac{3}{5} \\times 600 = 360$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{3}{5} \\times 600 = 360\\text{ m}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil dari operasi desimal $4{,}85 + 2{,}6 - 1{,}32$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "6,13"
+            },
+            {
+              "key": "B",
+              "text": "6,23"
+            },
+            {
+              "key": "C",
+              "text": "5,93"
+            },
+            {
+              "key": "D",
+              "text": "6,03"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Lakukan penjumlahan desimal: $7{,}45 - 1{,}32 = 6{,}13$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$4{,}85 + 2{,}60 - 1{,}32 = 6{,}13$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah ember berisi $15\\frac{3}{4}$ liter air. Air tersebut akan dituangkan ke dalam beberapa botol yang masing-masing berkapasitas $\\frac{3}{4}$ liter. Berapa botol yang dibutuhkan?",
+          "options": [
+            {
+              "key": "A",
+              "text": "21 botol"
+            },
+            {
+              "key": "B",
+              "text": "20 botol"
+            },
+            {
+              "key": "C",
+              "text": "18 botol"
+            },
+            {
+              "key": "D",
+              "text": "24 botol"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Bagi $15\\frac{3}{4} = \\frac{63}{4}$ dengan $\\frac{3}{4}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{63}{4} : \\frac{3}{4} = \\frac{63}{3} = 21\\text{ botol}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Urutan pecahan $\\frac{1}{2}, \\frac{3}{4}, 0{,}6, 45\\%$ dari yang terkecil adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "45%, 1/2, 0,6, 3/4"
+            },
+            {
+              "key": "B",
+              "text": "1/2, 45%, 0,6, 3/4"
+            },
+            {
+              "key": "C",
+              "text": "45%, 0,6, 1/2, 3/4"
+            },
+            {
+              "key": "D",
+              "text": "1/2, 3/4, 45%, 0,6"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Ubah ke bentuk desimal: $45\\% = 0{,}45$, $1/2 = 0{,}50$, $0{,}60$, $3/4 = 0{,}75$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n0,45 < 0,50 < 0,60 < 0,75 $\\implies$ **45%, 1/2, 0,6, 3/4** (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah bak mandi mula-mula terisi $\\frac{1}{3}$ bagian. Setelah ditambah 40 liter air, bak tersebut terisi $\\frac{5}{6}$ bagian. Kapasitas penuh bak mandi tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "80 liter"
+            },
+            {
+              "key": "B",
+              "text": "90 liter"
+            },
+            {
+              "key": "C",
+              "text": "75 liter"
+            },
+            {
+              "key": "D",
+              "text": "100 liter"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Selisih bagian: $\\frac{5}{6} - \\frac{2}{6} = \\frac{3}{6} = \\frac{1}{2}$. Kapasitas $= 40 : \\frac{1}{2} = 80$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\text{Kapasitas} = 40 : \\left(\\frac{5}{6} - \\frac{1}{3}\\right) = 40 : \\frac{1}{2} = 80\\text{ liter}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Harga sebuah baju adalah Rp120.000,00. Toko memberikan diskon $25\\%$. Berapakah harga baju tersebut setelah didiskon?",
+          "options": [
+            {
+              "key": "A",
+              "text": "Rp90.000,00"
+            },
+            {
+              "key": "B",
+              "text": "Rp95.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp100.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp85.000,00"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Diskon $= 25\\% \\times 120.000 = 30.000$. Harga bayar $= 120.000 - 30.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$120.000 - 30.000 = \\text{Rp}90.000,00$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Rani mempunyai pita sepanjang $5\\frac{1}{2}\\text{ m}$. Diberikan kepada adiknya $1\\frac{3}{4}\\text{ m}$, lalu ia membeli lagi pita sepanjang $2\\frac{1}{4}\\text{ m}$. Panjang pita Rani sekarang adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "6 m"
+            },
+            {
+              "key": "B",
+              "text": "5,5 m"
+            },
+            {
+              "key": "C",
+              "text": "6,25 m"
+            },
+            {
+              "key": "D",
+              "text": "5,75 m"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$5\\frac{2}{4} - 1\\frac{3}{4} + 2\\frac{1}{4} = 3\\frac{3}{4} + 2\\frac{1}{4} = 6$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$5\\frac{1}{2} - 1\\frac{3}{4} + 2\\frac{1}{4} = 6\\text{ meter}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Nilai dari $\\left(1 - \\frac{1}{2}\\right) \\times \\left(1 - \\frac{1}{3}\\right) \\times \\left(1 - \\frac{1}{4}\\right) \\times \\left(1 - \\frac{1}{5}\\right)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{1}{5}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{1}{4}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{2}{5}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{1}{10}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sederhanakan setiap kurung: $\\frac{1}{2} \\times \\frac{2}{3} \\times \\frac{3}{4} \\times \\frac{4}{5} = \\frac{1}{5}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{1}{2} \\times \\frac{2}{3} \\times \\frac{3}{4} \\times \\frac{4}{5} = \\frac{1}{5}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b3-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Perbandingan tabungan Andi dan Budi adalah 3 : 5. Jika jumlah tabungan mereka berdua adalah Rp400.000,00, selisih tabungan mereka adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Rp100.000,00"
+            },
+            {
+              "key": "B",
+              "text": "Rp80.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp120.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp150.000,00"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Selisih $= \\frac{5 - 3}{3 + 5} \\times 400.000 = \\frac{2}{8} \\times 400.000 = 100.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{2}{8} \\times 400.000 = \\text{Rp}100.000,00$$ (Opsi A)."
         }
       ]
     },
@@ -611,6 +1907,438 @@ export const grade5Data = {
           "correctAnswer": "A",
           "hint": "Hitung keliling kebun terlebih dahulu: $K = 2 \\times (20 + 15) = 70\\text{ m}$, lalu bagi dengan jarak antar-tiang (5 m).",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Keliling kebun: $K = 2 \\times (20 + 15) = 2 \\times 35 = 70\\text{ meter}$.\n2. Banyak tiang yang dibutuhkan:\n$$\\text{Banyak tiang} = \\frac{70}{5} = 14\\text{ tiang}$$\nBanyak tiang yang dibutuhkan adalah **14 tiang** (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Keliling sebuah persegi yang memiliki panjang sisi 12 cm adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "48 cm"
+            },
+            {
+              "key": "B",
+              "text": "36 cm"
+            },
+            {
+              "key": "C",
+              "text": "24 cm"
+            },
+            {
+              "key": "D",
+              "text": "144 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Keliling persegi: $K = 4 \\times s$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$K = 4 \\times 12 = 48\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Keliling persegi panjang berukuran panjang 18 cm dan lebar 10 cm adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "56 cm"
+            },
+            {
+              "key": "B",
+              "text": "48 cm"
+            },
+            {
+              "key": "C",
+              "text": "54 cm"
+            },
+            {
+              "key": "D",
+              "text": "180 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$K = 2(p + l) = 2(18 + 10) = 56$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$K = 2(18 + 10) = 2 \\times 28 = 56\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah segitiga sama sisi memiliki keliling 45 cm. Panjang masing-masing sisinya adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "15 cm"
+            },
+            {
+              "key": "B",
+              "text": "12 cm"
+            },
+            {
+              "key": "C",
+              "text": "18 cm"
+            },
+            {
+              "key": "D",
+              "text": "10 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sisi segitiga sama sisi: $s = K / 3 = 45 / 3 = 15$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$s = \\frac{45}{3} = 15\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah jajar genjang memiliki panjang sisi sejajar 14 cm dan 9 cm. Keliling jajar genjang tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "46 cm"
+            },
+            {
+              "key": "B",
+              "text": "44 cm"
+            },
+            {
+              "key": "C",
+              "text": "48 cm"
+            },
+            {
+              "key": "D",
+              "text": "50 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$K = 2(a + b) = 2(14 + 9) = 46$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$K = 2(14 + 9) = 46\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Keliling sebuah belah ketupat adalah 68 cm. Panjang sisi belah ketupat tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "17 cm"
+            },
+            {
+              "key": "B",
+              "text": "16 cm"
+            },
+            {
+              "key": "C",
+              "text": "18 cm"
+            },
+            {
+              "key": "D",
+              "text": "15 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sisi belah ketupat: $s = K / 4 = 68 / 4 = 17$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$s = \\frac{68}{4} = 17\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Layang-layang memiliki panjang sisi yang berdekatan masing-masing 12 cm dan 18 cm. Keliling layang-layang tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "60 cm"
+            },
+            {
+              "key": "B",
+              "text": "54 cm"
+            },
+            {
+              "key": "C",
+              "text": "64 cm"
+            },
+            {
+              "key": "D",
+              "text": "72 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$K = 2(12 + 18) = 60$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$K = 2(12 + 18) = 60\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Pak Budi memagari kebunnya yang berbentuk persegi panjang berukuran $25\\text{ m} \\times 15\\text{ m}$. Jika biaya pembuatan pagar Rp50.000,00 per meter, total biaya yang dibutuhkan adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Rp4.000.000,00"
+            },
+            {
+              "key": "B",
+              "text": "Rp3.500.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp4.500.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp3.000.000,00"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Keliling $= 2(25 + 15) = 80$ m. Biaya $= 80 \\times 50.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$80 \\times 50.000 = \\text{Rp}4.000.000,00$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Keliling trapesium sama kaki dengan panjang sisi sejajar 10 cm dan 20 cm, serta panjang sisi miring 8 cm adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "46 cm"
+            },
+            {
+              "key": "B",
+              "text": "38 cm"
+            },
+            {
+              "key": "C",
+              "text": "44 cm"
+            },
+            {
+              "key": "D",
+              "text": "48 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Keliling $= 10 + 20 + 8 + 8 = 46$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$K = 10 + 20 + 2(8) = 46\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah lapangan berbentuk persegi memiliki keliling 160 meter. Danu berlari mengelilingi lapangan tersebut sebanyak 3 putaran. Jarak yang ditempuh Danu adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "480 meter"
+            },
+            {
+              "key": "B",
+              "text": "320 meter"
+            },
+            {
+              "key": "C",
+              "text": "640 meter"
+            },
+            {
+              "key": "D",
+              "text": "400 meter"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jarak $= 3 \\times 160 = 480$ meter.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$3 \\times 160 = 480\\text{ meter}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Keliling segitiga siku-siku dengan panjang sisi siku-siku 6 cm dan 8 cm adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "24 cm"
+            },
+            {
+              "key": "B",
+              "text": "20 cm"
+            },
+            {
+              "key": "C",
+              "text": "26 cm"
+            },
+            {
+              "key": "D",
+              "text": "28 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Hipotenusa $= \\sqrt{6^2 + 8^2} = 10$ cm. Keliling $= 6 + 8 + 10 = 24$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$K = 6 + 8 + 10 = 24\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah persegi panjang memiliki keliling 44 cm. Jika lebarnya 8 cm, maka panjang persegi panjang tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "14 cm"
+            },
+            {
+              "key": "B",
+              "text": "12 cm"
+            },
+            {
+              "key": "C",
+              "text": "15 cm"
+            },
+            {
+              "key": "D",
+              "text": "16 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$p = (K / 2) - l = 22 - 8 = 14$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$p = \\frac{44}{2} - 8 = 22 - 8 = 14\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dua buah persegi memiliki perbandingan sisi 2 : 3. Jika keliling persegi yang lebih kecil adalah 32 cm, keliling persegi yang lebih besar adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "48 cm"
+            },
+            {
+              "key": "B",
+              "text": "40 cm"
+            },
+            {
+              "key": "C",
+              "text": "56 cm"
+            },
+            {
+              "key": "D",
+              "text": "64 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sisi kecil $= 32 / 4 = 8$ cm. Sisi besar $= \\frac{3}{2} \\times 8 = 12$ cm. Keliling $= 4 \\times 12 = 48$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$K_2 = \\frac{3}{2} \\times 32 = 48\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah taman berbentuk persegi panjang memiliki panjang $(2x + 3)$ meter dan lebar $(x + 2)$ meter. Jika keliling taman adalah 46 meter, panjang taman tersebut sebenarnya adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "15 meter"
+            },
+            {
+              "key": "B",
+              "text": "12 meter"
+            },
+            {
+              "key": "C",
+              "text": "14 meter"
+            },
+            {
+              "key": "D",
+              "text": "16 meter"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$2(3x + 5) = 46 \\implies 3x + 5 = 23 \\implies 3x = 18 \\implies x = 6$. Panjang $= 2(6) + 3 = 15$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$p = 2(6) + 3 = 15\\text{ meter}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Di sekeliling kolam berbentuk persegi panjang dengan ukuran $16\\text{ m} \\times 12\\text{ m}$ dibuat jalan setapak selebar 1 meter. Keliling luar jalan setapak tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "64 meter"
+            },
+            {
+              "key": "B",
+              "text": "60 meter"
+            },
+            {
+              "key": "C",
+              "text": "56 meter"
+            },
+            {
+              "key": "D",
+              "text": "68 meter"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Panjang luar $= 16 + 2 = 18$ m, lebar luar $= 12 + 2 = 14$ m. $K = 2(18 + 14) = 64$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$K = 2(18 + 14) = 64\\text{ meter}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah kawat sepanjang 60 cm akan dibentuk menjadi segitiga sama kaki. Jika panjang alas segitiga 16 cm, panjang masing-masing sisi kakinya adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "22 cm"
+            },
+            {
+              "key": "B",
+              "text": "20 cm"
+            },
+            {
+              "key": "C",
+              "text": "24 cm"
+            },
+            {
+              "key": "D",
+              "text": "18 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kaki segitiga $= (60 - 16) / 2 = 44 / 2 = 22$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\text{kaki} = \\frac{60 - 16}{2} = 22\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b4-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Rangka layang-layang dibuat dari kawat. Jika panjang sisi-sisi layang-layang adalah 15 cm dan 25 cm, serta terdapat dua bilah bambu penyangga sepanjang 30 cm dan 40 cm, total panjang kawat dan bilah bambu yang dibutuhkan adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "150 cm"
+            },
+            {
+              "key": "B",
+              "text": "140 cm"
+            },
+            {
+              "key": "C",
+              "text": "160 cm"
+            },
+            {
+              "key": "D",
+              "text": "130 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Keliling $= 2(15 + 25) = 80$ cm. Total $= 80 + 30 + 40 = 150$ cm.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$80 + 30 + 40 = 150\\text{ cm}$$ (Opsi A)."
         }
       ]
     },
@@ -770,6 +2498,438 @@ export const grade5Data = {
           "correctAnswer": "A",
           "hint": "Gunakan rumus: $L = \\frac{a + b}{2} \\times t = \\frac{14 + 18}{2} \\times 8$.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Jumlah sisi sejajar: $14 + 18 = 32\\text{ cm}$.\n2. Luas trapesium:\n$$L = \\frac{32}{2} \\times 8 = 16 \\times 8 = 128\\text{ cm}^2$$\nLuas trapesium adalah **$128\\text{ cm}^2$** (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Luas persegi dengan panjang sisi 9 cm adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "81 cm^2"
+            },
+            {
+              "key": "B",
+              "text": "72 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "36 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "90 cm^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas persegi: $L = s \\times s = 9 \\times 9$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L = 9 \\times 9 = 81\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Luas daerah persegi panjang dengan panjang 15 cm dan lebar 8 cm adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "120 cm^2"
+            },
+            {
+              "key": "B",
+              "text": "110 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "46 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "125 cm^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$L = p \\times l = 15 \\times 8 = 120$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L = 15 \\times 8 = 120\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Luas segitiga dengan panjang alas 14 cm dan tinggi 10 cm adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "70 cm^2"
+            },
+            {
+              "key": "B",
+              "text": "140 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "80 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "60 cm^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas segitiga: $L = \\frac{1}{2} \\times a \\times t$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L = \\frac{1}{2} \\times 14 \\times 10 = 70\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah jajar genjang memiliki alas 18 cm dan tinggi 7 cm. Luas jajar genjang tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "126 cm^2"
+            },
+            {
+              "key": "B",
+              "text": "116 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "136 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "63 cm^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas jajar genjang: $L = a \\times t = 18 \\times 7$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L = 18 \\times 7 = 126\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Luas belah ketupat yang memiliki panjang diagonal 16 cm dan 12 cm adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "96 cm^2"
+            },
+            {
+              "key": "B",
+              "text": "192 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "84 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "108 cm^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas belah ketupat: $L = \\frac{1}{2} \\times d_1 \\times d_2$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L = \\frac{1}{2} \\times 16 \\times 12 = 96\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah layang-layang memiliki panjang diagonal 20 cm dan 15 cm. Luas layang-layang tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "150 cm^2"
+            },
+            {
+              "key": "B",
+              "text": "300 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "175 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "125 cm^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$L = \\frac{1}{2} \\times 20 \\times 15 = 150$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L = \\frac{1}{2} \\times 20 \\times 15 = 150\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Luas trapesium dengan panjang sisi sejajar 12 cm dan 18 cm serta tinggi 8 cm adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "120 cm^2"
+            },
+            {
+              "key": "B",
+              "text": "240 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "108 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "130 cm^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$L = \\frac{a + b}{2} \\times t = \\frac{30}{2} \\times 8 = 120$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L = \\frac{12 + 18}{2} \\times 8 = 15 \\times 8 = 120\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Luas sebuah persegi adalah $144\\text{ cm}^2$. Keliling persegi tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "48 cm"
+            },
+            {
+              "key": "B",
+              "text": "36 cm"
+            },
+            {
+              "key": "C",
+              "text": "52 cm"
+            },
+            {
+              "key": "D",
+              "text": "44 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sisi $= \\sqrt{144} = 12$ cm. Keliling $= 4 \\times 12 = 48$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$K = 4 \\times \\sqrt{144} = 4 \\times 12 = 48\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Lantai sebuah ruangan berukuran $6\\text{ m} \\times 4\\text{ m}$ akan dipasangi ubin berukuran $40\\text{ cm} \\times 40\\text{ cm}$. Banyak ubin yang dibutuhkan adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "150 ubin"
+            },
+            {
+              "key": "B",
+              "text": "120 ubin"
+            },
+            {
+              "key": "C",
+              "text": "200 ubin"
+            },
+            {
+              "key": "D",
+              "text": "160 ubin"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas lantai $= 240.000\\text{ cm}^2$. Luas ubin $= 1.600\\text{ cm}^2$. Banyak ubin $= 240.000 / 1.600 = 150$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\text{Banyak ubin} = \\frac{600 \\times 400}{40 \\times 40} = 15 \\times 10 = 150\\text{ ubin}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah segitiga memiliki luas $84\\text{ cm}^2$. Jika tingginya 12 cm, maka panjang alas segitiga tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "14 cm"
+            },
+            {
+              "key": "B",
+              "text": "12 cm"
+            },
+            {
+              "key": "C",
+              "text": "16 cm"
+            },
+            {
+              "key": "D",
+              "text": "10 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Alas $= \\frac{2 \\times L}{t} = \\frac{168}{12} = 14$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$a = \\frac{2 \\times 84}{12} = 14\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Kebun sayur Pak Harun berbentuk jajar genjang seluas $180\\text{ m}^2$. Jika panjang alas kebun 15 meter, tinggi kebun tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "12 meter"
+            },
+            {
+              "key": "B",
+              "text": "10 meter"
+            },
+            {
+              "key": "C",
+              "text": "14 meter"
+            },
+            {
+              "key": "D",
+              "text": "11 meter"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Tinggi $= L / a = 180 / 15 = 12$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$t = \\frac{180}{15} = 12\\text{ meter}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah persegi panjang dan persegi memiliki keliling yang sama yaitu 40 cm. Jika lebar persegi panjang 8 cm, selisih luas kedua bangun datar tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "4 cm^2"
+            },
+            {
+              "key": "B",
+              "text": "8 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "6 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "10 cm^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Persegi: $s = 10 \\implies L = 100$. Persegi panjang: $p = 12 \\implies L = 96$. Selisih $= 100 - 96 = 4$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$100 - (12 \\times 8) = 100 - 96 = 4\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Di tengah taman berbentuk persegi berukuran $14\\text{ m} \\times 14\\text{ m}$ dibuat kolam ikan berbentuk lingkaran dengan diameter 14 meter. Luas taman di luar kolam ikan adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "42 m^2"
+            },
+            {
+              "key": "B",
+              "text": "56 m^2"
+            },
+            {
+              "key": "C",
+              "text": "38 m^2"
+            },
+            {
+              "key": "D",
+              "text": "48 m^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas persegi $= 196$. Luas lingkaran $= \\frac{22}{7} \\times 7^2 = 154$. Sisa $= 196 - 154 = 42$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$196 - 154 = 42\\text{ m}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah trapesium memiliki luas $150\\text{ cm}^2$ dan tinggi 10 cm. Jika perbandingan panjang kedua sisi sejajarnya adalah 2 : 3, panjang sisi sejajar yang lebih panjang adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "18 cm"
+            },
+            {
+              "key": "B",
+              "text": "12 cm"
+            },
+            {
+              "key": "C",
+              "text": "15 cm"
+            },
+            {
+              "key": "D",
+              "text": "20 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$a + b = \\frac{2 \\times 150}{10} = 30$. Sisi panjang $= \\frac{3}{5} \\times 30 = 18$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{3}{5} \\times 30 = 18\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Bangun datar gabungan terdiri atas persegi panjang berukuran $10\\text{ cm} \\times 6\\text{ cm}$ dan segitiga yang berimpit pada salah satu sisi 10 cm dengan tinggi segitiga 4 cm. Luas total bangun gabungan tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "80 cm^2"
+            },
+            {
+              "key": "B",
+              "text": "90 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "70 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "85 cm^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas persegi panjang $= 60$. Luas segitiga $= \\frac{1}{2} \\times 10 \\times 4 = 20$. Total $= 60 + 20 = 80$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$60 + 20 = 80\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b5-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Tanah berbentuk belah ketupat dengan keliling 52 cm memiliki salah satu diagonal sepanjang 24 cm. Luas tanah tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "120 cm^2"
+            },
+            {
+              "key": "B",
+              "text": "240 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "144 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "156 cm^2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sisi $= 13$. Diagonal lain: $2 \\times \\sqrt{13^2 - 12^2} = 10$. Luas $= \\frac{1}{2} \\times 24 \\times 10 = 120$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L = \\frac{1}{2} \\times 24 \\times 10 = 120\\text{ cm}^2$$ (Opsi A)."
         }
       ]
     },
@@ -924,6 +3084,438 @@ export const grade5Data = {
           "correctAnswer": "A",
           "hint": "Satu putaran penuh $= 360^\\circ$. Hitung $\\frac{1}{3} \\times 360^\\circ = 120^\\circ$, lalu tentukan jenisnya.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hitung besar sudut: $\\frac{1}{3} \\times 360^\\circ = 120^\\circ$.\n2. Karena $120^\\circ$ berada di antara $90^\\circ$ dan $180^\\circ$, maka termasuk **sudut tumpul** (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Sudut yang besarnya tepat $90^\\circ$ disebut sudut...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Siku-siku"
+            },
+            {
+              "key": "B",
+              "text": "Lancip"
+            },
+            {
+              "key": "C",
+              "text": "Tumpul"
+            },
+            {
+              "key": "D",
+              "text": "Lurus"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sudut $90^\\circ$ membentuk sudut siku-siku.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nSudut $90^\\circ$ adalah **sudut siku-siku** (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sudut yang besarnya antara $0^\\circ$ dan $90^\\circ$ dikelompokkan sebagai sudut...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Lancip"
+            },
+            {
+              "key": "B",
+              "text": "Tumpul"
+            },
+            {
+              "key": "C",
+              "text": "Lurus"
+            },
+            {
+              "key": "D",
+              "text": "Refleks"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Besar sudut kurang dari $90^\\circ$ adalah sudut lancip.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nSudut tersebut adalah **sudut lancip** (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Besar sudut yang dibentuk oleh kedua jarum jam pada pukul 03.00 tepat adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "90^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "60^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "120^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "45^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jarum jam pendek di angka 3 dan jarum panjang di angka 12: $3 \\times 30^\\circ = 90^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$3 \\times 30^\\circ = 90^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sudut terkecil yang dibentuk oleh kedua jarum jam pada pukul 04.00 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "120^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "100^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "150^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "90^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Tiap 1 jam bernilai $30^\\circ$. Pukul 04.00 $= 4 \\times 30^\\circ = 120^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$4 \\times 30^\\circ = 120^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Alat yang digunakan untuk mengukur besar sudut secara akurat adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Busur derajat"
+            },
+            {
+              "key": "B",
+              "text": "Jangka"
+            },
+            {
+              "key": "C",
+              "text": "Penggaris segitiga"
+            },
+            {
+              "key": "D",
+              "text": "Meteran"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Busur derajat adalah instrumen pengukur besar sudut.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nAlatnya adalah **busur derajat** (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jumlah seluruh sudut dalam pada sebuah segitiga selalu sama dengan...",
+          "options": [
+            {
+              "key": "A",
+              "text": "180^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "360^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "90^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "270^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Teorema jumlah sudut segitiga $= 180^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nJumlah sudut segitiga adalah **$180^\\circ$** (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Pada segitiga siku-siku, jika salah satu sudut lancipnya adalah $35^\\circ$, maka besar sudut lancip lainnya adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "55^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "45^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "65^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "50^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sudut kedua $= 90^\\circ - 35^\\circ = 55^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$90^\\circ - 35^\\circ = 55^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah segitiga sama kaki memiliki satu sudut puncak sebesar $50^\\circ$. Besar masing-masing sudut alasnya adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "65^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "70^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "60^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "55^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sudut alas $= (180^\\circ - 50^\\circ) / 2 = 130^\\circ / 2 = 65^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{180^\\circ - 50^\\circ}{2} = 65^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Besar sudut lurus adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "180^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "360^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "90^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "270^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sudut lurus bernilai $180^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nBesarnya adalah **$180^\\circ$** (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sudut terkecil yang dibentuk oleh kedua jarum jam pada pukul 06.00 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "180^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "150^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "120^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "90^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jarum membentuk garis lurus ($180^\\circ$).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$6 \\times 30^\\circ = 180^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jumlah seluruh sudut dalam pada sebuah segi empat (seperti persegi atau persegi panjang) adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "360^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "180^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "270^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "400^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Segi empat terdiri dari 2 segitiga: $2 \\times 180^\\circ = 360^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nJumlah sudut segi empat adalah **$360^\\circ$** (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Besar sudut terkecil yang dibentuk oleh kedua jarum jam pada pukul 03.30 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "75^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "90^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "70^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "80^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jarum menit di angka 6 ($180^\\circ$). Jarum jam di $3{,}5 \\times 30^\\circ = 105^\\circ$. Selisih $= 180^\\circ - 105^\\circ = 75^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$180^\\circ - 105^\\circ = 75^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dua sudut saling berpelurus (suplemen). Jika sudut pertama besarnya tiga kali sudut kedua, besar sudut pertama adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "135^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "120^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "145^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "150^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$3x + x = 180^\\circ \\implies 4x = 180^\\circ \\implies x = 45^\\circ$. Sudut pertama $= 3(45^\\circ) = 135^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$3 \\times 45^\\circ = 135^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Pada jajar genjang $ABCD$, besar sudut $A = 70^\\circ$. Besar sudut $B$ yang bersebelahan adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "110^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "70^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "120^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "90^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Dua sudut bersebelahan pada jajar genjang berjumlah $180^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\angle B = 180^\\circ - 70^\\circ = 110^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sudut terkecil yang dibentuk oleh jarum jam pada pukul 08.20 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "130^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "120^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "140^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "125^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jarum jam: $8 \\times 30^\\circ + 20 \\times 0{,}5^\\circ = 250^\\circ$. Jarum menit: $20 \\times 6^\\circ = 120^\\circ$. Selisih $= 250^\\circ - 120^\\circ = 130^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$250^\\circ - 120^\\circ = 130^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b6-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah segi lima beraturan memiliki 5 sudut yang sama besar. Besar setiap sudut dalam segi lima beraturan tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "108^\\circ"
+            },
+            {
+              "key": "B",
+              "text": "120^\\circ"
+            },
+            {
+              "key": "C",
+              "text": "100^\\circ"
+            },
+            {
+              "key": "D",
+              "text": "115^\\circ"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Total sudut segi-$n$: $(n - 2) \\times 180^\\circ = 3 \\times 180^\\circ = 540^\\circ$. Tiap sudut $= 540^\\circ / 5 = 108^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{3 \\times 180^\\circ}{5} = 108^\\circ$$ (Opsi A)."
         }
       ]
     },
@@ -1073,6 +3665,438 @@ export const grade5Data = {
           "correctAnswer": "A",
           "hint": "Jajar genjang tidak bisa dilipat saling menutupi, tetapi dapat menempati bingkainya pada putaran $180^\\circ$ dan $360^\\circ$.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJajar genjang tidak memiliki simetri lipat (0 simetri lipat) dan memiliki **2 simetri putar** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Banyak simetri lipat yang dimiliki oleh bangun persegi adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "4"
+            },
+            {
+              "key": "B",
+              "text": "2"
+            },
+            {
+              "key": "C",
+              "text": "3"
+            },
+            {
+              "key": "D",
+              "text": "8"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Persegi memiliki 4 sumbu simetri lipat.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nPersegi memiliki **4 simetri lipat** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bangun datar yang memiliki 2 simetri lipat dan 2 simetri putar adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Persegi panjang"
+            },
+            {
+              "key": "B",
+              "text": "Segitiga sama sisi"
+            },
+            {
+              "key": "C",
+              "text": "Trapesium sama kaki"
+            },
+            {
+              "key": "D",
+              "text": "Layang-layang"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Persegi panjang memiliki 2 simetri lipat dan 2 simetri putar.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nBangun tersebut adalah **persegi panjang** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Banyak simetri putar yang dimiliki oleh bangun belah ketupat adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "2"
+            },
+            {
+              "key": "B",
+              "text": "4"
+            },
+            {
+              "key": "C",
+              "text": "1"
+            },
+            {
+              "key": "D",
+              "text": "3"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Belah ketupat memiliki 2 simetri putar tingkat dua.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nBelah ketupat memiliki **2 simetri putar** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bangun datar yang memiliki 4 sisi sama panjang dan 4 sudut siku-siku adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Persegi"
+            },
+            {
+              "key": "B",
+              "text": "Persegi panjang"
+            },
+            {
+              "key": "C",
+              "text": "Belah ketupat"
+            },
+            {
+              "key": "D",
+              "text": "Jajar genjang"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Karakteristik 4 sisi sama dan sudut siku-siku adalah persegi.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nBangun tersebut adalah **persegi** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bangun datar yang memiliki satu pasang sisi sejajar tetapi panjangnya tidak sama dinamakan...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Trapesium"
+            },
+            {
+              "key": "B",
+              "text": "Jajar genjang"
+            },
+            {
+              "key": "C",
+              "text": "Layang-layang"
+            },
+            {
+              "key": "D",
+              "text": "Belah ketupat"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Definisi trapesium adalah bangun segi empat dengan tepat sepasang sisi sejajar.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nBangun tersebut adalah **trapesium** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jumlah simetri lipat pada segitiga sama sisi adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "3"
+            },
+            {
+              "key": "B",
+              "text": "1"
+            },
+            {
+              "key": "C",
+              "text": "2"
+            },
+            {
+              "key": "D",
+              "text": "0"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Segitiga sama sisi memiliki 3 sumbu simetri lipat.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nSegitiga sama sisi memiliki **3 simetri lipat** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bangun layang-layang memiliki simetri lipat sebanyak...",
+          "options": [
+            {
+              "key": "A",
+              "text": "1"
+            },
+            {
+              "key": "B",
+              "text": "2"
+            },
+            {
+              "key": "C",
+              "text": "0"
+            },
+            {
+              "key": "D",
+              "text": "4"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Layang-layang memiliki 1 sumbu simetri lipat di sepanjang diagonal terpanjangnya.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nLayang-layang memiliki **1 simetri lipat** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bangun datar yang memiliki simetri lipat dan simetri putar tak terhingga adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Lingkaran"
+            },
+            {
+              "key": "B",
+              "text": "Persegi"
+            },
+            {
+              "key": "C",
+              "text": "Segi delapan"
+            },
+            {
+              "key": "D",
+              "text": "Oval"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Lingkaran simetris sempurna di setiap garis tengahnya.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nBangun tersebut adalah **lingkaran** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Persamaan antara persegi dan belah ketupat adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Semua sisinya sama panjang"
+            },
+            {
+              "key": "B",
+              "text": "Semua sudutnya siku-siku"
+            },
+            {
+              "key": "C",
+              "text": "Kedua diagonalnya sama panjang"
+            },
+            {
+              "key": "D",
+              "text": "Memiliki 4 simetri lipat"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Keduanya memiliki 4 sisi yang sama panjang.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nPersamaannya adalah **semua sisinya sama panjang** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bangun jajar genjang memiliki simetri lipat sebanyak...",
+          "options": [
+            {
+              "key": "A",
+              "text": "0"
+            },
+            {
+              "key": "B",
+              "text": "1"
+            },
+            {
+              "key": "C",
+              "text": "2"
+            },
+            {
+              "key": "D",
+              "text": "4"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jajar genjang umum tidak memiliki sumbu simetri lipat (0 simetri lipat).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nJajar genjang memiliki **0 simetri lipat** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Perbedaan antara persegi panjang dan jajar genjang terletak pada...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Besar sudut-sudutnya"
+            },
+            {
+              "key": "B",
+              "text": "Jumlah sisinya"
+            },
+            {
+              "key": "C",
+              "text": "Banyak pasangan sisi sejajar"
+            },
+            {
+              "key": "D",
+              "text": "Kelilingnya"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Persegi panjang memiliki sudut siku-siku ($90^\\circ$), sedangkan jajar genjang sudutnya tidak siku-siku.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nPerbedaannya terletak pada **besar sudut-sudutnya** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah segi delapan beraturan memiliki simetri putar sebanyak...",
+          "options": [
+            {
+              "key": "A",
+              "text": "8"
+            },
+            {
+              "key": "B",
+              "text": "4"
+            },
+            {
+              "key": "C",
+              "text": "6"
+            },
+            {
+              "key": "D",
+              "text": "16"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Segi-$n$ beraturan memiliki $n$ simetri putar.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nSegi delapan beraturan memiliki **8 simetri putar** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dua bangun datar yang selalu sebangun tanpa bergantung pada ukuran sisinya adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Dua lingkaran"
+            },
+            {
+              "key": "B",
+              "text": "Dua persegi panjang"
+            },
+            {
+              "key": "C",
+              "text": "Dua segitiga sama kaki"
+            },
+            {
+              "key": "D",
+              "text": "Dua belah ketupat"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Semua lingkaran memiliki perbandingan bentuk yang identik (konstan $\\pi$).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nDua lingkaran selalu **sebangun** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Suatu segi empat memiliki sifat: kedua diagonalnya saling tegak lurus, membagi dua sama panjang, dan sama panjang. Bangun tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Persegi"
+            },
+            {
+              "key": "B",
+              "text": "Belah ketupat"
+            },
+            {
+              "key": "C",
+              "text": "Persegi panjang"
+            },
+            {
+              "key": "D",
+              "text": "Layang-layang"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Saling tegak lurus, membagi dua, dan sama panjang adalah ciri khusus persegi.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nBangun tersebut adalah **persegi** (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Banyak diagonal yang dapat ditarik pada bangun segi enam adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "9"
+            },
+            {
+              "key": "B",
+              "text": "6"
+            },
+            {
+              "key": "C",
+              "text": "8"
+            },
+            {
+              "key": "D",
+              "text": "12"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rumus banyak diagonal segi-$n$: $D = \\frac{n(n - 3)}{2} = \\frac{6 \\times 3}{2} = 9$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$D = \\frac{6(6 - 3)}{2} = 9$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b7-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Bangun datar yang dibentuk oleh dua pasang sisi sama panjang, tetapi tidak sejajar, serta memiliki sepasang sudut berhadapan sama besar adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Layang-layang"
+            },
+            {
+              "key": "B",
+              "text": "Jajar genjang"
+            },
+            {
+              "key": "C",
+              "text": "Trapesium sama kaki"
+            },
+            {
+              "key": "D",
+              "text": "Belah ketupat"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Ciri-ciri tersebut mendefinisikan bangun layang-layang.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nBangun datar tersebut adalah **layang-layang** (Opsi A)."
         }
       ]
     },
@@ -1224,6 +4248,438 @@ export const grade5Data = {
           "correctAnswer": "A",
           "hint": "Jumlahkan seluruh pengunjung ($25 + 30 + 35 + 20 + 40 = 150$), lalu bagi dengan 5 hari.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total pengunjung: $25 + 30 + 35 + 20 + 40 = 150\\text{ orang}$.\n2. Rata-rata per hari:\n$$\\text{Rata-rata} = \\frac{150}{5} = 30\\text{ orang}$$\nRata-rata pengunjung per hari adalah **30 orang** (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Modus dari data berat badan (kg): 32, 34, 32, 35, 33, 32, 36 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "32 kg"
+            },
+            {
+              "key": "B",
+              "text": "34 kg"
+            },
+            {
+              "key": "C",
+              "text": "33 kg"
+            },
+            {
+              "key": "D",
+              "text": "35 kg"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Nilai 32 muncul paling banyak (3 kali).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nModus adalah **32 kg** (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Median dari data terurut: 5, 6, 7, 8, 9, 10, 11 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "8"
+            },
+            {
+              "key": "B",
+              "text": "7"
+            },
+            {
+              "key": "C",
+              "text": "9"
+            },
+            {
+              "key": "D",
+              "text": "7,5"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Data tengah dari 7 data ganjil adalah data ke-4.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nMedian data tersebut adalah **8** (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Nilai rata-rata dari data: 7, 8, 9, 6, 10 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "8"
+            },
+            {
+              "key": "B",
+              "text": "7,5"
+            },
+            {
+              "key": "C",
+              "text": "8,5"
+            },
+            {
+              "key": "D",
+              "text": "9"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Mean $= (7 + 8 + 9 + 6 + 10) / 5 = 40 / 5 = 8$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\bar{x} = \\frac{40}{5} = 8$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Pada piktogram (diagram gambar), 1 simbol buku mewakili 50 eksemplar buku. Jika perpustakaan memiliki 7 simbol buku, total buku adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "350 buku"
+            },
+            {
+              "key": "B",
+              "text": "300 buku"
+            },
+            {
+              "key": "C",
+              "text": "250 buku"
+            },
+            {
+              "key": "D",
+              "text": "400 buku"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Total $= 7 \\times 50 = 350$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$7 \\times 50 = 350\\text{ buku}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Diagram batang tinggi badan menunjukkan: Kelas A 135 cm, Kelas B 140 cm, Kelas C 138 cm, Kelas D 142 cm. Selisih tinggi tertinggi dan terendah adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "7 cm"
+            },
+            {
+              "key": "B",
+              "text": "5 cm"
+            },
+            {
+              "key": "C",
+              "text": "8 cm"
+            },
+            {
+              "key": "D",
+              "text": "6 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$142 - 135 = 7$ cm.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$142 - 135 = 7\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Median dari data genap: 10, 12, 14, 16, 18, 20 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "15"
+            },
+            {
+              "key": "B",
+              "text": "14"
+            },
+            {
+              "key": "C",
+              "text": "16"
+            },
+            {
+              "key": "D",
+              "text": "14,5"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rata-rata dua data tengah: $(14 + 16) / 2 = 15$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{14 + 16}{2} = 15$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Nilai ulangan matematika 5 orang siswa adalah 75, 80, 85, 90, 70. Nilai rata-rata ulangan mereka adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "80"
+            },
+            {
+              "key": "B",
+              "text": "78"
+            },
+            {
+              "key": "C",
+              "text": "82"
+            },
+            {
+              "key": "D",
+              "text": "79"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Total $= 400 / 5 = 80$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{400}{5} = 80$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Tabel frekuensi nilai siswa: Nilai 6 (4 anak), Nilai 7 (6 anak), Nilai 8 (8 anak), Nilai 9 (2 anak). Banyak siswa yang mendapat nilai lebih dari 7 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "10 anak"
+            },
+            {
+              "key": "B",
+              "text": "8 anak"
+            },
+            {
+              "key": "C",
+              "text": "12 anak"
+            },
+            {
+              "key": "D",
+              "text": "14 anak"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Siswa nilai 8 dan 9: $8 + 2 = 10$ anak.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$8 + 2 = 10\\text{ anak}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Diagram lingkaran menunjukkan hobi siswa: Futsal $40\\%$, Musik $25\\%$, Menari $15\\%$, sisanya Membaca. Persentase siswa yang gemar membaca adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "20%"
+            },
+            {
+              "key": "B",
+              "text": "25%"
+            },
+            {
+              "key": "C",
+              "text": "15%"
+            },
+            {
+              "key": "D",
+              "text": "30%"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$100\\% - (40\\% + 25\\% + 15\\%) = 100\\% - 80\\% = 20\\%$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$100\\% - 80\\% = 20\\%$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jika persentase gemar membaca adalah $20\\%$ dari total 150 siswa, banyak siswa yang gemar membaca adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "30 siswa"
+            },
+            {
+              "key": "B",
+              "text": "25 siswa"
+            },
+            {
+              "key": "C",
+              "text": "35 siswa"
+            },
+            {
+              "key": "D",
+              "text": "40 siswa"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$20\\% \\times 150 = 30$ siswa.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$0{,}20 \\times 150 = 30\\text{ siswa}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Data hasil panen padi (ton) selama 5 tahun: 24, 28, 26, 30, 32. Rata-rata hasil panen per tahun adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "28 ton"
+            },
+            {
+              "key": "B",
+              "text": "27 ton"
+            },
+            {
+              "key": "C",
+              "text": "29 ton"
+            },
+            {
+              "key": "D",
+              "text": "30 ton"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Total $= 140 / 5 = 28$ ton.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{140}{5} = 28\\text{ ton}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Rata-rata nilai ulangan 9 orang siswa adalah 78. Jika seorang siswa lain bernama Edo digabungkan, nilai rata-ratanya menjadi 80. Nilai ulangan Edo adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "98"
+            },
+            {
+              "key": "B",
+              "text": "96"
+            },
+            {
+              "key": "C",
+              "text": "95"
+            },
+            {
+              "key": "D",
+              "text": "92"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Total 10 siswa $= 800$. Total 9 siswa $= 702$. Nilai Edo $= 800 - 702 = 98$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$10(80) - 9(78) = 800 - 702 = 98$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Nilai rata-rata tes matematika dari 20 siswa perempuan adalah 82, sedangkan 10 siswa laki-laki memiliki rata-rata 76. Rata-rata seluruh siswa adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "80"
+            },
+            {
+              "key": "B",
+              "text": "79"
+            },
+            {
+              "key": "C",
+              "text": "81"
+            },
+            {
+              "key": "D",
+              "text": "78,5"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$\\bar{x} = \\frac{20(82) + 10(76)}{30} = \\frac{1.640 + 760}{30} = \\frac{2.400}{30} = 80$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{2.400}{30} = 80$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dalam diagram garis suhu badan pasien selama 5 jam tercatat: $37^\\circ\\text{C}, 38^\\circ\\text{C}, 39^\\circ\\text{C}, 38{,}5^\\circ\\text{C}, 37{,}5^\\circ\\text{C}$. Penurunan suhu terbesar terjadi antara jam ke...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Jam ke-4 dan jam ke-5 (turun 1,0 C)"
+            },
+            {
+              "key": "B",
+              "text": "Jam ke-3 dan jam ke-4 (turun 0,5 C)"
+            },
+            {
+              "key": "C",
+              "text": "Jam ke-1 dan jam ke-2"
+            },
+            {
+              "key": "D",
+              "text": "Jam ke-2 dan jam ke-3"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Dari $38{,}5^\\circ$ ke $37{,}5^\\circ$ turun $1{,}0^\\circ\\text{C}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nPenurunan terbesar adalah $38{,}5^\\circ - 37{,}5^\\circ = 1{,}0^\\circ\\text{C}$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Data nilai: 6, 7, 7, $x$, 8, 9 memiliki rata-rata 7,5. Nilai $x$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "8"
+            },
+            {
+              "key": "B",
+              "text": "7"
+            },
+            {
+              "key": "C",
+              "text": "9"
+            },
+            {
+              "key": "D",
+              "text": "6"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Total $= 6 \\times 7{,}5 = 45$. $6 + 7 + 7 + 8 + 9 = 37 \\implies x = 45 - 37 = 8$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x = 45 - 37 = 8$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b8-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah toko buku mencatat penjualan buku selama 6 hari dengan data: 20, 25, 22, 28, 25, $y$. Jika rata-rata penjualannya 24 buku per hari, maka nilai $y$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "24"
+            },
+            {
+              "key": "B",
+              "text": "23"
+            },
+            {
+              "key": "C",
+              "text": "25"
+            },
+            {
+              "key": "D",
+              "text": "22"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Total $= 6 \\times 24 = 144$. $20 + 25 + 22 + 28 + 25 = 120 \\implies y = 144 - 120 = 24$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$y = 144 - 120 = 24\\text{ buku}$$ (Opsi A)."
         }
       ]
     },
@@ -1374,6 +4830,438 @@ export const grade5Data = {
           "correctAnswer": "A",
           "hint": "Hitung total sumbangan ($350.000 + 425.000 = 775.000$), lalu kurangkan dari 1.000.000.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total sumbangan: $350.000 + 425.000 = 775.000$.\n2. Sisa uang:\n$$1.000.000 - 775.000 = \\text{Rp}225.000,00$$\nSisa uang dermawan adalah **Rp225.000,00** (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Nilai tempat angka 4 pada bilangan 482.750 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Ratus ribuan"
+            },
+            {
+              "key": "B",
+              "text": "Puluh ribuan"
+            },
+            {
+              "key": "C",
+              "text": "Ribuan"
+            },
+            {
+              "key": "D",
+              "text": "Jutaan"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Angka 4 berada di posisi ratus ribuan.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nNilai tempatnya adalah **ratus ribuan** (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bilangan 'tiga ratus tujuh puluh lima ribu enam ratus dua puluh' dituliskan dalam angka menjadi...",
+          "options": [
+            {
+              "key": "A",
+              "text": "375.620"
+            },
+            {
+              "key": "B",
+              "text": "375.260"
+            },
+            {
+              "key": "C",
+              "text": "357.620"
+            },
+            {
+              "key": "D",
+              "text": "375.602"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "375 ribu (375.000) + 620 = 375.620.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nPenulisan yang benar adalah **375.620** (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil penjumlahan $450.000 + 375.000$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "825.000"
+            },
+            {
+              "key": "B",
+              "text": "815.000"
+            },
+            {
+              "key": "C",
+              "text": "835.000"
+            },
+            {
+              "key": "D",
+              "text": "725.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$450 + 375 = 825$ ribu.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$450.000 + 375.000 = 825.000$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil pengurangan $1.000.000 - 645.000$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "355.000"
+            },
+            {
+              "key": "B",
+              "text": "365.000"
+            },
+            {
+              "key": "C",
+              "text": "455.000"
+            },
+            {
+              "key": "D",
+              "text": "345.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$1.000 - 645 = 355$ ribu.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$1.000.000 - 645.000 = 355.000$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil dari $25.000 \\times 30$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "750.000"
+            },
+            {
+              "key": "B",
+              "text": "75.000"
+            },
+            {
+              "key": "C",
+              "text": "7.500.000"
+            },
+            {
+              "key": "D",
+              "text": "700.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$25 \\times 3 = 75$ diikuti empat nol: 750.000.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$25.000 \\times 30 = 750.000$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil pembagian $600.000 : 15$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "40.000"
+            },
+            {
+              "key": "B",
+              "text": "4.000"
+            },
+            {
+              "key": "C",
+              "text": "400.000"
+            },
+            {
+              "key": "D",
+              "text": "50.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$60 : 15 = 4$ diikuti empat nol: 40.000.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$600.000 : 15 = 40.000$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bilangan 786.450 jika dibulatkan ke puluh ribuan terdekat menjadi...",
+          "options": [
+            {
+              "key": "A",
+              "text": "790.000"
+            },
+            {
+              "key": "B",
+              "text": "780.000"
+            },
+            {
+              "key": "C",
+              "text": "800.000"
+            },
+            {
+              "key": "D",
+              "text": "786.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Lihat angka ribuan yaitu 6 ($6 \\ge 5$), maka bulatkan ke atas.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nKarena angka ribuannya 6, maka dibulatkan ke atas menjadi **790.000** (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah perusahaan menyumbangkan 500 paket sembako. Jika tiap paket bernilai Rp180.000,00, total dana sumbangan tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Rp90.000.000,00"
+            },
+            {
+              "key": "B",
+              "text": "Rp9.000.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp85.000.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp95.000.000,00"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$500 \\times 180.000 = 90.000.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$500 \\times 180.000 = \\text{Rp}90.000.000,00$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Di antara bilangan berikut, manakah yang nilainya paling mendekati 500.000?",
+          "options": [
+            {
+              "key": "A",
+              "text": "498.750"
+            },
+            {
+              "key": "B",
+              "text": "502.500"
+            },
+            {
+              "key": "C",
+              "text": "495.000"
+            },
+            {
+              "key": "D",
+              "text": "505.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Selisih $498.750$ ke $500.000$ hanya $1.250$ (terkecil).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nSelisih terkecil adalah $|500.000 - 498.750| = 1.250$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Hasil operasi hitung campuran $250.000 + 150.000 : 3$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "300.000"
+            },
+            {
+              "key": "B",
+              "text": "400.000"
+            },
+            {
+              "key": "C",
+              "text": "200.000"
+            },
+            {
+              "key": "D",
+              "text": "350.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Dahulukan pembagian: $150.000 : 3 = 50.000$. Lalu jumlahkan: $250.000 + 50.000 = 300.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$250.000 + 50.000 = 300.000$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Pemerintah membangun jalan desa sepanjang 12.500 meter di tahap I dan 18.750 meter di tahap II. Target total pembangunan adalah 40.000 meter. Berapa panjang jalan yang belum dibangun?",
+          "options": [
+            {
+              "key": "A",
+              "text": "8.750 meter"
+            },
+            {
+              "key": "B",
+              "text": "9.750 meter"
+            },
+            {
+              "key": "C",
+              "text": "7.750 meter"
+            },
+            {
+              "key": "D",
+              "text": "8.250 meter"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$40.000 - (12.500 + 18.750) = 40.000 - 31.250 = 8.750$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$40.000 - 31.250 = 8.750\\text{ meter}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah gudang beras menyimpan 850.000 kg beras. Pada minggu pertama dikeluarkan 240.000 kg dan minggu kedua 315.000 kg. Kemudian masuk pasokan baru sebanyak 175.000 kg. Stok beras di gudang sekarang adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "470.000 kg"
+            },
+            {
+              "key": "B",
+              "text": "480.000 kg"
+            },
+            {
+              "key": "C",
+              "text": "460.000 kg"
+            },
+            {
+              "key": "D",
+              "text": "490.000 kg"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$850.000 - 555.000 + 175.000 = 295.000 + 175.000 = 470.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$850.000 - (240.000 + 315.000) + 175.000 = 470.000\\text{ kg}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Nilai dari $(450.000 - 150.000) : (25 \\times 4)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "3.000"
+            },
+            {
+              "key": "B",
+              "text": "300"
+            },
+            {
+              "key": "C",
+              "text": "30.000"
+            },
+            {
+              "key": "D",
+              "text": "300.000"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$300.000 : 100 = 3.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$300.000 : 100 = 3.000$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah mesin cetak otomatis dapat mencetak 12.000 lembar brosur per jam. Jika mesin beroperasi 8 jam sehari selama 5 hari kerja, total brosur yang dicetak adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "480.000 lembar"
+            },
+            {
+              "key": "B",
+              "text": "460.000 lembar"
+            },
+            {
+              "key": "C",
+              "text": "500.000 lembar"
+            },
+            {
+              "key": "D",
+              "text": "520.000 lembar"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$12.000 \\times 8 \\times 5 = 12.000 \\times 40 = 480.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$12.000 \\times 40 = 480.000\\text{ lembar}$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Selisih antara nilai angka 7 terbesar dan nilai angka 7 terkecil pada bilangan 757.270 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "699.930"
+            },
+            {
+              "key": "B",
+              "text": "700.000"
+            },
+            {
+              "key": "C",
+              "text": "693.000"
+            },
+            {
+              "key": "D",
+              "text": "699.300"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Angka 7 ratus ribuan (700.000) dan angka 7 puluhan (70): $700.000 - 70 = 699.930$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$700.000 - 70 = 699.930$$ (Opsi A)."
+        },
+        {
+          "id": "sd5-b9-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dalam rangka program penghijauan, disiapkan 1.000.000 bibit pohon untuk 8 kabupaten sama rata. Jika setiap kabupaten membagikan lagi bibit tersebut ke 25 kecamatan secara merata, berapa bibit yang diterima setiap kecamatan?",
+          "options": [
+            {
+              "key": "A",
+              "text": "5.000 bibit"
+            },
+            {
+              "key": "B",
+              "text": "4.000 bibit"
+            },
+            {
+              "key": "C",
+              "text": "6.000 bibit"
+            },
+            {
+              "key": "D",
+              "text": "4.500 bibit"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Tiap kabupaten $= 1.000.000 : 8 = 125.000$. Tiap kecamatan $= 125.000 : 25 = 5.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{1.000.000}{8 \\times 25} = \\frac{1.000.000}{200} = 5.000\\text{ bibit}$$ (Opsi A)."
         }
       ]
     }

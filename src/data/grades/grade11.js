@@ -1,6 +1,6 @@
 /**
  * Data Kurikulum Kelas 11 SMA (Fase F)
- * 3 Bab Wajib Resmi Sesuai Buku Siswa Matematika
+ * 3 Bab Utama Wajib Resmi Sesuai Buku Siswa Matematika
  */
 
 export const grade11Data = {
@@ -192,6 +192,411 @@ export const grade11Data = {
           "correctAnswer": "A",
           "hint": "Gunakan invers dari fungsi komposisi atau cari nilai $m$ terlebih dahulu dari Mesin II, kemudian cari $x$ dari Mesin I.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hubungan kedua mesin dimodelkan sebagai komposisi:\n$$Biskuit = (g \\circ f)(x) = g(f(x)) = g(1{,}5x + 2)$$\n2. Masukkan ke fungsi $g$:\n$$(g \\circ f)(x) = 2(1{,}5x + 2) - 1 = 3x + 4 - 1 = 3x + 3$$\n3. Diketahui hasil biskuit adalah 39 kg, sehingga:\n$$3x + 3 = 39$$\n$$3x = 39 - 3 = 36$$\n$$x = \\frac{36}{3} = 12\\text{ kg}$$\nJadi, tepung terigu mula-mula yang dimasukkan adalah **12 kg** (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Diketahui $f(x) = 2x + 5$ dan $g(x) = 3x - 1$. Rumus fungsi $(f \\circ g)(x)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "6x + 3"
+            },
+            {
+              "key": "B",
+              "text": "6x + 14"
+            },
+            {
+              "key": "C",
+              "text": "6x - 2"
+            },
+            {
+              "key": "D",
+              "text": "5x + 4"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Substitusikan $g(x)$ ke dalam $f(x)$: $(f \\circ g)(x) = f(g(x)) = 2(3x - 1) + 5$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(f \\circ g)(x) = 2(3x - 1) + 5 = 6x - 2 + 5 = 6x + 3$$\nRumusnya adalah **$6x + 3$** (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Diketahui $f(x) = x^2 - 4$ dan $g(x) = x + 3$. Nilai dari $(g \\circ f)(2)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "3"
+            },
+            {
+              "key": "B",
+              "text": "0"
+            },
+            {
+              "key": "C",
+              "text": "7"
+            },
+            {
+              "key": "D",
+              "text": "-1"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Hitung $f(2) = 2^2 - 4 = 0$, kemudian hitung $g(0) = 0 + 3 = 3$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $f(2) = 2^2 - 4 = 0$\n2. $(g \\circ f)(2) = g(f(2)) = g(0) = 0 + 3 = 3$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Invers dari fungsi $f(x) = 3x - 7$ adalah $f^{-1}(x) = \\dots$",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{x + 7}{3}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{x - 7}{3}"
+            },
+            {
+              "key": "C",
+              "text": "3x + 7"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{7 - x}{3}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Misalkan $y = 3x - 7$, lalu nyatakan $x$ dalam bentuk $y$: $x = \\frac{y + 7}{3}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$y = 3x - 7 \\implies 3x = y + 7 \\implies x = \\frac{y + 7}{3}$$\nInversnya adalah **$f^{-1}(x) = \\frac{x + 7}{3}$** (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Invers dari fungsi rasional $f(x) = \\frac{2x + 1}{x - 3}$, untuk $x \\neq 3$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{3x + 1}{x - 2}, x \\neq 2"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{3x - 1}{x + 2}, x \\neq -2"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{2x - 1}{x + 3}, x \\neq -3"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{-3x + 1}{x - 2}, x \\neq 2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rumus cepat invers $f(x) = \\frac{ax + b}{cx + d} \\implies f^{-1}(x) = \\frac{-dx + b}{cx - a}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nDengan $a = 2, b = 1, c = 1, d = -3$:\n$$f^{-1}(x) = \\frac{-(-3)x + 1}{1x - 2} = \\frac{3x + 1}{x - 2}, \\quad x \\neq 2$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Diketahui $(f \\circ g)(x) = 4x + 6$ dan $f(x) = 2x - 4$. Rumus fungsi $g(x)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "2x + 5"
+            },
+            {
+              "key": "B",
+              "text": "2x + 1"
+            },
+            {
+              "key": "C",
+              "text": "2x - 5"
+            },
+            {
+              "key": "D",
+              "text": "4x + 10"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Gunakan $f(g(x)) = 2g(x) - 4 = 4x + 6 \\implies 2g(x) = 4x + 10$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2g(x) - 4 = 4x + 6 \\implies 2g(x) = 4x + 10 \\implies g(x) = 2x + 5$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Diketahui $(f \\circ g)(x) = 2x^2 - 6x + 1$ dan $g(x) = x - 2$. Nilai dari $f(1)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "1"
+            },
+            {
+              "key": "B",
+              "text": "-3"
+            },
+            {
+              "key": "C",
+              "text": "5"
+            },
+            {
+              "key": "D",
+              "text": "0"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Untuk mencari $f(1)$, cari $x$ sehingga $g(x) = 1 \\implies x - 2 = 1 \\implies x = 3$. Lalu hitung $(f \\circ g)(3)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $g(x) = 1 \\implies x = 3$\n2. $f(1) = (f \\circ g)(3) = 2(3^2) - 6(3) + 1 = 18 - 18 + 1 = 1$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah pabrik kertas memproses kayu melalui dua tahap. Tahap I menghasilkan bubur kertas $m = f(x) = 0{,}8x - 10$ (dalam ton). Tahap II menghasilkan kertas siap jual $g(m) = 0{,}6m - 5$. Jika tersedia 100 ton kayu, berapa ton kertas siap jual yang dihasilkan?",
+          "options": [
+            {
+              "key": "A",
+              "text": "37 ton"
+            },
+            {
+              "key": "B",
+              "text": "35 ton"
+            },
+            {
+              "key": "C",
+              "text": "42 ton"
+            },
+            {
+              "key": "D",
+              "text": "39 ton"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Hitung $m = f(100) = 0{,}8(100) - 10 = 70$ ton. Lalu $g(70) = 0{,}6(70) - 5 = 42 - 5 = 37$ ton.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $m = 0{,}8(100) - 10 = 70\\text{ ton}$\n2. $g(70) = 0{,}6(70) - 5 = 37\\text{ ton}$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jika $f(x) = \\frac{x}{x + 1}$ untuk $x \\neq -1$, maka nilai dari $f^{-1}\\left(\\frac{1}{2}\\right)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "1"
+            },
+            {
+              "key": "B",
+              "text": "2"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{3}"
+            },
+            {
+              "key": "D",
+              "text": "-1"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Misalkan $f(x) = \\frac{1}{2} \\implies \\frac{x}{x + 1} = \\frac{1}{2} \\implies 2x = x + 1 \\implies x = 1$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{x}{x + 1} = \\frac{1}{2} \\implies 2x = x + 1 \\implies x = 1$$\nNilainya adalah **1** (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Diketahui $f(x) = 3x - 2$ dan $g(x) = x + 4$. Rumus fungsi $(f \\circ g)^{-1}(x)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{x - 10}{3}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{x + 10}{3}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{x + 2}{3}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{x - 2}{3}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Tentukan $(f \\circ g)(x) = 3(x + 4) - 2 = 3x + 10$. Inversnya adalah $\\frac{x - 10}{3}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(f \\circ g)(x) = 3x + 12 - 2 = 3x + 10$\n2. Invers: $y = 3x + 10 \\implies x = \\frac{y - 10}{3}$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jika $f(x) = 2x + 1$ dan $(f \\circ g)(x) = 2x^2 + 4x + 1$, maka rumus $g(x)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "x² + 2x"
+            },
+            {
+              "key": "B",
+              "text": "x² + 4x"
+            },
+            {
+              "key": "C",
+              "text": "2x² + 4x"
+            },
+            {
+              "key": "D",
+              "text": "x² - 2x"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$2g(x) + 1 = 2x^2 + 4x + 1 \\implies 2g(x) = 2x^2 + 4x \\implies g(x) = x^2 + 2x$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2g(x) + 1 = 2x^2 + 4x + 1 \\implies g(x) = x^2 + 2x$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Diketahui fungsi $f(x) = \\frac{ax + 1}{2x - 3}$. Jika $f^{-1}(1) = 2$, maka nilai dari konstanta $a$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "0"
+            },
+            {
+              "key": "B",
+              "text": "1"
+            },
+            {
+              "key": "C",
+              "text": "2"
+            },
+            {
+              "key": "D",
+              "text": "-1"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sifat invers: $f^{-1}(1) = 2 \\iff f(2) = 1$. Hitung $f(2) = \\frac{2a + 1}{2(2) - 3} = \\frac{2a + 1}{1} = 1 \\implies 2a = 0 \\implies a = 0$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$f(2) = 1 \\implies \\frac{2a + 1}{4 - 3} = 1 \\implies 2a + 1 = 1 \\implies a = 0$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Jika $f(x) = \\frac{x}{x - 1}$ untuk $x \\neq 1$, maka nilai dari $(f \\circ f \\circ f)(x)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{x}{x - 1}"
+            },
+            {
+              "key": "B",
+              "text": "x"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{x}"
+            },
+            {
+              "key": "D",
+              "text": "x - 1"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$(f \\circ f)(x) = \\frac{\\frac{x}{x-1}}{\\frac{x}{x-1} - 1} = \\frac{x}{x - (x - 1)} = x$. Maka $(f \\circ f \\circ f)(x) = f(x) = \\frac{x}{x - 1}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(f \\circ f)(x) = x$ (fungsi identitas)\n2. $(f \\circ f \\circ f)(x) = f(x) = \\frac{x}{x - 1}$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Suatu fungsi memenuhi $f(2x + 1) = \\frac{4x + 3}{2x - 1}$. Rumus $f(x)$ untuk $x \\neq 2$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{2x + 1}{x - 2}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{2x - 1}{x - 2}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{x + 2}{x - 1}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{4x - 1}{2x - 3}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Misalkan $u = 2x + 1 \\implies 2x = u - 1$. Substitusikan ke pembilang $2(u - 1) + 3 = 2u + 1$ dan penyebut $(u - 1) - 1 = u - 2$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$f(u) = \\frac{2(u - 1) + 3}{(u - 1) - 1} = \\frac{2u + 1}{u - 2} \\implies f(x) = \\frac{2x + 1}{x - 2}$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Fungsi $f: \\mathbb{R} \\to \\mathbb{R}$ didefinisikan oleh $f(x) = x^2 - 4x + 7$ dengan domain $x \\ge 2$. Rumus invers $f^{-1}(x)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "2 + \\sqrt{x - 3}"
+            },
+            {
+              "key": "B",
+              "text": "2 - \\sqrt{x - 3}"
+            },
+            {
+              "key": "C",
+              "text": "-2 + \\sqrt{x + 3}"
+            },
+            {
+              "key": "D",
+              "text": "4 + \\sqrt{x - 7}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Ubah ke kuadrat sempurna: $y = (x - 2)^2 + 3 \\implies (x - 2)^2 = y - 3 \\implies x - 2 = +\\sqrt{y - 3}$ (karena $x \\ge 2$).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(x - 2)^2 = y - 3 \\implies x = 2 + \\sqrt{y - 3} \\implies f^{-1}(x) = 2 + \\sqrt{x - 3}$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b1-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Diberikan $f(x) = 2x - 3$ dan $g(x) = 3x + k$. Jika $(f \\circ g)(x) = (g \\circ f)(x)$ berlaku untuk setiap $x \\in \\mathbb{R}$, maka nilai dari konstanta $k$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "-6"
+            },
+            {
+              "key": "B",
+              "text": "6"
+            },
+            {
+              "key": "C",
+              "text": "-3"
+            },
+            {
+              "key": "D",
+              "text": "3"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$(f \\circ g)(x) = 2(3x + k) - 3 = 6x + 2k - 3$. $(g \\circ f)(x) = 3(2x - 3) + k = 6x - 9 + k$. Samakan konstanta: $2k - 3 = k - 9 \\implies k = -6$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2k - 3 = k - 9 \\implies 2k - k = -9 + 3 \\implies k = -6$$ (Opsi A)."
         }
       ]
     },
@@ -377,6 +782,411 @@ export const grade11Data = {
           "correctAnswer": "A",
           "hint": "Garis singgung dalam menjumlahkan jari-jari: $(R + r) = 7 + 3 = 10$. Lalu hitung $\\sqrt{26^2 - 10^2}$.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Identifikasi parameter: $R = 7\\text{ cm}$, $r = 3\\text{ cm}$, $p = 26\\text{ cm}$.\n2. Hitung jumlah jari-jari: $R + r = 7 + 3 = 10\\text{ cm}$.\n3. Gunakan rumus GSPD:\n$$d_D = \\sqrt{p^2 - (R + r)^2} = \\sqrt{26^2 - 10^2} = \\sqrt{676 - 100} = \\sqrt{576} = 24\\text{ cm}$$\nJadi, panjang garis singgung persekutuan dalam adalah **$24\\text{ cm}$** (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Besar sudut keliling yang menghadap busur yang sama dengan sudut pusat $80^\\circ$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "40°"
+            },
+            {
+              "key": "B",
+              "text": "160°"
+            },
+            {
+              "key": "C",
+              "text": "80°"
+            },
+            {
+              "key": "D",
+              "text": "20°"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Besar sudut keliling sama dengan setengah dari besar sudut pusat: $\\frac{1}{2} \\times 80^\\circ = 40^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\angle \\text{keliling} = \\frac{1}{2} \\times \\angle \\text{pusat} = \\frac{1}{2} \\times 80^\\circ = 40^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Besar sudut keliling yang menghadap diameter lingkaran selalu sama dengan...",
+          "options": [
+            {
+              "key": "A",
+              "text": "90°"
+            },
+            {
+              "key": "B",
+              "text": "180°"
+            },
+            {
+              "key": "C",
+              "text": "60°"
+            },
+            {
+              "key": "D",
+              "text": "45°"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Diameter membentuk sudut pusat $180^\\circ$, sehingga sudut kelilingnya adalah $\\frac{1}{2} \\times 180^\\circ = 90^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSudut keliling menghadap diameter selalu **$90^\\circ$ (siku-siku)** (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Pada segiempat tali busur $ABCD$, besar $\\angle A = 75^\\circ$. Besar sudut yang berhadapan yaitu $\\angle C$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "105°"
+            },
+            {
+              "key": "B",
+              "text": "75°"
+            },
+            {
+              "key": "C",
+              "text": "115°"
+            },
+            {
+              "key": "D",
+              "text": "125°"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jumlah dua sudut yang saling berhadapan pada segiempat tali busur selalu $180^\\circ$: $\\angle C = 180^\\circ - 75^\\circ = 105^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\angle A + \\angle C = 180^\\circ \\implies \\angle C = 180^\\circ - 75^\\circ = 105^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Dua lingkaran memiliki jari-jari masing-masing 9 cm dan 4 cm. Jika jarak kedua pusat lingkaran adalah 13 cm, panjang garis singgung persekutuan luar (GSPL) adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "12 cm"
+            },
+            {
+              "key": "B",
+              "text": "10 cm"
+            },
+            {
+              "key": "C",
+              "text": "8 cm"
+            },
+            {
+              "key": "D",
+              "text": "11 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rumus GSPL: $d = \\sqrt{p^2 - (R - r)^2} = \\sqrt{13^2 - (9 - 4)^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12$ cm.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$d = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Dua lingkaran dengan jari-jari 5 cm dan 3 cm berjarak pusat 10 cm. Panjang garis singgung persekutuan dalam (GSPD) adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "6 cm"
+            },
+            {
+              "key": "B",
+              "text": "8 cm"
+            },
+            {
+              "key": "C",
+              "text": "7 cm"
+            },
+            {
+              "key": "D",
+              "text": "9 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rumus GSPD: $d = \\sqrt{p^2 - (R + r)^2} = \\sqrt{10^2 - (5 + 3)^2} = \\sqrt{100 - 64} = \\sqrt{36} = 6$ cm.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$d = \\sqrt{10^2 - 8^2} = \\sqrt{100 - 64} = \\sqrt{36} = 6\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah juring lingkaran dengan jari-jari 14 cm memiliki sudut pusat $90^\\circ$. Luas juring tersebut dengan $\\pi = \\frac{22}{7}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "154 cm²"
+            },
+            {
+              "key": "B",
+              "text": "308 cm²"
+            },
+            {
+              "key": "C",
+              "text": "77 cm²"
+            },
+            {
+              "key": "D",
+              "text": "616 cm²"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas juring $= \\frac{\\theta}{360^\\circ} \\times \\pi r^2 = \\frac{90}{360} \\times \\frac{22}{7} \\times 196 = \\frac{1}{4} \\times 616 = 154$ cm².",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L_j = \\frac{1}{4} \\times 616 = 154\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Panjang busur lingkaran yang memiliki sudut pusat $60^\\circ$ dan jari-jari 21 cm dengan $\\pi = \\frac{22}{7}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "22 cm"
+            },
+            {
+              "key": "B",
+              "text": "44 cm"
+            },
+            {
+              "key": "C",
+              "text": "11 cm"
+            },
+            {
+              "key": "D",
+              "text": "33 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Panjang busur $= \\frac{60}{360} \\times 2\\pi r = \\frac{1}{6} \\times 2 \\times \\frac{22}{7} \\times 21 = \\frac{1}{6} \\times 132 = 22$ cm.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\frac{1}{6} \\times 132 = 22\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Luas tembereng lingkaran dengan sudut pusat $90^\\circ$ dan jari-jari 10 cm dengan $\\pi = 3{,}14$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "28,5 cm²"
+            },
+            {
+              "key": "B",
+              "text": "50 cm²"
+            },
+            {
+              "key": "C",
+              "text": "78,5 cm²"
+            },
+            {
+              "key": "D",
+              "text": "25 cm²"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas juring $= \\frac{1}{4} \\times 3{,}14 \\times 100 = 78{,}5$ cm². Luas segitiga $= \\frac{1}{2} \\times 10 \\times 10 = 50$ cm². Luas tembereng $= 78{,}5 - 50 = 28{,}5$ cm².",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L_{\\text{tembereng}} = 78{,}5 - 50 = 28{,}5\\text{ cm}^2$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Pada lingkaran dengan pusat $O$, titik $A, B, C$ terletak pada lingkaran. Jika $\\angle AOB = 110^\\circ$ dan $\\angle BOC = 130^\\circ$, maka besar sudut keliling $\\angle ABC$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "60°"
+            },
+            {
+              "key": "B",
+              "text": "120°"
+            },
+            {
+              "key": "C",
+              "text": "55°"
+            },
+            {
+              "key": "D",
+              "text": "65°"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sudut pusat $\\angle AOC = 360^\\circ - (110^\\circ + 130^\\circ) = 360^\\circ - 240^\\circ = 120^\\circ$. Sudut keliling $= \\frac{1}{2} \\times 120^\\circ = 60^\\circ$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\angle AOC = 120^\\circ \\implies \\angle ABC = \\frac{1}{2} \\times 120^\\circ = 60^\\circ$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Dua roda gerigi dihubungkan oleh rantai luar. Jari-jari kedua roda adalah 15 cm dan 3 cm, serta jarak antara kedua pusat roda adalah 20 cm. Panjang rantai lurus bebas (garis singgung persekutuan luar) adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "16 cm"
+            },
+            {
+              "key": "B",
+              "text": "15 cm"
+            },
+            {
+              "key": "C",
+              "text": "18 cm"
+            },
+            {
+              "key": "D",
+              "text": "14 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "GSPL $= \\sqrt{20^2 - (15 - 3)^2} = \\sqrt{400 - 144} = \\sqrt{256} = 16$ cm.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$d = \\sqrt{20^2 - 12^2} = \\sqrt{256} = 16\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Pada segiempat tali busur $PQRS$, diketahui $\\angle P = (2x + 10)^\\circ$ dan $\\angle R = (3x + 20)^\\circ$. Nilai dari $x$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "30"
+            },
+            {
+              "key": "B",
+              "text": "25"
+            },
+            {
+              "key": "C",
+              "text": "35"
+            },
+            {
+              "key": "D",
+              "text": "40"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$\\angle P + \\angle R = 180^\\circ \\implies 5x + 30 = 180 \\implies 5x = 150 \\implies x = 30$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(2x + 10) + (3x + 20) = 180 \\implies 5x = 150 \\implies x = 30$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dua tali busur $AB$ dan $CD$ berpotongan di dalam lingkaran pada titik $E$. Jika $AE = 6$ cm, $EB = 8$ cm, dan $CE = 4$ cm, panjang ruas garis $ED$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "12 cm"
+            },
+            {
+              "key": "B",
+              "text": "10 cm"
+            },
+            {
+              "key": "C",
+              "text": "9 cm"
+            },
+            {
+              "key": "D",
+              "text": "14 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Teorema perpotongan tali busur: $AE \\times EB = CE \\times ED \\implies 6 \\times 8 = 4 \\times ED \\implies ED = 12$ cm.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$ED = \\frac{6 \\times 8}{4} = 12\\text{ cm}$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dari sebuah titik $P$ di luar lingkaran ditarik garis singgung $PT$ sepanjang 12 cm dan garis potong $PAB$ dengan $PA = 8$ cm. Panjang tali busur $AB$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "10 cm"
+            },
+            {
+              "key": "B",
+              "text": "18 cm"
+            },
+            {
+              "key": "C",
+              "text": "8 cm"
+            },
+            {
+              "key": "D",
+              "text": "12 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Teorema garis singgung dan garis potong: $PT^2 = PA \\times PB \\implies 144 = 8 \\times PB \\implies PB = 18$ cm. Maka $AB = PB - PA = 18 - 8 = 10$ cm.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $PB = \\frac{144}{8} = 18\\text{ cm}$\n2. $AB = 18 - 8 = 10\\text{ cm}$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Diketahui persamaan lingkaran $x^2 + y^2 = 25$. Persamaan garis singgung lingkaran tersebut yang melalui titik $P(3, 4)$ pada lingkaran adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "3x + 4y = 25"
+            },
+            {
+              "key": "B",
+              "text": "4x + 3y = 25"
+            },
+            {
+              "key": "C",
+              "text": "3x - 4y = 25"
+            },
+            {
+              "key": "D",
+              "text": "4x - 3y = 25"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rumus bagi adil: $x_1 x + y_1 y = r^2 \\implies 3x + 4y = 25$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3x + 4y = 25$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b2-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Titik pusat dan jari-jari lingkaran dengan persamaan $x^2 + y^2 - 6x + 8y - 11 = 0$ berturut-turut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "P(3, -4) dan r = 6"
+            },
+            {
+              "key": "B",
+              "text": "P(-3, 4) dan r = 6"
+            },
+            {
+              "key": "C",
+              "text": "P(3, -4) dan r = 36"
+            },
+            {
+              "key": "D",
+              "text": "P(-3, 4) dan r = 5"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Pusat: $(-\\frac{A}{2}, -\\frac{B}{2}) = (3, -4)$. Jari-jari: $r = \\sqrt{3^2 + (-4)^2 - (-11)} = \\sqrt{9 + 16 + 11} = \\sqrt{36} = 6$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Pusat $= (-\\frac{-6}{2}, -\\frac{8}{2}) = (3, -4)$\n2. Jari-jari $= \\sqrt{9 + 16 + 11} = \\sqrt{36} = 6$ (Opsi A)."
         }
       ]
     },
@@ -567,6 +1377,411 @@ export const grade11Data = {
           "correctAnswer": "A",
           "hint": "Perhatikan gradien kemiringan garis $b = -3$. Setiap kenaikan 1 satuan $x$ menyebabkan perubahan $\\Delta y = b \\times \\Delta x$.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Nilai gradien regresi adalah $b = -3$.\n2. Kenaikan nilai variabel bebas adalah $\\Delta x = 5$.\n3. Perubahan taksiran variabel terikat adalah:\n$$\\Delta \\hat{y} = b \\times \\Delta x = -3 \\times 5 = -15$$\nTanda negatif menyatakan penurunan, sehingga permintaan barang berkurang sebanyak **15 lusin** (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Pada diagram pencar (scatter plot), jika titik-titik data membentuk pola yang cenderung naik dari kiri bawah ke kanan atas, maka hubungan antara kedua variabel adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Korelasi positif"
+            },
+            {
+              "key": "B",
+              "text": "Korelasi negatif"
+            },
+            {
+              "key": "C",
+              "text": "Tidak ada korelasi"
+            },
+            {
+              "key": "D",
+              "text": "Korelasi kuadratik"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Pola naik dari kiri bawah ke kanan atas menunjukkan korelasi linear positif.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nHubungan tersebut adalah **korelasi positif** (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah garis regresi linear memiliki persamaan $\\hat{y} = 2{,}5x + 10$. Jika nilai variabel bebas $x = 8$, maka nilai prediksi $\\hat{y}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "30"
+            },
+            {
+              "key": "B",
+              "text": "28"
+            },
+            {
+              "key": "C",
+              "text": "32"
+            },
+            {
+              "key": "D",
+              "text": "25"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Substitusikan $x = 8$: $\\hat{y} = 2{,}5(8) + 10 = 20 + 10 = 30$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\hat{y} = 2{,}5(8) + 10 = 20 + 10 = 30$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Rentang nilai koefisien korelasi Pearson ($r$) selalu berada pada interval...",
+          "options": [
+            {
+              "key": "A",
+              "text": "-1 <= r <= 1"
+            },
+            {
+              "key": "B",
+              "text": "0 <= r <= 1"
+            },
+            {
+              "key": "C",
+              "text": "-1 < r < 1"
+            },
+            {
+              "key": "D",
+              "text": "r >= 0"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Nilai $r$ dibatasi antara $-1$ (korelasi negatif sempurna) hingga $+1$ (korelasi positif sempurna).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nNilai $r$ berada pada rentang **$-1 \\le r \\le 1$** (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jika koefisien korelasi dua variabel adalah $r = 0{,}8$, maka nilai koefisien determinasi ($R^2$) adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "64%"
+            },
+            {
+              "key": "B",
+              "text": "80%"
+            },
+            {
+              "key": "C",
+              "text": "16%"
+            },
+            {
+              "key": "D",
+              "text": "40%"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Koefisien determinasi $= r^2 = (0{,}8)^2 = 0{,}64 = 64\\%$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R^2 = (0{,}8)^2 = 0{,}64 = 64\\%$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Arti dari koefisien determinasi $R^2 = 75\\%$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "75% variasi nilai variabel terikat y dapat dijelaskan oleh variabel bebas x"
+            },
+            {
+              "key": "B",
+              "text": "75% data berada tepat pada garis lurus regresi"
+            },
+            {
+              "key": "C",
+              "text": "Korelasi kedua variabel bernilai 0,75"
+            },
+            {
+              "key": "D",
+              "text": "Variabel x menyebabkan perubahan 75% pada variabel y"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$R^2$ mengukur proporsi variabilitas variabel respons yang dijelaskan oleh model regresi.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nMaknanya adalah **75% variasi nilai $y$ dapat dijelaskan oleh variabel $x$** (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Persamaan regresi biaya promosi ($x$ dalam juta rupiah) terhadap omzet penjualan ($y$ dalam juta rupiah) adalah $\\hat{y} = 15 + 4{,}2x$. Jika biaya promosi adalah 10 juta rupiah, taksiran omzet penjualan adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "57 juta rupiah"
+            },
+            {
+              "key": "B",
+              "text": "52 juta rupiah"
+            },
+            {
+              "key": "C",
+              "text": "62 juta rupiah"
+            },
+            {
+              "key": "D",
+              "text": "47 juta rupiah"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Substitusikan $x = 10$: $\\hat{y} = 15 + 4{,}2(10) = 15 + 42 = 57$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\hat{y} = 15 + 4{,}2(10) = 57\\text{ juta rupiah}$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Dalam analisis regresi $\\hat{y} = a + bx$, titik koordinat yang selalu dilalui oleh garis regresi terbaik adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "(\\bar{x}, \\bar{y})"
+            },
+            {
+              "key": "B",
+              "text": "(0, 0)"
+            },
+            {
+              "key": "C",
+              "text": "(\\bar{x}, 0)"
+            },
+            {
+              "key": "D",
+              "text": "(0, \\bar{y})"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Garis regresi metode kuadrat terkecil selalu melewati titik rata-rata $(\\bar{x}, \\bar{y})$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nGaris regresi selalu melewati titik rata-rata **$(\\bar{x}, \\bar{y})$** (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Residu pada pengamatan ke-$i$ didefinisikan sebagai selisih antara nilai aktual dan nilai prediksi: $e_i = y_i - \\hat{y}_i$. Jika nilai aktual $y = 45$ dan nilai prediksinya $\\hat{y} = 42$, maka residunya adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "3"
+            },
+            {
+              "key": "B",
+              "text": "-3"
+            },
+            {
+              "key": "C",
+              "text": "87"
+            },
+            {
+              "key": "D",
+              "text": "1,07"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Residu $= 45 - 42 = 3$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$e = y - \\hat{y} = 45 - 42 = 3$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jika korelasi antara lama belajar ($x$) dan nilai ujian ($y$) adalah $r = 0{,}92$, kesimpulan yang paling tepat mengenai hubungan kedua variabel adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Hubungan linear positif yang sangat kuat"
+            },
+            {
+              "key": "B",
+              "text": "Hubungan linear positif yang lemah"
+            },
+            {
+              "key": "C",
+              "text": "Lama belajar menjadi satu-satunya penyebab nilai tinggi"
+            },
+            {
+              "key": "D",
+              "text": "Hubungan negatif kuat"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Nilai $r$ di atas 0,8 menunjukkan korelasi linear positif yang sangat kuat.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nNilai $r = 0{,}92$ mengindikasikan **hubungan linear positif yang sangat kuat** (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jika nilai korelasi $r = 0$, interpretasi yang tepat adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Tidak ada hubungan linear antara kedua variabel"
+            },
+            {
+              "key": "B",
+              "text": "Kedua variabel tidak memiliki hubungan sama sekali"
+            },
+            {
+              "key": "C",
+              "text": "Garis regresi tegak lurus sempurna"
+            },
+            {
+              "key": "D",
+              "text": "Data tidak valid"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$r = 0$ menunjukkan tidak adanya korelasi linear (namun mungkin ada hubungan non-linear).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$r = 0$ berarti **tidak ada hubungan linear** (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Diberikan data sampel dengan $\\bar{x} = 5, \\bar{y} = 14$ dan gradien garis regresi $b = 1{,}8$. Nilai intersep $a$ dari garis regresi $\\hat{y} = a + bx$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "5"
+            },
+            {
+              "key": "B",
+              "text": "4"
+            },
+            {
+              "key": "C",
+              "text": "6"
+            },
+            {
+              "key": "D",
+              "text": "3"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rumus intersep: $a = \\bar{y} - b\\bar{x} = 14 - 1{,}8(5) = 14 - 9 = 5$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$a = 14 - 1{,}8(5) = 14 - 9 = 5$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Suatu model regresi $\\hat{y} = -0{,}6x + 80$ memodelkan hubungan kecepatan berkendara ($x$ km/jam) terhadap jarak tempuh per liter bahan bakar ($y$). Jika seorang pengemudi melaju 60 km/jam dan kenyataannya menempuh 41 km/liter, berapakah residu pengamatan tersebut?",
+          "options": [
+            {
+              "key": "A",
+              "text": "-3"
+            },
+            {
+              "key": "B",
+              "text": "3"
+            },
+            {
+              "key": "C",
+              "text": "44"
+            },
+            {
+              "key": "D",
+              "text": "-44"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Nilai prediksi: $\\hat{y} = -0{,}6(60) + 80 = -36 + 80 = 44$. Residu: $e = y - \\hat{y} = 41 - 44 = -3$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $\\hat{y} = 44$\n2. $e = 41 - 44 = -3$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Pemberian pupuk ($x$) dan tinggi tanaman ($y$) memiliki kovarian $s_{xy} = 18$, simpangan baku $s_x = 3$, dan simpangan baku $s_y = 7{,}5$. Koefisien korelasi Pearson ($r$) antara $x$ dan $y$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "0,8"
+            },
+            {
+              "key": "B",
+              "text": "0,75"
+            },
+            {
+              "key": "C",
+              "text": "0,6"
+            },
+            {
+              "key": "D",
+              "text": "0,85"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rumus Pearson: $r = \\frac{s_{xy}}{s_x \\times s_y} = \\frac{18}{3 \\times 7{,}5} = \\frac{18}{22{,}5} = 0{,}8$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$r = \\frac{18}{22{,}5} = 0{,}8$$ (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Fenomena 'Korelasi Spurious' (Korelasi Semu) terjadi ketika...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Dua variabel tampak berkorelasi tinggi secara statistik tetapi tidak memiliki hubungan sebab-akibat nyata"
+            },
+            {
+              "key": "B",
+              "text": "Koefisien korelasi bernilai tepat 1"
+            },
+            {
+              "key": "C",
+              "text": "Diagram pencar membentuk garis horizontal sempurna"
+            },
+            {
+              "key": "D",
+              "text": "Data memiliki nilai residu yang selalu nol"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Korelasi semu adalah korelasi statistik kebetulan atau dipengaruhi variabel ketiga tersembunyi (confounding).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKorelasi semu adalah **dua variabel tampak berkorelasi tinggi tetapi tidak memiliki hubungan sebab-akibat nyata** (Opsi A)."
+        },
+        {
+          "id": "sma11-b3-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah garis regresi $\\hat{y} = 5 + 2x$ dihitung dari data dengan rentang $x$ antara 2 dan 10. Jika model digunakan untuk memprediksi nilai $y$ saat $x = 35$, tindakan tersebut dinamakan...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Ekstrapolasi (yang berisiko kurang akurat)"
+            },
+            {
+              "key": "B",
+              "text": "Interpolasi (yang sangat valid)"
+            },
+            {
+              "key": "C",
+              "text": "Transformasi data kuadratik"
+            },
+            {
+              "key": "D",
+              "text": "Uji autokorelasi"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Memprediksi nilai di luar rentang domain data sampel dinamakan ekstrapolasi.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTindakan memprediksi di luar rentang data pengamatan disebut **ekstrapolasi** (Opsi A)."
         }
       ]
     }

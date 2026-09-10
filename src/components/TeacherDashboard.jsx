@@ -49,15 +49,22 @@ import {
   ClipboardList
 } from 'lucide-react';
 
+export const PR_PACKETS = [
+  { index: 1, title: "Paket 1", range: "Soal 1–5", desc: "Dasar & Konsep", fullLabel: "Paket 1 (Soal 1–5: Dasar)" },
+  { index: 2, title: "Paket 2", range: "Soal 6–10", desc: "Sedang & Prosedural", fullLabel: "Paket 2 (Soal 6–10: Sedang)" },
+  { index: 3, title: "Paket 3", range: "Soal 11–15", desc: "Aplikasi & Terapan", fullLabel: "Paket 3 (Soal 11–15: Terapan)" },
+  { index: 4, title: "Paket 4", range: "Soal 16–20", desc: "Tantangan & Analisis", fullLabel: "Paket 4 (Soal 16–20: Tantangan)" }
+];
+
 export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setActiveTab, onBackToPublic, onSignOut }) {
   const [students, setStudents] = useState(getStudents());
   const [quests, setQuests] = useState(getQuests());
   
-  // Quest Generator state - default to 5 questions and recommended chapter for the first student
+  // Quest Generator state - 4 segments (5 questions per packet)
   const [targetStudentId, setTargetStudentId] = useState(students[0]?.id || "");
   const [generatorGrade, setGeneratorGrade] = useState(students[0]?.grade || 4);
   const [generatorChapterId, setGeneratorChapterId] = useState(() => getDefaultChapterForGrade(students[0]?.grade || 4));
-  const [questionCount, setQuestionCount] = useState(5);
+  const [selectedPacket, setSelectedPacket] = useState(1);
   const [deadline, setDeadline] = useState(getDefaultDeadlineDate());
   const [copiedNotification, setCopiedNotification] = useState(false);
   const [createdQuestInfo, setCreatedQuestInfo] = useState(null);
@@ -96,6 +103,28 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
     return ch || genGradeData.chapters[0];
   }, [genGradeData, generatorChapterId]);
 
+  // Packets already assigned to this target student for this chapter
+  const assignedPacketsForTarget = useMemo(() => {
+    if (!targetStudentId || !generatorChapterId) return [];
+    return quests
+      .filter((q) => q.studentId === targetStudentId && q.chapterId === generatorChapterId)
+      .map((q) => q.packetIndex || (q.title && q.title.match(/Paket (\d)/) ? Number(q.title.match(/Paket (\d)/)[1]) : null))
+      .filter(Boolean);
+  }, [targetStudentId, generatorChapterId, quests]);
+
+  // Recommended next packet (first unassigned packet 1..4)
+  const recommendedPacketForTarget = useMemo(() => {
+    for (let p = 1; p <= 4; p++) {
+      if (!assignedPacketsForTarget.includes(p)) return p;
+    }
+    return 1;
+  }, [assignedPacketsForTarget]);
+
+  // Auto-sync selectedPacket to recommended packet when target student or chapter changes
+  useEffect(() => {
+    setSelectedPacket(recommendedPacketForTarget);
+  }, [recommendedPacketForTarget]);
+
   // Recommended chapter for current generator grade according to academic calendar
   const recChapterForGen = useMemo(() => {
     const rec = getRecommendedChapter(generatorGrade);
@@ -126,7 +155,6 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
   const handleAssignToStudent = (student, specificChapterId = null) => {
     setTargetStudentId(student.id);
     setGeneratorGrade(student.grade);
-    setQuestionCount(5);
     if (specificChapterId) {
       setGeneratorChapterId(specificChapterId);
     } else {
@@ -135,20 +163,25 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
     setActiveTab('generator');
   };
 
-  // Handle Create Quest (5 questions by default)
+  // Handle Create Quest (5 questions according to selected Paket)
   const handleCreateQuest = () => {
     const student = students.find((s) => s.id === targetStudentId);
-    // Pick questions according to count directly from chapter questions
-    const selectedQuestions = genChapter.questions.slice(0, Math.min(questionCount, genChapter.questions.length));
-    
+    const startIdx = (selectedPacket - 1) * 5;
+    const endIdx = startIdx + 5;
+    const allQuestions = genChapter.questions || [];
+    const selectedQuestions = allQuestions.slice(startIdx, endIdx);
+    const actualEndIdx = Math.min(endIdx, allQuestions.length);
+
     const newQuest = createQuest({
-      title: `Quest: ${genChapter.title}`,
+      title: `Quest: ${genChapter.title} — Paket ${selectedPacket} (Soal ${startIdx + 1}–${actualEndIdx})`,
       grade: generatorGrade,
       chapterId: genChapter.id,
       chapterTitle: genChapter.title,
+      packetIndex: selectedPacket,
+      packetRange: `${startIdx + 1}–${actualEndIdx}`,
       track: genChapter.track || null,
       trackLabel: genChapter.trackLabel || null,
-      category: "LATIHAN",
+      category: "PR_PAKET",
       studentId: student?.id || "guest",
       studentName: student?.name || "Siswa",
       deadline: deadline || getDefaultDeadlineDate(),
@@ -220,9 +253,10 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
     const origin = window.location.origin;
     const questUrl = `${origin}/?questId=${quest.id}`;
     const trackInfo = quest.trackLabel ? ` [${quest.trackLabel}]` : "";
+    const packetInfo = quest.packetIndex ? `\n🎯 *Paket PR*: Paket ${quest.packetIndex} (Soal ${quest.packetRange || '5 Soal'})` : "";
     const deadlineText = quest.deadline ? `\n📅 *Tenggat Pengumpulan*: ${formatIndonesianDate(quest.deadline)}` : "";
 
-    return `Halo *${quest.studentName}*, ini tugas latihan matematika bab *${quest.chapterTitle}*${trackInfo} dari Sir Jevon.\n\nSilakan kerjakan 5 butir soal pada link berikut:\n🔗 ${questUrl}${deadlineText}\n\nLatihan sudah dilengkapi papan cakar digital dan pembahasan simpel dari Sir Jevon. Semangat belajar! 🔥\n\nSalam hangat,\n*Sir Jevon — AwesomeMathJ*`;
+    return `Halo *${quest.studentName}*, ini tugas latihan matematika bab *${quest.chapterTitle}*${trackInfo} dari Sir Jevon.${packetInfo}\n\nSilakan kerjakan 5 butir soal pada link berikut:\n🔗 ${questUrl}${deadlineText}\n\nLatihan sudah dilengkapi papan cakar digital dan pembahasan simpel dari Sir Jevon. Semangat belajar! 🔥\n\nSalam hangat,\n*Sir Jevon — AwesomeMathJ*`;
   };
 
   const copyWhatsAppMessage = (quest) => {
@@ -435,39 +469,82 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
             </div>
 
 
-            {/* Question Count & Deadline Date in 2 columns */}
-            <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: '0.75rem' }}>
-              <div className="form-group">
-                <label className="form-label" htmlFor="select-generator-count">
-                  4. Jumlah Soal:
+            {/* 4. Segment / Paket Selection (5 questions per packet) */}
+            <div className="form-group" style={{ marginBottom: '1.25rem' }}>
+              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.45rem', flexWrap: 'wrap', gap: '0.25rem' }}>
+                <label className="form-label" style={{ marginBottom: 0 }}>
+                  4. Pilih Paket PR (5 Soal per Segmen):
                 </label>
-                <select 
-                  id="select-generator-count"
-                  className="form-select"
-                  value={questionCount}
-                  onChange={(e) => setQuestionCount(Number(e.target.value))}
-                >
-                  <option value={3}>3 Butir Soal</option>
-                  <option value={5}>5 Butir Soal (Standar)</option>
-                </select>
+                <span style={{ fontSize: '0.75rem', color: 'var(--text-muted)' }}>
+                  Total 20 Soal Kurikulum Resmi
+                </span>
               </div>
 
-              <div className="form-group">
-                <label className="form-label" htmlFor="input-generator-deadline">
-                  5. Tenggat (Deadline):
-                </label>
-                <input 
-                  id="input-generator-deadline"
-                  type="date"
-                  className="form-input"
-                  value={deadline}
-                  onChange={(e) => setDeadline(e.target.value)}
-                />
+              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(auto-fit, minmax(130px, 1fr))', gap: '0.5rem' }}>
+                {PR_PACKETS.map((pkt) => {
+                  const isSelected = selectedPacket === pkt.index;
+                  const isAlreadyAssigned = assignedPacketsForTarget.includes(pkt.index);
+                  const isRecommended = recommendedPacketForTarget === pkt.index;
+
+                  return (
+                    <button
+                      key={pkt.index}
+                      type="button"
+                      id={`btn-select-packet-${pkt.index}`}
+                      onClick={() => setSelectedPacket(pkt.index)}
+                      style={{
+                        textAlign: 'left',
+                        padding: '0.65rem 0.75rem',
+                        borderRadius: 'var(--radius-sm)',
+                        border: isSelected ? '2px solid var(--primary-blue)' : '1px solid var(--border-subtle)',
+                        backgroundColor: isSelected ? 'var(--primary-light)' : '#FFFFFF',
+                        cursor: 'pointer',
+                        transition: 'all 0.15s ease',
+                        position: 'relative'
+                      }}
+                    >
+                      <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.2rem' }}>
+                        <strong style={{ fontSize: '0.85rem', color: isSelected ? 'var(--primary-navy)' : 'var(--text-primary)' }}>
+                          {pkt.title}
+                        </strong>
+                        {isAlreadyAssigned && (
+                          <span title="Sudah pernah ditugaskan" style={{ fontSize: '0.75rem', color: 'var(--status-emerald)', fontWeight: 700 }}>
+                            ✓ Diberikan
+                          </span>
+                        )}
+                        {isRecommended && !isAlreadyAssigned && (
+                          <span title="Rekomendasi Paket Berikutnya" style={{ fontSize: '0.72rem', color: '#B45309', fontWeight: 600 }}>
+                            ⭐ Rekomendasi
+                          </span>
+                        )}
+                      </div>
+                      <div style={{ fontSize: '0.74rem', color: 'var(--text-secondary)' }}>
+                        {pkt.range}
+                      </div>
+                      <div style={{ fontSize: '0.68rem', color: isSelected ? 'var(--primary-blue)' : 'var(--text-muted)', marginTop: '0.2rem' }}>
+                        {pkt.desc}
+                      </div>
+                    </button>
+                  );
+                })}
               </div>
             </div>
 
-            <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginBottom: '1.25rem' }}>
-              📅 Tenggat terpasang: <strong>{formatIndonesianDate(deadline)}</strong>
+            {/* 5. Deadline Date */}
+            <div className="form-group" style={{ marginBottom: '1.25rem' }}>
+              <label className="form-label" htmlFor="input-generator-deadline">
+                5. Tenggat (Deadline):
+              </label>
+              <input 
+                id="input-generator-deadline"
+                type="date"
+                className="form-input"
+                value={deadline}
+                onChange={(e) => setDeadline(e.target.value)}
+              />
+              <div style={{ fontSize: '0.78rem', color: 'var(--text-muted)', marginTop: '0.35rem' }}>
+                📅 Tenggat terpasang: <strong>{formatIndonesianDate(deadline)}</strong>
+              </div>
             </div>
 
             {/* Action to create quest */}

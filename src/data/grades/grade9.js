@@ -1,6 +1,6 @@
 /**
  * Data Kurikulum Kelas 9 SMP (Fase D)
- * 4 Bab Wajib Resmi Sesuai Buku Siswa Matematika
+ * 4 Bab Resmi Sesuai Buku Siswa Matematika
  */
 
 export const grade9Data = {
@@ -188,6 +188,411 @@ export const grade9Data = {
           "correctAnswer": "A",
           "hint": "Misalkan usia ayah $= x$ dan anak $= y$. Dua tahun lalu: $x - 2 = 4(y - 2)$. Tiga tahun lagi: $(x + 3) + (y + 3) = 55$.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hubungan waktu lampau (2 tahun lalu):\n$$x - 2 = 4(y - 2) \\implies x - 2 = 4y - 8 \\implies x - 4y = -6$$\n2. Hubungan masa depan (3 tahun lagi):\n$$(x + 3) + (y + 3) = 55 \\implies x + y + 6 = 55 \\implies x + y = 49$$\n3. Eliminasi $x$ dengan mengurangkan kedua persamaan:\n$$(x + y) - (x - 4y) = 49 - (-6)$$\n$$5y = 55 \\implies y = 11\\text{ tahun}$$\n4. Usia ayah sekarang:\n$$x = 49 - 11 = 38\\text{ tahun}$$\nUsia ayah sekarang adalah **38 tahun** (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Himpunan penyelesaian dari SPLDV $\\begin{cases} 2x + y = 9 \\\\ x - y = 3 \\end{cases}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "{(4, 1)}"
+            },
+            {
+              "key": "B",
+              "text": "{(3, 3)}"
+            },
+            {
+              "key": "C",
+              "text": "{(5, -1)}"
+            },
+            {
+              "key": "D",
+              "text": "{(2, 5)}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Gunakan metode eliminasi dengan menjumlahkan kedua persamaan untuk menghilangkan variabel $y$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Jumlahkan kedua persamaan: $(2x + y) + (x - y) = 9 + 3 \\implies 3x = 12 \\implies x = 4$\n2. Substitusikan $x = 4$ ke persamaan kedua: $4 - y = 3 \\implies y = 1$\nHimpunan penyelesaiannya adalah **{(4, 1)}** (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jika $x$ dan $y$ memenuhi sistem persamaan $\\begin{cases} 3x + 2y = 12 \\\\ x + 2y = 8 \\end{cases}$, maka nilai dari $x + y$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "5"
+            },
+            {
+              "key": "B",
+              "text": "6"
+            },
+            {
+              "key": "C",
+              "text": "4"
+            },
+            {
+              "key": "D",
+              "text": "7"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kurangkan kedua persamaan untuk mengeliminasi $y$, cari nilai $x$ lalu $y$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(3x + 2y) - (x + 2y) = 12 - 8 \\implies 2x = 4 \\implies x = 2$\n2. $2 + 2y = 8 \\implies 2y = 6 \\implies y = 3$\n3. Nilai $x + y = 2 + 3 = 5$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Harga 3 buku tulis dan 2 pulpen adalah Rp16.500,00, sedangkan harga 2 buku tulis dan 4 pulpen adalah Rp19.000,00. Model matematika yang sesuai adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\begin{cases} 3x + 2y = 16.500 \\\\ 2x + 4y = 19.000 \\end{cases}"
+            },
+            {
+              "key": "B",
+              "text": "\\begin{cases} 3x + 2y = 19.000 \\\\ 2x + 4y = 16.500 \\end{cases}"
+            },
+            {
+              "key": "C",
+              "text": "\\begin{cases} 2x + 3y = 16.500 \\\\ 4x + 2y = 19.000 \\end{cases}"
+            },
+            {
+              "key": "D",
+              "text": "\\begin{cases} 3x + 4y = 16.500 \\\\ 2x + 2y = 19.000 \\end{cases}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Misalkan $x =$ harga buku tulis dan $y =$ harga pulpen.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModel matematika yang tepat adalah:\n$$\\begin{cases} 3x + 2y = 16.500 \\\\ 2x + 4y = 19.000 \\end{cases}$$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Diketahui sistem persamaan $\\begin{cases} x = 2y - 1 \\\\ 3x + y = 11 \\end{cases}$. Nilai $x$ yang memenuhi adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "3"
+            },
+            {
+              "key": "B",
+              "text": "2"
+            },
+            {
+              "key": "C",
+              "text": "4"
+            },
+            {
+              "key": "D",
+              "text": "1"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Substitusikan bentuk $x = 2y - 1$ langsung ke persamaan kedua: $3(2y - 1) + y = 11$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $3(2y - 1) + y = 11 \\implies 6y - 3 + y = 11 \\implies 7y = 14 \\implies y = 2$\n2. $x = 2(2) - 1 = 3$\nNilai $x$ adalah **3** (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Penyelesaian dari sistem persamaan $\\begin{cases} 4x - 3y = 1 \\\\ 2x - y = 3 \\end{cases}$ adalah $(x_0, y_0)$. Nilai dari $2x_0 - 3y_0$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "-7"
+            },
+            {
+              "key": "B",
+              "text": "5"
+            },
+            {
+              "key": "C",
+              "text": "7"
+            },
+            {
+              "key": "D",
+              "text": "-5"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kalikan persamaan kedua dengan 2 lalu eliminasikan $x$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Kalikan persamaan kedua dengan 2: $4x - 2y = 6$\n2. Kurangkan dengan persamaan pertama: $(4x - 2y) - (4x - 3y) = 6 - 1 \\implies y = 5$\n3. $2x - 5 = 3 \\implies 2x = 8 \\implies x = 4$\n4. Nilai $2(4) - 3(5) = 8 - 15 = -7$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Keliling sebuah persegi panjang adalah 44 cm. Jika panjangnya 6 cm lebih dari lebarnya, maka luas persegi panjang tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "112 cm²"
+            },
+            {
+              "key": "B",
+              "text": "120 cm²"
+            },
+            {
+              "key": "C",
+              "text": "108 cm²"
+            },
+            {
+              "key": "D",
+              "text": "96 cm²"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Misalkan $p = l + 6$. Keliling: $2(p + l) = 44 \\implies p + l = 22$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(l + 6) + l = 22 \\implies 2l = 16 \\implies l = 8\\text{ cm}$\n2. $p = 8 + 6 = 14\\text{ cm}$\n3. Luas $= 14 \\times 8 = 112\\text{ cm}^2$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Jumlah umur Ibu dan umur Susi adalah 48 tahun. Empat tahun yang lalu, umur Ibu adalah empat kali umur Susi. Umur Susi saat ini adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "12 tahun"
+            },
+            {
+              "key": "B",
+              "text": "10 tahun"
+            },
+            {
+              "key": "C",
+              "text": "14 tahun"
+            },
+            {
+              "key": "D",
+              "text": "8 tahun"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Empat tahun lalu jumlah umur mereka adalah $48 - 8 = 40$ tahun. Umur Susi 4 tahun lalu: $40 : 5 = 8$ tahun.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Empat tahun lalu: $(I - 4) + (S - 4) = 40$\n2. Karena $I - 4 = 4(S - 4)$, maka $5(S - 4) = 40 \\implies S - 4 = 8$\n3. Umur Susi sekarang: $8 + 4 = 12\\text{ tahun}$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Di tempat parkir terdapat 75 kendaraan yang terdiri dari sepeda motor dan mobil. Jumlah seluruh roda adalah 210 buah. Jika tarif parkir motor Rp2.000 dan mobil Rp5.000, pendapatan parkir saat itu adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Rp240.000,00"
+            },
+            {
+              "key": "B",
+              "text": "Rp255.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp270.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp225.000,00"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "SPLDV: $m + k = 75$ dan $2m + 4k = 210$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Bagi persamaan roda dengan 2: $m + 2k = 105$\n2. Kurangkan dengan $m + k = 75 \\implies k = 30$ mobil\n3. $m = 75 - 30 = 45$ motor\n4. Pendapatan $= (45 \\times 2.000) + (30 \\times 5.000) = 90.000 + 150.000 = 240.000$ (Opsi B)."
+        },
+        {
+          "id": "smp9-b1-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Seorang pedagang menjual beras jenis A seharga Rp12.000/kg dan jenis B seharga Rp10.000/kg. Ia mencampur kedua beras tersebut sehingga diperoleh 50 kg beras campuran dengan harga rata-rata Rp11.200/kg. Banyak beras jenis A adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "30 kg"
+            },
+            {
+              "key": "B",
+              "text": "20 kg"
+            },
+            {
+              "key": "C",
+              "text": "25 kg"
+            },
+            {
+              "key": "D",
+              "text": "35 kg"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "SPLDV: $a + b = 50$ dan $12.000a + 10.000b = 50 \\times 11.200 = 560.000$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $12a + 10b = 560$\n2. $10a + 10b = 500$\n3. $2a = 60 \\implies a = 30\\text{ kg}$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sistem persamaan linear $\\begin{cases} \\frac{1}{x} + \\frac{1}{y} = \\frac{5}{6} \\\\ \\frac{1}{x} - \\frac{1}{y} = \\frac{1}{6} \\end{cases}$. Nilai dari $x \\times y$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "6"
+            },
+            {
+              "key": "B",
+              "text": "5"
+            },
+            {
+              "key": "C",
+              "text": "4"
+            },
+            {
+              "key": "D",
+              "text": "8"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Misalkan $u = \\frac{1}{x}$ dan $v = \\frac{1}{y}$. Maka $2u = 1 \\implies u = \\frac{1}{2} \\implies x = 2$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $2u = \\frac{6}{6} = 1 \\implies u = \\frac{1}{2} \\implies x = 2$\n2. $v = \\frac{5}{6} - \\frac{3}{6} = \\frac{2}{6} = \\frac{1}{3} \\implies y = 3$\n3. $x \\times y = 2 \\times 3 = 6$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Nilai $k$ agar sistem persamaan $\\begin{cases} 2x - 3y = 7 \\\\ 4x - ky = 14 \\end{cases}$ memiliki tak hingga banyak penyelesaian adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "6"
+            },
+            {
+              "key": "B",
+              "text": "-6"
+            },
+            {
+              "key": "C",
+              "text": "3"
+            },
+            {
+              "key": "D",
+              "text": "-3"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Agar tak hingga banyak penyelesaian, rasio koefisien harus sama: $\\frac{2}{4} = \\frac{-3}{-k} = \\frac{7}{14}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{4} = \\frac{3}{k} \\implies \\frac{1}{2} = \\frac{3}{k} \\implies k = 6$$\nNilai $k$ adalah **6** (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah perahu motor menempuh jarak 36 km ke arah hulu (melawan arus) dalam waktu 3 jam. Dalam perjalanan kembali ke arah hilir (searah arus), perahu menempuh jarak yang sama dalam waktu 2 jam. Kecepatan arus air sungai adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "3 km/jam"
+            },
+            {
+              "key": "B",
+              "text": "12 km/jam"
+            },
+            {
+              "key": "C",
+              "text": "15 km/jam"
+            },
+            {
+              "key": "D",
+              "text": "2 km/jam"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kecepatan lawan arus: $v_p - v_a = 36 : 3 = 12$. Kecepatan searah arus: $v_p + v_a = 36 : 2 = 18$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $v_p - v_a = 12$\n2. $v_p + v_a = 18$\n3. Kurangkan: $2v_a = 6 \\implies v_a = 3\\text{ km/jam}$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah bilangan dua digit bernilai 7 kali jumlah digit-digitnya. Jika kedua digit ditukar posisinya, bilangan baru yang terbentuk bernilai 36 kurangnya dari bilangan semula. Bilangan mula-mula adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "84"
+            },
+            {
+              "key": "B",
+              "text": "42"
+            },
+            {
+              "key": "C",
+              "text": "63"
+            },
+            {
+              "key": "D",
+              "text": "96"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Misalkan bilangan $10a + b$. $10a + b = 7(a + b) \\implies 3a = 6b \\implies a = 2b$. Selisih tukar: $9(a - b) = 36 \\implies a - b = 4$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $a = 2b$\n2. $2b - b = 4 \\implies b = 4$\n3. $a = 2(4) = 8$\nBilangan semula adalah **84** (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dua pipa A dan B jika dibuka bersamaan dapat mengisi kolam renang dalam waktu 6 jam. Jika pipa A dibuka 4 jam lalu ditutup, kemudian pipa B meneruskan selama 9 jam, kolam terisi penuh. Waktu yang diperlukan pipa A sendiri untuk mengisi kolam adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "10 jam"
+            },
+            {
+              "key": "B",
+              "text": "12 jam"
+            },
+            {
+              "key": "C",
+              "text": "15 jam"
+            },
+            {
+              "key": "D",
+              "text": "8 jam"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Misalkan kecepatan $\\frac{1}{a} + \\frac{1}{b} = \\frac{1}{6}$ dan $\\frac{4}{a} + \\frac{9}{b} = 1$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $4(\\frac{1}{a} + \\frac{1}{b}) + \\frac{5}{b} = 1 \\implies \\frac{4}{6} + \\frac{5}{b} = 1 \\implies \\frac{5}{b} = \\frac{1}{3} \\implies b = 15$ jam\n2. $\\frac{1}{a} = \\frac{1}{6} - \\frac{1}{15} = \\frac{5 - 2}{30} = \\frac{3}{30} = \\frac{1}{10} \\implies a = 10$ jam (Opsi A)."
+        },
+        {
+          "id": "smp9-b1-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Diketahui $x$ dan $y$ bilangan bulat positif yang memenuhi sistem $\\begin{cases} x^2 - y^2 = 33 \\\\ x + y = 11 \\end{cases}$. Nilai dari $2x - y$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "10"
+            },
+            {
+              "key": "B",
+              "text": "12"
+            },
+            {
+              "key": "C",
+              "text": "8"
+            },
+            {
+              "key": "D",
+              "text": "14"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Faktorkan: $(x - y)(x + y) = 33 \\implies (x - y)(11) = 33 \\implies x - y = 3$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x + y = 11$\n2. $x - y = 3$\n3. Jumlahkan: $2x = 14 \\implies x = 7$\n4. $y = 11 - 7 = 4$\n5. $2(7) - 4 = 14 - 4 = 10$ (Opsi A)."
         }
       ]
     },
@@ -376,6 +781,411 @@ export const grade9Data = {
           "correctAnswer": "A",
           "hint": "Ubah satuan ke cm: $r = 70\\text{ cm}$, tinggi $t = 1\\text{ m} = 100\\text{ cm}$. Cari volume dalam $\\text{cm}^3$, lalu bagi 1.000 untuk konversi ke liter.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Parameter: $r = \\frac{140}{2} = 70\\text{ cm}$ dan $t = 100\\text{ cm}$.\n2. Hitung volume tabung:\n$$V = \\frac{22}{7} \\times 70^2 \\times 100 = \\frac{22}{7} \\times 4.900 \\times 100 = 22 \\times 700 \\times 100 = 1.540.000\\text{ cm}^3$$\n3. Konversi ke liter:\n$$\\text{Volume} = \\frac{1.540.000}{1.000} = 1.540\\text{ liter}$$\nVolume minyak dalam drum adalah **1.540 liter** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah tabung memiliki jari-jari alas 7 cm dan tinggi 10 cm. Volume tabung tersebut dengan $\\pi = \\frac{22}{7}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "1.540 cm³"
+            },
+            {
+              "key": "B",
+              "text": "1.450 cm³"
+            },
+            {
+              "key": "C",
+              "text": "1.520 cm³"
+            },
+            {
+              "key": "D",
+              "text": "1.600 cm³"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rumus volume tabung: $V = \\pi r^2 t = \\frac{22}{7} \\times 7^2 \\times 10$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 49 \\times 10 = 154 \\times 10 = 1.540\\text{ cm}^3$$\nVolumenya adalah **1.540 cm³** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Luas selimut tabung yang berdiameter 14 cm dan tinggi 20 cm adalah... ($\\pi = \\frac{22}{7}$)",
+          "options": [
+            {
+              "key": "A",
+              "text": "880 cm²"
+            },
+            {
+              "key": "B",
+              "text": "840 cm²"
+            },
+            {
+              "key": "C",
+              "text": "920 cm²"
+            },
+            {
+              "key": "D",
+              "text": "780 cm²"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas selimut $= 2\\pi r t = \\pi d t = \\frac{22}{7} \\times 14 \\times 20$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L_s = \\frac{22}{7} \\times 14 \\times 20 = 44 \\times 20 = 880\\text{ cm}^2$$\nLuas selimutnya adalah **880 cm²** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah kerucut memiliki jari-jari alas 6 cm dan tinggi 8 cm. Panjang garis pelukis ($s$) kerucut tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "10 cm"
+            },
+            {
+              "key": "B",
+              "text": "12 cm"
+            },
+            {
+              "key": "C",
+              "text": "14 cm"
+            },
+            {
+              "key": "D",
+              "text": "9 cm"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Gunakan teorema Pythagoras: $s = \\sqrt{r^2 + t^2} = \\sqrt{6^2 + 8^2}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$$\nPanjang garis pelukisnya adalah **10 cm** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Volume kerucut dengan panjang jari-jari alas 7 cm dan tinggi 12 cm adalah... ($\\pi = \\frac{22}{7}$)",
+          "options": [
+            {
+              "key": "A",
+              "text": "616 cm³"
+            },
+            {
+              "key": "B",
+              "text": "528 cm³"
+            },
+            {
+              "key": "C",
+              "text": "640 cm³"
+            },
+            {
+              "key": "D",
+              "text": "580 cm³"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Volume kerucut $= \\frac{1}{3}\\pi r^2 t = \\frac{1}{3} \\times \\frac{22}{7} \\times 49 \\times 12$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{3} \\times 154 \\times 12 = 154 \\times 4 = 616\\text{ cm}^3$$\nVolumenya adalah **616 cm³** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Volume bola yang berjari-jari 21 cm dengan $\\pi = \\frac{22}{7}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "38.808 cm³"
+            },
+            {
+              "key": "B",
+              "text": "36.408 cm³"
+            },
+            {
+              "key": "C",
+              "text": "42.108 cm³"
+            },
+            {
+              "key": "D",
+              "text": "32.808 cm³"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Volume bola $= \\frac{4}{3}\\pi r^3 = \\frac{4}{3} \\times \\frac{22}{7} \\times 21^3$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{4}{3} \\times \\frac{22}{7} \\times 9.261 = \\frac{88}{21} \\times 9.261 = 88 \\times 441 = 38.808\\text{ cm}^3$$\nVolumenya adalah **38.808 cm³** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Luas permukaan bola yang berjari-jari 7 cm dengan $\\pi = \\frac{22}{7}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "616 cm²"
+            },
+            {
+              "key": "B",
+              "text": "308 cm²"
+            },
+            {
+              "key": "C",
+              "text": "154 cm²"
+            },
+            {
+              "key": "D",
+              "text": "1.232 cm²"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas bola $= 4\\pi r^2 = 4 \\times \\frac{22}{7} \\times 49$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 4 \\times 154 = 616\\text{ cm}^2$$\nLuas permukaannya adalah **616 cm²** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah drum minyak berbentuk tabung berdiameter 70 cm dan tinggi 1 meter. Jika drum terisi penuh, volume minyak adalah... ($\\pi = \\frac{22}{7}$)",
+          "options": [
+            {
+              "key": "A",
+              "text": "385 liter"
+            },
+            {
+              "key": "B",
+              "text": "350 liter"
+            },
+            {
+              "key": "C",
+              "text": "420 liter"
+            },
+            {
+              "key": "D",
+              "text": "320 liter"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jari-jari $= 35$ cm, tinggi $= 100$ cm. $V = \\frac{22}{7} \\times 35^2 \\times 100 = 385.000\\text{ cm}^3 = 385\\text{ liter}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 1.225 \\times 100 = 385.000\\text{ cm}^3 = 385\\text{ liter}$$\nVolume minyak adalah **385 liter** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah topi ulang tahun berbentuk kerucut memiliki diameter alas 14 cm dan garis pelukis 25 cm. Luas kertas karton minimal untuk membuat topi tersebut adalah... ($\\pi = \\frac{22}{7}$)",
+          "options": [
+            {
+              "key": "A",
+              "text": "550 cm²"
+            },
+            {
+              "key": "B",
+              "text": "500 cm²"
+            },
+            {
+              "key": "C",
+              "text": "600 cm²"
+            },
+            {
+              "key": "D",
+              "text": "450 cm²"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Topi ulang tahun tanpa alas: Luas selimut kerucut $= \\pi r s = \\frac{22}{7} \\times 7 \\times 25$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L_s = 22 \\times 25 = 550\\text{ cm}^2$$\nLuas kertas karton adalah **550 cm²** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah bola besi dimasukkan ke dalam tabung berisi air penuh. Jika jari-jari bola sama dengan jari-jari tabung yaitu 6 cm dan tinggi tabung 12 cm, perbandingan volume bola terhadap volume tabung adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "2 : 3"
+            },
+            {
+              "key": "B",
+              "text": "1 : 2"
+            },
+            {
+              "key": "C",
+              "text": "3 : 4"
+            },
+            {
+              "key": "D",
+              "text": "1 : 3"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Volume bola $= \\frac{4}{3}\\pi r^3$. Volume tabung $= \\pi r^2 (2r) = 2\\pi r^3$. Rasio $= \\frac{4}{3} : 2 = 4 : 6 = 2 : 3$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{V_{\\text{bola}}}{V_{\\text{tabung}}} = \\frac{\\frac{4}{3}\\pi r^3}{2\\pi r^3} = \\frac{2}{3}$$\nPerbandingannya adalah **2 : 3** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Luas permukaan setengah bola padat (pejal) yang memiliki jari-jari 10 cm adalah... ($\\pi = 3{,}14$)",
+          "options": [
+            {
+              "key": "A",
+              "text": "942 cm²"
+            },
+            {
+              "key": "B",
+              "text": "628 cm²"
+            },
+            {
+              "key": "C",
+              "text": "314 cm²"
+            },
+            {
+              "key": "D",
+              "text": "1.256 cm²"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas setengah bola pejal $= 3\\pi r^2 = 3 \\times 3{,}14 \\times 100$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 3\\pi r^2 = 3 \\times 314 = 942\\text{ cm}^2$$\nLuas permukaannya adalah **942 cm²** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Jika jari-jari sebuah tabung diperbesar menjadi 2 kali semula dan tingginya diperkecil menjadi $\\frac{1}{2}$ kali semula, perbandingan volume tabung setelah perubahan terhadap volume semula adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "2 : 1"
+            },
+            {
+              "key": "B",
+              "text": "4 : 1"
+            },
+            {
+              "key": "C",
+              "text": "1 : 1"
+            },
+            {
+              "key": "D",
+              "text": "1 : 2"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "$V_2 = \\pi (2r)^2 (\\frac{1}{2}t) = \\pi (4r^2) (\\frac{1}{2}t) = 2\\pi r^2 t = 2 V_1$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V_2 = \\pi (2r)^2 \\left(\\frac{1}{2}t\\right) = 2 \\pi r^2 t = 2V_1$$\nPerbandingannya adalah **2 : 1** (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah bandul timah padat dibentuk dari gabungan kerucut dan belahan bola dengan jari-jari sama yaitu 7 cm. Jika tinggi kerucut 24 cm, volume bandul tersebut adalah... ($\\pi = \\frac{22}{7}$)",
+          "options": [
+            {
+              "key": "A",
+              "text": "1.950,67 cm³"
+            },
+            {
+              "key": "B",
+              "text": "1.840,33 cm³"
+            },
+            {
+              "key": "C",
+              "text": "2.100,50 cm³"
+            },
+            {
+              "key": "D",
+              "text": "1.750,25 cm³"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Volume kerucut: $\\frac{1}{3} \\times \\frac{22}{7} \\times 49 \\times 24 = 1.232$. Setengah bola: $\\frac{2}{3} \\times \\frac{22}{7} \\times 343 = 718{,}67$. Total $= 1.232 + 718{,}67 = 1.950{,}67$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V_{\\text{kerucut}} = \\frac{1}{3} \\times 154 \\times 24 = 1.232\\text{ cm}^3$\n2. $V_{\\text{setengah bola}} = \\frac{2}{3} \\times \\frac{22}{7} \\times 343 = 718{,}67\\text{ cm}^3$\n3. Total $= 1.232 + 718{,}67 = 1.950{,}67\\text{ cm}^3$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah tangki air berbentuk tabung dengan jari-jari 1,4 meter dan tinggi 2 meter bocor sehingga air berkurang sebanyak 308 liter per jam. Waktu yang dibutuhkan agar air di dalam tangki yang semula penuh menjadi kosong adalah... ($\\pi = \\frac{22}{7}$)",
+          "options": [
+            {
+              "key": "A",
+              "text": "40 jam"
+            },
+            {
+              "key": "B",
+              "text": "35 jam"
+            },
+            {
+              "key": "C",
+              "text": "45 jam"
+            },
+            {
+              "key": "D",
+              "text": "50 jam"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Volume tangki $= \\frac{22}{7} \\times 1{,}4^2 \\times 2 = 12{,}32\\text{ m}^3 = 12.320\\text{ liter}$. Waktu $= 12.320 : 308 = 40$ jam.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = \\frac{22}{7} \\times 1{,}96 \\times 2 = 12{,}32\\text{ m}^3 = 12.320\\text{ liter}$\n2. Waktu $= 12.320 : 308 = 40\\text{ jam}$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Suatu kerucut terpancung memiliki jari-jari lingkaran alas 10 cm, jari-jari lingkaran atas 4 cm, dan tinggi 8 cm. Volume kerucut terpancung tersebut adalah... ($\\pi = 3{,}14$)",
+          "options": [
+            {
+              "key": "A",
+              "text": "1.306,24 cm³"
+            },
+            {
+              "key": "B",
+              "text": "1.250,50 cm³"
+            },
+            {
+              "key": "C",
+              "text": "1.420,10 cm³"
+            },
+            {
+              "key": "D",
+              "text": "1.180,60 cm³"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Volume kerucut terpancung: $V = \\frac{1}{3}\\pi t (R^2 + Rr + r^2) = \\frac{1}{3} \\times 3{,}14 \\times 8 \\times (100 + 40 + 16) = \\frac{1}{3} \\times 25{,}12 \\times 156 = 1.306{,}24$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{3}\\pi t (R^2 + Rr + r^2) = \\frac{1}{3} \\times 3{,}14 \\times 8 \\times 156 = 1.306{,}24\\text{ cm}^3$$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b2-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah kawat silinder tembaga memiliki panjang 100 meter (10.000 cm) dan jari-jari penampang 0,1 cm. Jika massa jenis tembaga adalah $8{,}9\\text{ g/cm}^3$, massa kawat tersebut dengan $\\pi = 3{,}14$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "2.794,6 gram"
+            },
+            {
+              "key": "B",
+              "text": "2.540,0 gram"
+            },
+            {
+              "key": "C",
+              "text": "2.980,0 gram"
+            },
+            {
+              "key": "D",
+              "text": "3.140,0 gram"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Volume kawat $= \\pi r^2 t = 3{,}14 \\times (0{,}1)^2 \\times 10.000 = 314\\text{ cm}^3$. Massa $= 314 \\times 8{,}9 = 2.794{,}6$ gram.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = 3{,}14 \\times 0{,}01 \\times 10.000 = 314\\text{ cm}^3$\n2. $\\text{Massa} = 314 \\times 8{,}9 = 2.794{,}6\\text{ gram}$ (Opsi A)."
         }
       ]
     },
@@ -538,6 +1348,438 @@ export const grade9Data = {
           "correctAnswer": "A",
           "hint": "Lakukan dilatasi terlebih dahulu: $(-3(-2), -3(3)) = (6, -9)$, lalu tukar posisinya untuk refleksi garis $y = x$.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Dilatasi dengan pusat $O$ dan skala $k = -3$:\n$$K'(-3(-2), -3(3)) = K'(6, -9)$$\n2. Refleksi titik $K'(6, -9)$ terhadap garis $y = x$ menukar posisinya: $(x, y) \\to (y, x)$:\n$$K''(-9, 6)$$\nKoordinat akhirnya adalah **$(-9, 6)$** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Bayangan titik $A(2, 5)$ yang ditranslasikan oleh $T = \\begin{pmatrix} 3 \\\\ -2 \\end{pmatrix}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "A'(5, 3)"
+            },
+            {
+              "key": "B",
+              "text": "A'(5, 7)"
+            },
+            {
+              "key": "C",
+              "text": "A'(-1, 7)"
+            },
+            {
+              "key": "D",
+              "text": "A'(6, -10)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jumlahkan koordinat awal dengan vektor translasi: $(x + a, y + b) = (2 + 3, 5 - 2)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A' = (2 + 3, 5 - 2) = (5, 3)$$\nKoordinat bayangannya adalah **A'(5, 3)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bayangan titik $B(-4, 7)$ yang direfleksikan terhadap sumbu-$X$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "B'(-4, -7)"
+            },
+            {
+              "key": "B",
+              "text": "B'(4, 7)"
+            },
+            {
+              "key": "C",
+              "text": "B'(4, -7)"
+            },
+            {
+              "key": "D",
+              "text": "B'(-7, -4)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap sumbu-$X$: $(x, y) \\to (x, -y)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$B'(-4, -7)$$\nBayangannya adalah **B'(-4, -7)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bayangan titik $C(3, -8)$ yang direfleksikan terhadap sumbu-$Y$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "C'(-3, -8)"
+            },
+            {
+              "key": "B",
+              "text": "C'(3, 8)"
+            },
+            {
+              "key": "C",
+              "text": "C'(-3, 8)"
+            },
+            {
+              "key": "D",
+              "text": "C'(-8, 3)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap sumbu-$Y$: $(x, y) \\to (-x, y)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C'(-3, -8)$$\nBayangannya adalah **C'(-3, -8)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bayangan titik $D(5, 2)$ yang direfleksikan terhadap garis $y = x$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "D'(2, 5)"
+            },
+            {
+              "key": "B",
+              "text": "D'(-5, -2)"
+            },
+            {
+              "key": "C",
+              "text": "D'(-2, -5)"
+            },
+            {
+              "key": "D",
+              "text": "D'(5, -2)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap garis $y = x$: $(x, y) \\to (y, x)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$D'(2, 5)$$\nBayangannya adalah **D'(2, 5)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bayangan titik $P(4, -3)$ yang dirotasikan sejauh $90^\\circ$ berlawanan arah jarum jam dengan pusat $O(0, 0)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "P'(3, 4)"
+            },
+            {
+              "key": "B",
+              "text": "P'(-3, -4)"
+            },
+            {
+              "key": "C",
+              "text": "P'(-4, 3)"
+            },
+            {
+              "key": "D",
+              "text": "P'(4, 3)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rotasi $[O, 90^\\circ]$: $(x, y) \\to (-y, x)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P'(-(-3), 4) = P'(3, 4)$$\nBayangannya adalah **P'(3, 4)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Titik $Q(-2, 6)$ didilatasikan dengan pusat $O(0, 0)$ dan faktor skala $k = 3$. Koordinat bayangan titik $Q$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Q'(-6, 18)"
+            },
+            {
+              "key": "B",
+              "text": "Q'(-6, 2)"
+            },
+            {
+              "key": "C",
+              "text": "Q'(1, 9)"
+            },
+            {
+              "key": "D",
+              "text": "Q'(6, -18)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Dilatasi $[O, k]$: $(x, y) \\to (kx, ky) = (3(-2), 3(6))$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Q' = (3 \\times (-2), 3 \\times 6) = (-6, 18)$$\nBayangannya adalah **Q'(-6, 18)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Titik $A(1, 4)$ ditranslasikan oleh $T_1 = \\begin{pmatrix} 2 \\\\ 3 \\end{pmatrix}$ kemudian dilanjutkan translasi oleh $T_2 = \\begin{pmatrix} -4 \\\\ 1 \\end{pmatrix}$. Bayangan akhir titik $A$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "A'(-1, 8)"
+            },
+            {
+              "key": "B",
+              "text": "A'(3, 7)"
+            },
+            {
+              "key": "C",
+              "text": "A'(-1, 6)"
+            },
+            {
+              "key": "D",
+              "text": "A'(1, 8)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Translasi gabungan: $T = T_1 + T_2 = \\begin{pmatrix} 2 - 4 \\\\ 3 + 1 \\end{pmatrix} = \\begin{pmatrix} -2 \\\\ 4 \\end{pmatrix}$. $A' = (1 - 2, 4 + 4)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A' = (1 + 2 - 4, 4 + 3 + 1) = (-1, 8)$$\nBayangannya adalah **A'(-1, 8)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bayangan titik $K(3, 7)$ yang direfleksikan terhadap garis $x = 5$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "K'(7, 7)"
+            },
+            {
+              "key": "B",
+              "text": "K'(5, 7)"
+            },
+            {
+              "key": "C",
+              "text": "K'(2, 7)"
+            },
+            {
+              "key": "D",
+              "text": "K'(8, 7)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap $x = h$: $x' = 2h - x = 2(5) - 3 = 7$, sedangkan $y' = y = 7$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x' = 2(5) - 3 = 7, \\quad y' = 7 \\implies K'(7, 7)$$\nBayangannya adalah **K'(7, 7)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bayangan titik $M(-2, 4)$ yang direfleksikan terhadap garis $y = 1$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "M'(-2, -2)"
+            },
+            {
+              "key": "B",
+              "text": "M'(-2, 2)"
+            },
+            {
+              "key": "C",
+              "text": "M'(4, 1)"
+            },
+            {
+              "key": "D",
+              "text": "M'(-2, 3)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap $y = k$: $y' = 2k - y = 2(1) - 4 = -2$, sedangkan $x' = x = -2$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x' = -2, \\quad y' = 2(1) - 4 = -2 \\implies M'(-2, -2)$$\nBayangannya adalah **M'(-2, -2)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Bayangan titik $R(5, -1)$ yang dirotasikan sejauh $180^\\circ$ dengan pusat $O(0, 0)$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "R'(-5, 1)"
+            },
+            {
+              "key": "B",
+              "text": "R'(5, 1)"
+            },
+            {
+              "key": "C",
+              "text": "R'(-1, 5)"
+            },
+            {
+              "key": "D",
+              "text": "R'(-5, -1)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rotasi $[O, 180^\\circ]$: $(x, y) \\to (-x, -y)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R'(-5, -(-1)) = R'(-5, 1)$$\nBayangannya adalah **R'(-5, 1)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah segitiga $ABC$ dengan luas 15 cm² didilatasikan dengan faktor skala $k = 4$. Luas bayangan segitiga tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "240 cm²"
+            },
+            {
+              "key": "B",
+              "text": "60 cm²"
+            },
+            {
+              "key": "C",
+              "text": "120 cm²"
+            },
+            {
+              "key": "D",
+              "text": "180 cm²"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas bangun hasil dilatasi $= k^2 \\times \\text{Luas awal} = 4^2 \\times 15 = 16 \\times 15 = 240$ cm².",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas bayangan} = 4^2 \\times 15 = 16 \\times 15 = 240\\text{ cm}^2$$\nLuasnya adalah **240 cm²** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Bayangan garis $2x + 3y = 6$ yang ditranslasikan oleh $T = \\begin{pmatrix} 1 \\\\ -2 \\end{pmatrix}$ memiliki persamaan...",
+          "options": [
+            {
+              "key": "A",
+              "text": "2x + 3y = 2"
+            },
+            {
+              "key": "B",
+              "text": "2x + 3y = 10"
+            },
+            {
+              "key": "C",
+              "text": "2x - 3y = 2"
+            },
+            {
+              "key": "D",
+              "text": "3x + 2y = 4"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Gunakan substitusi $x = x' - 1$ dan $y = y' + 2$: $2(x - 1) + 3(y + 2) = 6 \\implies 2x - 2 + 3y + 6 = 6 \\implies 2x + 3y = 2$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2(x - 1) + 3(y + 2) = 6 \\implies 2x + 3y + 4 = 6 \\implies 2x + 3y = 2$$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Titik $P(2, -3)$ direfleksikan terhadap garis $y = -x$, kemudian dilanjutkan dengan translasi oleh $T = \\begin{pmatrix} -1 \\\\ 4 \\end{pmatrix}$. Koordinat bayangan akhir titik $P$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "P'(2, 2)"
+            },
+            {
+              "key": "B",
+              "text": "P'(4, 2)"
+            },
+            {
+              "key": "C",
+              "text": "P'(2, -2)"
+            },
+            {
+              "key": "D",
+              "text": "P'(3, 1)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "1. Refleksi $y = -x$: $(x, y) \\to (-y, -x) = (3, -2)$. 2. Translasi: $(3 - 1, -2 + 4) = (2, 2)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Cermin $y = -x$: $P'(3, -2)$\n2. Translasi: $P''(3 - 1, -2 + 4) = P''(2, 2)$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Bayangan titik $A(3, 5)$ oleh dilatasi dengan pusat $P(1, 2)$ dan faktor skala $k = 2$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "A'(5, 8)"
+            },
+            {
+              "key": "B",
+              "text": "A'(6, 10)"
+            },
+            {
+              "key": "C",
+              "text": "A'(4, 7)"
+            },
+            {
+              "key": "D",
+              "text": "A'(7, 11)"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rumus dilatasi pusat $(a, b)$: $x' = a + k(x - a) = 1 + 2(3 - 1) = 5$, $y' = b + k(y - b) = 2 + 2(5 - 2) = 8$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- $x' = 1 + 2(2) = 5$\n- $y' = 2 + 2(3) = 8$\nBayangannya adalah **A'(5, 8)** (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah titik $T(a, b)$ dicerminkan terhadap sumbu-$X$ menghasilkan titik $(4, -6)$. Kemudian titik $(4, -6)$ ditranslasikan oleh $\\begin{pmatrix} -1 \\\\ 2 \\end{pmatrix}$ menghasilkan $(c, d)$. Nilai dari $a + b + c + d$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "9"
+            },
+            {
+              "key": "B",
+              "text": "11"
+            },
+            {
+              "key": "C",
+              "text": "7"
+            },
+            {
+              "key": "D",
+              "text": "13"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Dari $T'(4, -6)$ cermin sumbu-$X$, maka $a = 4$ dan $b = 6$. Bayangan translasi: $c = 4 - 1 = 3$ dan $d = -6 + 2 = -4$. $a + b + c + d = 4 + 6 + 3 - 4 = 9$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $T(a, b) = (4, 6) \\implies a = 4, b = 6$\n2. $(c, d) = (4 - 1, -6 + 2) = (3, -4)$\n3. $a + b + c + d = 4 + 6 + 3 - 4 = 9$ (Opsi A)."
+        },
+        {
+          "id": "smp9-b3-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Luas lingkaran $L$ dengan jari-jari 7 cm didilatasikan oleh $[O, 3]$. Perubahan (pertambahan) luas lingkaran tersebut dengan $\\pi = \\frac{22}{7}$ adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "1.232 cm²"
+            },
+            {
+              "key": "B",
+              "text": "1.386 cm²"
+            },
+            {
+              "key": "C",
+              "text": "1.540 cm²"
+            },
+            {
+              "key": "D",
+              "text": "1.078 cm²"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas awal $= \\frac{22}{7} \\times 49 = 154$ cm². Luas baru $= 3^2 \\times 154 = 9 \\times 154 = 1.386$ cm². Pertambahan luas $= 1.386 - 154 = 1.232$ cm².",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Luas awal $= 154\\text{ cm}^2$\n2. Luas baru $= 9 \\times 154 = 1.386\\text{ cm}^2$\n3. Pertambahan $= 1.386 - 154 = 1.232\\text{ cm}^2$ (Opsi A)."
         }
       ]
     },
@@ -693,6 +1935,438 @@ export const grade9Data = {
           "correctAnswer": "A",
           "hint": "Peluang sisi Gambar $= \\frac{1}{2}$, peluang mata dadu ganjil $\\{1, 3, 5\\} = \\frac{3}{6} = \\frac{1}{2}$. Kalikan keduanya, lalu kalikan 120.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Peluang gabungan saling bebas:\n$$P = P(\\text{Gambar}) \\times P(\\text{Ganjil}) = \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$$\n2. Frekuensi harapan:\n$$F_h = 120 \\times \\frac{1}{4} = 30\\text{ kali}$$\nFrekuensi harapan adalah **30 kali** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-5",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Populasi adalah seluruh objek yang menjadi sasaran penelitian, sedangkan sampel adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Sebagian dari populasi yang diambil untuk mewakili populasi"
+            },
+            {
+              "key": "B",
+              "text": "Data yang sudah diolah menjadi tabel"
+            },
+            {
+              "key": "C",
+              "text": "Seluruh data yang bernilai ekstrem"
+            },
+            {
+              "key": "D",
+              "text": "Jumlah frekuensi terbanyak"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Sampel merupakan bagian representatif yang diambil dari populasi.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSampel adalah **sebagian dari populasi yang mewakili populasi** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-6",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Seorang peneliti ingin mengetahui kualitas air sumur di sebuah desa yang terdiri dari 500 rumah. Peneliti mengambil sampel air dari 25 rumah yang dipilih secara acak. Populasi dari penelitian tersebut adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Air sumur seluruh rumah di desa tersebut (500 rumah)"
+            },
+            {
+              "key": "B",
+              "text": "Air sumur dari 25 rumah yang diambil"
+            },
+            {
+              "key": "C",
+              "text": "Peneliti yang mengambil sampel"
+            },
+            {
+              "key": "D",
+              "text": "Kedalaman sumur rata-rata"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Populasi mencakup seluruh sasaran: air sumur seluruh 500 rumah.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPopulasinya adalah **air sumur seluruh rumah di desa tersebut** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-7",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Dua buah dadu dilempar bersamaan satu kali. Peluang munculnya mata dadu kembar (sama) adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{1}{6}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{1}{12}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{36}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{1}{4}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Mata dadu kembar: (1,1), (2,2), (3,3), (4,4), (5,5), (6,6) ada 6 dari 36 kemungkinan. Peluang $= \\frac{6}{36} = \\frac{1}{6}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{36} = \\frac{1}{6}$$\nPeluangnya adalah **$\\frac{1}{6}$** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-8",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah kartu diambil secara acak dari satu set kartu bridge (52 kartu). Peluang terambilnya kartu As adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{1}{13}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{1}{52}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{4}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{2}{13}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Terdapat 4 kartu As dalam 52 kartu. Peluang $= \\frac{4}{52} = \\frac{1}{13}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{4}{52} = \\frac{1}{13}$$\nPeluangnya adalah **$\\frac{1}{13}$** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-9",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Dari pelemparan sebuah dadu sebanyak 120 kali, frekuensi harapan munculnya mata dadu faktor dari 6 (1, 2, 3, 6) adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "80 kali"
+            },
+            {
+              "key": "B",
+              "text": "60 kali"
+            },
+            {
+              "key": "C",
+              "text": "90 kali"
+            },
+            {
+              "key": "D",
+              "text": "40 kali"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Peluang faktor dari 6 $= \\frac{4}{6} = \\frac{2}{3}$. Frekuensi harapan $= 120 \\times \\frac{2}{3} = 80$ kali.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$F_h = 120 \\times \\frac{4}{6} = 80\\text{ kali}$$\nFrekuensi harapannya adalah **80 kali** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-10",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Dalam sebuah kantong terdapat 8 kelereng merah, 7 kelereng kuning, dan 5 kelereng biru. Peluang terambilnya bukan kelereng kuning adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{13}{20}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{7}{20}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{3}{5}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{1}{2}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Bukan kuning $= 8 + 5 = 13$. Total $= 20$. Peluang $= \\frac{13}{20}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = 1 - \\frac{7}{20} = \\frac{13}{20}$$\nPeluangnya adalah **$\\frac{13}{20}$** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-11",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Tiga koin dilempar bersamaan. Peluang muncul tepat 2 sisi Gambar adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{3}{8}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{1}{4}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{2}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{1}{8}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kejadian tepat 2 Gambar: (G,G,A), (G,A,G), (A,G,G) ada 3 dari 8 kemungkinan.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{3}{8}$$\nPeluangnya adalah **$\\frac{3}{8}$** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-12",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Dalam pemilihan ketua OSIS dengan 400 pemilih, survei cepat terhadap 50 sampel acak menunjukkan 35 pemilih memilih kandidat A. Perkiraan perolehan suara total kandidat A adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "280 suara"
+            },
+            {
+              "key": "B",
+              "text": "250 suara"
+            },
+            {
+              "key": "C",
+              "text": "300 suara"
+            },
+            {
+              "key": "D",
+              "text": "320 suara"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Proporsi sampel $= \\frac{35}{50} = 0{,}7$. Estimasi total $= 0{,}7 \\times 400 = 280$ suara.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Estimasi} = \\frac{35}{50} \\times 400 = 280\\text{ suara}$$\nPerkiraannya adalah **280 suara** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-13",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Dua buah dadu dilempar bersamaan. Peluang muncul jumlah kedua mata dadu kurang dari 5 adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{1}{6}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{5}{36}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{9}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{7}{36}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Pasangan jumlah < 5: jumlah 2 (1,1), jumlah 3 (1,2),(2,1), jumlah 4 (1,3),(2,2),(3,1) total 6 pasangan. Peluang $= \\frac{6}{36} = \\frac{1}{6}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{36} = \\frac{1}{6}$$\nPeluangnya adalah **$\\frac{1}{6}$** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-14",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Sebuah pabrik lampu memproduksi 10.000 bohlam lampu. Dari pengujian 500 sampel acak, ditemukan 15 bohlam cacat. Perkiraan banyak bohlam cacat dari seluruh produksi adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "300 bohlam"
+            },
+            {
+              "key": "B",
+              "text": "250 bohlam"
+            },
+            {
+              "key": "C",
+              "text": "350 bohlam"
+            },
+            {
+              "key": "D",
+              "text": "200 bohlam"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Persentase cacat $= \\frac{15}{500} = 0{,}03 = 3\\%$. Total cacat $= 3\\% \\times 10.000 = 300$ bohlam.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Estimasi} = \\frac{15}{500} \\times 10.000 = 300\\text{ bohlam}$$\nPerkiraannya adalah **300 bohlam** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-15",
+          "category": "Latihan",
+          "difficulty": "Sedang",
+          "question": "Peluang seorang penembak jitu tepat mengenai sasaran adalah 0,85. Jika penembak tersebut menembak sebanyak 40 kali, frekuensi harapan tembakan meleset adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "6 kali"
+            },
+            {
+              "key": "B",
+              "text": "8 kali"
+            },
+            {
+              "key": "C",
+              "text": "5 kali"
+            },
+            {
+              "key": "D",
+              "text": "7 kali"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Peluang meleset $= 1 - 0{,}85 = 0{,}15$. Frekuensi meleset $= 40 \\times 0{,}15 = 6$ kali.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$F_h = 40 \\times (1 - 0{,}85) = 40 \\times 0{,}15 = 6\\text{ kali}$$\nFrekuensi meleset adalah **6 kali** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-16",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah kantong berisi 6 bola merah dan 4 bola putih. Diambil 2 bola satu demi satu tanpa pengembalian. Peluang terambil bola pertama merah dan bola kedua putih adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{4}{15}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{6}{25}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{5}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{2}{9}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Peluang merah pertama $= \\frac{6}{10}$. Peluang putih kedua $= \\frac{4}{9}$. Peluang bersama $= \\frac{6}{10} \\times \\frac{4}{9} = \\frac{24}{90} = \\frac{4}{15}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{10} \\times \\frac{4}{9} = \\frac{24}{90} = \\frac{4}{15}$$\nPeluangnya adalah **$\\frac{4}{15}$** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-17",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dua dadu dilempar bersamaan. Peluang muncul jumlah kedua mata dadu bernilai bilangan prima (2, 3, 5, 7, 11) adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{15}{36} = \\frac{5}{12}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{7}{18}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{2}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{13}{36}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jumlah 2: 1 pasang; Jumlah 3: 2 pasang; Jumlah 5: 4 pasang; Jumlah 7: 6 pasang; Jumlah 11: 2 pasang. Total $= 1 + 2 + 4 + 6 + 2 = 15$. Peluang $= \\frac{15}{36} = \\frac{5}{12}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{15}{36} = \\frac{5}{12}$$\nPeluangnya adalah **$\\frac{5}{12}$** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-18",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Suatu keluarga berencana memiliki 3 orang anak. Peluang keluarga tersebut memiliki paling sedikit 1 anak laki-laki adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{7}{8}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{3}{4}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{2}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{3}{8}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Gunakan komplemen: $1 - P(\\text{semua perempuan}) = 1 - \\frac{1}{8} = \\frac{7}{8}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = 1 - \\left(\\frac{1}{2}\\right)^3 = 1 - \\frac{1}{8} = \\frac{7}{8}$$\nPeluangnya adalah **$\\frac{7}{8}$** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-19",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Dalam sebuah kotak terdapat 10 kartu bernomor 1 sampai 10. Jika diambil dua kartu sekaligus secara acak, peluang terambil kedua kartu bernomor genap adalah...",
+          "options": [
+            {
+              "key": "A",
+              "text": "\\frac{2}{9}"
+            },
+            {
+              "key": "B",
+              "text": "\\frac{1}{4}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{5}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{3}{10}"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kartu genap: 2, 4, 6, 8, 10 (ada 5). Total cara $= C(10, 2) = 45$. Cara genap $= C(5, 2) = 10$. Peluang $= \\frac{10}{45} = \\frac{2}{9}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{C(5, 2)}{C(10, 2)} = \\frac{10}{45} = \\frac{2}{9}$$\nPeluangnya adalah **$\\frac{2}{9}$** (Opsi A)."
+        },
+        {
+          "id": "smp9-b4-20",
+          "category": "Latihan",
+          "difficulty": "Tantangan",
+          "question": "Sebuah survei mengenai kebiasaan membaca melibatkan siswa SMP. Jika teknik pengambilan sampel dilakukan dengan membagi siswa menjadi strata berdasarkan tingkatan kelas (Kelas 7, 8, 9) lalu mengambil sampel acak proporsional dari setiap tingkatan, teknik sampling tersebut dinamakan...",
+          "options": [
+            {
+              "key": "A",
+              "text": "Stratified Random Sampling"
+            },
+            {
+              "key": "B",
+              "text": "Simple Random Sampling"
+            },
+            {
+              "key": "C",
+              "text": "Cluster Sampling"
+            },
+            {
+              "key": "D",
+              "text": "Convenience Sampling"
+            }
+          ],
+          "correctAnswer": "A",
+          "hint": "Pengambilan sampel berstrata sesuai tingkatan disebut stratified random sampling.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTeknik tersebut adalah **Stratified Random Sampling** (Opsi A)."
         }
       ]
     }
