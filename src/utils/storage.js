@@ -354,3 +354,44 @@ export function submitQuestResult(submissionData) {
 
   return newSubmission;
 }
+
+// -------------------------------------------------------------
+// BACKUP & RESTORE (EXPORT / IMPORT JSON)
+// -------------------------------------------------------------
+export function exportAllData() {
+  return {
+    version: "2.0",
+    exportDate: new Date().toISOString(),
+    students: getStudents(),
+    quests: getQuests(),
+    submissions: getSubmissions()
+  };
+}
+
+export function importAllData(data) {
+  if (!data || typeof data !== "object") {
+    throw new Error("File JSON tidak valid atau kosong.");
+  }
+  if (!Array.isArray(data.students)) {
+    throw new Error("Format data JSON tidak valid: properti 'students' tidak ditemukan.");
+  }
+  saveStudents(data.students);
+  if (Array.isArray(data.quests)) {
+    saveQuests(data.quests);
+  }
+  if (Array.isArray(data.submissions)) {
+    saveSubmissions(data.submissions);
+  }
+  return true;
+}
+
+export function resetToDefaultDemoData() {
+  localStorage.removeItem(STORAGE_KEYS.STUDENTS);
+  localStorage.removeItem(STORAGE_KEYS.QUESTS);
+  localStorage.removeItem(STORAGE_KEYS.SUBMISSIONS);
+  return {
+    students: getStudents(),
+    quests: getQuests(),
+    submissions: getSubmissions()
+  };
+}
