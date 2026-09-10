@@ -79,15 +79,20 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
     return CURRICULUM_DATA.find((g) => g.grade === Number(selectedGrade)) || CURRICULUM_DATA[0];
   }, [selectedGrade]);
 
-  // Chapters filtered by track (for Grade 11 & 12)
+  // Chapters filtered by track (for SMA grades 10-12)
   const displayedChapters = useMemo(() => {
     if (!currentGradeData?.chapters) return [];
-    if (currentGradeData.grade !== 11 && currentGradeData.grade !== 12) {
+    // Only apply track filter for SMA grades (10, 11, 12)
+    if (currentGradeData.grade < 10) {
       return currentGradeData.chapters;
     }
     if (selectedTrackFilter === "ALL") return currentGradeData.chapters;
-    return currentGradeData.chapters.filter((c) => c.track === selectedTrackFilter);
+    // Case-insensitive comparison: data has lowercase, filter has uppercase
+    return currentGradeData.chapters.filter(
+      (c) => (c.track || "wajib").toLowerCase() === selectedTrackFilter.toLowerCase()
+    );
   }, [currentGradeData, selectedTrackFilter]);
+
 
   // Active Chapter
   const currentChapter = useMemo(() => {
@@ -440,8 +445,8 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
         </div>
       </div>
 
-      {/* Special Track Filter for Grade 11 & 12 (Wajib vs Pilihan Lanjut) */}
-      {(currentGradeData.grade === 11 || currentGradeData.grade === 12) && (
+      {/* Special Track Filter for Grade 10, 11 & 12 (Wajib vs Pilihan Lanjut) */}
+      {(currentGradeData.grade >= 10) && (
         <div className="editorial-card" style={{ padding: '0.75rem 1.25rem', marginBottom: '1.25rem', backgroundColor: '#F8FAFC' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '0.825rem', fontWeight: 600, color: 'var(--text-secondary)' }}>

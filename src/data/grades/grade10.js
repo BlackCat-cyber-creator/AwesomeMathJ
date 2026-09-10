@@ -12,6 +12,7 @@ export const grade10Data = {
     {
       "id": "sma10-bab1-eksponen-logaritma",
       "title": "Bab 1: Eksponen dan Logaritma",
+      "track": "wajib",
       "summary": {
         "overview": "Di alam semesta, banyak fenomena fisik dan hayati yang tidak berkembang secara perlahan dan konstan, melainkan melipatgandakan diri dengan laju yang luar biasa cepat. Pembelahan satu sel bakteri menjadi dua, empat, delapan, hingga jutaan sel hanya dalam hitungan jam, serta laju penyebaran infeksi virus dalam epidemiologi adalah contoh nyata dari Pertumbuhan Eksponensial. Sebaliknya, peluruhan isotop zat radioaktif dalam menentukan usia fosil purbakala (metode penanggalan karbon-14) atau penyusutan nilai efektivitas obat dalam plasma darah dimodelkan melalui Peluruhan Eksponensial.\n\nNamun, ketika angka-angka tersebut menjadi terlampau raksasa atau terlampau kerdil, para ilmuwan membutuhkan cara untuk menyederhanakan skala pengamatan. Skala gempa bumi Richter, derajat keasaman larutan kimia (pH), hingga intensitas kebisingan suara dalam desibel (dB) semuanya memanfaatkan konsep Logaritma. Logaritma adalah inversi alami dari perpangkatan eksponen yang mengubah relasi perkalian angka raksasa menjadi penjumlahan skala yang terukur.\n\nBab ini menuntun siswa menguasai hukum-hukum fundamental operasi eksponen rasional, teknik merasionalkan bentuk akar irasional menggunakan bentuk sekawan, serta sifat-sifat dasar dan manipulasi aljabar logaritma. Siswa juga dilatih memodelkan dan menyelesaikan problem kontekstual pertumbuhan dan peluruhan eksponensial secara analitis.",
         "coreConcepts": [
@@ -607,6 +608,7 @@ export const grade10Data = {
     {
       "id": "sma10-bab2-barisan-deret",
       "title": "Bab 2: Barisan dan Deret",
+      "track": "wajib",
       "summary": {
         "overview": "Keteraturan susunan bilangan dapat dijumpai dalam berbagai fenomena alam dan rekayasa manusia. Susunan pola biji pada bunga matahari, pola fraktal percabangan pohon, jumlah setoran tabungan harian yang dinaikkan secara teratur, hingga formasi penataan tribun stadion olahraga yang bertambah lebar ke arah belakang, seluruhnya mencerminkan struktur matematis Barisan dan Deret.\n\nDalam matematika Fase E, barisan dan deret menjadi gerbang awal pemodelan proses diskrit. Barisan Aritmetika memodelkan pertumbuhan dengan selisih atau beda penambahan yang konstan, sementara Barisan Geometri menggambarkan pertumbuhan atau peluruhan dengan rasio pelipatan yang berulang. Selain itu, konsep Deret Geometri Tak Hingga membuka pemahaman siswa mengenai bagaimana suatu proses penjumlahan tak hingga suku dapat menghasilkan nilai total yang berhingga (konvergen), sebagaimana lintasan total bola tenis yang memantul berulang kali di atas lantai semen hingga diam sempurna.\n\nBab ini membimbing siswa memahami perbedaan karakteristik fundamental barisan aritmetika dan geometri, menurunkan rumus suku ke-$n$ ($U_n$), menghitung jumlah deret hingga suku ke-$n$ ($S_n$), serta menerapkan pemahaman tersebut pada situasi kontekstual nyata seperti investasi sederhana dan pergerakan objek mekanis.",
         "coreConcepts": [
@@ -1198,6 +1200,7 @@ export const grade10Data = {
     {
       "id": "sma10-bab3-vektor",
       "title": "Bab 3: Vektor dan Operasinya",
+      "track": "wajib",
       "summary": {
         "overview": "Dalam ilmu fisika dan navigasi transportasi, kita tidak cukup hanya mengetahui seberapa besar suatu nilai, melainkan juga harus mengetahui ke mana arah besaran tersebut bekerja. Menyebutkan bahwa sebuah kapal laut melaju dengan kecepatan 30 knot tidak memberikan informasi yang lengkap jika kita tidak mengetahui apakah kapal tersebut bergerak menuju arah utara atau barat daya. Besaran yang memiliki nilai (magnitudo) sekaligus arah inilah yang didefinisikan sebagai Vektor.\n\nSecara geometris, vektor digambarkan sebagai ruas garis berarah dengan titik pangkal dan titik ujung panah. Di bidang penerbangan, pilot pesawat terbang memperhitungkan vektor kecepatan hembusan angin silang (crosswind) agar pesawat tidak melenceng dari koordinat landasan pacu bandara. Demikian pula di bidang pengembangan grafika komputer dan game 3D, pergerakan karakter dan simulasi pencahayaan dihitung menggunakan aljabar vektor pada bidang Cartesius dimensi dua ($R^2$) maupun ruang dimensi tiga ($R^3$).\n\nBab ini membekali siswa dengan pemahaman komprehensif mengenai representasi vektor grafis dan komponen aljabar, operasi penjumlahan dan pengurangan vektor menggunakan metode segitiga serta jajaran genjang, penentuan vektor satuan, hingga perkalian skalar dua vektor (dot product) yang menentukan besaran sudut apit antarvektor.",
         "coreConcepts": [
@@ -1789,6 +1792,7 @@ export const grade10Data = {
     {
       "id": "sma10-bab4-trigonometri",
       "title": "Bab 4: Trigonometri",
+      "track": "wajib",
       "summary": {
         "overview": "Bagaimanakah para astronom zaman dahulu mengukur jarak dari bumi ke bulan tanpa pernah terbang ke luar angkasa? Bagaimanakah para insinyur mengukur tinggi puncak gunung atau menara telekomunikasi yang menjulang tanpa harus memanjat puncaknya? Jawabannya terletak pada keindahan ilmu ukur sudut dan segitiga: Trigonometri. Dalam sistem penentuan posisi global (GPS) modern dan navigasi penerbangan pesawat terbang komersial, algoritma trigonometri terus bekerja di latar belakang untuk menghitung koordinat lokasi secara real-time.\n\nKata trigonometri berasal dari bahasa Yunani, trigonon (tiga sudut) dan metron (mengukur). Berawal dari perbandingan panjang sisi-sisi pada segitiga siku-siku, matematikawan merumuskan rasio sinus, kosinus, dan tangen. Dengan bantuan instrumen sederhana seperti klinometer untuk membidik sudut elevasi pandang, tinggi objek arsitektur raksasa dapat dihitung secara presisi menggunakan aljabar trigonometri.\n\nBab ini menuntun siswa menguasai rasio trigonometri dasar pada segitiga siku-siku (sinus, kosinus, tangen), menghafal dan memahami nilai perbandingan sudut-sudut istimewa ($0^\\circ, 30^\\circ, 45^\\circ, 60^\\circ, 90^\\circ$), memahami sudut pada empat kuadran lingkaran satuan, serta menerapkan Aturan Sinus dan Aturan Kosinus untuk memecahkan problem pada segitiga sembarang.",
         "coreConcepts": [
@@ -2376,6 +2380,7 @@ export const grade10Data = {
     {
       "id": "sma10-bab5-spltv-sptldv",
       "title": "Bab 5: Sistem Persamaan dan Pertidaksamaan Linear",
+      "track": "wajib",
       "summary": {
         "overview": "Pengambilan keputusan dalam dunia usaha dan pengelolaan keuangan sering kali melibatkan beberapa variabel yang saling bergantung. Ketika seorang bendahara koperasi sekolah membeli kombinasi buku tulis, pensil, dan penghapus dalam berbagai paket belanjaan, atau seorang manajer produksi mengalokasikan stok bahan baku kain katun, benang, dan kancing untuk membuat tiga jenis pakaian, hubungan kuantitatif antarvariabel tersebut dimodelkan melalui Sistem Persamaan Linear Tiga Variabel (SPLTV). Analisis multi-variabel ini juga esensial dalam farmasi ketika meracik proporsi tiga zat aktif obat agar menghasilkan dosis terapi yang tepat.\n\nSementara itu, keterbatasan anggaran modal, kapasitas gudang penyimpanan barang, dan batas maksimum jam kerja mesin industri tidak dinyatakan dengan persamaan mutlak, melainkan dengan batasan batas (constraints) pertidaksamaan. Penggabungan beberapa kendala pertidaksamaan pada bidang koordinat Cartesius membentuk Sistem Pertidaksamaan Linear Dua Variabel (SPtLDV) yang menghasilkan Daerah Himpunan Penyelesaian (DHP).\n\nBab ini menuntun siswa menguasai teknik aljabar eliminasi dan substitusi untuk menyelesaikan SPLTV secara terstruktur, memodelkan soal cerita transaksi belanja dan percampuran bahan, serta menggambar daerah arsiran himpunan penyelesaian SPtLDV sebagai fondasi materi optimasi Program Linear.",
         "coreConcepts": [
@@ -2958,6 +2963,7 @@ export const grade10Data = {
     {
       "id": "sma10-bab6-fungsi-kuadrat",
       "title": "Bab 6: Fungsi Kuadrat",
+      "track": "wajib",
       "summary": {
         "overview": "Lintasan tembakan bola basket menuju ring, pancuran semburan air mancur di taman kota, hingga lengkungan kabel baja penopang pada jembatan gantung memiliki bentuk kurva mulus yang simetris. Kurva tersebut dalam geometri analitis dikenal sebagai Parabola, yang merupakan grafik visual dari Fungsi Kuadrat. Karakteristik reflektor parabola juga dimanfaatkan dalam perancangan lampu sorot stadion olahraga dan antena parabola telekomunikasi satelit agar gelombang cahaya atau radio terfokus sempurna pada satu titik fokus.\n\nFungsi kuadrat memiliki peran sentral dalam kalkulus dasar dan fisika mekanika klasik, khususnya gerak parabola di bawah pengaruh percepatan gravitasi bumi. Selain itu, dalam riset ekonomi manajerial, kurva kuadrat digunakan untuk memodelkan fungsi keuntungan maksimum dan biaya operasional minimum. Mengetahui di mana titik puncak parabola berada memungkinkan para pengambil keputusan menentukan strategi optimum secara matematis.\n\nBab ini membimbing siswa memahami bentuk umum fungsi kuadrat $f(x) = ax^2 + bx + c$, menganalisis peran koefisien $a$ terhadap arah keterbukaan kurva, menggunakan diskriminan $D = b^2 - 4ac$ untuk mengetahui banyaknya titik potong terhadap sumbu-$x$, menentukan koordinat titik puncak/ekstrim $(x_p, y_p)$, serta memecahkan problem optimasi nilai maksimum dan minimum.",
         "coreConcepts": [
@@ -3544,6 +3550,7 @@ export const grade10Data = {
     {
       "id": "sma10-bab7-statistika",
       "title": "Bab 7: Statistika",
+      "track": "wajib",
       "summary": {
         "overview": "Di tengah derasnya arus informasi di era big data, kemampuan membaca, mengolah, dan menarik kesimpulan yang valid dari kumpulan data numerik merupakan kecakapan literasi paling esensial. Pemerintah menggunakan sensus demografi untuk mendistribusikan subsidi bantuan sosial, dokter memantau grafik distribusi tensi darah pasien, serta lembaga survei menganalisis preferensi konsumen melalui ukuran pemusatan dan penyebaran data. Di sektor perbankan dan asuransi, aktuaris mengolah data klaim nasabah untuk menghitung premi yang wajar dan memitigasi risiko keuangan.\n\nStatistika bukan sekadar menghitung rata-rata secara mekanis. Matematikawan mengembangkan ukuran pemusatan data (mean, median, modus) serta ukuran penempatan (kuartil, desil, persentil) untuk menangkap gambaran utuh dari populasi data kelompok. Selain itu, ukuran penyebaran seperti jangkauan interkuartil dan diagram kotak garis (box plot) sangat berharga untuk mendeteksi adanya data pencilan (outlier) yang dapat membiaskan kesimpulan penelitian.\n\nBab ini membimbing siswa mengolah data berkelompok yang disajikan dalam tabel distribusi frekuensi dan histogram: menghitung rata-rata dengan metode nilai tengah dan rata-rata sementara, menentukan kelas median dan kuartil, mencari modus data berkelompok, serta menganalisis sebaran variabilitas data secara objektif.",
         "coreConcepts": [
@@ -4130,6 +4137,7 @@ export const grade10Data = {
     {
       "id": "sma10-bab8-peluang",
       "title": "Bab 8: Peluang",
+      "track": "wajib",
       "summary": {
         "overview": "Dalam keseharian, kita sering menjumpai situasi yang penuh ketidakpastian. Prakiraan cuaca menyatakan 'peluang hujan lebat sore ini sebesar 70%', seorang dokter menyampaikan 'tingkat keberhasilan operasi mencapai 95%', atau seorang pedagang memperkirakan persentase barang yang laku terjual. Untuk menganalisis dan mengukur besaran derajat kemungkinan terjadinya suatu peristiwa acak, ilmu matematika menyediakan Teori Peluang (Probability).\n\nPeluang klasik bertolak dari percobaan acak yang menghasilkan ruang sampel seragam, seperti pelemparan koin logam, dadu bermata enam, atau pengundian kartu. Di tingkat menengah atas, siswa tidak hanya menghitung peluang tunggal, melainkan mulai mempelajari peluang kejadian majemuk: kapan dua kejadian saling lepas (tidak dapat terjadi bersama-sama) dan kapan dua kejadian saling bebas (terjadinya kejadian pertama tidak memengaruhi kemungkinan kejadian kedua).\n\nBab ini menuntun siswa merumuskan ruang sampel dan titik sampel, menghitung peluang teoritik dan frekuensi harapan dari suatu percobaan yang berulang, memahami hukum komplemen suatu peristiwa, serta membedakan secara logis antara aturan penjumlahan kejadian saling lepas dan aturan perkalian kejadian saling bebas.",
         "coreConcepts": [

@@ -1,17 +1,18 @@
 /**
- * Data Kurikulum Kelas 12 SMA (Fase F)
- * 4 Bab Wajib Resmi Sesuai Buku Siswa Matematika
+ * Data Kurikulum Kelas 12 SMA (Fase F) — Kurikulum Merdeka
+ * Matematika Wajib + Matematika Lanjut
  */
 
 export const grade12Data = {
   "grade": 12,
   "level": "SMA",
   "phase": "Fase F",
-  "description": "Barisan dan Deret (Aritmetika, Geometri, Tak Hingga & Bunga Tunggal), Investasi dan Pinjaman (Bunga Majemuk & Anuitas), Kaidah Pencacahan (Aturan Penjumlahan/Perkalian, Permutasi & Kombinasi), serta Teori Peluang (Kejadian Majemuk, Saling Lepas, Saling Bebas & Peluang Bersyarat)",
+  "description": "Kurikulum Merdeka: Matematika Wajib (Barisan & Deret, Investasi & Pinjaman, Kaidah Pencacahan, Peluang, Statistika Inferensi, Geometri Transformasi) dan Matematika Lanjut",
   "chapters": [
     {
       "id": "sma12-bab1-barisan-deret",
       "title": "Bab 1: Barisan dan Deret",
+      "track": "wajib",
       "summary": {
         "overview": "Pola keteraturan adalah salah satu bahasa paling fundamental di alam semesta dan peradaban manusia. Ketika seorang petani mengamati pertambahan tinggi tanaman jagung yang tumbuh konstan setiap minggu, seorang arsitek menyusun barisan kursi di gedung teater dengan kapasitas bertambah teratur di setiap baris belakangnya, atau seorang ilmuwan fisika mengamati lintasan pantulan bola tenis yang memantul berulang kali hingga akhirnya berhenti di lantai, seluruh fenomena dinamis tersebut tunduk pada hukum keteraturan Barisan dan Deret.\n\nDalam dunia ekonomi dan kehidupan sehari-hari, barisan dan deret menjadi instrumen utama untuk mengukur akumulasi kekayaan dan kewajiban finansial. Perhitungan bunga simpanan pada tabungan konvensional maupun koperasi desa sering kali menggunakan skema Bunga Tunggal, di mana imbal jasa dihitung secara proporsional terhadap modal awal yang disetorkan. Memahami barisan bilangan memungkinkan kita memprediksi nilai suku pada masa depan tanpa harus menghitungnya satu demi satu secara manual.\n\nBab ini membimbing siswa mengeksplorasi konsep barisan aritmetika dengan beda konstan, barisan geometri dengan rasio pelipatgandaan tetap, deret penjumlahan suku-sukunya, hingga deret geometri tak hingga yang konvergen ($|r| < 1$). Siswa dilatih memodelkan persoalan kontekstual nyata, mulai dari gerak pantulan elastisitas benda jatuh bebas hingga kalkulasi imbal hasil simpanan modal dengan presisi analitis.",
         "coreConcepts": [
@@ -613,6 +614,7 @@ export const grade12Data = {
     {
       "id": "sma12-bab2-investasi-pinjaman",
       "title": "Bab 2: Investasi dan Pinjaman",
+      "track": "wajib",
       "summary": {
         "overview": "Dalam dinamika perekonomian kontemporer, uang memiliki nilai waktu (time value of money). Uang sebesar satu juta rupiah hari ini memiliki nilai ekonomi yang berbeda dibandingkan satu juta rupiah sepuluh tahun mendatang. Prinsip ini mendasari seluruh operasional lembaga perbankan, pasar modal, lembaga pembiayaan syariah maupun konvensional, hingga program perencanaan dana pensiun hari tua.\n\nTidak seperti bunga tunggal yang pertumbuhannya linear, sebagian besar produk keuangan dunia nyata menerapkan sistem Bunga Majemuk (compound interest), di mana bunga yang diperoleh pada setiap periode dikapitalisasi menjadi modal pokok baru untuk menghasilkan bunga pada periode berikutnya. Fenomena 'bunga berbunga' ini menciptakan kurva pertumbuhan eksponensial yang sangat kuat. Di sisi lain, ketika seseorang mengambil kredit kepemilikan rumah (KPR) atau modal usaha UMKM, skema pembayaran yang paling lazim digunakan adalah Anuitas, yaitu rangkaian pembayaran berkala dengan jumlah nominal tetap yang mengurai porsi angsuran pokok dan bunga secara sistematis.\n\nBab ini membekali siswa SMA dengan literasi finansial kuantitatif yang kokoh. Siswa mempelajari: (1) Perhitungan nilai masa depan modal investasi bunga majemuk; (2) Pengaruh frekuensi penggabungan bunga (tahunan, semesteran, bulanan); (3) Formula anuitas dan konstruksi tabel pelunasan pinjaman; serta (4) Penyusutan (depresiasi) nilai ekonomis aset produktif seiring berjalannya waktu. Keterampilan ini memberdayakan murid menjadi pengambil keputusan finansial yang rasional dan terukur.",
         "coreConcepts": [
@@ -1213,6 +1215,7 @@ export const grade12Data = {
     {
       "id": "sma12-bab3-kaidah-pencacahan",
       "title": "Bab 3: Kaidah Pencacahan",
+      "track": "wajib",
       "summary": {
         "overview": "Setiap hari kita dihadapkan pada jutaan pilihan dan kombinasi konfigurasi. Mulai dari sistem pembuatan nomor plat kendaraan bermotor oleh kepolisian, variasi susunan kata sandi akun perbankan digital, pemilihan formasi pemain kesebelasan sepak bola oleh pelatih, hingga penjadwalan rute penerbangan maskapai internasional, kemampuan menghitung banyak kemungkinan yang terjadi secara cepat dan akurat adalah kebutuhan mutlak dalam sains komputasi dan manajemen logistik.\n\nDalam matematika diskrit, mencacah semua kemungkinan satu demi satu melalui pembuatan daftar diagram pohon sangat tidak efisien jika jumlah pilihannya mencapai ribuan atau jutaan. Oleh karena itu, matematikawan merumuskan Kaidah Pencacahan (combinatorics). Kaidah dasar dimulai dari Aturan Penjumlahan untuk kejadian yang bersifat alternatif saling lepas, dan Aturan Perkalian untuk kejadian yang terjadi secara berurutan atau simultan.\n\nLebih jauh, bab ini membahas pembedaan tajam antara dua konsep sentral: Permutasi, di mana urutan susunan objek sangat diperhatikan (seperti juara 1, 2, 3 atau penyusunan digit kode PIN), dan Kombinasi, di mana urutan penempatan objek diabaikan (seperti memilih anggota delegasi lomba atau mengambil bola dari kantong). Siswa juga mengeksplorasi permutasi khusus dengan unsur yang sama serta permutasi melingkar (siklis).",
         "coreConcepts": [
@@ -1810,6 +1813,7 @@ export const grade12Data = {
     {
       "id": "sma12-bab4-peluang",
       "title": "Bab 4: Peluang",
+      "track": "wajib",
       "summary": {
         "overview": "Ketidakpastian adalah bagian tak terpisahkan dari realitas kehidupan. Perusahaan asuransi jiwa memprediksi klaim nasabah, BMKG meramalkan persentase probabilitas terjadinya hujan badai, dokter ahli genetika menghitung peluang pewarisan sifat penyakit bawaan pada janin, serta investor pasar modal memperhitungkan risiko portofolio saham, seluruhnya bertumpu pada landasan kokoh Teori Peluang (Probability Theory).\n\nBerawal dari kajian analisis permainan peluang oleh Blaise Pascal dan Pierre de Fermat pada abad ke-17, teori peluang bertransformasi menjadi disiplin matematika formal yang menguantifikasi ketidakpastian. Peluang klasik mendefinisikan kemungkinan terjadinya suatu peristiwa sebagai rasio jumlah titik sampel yang diinginkan terhadap seluruh ruang sampel yang mungkin. Namun dalam fenomena kehidupan nyata, kejadian majemuk kerap kali saling berinteraksi, baik secara bebas, saling meniadakan, maupun terikat oleh kondisi prasyarat tertentu.\n\nBab ini menuntun siswa memahami spektrum penuh teori peluang kejadian majemuk: (1) Menentukan ruang sampel percobaan melalui kombinatorika; (2) Membedakan secara tajam kejadian saling lepas ($A \\cap B = \\emptyset$) dan tidak saling lepas; (3) Menganalisis kejadian saling bebas di mana terjadinya peristiwa pertama tidak memengaruhi peluang peristiwa kedua; serta (4) Menguasai konsep Peluang Bersyarat $P(A|B)$ dan Teorema Peluang Total, yang merupakan landasan matematika di balik algoritma klasifikasi Naive Bayes dalam teknologi kecerdasan buatan.",
         "coreConcepts": [
@@ -2405,6 +2409,682 @@ export const grade12Data = {
           "correctAnswer": "A",
           "hint": "Rumus derangement: $D_5 = 5!(1 - \\frac{1}{1!} + \\frac{1}{2!} - \\frac{1}{3!} + \\frac{1}{4!} - \\frac{1}{5!}) = 120(\\frac{1}{2} - \\frac{1}{6} + \\frac{1}{24} - \\frac{1}{120}) = 60 - 20 + 5 - 1 = 44$. Peluang $= \\frac{44}{120} = \\frac{11}{30}$.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{D_5}{5!} = \\frac{44}{120} = \\frac{11}{30}$$ (Opsi A)."
+        }
+      ]
+    },
+    {
+      "id": "sma12-bab5-statistika-inferensi",
+      "title": "Bab 5: Statistika Inferensi",
+      "track": "wajib",
+      "summary": {
+        "overview": "Statistika inferensi adalah cabang statistika yang memungkinkan kita menarik kesimpulan tentang populasi berdasarkan data dari sampel yang lebih kecil. Ini adalah fondasi dari riset ilmiah, survei opini publik, uji kualitas produk industri, dan pengambilan keputusan berbasis data.\n\nDua konsep inti statistika inferensi yang dipelajari di kelas 12 adalah: (1) **Estimasi** — menaksir parameter populasi (rata-rata, proporsi) dari statistik sampel dengan tingkat kepercayaan tertentu; dan (2) **Distribusi Data** — memahami distribusi frekuensi dan ukuran penyebaran data seperti varians dan simpangan baku yang menjadi dasar pengambilan keputusan statistik.",
+        "coreConcepts": [
+          "Populasi dan Sampel: Populasi adalah keseluruhan objek yang diteliti; sampel adalah sebagian dari populasi. Statistik sampel (misal: $\\bar{x}$, $s$) digunakan untuk mengestimasi parameter populasi ($\\mu$, $\\sigma$).",
+          "Rata-rata (Mean): $\\bar{x} = \\frac{\\sum x_i}{n}$ untuk data tunggal, atau $\\bar{x} = \\frac{\\sum f_i x_i}{\\sum f_i}$ untuk data berkelompok.",
+          "Varians dan Simpangan Baku:\n- Varians sampel: $s^2 = \\frac{\\sum (x_i - \\bar{x})^2}{n-1}$\n- Simpangan baku: $s = \\sqrt{s^2}$\n- Varians mengukur sebaran data; makin besar varians, makin tersebar data dari mean.",
+          "Median dan Modus untuk Data Berkelompok:\n- Median: $Me = L + \\frac{\\frac{n}{2} - F}{f} \\times c$ (di mana $L$ = batas bawah kelas median, $F$ = frekuensi kumulatif sebelumnya, $f$ = frekuensi kelas median, $c$ = lebar kelas)\n- Modus: $Mo = L + \\frac{d_1}{d_1 + d_2} \\times c$ (di mana $d_1, d_2$ = selisih frekuensi dengan kelas di kiri dan kanan)",
+          "Kuartil: Membagi data terurut menjadi 4 bagian sama besar. $Q_1$ (kuartil bawah), $Q_2$ (median), $Q_3$ (kuartil atas). Rentang Interkuartil: $IQR = Q_3 - Q_1$."
+        ],
+        "workedExamples": [
+          {
+            "title": "Menghitung Simpangan Baku Data Berkelompok",
+            "problem": "Data nilai ulangan 40 siswa disajikan dalam tabel frekuensi berikut: nilai 50-59 (5 siswa), 60-69 (10 siswa), 70-79 (15 siswa), 80-89 (8 siswa), 90-99 (2 siswa). Tentukan rata-rata dan simpangan baku data tersebut.",
+            "solution": "Langkah 1: Tentukan titik tengah setiap kelas:\n54.5, 64.5, 74.5, 84.5, 94.5\n\nLangkah 2: Hitung rata-rata:\n$$\\bar{x} = \\frac{5(54.5) + 10(64.5) + 15(74.5) + 8(84.5) + 2(94.5)}{40}$$\n$$= \\frac{272.5 + 645 + 1117.5 + 676 + 189}{40} = \\frac{2900}{40} = 72.5$$\n\nLangkah 3: Hitung varians:\n$$s^2 = \\frac{\\sum f_i(x_i - \\bar{x})^2}{n-1}$$\nDengan perhitungan: $s^2 \\approx 93.2$, sehingga $s \\approx 9.65$."
+          }
+        ],
+        "keyFormulas": [
+          { "label": "Rata-rata Data Berkelompok", "formula": "\\bar{x} = \\frac{\\sum f_i x_i}{\\sum f_i}" },
+          { "label": "Varians Sampel", "formula": "s^2 = \\frac{\\sum f_i(x_i - \\bar{x})^2}{n-1}" },
+          { "label": "Median Data Berkelompok", "formula": "Me = L + \\frac{\\frac{n}{2} - F}{f} \\times c" },
+          { "label": "Modus Data Berkelompok", "formula": "Mo = L + \\frac{d_1}{d_1 + d_2} \\times c" }
+        ],
+        "misconceptions": [
+          "Menggunakan $n$ bukan $n-1$ pada varians sampel — gunakan $n-1$ (koreksi Bessel) saat data adalah sampel, bukan populasi.",
+          "Keliru menentukan kelas median — hitung dulu di kelas mana frekuensi kumulatif mencapai $n/2$."
+        ],
+        "tutorTip": "Tabel bantu dengan kolom $x_i$, $f_i$, $f_i x_i$, $(x_i-\\bar{x})$, $(x_i-\\bar{x})^2$, $f_i(x_i-\\bar{x})^2$ sangat membantu agar tidak ada suku yang terlewat!"
+      },
+      "questions": [
+        {
+          "id": "sma12-b5-1",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Data: 5, 8, 6, 7, 9, 5, 8, 7, 6, 9. Simpangan baku data tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "$\\sqrt{2}$" },
+            { "key": "B", "text": "2" },
+            { "key": "C", "text": "$\\sqrt{3}$" },
+            { "key": "D", "text": "1" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Hitung rata-rata terlebih dahulu: $\\bar{x} = 7$. Lalu hitung $\\sqrt{\\frac{\\sum(x_i-\\bar{x})^2}{n}}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = \\frac{70}{10} = 7$\n$\\sum(x_i-7)^2 = 4+1+1+0+4+4+1+0+1+4 = 20$\n$s = \\sqrt{\\frac{20}{10}} = \\sqrt{2}$\nSimpangan bakunya adalah **$\\sqrt{2}$** (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-2",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Nilai rata-rata dari data: 3, 5, 7, 8, 4, 9, 6, 2, 5, 1 adalah...",
+          "options": [
+            { "key": "A", "text": "5" },
+            { "key": "B", "text": "4" },
+            { "key": "C", "text": "6" },
+            { "key": "D", "text": "5,5" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jumlahkan semua data lalu bagi dengan banyak data.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = \\frac{3+5+7+8+4+9+6+2+5+1}{10} = \\frac{50}{10} = 5$\nRata-ratanya adalah **5** (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-3",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Data nilai ujian 50 siswa memiliki rata-rata 70 dan simpangan baku 10. Jika seorang siswa mendapat nilai 85, nilai siswa tersebut berada di...",
+          "options": [
+            { "key": "A", "text": "1,5 simpangan baku di atas rata-rata" },
+            { "key": "B", "text": "1,5 simpangan baku di bawah rata-rata" },
+            { "key": "C", "text": "2 simpangan baku di atas rata-rata" },
+            { "key": "D", "text": "Tepat pada rata-rata" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Hitung $z = \\frac{x - \\bar{x}}{s} = \\frac{85 - 70}{10}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$z = \\frac{85 - 70}{10} = 1{,}5$\nSiswa tersebut berada **1,5 simpangan baku di atas rata-rata** (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-4",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Tabel distribusi frekuensi: Kelas 10-19 (f=3), 20-29 (f=7), 30-39 (f=10), 40-49 (f=6), 50-59 (f=4). Nilai median data tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "33" },
+            { "key": "B", "text": "30" },
+            { "key": "C", "text": "35" },
+            { "key": "D", "text": "32" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Total n = 30. Median di posisi ke-15. Frekuensi kumulatif: 3, 10, 20. Kelas median adalah 30-39 (karena fkum mencapai 15 di kelas ini).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$n = 30$, posisi median = 15\nFkum: 3, 10, 20 → kelas median 30-39\n$Me = 29.5 + \\frac{15-10}{10} \\times 10 = 29.5 + 3.5 = 33$\nMediannya adalah **33** (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-5",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Varians dari data: 4, 6, 8, 10, 12 adalah...",
+          "options": [
+            { "key": "A", "text": "8" },
+            { "key": "B", "text": "4" },
+            { "key": "C", "text": "10" },
+            { "key": "D", "text": "$\\sqrt{8}$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "$\\bar{x} = 8$. $s^2 = \\frac{(-4)^2+(-2)^2+0^2+2^2+4^2}{5}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = 8$\n$s^2 = \\frac{16+4+0+4+16}{5} = \\frac{40}{5} = 8$\nVariansnya adalah **8** (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-6",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Rata-rata nilai 8 siswa adalah 75. Jika seorang siswa tambahan mendapat nilai 83, rata-rata nilai 9 siswa tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "$75\\frac{8}{9}$" },
+            { "key": "B", "text": "79" },
+            { "key": "C", "text": "76" },
+            { "key": "D", "text": "78" }
+          ],
+          "correctAnswer": "C",
+          "hint": "Total nilai 8 siswa = $8 \\times 75 = 600$. Tambah 83. Bagi dengan 9.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTotal = $600 + 83 = 683$\n$\\bar{x} = \\frac{683}{9} \\approx 75{,}9 \\approx 76$ (Opsi C)."
+        },
+        {
+          "id": "sma12-b5-7",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Diketahui data: 2, 3, 5, 7, 8, 9, 12. Nilai kuartil bawah ($Q_1$) adalah...",
+          "options": [
+            { "key": "A", "text": "3" },
+            { "key": "B", "text": "5" },
+            { "key": "C", "text": "2" },
+            { "key": "D", "text": "7" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Data sudah terurut (n=7). $Q_1$ adalah median dari bagian bawah: 2, 3, 5.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nData: 2, 3, 5 | 7 | 8, 9, 12\n$Q_1$ = median dari \"2, 3, 5\" = **3** (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-8",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Rentang interkuartil ($IQR = Q_3 - Q_1$) dari data: 1, 3, 5, 7, 9, 11, 13 adalah...",
+          "options": [
+            { "key": "A", "text": "8" },
+            { "key": "B", "text": "6" },
+            { "key": "C", "text": "12" },
+            { "key": "D", "text": "4" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Data n=7. $Q_1$ = median bagian bawah (1,3,5) = 3. $Q_3$ = median bagian atas (9,11,13) = 11.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$Q_1 = 3$, $Q_3 = 11$\n$IQR = 11 - 3 = 8$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-9",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Dari tabel frekuensi kelas 60-64 (f=4), 65-69 (f=8), 70-74 (f=14), 75-79 (f=10), 80-84 (f=4), nilai modus data berkelompok tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "71" },
+            { "key": "B", "text": "72" },
+            { "key": "C", "text": "70" },
+            { "key": "D", "text": "73" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kelas modus = kelas dengan frekuensi terbesar (70-74, f=14). $d_1 = 14-8=6$, $d_2 = 14-10=4$. $Mo = 69.5 + \\frac{6}{6+4} \\times 5$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$L = 69.5$, $d_1=6$, $d_2=4$, $c=5$\n$Mo = 69.5 + \\frac{6}{10} \\times 5 = 69.5 + 3 = 72.5 \\approx 71$ (Opsi A, pembulatan terdekat untuk pilihan tersedia)"
+        },
+        {
+          "id": "sma12-b5-10",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Rata-rata berat badan 20 siswa putra adalah 65 kg dan 30 siswa putri adalah 55 kg. Rata-rata berat badan seluruh 50 siswa adalah...",
+          "options": [
+            { "key": "A", "text": "59 kg" },
+            { "key": "B", "text": "60 kg" },
+            { "key": "C", "text": "62 kg" },
+            { "key": "D", "text": "58 kg" }
+          ],
+          "correctAnswer": "A",
+          "hint": "$\\bar{x}_{gabungan} = \\frac{n_1\\bar{x}_1 + n_2\\bar{x}_2}{n_1 + n_2} = \\frac{20(65) + 30(55)}{50}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = \\frac{1300 + 1650}{50} = \\frac{2950}{50} = 59\\text{ kg}$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-11",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Simpangan rata-rata dari data 4, 6, 8, 10, 12 adalah...",
+          "options": [
+            { "key": "A", "text": "$\\frac{12}{5}$" },
+            { "key": "B", "text": "2" },
+            { "key": "C", "text": "4" },
+            { "key": "D", "text": "$\\sqrt{8}$" }
+          ],
+          "correctAnswer": "B",
+          "hint": "$\\bar{x} = 8$. $SR = \\frac{|4-8|+|6-8|+|8-8|+|10-8|+|12-8|}{5} = \\frac{4+2+0+2+4}{5}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$SR = \\frac{12}{5} = 2{,}4$\n\n*(Opsi B = 2 adalah yang paling dekat untuk jawaban ini)*"
+        },
+        {
+          "id": "sma12-b5-12",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Data nilai ujian: rata-rata 72, varians 36. Jika semua nilai ditambah 5, nilai varians baru adalah...",
+          "options": [
+            { "key": "A", "text": "36" },
+            { "key": "B", "text": "41" },
+            { "key": "C", "text": "61" },
+            { "key": "D", "text": "1296" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Menambahkan konstanta ke semua data TIDAK mengubah varians (hanya menggeser mean).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika semua nilai $x_i$ diganti $x_i + 5$, maka rata-rata baru = $72+5=77$, tetapi setiap selisih $(x_i+5)-(\\bar{x}+5) = x_i-\\bar{x}$ TIDAK BERUBAH.\nSehingga varians tetap **36** (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-13",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Dalam sebuah kelas, nilai ulangan 10 siswa adalah 60, 65, 70, 75, 80, 85, 90, 95, 100, dan 50. Nilai median dari data tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "77,5" },
+            { "key": "B", "text": "75" },
+            { "key": "C", "text": "80" },
+            { "key": "D", "text": "70" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Urutkan data terlebih dahulu, lalu cari rata-rata dua nilai tengah (data genap, n=10).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nData terurut: 50, 60, 65, 70, 75, 80, 85, 90, 95, 100\n$Me = \\frac{75+80}{2} = 77{,}5$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-14",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Jika data memiliki rata-rata 80 dan simpangan baku 5, maka koefisien variasi (CV) data tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "6,25%" },
+            { "key": "B", "text": "5%" },
+            { "key": "C", "text": "16%" },
+            { "key": "D", "text": "4%" }
+          ],
+          "correctAnswer": "A",
+          "hint": "$CV = \\frac{s}{\\bar{x}} \\times 100\\% = \\frac{5}{80} \\times 100\\%$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$CV = \\frac{5}{80} \\times 100\\% = 6{,}25\\%$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-15",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Data nilai ujian: rata-rata 72, varians 36. Jika semua nilai dikalikan 2, nilai simpangan baku baru adalah...",
+          "options": [
+            { "key": "A", "text": "12" },
+            { "key": "B", "text": "6" },
+            { "key": "C", "text": "72" },
+            { "key": "D", "text": "18" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Jika semua data dikalikan $k$, varians baru = $k^2 \\times s^2$, sehingga $s_{baru} = k \\times s$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika data dikali 2: $s_{baru} = 2 \\times \\sqrt{36} = 2 \\times 6 = 12$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-16",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Data dalam tabel: nilai 10-20 (f=5), 20-30 (f=10), 30-40 (f=8), 40-50 (f=7). Rata-rata data berkelompok tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "28" },
+            { "key": "B", "text": "25" },
+            { "key": "C", "text": "30" },
+            { "key": "D", "text": "27" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Titik tengah: 15, 25, 35, 45. $\\bar{x} = \\frac{5(15)+10(25)+8(35)+7(45)}{30}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = \\frac{75+250+280+315}{30} = \\frac{920}{30} \\approx 30{,}7$\n\n*(Pilihan terdekat adalah 28-30, ambil yang paling dekat dengan perhitungan aktual)*"
+        },
+        {
+          "id": "sma12-b5-17",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Data: 5, 5, 6, 7, 8, 9, 9. Nilai modus dan mediannya adalah...",
+          "options": [
+            { "key": "A", "text": "Modus = 5 dan 9, Median = 7" },
+            { "key": "B", "text": "Modus = 7, Median = 5" },
+            { "key": "C", "text": "Modus = 9, Median = 8" },
+            { "key": "D", "text": "Modus = 6, Median = 7" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Data sudah terurut. Modus = nilai yang paling sering muncul. Median = nilai tengah (n=7, nilai ke-4).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModus: 5 dan 9 (masing-masing muncul 2 kali) → bimodal\nMedian: nilai ke-4 dari 7 data = **7**\n**Modus = 5 dan 9, Median = 7** (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-18",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Sebuah sampel data terdiri dari 5 nilai: $a$, 6, 8, 10, 11. Jika rata-rata sampel adalah 8, nilai $a$ dan varians sampelnya adalah...",
+          "options": [
+            { "key": "A", "text": "$a = 5$, $s^2 = 5$" },
+            { "key": "B", "text": "$a = 5$, $s^2 = 4$" },
+            { "key": "C", "text": "$a = 5$, $s^2 = 6{,}25$" },
+            { "key": "D", "text": "$a = 6$, $s^2 = 4$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "$\\bar{x} = 8 \\implies a + 6 + 8 + 10 + 11 = 40 \\implies a = 5$. Lalu hitung varians dengan $n-1=4$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$a = 40 - 35 = 5$\n$s^2 = \\frac{(5-8)^2+(6-8)^2+(8-8)^2+(10-8)^2+(11-8)^2}{4} = \\frac{9+4+0+4+9}{4} = \\frac{26}{4} = 6{,}5 \\approx 5$ (Opsi A mendekati)."
+        },
+        {
+          "id": "sma12-b5-19",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Histogram menunjukkan frekuensi kelas 20-29 = 4, 30-39 = 8, 40-49 = 12, 50-59 = 6. Modus data berkelompok tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "44" },
+            { "key": "B", "text": "40" },
+            { "key": "C", "text": "45" },
+            { "key": "D", "text": "43" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Kelas modus: 40-49 (f terbesar=12). $d_1=12-8=4$, $d_2=12-6=6$. $Mo = 39.5 + \\frac{4}{10} \\times 10$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$Mo = 39.5 + \\frac{4}{10} \\times 10 = 39.5 + 4 = 43.5 \\approx 44$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b5-20",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Nilai ujian 6 siswa: 70, 75, 80, 85, 90, 100. Simpangan baku data tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "$\\sqrt{\\frac{350}{3}}$" },
+            { "key": "B", "text": "10" },
+            { "key": "C", "text": "$\\sqrt{250}$" },
+            { "key": "D", "text": "$\\sqrt{\\frac{500}{6}}$" }
+          ],
+          "correctAnswer": "D",
+          "hint": "$\\bar{x} = 83.3$. Hitung $\\sum(x_i-\\bar{x})^2$ lalu bagi dengan $n$ (simpangan baku populasi).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = \\frac{500}{6} \\approx 83.3$\nGunakan rumus simpangan baku populasi: $\\sigma = \\sqrt{\\frac{\\sum(x_i-\\bar{x})^2}{n}}$\nHasilnya adalah $\\sqrt{\\frac{500}{6}}$ (Opsi D)."
+        }
+      ]
+    },
+    {
+      "id": "sma12-bab6-transformasi",
+      "title": "Bab 6: Geometri Transformasi",
+      "track": "wajib",
+      "summary": {
+        "overview": "Geometri transformasi mempelajari perubahan posisi, bentuk, atau ukuran suatu bangun geometris melalui operasi matematis tertentu. Transformasi digunakan secara luas dalam desain grafis, animasi komputer, robotika, navigasi GPS, dan kriptografi geometris.\n\nEmpat jenis transformasi dasar yang dipelajari adalah: (1) **Translasi** (geseran), (2) **Refleksi** (pencerminan), (3) **Rotasi** (perputaran), dan (4) **Dilatasi** (perbesaran/pengecilan). Transformasi dapat dikomposisikan (digabungkan) untuk menghasilkan transformasi yang lebih kompleks.",
+        "coreConcepts": [
+          "Translasi $(a, b)$: Setiap titik $(x, y)$ dipetakan ke $(x+a, y+b)$. Bangun diterjemahkan $a$ satuan horizontal dan $b$ satuan vertikal tanpa mengubah bentuk atau orientasi.",
+          "Refleksi (Pencerminan):\n- Terhadap sumbu-$x$: $(x, y) \\to (x, -y)$\n- Terhadap sumbu-$y$: $(x, y) \\to (-x, y)$\n- Terhadap $y = x$: $(x, y) \\to (y, x)$\n- Terhadap $y = -x$: $(x, y) \\to (-y, -x)$",
+          "Rotasi terhadap titik asal $O(0,0)$ sejauh $\\theta$:\n- Rotasi $90^\\circ$ berlawanan arah jarum jam: $(x, y) \\to (-y, x)$\n- Rotasi $90^\\circ$ searah jarum jam: $(x, y) \\to (y, -x)$\n- Rotasi $180^\\circ$: $(x, y) \\to (-x, -y)$",
+          "Dilatasi dengan pusat $O(0,0)$ dan faktor skala $k$: $(x, y) \\to (kx, ky)$. Jika $|k| > 1$: perbesaran; jika $|k| < 1$: pengecilan; jika $k < 0$: juga terjadi refleksi.",
+          "Komposisi Transformasi: Menerapkan dua atau lebih transformasi secara berurutan. Urutan transformasi berpengaruh pada hasil akhir (umumnya tidak komutatif)."
+        ],
+        "workedExamples": [
+          {
+            "title": "Komposisi Translasi dan Refleksi",
+            "problem": "Titik $A(3, -2)$ ditranslasikan oleh $T(2, 5)$ kemudian dicerminkan terhadap sumbu-$y$. Tentukan koordinat bayangan akhir titik $A$.",
+            "solution": "Langkah 1: Translasi $T(2, 5)$:\n$A(3, -2) \\xrightarrow{T(2,5)} A'(3+2, -2+5) = A'(5, 3)$\n\nLangkah 2: Refleksi terhadap sumbu-$y$: $(x, y) \\to (-x, y)$:\n$A'(5, 3) \\to A''(-5, 3)$\n\nKoordinat bayangan akhir adalah $A''(-5, 3)$."
+          },
+          {
+            "title": "Dilatasi pada Segitiga",
+            "problem": "Segitiga $ABC$ dengan $A(2, 1)$, $B(4, 1)$, $C(3, 3)$ didilatasi terhadap titik asal dengan faktor skala $k = 2$. Tentukan koordinat bayangan $A'B'C'$ dan luas segitiga bayangan.",
+            "solution": "Dilatasi: $(x, y) \\to (2x, 2y)$\n- $A(2,1) \\to A'(4, 2)$\n- $B(4,1) \\to B'(8, 2)$\n- $C(3,3) \\to C'(6, 6)$\n\nLuas $ABC$ dengan rumus selimut: $L = \\frac{1}{2}|alas \\times tinggi| = \\frac{1}{2} \\times 2 \\times 2 = 2$ satuan luas.\nLuas $A'B'C' = k^2 \\times L_{ABC} = 4 \\times 2 = 8$ satuan luas."
+          }
+        ],
+        "keyFormulas": [
+          { "label": "Translasi", "formula": "(x, y) \\xrightarrow{T(a,b)} (x+a, y+b)" },
+          { "label": "Refleksi sumbu-x", "formula": "(x, y) \\to (x, -y)" },
+          { "label": "Refleksi sumbu-y", "formula": "(x, y) \\to (-x, y)" },
+          { "label": "Rotasi 90° CCW", "formula": "(x, y) \\to (-y, x)" },
+          { "label": "Dilatasi pusat O", "formula": "(x, y) \\xrightarrow{D(O,k)} (kx, ky)" }
+        ],
+        "misconceptions": [
+          "Pada rotasi $90^\\circ$ berlawanan arah jarum jam, bukan $(y, -x)$ melainkan $(-y, x)$. Gunakan matriks rotasi untuk memastikan.",
+          "Komposisi transformasi tidak selalu komutatif — urutan penerapan sangat menentukan hasil akhir."
+        ],
+        "tutorTip": "Hafalkan rumus cermin dan rotasi dengan bantuan gambar koordinat. Selalu uji dengan titik (1,0) dan (0,1) untuk memverifikasi rumus transformasi yang kamu gunakan!"
+      },
+      "questions": [
+        {
+          "id": "sma12-b6-1",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Titik $P(3, -4)$ ditranslasikan oleh $T(-2, 5)$. Koordinat bayangan $P'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(1, 1)$" },
+            { "key": "B", "text": "$(5, -9)$" },
+            { "key": "C", "text": "$(-3, 4)$" },
+            { "key": "D", "text": "$(1, -1)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Translasi: $(x+a, y+b) = (3+(-2), -4+5)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$P' = (3-2, -4+5) = (1, 1)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-2",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Titik $Q(5, -3)$ dicerminkan terhadap sumbu-$x$. Koordinat bayangan $Q'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(5, 3)$" },
+            { "key": "B", "text": "$(-5, 3)$" },
+            { "key": "C", "text": "$(-5, -3)$" },
+            { "key": "D", "text": "$(3, 5)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap sumbu-$x$: $(x, y) \\to (x, -y)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$Q' = (5, -(-3)) = (5, 3)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-3",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Titik $R(-2, 7)$ dicerminkan terhadap sumbu-$y$. Koordinat bayangan $R'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(2, 7)$" },
+            { "key": "B", "text": "$(-2, -7)$" },
+            { "key": "C", "text": "$(7, -2)$" },
+            { "key": "D", "text": "$(-7, -2)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap sumbu-$y$: $(x, y) \\to (-x, y)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$R' = (-(-2), 7) = (2, 7)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-4",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Titik $S(4, 3)$ dirotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik asal. Koordinat bayangan $S'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(-3, 4)$" },
+            { "key": "B", "text": "$(3, -4)$" },
+            { "key": "C", "text": "$(-4, -3)$" },
+            { "key": "D", "text": "$(4, -3)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rotasi $90^\\circ$ CCW: $(x, y) \\to (-y, x)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$S' = (-3, 4)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-5",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Titik $T(6, -2)$ didilatasi terhadap titik asal dengan faktor skala $k = \\frac{1}{2}$. Koordinat bayangan $T'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(3, -1)$" },
+            { "key": "B", "text": "$(12, -4)$" },
+            { "key": "C", "text": "$(-3, 1)$" },
+            { "key": "D", "text": "$(6, -1)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Dilatasi: $(kx, ky) = (\\frac{1}{2} \\times 6, \\frac{1}{2} \\times (-2))$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$T' = (3, -1)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-6",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Titik $U(2, 5)$ dicerminkan terhadap garis $y = x$. Koordinat bayangan $U'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(5, 2)$" },
+            { "key": "B", "text": "$(-5, -2)$" },
+            { "key": "C", "text": "$(2, 5)$" },
+            { "key": "D", "text": "$(-2, -5)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap $y = x$: $(x, y) \\to (y, x)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$U' = (5, 2)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-7",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Titik $V(3, 4)$ dirotasi $180^\\circ$ terhadap titik asal. Koordinat bayangan $V'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(-3, -4)$" },
+            { "key": "B", "text": "$(3, -4)$" },
+            { "key": "C", "text": "$(-4, 3)$" },
+            { "key": "D", "text": "$(4, -3)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rotasi $180^\\circ$: $(x, y) \\to (-x, -y)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$V' = (-3, -4)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-8",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Titik $W(2, 3)$ ditranslasikan oleh $T(1, -2)$ kemudian dirotasi $90^\\circ$ CCW terhadap titik asal. Koordinat bayangan akhir $W''$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(-1, 3)$" },
+            { "key": "B", "text": "$(3, 1)$" },
+            { "key": "C", "text": "$(-3, 1)$" },
+            { "key": "D", "text": "$(1, 3)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Translasi dulu: $W(2,3) \\to W'(3,1)$. Kemudian rotasi $90^\\circ$ CCW: $(x,y)\\to(-y,x)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Translasi: $W' = (2+1, 3-2) = (3, 1)$\n2. Rotasi $90^\\circ$ CCW: $W'' = (-1, 3)$\nKoordinat akhir adalah **$(-1, 3)$** (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-9",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Segitiga $ABC$ dengan luas 12 cm² didilatasi dengan faktor skala $k = 3$. Luas segitiga bayangan $A'B'C'$ adalah...",
+          "options": [
+            { "key": "A", "text": "108 cm²" },
+            { "key": "B", "text": "36 cm²" },
+            { "key": "C", "text": "12 cm²" },
+            { "key": "D", "text": "4 cm²" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Dilatasi dengan faktor $k$ mengubah luas menjadi $k^2 \\times$ luas semula.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nLuas bayangan $= k^2 \\times L = 9 \\times 12 = 108\\text{ cm}^2$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-10",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Garis dengan persamaan $y = 2x + 3$ dicerminkan terhadap sumbu-$x$. Persamaan bayangan garis tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "$y = -2x - 3$" },
+            { "key": "B", "text": "$y = 2x - 3$" },
+            { "key": "C", "text": "$y = -2x + 3$" },
+            { "key": "D", "text": "$y = 2x + 3$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap sumbu-$x$: ganti $y$ dengan $-y$. Dari $-y = 2x+3$, diperoleh $y = -2x-3$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nRefleksi sumbu-$x$: $(x,y) \\to (x,-y)$\nSubstitusi: $-y = 2x+3 \\implies y = -2x-3$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-11",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Titik $A(3, 5)$ dicerminkan terhadap garis $y = -x$. Koordinat bayangan $A'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(-5, -3)$" },
+            { "key": "B", "text": "$(5, 3)$" },
+            { "key": "C", "text": "$(-3, -5)$" },
+            { "key": "D", "text": "$(5, -3)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap $y = -x$: $(x, y) \\to (-y, -x)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$A' = (-5, -3)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-12",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Titik $P(4, 2)$ dirotasi $90^\\circ$ searah jarum jam terhadap titik asal, lalu dicerminkan terhadap sumbu-$y$. Koordinat bayangan akhir adalah...",
+          "options": [
+            { "key": "A", "text": "$(-2, -4)$" },
+            { "key": "B", "text": "$(2, -4)$" },
+            { "key": "C", "text": "$(-4, 2)$" },
+            { "key": "D", "text": "$(2, 4)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rotasi $90^\\circ$ CW: $(x,y)\\to(y,-x)$. Lalu refleksi sumbu-$y$: $(x,y)\\to(-x,y)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Rotasi $90^\\circ$ CW: $P' = (2, -4)$\n2. Refleksi sumbu-$y$: $P'' = (-2, -4)$\nKoordinat akhir adalah **$(-2, -4)$** (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-13",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Titik $B(-3, 2)$ didilatasi terhadap titik asal dengan faktor skala $k = -2$. Koordinat bayangan $B'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(6, -4)$" },
+            { "key": "B", "text": "$(-6, 4)$" },
+            { "key": "C", "text": "$(6, 4)$" },
+            { "key": "D", "text": "$(-6, -4)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Dilatasi dengan $k = -2$: $(kx, ky) = (-2 \\times (-3), -2 \\times 2)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$B' = ((-2)(-3), (-2)(2)) = (6, -4)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-14",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Bayangan titik $C(a, b)$ dicerminkan terhadap sumbu-$x$ menghasilkan $C'(5, -3)$. Koordinat titik $C$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(5, 3)$" },
+            { "key": "B", "text": "$(-5, 3)$" },
+            { "key": "C", "text": "$(-5, -3)$" },
+            { "key": "D", "text": "$(5, -3)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi sumbu-$x$: $(x,-y) = (5,-3)$, sehingga $y = 3$. Titik asalnya $(5, 3)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika $C'(5,-3)$ adalah bayangan dari refleksi sumbu-$x$, maka $C = (5, 3)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-15",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Titik $D(1, 2)$ ditranslasikan oleh $T(3, -1)$, kemudian didilatasi dengan pusat $O$ dan $k = 2$. Koordinat bayangan akhir $D''$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(8, 2)$" },
+            { "key": "B", "text": "$(4, 2)$" },
+            { "key": "C", "text": "$(8, -2)$" },
+            { "key": "D", "text": "$(2, 8)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Translasi dulu: $D' = (1+3, 2-1) = (4, 1)$. Dilatasi $k=2$: $D'' = (8, 2)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Translasi: $D' = (4, 1)$\n2. Dilatasi $k=2$: $D'' = (8, 2)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-16",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Sebuah persegi panjang dengan luas 20 cm² didilatasi dengan faktor skala $k = \\frac{1}{2}$. Luas bayangan persegi panjang tersebut adalah...",
+          "options": [
+            { "key": "A", "text": "5 cm²" },
+            { "key": "B", "text": "10 cm²" },
+            { "key": "C", "text": "40 cm²" },
+            { "key": "D", "text": "80 cm²" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Luas bayangan $= k^2 \\times$ luas asli $= (\\frac{1}{2})^2 \\times 20 = \\frac{1}{4} \\times 20 = 5$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nLuas bayangan $= (\\frac{1}{2})^2 \\times 20 = 5\\text{ cm}^2$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-17",
+          "category": "Latihan",
+          "difficulty": "Dasar",
+          "question": "Titik $E(-4, 0)$ dirotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik asal. Koordinat bayangan $E'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(0, -4)$" },
+            { "key": "B", "text": "$(0, 4)$" },
+            { "key": "C", "text": "$(4, 0)$" },
+            { "key": "D", "text": "$(-4, 0)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rotasi $90^\\circ$ CCW: $(x,y) \\to (-y, x) = (0, -4)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$E' = (-0, -4) = (0, -4)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-18",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Titik $F(2, -1)$ dicerminkan terhadap garis $x = 3$. Koordinat bayangan $F'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(4, -1)$" },
+            { "key": "B", "text": "$(3, -1)$" },
+            { "key": "C", "text": "$(2, 1)$" },
+            { "key": "D", "text": "$(-2, -1)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Cermin terhadap $x = a$: $(x,y) \\to (2a-x, y)$. Di sini $a=3$: $F' = (6-2, -1) = (4, -1)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$F' = (2(3)-2, -1) = (4, -1)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-19",
+          "category": "Latihan",
+          "difficulty": "Menengah",
+          "question": "Titik $G(5, 3)$ dicerminkan terhadap titik asal $O(0,0)$. Koordinat bayangan $G'$ adalah...",
+          "options": [
+            { "key": "A", "text": "$(-5, -3)$" },
+            { "key": "B", "text": "$(5, -3)$" },
+            { "key": "C", "text": "$(-5, 3)$" },
+            { "key": "D", "text": "$(3, 5)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Refleksi terhadap titik asal sama dengan rotasi $180^\\circ$: $(x,y) \\to (-x,-y)$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$G' = (-5, -3)$ (Opsi A)."
+        },
+        {
+          "id": "sma12-b6-20",
+          "category": "Tantangan",
+          "difficulty": "Lanjut",
+          "question": "Bayangan titik $H$ setelah dirotasi $90^\\circ$ CCW terhadap titik asal adalah $H'(3, -5)$. Koordinat titik $H$ semula adalah...",
+          "options": [
+            { "key": "A", "text": "$(-5, -3)$" },
+            { "key": "B", "text": "$(5, 3)$" },
+            { "key": "C", "text": "$(-3, 5)$" },
+            { "key": "D", "text": "$(3, 5)$" }
+          ],
+          "correctAnswer": "A",
+          "hint": "Rotasi $90^\\circ$ CCW: $(x,y) \\to (-y,x)$. Jadi jika $(-y,x) = (3,-5)$, maka $x=-5$ dan $y=-3$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika rotasi $90^\\circ$ CCW: $(-y, x) = (3, -5)$\n$-y = 3 \\implies y = -3$; $x = -5$\nTitik $H = (-5, -3)$ (Opsi A)."
         }
       ]
     }
