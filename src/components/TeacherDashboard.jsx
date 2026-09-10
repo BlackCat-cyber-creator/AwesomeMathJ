@@ -469,7 +469,12 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
     const packetInfo = quest.packetIndex ? `\n🎯 *Paket PR*: Paket ${quest.packetIndex} (Soal ${quest.packetRange || '5 Soal'})` : "";
     const deadlineText = quest.deadline ? `\n📅 *Tenggat Pengumpulan*: ${formatIndonesianDate(quest.deadline)}` : "";
 
-    return `Halo *${quest.studentName}*, ini tugas latihan matematika bab *${quest.chapterTitle}*${trackInfo} dari Sir Jevon.${packetInfo}\n\nSilakan kerjakan 5 butir soal pada link berikut:\n🔗 ${questUrl}${deadlineText}\n\nLatihan sudah dilengkapi papan cakar digital dan pembahasan simpel dari Sir Jevon. Semangat belajar! 🔥\n\nSalam hangat,\n*Sir Jevon — AwesomeMathJ*`;
+    // Mencegah duplikasi kata 'bab' jika nama bab sudah ada awalan 'Bab' (misal: 'Bab 2: Aljabar')
+    const rawChapterTitle = (quest.chapterTitle || "").trim();
+    const chapterPrefix = rawChapterTitle.toLowerCase().startsWith("bab") ? "" : "bab ";
+    const formattedChapter = `*${rawChapterTitle}*`;
+
+    return `Halo *${quest.studentName}*, ini tugas latihan matematika ${chapterPrefix}${formattedChapter}${trackInfo} dari Sir Jevon.${packetInfo}\n\nSilakan kerjakan 5 butir soal pada link berikut:\n🔗 ${questUrl}${deadlineText}\n\nLatihan sudah dilengkapi papan cakar digital dan pembahasan simpel dari Sir Jevon. Semangat belajar! 🔥\n\nSalam hangat,\n*Sir Jevon — AwesomeMathJ*`;
   };
 
   const copyWhatsAppMessage = (quest) => {
@@ -624,23 +629,6 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
           </button>
         </div>
 
-        {/* Database Backup / Restore Trigger */}
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-
-          <button
-            id="btn-open-backup-modal"
-            className="btn btn-outline"
-            style={{ fontSize: '0.8rem', padding: '0.4rem 0.85rem', display: 'flex', alignItems: 'center', gap: '0.45rem' }}
-            onClick={() => {
-              setBackupMessage(null);
-              setShowBackupModal(true);
-            }}
-            title="Cadangkan atau pulihkan data murid dan tugas"
-          >
-            <Database size={15} color="var(--primary-blue)" />
-            Backup & Restore (JSON)
-          </button>
-        </div>
       </div>
 
       {/* ======================================================== */}
