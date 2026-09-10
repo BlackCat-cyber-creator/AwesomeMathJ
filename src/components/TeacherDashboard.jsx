@@ -466,15 +466,15 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
     const origin = window.location.origin;
     const questUrl = `${origin}/?questId=${quest.id}`;
     const trackInfo = quest.trackLabel ? ` [${quest.trackLabel}]` : "";
-    const packetInfo = quest.packetIndex ? `\n🎯 *Paket PR*: Paket ${quest.packetIndex} (Soal ${quest.packetRange || '5 Soal'})` : "";
-    const deadlineText = quest.deadline ? `\n📅 *Tenggat Pengumpulan*: ${formatIndonesianDate(quest.deadline)}` : "";
+    const packetInfo = quest.packetIndex ? `\n🎯 *Paket Soal*: Paket ${quest.packetIndex} (${quest.packetRange || '5 Butir Soal'})` : "";
+    const deadlineText = quest.deadline ? `\n📅 *Tenggat*: ${formatIndonesianDate(quest.deadline)}` : "";
 
     // Mencegah duplikasi kata 'bab' jika nama bab sudah ada awalan 'Bab' (misal: 'Bab 2: Aljabar')
     const rawChapterTitle = (quest.chapterTitle || "").trim();
-    const chapterPrefix = rawChapterTitle.toLowerCase().startsWith("bab") ? "" : "bab ";
+    const chapterPrefix = rawChapterTitle.toLowerCase().startsWith("bab") ? "" : "Bab ";
     const formattedChapter = `*${rawChapterTitle}*`;
 
-    return `Halo *${quest.studentName}*, ini tugas latihan matematika ${chapterPrefix}${formattedChapter}${trackInfo} dari Sir Jevon.${packetInfo}\n\nSilakan kerjakan 5 butir soal pada link berikut:\n🔗 ${questUrl}${deadlineText}\n\nLatihan sudah dilengkapi papan cakar digital dan pembahasan simpel dari Sir Jevon. Semangat belajar! 🔥\n\nSalam hangat,\n*Sir Jevon — AwesomeMathJ*`;
+    return `Halo *${quest.studentName}* & Bapak/Ibu Wali Murid,\n\nBerikut link tugas latihan matematika dari *Sir Jevon*:\n📚 *Materi*: ${chapterPrefix}${formattedChapter}${trackInfo}${packetInfo}${deadlineText}\n\nSilakan buka tautan berikut untuk mulai mengerjakan:\n🔗 ${questUrl}\n\n📌 *Petunjuk Pengerjaan*:\n1. Langsung dibuka di browser HP/laptop (tanpa perlu instal aplikasi).\n2. Tersedia *Papan Cakar Digital* di layar untuk corat-coret hitungan.\n3. Nilai & coretan otomatis tersimpan langsung ke evaluasi Sir Jevon.\n\nSemangat belajar! Hubungi Sir Jevon jika ada kendala ya. 🔥\n\nSalam hangat,\n*Sir Jevon — AwesomeMathJ*`;
   };
 
   const copyWhatsAppMessage = (quest) => {
