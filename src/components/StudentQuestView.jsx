@@ -1,9 +1,10 @@
-import React, { useState } from 'react';
+import React, { useState, useEffect } from 'react';
 import confetti from 'canvas-confetti';
 import { MathText } from './MathRenderer';
 import { QuestionVisual } from './QuestionVisual';
 import { ScratchpadModal } from './ScratchpadModal';
 import { getQuestById, submitQuestResult, updateQuestStatus, formatIndonesianDate } from '../utils/storage';
+import { getQuestByIdCloud, submitQuestResultCloud, updateQuestStatusCloud } from '../firebase/firestore';
 import { 
   Flame, 
   CheckCircle, 
@@ -15,11 +16,13 @@ import {
   Edit3,
   Check,
   Calendar,
-  BookOpen
+  BookOpen,
+  Loader2
 } from 'lucide-react';
 
 export function StudentQuestView({ questId, onBackToDashboard }) {
-  const [quest] = useState(() => (questId ? getQuestById(questId) : null));
+  const [quest, setQuest] = useState(() => (questId ? getQuestById(questId) : null));
+  const [isLoadingQuest, setIsLoadingQuest] = useState(!quest && !!questId);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswerChecked, setIsAnswerChecked] = useState(false);
@@ -28,6 +31,53 @@ export function StudentQuestView({ questId, onBackToDashboard }) {
   const [isFinished, setIsFinished] = useState(false);
   const [earnedXp, setEarnedXp] = useState(0);
   const [isScratchpadOpen, setIsScratchpadOpen] = useState(false);
+
+  // Ambil data quest dari Firestore jika tidak ada di cache lokal (misal murid buka link di HP)
+  useEffect(() => {
+    let isMounted = true;
+    if (!quest && questId) {
+      setIsLoadingQuest(true);
+      getQuestByIdCloud(questId)
+        .then((cloudQuest) => {
+          if (isMounted && cloudQuest) {
+            setQuest(cloudQuest);
+          }
+        })
+        .catch((err) => {
+          console.error("Gagal mengambil quest dari cloud:", err);
+        })
+        .finally(() => {
+          if (isMounted) setIsLoadingQuest(false);
+        });
+    }
+    return () => { isMounted = false; };
+  }, [questId, quest]);
+
+  if (isLoadingQuest) {
+    return (
+      <div style={{ maxWidth: 640, margin: '5rem auto', textAlign: 'center', padding: '2rem' }}>
+        <div className="editorial-card" style={{ padding: '3.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <div style={{
+            width: 54,
+            height: 54,
+            borderRadius: '50%',
+            backgroundColor: 'var(--primary-light)',
+            display: 'flex',
+            alignItems: 'center',
+            justifyContent: 'center',
+            marginBottom: '1rem',
+            color: 'var(--primary-navy)'
+          }}>
+            <Loader2 size={28} className="spin-animation" />
+          </div>
+          <h3 style={{ color: 'var(--primary-navy)', marginBottom: '0.4rem' }}>Memuat Soal Latihan...</h3>
+          <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.9rem' }}>
+            Mengambil penugasan materi langsung dari cloud AwesomeMathJ.
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (!quest) {
     return (
@@ -55,9 +105,10 @@ export function StudentQuestView({ questId, onBackToDashboard }) {
     const isCorrect = selectedOption === currentQ.correctAnswer;
     setIsAnswerChecked(true);
 
-    // Update quest status to in_progress in storage
+    // Update quest status to in_progress in storage & Firestore
     if (quest.id && !quest.id.startsWith("practice-")) {
       updateQuestStatus(quest.id, "in_progress");
+      updateQuestStatusCloud(quest.id, "in_progress").catch(() => {});
     }
 
     setAnswersState((prev) => ({
@@ -94,10 +145,11 @@ export function StudentQuestView({ questId, onBackToDashboard }) {
         // graceful fallback
       }
 
-      // Save submission
+      // Save submission to local storage & Firestore cloud
       if (quest.id && !quest.id.startsWith("practice-")) {
-        submitQuestResult({
+        const subData = {
           questId: quest.id,
+          teacherId: quest.teacherId || null,
           studentId: quest.studentId,
           studentName: quest.studentName,
           score: finalScore,
@@ -111,6 +163,13 @@ export function StudentQuestView({ questId, onBackToDashboard }) {
               isCorrect: selectedOption === currentQ.correctAnswer
             }
           }
+        };
+
+        // Simpan lokal
+        submitQuestResult(subData);
+        // Simpan cloud
+        submitQuestResultCloud(subData).catch((err) => {
+          console.warn("Gagal menyimpan hasil ke cloud:", err);
         });
       }
 

@@ -6,6 +6,7 @@ import { ChapterSolutionView } from './components/ChapterSolutionView';
 import { PublicHandbook } from './components/PublicHandbook';
 import { TeacherLoginView } from './components/TeacherLoginView';
 import { isTeacherAuthenticated, setTeacherAuthenticated, getQuestById } from './utils/storage';
+import { subscribeToTeacherAuth, logoutTeacher, getCurrentTeacherUser } from './firebase/auth';
 import { getChapterSolutionData } from './data/curriculumData';
 import { 
   GraduationCap, 
@@ -121,17 +122,38 @@ export function App() {
     navigateTo('/');
   };
 
+  const [currentTeacher, setCurrentTeacher] = useState(getCurrentTeacherUser());
+
+  // Listen to Firebase Auth state
+  useEffect(() => {
+    const unsubscribe = subscribeToTeacherAuth((user) => {
+      if (user) {
+        setCurrentTeacher(user);
+        setIsTeacherLoggedIn(true);
+        setTeacherAuthenticated(true);
+      }
+    });
+    return () => unsubscribe();
+  }, []);
+
   // Successful Teacher Login
-  const handleAuthSuccess = () => {
+  const handleAuthSuccess = (authUser) => {
     setTeacherAuthenticated(true);
     setIsTeacherLoggedIn(true);
+    if (authUser) setCurrentTeacher(authUser);
     navigateTo('/teacher');
   };
 
   // Teacher Sign Out
-  const handleSignOut = () => {
+  const handleSignOut = async () => {
+    try {
+      await logoutTeacher();
+    } catch (e) {
+      console.warn("Logout error:", e);
+    }
     setTeacherAuthenticated(false);
     setIsTeacherLoggedIn(false);
+    setCurrentTeacher(null);
     navigateTo('/teacher');
   };
 
@@ -274,6 +296,7 @@ export function App() {
               setActiveTab={setActiveTeacherTab}
               onBackToPublic={() => navigateTo('/')}
               onSignOut={handleSignOut}
+              currentTeacher={currentTeacher}
             />
           ) : (
             <TeacherLoginView 
