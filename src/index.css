@@ -4,6 +4,9 @@
    ========================================================================== */
 
 :root {
+  /* Enforce Light Theme across all devices */
+  color-scheme: light;
+
   /* Surface & Paper Palette */
   --bg-paper: #F9FAFB;
   --bg-surface: #FFFFFF;
@@ -74,12 +77,14 @@
 html {
   font-size: 16px;
   scroll-behavior: smooth;
+  color-scheme: light;
 }
 
 body {
   font-family: var(--font-body);
   background-color: var(--bg-paper);
   color: var(--text-primary);
+  color-scheme: light;
   min-height: 100vh;
   line-height: 1.65;
   -webkit-font-smoothing: antialiased;
@@ -1157,129 +1162,9 @@ img, svg {
 }
 
 /* ==========================================================================
-   DARK MODE SUPPORT
+   THEME LOCK: PURE LIGHT & CLEAN WHITE EDITORIAL (NO DARK MODE)
+   Semua perangkat (desktop, tablet, mobile) dikunci pada palet putih bersih.
    ========================================================================== */
-@media (prefers-color-scheme: dark) {
-  :root {
-    --bg-paper: #0F172A;
-    --bg-surface: #1E293B;
-    --bg-surface-elevated: #334155;
-    --bg-surface-subtle: #1E293B;
-
-    --border-subtle: #334155;
-    --border-medium: #475569;
-    --border-strong: #64748B;
-
-    --text-primary: #F1F5F9;
-    --text-secondary: #CBD5E1;
-    --text-muted: #94A3B8;
-    --text-subtle: #64748B;
-
-    --primary-navy: #93C5FD;
-    --primary-blue: #60A5FA;
-    --primary-hover: #3B82F6;
-    --primary-light: #1E3A5F;
-    --primary-subtle: #1E3A5F;
-
-    --status-emerald: #34D399;
-    --status-emerald-light: #064E3B;
-    --status-emerald-border: #065F46;
-
-    --status-brick: #F87171;
-    --status-brick-light: #450A0A;
-    --status-brick-border: #7F1D1D;
-
-    --accent-amber: #FBBF24;
-    --accent-amber-light: #451A03;
-    --accent-amber-border: #78350F;
-
-    --whatsapp-green: #4ADE80;
-    --whatsapp-light: #064E3B;
-  }
-
-  .top-navbar {
-    background: #1E293B;
-    border-bottom-color: #334155;
-  }
-
-  .brand-icon-wrapper {
-    background: #3B82F6;
-  }
-
-  .accordion-header:hover {
-    background-color: rgba(255, 255, 255, 0.03);
-  }
-
-  .accordion-section {
-    border-color: #334155;
-  }
-
-  .ringkasan-kilat-card {
-    background: linear-gradient(135deg, #1E3A5F 0%, #1E293B 100%);
-    border-color: #334155;
-  }
-
-  .peta-chip {
-    background: #1E293B;
-    border-color: #475569;
-    color: #CBD5E1;
-  }
-
-  .peta-chip:hover {
-    background: #1E3A5F;
-    color: #93C5FD;
-    border-color: #60A5FA;
-  }
-
-  .nav-pill-group {
-    background: #334155;
-    border-color: #475569;
-  }
-
-  .nav-pill.active {
-    background: #1E293B;
-    color: #93C5FD;
-  }
-
-  .btn-outline {
-    background: #1E293B;
-    color: #CBD5E1;
-    border-color: #475569;
-  }
-
-  .btn-outline:hover {
-    background: #334155;
-    color: #F1F5F9;
-  }
-
-  .btn-subtle {
-    background: #334155;
-    color: #CBD5E1;
-    border-color: #475569;
-  }
-
-  .form-select, .form-input, .form-textarea {
-    background: #1E293B;
-    color: #F1F5F9;
-    border-color: #475569;
-  }
-
-  .katex {
-    color: #F1F5F9 !important;
-  }
-
-  .handbook-hero {
-    background: linear-gradient(135deg, #1E293B 0%, #0F172A 100%);
-  }
-
-  /* Override inline backgrounds in dark mode for accordion content */
-  .pillar-overview .accordion-body-inner,
-  .pillar-concepts .accordion-body-inner,
-  .pillar-examples .accordion-body-inner,
-  .pillar-formulas .accordion-body-inner {
-    color: #CBD5E1;
-  }
-}
 
 /* ==========================================================================
    MOBILE ACCORDION ADJUSTMENTS
