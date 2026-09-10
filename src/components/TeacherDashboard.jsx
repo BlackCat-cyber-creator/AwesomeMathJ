@@ -90,11 +90,8 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
   const [students, setStudents] = useState(getStudents());
   const [quests, setQuests] = useState(getQuests());
   
-  // Cloud Firestore state & synchronization
-  const [isCloudConnected, setIsCloudConnected] = useState(!!currentTeacher?.uid && currentTeacher.uid !== "teacher-offline");
-  const [isSyncingCloud, setIsSyncingCloud] = useState(false);
-  const [syncCloudSuccess, setSyncCloudSuccess] = useState(false);
-  const [syncCloudError, setSyncCloudError] = useState(null);
+  // Cloud Firestore state & automatic real-time synchronization
+  const [isCloudConnected, setIsCloudConnected] = useState(true);
 
   // Real-time Firestore synchronization for students and quests
   useEffect(() => {
@@ -143,25 +140,6 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
       unsubQuests();
     };
   }, [currentTeacher]);
-
-  const handleManualCloudSync = async () => {
-    const teacherId = (currentTeacher?.uid && currentTeacher.uid !== "teacher-offline")
-      ? currentTeacher.uid
-      : "sirjevon";
-    try {
-      setIsSyncingCloud(true);
-      setSyncCloudError(null);
-      await migrateLocalDataToCloud(teacherId, students, quests);
-      setSyncCloudSuccess(true);
-      setTimeout(() => setSyncCloudSuccess(false), 3500);
-    } catch (err) {
-      console.error("Gagal sinkronisasi ke cloud:", err);
-      setSyncCloudError("Gagal sinkronisasi: " + err.message);
-      setTimeout(() => setSyncCloudError(null), 5000);
-    } finally {
-      setIsSyncingCloud(false);
-    }
-  };
   
   // Quest Generator state - 4 segments (5 questions per packet)
   const [targetStudentId, setTargetStudentId] = useState(students[0]?.id || "");
@@ -617,49 +595,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
         </div>
       </div>
 
-      {/* Cloud Sync Notifications if triggered */}
-      {syncCloudSuccess && (
-        <div 
-          style={{ 
-            backgroundColor: 'var(--status-emerald-light)', 
-            color: 'var(--status-emerald)', 
-            border: '1px solid var(--status-emerald-border)',
-            padding: '0.75rem 1rem', 
-            borderRadius: 'var(--radius-sm)', 
-            fontSize: '0.85rem', 
-            fontWeight: 600,
-            marginBottom: '1rem',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem'
-          }}
-        >
-          <CheckCircle2 size={16} />
-          Data murid dan penugasan PR berhasil diunggah dan disinkronkan ke Firebase Cloud!
-        </div>
-      )}
-      {syncCloudError && (
-        <div 
-          style={{ 
-            backgroundColor: 'var(--status-brick-light)', 
-            color: 'var(--status-brick)', 
-            border: '1px solid var(--status-brick-border)',
-            padding: '0.75rem 1rem', 
-            borderRadius: 'var(--radius-sm)', 
-            fontSize: '0.85rem', 
-            fontWeight: 600,
-            marginBottom: '1rem',
-            display: 'flex',
-            alignItems: 'center',
-            gap: '0.5rem'
-          }}
-        >
-          <AlertCircle size={16} />
-          {syncCloudError}
-        </div>
-      )}
-
-      {/* Navigation Tabs & Cloud / Backup Toolbar */}
+      {/* Navigation Tabs & Database Backup Toolbar */}
       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.5rem', flexWrap: 'wrap', gap: '0.75rem' }}>
         <div className="nav-pill-group" style={{ display: 'inline-flex' }}>
           <button 
@@ -688,43 +624,8 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, activeTab, setAc
           </button>
         </div>
 
-        {/* Cloud Sync & Database Backup Actions */}
+        {/* Database Backup / Restore Trigger */}
         <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-          {isCloudConnected && (
-            <button
-              id="btn-manual-cloud-sync"
-              className="btn btn-outline"
-              disabled={isSyncingCloud}
-              style={{ 
-                fontSize: '0.8rem', 
-                padding: '0.4rem 0.85rem', 
-                display: 'flex', 
-                alignItems: 'center', 
-                gap: '0.45rem',
-                borderColor: syncCloudSuccess ? 'var(--status-emerald)' : undefined,
-                color: syncCloudSuccess ? 'var(--status-emerald)' : undefined
-              }}
-              onClick={handleManualCloudSync}
-              title="Unggah data siswa dan tugas lokal ke Firestore Cloud"
-            >
-              {isSyncingCloud ? (
-                <>
-                  <RefreshCw size={14} className="spin-animation" />
-                  Menyinkronkan...
-                </>
-              ) : syncCloudSuccess ? (
-                <>
-                  <CheckCircle2 size={14} color="var(--status-emerald)" />
-                  Tersinkron ke Cloud!
-                </>
-              ) : (
-                <>
-                  <Cloud size={14} color="var(--primary-blue)" />
-                  Sinkronkan ke Cloud
-                </>
-              )}
-            </button>
-          )}
 
           <button
             id="btn-open-backup-modal"
