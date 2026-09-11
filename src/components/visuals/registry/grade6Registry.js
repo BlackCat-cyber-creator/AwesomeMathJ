@@ -201,7 +201,7 @@ export const grade6VisualRegistry = {
     type: 'bar-model',
     props: {
       title: 'Kelereng Doni dan Budi',
-      caption: '*Rasio 3 : 5, kelereng Budi berjumlah 40 butir',
+      caption: '*Rasio 3 : 5, kelereng Budi berjumlah 35 butir',
       rows: [
         {
           segments: [
@@ -213,7 +213,7 @@ export const grade6VisualRegistry = {
           segments: [
             { label: 'Budi (5)', width: 100, color: 'green' }
           ],
-          totalLabel: '40 Butir'
+          totalLabel: '35 Butir'
         }
       ],
       target: '? butir',
@@ -430,10 +430,10 @@ export const grade6VisualRegistry = {
       title: 'Luas Bidang Sisi Kubus',
       caption: '*Volume kubus adalah 512 cm³',
       solid: 'box',
-      lengthLabel: 's = 8 cm',
-      widthLabel: 's = 8 cm',
-      heightLabel: 's = 8 cm',
-      targetLabel: 'V = 512 cm³'
+      lengthLabel: 's',
+      widthLabel: 's',
+      heightLabel: 's',
+      targetLabel: 'V = 512 cm³ (Luas sisi = ?)'
     }
   },
 

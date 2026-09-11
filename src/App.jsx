@@ -1,12 +1,7 @@
-import React, { useState, useEffect, useMemo } from 'react';
-import { TeacherDashboard } from './components/TeacherDashboard';
-import { StudentQuestView } from './components/StudentQuestView';
-import { PrintableWorksheet } from './components/PrintableWorksheet';
-import { ChapterSolutionView } from './components/ChapterSolutionView';
-import { PublicHandbook } from './components/PublicHandbook';
-import { TeacherLoginView } from './components/TeacherLoginView';
-import { isTeacherAuthenticated, setTeacherAuthenticated, getQuestById } from './utils/storage';
-import { subscribeToTeacherAuth, logoutTeacher, getCurrentTeacherUser } from './firebase/auth';
+import React, { useState, useEffect, Suspense, lazy } from 'react';
+import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
+import { useAuth } from './context/AuthContext';
+import { getQuestById } from './utils/storage';
 import { getChapterSolutionData } from './data/curriculumData';
 import { 
   GraduationCap, 
@@ -14,147 +9,106 @@ import {
   ShieldCheck, 
   BookOpen, 
   LogOut,
-  ArrowLeft
+  Loader2
 } from 'lucide-react';
 
+// Lazy-loaded Views for maximal code-splitting
+const TeacherDashboard = lazy(() => import('./components/TeacherDashboard').then(m => ({ default: m.TeacherDashboard })));
+const StudentQuestView = lazy(() => import('./components/StudentQuestView').then(m => ({ default: m.StudentQuestView })));
+const PrintableWorksheet = lazy(() => import('./components/PrintableWorksheet').then(m => ({ default: m.PrintableWorksheet })));
+const ChapterSolutionView = lazy(() => import('./components/ChapterSolutionView').then(m => ({ default: m.ChapterSolutionView })));
+const PublicHandbook = lazy(() => import('./components/PublicHandbook').then(m => ({ default: m.PublicHandbook })));
+const TeacherLoginView = lazy(() => import('./components/TeacherLoginView').then(m => ({ default: m.TeacherLoginView })));
+
+function RouteFallback() {
+  return (
+    <div style={{
+      minHeight: '60vh',
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      justifyContent: 'center',
+      gap: '1rem',
+      color: 'var(--text-muted)'
+    }}>
+      <Loader2 size={36} className="spinner" style={{ color: 'var(--primary-blue)', animation: 'spin 1s linear infinite' }} />
+      <span style={{ fontWeight: 600, fontSize: '0.95rem' }}>Memuat halaman...</span>
+    </div>
+  );
+}
+
 export function App() {
-  // Check URL parameters directly on initial load (e.g. ?questId=...)
-  const getUrlQuestId = () => {
-    if (typeof window === 'undefined') return null;
-    const params = new URLSearchParams(window.location.search);
-    return params.get("questId");
-  };
+  const navigate = useNavigate();
+  const location = useLocation();
+  const [searchParams, setSearchParams] = useSearchParams();
+  const { user, teacherName, isAuthenticated, isLoading: isAuthLoading, logout } = useAuth();
 
-  // Check URL parameters for online solution/pembahasan (e.g. ?pembahasan=1&grade=4&chapter=...)
-  const getUrlSolutionParams = () => {
-    if (typeof window === 'undefined') return null;
-    const params = new URLSearchParams(window.location.search);
-    if (params.get("pembahasan") || params.get("solution")) {
-      return {
-        grade: params.get("grade"),
-        chapter: params.get("chapter"),
-        questId: params.get("questId")
-      };
-    }
-    return null;
-  };
-
-  const [currentPath, setCurrentPath] = useState(window.location.pathname);
-  const [activeStudentQuestId, setActiveStudentQuestId] = useState(getUrlQuestId());
-  const [solutionParams, setSolutionParams] = useState(getUrlSolutionParams());
   const [activeWorksheetQuest, setActiveWorksheetQuest] = useState(null);
-  const [isTeacherLoggedIn, setIsTeacherLoggedIn] = useState(isTeacherAuthenticated());
-  const [activeTeacherTab, setActiveTeacherTab] = useState("generator"); // "generator", "students", "syllabus"
+  const [activeTeacherTab, setActiveTeacherTab] = useState("generator");
 
-  // Check if current route is dedicated to teacher portal (/teacher)
-  const isTeacherRoute = currentPath === '/teacher' || currentPath.startsWith('/teacher/');
+  const questId = searchParams.get("questId");
+  const isSolutionParam = searchParams.get("pembahasan") || searchParams.get("solution");
+  const solutionGrade = searchParams.get("grade");
+  const solutionChapter = searchParams.get("chapter");
 
-  // Ambil data kunci & pembahasan secara instan sesuai grade & chapterId
-  const activeSolutionData = useMemo(() => {
-    if (!solutionParams) return null;
-    if (solutionParams.grade && solutionParams.chapter) {
-      const data = getChapterSolutionData(solutionParams.grade, solutionParams.chapter);
-      if (data) return data;
+  const isTeacherRoute = location.pathname === '/teacher' || location.pathname.startsWith('/teacher/');
+
+  // Async load solution data if URL has solution params
+  const [activeSolutionData, setActiveSolutionData] = useState(null);
+  useEffect(() => {
+    let active = true;
+    if (!isSolutionParam && !solutionGrade) {
+      setActiveSolutionData(null);
+      return;
     }
-    if (solutionParams.questId) {
-      const quest = getQuestById(solutionParams.questId);
-      if (quest) {
-        return {
+    if (solutionGrade && solutionChapter) {
+      getChapterSolutionData(solutionGrade, solutionChapter).then((data) => {
+        if (active && data) setActiveSolutionData(data);
+      });
+    } else if (questId) {
+      const quest = getQuestById(questId);
+      if (quest && active) {
+        setActiveSolutionData({
           id: quest.id,
           title: quest.chapterTitle || quest.title,
           grade: quest.grade,
           questions: quest.questions,
           level: quest.trackLabel || ""
-        };
+        });
       }
     }
-    return null;
-  }, [solutionParams]);
+    return () => { active = false; };
+  }, [isSolutionParam, solutionGrade, solutionChapter, questId]);
 
-  // Seamless client-side navigation
-  const navigateTo = (path) => {
-    window.history.pushState({ path }, '', path);
-    setCurrentPath(path);
-    setActiveStudentQuestId(getUrlQuestId());
-    setSolutionParams(getUrlSolutionParams());
-    window.scrollTo({ top: 0, behavior: 'instant' });
-  };
-
-  // Listen to popstate (browser back/forward button)
-  useEffect(() => {
-    const handlePopState = () => {
-      setCurrentPath(window.location.pathname);
-      setActiveStudentQuestId(getUrlQuestId());
-      setSolutionParams(getUrlSolutionParams());
-    };
-    window.addEventListener('popstate', handlePopState);
-    return () => window.removeEventListener('popstate', handlePopState);
-  }, []);
-
-  // Launch student quest (preview or direct link)
-  const handleLaunchQuest = (questId) => {
-    setActiveStudentQuestId(questId);
+  const handleBackToHome = () => {
     setActiveWorksheetQuest(null);
-    const newUrl = `${window.location.pathname}?questId=${questId}`;
-    window.history.pushState({ path: newUrl }, '', newUrl);
+    setActiveSolutionData(null);
+    setSearchParams({});
+    navigate('/');
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
-  // Launch practice quest directly from Public Handbook
+  const handleLaunchQuest = (qId) => {
+    setActiveWorksheetQuest(null);
+    setSearchParams({ questId: qId });
+    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
+  };
+
   const handleLaunchPracticeQuest = (practiceQuest) => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setActiveWorksheetQuest(null);
-    setActiveStudentQuestId(practiceQuest.id);
     localStorage.setItem(`mathquest_practice_${practiceQuest.id}`, JSON.stringify(practiceQuest));
+    setSearchParams({ questId: practiceQuest.id });
   };
 
-  // Open printable worksheet
   const handlePrintQuest = (quest) => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
     setActiveWorksheetQuest(quest);
   };
 
-  // Return to home / default view
-  const handleBackToHome = () => {
-    window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    setActiveStudentQuestId(null);
-    setActiveWorksheetQuest(null);
-    setSolutionParams(null);
-    navigateTo('/');
-  };
-
-  const [currentTeacher, setCurrentTeacher] = useState(getCurrentTeacherUser());
-
-  // Listen to Firebase Auth state
-  useEffect(() => {
-    const unsubscribe = subscribeToTeacherAuth((user) => {
-      if (user) {
-        setCurrentTeacher(user);
-        setIsTeacherLoggedIn(true);
-        setTeacherAuthenticated(true);
-      }
-    });
-    return () => unsubscribe();
-  }, []);
-
-  // Successful Teacher Login
-  const handleAuthSuccess = (authUser) => {
-    setTeacherAuthenticated(true);
-    setIsTeacherLoggedIn(true);
-    if (authUser) setCurrentTeacher(authUser);
-    navigateTo('/teacher');
-  };
-
-  // Teacher Sign Out
   const handleSignOut = async () => {
-    try {
-      await logoutTeacher();
-    } catch (e) {
-      console.warn("Logout error:", e);
-    }
-    setTeacherAuthenticated(false);
-    setIsTeacherLoggedIn(false);
-    setCurrentTeacher(null);
-    navigateTo('/teacher');
+    await logout();
+    navigate('/teacher');
   };
 
   return (
@@ -192,12 +146,9 @@ export function App() {
 
           {/* Right Header Navigation & Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
-            
-            {/* In Worksheet, Solution, or Student Quest view, control bar already has 'Kembali ke Beranda', so no redundant navbar button */}
-            {(activeStudentQuestId || activeWorksheetQuest || activeSolutionData) ? null : isTeacherRoute ? (
-              // On /teacher Route
+            {(questId || activeWorksheetQuest || activeSolutionData) ? null : isTeacherRoute ? (
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
-                {isTeacherLoggedIn && (
+                {isAuthenticated && (
                   <div 
                     style={{ 
                       display: 'flex', 
@@ -211,7 +162,7 @@ export function App() {
                     }}
                   >
                     <span style={{ width: 8, height: 8, borderRadius: '50%', backgroundColor: 'var(--status-emerald)', display: 'inline-block' }}></span>
-                    <span style={{ color: '#065F46', fontWeight: 700 }}>Studio Guru</span>
+                    <span style={{ color: '#065F46', fontWeight: 700 }}>Studio Guru ({teacherName})</span>
                   </div>
                 )}
 
@@ -219,14 +170,14 @@ export function App() {
                   id="btn-nav-switch-public"
                   className="btn btn-outline"
                   style={{ fontSize: '0.8rem', padding: '0.35rem 0.75rem' }}
-                  onClick={() => navigateTo('/')}
+                  onClick={() => navigate('/')}
                   title="Kembali ke Buku Panduan Publik"
                 >
                   <BookOpen size={14} />
                   Portal Publik
                 </button>
 
-                {isTeacherLoggedIn && (
+                {isAuthenticated && (
                   <button
                     id="btn-nav-signout"
                     className="btn btn-subtle"
@@ -240,14 +191,13 @@ export function App() {
                 )}
               </div>
             ) : (
-              // On / (Public Route)
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                {isTeacherLoggedIn ? (
+                {isAuthenticated ? (
                   <button
                     id="btn-nav-open-teacher-studio"
                     className="btn btn-royal"
                     style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
-                    onClick={() => navigateTo('/teacher')}
+                    onClick={() => navigate('/teacher')}
                   >
                     <ShieldCheck size={15} />
                     Studio Guru
@@ -257,7 +207,7 @@ export function App() {
                     id="btn-nav-teacher-signin"
                     className="btn btn-royal"
                     style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
-                    onClick={() => navigateTo('/teacher')}
+                    onClick={() => navigate('/teacher')}
                   >
                     <Lock size={14} />
                     Portal Guru
@@ -265,52 +215,53 @@ export function App() {
                 )}
               </div>
             )}
-
           </div>
         </div>
       </header>
 
-      {/* Main Content Area */}
+      {/* Main Content Area with Suspense Lazy Routing */}
       <main>
-        {activeWorksheetQuest ? (
-          <PrintableWorksheet
-            quest={activeWorksheetQuest}
-            onBack={handleBackToHome}
-          />
-        ) : activeSolutionData ? (
-          <ChapterSolutionView
-            chapterData={activeSolutionData}
-            onBack={handleBackToHome}
-          />
-        ) : activeStudentQuestId ? (
-          <StudentQuestView 
-            questId={activeStudentQuestId}
-            onBackToDashboard={handleBackToHome}
-          />
-        ) : isTeacherRoute ? (
-          isTeacherLoggedIn ? (
-            <TeacherDashboard 
-              onLaunchQuest={handleLaunchQuest}
-              onPrintQuest={handlePrintQuest}
-              activeTab={activeTeacherTab}
-              setActiveTab={setActiveTeacherTab}
-              onBackToPublic={() => navigateTo('/')}
-              onSignOut={handleSignOut}
-              currentTeacher={currentTeacher}
+        <Suspense fallback={<RouteFallback />}>
+          {activeWorksheetQuest ? (
+            <PrintableWorksheet
+              quest={activeWorksheetQuest}
+              onBack={handleBackToHome}
             />
+          ) : activeSolutionData ? (
+            <ChapterSolutionView
+              chapterData={activeSolutionData}
+              onBack={handleBackToHome}
+            />
+          ) : questId ? (
+            <StudentQuestView 
+              questId={questId}
+              onBackToDashboard={handleBackToHome}
+            />
+          ) : isTeacherRoute ? (
+            isAuthenticated ? (
+              <TeacherDashboard 
+                onLaunchQuest={handleLaunchQuest}
+                onPrintQuest={handlePrintQuest}
+                activeTab={activeTeacherTab}
+                setActiveTab={setActiveTeacherTab}
+                onBackToPublic={() => navigate('/')}
+                onSignOut={handleSignOut}
+                currentTeacher={user}
+              />
+            ) : (
+              <TeacherLoginView 
+                onBack={() => navigate('/')}
+                onSuccess={() => navigate('/teacher')}
+              />
+            )
           ) : (
-            <TeacherLoginView 
-              onBack={() => navigateTo('/')}
-              onSuccess={handleAuthSuccess}
+            <PublicHandbook 
+              onOpenAuth={() => navigate('/teacher')}
+              onLaunchPractice={handleLaunchPracticeQuest}
+              onPrintQuest={handlePrintQuest}
             />
-          )
-        ) : (
-          <PublicHandbook 
-            onOpenAuth={() => navigateTo('/teacher')}
-            onLaunchPractice={handleLaunchPracticeQuest}
-            onPrintQuest={handlePrintQuest}
-          />
-        )}
+          )}
+        </Suspense>
       </main>
     </div>
   );

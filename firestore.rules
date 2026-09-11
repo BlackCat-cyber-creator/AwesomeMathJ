@@ -1,0 +1,49 @@
+rules_version = '2';
+service cloud.firestore {
+  match /databases/{database}/documents {
+
+    function isAuthenticated() {
+      return request.auth != null;
+    }
+
+    function isTeacher(teacherId) {
+      return isAuthenticated() && request.auth.uid == teacherId;
+    }
+
+    // 1. Teacher Student CRM
+    // Only the authenticated teacher can access their own student roster
+    match /teachers/{teacherId} {
+      allow read, write: if isTeacher(teacherId);
+
+      match /students/{studentId} {
+        allow read, write: if isTeacher(teacherId);
+        // Allow student completing quest to update their streak and totalXp
+        allow update: if isTeacher(teacherId) || 
+          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['totalXp', 'streak', 'lastActive']);
+      }
+    }
+
+    // 2. Quests (Homework)
+    // Public read so students can open their homework link directly
+    match /quests/{questId} {
+      allow read: if true;
+
+      // Only authenticated teacher can create and delete their quests
+      allow create: if isAuthenticated() && request.resource.data.teacherId == request.auth.uid;
+      allow delete: if isAuthenticated() && resource.data.teacherId == request.auth.uid;
+
+      // Teacher can edit; students can update completion status and answers
+      allow update: if (isAuthenticated() && resource.data.teacherId == request.auth.uid) ||
+        request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'lastScore', 'submittedAt', 'answers']);
+    }
+
+    // 3. Submissions
+    // Students can submit results without requiring teacher credentials
+    match /submissions/{submissionId} {
+      allow create: if true;
+      // Only authenticated teacher who assigned the quest can view submissions
+      allow read: if isAuthenticated() && (resource.data.teacherId == request.auth.uid);
+      allow update, delete: if isAuthenticated() && (resource.data.teacherId == request.auth.uid);
+    }
+  }
+}

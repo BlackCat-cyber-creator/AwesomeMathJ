@@ -14,6 +14,7 @@ import {
   increment
 } from "firebase/firestore";
 import { db } from "./config";
+import { generateId } from "../utils/idGenerator";
 
 /**
  * Membersihkan objek dari nilai `undefined` agar aman disimpan di Firestore
@@ -64,7 +65,7 @@ export function subscribeStudents(teacherId, onData, onError) {
 export async function addStudentCloud(teacherId, studentData) {
   if (!teacherId) throw new Error("Teacher ID wajib ada");
   
-  const studentId = studentData.id || `std-${Date.now()}`;
+  const studentId = studentData.id || generateId('std');
   const docRef = doc(db, "teachers", teacherId, "students", studentId);
   
   const newStudent = sanitizeForFirestore({
@@ -133,7 +134,7 @@ export function subscribeQuests(teacherId, onData, onError) {
  * Buat tugas PR baru di Firestore
  */
 export async function createQuestCloud(teacherId, questData) {
-  const questId = questData.id || `quest-${Date.now().toString(36)}-${Math.random().toString(36).substring(2, 6)}`;
+  const questId = questData.id || generateId('quest');
   const docRef = doc(db, "quests", questId);
 
   const newQuest = sanitizeForFirestore({
@@ -197,7 +198,7 @@ export async function deleteQuestCloud(questId) {
  * Simpan hasil pengerjaan latihan murid ke Firestore
  */
 export async function submitQuestResultCloud(submissionData) {
-  const submissionId = `sub-${Date.now()}`;
+  const submissionId = submissionData.id || generateId('sub');
   const now = new Date().toISOString();
   const today = now.split("T")[0];
 

@@ -1,7 +1,4 @@
-/**
- * LocalStorage Manager untuk AwesomeMathJ (Sir Jevon)
- * Mengelola Siswa (CRM), Tugas PR (Quest), Rekam Nilai, Autentikasi Guru, dan Streak
- */
+import { generateId } from './idGenerator';
 
 const STORAGE_KEYS = {
   STUDENTS: "awesomemathj_students_v2",
@@ -131,7 +128,7 @@ export function addStudent(student) {
   const students = getStudents();
   const newStudent = {
     ...student,
-    id: `std-${Date.now()}`,
+    id: student.id || generateId('std'),
     streak: 0,
     totalXp: 0,
     lastActive: null
@@ -244,7 +241,7 @@ export function createQuest(questData) {
   const quests = getQuests();
   const newQuest = {
     ...questData,
-    id: `quest-${Date.now().toString(36)}-${Math.random().toString(36).substr(2, 4)}`,
+    id: questData.id || generateId('quest'),
     createdAt: new Date().toISOString(),
     status: "assigned", // assigned, in_progress, completed
     deadline: questData.deadline || getDefaultDeadlineDate()
@@ -321,7 +318,7 @@ export function submitQuestResult(submissionData) {
 
   const newSubmission = {
     ...submissionData,
-    id: `sub-${Date.now()}`,
+    id: submissionData.id || generateId('sub'),
     submittedAt: new Date().toISOString()
   };
   submissions.unshift(newSubmission);

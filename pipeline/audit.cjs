@@ -20,7 +20,8 @@ for (const g of grades) {
   try {
     const jsonMatch = raw.match(/export\s+const\s+\w+\s*=\s*(\{[\s\S]*\});?\s*$/);
     if (jsonMatch) {
-      data = eval(`(${jsonMatch[1]})`);
+      const vm = require('vm');
+      data = vm.runInNewContext(`(${jsonMatch[1]})`, Object.create(null), { timeout: 2000 });
     }
   } catch (e) {
     console.log(`Kelas ${g}\t| ERROR parsing: ${e.message}`);

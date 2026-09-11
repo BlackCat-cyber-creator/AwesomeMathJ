@@ -1,6 +1,7 @@
 import React, { useState, useMemo, useEffect, useRef } from 'react';
 import confetti from 'canvas-confetti';
-import { CURRICULUM_DATA } from '../data/curriculumData';
+import { CURRICULUM_DATA, getGradeData, GRADE_METADATA } from '../data/curriculumData';
+import { generateId } from '../utils/idGenerator';
 import { MathText } from './MathRenderer';
 import { 
   BookOpen, 
@@ -74,10 +75,31 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
     });
   };
 
-  // Active Grade Data
-  const currentGradeData = useMemo(() => {
-    return CURRICULUM_DATA.find((g) => g.grade === Number(selectedGrade)) || CURRICULUM_DATA[0];
+  // Dynamic Grade Data Loader (Code-splitting)
+  const [fullGradeData, setFullGradeData] = useState(null);
+  const [isGradeLoading, setIsGradeLoading] = useState(false);
+
+  useEffect(() => {
+    let active = true;
+    setIsGradeLoading(true);
+    getGradeData(selectedGrade).then((data) => {
+      if (active) {
+        setFullGradeData(data);
+        setIsGradeLoading(false);
+      }
+    }).catch(() => {
+      if (active) setIsGradeLoading(false);
+    });
+    return () => { active = false; };
   }, [selectedGrade]);
+
+  // Active Grade Data: instant fallback from CURRICULUM_DATA, enhanced with full questions once loaded
+  const currentGradeData = useMemo(() => {
+    if (fullGradeData && fullGradeData.grade === Number(selectedGrade)) {
+      return fullGradeData;
+    }
+    return CURRICULUM_DATA.find((g) => g.grade === Number(selectedGrade)) || CURRICULUM_DATA[0];
+  }, [selectedGrade, fullGradeData]);
 
   // Chapters filtered by track (for SMA grades 10-12)
   const displayedChapters = useMemo(() => {
@@ -219,7 +241,7 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
   const handlePracticeThisChapter = () => {
     if (!currentChapter) return;
     onLaunchPractice({
-      id: `practice-${currentChapter.id}-${Date.now()}`,
+      id: generateId(`practice-${currentChapter.id}`),
       title: `Latihan Mandiri: ${currentChapter.title}`,
       grade: currentGradeData.grade,
       chapterId: currentChapter.id,
@@ -875,6 +897,19 @@ export function PublicHandbook({ onOpenAuth, onLaunchPractice, onPrintQuest }) {
                   : allQuestions.slice((selectedPacketFilter - 1) * 5, selectedPacketFilter * 5);
 
                 if (filteredQuestions.length === 0) {
+                  if (isGradeLoading) {
+                    return (
+                      <div className="editorial-card" style={{ padding: '3rem 2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
+                        <div style={{ display: 'inline-block', width: '28px', height: '28px', border: '3px solid #E2E8F0', borderTopColor: 'var(--primary-blue)', borderRadius: '50%', animation: 'spin 0.8s linear infinite', marginBottom: '1rem' }} />
+                        <div style={{ fontWeight: 700, color: 'var(--primary-navy)', fontSize: '1rem', marginBottom: '0.25rem' }}>
+                          Memuat Bank Soal Latihan...
+                        </div>
+                        <div style={{ fontSize: '0.825rem' }}>
+                          Mengambil 20 butir soal interaktif Kurikulum Merdeka
+                        </div>
+                      </div>
+                    );
+                  }
                   return (
                     <div className="editorial-card" style={{ padding: '2rem', textAlign: 'center', color: 'var(--text-muted)' }}>
                       Belum ada butir soal untuk paket ini.

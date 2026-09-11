@@ -167,27 +167,14 @@ export const grade9VisualRegistry = {
   },
 
   'smp9-b1-11': {
-    type: 'shopping',
+    type: 'quadrilateral',
     props: {
-      title: 'Paket Belanja Pakaian',
-      caption: '*Kemeja = x, Celana = y',
-      packages: [
-        {
-          items: [
-            { type: 'buku', count: 2, label: 'x' },
-            { type: 'pulpen', count: 3, label: 'y' }
-          ],
-          price: 'Rp380.000'
-        },
-        {
-          items: [
-            { type: 'buku', count: 3, label: 'x' },
-            { type: 'pulpen', count: 2, label: 'y' }
-          ],
-          price: 'Rp370.000'
-        }
-      ],
-      targetLabel: 'Harga 1 Kemeja + 1 Celana = ?'
+      title: 'Persegi Panjang (Keliling = 44 cm)',
+      caption: '*Panjang (p) berukuran 6 cm lebih dari lebar (l)',
+      type: 'rectangle',
+      dimA: 'p = l + 6',
+      dimB: 'l',
+      targetBadge: 'Luas = ? cm²'
     }
   },
 
@@ -462,14 +449,14 @@ export const grade9VisualRegistry = {
       title: 'Refleksi terhadap Sumbu-X',
       caption: '*Pencerminan titik B(-4, 6) menghasilkan bayangan dengan ordinat berlawanan tanda',
       points: [
-        { x: -4, y: 4, label: 'B(-4, 6)' }
+        { x: -4, y: 6, label: 'B(-4, 6)' }
       ],
       mirrorLine: {
         type: 'axis-x',
         label: 'Cermin Sumbu-X'
       },
       targetPoint: {
-        x: -4, y: -4, label: "B'(?, ?)"
+        x: -4, y: -6, label: "B'(?, ?)"
       }
     }
   },
@@ -480,10 +467,10 @@ export const grade9VisualRegistry = {
       title: 'Rotasi 90° Berlawanan Jarum Jam Pusat O(0, 0)',
       caption: '*Titik P(5, 2) diputar sebesar 90° CCW',
       points: [
-        { x: 4, y: 2, label: 'P(5, 2)' }
+        { x: 5, y: 2, label: 'P(5, 2)' }
       ],
       targetPoint: {
-        x: -2, y: 4, label: "P'(?, ?)"
+        x: -2, y: 5, label: "P'(?, ?)"
       }
     }
   },
@@ -494,15 +481,15 @@ export const grade9VisualRegistry = {
       title: 'Translasi Vektor T(3, -2)',
       caption: '*Pergeseran titik A(2, 5)',
       points: [
-        { x: 2, y: 4, label: 'A(2, 5)' }
+        { x: 2, y: 5, label: 'A(2, 5)' }
       ],
       arrow: {
-        from: { x: 2, y: 4 },
-        to: { x: 5, y: 2 },
+        from: { x: 2, y: 5 },
+        to: { x: 5, y: 3 },
         label: 'T(3, -2)'
       },
       targetPoint: {
-        x: 5, y: 2, label: "A'(?, ?)"
+        x: 5, y: 3, label: "A'(?, ?)"
       }
     }
   },
@@ -513,14 +500,14 @@ export const grade9VisualRegistry = {
       title: 'Refleksi terhadap Garis y = x',
       caption: '*Pencerminan titik D(5, 2) menghasilkan pertukaran koordinat (x, y)',
       points: [
-        { x: 4, y: 2, label: 'D(5, 2)' }
+        { x: 5, y: 2, label: 'D(5, 2)' }
       ],
       mirrorLine: {
         type: 'y=x',
         label: 'Garis y = x'
       },
       targetPoint: {
-        x: 2, y: 4, label: "D'(?, ?)"
+        x: 2, y: 5, label: "D'(?, ?)"
       }
     }
   },
@@ -531,15 +518,15 @@ export const grade9VisualRegistry = {
       title: 'Refleksi terhadap Garis Tegak x = 5',
       caption: '*Pencerminan titik K(3, 7) terhadap sumbu cermin vertikal x = 5',
       points: [
-        { x: 2, y: 4, label: 'K(3, 7)' }
+        { x: 3, y: 7, label: 'K(3, 7)' }
       ],
       mirrorLine: {
         type: 'x=h',
-        val: 3.5,
+        val: 5,
         label: 'Cermin x = 5'
       },
       targetPoint: {
-        x: 5, y: 4, label: "K'(?, ?)"
+        x: 7, y: 7, label: "K'(?, ?)"
       }
     }
   },
@@ -550,14 +537,14 @@ export const grade9VisualRegistry = {
       title: 'Refleksi terhadap Sumbu-Y',
       caption: '*Pencerminan titik C(3, -8) terhadap sumbu vertikal Y',
       points: [
-        { x: 3, y: -4, label: 'C(3, -8)' }
+        { x: 3, y: -8, label: 'C(3, -8)' }
       ],
       mirrorLine: {
         type: 'axis-y',
         label: 'Cermin Sumbu-Y'
       },
       targetPoint: {
-        x: -3, y: -4, label: "C'(?, ?)"
+        x: -3, y: -8, label: "C'(?, ?)"
       }
     }
   },
@@ -568,15 +555,15 @@ export const grade9VisualRegistry = {
       title: 'Dilatasi Pusat O(0,0) Faktor Skala k = 3',
       caption: '*Perbesaran jarak titik Q(-2, 6) dari pusat koordinat',
       points: [
-        { x: -1.5, y: 2, label: 'Q(-2, 6)' }
+        { x: -2, y: 6, label: 'Q(-2, 6)' }
       ],
       arrow: {
-        from: { x: -1.5, y: 2 },
-        to: { x: -4, y: 5 },
+        from: { x: -2, y: 6 },
+        to: { x: -6, y: 18 },
         label: '× 3'
       },
       targetPoint: {
-        x: -4, y: 5, label: "Q'(?, ?)"
+        x: -6, y: 18, label: "Q'(?, ?)"
       }
     }
   },
@@ -587,10 +574,10 @@ export const grade9VisualRegistry = {
       title: 'Rotasi 180° Pusat O(0, 0)',
       caption: '*Pemutaran setengah lingkaran titik R(5, -1) membalikkan tanda kedua koordinat',
       points: [
-        { x: 4, y: -1, label: 'R(5, -1)' }
+        { x: 5, y: -1, label: 'R(5, -1)' }
       ],
       targetPoint: {
-        x: -4, y: 1, label: "R'(?, ?)"
+        x: -5, y: 1, label: "R'(?, ?)"
       }
     }
   }

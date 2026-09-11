@@ -41,18 +41,19 @@ function validateGradeFile(filePath) {
     }
   });
 
-  // 2. Parse data
+  // 2. Parse data safely without arbitrary eval
   let data;
   try {
     const jsonMatch = raw.match(/export\s+const\s+\w+\s*=\s*(\{[\s\S]*\});?\s*$/);
     if (jsonMatch) {
-      data = eval(`(${jsonMatch[1]})`);
+      const vm = require('vm');
+      data = vm.runInNewContext(`(${jsonMatch[1]})`, Object.create(null), { timeout: 2000 });
     } else {
       errors.push("Could not extract exported grade data object.");
       return { ok: false, errors, warnings };
     }
   } catch (e) {
-    errors.push(`Syntax / eval error parsing data: ${e.message}`);
+    errors.push(`Syntax / parsing error: ${e.message}`);
     return { ok: false, errors, warnings };
   }
 

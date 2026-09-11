@@ -12,17 +12,45 @@ export function CartesianPlotVisual({
   caption,
   points = [], // [{ x: 3, y: -5, label: 'A(3, -5)', color: 'blue' }]
   arrow = null, // { from: {x: 3, y: -5}, to: {x: 1, y: 2}, label: 'T(-2, 7)', color: 'purple' }
-  mirrorLine = null, // { type: 'x=2' | 'y=x' | 'axis-x' | 'axis-y', label: 'Garis Cermin x = 2' }
+  mirrorLine = null, // { type: 'x=2' | 'y=x' | 'axis-x' | 'axis-y' | 'x=h', label: 'Garis Cermin' }
   rotationArc = null, // { center: {x: 0, y: 0}, angle: '90° CCW' }
   targetPoint = null, // { label: "A'(?, ?)", x: 1, y: 2 }
-  xRange = [-5, 5],
-  yRange = [-5, 5],
+  xRange: xRangeProp,
+  yRange: yRangeProp,
   width = 330,
   heightSvg = 165
 }) {
-  const originCanvasX = 150;
-  const originCanvasY = 85;
-  const unitPx = 14; // Skala pixel per satuan koordinat
+  // Auto-compute range from all data points if not explicitly provided
+  const allCoords = [];
+  points.forEach(p => allCoords.push({ x: p.x, y: p.y }));
+  if (arrow) {
+    allCoords.push({ x: arrow.from.x, y: arrow.from.y });
+    allCoords.push({ x: arrow.to.x, y: arrow.to.y });
+  }
+  if (targetPoint) allCoords.push({ x: targetPoint.x, y: targetPoint.y });
+  if (mirrorLine && mirrorLine.type === 'x=h' && mirrorLine.val != null) {
+    allCoords.push({ x: mirrorLine.val, y: 0 });
+  }
+  allCoords.push({ x: 0, y: 0 }); // Always include origin
+
+  const xMin = Math.min(...allCoords.map(c => c.x));
+  const xMax = Math.max(...allCoords.map(c => c.x));
+  const yMin = Math.min(...allCoords.map(c => c.y));
+  const yMax = Math.max(...allCoords.map(c => c.y));
+
+  const xRange = xRangeProp || [Math.min(xMin - 1, -2), Math.max(xMax + 1, 2)];
+  const yRange = yRangeProp || [Math.min(yMin - 1, -2), Math.max(yMax + 1, 2)];
+
+  const gridPadding = 30;
+  const usableW = width - gridPadding * 2;
+  const usableH = heightSvg - gridPadding * 2;
+  const xSpan = xRange[1] - xRange[0];
+  const ySpan = yRange[1] - yRange[0];
+  const unitPx = Math.min(usableW / xSpan, usableH / ySpan, 18);
+
+  // Position origin so it maps correctly
+  const originCanvasX = gridPadding + (-xRange[0]) * unitPx;
+  const originCanvasY = gridPadding + yRange[1] * unitPx;
 
   const toCanvas = (cx, cy) => ({
     x: originCanvasX + cx * unitPx,
@@ -64,6 +92,16 @@ export function CartesianPlotVisual({
             <>
               <line x1={originCanvasX - 70} y1={originCanvasY + 70} x2={originCanvasX + 70} y2={originCanvasY - 70} stroke={VISUAL_THEME.danger} strokeWidth="1.75" strokeDasharray="4 2" />
               <text x={originCanvasX + 45} y={originCanvasY - 50} fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.dangerDark}>{mirrorLine.label || 'y = x'}</text>
+            </>
+          ) : mirrorLine.type === 'axis-x' ? (
+            <>
+              <line x1={20} y1={originCanvasY} x2={width - 20} y2={originCanvasY} stroke={VISUAL_THEME.danger} strokeWidth="2.5" strokeDasharray="5 3" />
+              <text x={width - 55} y={originCanvasY - 6} fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.dangerDark}>{mirrorLine.label || 'Sumbu-X'}</text>
+            </>
+          ) : mirrorLine.type === 'axis-y' ? (
+            <>
+              <line x1={originCanvasX} y1={15} x2={originCanvasX} y2={heightSvg - 15} stroke={VISUAL_THEME.danger} strokeWidth="2.5" strokeDasharray="5 3" />
+              <text x={originCanvasX + 6} y={24} fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.dangerDark}>{mirrorLine.label || 'Sumbu-Y'}</text>
             </>
           ) : null}
         </g>
