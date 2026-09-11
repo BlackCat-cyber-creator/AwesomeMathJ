@@ -120,11 +120,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "$6\\sqrt{3}$"
+              "text": "$5\\sqrt{3}$"
             },
             {
               "key": "B",
-              "text": "$5\\sqrt{3}$"
+              "text": "$6\\sqrt{3}$"
             },
             {
               "key": "C",
@@ -135,9 +135,9 @@ export const grade8Data = {
               "text": "$4\\sqrt{3}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Sederhanakan masing-masing bentuk akar: $\\sqrt{75} = 5\\sqrt{3}$, $2\\sqrt{12} = 4\\sqrt{3}$, dan $\\sqrt{27} = 3\\sqrt{3}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sederhanakan tiap suku:\n- $\\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt{3}$\n- $2\\sqrt{12} = 2\\sqrt{4 \\times 3} = 2(2\\sqrt{3}) = 4\\sqrt{3}$\n- $\\sqrt{27} = \\sqrt{9 \\times 3} = 3\\sqrt{3}$\n2. Gabungkan akar-akar sejenis:\n$$(5 + 4 - 3)\\sqrt{3} = 6\\sqrt{3}$$\nHasilnya adalah **$6\\sqrt{3}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sederhanakan tiap suku:\n- $\\sqrt{75} = \\sqrt{25 \\times 3} = 5\\sqrt{3}$\n- $2\\sqrt{12} = 2\\sqrt{4 \\times 3} = 2(2\\sqrt{3}) = 4\\sqrt{3}$\n- $\\sqrt{27} = \\sqrt{9 \\times 3} = 3\\sqrt{3}$\n2. Gabungkan akar-akar sejenis:\n$$(5 + 4 - 3)\\sqrt{3} = 6\\sqrt{3}$$\nHasilnya adalah **$6\\sqrt{3}$** (Opsi B)."
         },
         {
           "id": "smp8-b1-4",
@@ -147,24 +147,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "$2{,}25 \\times 10^8\\text{ km}$"
-            },
-            {
-              "key": "B",
               "text": "$22{,}5 \\times 10^7\\text{ km}$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$0{,}225 \\times 10^9\\text{ km}$"
+            },
+            {
+              "key": "C",
+              "text": "$2{,}25 \\times 10^8\\text{ km}$"
             },
             {
               "key": "D",
               "text": "$2{,}25 \\times 10^6\\text{ km}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Syarat notasi ilmiah: $1 \\le a < 10$. Geser tanda koma desimal ke kiri sebanyak 8 angka.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Bilangan: 225.000.000\n2. Geser koma desimal 8 langkah ke kiri agar bernilai 2,25 (memenuhi $1 \\le a < 10$):\n$$225.000.000 = 2{,}25 \\times 10^8\\text{ km}$$\nBentuk bakunya adalah **$2{,}25 \\times 10^8\\text{ km}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Bilangan: 225.000.000\n2. Geser koma desimal 8 langkah ke kiri agar bernilai 2,25 (memenuhi $1 \\le a < 10$):\n$$225.000.000 = 2{,}25 \\times 10^8\\text{ km}$$\nBentuk bakunya adalah **$2{,}25 \\times 10^8\\text{ km}$** (Opsi C)."
         },
         {
           "id": "smp8-b1-5",
@@ -174,11 +174,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "2^{12}"
+              "text": "2^7"
             },
             {
               "key": "B",
-              "text": "2^7"
+              "text": "2^{12}"
             },
             {
               "key": "C",
@@ -189,9 +189,9 @@ export const grade8Data = {
               "text": "8^4"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan sifat pemangkatan bilangan berpangkat: $(a^m)^n = a^{m \\times n}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sesuai sifat eksponen $(a^m)^n = a^{m \\times n}$:\n$$(2^3)^4 = 2^{3 \\times 4} = 2^{12}$$\nHasil sederhananya adalah **$2^{12}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sesuai sifat eksponen $(a^m)^n = a^{m \\times n}$:\n$$(2^3)^4 = 2^{3 \\times 4} = 2^{12}$$\nHasil sederhananya adalah **$2^{12}$** (Opsi B)."
         },
         {
           "id": "smp8-b1-6",
@@ -201,11 +201,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{125}"
+              "text": "-\\frac{1}{125}"
             },
             {
               "key": "B",
-              "text": "-\\frac{1}{125}"
+              "text": "\\frac{1}{125}"
             },
             {
               "key": "C",
@@ -216,9 +216,9 @@ export const grade8Data = {
               "text": "\\frac{1}{15}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Ingat definisi pangkat bulat negatif: $a^{-n} = \\frac{1}{a^n}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$5^{-3} = \\frac{1}{5^3} = \\frac{1}{125}$$\nNilainya adalah **$\\frac{1}{125}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$5^{-3} = \\frac{1}{5^3} = \\frac{1}{125}$$\nNilainya adalah **$\\frac{1}{125}$** (Opsi B)."
         },
         {
           "id": "smp8-b1-7",
@@ -228,24 +228,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "a^4 b^3"
-            },
-            {
-              "key": "B",
               "text": "a^3 b^4"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "a^8 b^5"
+            },
+            {
+              "key": "C",
+              "text": "a^4 b^3"
             },
             {
               "key": "D",
               "text": "a^4 b^4"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kurangkan pangkat variabel yang sama: $a^{6-2} b^{4-1}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{a^6 b^4}{a^2 b^1} = a^{6-2} b^{4-1} = a^4 b^3$$\nBentuk sederhananya adalah **$a^4 b^3$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{a^6 b^4}{a^2 b^1} = a^{6-2} b^{4-1} = a^4 b^3$$\nBentuk sederhananya adalah **$a^4 b^3$** (Opsi C)."
         },
         {
           "id": "smp8-b1-8",
@@ -255,24 +255,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "6\\sqrt{2}"
-            },
-            {
-              "key": "B",
               "text": "3\\sqrt{8}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "2\\sqrt{6}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "4\\sqrt{3}"
+            },
+            {
+              "key": "D",
+              "text": "6\\sqrt{2}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Cari faktor kuadrat terbesar dari 72, yaitu $36 \\times 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\sqrt{72} = \\sqrt{36 \\times 2} = \\sqrt{36} \\times \\sqrt{2} = 6\\sqrt{2}$$\nHasil sederhananya adalah **$6\\sqrt{2}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\sqrt{72} = \\sqrt{36 \\times 2} = \\sqrt{36} \\times \\sqrt{2} = 6\\sqrt{2}$$\nHasil sederhananya adalah **$6\\sqrt{2}$** (Opsi D)."
         },
         {
           "id": "smp8-b1-9",
@@ -309,24 +309,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "3\\sqrt{3}"
-            },
-            {
-              "key": "B",
               "text": "4\\sqrt{3}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "2\\sqrt{3}"
+            },
+            {
+              "key": "C",
+              "text": "3\\sqrt{3}"
             },
             {
               "key": "D",
               "text": "7\\sqrt{3}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Jumlahkan dan kurangkan koefisien dari bentuk akar yang sejenis.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(2 + 5 - 4)\\sqrt{3} = 3\\sqrt{3}$$\nHasilnya adalah **$3\\sqrt{3}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(2 + 5 - 4)\\sqrt{3} = 3\\sqrt{3}$$\nHasilnya adalah **$3\\sqrt{3}$** (Opsi C)."
         },
         {
           "id": "smp8-b1-11",
@@ -336,11 +336,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "16"
+              "text": "8"
             },
             {
               "key": "B",
-              "text": "8"
+              "text": "16"
             },
             {
               "key": "C",
@@ -351,9 +351,9 @@ export const grade8Data = {
               "text": "4"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Ubah semua basis menjadi bilangan pokok 2: $4 = 2^2$ dan $8 = 2^3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Pembilang: $4^3 \\times 2^4 = (2^2)^3 \\times 2^4 = 2^6 \\times 2^4 = 2^{10}$\n2. Penyebut: $8^2 = (2^3)^2 = 2^6$\n3. Operasi: $\\frac{2^{10}}{2^6} = 2^{10-6} = 2^4 = 16$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Pembilang: $4^3 \\times 2^4 = (2^2)^3 \\times 2^4 = 2^6 \\times 2^4 = 2^{10}$\n2. Penyebut: $8^2 = (2^3)^2 = 2^6$\n3. Operasi: $\\frac{2^{10}}{2^6} = 2^{10-6} = 2^4 = 16$ (Opsi B)."
         },
         {
           "id": "smp8-b1-12",
@@ -363,24 +363,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "2\\sqrt{3}"
-            },
-            {
-              "key": "B",
               "text": "3\\sqrt{2}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6\\sqrt{3}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "3\\sqrt{3}"
+            },
+            {
+              "key": "D",
+              "text": "2\\sqrt{3}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kalikan pembilang dan penyebut dengan $\\frac{\\sqrt{3}}{\\sqrt{3}}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{6}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{6\\sqrt{3}}{3} = 2\\sqrt{3}$$\nBentuk rasionalnya adalah **$2\\sqrt{3}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{6}{\\sqrt{3}} \\times \\frac{\\sqrt{3}}{\\sqrt{3}} = \\frac{6\\sqrt{3}}{3} = 2\\sqrt{3}$$\nBentuk rasionalnya adalah **$2\\sqrt{3}$** (Opsi D)."
         },
         {
           "id": "smp8-b1-13",
@@ -390,24 +390,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "3{,}84 \\times 10^8\\text{ m}"
-            },
-            {
-              "key": "B",
               "text": "3{,}84 \\times 10^5\\text{ m}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "38{,}4 \\times 10^7\\text{ m}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "3{,}84 \\times 10^6\\text{ m}"
+            },
+            {
+              "key": "D",
+              "text": "3{,}84 \\times 10^8\\text{ m}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Ubah kilometer ke meter dengan mengalikan $10^3$, lalu nyatakan dalam notasi ilmiah.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $384.000\\text{ km} = 384.000.000\\text{ m}$\n2. Dalam notasi ilmiah: $3{,}84 \\times 10^8\\text{ m}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $384.000\\text{ km} = 384.000.000\\text{ m}$\n2. Dalam notasi ilmiah: $3{,}84 \\times 10^8\\text{ m}$ (Opsi D)."
         },
         {
           "id": "smp8-b1-14",
@@ -417,24 +417,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "4\\sqrt{3}"
-            },
-            {
-              "key": "B",
               "text": "2\\sqrt{12}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "3\\sqrt{4}"
+            },
+            {
+              "key": "C",
+              "text": "4\\sqrt{3}"
             },
             {
               "key": "D",
               "text": "4\\sqrt{2}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kalikan isi akar: $\\sqrt{48}$, lalu sederhanakan $48 = 16 \\times 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\sqrt{6 \\times 8} = \\sqrt{48} = \\sqrt{16 \\times 3} = 4\\sqrt{3}$$\nHasil sederhananya adalah **$4\\sqrt{3}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\sqrt{6 \\times 8} = \\sqrt{48} = \\sqrt{16 \\times 3} = 4\\sqrt{3}$$\nHasil sederhananya adalah **$4\\sqrt{3}$** (Opsi C)."
         },
         {
           "id": "smp8-b1-15",
@@ -444,24 +444,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "960"
-            },
-            {
-              "key": "B",
               "text": "480"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "1.920"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "240"
+            },
+            {
+              "key": "D",
+              "text": "960"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "2 jam $= 120$ menit. Banyak pembelahan $n = 120 / 20 = 6$. Total $= 15 \\times 2^6$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $n = \\frac{120}{20} = 6$\n2. Banyak bakteri $= 15 \\times 2^6 = 15 \\times 64 = 960$ bakteri (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $n = \\frac{120}{20} = 6$\n2. Banyak bakteri $= 15 \\times 2^6 = 15 \\times 64 = 960$ bakteri (Opsi D)."
         },
         {
           "id": "smp8-b1-16",
@@ -498,24 +498,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\sqrt{5} + 1"
-            },
-            {
-              "key": "B",
               "text": "\\sqrt{5} - 1"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "2(\\sqrt{5} + 1)"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{\\sqrt{5} + 1}{2}"
+            },
+            {
+              "key": "D",
+              "text": "\\sqrt{5} + 1"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kalikan dengan sekawan penyebut yaitu $\\frac{\\sqrt{5} + 1}{\\sqrt{5} + 1}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{4}{\\sqrt{5} - 1} \\times \\frac{\\sqrt{5} + 1}{\\sqrt{5} + 1} = \\frac{4(\\sqrt{5} + 1)}{5 - 1} = \\frac{4(\\sqrt{5} + 1)}{4} = \\sqrt{5} + 1$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{4}{\\sqrt{5} - 1} \\times \\frac{\\sqrt{5} + 1}{\\sqrt{5} + 1} = \\frac{4(\\sqrt{5} + 1)}{5 - 1} = \\frac{4(\\sqrt{5} + 1)}{4} = \\sqrt{5} + 1$$ (Opsi D)."
         },
         {
           "id": "smp8-b1-18",
@@ -552,24 +552,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "4\\sqrt{2}"
-            },
-            {
-              "key": "B",
               "text": "3\\sqrt{2}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "5\\sqrt{2}"
+            },
+            {
+              "key": "C",
+              "text": "4\\sqrt{2}"
             },
             {
               "key": "D",
               "text": "2\\sqrt{2}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Faktorkan masing-masing bentuk akar dengan bilangan kuadrat sempurna: $18=9\\times 2$, $50=25\\times 2$, $32=16\\times 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\sqrt{18} + \\sqrt{50} - \\sqrt{32} = 3\\sqrt{2} + 5\\sqrt{2} - 4\\sqrt{2} = (3 + 5 - 4)\\sqrt{2} = 4\\sqrt{2}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\sqrt{18} + \\sqrt{50} - \\sqrt{32} = 3\\sqrt{2} + 5\\sqrt{2} - 4\\sqrt{2} = (3 + 5 - 4)\\sqrt{2} = 4\\sqrt{2}$$ (Opsi C)."
         },
         {
           "id": "smp8-b1-20",
@@ -579,11 +579,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "$300\\text{ m}^3$"
+              "text": "$30\\text{ m}^3$"
             },
             {
               "key": "B",
-              "text": "$30\\text{ m}^3$"
+              "text": "$300\\text{ m}^3$"
             },
             {
               "key": "C",
@@ -594,9 +594,9 @@ export const grade8Data = {
               "text": "$30.000\\text{ m}^3$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Konversikan ukuran ke meter terlebih dahulu: $1\\text{ m} = 10^2\\text{ cm}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Panjang $= 40\\text{ m}$, Lebar $= 30\\text{ m}$, Tinggi $= 2{,}5\\text{ m}$\n2. Volume $= 40 \\times 30 \\times 2{,}5 = 300\\text{ m}^3$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Panjang $= 40\\text{ m}$, Lebar $= 30\\text{ m}$, Tinggi $= 2{,}5\\text{ m}$\n2. Volume $= 40 \\times 30 \\times 2{,}5 = 300\\text{ m}^3$ (Opsi B)."
         }
       ]
     },
@@ -652,24 +652,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "10 cm"
-            },
-            {
-              "key": "B",
               "text": "14 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "12 cm"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "9 cm"
+            },
+            {
+              "key": "D",
+              "text": "10 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Gunakan rumus $c = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$c = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$$\nPanjang sisi miringnya adalah **10 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$c = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$$\nPanjang sisi miringnya adalah **10 cm** (Opsi D)."
         },
         {
           "id": "smp8-b2-2",
@@ -679,11 +679,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "5, 12, 13"
+              "text": "4, 5, 6"
             },
             {
               "key": "B",
-              "text": "4, 5, 6"
+              "text": "5, 12, 13"
             },
             {
               "key": "C",
@@ -694,9 +694,9 @@ export const grade8Data = {
               "text": "7, 10, 15"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Periksa apakah $a^2 + b^2 = c^2$: $5^2 + 12^2 = 25 + 144 = 169 = 13^2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$5^2 + 12^2 = 25 + 144 = 169$$\n$$13^2 = 169$$\nKarena nilainya sama persis, maka **5, 12, 13** adalah tripel Pythagoras (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$5^2 + 12^2 = 25 + 144 = 169$$\n$$13^2 = 169$$\nKarena nilainya sama persis, maka **5, 12, 13** adalah tripel Pythagoras (Opsi B)."
         },
         {
           "id": "smp8-b2-3",
@@ -733,11 +733,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "Segitiga tumpul"
+              "text": "Segitiga lancip"
             },
             {
               "key": "B",
-              "text": "Segitiga lancip"
+              "text": "Segitiga tumpul"
             },
             {
               "key": "C",
@@ -748,9 +748,9 @@ export const grade8Data = {
               "text": "Segitiga sama sisi"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Bandingkan kuadrat sisi terpanjang $16^2$ dengan jumlah kuadrat dua sisi lainnya: $9^2 + 12^2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Kuadrat sisi terpanjang: $16^2 = 256$.\n2. Jumlah kuadrat dua sisi lainnya: $9^2 + 12^2 = 81 + 144 = 225$.\n3. Bandingkan:\n$$256 > 225 \\implies c^2 > a^2 + b^2$$\nKarena kuadrat sisi terpanjang lebih besar, maka segitiga tersebut adalah **segitiga tumpul** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Kuadrat sisi terpanjang: $16^2 = 256$.\n2. Jumlah kuadrat dua sisi lainnya: $9^2 + 12^2 = 81 + 144 = 225$.\n3. Bandingkan:\n$$256 > 225 \\implies c^2 > a^2 + b^2$$\nKarena kuadrat sisi terpanjang lebih besar, maka segitiga tersebut adalah **segitiga tumpul** (Opsi B)."
         },
         {
           "id": "smp8-b2-5",
@@ -760,24 +760,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "15 cm"
-            },
-            {
-              "key": "B",
               "text": "13 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "14 cm"
+            },
+            {
+              "key": "C",
+              "text": "15 cm"
             },
             {
               "key": "D",
               "text": "16 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Gunakan rumus Pythagoras: $c = \\sqrt{a^2 + b^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$c = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\\text{ cm}$$\nPanjang hipotenusa adalah **15 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$c = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\\text{ cm}$$\nPanjang hipotenusa adalah **15 cm** (Opsi C)."
         },
         {
           "id": "smp8-b2-6",
@@ -787,24 +787,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "7, 24, 25"
-            },
-            {
-              "key": "B",
               "text": "6, 8, 11"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "9, 12, 16"
+            },
+            {
+              "key": "C",
+              "text": "7, 24, 25"
             },
             {
               "key": "D",
               "text": "8, 15, 18"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Ujilah apakah kuadrat bilangan terbesar sama dengan jumlah kuadrat dua bilangan lainnya ($a^2 + b^2 = c^2$).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$7^2 + 24^2 = 49 + 576 = 625 = 25^2$$\nJadi, **7, 24, 25** adalah tripel Pythagoras (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$7^2 + 24^2 = 49 + 576 = 625 = 25^2$$\nJadi, **7, 24, 25** adalah tripel Pythagoras (Opsi C)."
         },
         {
           "id": "smp8-b2-7",
@@ -841,24 +841,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "8 meter"
-            },
-            {
-              "key": "B",
               "text": "7 meter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "9 meter"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "8,5 meter"
+            },
+            {
+              "key": "D",
+              "text": "8 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Dinding dan tanah membentuk sudut siku-siku. Tinggi dinding $t = \\sqrt{10^2 - 6^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\sqrt{10^2 - 6^2} = \\sqrt{100 - 36} = \\sqrt{64} = 8\\text{ meter}$$\nTinggi dinding adalah **8 meter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\sqrt{10^2 - 6^2} = \\sqrt{100 - 36} = \\sqrt{64} = 8\\text{ meter}$$\nTinggi dinding adalah **8 meter** (Opsi D)."
         },
         {
           "id": "smp8-b2-9",
@@ -868,24 +868,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "6\\sqrt{2} cm"
-            },
-            {
-              "key": "B",
               "text": "12 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6\\sqrt{3} cm"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "8 cm"
+            },
+            {
+              "key": "D",
+              "text": "6\\sqrt{2} cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Perbandingan sisi pada segitiga siku-siku sama kaki adalah $1 : 1 : \\sqrt{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPanjang hipotenusa $= 6 \\times \\sqrt{2} = 6\\sqrt{2}\\text{ cm}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPanjang hipotenusa $= 6 \\times \\sqrt{2} = 6\\sqrt{2}\\text{ cm}$ (Opsi D)."
         },
         {
           "id": "smp8-b2-10",
@@ -895,24 +895,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "10 cm"
-            },
-            {
-              "key": "B",
               "text": "5\\sqrt{3} cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "15 cm"
+            },
+            {
+              "key": "C",
+              "text": "10 cm"
             },
             {
               "key": "D",
               "text": "10\\sqrt{3} cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Perbandingan sisi di depan sudut $30^\\circ : 60^\\circ : 90^\\circ$ adalah $1 : \\sqrt{3} : 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nHipotenusa $= 2 \\times 5 = 10\\text{ cm}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nHipotenusa $= 2 \\times 5 = 10\\text{ cm}$ (Opsi C)."
         },
         {
           "id": "smp8-b2-11",
@@ -949,11 +949,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "26 km"
+              "text": "28 km"
             },
             {
               "key": "B",
-              "text": "28 km"
+              "text": "26 km"
             },
             {
               "key": "C",
@@ -964,9 +964,9 @@ export const grade8Data = {
               "text": "25 km"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Arah utara dan timur saling tegak lurus ($90^\\circ$). Jarak terdekat adalah hipotenusa: $s = \\sqrt{24^2 + 10^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{24^2 + 10^2} = \\sqrt{576 + 100} = \\sqrt{676} = 26\\text{ km}$$\nJarak terdekatnya adalah **26 km** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{24^2 + 10^2} = \\sqrt{576 + 100} = \\sqrt{676} = 26\\text{ km}$$\nJarak terdekatnya adalah **26 km** (Opsi B)."
         },
         {
           "id": "smp8-b2-13",
@@ -1003,24 +1003,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "50 cm^2"
-            },
-            {
-              "key": "B",
               "text": "100 cm^2"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "25 cm^2"
+            },
+            {
+              "key": "C",
+              "text": "50 cm^2"
             },
             {
               "key": "D",
               "text": "75 cm^2"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Rumus luas persegi dengan diagonal $d$ adalah $L = \\frac{1}{2} d^2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = \\frac{1}{2} \\times 10^2 = \\frac{1}{2} \\times 100 = 50\\text{ cm}^2$$\nLuas persegi adalah **$50\\text{ cm}^2$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = \\frac{1}{2} \\times 10^2 = \\frac{1}{2} \\times 100 = 50\\text{ cm}^2$$\nLuas persegi adalah **$50\\text{ cm}^2$** (Opsi C)."
         },
         {
           "id": "smp8-b2-15",
@@ -1030,24 +1030,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "20 meter"
-            },
-            {
-              "key": "B",
               "text": "18 meter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "22 meter"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "19 meter"
+            },
+            {
+              "key": "D",
+              "text": "20 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Tinggi layang-layang adalah salah satu sisi tegak segitiga siku-siku: $t = \\sqrt{25^2 - 15^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\sqrt{625 - 225} = \\sqrt{400} = 20\\text{ meter}$$\nTinggi layang-layang adalah **20 meter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\sqrt{625 - 225} = \\sqrt{400} = 20\\text{ meter}$$\nTinggi layang-layang adalah **20 meter** (Opsi D)."
         },
         {
           "id": "smp8-b2-16",
@@ -1084,11 +1084,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "120 cm^2"
+              "text": "240 cm^2"
             },
             {
               "key": "B",
-              "text": "240 cm^2"
+              "text": "120 cm^2"
             },
             {
               "key": "C",
@@ -1099,9 +1099,9 @@ export const grade8Data = {
               "text": "156 cm^2"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Sisi belah ketupat $s = 52 / 4 = 13$ cm. Setengah diagonal pertama $= 12$ cm. Cari setengah diagonal kedua dengan Pythagoras.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sisi belah ketupat $s = 13\\text{ cm}$\n2. Setengah diagonal $d_2$: $\\sqrt{13^2 - 12^2} = \\sqrt{169 - 144} = 5\\text{ cm} \\implies d_2 = 10\\text{ cm}$\n3. Luas $= \\frac{1}{2} \\times d_1 \\times d_2 = \\frac{1}{2} \\times 24 \\times 10 = 120\\text{ cm}^2$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sisi belah ketupat $s = 13\\text{ cm}$\n2. Setengah diagonal $d_2$: $\\sqrt{13^2 - 12^2} = \\sqrt{169 - 144} = 5\\text{ cm} \\implies d_2 = 10\\text{ cm}$\n3. Luas $= \\frac{1}{2} \\times d_1 \\times d_2 = \\frac{1}{2} \\times 24 \\times 10 = 120\\text{ cm}^2$ (Opsi B)."
         },
         {
           "id": "smp8-b2-18",
@@ -1111,11 +1111,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "Segitiga tumpul"
+              "text": "Segitiga lancip"
             },
             {
               "key": "B",
-              "text": "Segitiga lancip"
+              "text": "Segitiga tumpul"
             },
             {
               "key": "C",
@@ -1126,9 +1126,9 @@ export const grade8Data = {
               "text": "Segitiga sembarang lancip"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Hitung $c^2$ dan bandingkan dengan $a^2 + b^2$. Jika $c^2 > a^2 + b^2$, segitiga adalah tumpul.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sisi terpanjang $c = 16 \\implies 16^2 = 256$\n2. $a^2 + b^2 = 9^2 + 12^2 = 81 + 144 = 225$\n3. Karena $256 > 225$ ($c^2 > a^2 + b^2$), segitiga tersebut adalah **segitiga tumpul** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sisi terpanjang $c = 16 \\implies 16^2 = 256$\n2. $a^2 + b^2 = 9^2 + 12^2 = 81 + 144 = 225$\n3. Karena $256 > 225$ ($c^2 > a^2 + b^2$), segitiga tersebut adalah **segitiga tumpul** (Opsi B)."
         },
         {
           "id": "smp8-b2-19",
@@ -1138,24 +1138,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "128 cm^2"
-            },
-            {
-              "key": "B",
               "text": "160 cm^2"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "96 cm^2"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "140 cm^2"
+            },
+            {
+              "key": "D",
+              "text": "128 cm^2"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Cari tinggi trapesium dengan Pythagoras pada salah satu segitiga di sisi samping.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Proyeksi alas: $\\frac{22 - 10}{2} = 6\\text{ cm}$\n2. Tinggi trapesium: $t = \\sqrt{10^2 - 6^2} = 8\\text{ cm}$\n3. Luas $= \\frac{22 + 10}{2} \\times 8 = 16 \\times 8 = 128\\text{ cm}^2$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Proyeksi alas: $\\frac{22 - 10}{2} = 6\\text{ cm}$\n2. Tinggi trapesium: $t = \\sqrt{10^2 - 6^2} = 8\\text{ cm}$\n3. Luas $= \\frac{22 + 10}{2} \\times 8 = 16 \\times 8 = 128\\text{ cm}^2$ (Opsi D)."
         },
         {
           "id": "smp8-b2-20",
@@ -1165,24 +1165,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "13 meter"
-            },
-            {
-              "key": "B",
               "text": "15 meter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "14 meter"
+            },
+            {
+              "key": "C",
+              "text": "13 meter"
             },
             {
               "key": "D",
               "text": "12,5 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Bentuk segitiga siku-siku dengan alas 12 m dan tinggi selisih kedua tiang ($14 - 9 = 5$ m).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$k = \\sqrt{12^2 + (14 - 9)^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13\\text{ meter}$$\nPanjang kawat adalah **13 meter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$k = \\sqrt{12^2 + (14 - 9)^2} = \\sqrt{144 + 25} = \\sqrt{169} = 13\\text{ meter}$$\nPanjang kawat adalah **13 meter** (Opsi C)."
         }
       ]
     },
@@ -1235,24 +1235,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "$x = 5$"
-            },
-            {
-              "key": "B",
               "text": "$x = 4$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$x = 6$"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "$x = 3$"
+            },
+            {
+              "key": "D",
+              "text": "$x = 5$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Tambahkan 7 ke kedua ruas: $5x = 18 + 7 = 25$, lalu bagi dengan 5.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $5x = 18 + 7 = 25$\n2. $x = \\frac{25}{5} = 5$\nNilai $x$ adalah **$x = 5$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $5x = 18 + 7 = 25$\n2. $x = \\frac{25}{5} = 5$\nNilai $x$ adalah **$x = 5$** (Opsi D)."
         },
         {
           "id": "smp8-b3-2",
@@ -1262,24 +1262,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\{1, 2, 3\\}$"
-            },
-            {
-              "key": "B",
               "text": "$\\{1, 2, 3, 4\\}$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$\\{0, 1, 2, 3\\}$"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "$\\{2, 3\\}$"
+            },
+            {
+              "key": "D",
+              "text": "$\\{1, 2, 3\\}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kurangkan 3: $2x < 8 \\implies x < 4$. Bilangan bulat positif yang kurang dari 4 adalah 1, 2, 3.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $2x < 11 - 3 \\implies 2x < 8$\n2. $x < 4$\n3. Karena diminta bilangan bulat positif ($x \\in \\{1, 2, 3, \\dots\\}$):\nHimpunannya adalah **$\\{1, 2, 3\\}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $2x < 11 - 3 \\implies 2x < 8$\n2. $x < 4$\n3. Karena diminta bilangan bulat positif ($x \\in \\{1, 2, 3, \\dots\\}$):\nHimpunannya adalah **$\\{1, 2, 3\\}$** (Opsi D)."
         },
         {
           "id": "smp8-b3-3",
@@ -1289,24 +1289,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "$x \\ge 4$"
-            },
-            {
-              "key": "B",
               "text": "$x \\le 4$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$x \\ge -4$"
+            },
+            {
+              "key": "C",
+              "text": "$x \\ge 4$"
             },
             {
               "key": "D",
               "text": "$x \\le -4$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kurangkan 6: $-4x \\le -16$. Bagi dengan $-4$ dan balikkan tanda ketidaksamaan menjadi $\\ge$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $-4x \\le -10 - 6 \\implies -4x \\le -16$\n2. Bagi kedua ruas dengan $-4$ (tanda dibalik):\n$$x \\ge \\frac{-16}{-4} \\implies x \\ge 4$$\nPenyelesaiannya adalah **$x \\ge 4$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $-4x \\le -10 - 6 \\implies -4x \\le -16$\n2. Bagi kedua ruas dengan $-4$ (tanda dibalik):\n$$x \\ge \\frac{-16}{-4} \\implies x \\ge 4$$\nPenyelesaiannya adalah **$x \\ge 4$** (Opsi C)."
         },
         {
           "id": "smp8-b3-4",
@@ -1316,24 +1316,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "30 kotak"
-            },
-            {
-              "key": "B",
               "text": "31 kotak"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "29 kotak"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "32 kotak"
+            },
+            {
+              "key": "D",
+              "text": "30 kotak"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Susun pertidaksamaan: $150 + 35x \\le 1.200$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Model pertidaksamaan:\n$$150 + 35x \\le 1.200$$\n$$35x \\le 1.200 - 150$$\n$$35x \\le 1.050$$\n2. Hitung nilai maksimum $x$:\n$$x \\le \\frac{1.050}{35} = 30$$\nBanyak kotak maksimum yang dapat diangkut adalah **30 kotak** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Model pertidaksamaan:\n$$150 + 35x \\le 1.200$$\n$$35x \\le 1.200 - 150$$\n$$35x \\le 1.050$$\n2. Hitung nilai maksimum $x$:\n$$x \\le \\frac{1.050}{35} = 30$$\nBanyak kotak maksimum yang dapat diangkut adalah **30 kotak** (Opsi D)."
         },
         {
           "id": "smp8-b3-5",
@@ -1343,24 +1343,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "5"
-            },
-            {
-              "key": "B",
               "text": "4"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6"
+            },
+            {
+              "key": "C",
+              "text": "5"
             },
             {
               "key": "D",
               "text": "3"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Pindahkan konstanta ke ruas kanan lalu bagi dengan koefisien $x$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4x = 13 + 7 \\implies 4x = 20 \\implies x = 5$$\nNilai $x$ adalah **5** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4x = 13 + 7 \\implies 4x = 20 \\implies x = 5$$\nNilai $x$ adalah **5** (Opsi C)."
         },
         {
           "id": "smp8-b3-6",
@@ -1370,11 +1370,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "4"
+              "text": "3"
             },
             {
               "key": "B",
-              "text": "3"
+              "text": "4"
             },
             {
               "key": "C",
@@ -1385,9 +1385,9 @@ export const grade8Data = {
               "text": "2"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kalikan ke dalam kurung terlebih dahulu, lalu kumpulkan suku sejenis.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $6x - 3 = 2x + 12 + 1$\n2. $6x - 3 = 2x + 13$\n3. $6x - 2x = 13 + 3 \\implies 4x = 16 \\implies x = 4$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $6x - 3 = 2x + 12 + 1$\n2. $6x - 3 = 2x + 13$\n3. $6x - 2x = 13 + 3 \\implies 4x = 16 \\implies x = 4$ (Opsi B)."
         },
         {
           "id": "smp8-b3-7",
@@ -1397,11 +1397,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "{1, 2, 3, 4, 5}"
+              "text": "{1, 2, 3, 4, 5, 6}"
             },
             {
               "key": "B",
-              "text": "{1, 2, 3, 4, 5, 6}"
+              "text": "{1, 2, 3, 4, 5}"
             },
             {
               "key": "C",
@@ -1412,9 +1412,9 @@ export const grade8Data = {
               "text": "{1, 2, 3, 4}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Selesaikan pertidaksamaan: $2x < 12 \\implies x < 6$. Bilangan bulat positif dimulai dari 1.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2x < 12 \\implies x < 6$$\nKarena $x$ bilangan bulat positif: **{1, 2, 3, 4, 5}** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2x < 12 \\implies x < 6$$\nKarena $x$ bilangan bulat positif: **{1, 2, 3, 4, 5}** (Opsi B)."
         },
         {
           "id": "smp8-b3-8",
@@ -1478,11 +1478,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "25"
+              "text": "24"
             },
             {
               "key": "B",
-              "text": "24"
+              "text": "25"
             },
             {
               "key": "C",
@@ -1493,9 +1493,9 @@ export const grade8Data = {
               "text": "26"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Misalkan tiga bilangan itu $n - 1, n, n + 1$. Jumlahnya adalah $3n = 72$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $3n = 72 \\implies n = 24$\n2. Ketiga bilangan: 23, 24, 25\n3. Bilangan terbesarnya adalah **25** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $3n = 72 \\implies n = 24$\n2. Ketiga bilangan: 23, 24, 25\n3. Bilangan terbesarnya adalah **25** (Opsi B)."
         },
         {
           "id": "smp8-b3-11",
@@ -1505,24 +1505,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "13 meter"
-            },
-            {
-              "key": "B",
               "text": "19 meter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "14 meter"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "12 meter"
+            },
+            {
+              "key": "D",
+              "text": "13 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Keliling $= 2(p + l) = 64 \\implies p + l = 32$. Substitusi $p = l + 6$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(l + 6) + l = 32 \\implies 2l + 6 = 32 \\implies 2l = 26 \\implies l = 13\\text{ meter}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(l + 6) + l = 32 \\implies 2l + 6 = 32 \\implies 2l = 26 \\implies l = 13\\text{ meter}$$ (Opsi D)."
         },
         {
           "id": "smp8-b3-12",
@@ -1532,24 +1532,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "14 tahun"
-            },
-            {
-              "key": "B",
               "text": "12 tahun"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "15 tahun"
+            },
+            {
+              "key": "C",
+              "text": "14 tahun"
             },
             {
               "key": "D",
               "text": "16 tahun"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Misalkan umur anak sekarang $x$, maka ayah $3x$. Empat tahun lalu: $(3x - 4) + (x - 4) = 48$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4x - 8 = 48 \\implies 4x = 56 \\implies x = 14\\text{ tahun}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4x - 8 = 48 \\implies 4x = 56 \\implies x = 14\\text{ tahun}$$ (Opsi C)."
         },
         {
           "id": "smp8-b3-13",
@@ -1613,11 +1613,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "x \\le 6"
+              "text": "x \\le 5"
             },
             {
               "key": "B",
-              "text": "x \\le 5"
+              "text": "x \\le 6"
             },
             {
               "key": "C",
@@ -1628,9 +1628,9 @@ export const grade8Data = {
               "text": "x \\ge 6"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Keliling $= (x + 2) + (2x - 1) + (3x - 5) \\le 32$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$6x - 4 \\le 32 \\implies 6x \\le 36 \\implies x \\le 6$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$6x - 4 \\le 32 \\implies 6x \\le 36 \\implies x \\le 6$$ (Opsi B)."
         },
         {
           "id": "smp8-b3-16",
@@ -1640,24 +1640,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "6"
-            },
-            {
-              "key": "B",
               "text": "5"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "4"
+            },
+            {
+              "key": "C",
+              "text": "6"
             },
             {
               "key": "D",
               "text": "8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kalikan kedua ruas dengan 6 untuk menghilangkan penyebut.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $2(2x - 3) - 3(x - 2) = 6$\n2. $4x - 6 - 3x + 6 = 6 \\implies x = 6$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $2(2x - 3) - 3(x - 2) = 6$\n2. $4x - 6 - 3x + 6 = 6 \\implies x = 6$ (Opsi C)."
         },
         {
           "id": "smp8-b3-17",
@@ -1667,24 +1667,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "x \\ge -8"
-            },
-            {
-              "key": "B",
               "text": "x \\le -8"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "x \\ge 8"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "x \\le 8"
+            },
+            {
+              "key": "D",
+              "text": "x \\ge -8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kalikan kedua ruas dengan 6 untuk mengeliminasi pecahan.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $3(x - 2) \\le 2(2x + 1)$\n2. $3x - 6 \\le 4x + 2$\n3. $3x - 4x \\le 2 + 6 \\implies -x \\le 8 \\implies x \\ge -8$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $3(x - 2) \\le 2(2x + 1)$\n2. $3x - 6 \\le 4x + 2$\n3. $3x - 4x \\le 2 + 6 \\implies -x \\le 8 \\implies x \\ge -8$ (Opsi D)."
         },
         {
           "id": "smp8-b3-18",
@@ -1694,24 +1694,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "60 menit"
-            },
-            {
-              "key": "B",
               "text": "45 menit"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "50 menit"
+            },
+            {
+              "key": "C",
+              "text": "60 menit"
             },
             {
               "key": "D",
               "text": "40 menit"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Debit pengisian bersih $= \\frac{1}{20} - \\frac{1}{30} = \\frac{3 - 2}{60} = \\frac{1}{60}$ bagian/menit.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Laju netto} = \\frac{1}{20} - \\frac{1}{30} = \\frac{1}{60}\\text{ per menit}$$\nWaktu $= 60$ menit (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Laju netto} = \\frac{1}{20} - \\frac{1}{30} = \\frac{1}{60}\\text{ per menit}$$\nWaktu $= 60$ menit (Opsi C)."
         },
         {
           "id": "smp8-b3-19",
@@ -1721,11 +1721,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "4"
+              "text": "3"
             },
             {
               "key": "B",
-              "text": "3"
+              "text": "4"
             },
             {
               "key": "C",
@@ -1736,9 +1736,9 @@ export const grade8Data = {
               "text": "6"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Substitusikan $x = 3$ ke dalam persamaan: $3a + 5 = 17$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3a + 5 = 17 \\implies 3a = 12 \\implies a = 4$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3a + 5 = 17 \\implies 3a = 12 \\implies a = 4$$ (Opsi B)."
         },
         {
           "id": "smp8-b3-20",
@@ -1818,24 +1818,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "17"
-            },
-            {
-              "key": "B",
               "text": "19"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "23"
+            },
+            {
+              "key": "C",
+              "text": "17"
             },
             {
               "key": "D",
               "text": "15"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Substitusikan $x = 5$ ke dalam rumus: $4(5) - 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$f(5) = 4(5) - 3 = 20 - 3 = 17$$\nNilai $f(5)$ adalah **17** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$f(5) = 4(5) - 3 = 20 - 3 = 17$$\nNilai $f(5)$ adalah **17** (Opsi C)."
         },
         {
           "id": "smp8-b4-2",
@@ -1845,11 +1845,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\{(1, a), (2, b), (3, c), (4, d)\\}$"
+              "text": "$\\{(1, a), (1, b), (2, c), (3, d)\\}$"
             },
             {
               "key": "B",
-              "text": "$\\{(1, a), (1, b), (2, c), (3, d)\\}$"
+              "text": "$\\{(1, a), (2, b), (3, c), (4, d)\\}$"
             },
             {
               "key": "C",
@@ -1860,9 +1860,9 @@ export const grade8Data = {
               "text": "$\\{(2, a), (3, b), (3, c), (4, d)\\}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Periksa angka pertama (domain) pada setiap pasangan: tidak boleh ada angka yang muncul berulang kali.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPada opsi A, domainnya adalah $\\{1, 2, 3, 4\\}$ di mana setiap angka muncul tepat satu kali dan tidak ada yang bercabang. Jadi, opsi A adalah **fungsi** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPada opsi B, domainnya adalah $\\{1, 2, 3, 4\\}$ di mana setiap angka muncul tepat satu kali dan tidak ada yang bercabang. Jadi, himpunan pada opsi B adalah **fungsi** (Opsi B)."
         },
         {
           "id": "smp8-b4-3",
@@ -1872,24 +1872,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "8"
-            },
-            {
-              "key": "B",
               "text": "9"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6"
+            },
+            {
+              "key": "C",
+              "text": "8"
             },
             {
               "key": "D",
               "text": "5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Gunakan rumus banyak pemetaan dari $A$ ke $B$: $n(B)^{n(A)} = 2^3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $n(A) = 3$ dan $n(B) = 2$.\n2. Banyak pemetaan dari $A$ ke $B$:\n$$n(B)^{n(A)} = 2^3 = 8$$\nBanyaknya pemetaan yang mungkin adalah **8** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $n(A) = 3$ dan $n(B) = 2$.\n2. Banyak pemetaan dari $A$ ke $B$:\n$$n(B)^{n(A)} = 2^3 = 8$$\nBanyaknya pemetaan yang mungkin adalah **8** (Opsi C)."
         },
         {
           "id": "smp8-b4-4",
@@ -1899,24 +1899,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "20"
-            },
-            {
-              "key": "B",
               "text": "18"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "21"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "22"
+            },
+            {
+              "key": "D",
+              "text": "20"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Cari nilai $a$ dan $b$ terlebih dahulu: $2a = 11 - 5 = 6 \\implies a = 3, b = 2$. Lalu hitung $f(6) = 3(6) + 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sistem persamaan:\n$$a + b = 5$$\n$$3a + b = 11$$\n2. Eliminasi $b$:\n$$2a = 6 \\implies a = 3$$\n3. Cari $b$:\n$$3 + b = 5 \\implies b = 2$$\n4. Rumus fungsi: $f(x) = 3x + 2$.\n5. Nilai $f(6) = 3(6) + 2 = 18 + 2 = 20$.\nHasilnya adalah **20** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sistem persamaan:\n$$a + b = 5$$\n$$3a + b = 11$$\n2. Eliminasi $b$:\n$$2a = 6 \\implies a = 3$$\n3. Cari $b$:\n$$3 + b = 5 \\implies b = 2$$\n4. Rumus fungsi: $f(x) = 3x + 2$.\n5. Nilai $f(6) = 3(6) + 2 = 18 + 2 = 20$.\nHasilnya adalah **20** (Opsi D)."
         },
         {
           "id": "smp8-b4-5",
@@ -1926,24 +1926,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "7"
-            },
-            {
-              "key": "B",
               "text": "9"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6"
+            },
+            {
+              "key": "C",
+              "text": "7"
             },
             {
               "key": "D",
               "text": "8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Substitusikan nilai $x = 4$ ke dalam rumus fungsi.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$f(4) = 3(4) - 5 = 12 - 5 = 7$$\nNilai dari $f(4)$ adalah **7** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$f(4) = 3(4) - 5 = 12 - 5 = 7$$\nNilai dari $f(4)$ adalah **7** (Opsi C)."
         },
         {
           "id": "smp8-b4-6",
@@ -1980,11 +1980,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "8"
+              "text": "9"
             },
             {
               "key": "B",
-              "text": "9"
+              "text": "8"
             },
             {
               "key": "C",
@@ -1995,9 +1995,9 @@ export const grade8Data = {
               "text": "12"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Banyak pemetaan dari $A$ ke $B$ dirumuskan dengan $n(B)^{n(A)}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$n(A) = 3, \\quad n(B) = 2$$\nBanyak pemetaan $= n(B)^{n(A)} = 2^3 = 8$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$n(A) = 3, \\quad n(B) = 2$$\nBanyak pemetaan $= n(B)^{n(A)} = 2^3 = 8$ (Opsi B)."
         },
         {
           "id": "smp8-b4-8",
@@ -2007,11 +2007,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "6"
+              "text": "-6"
             },
             {
               "key": "B",
-              "text": "-6"
+              "text": "6"
             },
             {
               "key": "C",
@@ -2022,9 +2022,9 @@ export const grade8Data = {
               "text": "-5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Buat persamaan $5 - 2a = -7$ lalu selesaikan untuk mencari $a$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$5 - 2a = -7 \\implies -2a = -12 \\implies a = 6$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$5 - 2a = -7 \\implies -2a = -12 \\implies a = 6$$ (Opsi B)."
         },
         {
           "id": "smp8-b4-9",
@@ -2034,24 +2034,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "{1, 3, 5, 7}"
-            },
-            {
-              "key": "B",
               "text": "{2, 3, 4, 5}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "{1, 2, 3, 4}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "{0, 2, 4, 6}"
+            },
+            {
+              "key": "D",
+              "text": "{1, 3, 5, 7}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Hitung nilai fungsi untuk setiap anggota domain: $f(-1), f(0), f(1), f(2)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $f(-1) = 2(-1) + 3 = 1$\n2. $f(0) = 3$\n3. $f(1) = 5$\n4. $f(2) = 7$\nRange $= \\{1, 3, 5, 7\\}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $f(-1) = 2(-1) + 3 = 1$\n2. $f(0) = 3$\n3. $f(1) = 5$\n4. $f(2) = 7$\nRange $= \\{1, 3, 5, 7\\}$ (Opsi D)."
         },
         {
           "id": "smp8-b4-10",
@@ -2115,24 +2115,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "T(x) = 4.000x + 8.000, biaya Rp56.000,00"
-            },
-            {
-              "key": "B",
               "text": "T(x) = 8.000x + 4.000, biaya Rp100.000,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "T(x) = 4.000x + 8.000, biaya Rp48.000,00"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "T(x) = 12.000x, biaya Rp144.000,00"
+            },
+            {
+              "key": "D",
+              "text": "T(x) = 4.000x + 8.000, biaya Rp56.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Bentuk fungsi biaya linear: $T(x) = \\text{biaya per km} \\times x + \\text{tarif awal}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$T(x) = 4.000x + 8.000$$\n$$T(12) = 4.000(12) + 8.000 = 48.000 + 8.000 = \\text{Rp}56.000,00$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$T(x) = 4.000x + 8.000$$\n$$T(12) = 4.000(12) + 8.000 = 48.000 + 8.000 = \\text{Rp}56.000,00$$ (Opsi D)."
         },
         {
           "id": "smp8-b4-13",
@@ -2169,24 +2169,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "Setengah dari"
-            },
-            {
-              "key": "B",
               "text": "Dua kali dari"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Faktor dari"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Kurang dari"
+            },
+            {
+              "key": "D",
+              "text": "Setengah dari"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Perhatikan hubungan antara anggota pertama dan kedua: 2 adalah setengah dari 4, 3 adalah setengah dari 6.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKarena $2 = \\frac{1}{2} \\times 4$, $3 = \\frac{1}{2} \\times 6$, $4 = \\frac{1}{2} \\times 8$, relasi tersebut adalah **setengah dari** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKarena $2 = \\frac{1}{2} \\times 4$, $3 = \\frac{1}{2} \\times 6$, $4 = \\frac{1}{2} \\times 8$, relasi tersebut adalah **setengah dari** (Opsi D)."
         },
         {
           "id": "smp8-b4-15",
@@ -2196,11 +2196,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "1"
+              "text": "2"
             },
             {
               "key": "B",
-              "text": "2"
+              "text": "1"
             },
             {
               "key": "C",
@@ -2211,9 +2211,9 @@ export const grade8Data = {
               "text": "-1"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Cari nilai $p$ dan $q$ terlebih dahulu dengan metode eliminasi/substitusi.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $3p + q = 9$ dan $-2p + q = -11$\n2. $3p - (-2p) = 9 - (-11) \\implies 5p = 20 \\implies p = 4$\n3. $3(4) + q = 9 \\implies q = -3$\n4. $p + q = 4 + (-3) = 1$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $3p + q = 9$ dan $-2p + q = -11$\n2. $3p - (-2p) = 9 - (-11) \\implies 5p = 20 \\implies p = 4$\n3. $3(4) + q = 9 \\implies q = -3$\n4. $p + q = 4 + (-3) = 1$ (Opsi B)."
         },
         {
           "id": "smp8-b4-16",
@@ -2223,24 +2223,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "16"
-            },
-            {
-              "key": "B",
               "text": "15"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "18"
+            },
+            {
+              "key": "C",
+              "text": "16"
             },
             {
               "key": "D",
               "text": "14"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Perhatikan $f(x+2) - f(x) = a(x+2) + b - (ax + b) = 2a = 6 \\implies a = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $2a = 6 \\implies a = 3$\n2. $f(1) = 3(1) + b = 4 \\implies b = 1$\n3. $f(x) = 3x + 1$\n4. $f(5) = 3(5) + 1 = 16$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $2a = 6 \\implies a = 3$\n2. $f(1) = 3(1) + b = 4 \\implies b = 1$\n3. $f(x) = 3x + 1$\n4. $f(5) = 3(5) + 1 = 16$ (Opsi C)."
         },
         {
           "id": "smp8-b4-17",
@@ -2250,11 +2250,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "6 jam"
+              "text": "5,5 jam"
             },
             {
               "key": "B",
-              "text": "5,5 jam"
+              "text": "6 jam"
             },
             {
               "key": "C",
@@ -2265,9 +2265,9 @@ export const grade8Data = {
               "text": "7 jam"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Selesaikan persamaan $1.200t + 500 = 7.700$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$1.200t = 7.700 - 500 = 7.200 \\implies t = \\frac{7.200}{1.200} = 6\\text{ jam}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$1.200t = 7.700 - 500 = 7.200 \\implies t = \\frac{7.200}{1.200} = 6\\text{ jam}$$ (Opsi B)."
         },
         {
           "id": "smp8-b4-18",
@@ -2277,24 +2277,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "-1"
-            },
-            {
-              "key": "B",
               "text": "0"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "-2"
+            },
+            {
+              "key": "C",
+              "text": "-1"
             },
             {
               "key": "D",
               "text": "3"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Gunakan koordinat titik puncak parabola: $x_p = -\\frac{b}{2a}$, lalu cari $f(x_p)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x_p = -\\frac{-4}{2(1)} = 2$\n2. Nilai minimum: $f(2) = 2^2 - 4(2) + 3 = 4 - 8 + 3 = -1$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x_p = -\\frac{-4}{2(1)} = 2$\n2. Nilai minimum: $f(2) = 2^2 - 4(2) + 3 = 4 - 8 + 3 = -1$ (Opsi C)."
         },
         {
           "id": "smp8-b4-19",
@@ -2331,24 +2331,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{16}{3}"
-            },
-            {
-              "key": "B",
               "text": "5"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "4"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{14}{3}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{16}{3}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Selesaikan persamaan $\\frac{2k + 1}{k - 3} = 5$ dengan mengalikan silang.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2k + 1 = 5(k - 3) \\implies 2k + 1 = 5k - 15 \\implies 16 = 3k \\implies k = \\frac{16}{3}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2k + 1 = 5(k - 3) \\implies 2k + 1 = 5k - 15 \\implies 16 = 3k \\implies k = \\frac{16}{3}$$ (Opsi D)."
         }
       ]
     },
@@ -2408,24 +2408,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "3"
-            },
-            {
-              "key": "B",
               "text": "-5"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "-3"
+            },
+            {
+              "key": "C",
+              "text": "3"
             },
             {
               "key": "D",
               "text": "5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Pada bentuk eksplisit $y = mx + c$, gradien garis adalah koefisien dari variabel $x$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBerdasarkan bentuk $y = mx + c$, nilai $m = 3$.\nGradien garisnya adalah **3** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBerdasarkan bentuk $y = mx + c$, nilai $m = 3$.\nGradien garisnya adalah **3** (Opsi C)."
         },
         {
           "id": "smp8-b5-2",
@@ -2462,24 +2462,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "$-\\frac{1}{2}$"
-            },
-            {
-              "key": "B",
               "text": "$\\frac{1}{2}$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "-2"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "2"
+            },
+            {
+              "key": "D",
+              "text": "$-\\frac{1}{2}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Ubah ke bentuk $y = mx + c$ atau gunakan rumus $m = -\\frac{a}{b} = -\\frac{2}{4}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Rumus bentuk implisit $ax + by + c = 0$:\n$$m = -\\frac{a}{b} = -\\frac{2}{4} = -\\frac{1}{2}$$\nGradien garis adalah **$-\\frac{1}{2}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Rumus bentuk implisit $ax + by + c = 0$:\n$$m = -\\frac{a}{b} = -\\frac{2}{4} = -\\frac{1}{2}$$\nGradien garis adalah **$-\\frac{1}{2}$** (Opsi D)."
         },
         {
           "id": "smp8-b5-4",
@@ -2489,24 +2489,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "$y = 2x - 1$"
-            },
-            {
-              "key": "B",
               "text": "$y = 2x + 1$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$y = -\\frac{1}{2}x + 4$"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "$y = 2x - 7$"
+            },
+            {
+              "key": "D",
+              "text": "$y = 2x - 1$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Karena sejajar, gradiennya sama ($m = 2$). Gunakan $y - y_1 = m(x - x_1)$ dengan titik $(2, 3)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Karena sejajar, maka $m = 2$.\n2. Masukkan ke rumus garis melalui titik $(2, 3)$:\n$$y - 3 = 2(x - 2)$$\n$$y - 3 = 2x - 4$$\n$$y = 2x - 4 + 3 \\implies y = 2x - 1$$\nPersamaan garisnya adalah **$y = 2x - 1$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Karena sejajar, maka $m = 2$.\n2. Masukkan ke rumus garis melalui titik $(2, 3)$:\n$$y - 3 = 2(x - 2)$$\n$$y - 3 = 2x - 4$$\n$$y = 2x - 4 + 3 \\implies y = 2x - 1$$\nPersamaan garisnya adalah **$y = 2x - 1$** (Opsi D)."
         },
         {
           "id": "smp8-b5-5",
@@ -2516,11 +2516,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "4"
+              "text": "-7"
             },
             {
               "key": "B",
-              "text": "-7"
+              "text": "4"
             },
             {
               "key": "C",
@@ -2531,9 +2531,9 @@ export const grade8Data = {
               "text": "\\frac{1}{4}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Bentuk umum persamaan garis adalah $y = mx + c$, di mana $m$ adalah gradien.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKoefisien di depan variabel $x$ adalah $m = 4$. Jadi gradiennya adalah **4** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKoefisien di depan variabel $x$ adalah $m = 4$. Jadi gradiennya adalah **4** (Opsi B)."
         },
         {
           "id": "smp8-b5-6",
@@ -2543,24 +2543,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "2"
-            },
-            {
-              "key": "B",
               "text": "3"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{1}{2}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "4"
+            },
+            {
+              "key": "D",
+              "text": "2"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Rumus gradien dua titik: $m = \\frac{y_2 - y_1}{x_2 - x_1}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$m = \\frac{11 - 3}{6 - 2} = \\frac{8}{4} = 2$$\nGradien garis tersebut adalah **2** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$m = \\frac{11 - 3}{6 - 2} = \\frac{8}{4} = 2$$\nGradien garis tersebut adalah **2** (Opsi D)."
         },
         {
           "id": "smp8-b5-7",
@@ -2597,11 +2597,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "(6, 0) dan (0, -4)"
+              "text": "(0, 6) dan (-4, 0)"
             },
             {
               "key": "B",
-              "text": "(0, 6) dan (-4, 0)"
+              "text": "(6, 0) dan (0, -4)"
             },
             {
               "key": "C",
@@ -2612,9 +2612,9 @@ export const grade8Data = {
               "text": "(6, 0) dan (0, 4)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Potong sumbu-X saat $y = 0$, potong sumbu-Y saat $x = 0$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sumbu-X ($y=0$): $2x = 12 \\implies x = 6 \\implies (6, 0)$\n2. Sumbu-Y ($x=0$): $-3y = 12 \\implies y = -4 \\implies (0, -4)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sumbu-X ($y=0$): $2x = 12 \\implies x = 6 \\implies (6, 0)$\n2. Sumbu-Y ($x=0$): $-3y = 12 \\implies y = -4 \\implies (0, -4)$ (Opsi B)."
         },
         {
           "id": "smp8-b5-9",
@@ -2624,11 +2624,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "y = 3x - 1"
+              "text": "y = 3x + 1"
             },
             {
               "key": "B",
-              "text": "y = 3x + 1"
+              "text": "y = 3x - 1"
             },
             {
               "key": "C",
@@ -2639,9 +2639,9 @@ export const grade8Data = {
               "text": "y = 2x + 1"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan rumus persamaan garis satu titik: $y - y_1 = m(x - x_1)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$y - 5 = 3(x - 2) \\implies y - 5 = 3x - 6 \\implies y = 3x - 1$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$y - 5 = 3(x - 2) \\implies y - 5 = 3x - 6 \\implies y = 3x - 1$$ (Opsi B)."
         },
         {
           "id": "smp8-b5-10",
@@ -2678,24 +2678,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "y = 2x - 8"
-            },
-            {
-              "key": "B",
               "text": "y = 2x + 8"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "y = -2x - 8"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "y = 2x - 4"
+            },
+            {
+              "key": "D",
+              "text": "y = 2x - 8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Karena sejajar, gradien garis baru adalah $m = 2$. Gunakan $y - y_1 = m(x - x_1)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$y - (-2) = 2(x - 3) \\implies y + 2 = 2x - 6 \\implies y = 2x - 8$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$y - (-2) = 2(x - 3) \\implies y + 2 = 2x - 6 \\implies y = 2x - 8$$ (Opsi D)."
         },
         {
           "id": "smp8-b5-12",
@@ -2705,24 +2705,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "y = 3x + 1"
-            },
-            {
-              "key": "B",
               "text": "y = -3x + 7"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "y = 3x - 1"
+            },
+            {
+              "key": "C",
+              "text": "y = 3x + 1"
             },
             {
               "key": "D",
               "text": "y = \\frac{1}{3}x + 4"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Garis tegak lurus: $m_1 \\times m_2 = -1 \\implies -\\frac{1}{3} \\times m_2 = -1 \\implies m_2 = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$y - 4 = 3(x - 1) \\implies y - 4 = 3x - 3 \\implies y = 3x + 1$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$y - 4 = 3(x - 1) \\implies y - 4 = 3x - 3 \\implies y = 3x + 1$$ (Opsi C)."
         },
         {
           "id": "smp8-b5-13",
@@ -2759,11 +2759,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "60 km/jam"
+              "text": "50 km/jam"
             },
             {
               "key": "B",
-              "text": "50 km/jam"
+              "text": "60 km/jam"
             },
             {
               "key": "C",
@@ -2774,9 +2774,9 @@ export const grade8Data = {
               "text": "80 km/jam"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kecepatan adalah gradien garis jarak-waktu: $v = \\frac{s_2 - s_1}{t_2 - t_1}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$v = \\frac{300 - 120}{5 - 2} = \\frac{180}{3} = 60\\text{ km/jam}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$v = \\frac{300 - 120}{5 - 2} = \\frac{180}{3} = 60\\text{ km/jam}$$ (Opsi B)."
         },
         {
           "id": "smp8-b5-15",
@@ -2786,11 +2786,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "2"
+              "text": "3"
             },
             {
               "key": "B",
-              "text": "3"
+              "text": "2"
             },
             {
               "key": "C",
@@ -2801,9 +2801,9 @@ export const grade8Data = {
               "text": "4"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Substitusikan titik $(a, 5)$ ke dalam persamaan garis.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2a + 3(5) = 19 \\implies 2a + 15 = 19 \\implies 2a = 4 \\implies a = 2$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2a + 3(5) = 19 \\implies 2a + 15 = 19 \\implies 2a = 4 \\implies a = 2$$ (Opsi B)."
         },
         {
           "id": "smp8-b5-16",
@@ -2840,24 +2840,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "5x + 2y - 18 = 0"
-            },
-            {
-              "key": "B",
               "text": "5x - 2y - 22 = 0"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "2x + 5y - 3 = 0"
+            },
+            {
+              "key": "C",
+              "text": "5x + 2y - 18 = 0"
             },
             {
               "key": "D",
               "text": "5x + 2y + 18 = 0"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Gradien garis pertama $m_1 = \\frac{2}{5}$. Karena tegak lurus, $m_2 = -\\frac{5}{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $m_2 = -\\frac{5}{2}$\n2. $y - (-1) = -\\frac{5}{2}(x - 4) \\implies 2(y + 1) = -5(x - 4)$\n3. $2y + 2 = -5x + 20 \\implies 5x + 2y - 18 = 0$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $m_2 = -\\frac{5}{2}$\n2. $y - (-1) = -\\frac{5}{2}(x - 4) \\implies 2(y + 1) = -5(x - 4)$\n3. $2y + 2 = -5x + 20 \\implies 5x + 2y - 18 = 0$ (Opsi C)."
         },
         {
           "id": "smp8-b5-18",
@@ -2867,24 +2867,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "24 satuan luas"
-            },
-            {
-              "key": "B",
               "text": "12 satuan luas"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "48 satuan luas"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "36 satuan luas"
+            },
+            {
+              "key": "D",
+              "text": "24 satuan luas"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Cari titik potong garis dengan kedua sumbu koordinat sebagai panjang alas dan tinggi segitiga.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Potong sumbu-X: $3x = 24 \\implies x = 8 \\implies \\text{alas} = 8$\n2. Potong sumbu-Y: $4y = 24 \\implies y = 6 \\implies \\text{tinggi} = 6$\n3. Luas $= \\frac{1}{2} \\times 8 \\times 6 = 24\\text{ satuan luas}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Potong sumbu-X: $3x = 24 \\implies x = 8 \\implies \\text{alas} = 8$\n2. Potong sumbu-Y: $4y = 24 \\implies y = 6 \\implies \\text{tinggi} = 6$\n3. Luas $= \\frac{1}{2} \\times 8 \\times 6 = 24\\text{ satuan luas}$ (Opsi D)."
         },
         {
           "id": "smp8-b5-19",
@@ -2894,24 +2894,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "3"
-            },
-            {
-              "key": "B",
               "text": "4"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "2"
+            },
+            {
+              "key": "C",
+              "text": "3"
             },
             {
               "key": "D",
               "text": "5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Hitung gradien kedua titik yang diketahui, lalu samakan.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Gradien pembanding: $m = \\frac{5 - 1}{1 - (-1)} = \\frac{4}{2} = 2$\n2. Gradien garis $g$: $\\frac{7 - k}{4 - 2} = 2 \\implies 7 - k = 4 \\implies k = 3$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Gradien pembanding: $m = \\frac{5 - 1}{1 - (-1)} = \\frac{4}{2} = 2$\n2. Gradien garis $g$: $\\frac{7 - k}{4 - 2} = 2 \\implies 7 - k = 4 \\implies k = 3$ (Opsi C)."
         },
         {
           "id": "smp8-b5-20",
@@ -2921,24 +2921,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "4 satuan"
-            },
-            {
-              "key": "B",
               "text": "5 satuan"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "3 satuan"
+            },
+            {
+              "key": "C",
+              "text": "4 satuan"
             },
             {
               "key": "D",
               "text": "2 satuan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Gunakan rumus jarak titik $(x_0, y_0)$ ke garis $ax + by + c = 0$: $d = \\frac{|ax_0 + by_0 + c|}{\\sqrt{a^2 + b^2}}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$d = \\frac{|3(0) + 4(0) - 20|}{\\sqrt{3^2 + 4^2}} = \\frac{|-20|}{\\sqrt{25}} = \\frac{20}{5} = 4\\text{ satuan}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$d = \\frac{|3(0) + 4(0) - 20|}{\\sqrt{3^2 + 4^2}} = \\frac{|-20|}{\\sqrt{25}} = \\frac{20}{5} = 4\\text{ satuan}$$ (Opsi C)."
         }
       ]
     },
@@ -2998,24 +2998,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "7"
-            },
-            {
-              "key": "B",
               "text": "6,5"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "7,5"
+            },
+            {
+              "key": "C",
+              "text": "7"
             },
             {
               "key": "D",
               "text": "8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Jumlahkan semua nilai ($7+5+8+6+9=35$), lalu bagi dengan banyak data (5).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{7 + 5 + 8 + 6 + 9}{5} = \\frac{35}{5} = 7$$\nRata-ratanya adalah **7** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{7 + 5 + 8 + 6 + 9}{5} = \\frac{35}{5} = 7$$\nRata-ratanya adalah **7** (Opsi C)."
         },
         {
           "id": "smp8-b6-2",
@@ -3025,24 +3025,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "7"
-            },
-            {
-              "key": "B",
               "text": "8"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6"
+            },
+            {
+              "key": "C",
+              "text": "7"
             },
             {
               "key": "D",
               "text": "6,5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Urutkan data: $4, 5, 6, 7, 8, 8, 9$. Ambil data yang berada tepat di posisi tengah.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Urutkan: $4, 5, 6, 7, 8, 8, 9$ (ada 7 data).\n2. Nilai tengah adalah data ke-4 yaitu **7** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Urutkan: $4, 5, 6, 7, 8, 8, 9$ (ada 7 data).\n2. Nilai tengah adalah data ke-4 yaitu **7** (Opsi C)."
         },
         {
           "id": "smp8-b6-3",
@@ -3052,24 +3052,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "7"
-            },
-            {
-              "key": "B",
               "text": "8"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "7 dan 8"
+            },
+            {
+              "key": "D",
+              "text": "7"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Cari angka yang memiliki frekuensi kemunculan paling banyak: angka 7 muncul 3 kali.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- Angka 6 muncul 2 kali\n- Angka 7 muncul 3 kali\n- Angka 8 muncul 2 kali\n- Angka 9 muncul 1 kali\n- Angka 10 muncul 1 kali\nModus data adalah **7** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- Angka 6 muncul 2 kali\n- Angka 7 muncul 3 kali\n- Angka 8 muncul 2 kali\n- Angka 9 muncul 1 kali\n- Angka 10 muncul 1 kali\nModus data adalah **7** (Opsi D)."
         },
         {
           "id": "smp8-b6-4",
@@ -3106,24 +3106,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "8"
-            },
-            {
-              "key": "B",
               "text": "7"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "9"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "7,5"
+            },
+            {
+              "key": "D",
+              "text": "8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Modus adalah nilai data yang paling sering muncul (memiliki frekuensi tertinggi).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nAngka 8 muncul sebanyak 4 kali (frekuensi terbanyak). Jadi modusnya adalah **8** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nAngka 8 muncul sebanyak 4 kali (frekuensi terbanyak). Jadi modusnya adalah **8** (Opsi D)."
         },
         {
           "id": "smp8-b6-6",
@@ -3133,24 +3133,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "7"
-            },
-            {
-              "key": "B",
               "text": "6"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6,5"
+            },
+            {
+              "key": "C",
+              "text": "7"
             },
             {
               "key": "D",
               "text": "8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Urutkan data dari yang terkecil hingga terbesar, lalu cari nilai tengahnya.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Urutan data: 4, 5, 6, **7**, 7, 8, 9\n2. Karena banyak data ada 7 (ganjil), nilai tengahnya adalah data ke-4 yaitu **7** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Urutan data: 4, 5, 6, **7**, 7, 8, 9\n2. Karena banyak data ada 7 (ganjil), nilai tengahnya adalah data ke-4 yaitu **7** (Opsi C)."
         },
         {
           "id": "smp8-b6-7",
@@ -3160,24 +3160,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "7,5"
-            },
-            {
-              "key": "B",
               "text": "7,25"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "8,0"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "7,0"
+            },
+            {
+              "key": "D",
+              "text": "7,5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Mean diperoleh dengan menjumlahkan seluruh nilai data dibagi banyak data.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{6 + 8 + 7 + 9 + 5 + 10 + 7 + 8}{8} = \\frac{60}{8} = 7{,}5$$\nNilai rata-ratanya adalah **7,5** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{6 + 8 + 7 + 9 + 5 + 10 + 7 + 8}{8} = \\frac{60}{8} = 7{,}5$$\nNilai rata-ratanya adalah **7,5** (Opsi D)."
         },
         {
           "id": "smp8-b6-8",
@@ -3214,11 +3214,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "23"
+              "text": "20"
             },
             {
               "key": "B",
-              "text": "20"
+              "text": "23"
             },
             {
               "key": "C",
@@ -3229,9 +3229,9 @@ export const grade8Data = {
               "text": "22"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Jangkauan adalah selisih antara nilai datum terbesar dengan datum terkecil: $R = x_{\\max} - x_{\\min}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R = 35 - 12 = 23$$\nJangkauan data tersebut adalah **23** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R = 35 - 12 = 23$$\nJangkauan data tersebut adalah **23** (Opsi B)."
         },
         {
           "id": "smp8-b6-10",
@@ -3268,24 +3268,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "80"
-            },
-            {
-              "key": "B",
               "text": "78"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "82"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "79"
+            },
+            {
+              "key": "D",
+              "text": "80"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Gunakan rumus rata-rata gabungan: $\\bar{x}_{\\text{gab}} = \\frac{n_1 \\bar{x}_1 + n_2 \\bar{x}_2}{n_1 + n_2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total nilai awal: $24 \\times 75 = 1.800$\n2. Total nilai akhir: $(24 + 6) \\times 76 = 30 \\times 76 = 2.280$\n3. Total 6 siswa: $2.280 - 1.800 = 480$\n4. Rata-rata 6 siswa: $\\frac{480}{6} = 80$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total nilai awal: $24 \\times 75 = 1.800$\n2. Total nilai akhir: $(24 + 6) \\times 76 = 30 \\times 76 = 2.280$\n3. Total 6 siswa: $2.280 - 1.800 = 480$\n4. Rata-rata 6 siswa: $\\frac{480}{6} = 80$ (Opsi D)."
         },
         {
           "id": "smp8-b6-12",
@@ -3295,24 +3295,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "5, 7, dan 9"
-            },
-            {
-              "key": "B",
               "text": "6, 7, dan 8"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "5, 7, dan 10"
+            },
+            {
+              "key": "C",
+              "text": "5, 7, dan 9"
             },
             {
               "key": "D",
               "text": "3, 7, dan 9"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Bagi data menjadi dua bagian di kiri dan kanan median, lalu cari nilai tengah masing-masing bagian.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Median ($Q_2$) data ke-4 $= 7$\n2. Bagian kiri: 3, 5, 6 $\\implies Q_1 = 5$\n3. Bagian kanan: 8, 9, 10 $\\implies Q_3 = 9$\nNilai berturut-turut adalah **5, 7, dan 9** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Median ($Q_2$) data ke-4 $= 7$\n2. Bagian kiri: 3, 5, 6 $\\implies Q_1 = 5$\n3. Bagian kanan: 8, 9, 10 $\\implies Q_3 = 9$\nNilai berturut-turut adalah **5, 7, dan 9** (Opsi C)."
         },
         {
           "id": "smp8-b6-13",
@@ -3322,11 +3322,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "5,5"
+              "text": "5"
             },
             {
               "key": "B",
-              "text": "5"
+              "text": "5,5"
             },
             {
               "key": "C",
@@ -3337,9 +3337,9 @@ export const grade8Data = {
               "text": "4,5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Jangkauan interkuartil dirumuskan $QR = Q_3 - Q_1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $Q_1 = \\frac{5 + 6}{2} = 5{,}5$\n2. $Q_3 = \\frac{10 + 12}{2} = 11$\n3. $QR = 11 - 5{,}5 = 5{,}5$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $Q_1 = \\frac{5 + 6}{2} = 5{,}5$\n2. $Q_3 = \\frac{10 + 12}{2} = 11$\n3. $QR = 11 - 5{,}5 = 5{,}5$ (Opsi B)."
         },
         {
           "id": "smp8-b6-14",
@@ -3349,24 +3349,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "20 siswa"
-            },
-            {
-              "key": "B",
               "text": "15 siswa"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "25 siswa"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "30 siswa"
+            },
+            {
+              "key": "D",
+              "text": "20 siswa"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Total sudut satu lingkaran adalah $360^\\circ$. Cari sudut renang lalu kalikan dengan proporsi siswa.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sudut Renang: $360^\\circ - (150^\\circ + 90^\\circ + 60^\\circ) = 360^\\circ - 300^\\circ = 60^\\circ$\n2. Banyak siswa $= \\frac{60^\\circ}{360^\\circ} \\times 120 = \\frac{1}{6} \\times 120 = 20\\text{ siswa}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sudut Renang: $360^\\circ - (150^\\circ + 90^\\circ + 60^\\circ) = 360^\\circ - 300^\\circ = 60^\\circ$\n2. Banyak siswa $= \\frac{60^\\circ}{360^\\circ} \\times 120 = \\frac{1}{6} \\times 120 = 20\\text{ siswa}$ (Opsi D)."
         },
         {
           "id": "smp8-b6-15",
@@ -3376,11 +3376,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "78"
+              "text": "77,5"
             },
             {
               "key": "B",
-              "text": "77,5"
+              "text": "78"
             },
             {
               "key": "C",
@@ -3391,9 +3391,9 @@ export const grade8Data = {
               "text": "77"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rata-rata gabungan $= \\frac{(15 \\times 80) + (10 \\times 75)}{15 + 10}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{1.200 + 750}{25} = \\frac{1.950}{25} = 78$$\nRata-rata seluruh siswa adalah **78** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{1.200 + 750}{25} = \\frac{1.950}{25} = 78$$\nRata-rata seluruh siswa adalah **78** (Opsi B)."
         },
         {
           "id": "smp8-b6-16",
@@ -3430,11 +3430,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "7"
+              "text": "7,5"
             },
             {
               "key": "B",
-              "text": "7,5"
+              "text": "7"
             },
             {
               "key": "C",
@@ -3445,9 +3445,9 @@ export const grade8Data = {
               "text": "7,2"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Karena median 7,5 dari 6 data, maka dua nilai tengah yang dirata-ratakan adalah 7 dan 8. Maka $x \\le 4$. Jika $x=3$, periksa mean.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Karena dua nilai tengah adalah 7 dan 8, urutan data: $x, 4, 7, 8, 9, 11$.\n2. Jika $x = 3$, mean $= \\frac{3 + 4 + 7 + 8 + 9 + 11}{6} = \\frac{42}{6} = 7$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Karena dua nilai tengah adalah 7 dan 8, urutan data: $x, 4, 7, 8, 9, 11$.\n2. Jika $x = 3$, mean $= \\frac{3 + 4 + 7 + 8 + 9 + 11}{6} = \\frac{42}{6} = 7$ (Opsi B)."
         },
         {
           "id": "smp8-b6-18",
@@ -3484,11 +3484,11 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "60%"
+              "text": "50%"
             },
             {
               "key": "B",
-              "text": "50%"
+              "text": "60%"
             },
             {
               "key": "C",
@@ -3499,9 +3499,9 @@ export const grade8Data = {
               "text": "70%"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan aturan perbandingan rata-rata gabungan atau perbandingan selisih.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Selisih lulus ke gabungan: $82 - 74 = 8$\n2. Selisih tidak lulus ke gabungan: $74 - 62 = 12$\n3. Rasio (lulus : tidak lulus) $= 12 : 8 = 3 : 2$\n4. Persentase lulus $= \\frac{3}{3 + 2} \\times 100\\% = 60\\%$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Selisih lulus ke gabungan: $82 - 74 = 8$\n2. Selisih tidak lulus ke gabungan: $74 - 62 = 12$\n3. Rasio (lulus : tidak lulus) $= 12 : 8 = 3 : 2$\n4. Persentase lulus $= \\frac{3}{3 + 2} \\times 100\\% = 60\\%$ (Opsi B)."
         },
         {
           "id": "smp8-b6-20",
@@ -3511,24 +3511,24 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "182 cm"
-            },
-            {
-              "key": "B",
               "text": "175 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "180 cm"
+            },
+            {
+              "key": "C",
+              "text": "182 cm"
             },
             {
               "key": "D",
               "text": "178 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Agar salah satu anak mencapai tinggi maksimal, 4 anak lainnya harus memiliki tinggi minimal (142 cm).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total tinggi 5 anak $= 5 \\times 150 = 750\\text{ cm}$\n2. Tinggi minimal 4 anak $= 4 \\times 142 = 568\\text{ cm}$\n3. Tinggi maksimal anak ke-5 $= 750 - 568 = 182\\text{ cm}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total tinggi 5 anak $= 5 \\times 150 = 750\\text{ cm}$\n2. Tinggi minimal 4 anak $= 4 \\times 142 = 568\\text{ cm}$\n3. Tinggi maksimal anak ke-5 $= 750 - 568 = 182\\text{ cm}$ (Opsi C)."
         }
       ]
     }

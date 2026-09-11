@@ -63,11 +63,14 @@ describe('Visual Accuracy, Mathematical Fidelity, and Zero-Spoiler Tests', () =>
     const q20 = ch1.questions.find(q => q.id === 'smp8-b1-20');
     expect(q20).toBeDefined();
 
-    // Ensure options have proper math delimiters
-    expect(q20.options[0].text).toContain('$300\\text{ m}^3$');
-    expect(q20.options[1].text).toContain('$30\\text{ m}^3$');
-    expect(q20.options[2].text).toContain('$3.000\\text{ m}^3$');
-    expect(q20.options[3].text).toContain('$30.000\\text{ m}^3$');
+    // Ensure options have proper math delimiters and correct answer mapping
+    const texts = q20.options.map(o => o.text);
+    expect(texts).toContain('$300\\text{ m}^3$');
+    expect(texts).toContain('$30\\text{ m}^3$');
+    expect(texts).toContain('$3.000\\text{ m}^3$');
+    expect(texts).toContain('$30.000\\text{ m}^3$');
+    const correctOpt = q20.options.find(o => o.key === q20.correctAnswer);
+    expect(correctOpt.text).toBe('$300\\text{ m}^3$');
 
     // Ensure visual is registered with faithful dimensions and zero spoiler
     const vis = grade8VisualRegistry['smp8-b1-20'];

@@ -77,24 +77,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "34"
-            },
-            {
-              "key": "B",
               "text": "32"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "36"
+            },
+            {
+              "key": "C",
+              "text": "34"
             },
             {
               "key": "D",
               "text": "30"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Cari beda antarsuku terlebih dahulu: $4b = U_8 - U_4 = 28 - 16 = 12$, kemudian tambahkan $2b$ ke $U_8$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Cari selisih beda: $U_8 - U_4 = 4b \\implies 28 - 16 = 12 \\implies b = 3$\n2. Suku pertama: $a = U_4 - 3b = 16 - 3(3) = 16 - 9 = 7$\n3. Suku ke-10:\n$$U_{10} = a + 9b = 7 + 9(3) = 7 + 27 = 34$$\nJadi, nilai suku ke-10 adalah **34** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Cari selisih beda: $U_8 - U_4 = 4b \\implies 28 - 16 = 12 \\implies b = 3$\n2. Suku pertama: $a = U_4 - 3b = 16 - 3(3) = 16 - 9 = 7$\n3. Suku ke-10:\n$$U_{10} = a + 9b = 7 + 9(3) = 7 + 27 = 34$$\nJadi, nilai suku ke-10 adalah **34** (Opsi C)."
         },
         {
           "id": "sma12-b1-2",
@@ -131,24 +131,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "32 meter"
-            },
-            {
-              "key": "B",
               "text": "24 meter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "40 meter"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "20 meter"
+            },
+            {
+              "key": "D",
+              "text": "32 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Gunakan formula praktis lintasan bola: $S = h_0 \\cdot \\frac{q + p}{q - p}$ dengan $h_0 = 8$ dan rasio $\\frac{p}{q} = \\frac{3}{5}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Diketahui ketinggian awal $h_0 = 8\\text{ m}$ dan rasio $r = \\frac{3}{5}$ ($p = 3, q = 5$).\n2. Gunakan rumus terpadu lintasan pantulan bola:\n$$S_{\\text{total}} = h_0 \\cdot \\frac{q + p}{q - p} = 8 \\cdot \\frac{5 + 3}{5 - 3} = 8 \\cdot \\frac{8}{2} = 8 \\cdot 4 = 32\\text{ meter}$$\nPanjang seluruh lintasan bola sampai berhenti adalah **32 meter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Diketahui ketinggian awal $h_0 = 8\\text{ m}$ dan rasio $r = \\frac{3}{5}$ ($p = 3, q = 5$).\n2. Gunakan rumus terpadu lintasan pantulan bola:\n$$S_{\\text{total}} = h_0 \\cdot \\frac{q + p}{q - p} = 8 \\cdot \\frac{5 + 3}{5 - 3} = 8 \\cdot \\frac{8}{2} = 8 \\cdot 4 = 32\\text{ meter}$$\nPanjang seluruh lintasan bola sampai berhenti adalah **32 meter** (Opsi D)."
         },
         {
           "id": "sma12-b1-4",
@@ -185,24 +185,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "8 bulan"
-            },
-            {
-              "key": "B",
               "text": "6 bulan"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "10 bulan"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "12 bulan"
+            },
+            {
+              "key": "D",
+              "text": "8 bulan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Bunga bersih yang diperoleh adalah $\\text{Rp}400.000,00$. Gunakan $B = M_0 \\cdot i \\cdot \\frac{t}{12}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hitung akumulasi bunga yang diperoleh: $B = M_t - M_0 = 10.400.000 - 10.000.000 = \\text{Rp}400.000,00$.\n2. Masukkan ke formula bunga tunggal (dalam satuan bulan $t$):\n$$B = M_0 \\times i \\times \\frac{t}{12}$$\n$$400.000 = 10.000.000 \\times 0{,}06 \\times \\frac{t}{12}$$\n$$400.000 = 600.000 \\times \\frac{t}{12} = 50.000 \\times t$$\n3. Hitung nilai $t$:\n$$t = \\frac{400.000}{50.000} = 8\\text{ bulan}$$\nLama Pak Bayu menabung adalah **8 bulan** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hitung akumulasi bunga yang diperoleh: $B = M_t - M_0 = 10.400.000 - 10.000.000 = \\text{Rp}400.000,00$.\n2. Masukkan ke formula bunga tunggal (dalam satuan bulan $t$):\n$$B = M_0 \\times i \\times \\frac{t}{12}$$\n$$400.000 = 10.000.000 \\times 0{,}06 \\times \\frac{t}{12}$$\n$$400.000 = 600.000 \\times \\frac{t}{12} = 50.000 \\times t$$\n3. Hitung nilai $t$:\n$$t = \\frac{400.000}{50.000} = 8\\text{ bulan}$$\nLama Pak Bayu menabung adalah **8 bulan** (Opsi D)."
         },
         {
           "id": "sma12-b1-6",
@@ -212,24 +212,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "62"
-            },
-            {
-              "key": "B",
               "text": "65"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "59"
+            },
+            {
+              "key": "C",
+              "text": "62"
             },
             {
               "key": "D",
               "text": "68"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Rumus suku ke-$n$ aritmetika: $U_n = a + (n - 1)b = 5 + 19(3) = 5 + 57 = 62$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$U_{20} = 5 + 19(3) = 5 + 57 = 62$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$U_{20} = 5 + 19(3) = 5 + 57 = 62$$ (Opsi C)."
         },
         {
           "id": "sma12-b1-7",
@@ -239,11 +239,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "210"
+              "text": "200"
             },
             {
               "key": "B",
-              "text": "200"
+              "text": "210"
             },
             {
               "key": "C",
@@ -254,9 +254,9 @@ export const grade12Data = {
               "text": "190"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rumus jumlah: $S_n = \\frac{n}{2}[2a + (n - 1)b] = \\frac{10}{2}[2(3) + 9(4)] = 5(6 + 36) = 5(42) = 210$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_{10} = 5 \\times (6 + 36) = 5 \\times 42 = 210$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_{10} = 5 \\times (6 + 36) = 5 \\times 42 = 210$$ (Opsi B)."
         },
         {
           "id": "sma12-b1-8",
@@ -266,24 +266,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "192"
-            },
-            {
-              "key": "B",
               "text": "96"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "384"
+            },
+            {
+              "key": "C",
+              "text": "192"
             },
             {
               "key": "D",
               "text": "128"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Rumus suku ke-$n$ geometri: $U_n = a r^{n-1} = 3 \\times 2^6 = 3 \\times 64 = 192$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$U_7 = 3 \\times 2^6 = 3 \\times 64 = 192$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$U_7 = 3 \\times 2^6 = 3 \\times 64 = 192$$ (Opsi C)."
         },
         {
           "id": "sma12-b1-9",
@@ -293,11 +293,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "32"
+              "text": "30"
             },
             {
               "key": "B",
-              "text": "30"
+              "text": "32"
             },
             {
               "key": "C",
@@ -308,9 +308,9 @@ export const grade12Data = {
               "text": "64"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rumus deret tak hingga: $S_\\infty = \\frac{a}{1 - r} = \\frac{16}{1 - 0{,}5} = \\frac{16}{0{,}5} = 32$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_\\infty = \\frac{16}{1 - \\frac{1}{2}} = \\frac{16}{\\frac{1}{2}} = 32$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_\\infty = \\frac{16}{1 - \\frac{1}{2}} = \\frac{16}{\\frac{1}{2}} = 32$$ (Opsi B)."
         },
         {
           "id": "sma12-b1-10",
@@ -347,24 +347,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "3.200 bakteri"
-            },
-            {
-              "key": "B",
               "text": "1.600 bakteri"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6.400 bakteri"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "800 bakteri"
+            },
+            {
+              "key": "D",
+              "text": "3.200 bakteri"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "2 jam $= 120$ menit $= 6$ kali pembelahan. $U_7 = 50 \\times 2^6 = 50 \\times 64 = 3.200$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$N = 50 \\times 2^6 = 50 \\times 64 = 3.200\\text{ bakteri}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$N = 50 \\times 2^6 = 50 \\times 64 = 3.200\\text{ bakteri}$$ (Opsi D)."
         },
         {
           "id": "sma12-b1-12",
@@ -401,11 +401,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp33.300.000,00"
+              "text": "Rp32.500.000,00"
             },
             {
               "key": "B",
-              "text": "Rp32.500.000,00"
+              "text": "Rp33.300.000,00"
             },
             {
               "key": "C",
@@ -416,9 +416,9 @@ export const grade12Data = {
               "text": "Rp30.000.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "$S_{12} = \\frac{12}{2}[2(2.500.000) + 11(50.000)] = 6[5.000.000 + 550.000] = 6(5.550.000) = 33.300.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_{12} = 6 \\times (5.000.000 + 550.000) = 33.300.000\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_{12} = 6 \\times (5.000.000 + 550.000) = 33.300.000\\text{ rupiah}$$ (Opsi B)."
         },
         {
           "id": "sma12-b1-14",
@@ -455,11 +455,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "4"
+              "text": "3"
             },
             {
               "key": "B",
-              "text": "3"
+              "text": "4"
             },
             {
               "key": "C",
@@ -470,9 +470,9 @@ export const grade12Data = {
               "text": "6"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rumus sisipan: $b' = \\frac{b}{k + 1} = \\frac{28 - 4}{5 + 1} = \\frac{24}{6} = 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$b' = \\frac{24}{5 + 1} = 4$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$b' = \\frac{24}{5 + 1} = 4$$ (Opsi B)."
         },
         {
           "id": "sma12-b1-16",
@@ -482,11 +482,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "6n - 5"
+              "text": "6n - 2"
             },
             {
               "key": "B",
-              "text": "6n - 2"
+              "text": "6n - 5"
             },
             {
               "key": "C",
@@ -497,9 +497,9 @@ export const grade12Data = {
               "text": "6n + 1"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan $U_n = S_n - S_{n-1} = (3n^2 - 2n) - [3(n-1)^2 - 2(n-1)] = 6n - 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$U_n = S_n - S_{n-1} = 6n - 5$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$U_n = S_n - S_{n-1} = 6n - 5$$ (Opsi B)."
         },
         {
           "id": "sma12-b1-17",
@@ -509,24 +509,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "484 cm"
-            },
-            {
-              "key": "B",
               "text": "480 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "500 cm"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "440 cm"
+            },
+            {
+              "key": "D",
+              "text": "484 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "$a = 4, ar^4 = 324 \\implies r^4 = 81 \\implies r = 3$. Panjang total $= S_5 = \\frac{4(3^5 - 1)}{3 - 1} = 2(243 - 1) = 484$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $r^4 = 81 \\implies r = 3$\n2. $S_5 = \\frac{4(242)}{2} = 484\\text{ cm}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $r^4 = 81 \\implies r = 3$\n2. $S_5 = \\frac{4(242)}{2} = 484\\text{ cm}$ (Opsi D)."
         },
         {
           "id": "sma12-b1-18",
@@ -536,24 +536,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "3"
-            },
-            {
-              "key": "B",
               "text": "4"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{8}{3}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "2"
+            },
+            {
+              "key": "D",
+              "text": "3"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "$12 = \\frac{8}{1 - r} \\implies 1 - r = \\frac{8}{12} = \\frac{2}{3} \\implies r = \\frac{1}{3}$. Suku pertama genap: $U_2 = 8 \\times \\frac{1}{3} = \\frac{8}{3}$. Rasio genap $= r^2 = \\frac{1}{9}$. $S_{\\text{genap}} = \\frac{\\frac{8}{3}}{1 - \\frac{1}{9}} = \\frac{\\frac{8}{3}}{\\frac{8}{9}} = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_{\\text{genap}} = \\frac{U_2}{1 - r^2} = \\frac{\\frac{8}{3}}{\\frac{8}{9}} = 3$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_{\\text{genap}} = \\frac{U_2}{1 - r^2} = \\frac{\\frac{8}{3}}{\\frac{8}{9}} = 3$$ (Opsi D)."
         },
         {
           "id": "sma12-b1-19",
@@ -563,24 +563,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "3"
-            },
-            {
-              "key": "B",
               "text": "2"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "4"
+            },
+            {
+              "key": "C",
+              "text": "3"
             },
             {
               "key": "D",
               "text": "\\frac{3}{2}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "$(U_2)^3 = 216 \\implies U_2 = 6$. Maka $\\frac{6}{r} + 6 + 6r = 26 \\implies 6r^2 - 20r + 6 = 0 \\implies 3r^2 - 10r + 3 = 0 \\implies (3r - 1)(r - 3) = 0 \\implies r = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $U_2 = 6$\n2. $\\frac{6}{r} + 6r = 20 \\implies 3r^2 - 10r + 3 = 0 \\implies r = 3$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $U_2 = 6$\n2. $\\frac{6}{r} + 6r = 20 \\implies 3r^2 - 10r + 3 = 0 \\implies r = 3$ (Opsi C)."
         },
         {
           "id": "sma12-b1-20",
@@ -590,24 +590,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "780"
-            },
-            {
-              "key": "B",
               "text": "800"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "760"
+            },
+            {
+              "key": "C",
+              "text": "780"
             },
             {
               "key": "D",
               "text": "820"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Deret aritmetika dengan $a = 4(1) - 3 = 1$, $U_{20} = 4(20) - 3 = 77$. $S_{20} = \\frac{20}{2}(1 + 77) = 10(78) = 780$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_{20} = 10 \\times (1 + 77) = 780$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_{20} = 10 \\times (1 + 77) = 780$$ (Opsi C)."
         }
       ]
     },
@@ -732,11 +732,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\text{Rp}1.575.000,00$"
+              "text": "$\\text{Rp}1.600.000,00$"
             },
             {
               "key": "B",
-              "text": "$\\text{Rp}1.600.000,00$"
+              "text": "$\\text{Rp}1.575.000,00$"
             },
             {
               "key": "C",
@@ -747,9 +747,9 @@ export const grade12Data = {
               "text": "$\\text{Rp}1.650.000,00$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan sifat relasi angsuran pokok pada anuitas: $a_2 = a_1(1 + i)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Relasi antarangsuran pokok: $a_n = a_1(1 + i)^{n-1}$\n2. Untuk $n = 2$:\n$$a_2 = a_1(1 + i) = 1.500.000 \\times (1 + 0{,}05) = 1.500.000 \\times 1{,}05 = \\text{Rp}1.575.000,00$$\nBesar angsuran pokok tahun ke-2 adalah **$\\text{Rp}1.575.000,00$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Relasi antarangsuran pokok: $a_n = a_1(1 + i)^{n-1}$\n2. Untuk $n = 2$:\n$$a_2 = a_1(1 + i) = 1.500.000 \\times (1 + 0{,}05) = 1.500.000 \\times 1{,}05 = \\text{Rp}1.575.000,00$$\nBesar angsuran pokok tahun ke-2 adalah **$\\text{Rp}1.575.000,00$** (Opsi B)."
         },
         {
           "id": "sma12-b2-4",
@@ -759,11 +759,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\text{Rp}20.250.000,00$"
+              "text": "$\\text{Rp}20.000.000,00$"
             },
             {
               "key": "B",
-              "text": "$\\text{Rp}20.000.000,00$"
+              "text": "$\\text{Rp}20.250.000,00$"
             },
             {
               "key": "C",
@@ -774,9 +774,9 @@ export const grade12Data = {
               "text": "$\\text{Rp}19.500.000,00$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan rumus penyusutan eksponensial: $V_2 = V_0(1 - r)^2$ dengan $r = 0{,}10$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Formula: $V_2 = 25.000.000 \\times (1 - 0{,}10)^2 = 25.000.000 \\times (0{,}9)^2$\n2. $(0{,}9)^2 = 0{,}81$\n3. $V_2 = 25.000.000 \\times 0{,}81 = \\text{Rp}20.250.000,00$\nNilai motor setelah 2 tahun adalah **$\\text{Rp}20.250.000,00$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Formula: $V_2 = 25.000.000 \\times (1 - 0{,}10)^2 = 25.000.000 \\times (0{,}9)^2$\n2. $(0{,}9)^2 = 0{,}81$\n3. $V_2 = 25.000.000 \\times 0{,}81 = \\text{Rp}20.250.000,00$\nNilai motor setelah 2 tahun adalah **$\\text{Rp}20.250.000,00$** (Opsi B)."
         },
         {
           "id": "sma12-b2-5",
@@ -786,24 +786,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\text{Rp}13.850.000,00$"
-            },
-            {
-              "key": "B",
               "text": "$\\text{Rp}13.625.000,00$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$\\text{Rp}14.000.000,00$"
+            },
+            {
+              "key": "C",
+              "text": "$\\text{Rp}13.850.000,00$"
             },
             {
               "key": "D",
               "text": "$\\text{Rp}13.775.000,00$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Hitung bunga bulan pertama $b_1 = M \\times i$, kurangkan dari anuitas untuk mendapat angsuran pokok $a_1$, lalu sisa pinjaman adalah $M - a_1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hitung bunga bulan pertama:\n$$b_1 = 15.000.000 \\times 0{,}015 = 225.000$$\n2. Hitung angsuran pokok pelunasan hutang bulan pertama:\n$$a_1 = A - b_1 = 1.375.000 - 225.000 = 1.150.000$$\n3. Sisa pokok pinjaman setelah angsuran pertama:\n$$S_1 = M - a_1 = 15.000.000 - 1.150.000 = \\text{Rp}13.850.000,00$$\nSisa hutang pokok adalah **$\\text{Rp}13.850.000,00$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hitung bunga bulan pertama:\n$$b_1 = 15.000.000 \\times 0{,}015 = 225.000$$\n2. Hitung angsuran pokok pelunasan hutang bulan pertama:\n$$a_1 = A - b_1 = 1.375.000 - 225.000 = 1.150.000$$\n3. Sisa pokok pinjaman setelah angsuran pertama:\n$$S_1 = M - a_1 = 15.000.000 - 1.150.000 = \\text{Rp}13.850.000,00$$\nSisa hutang pokok adalah **$\\text{Rp}13.850.000,00$** (Opsi C)."
         },
         {
           "id": "sma12-b2-6",
@@ -813,24 +813,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp2.400.000,00"
-            },
-            {
-              "key": "B",
               "text": "Rp2.597.120,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp2.000.000,00"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Rp1.800.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp2.400.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Bunga tunggal: $B = M \\times i \\times t = 10.000.000 \\times 0{,}08 \\times 3 = 2.400.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$B = 10.000.000 \\times 0{,}08 \\times 3 = 2.400.000\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$B = 10.000.000 \\times 0{,}08 \\times 3 = 2.400.000\\text{ rupiah}$$ (Opsi D)."
         },
         {
           "id": "sma12-b2-7",
@@ -867,24 +867,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Angsuran pokok dan bunga"
-            },
-            {
-              "key": "B",
               "text": "Bunga murni dan denda"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Biaya administrasi dan premi"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Modal awal dan dividen"
+            },
+            {
+              "key": "D",
+              "text": "Angsuran pokok dan bunga"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Anuitas merupakan gabungan dari angsuran pokok pinjaman ($a_t$) dan bunga ($b_t$): $A = a_t + b_t$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nAnuitas terdiri dari **angsuran pokok dan bunga** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nAnuitas terdiri dari **angsuran pokok dan bunga** (Opsi D)."
         },
         {
           "id": "sma12-b2-9",
@@ -948,24 +948,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp120.000,00"
-            },
-            {
-              "key": "B",
               "text": "Rp100.000,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp150.000,00"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Rp110.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp120.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Bunga bulan pertama: $b_1 = M \\times i = 12.000.000 \\times 0{,}01 = 120.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$b_1 = 12.000.000 \\times 0{,}01 = 120.000\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$b_1 = 12.000.000 \\times 0{,}01 = 120.000\\text{ rupiah}$$ (Opsi D)."
         },
         {
           "id": "sma12-b2-12",
@@ -975,24 +975,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp980.000,00"
-            },
-            {
-              "key": "B",
               "text": "Rp1.000.000,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp920.000,00"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Rp950.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp980.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "$a_1 = A - b_1 = 1.100.000 - 120.000 = 980.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$a_1 = 1.100.000 - 120.000 = 980.000\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$a_1 = 1.100.000 - 120.000 = 980.000\\text{ rupiah}$$ (Opsi D)."
         },
         {
           "id": "sma12-b2-13",
@@ -1002,24 +1002,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp11.020.000,00"
-            },
-            {
-              "key": "B",
               "text": "Rp10.900.000,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp11.000.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp11.020.000,00"
             },
             {
               "key": "D",
               "text": "Rp11.120.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Sisa pinjaman: $S_1 = M - a_1 = 12.000.000 - 980.000 = 11.020.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_1 = 12.000.000 - 980.000 = 11.020.000\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_1 = 12.000.000 - 980.000 = 11.020.000\\text{ rupiah}$$ (Opsi C)."
         },
         {
           "id": "sma12-b2-14",
@@ -1029,11 +1029,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp10.000.000,00"
+              "text": "Rp9.500.000,00"
             },
             {
               "key": "B",
-              "text": "Rp9.500.000,00"
+              "text": "Rp10.000.000,00"
             },
             {
               "key": "C",
@@ -1044,9 +1044,9 @@ export const grade12Data = {
               "text": "Rp10.500.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Nilai tunai: $M_0 = \\frac{M_t}{(1 + i)^t} = \\frac{13.310.000}{(1{,}1)^3} = \\frac{13.310.000}{1{,}331} = 10.000.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$M_0 = \\frac{13.310.000}{1{,}331} = 10.000.000\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$M_0 = \\frac{13.310.000}{1{,}331} = 10.000.000\\text{ rupiah}$$ (Opsi B)."
         },
         {
           "id": "sma12-b2-15",
@@ -1056,24 +1056,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp3.641.000,00"
-            },
-            {
-              "key": "B",
               "text": "Rp3.310.000,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp3.500.000,00"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Rp3.200.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp3.641.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Tabungan 1: $1.000.000(1{,}1)^3 = 1.331.000$. Tabungan 2: $1.000.000(1{,}1)^2 = 1.210.000$. Tabungan 3: $1.000.000(1{,}1) = 1.100.000$. Total $= 3.641.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S = 1.331.000 + 1.210.000 + 1.100.000 = 3.641.000\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S = 1.331.000 + 1.210.000 + 1.100.000 = 3.641.000\\text{ rupiah}$$ (Opsi D)."
         },
         {
           "id": "sma12-b2-16",
@@ -1083,11 +1083,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "a_k = a_1 (1 + i)^{k - 1}"
+              "text": "a_k = a_1 (1 + i)^k"
             },
             {
               "key": "B",
-              "text": "a_k = a_1 (1 + i)^k"
+              "text": "a_k = a_1 (1 + i)^{k - 1}"
             },
             {
               "key": "C",
@@ -1098,9 +1098,9 @@ export const grade12Data = {
               "text": "a_k = a_1 (1 - i)^k"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Angsuran pokok pada sistem anuitas membentuk barisan geometri dengan rasio $(1 + i)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$a_k = a_1 (1 + i)^{k - 1}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$a_k = a_1 (1 + i)^{k - 1}$$ (Opsi B)."
         },
         {
           "id": "sma12-b2-17",
@@ -1110,24 +1110,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp463.050,00"
-            },
-            {
-              "key": "B",
               "text": "Rp460.000,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp450.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp463.050,00"
             },
             {
               "key": "D",
               "text": "Rp470.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "$a_4 = a_2 (1 + i)^{4 - 2} = 420.000 \\times (1{,}05)^2 = 420.000 \\times 1{,}1025 = 463.050$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$a_4 = 420.000 \\times (1{,}05)^2 = 463.050\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$a_4 = 420.000 \\times (1{,}05)^2 = 463.050\\text{ rupiah}$$ (Opsi C)."
         },
         {
           "id": "sma12-b2-18",
@@ -1137,11 +1137,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp7.451.475,00"
+              "text": "Rp7.200.000,00"
             },
             {
               "key": "B",
-              "text": "Rp7.200.000,00"
+              "text": "Rp7.451.475,00"
             },
             {
               "key": "C",
@@ -1152,9 +1152,9 @@ export const grade12Data = {
               "text": "Rp7.100.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rumus anuitas: $A = \\frac{M \\times i}{1 - (1+i)^{-n}} = \\frac{50.000.000 \\times 0{,}08}{1 - \\frac{1}{2{,}1589}} = \\frac{4.000.000}{0{,}5368} \\approx 7.451.475$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A = \\frac{4.000.000}{1 - (1{,}08)^{-10}} \\approx 7.451.475\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A = \\frac{4.000.000}{1 - (1{,}08)^{-10}} \\approx 7.451.475\\text{ rupiah}$$ (Opsi B)."
         },
         {
           "id": "sma12-b2-19",
@@ -1164,24 +1164,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "6 tahun"
-            },
-            {
-              "key": "B",
               "text": "5 tahun"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "7 tahun"
+            },
+            {
+              "key": "C",
+              "text": "6 tahun"
             },
             {
               "key": "D",
               "text": "8 tahun"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Aturan 72: Waktu penggandaan modal $\\approx \\frac{72}{\\text{suku bunga}} = \\frac{72}{12} = 6$ tahun.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t \\approx \\frac{72}{12} = 6\\text{ tahun}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t \\approx \\frac{72}{12} = 6\\text{ tahun}$$ (Opsi C)."
         },
         {
           "id": "sma12-b2-20",
@@ -1191,24 +1191,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp10.000.000,00"
-            },
-            {
-              "key": "B",
               "text": "Rp9.200.000,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp10.800.000,00"
+            },
+            {
+              "key": "C",
+              "text": "Rp10.000.000,00"
             },
             {
               "key": "D",
               "text": "Rp8.500.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Bunga bulan ke-5: $b_5 = S_4 \\times i \\implies 150.000 = S_4 \\times 0{,}015 \\implies S_4 = \\frac{150.000}{0{,}015} = 10.000.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_4 = \\frac{150.000}{0{,}015} = 10.000.000\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_4 = \\frac{150.000}{0{,}015} = 10.000.000\\text{ rupiah}$$ (Opsi C)."
         }
       ]
     },
@@ -1276,24 +1276,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "120 cara"
-            },
-            {
-              "key": "B",
               "text": "20 cara"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "720 cara"
+            },
+            {
+              "key": "C",
+              "text": "120 cara"
             },
             {
               "key": "D",
               "text": "36 cara"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Karena jabatan dibedakan secara struktural (Ketua, Sekretaris, Bendahara), gunakan Permutasi $P(6, 3)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Pemilihan memperhatikan urutan jabatan (Permutasi $n=6, r=3$):\n$$P(6, 3) = \\frac{6!}{(6 - 3)!} = \\frac{6!}{3!} = 6 \\times 5 \\times 4 = 120$$\nBanyak susunan pengurus yang dapat terbentuk adalah **120 cara** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Pemilihan memperhatikan urutan jabatan (Permutasi $n=6, r=3$):\n$$P(6, 3) = \\frac{6!}{(6 - 3)!} = \\frac{6!}{3!} = 6 \\times 5 \\times 4 = 120$$\nBanyak susunan pengurus yang dapat terbentuk adalah **120 cara** (Opsi C)."
         },
         {
           "id": "sma12-b3-2",
@@ -1303,24 +1303,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "24 cara"
-            },
-            {
-              "key": "B",
               "text": "120 cara"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "60 cara"
+            },
+            {
+              "key": "C",
+              "text": "24 cara"
             },
             {
               "key": "D",
               "text": "12 cara"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Gunakan rumus permutasi siklis: $P_{\\text{siklis}} = (n - 1)!$ dengan $n = 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Meja bundar menggunakan permutasi siklis:\n$$P_{\\text{siklis}} = (5 - 1)! = 4!$$\n2. Hitung nilai faktorial:\n$$4! = 4 \\times 3 \\times 2 \\times 1 = 24$$\nBanyak posisi duduk melingkar yang mungkin adalah **24 cara** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Meja bundar menggunakan permutasi siklis:\n$$P_{\\text{siklis}} = (5 - 1)! = 4!$$\n2. Hitung nilai faktorial:\n$$4! = 4 \\times 3 \\times 2 \\times 1 = 24$$\nBanyak posisi duduk melingkar yang mungkin adalah **24 cara** (Opsi C)."
         },
         {
           "id": "sma12-b3-3",
@@ -1330,11 +1330,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "30"
+              "text": "60"
             },
             {
               "key": "B",
-              "text": "60"
+              "text": "30"
             },
             {
               "key": "C",
@@ -1345,9 +1345,9 @@ export const grade12Data = {
               "text": "20"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kata MALAM memiliki 5 huruf dengan huruf M sebanyak 2 dan huruf A sebanyak 2. Gunakan rumus permutasi unsur sama.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hitung total huruf $n = 5$.\n2. Unsur yang sama: huruf M ada 2 ($k_1 = 2$), huruf A ada 2 ($k_2 = 2$), huruf L ada 1.\n3. Masukkan ke rumus permutasi unsur sama:\n$$P = \\frac{5!}{2! \\times 2!} = \\frac{120}{2 \\times 2} = \\frac{120}{4} = 30$$\nBanyak susunan kata berbeda yang dapat dibentuk adalah **30 kata** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hitung total huruf $n = 5$.\n2. Unsur yang sama: huruf M ada 2 ($k_1 = 2$), huruf A ada 2 ($k_2 = 2$), huruf L ada 1.\n3. Masukkan ke rumus permutasi unsur sama:\n$$P = \\frac{5!}{2! \\times 2!} = \\frac{120}{2 \\times 2} = \\frac{120}{4} = 30$$\nBanyak susunan kata berbeda yang dapat dibentuk adalah **30 kata** (Opsi B)."
         },
         {
           "id": "sma12-b3-4",
@@ -1357,24 +1357,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "45 kali"
-            },
-            {
-              "key": "B",
               "text": "90 kali"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "50 kali"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "100 kali"
+            },
+            {
+              "key": "D",
+              "text": "45 kali"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Jabat tangan melibatkan 2 orang dan tidak memperhatikan urutan ($A$ jabat tangan dengan $B$ sama dengan $B$ jabat tangan dengan $A$). Gunakan Kombinasi $C(10, 2)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Satu jabat tangan terjadi antara 2 orang tanpa memedulikan urutan (Kombinasi $n=10, r=2$):\n$$C(10, 2) = \\frac{10!}{2!(10 - 2)!} = \\frac{10 \\times 9}{2 \\times 1} = \\frac{90}{2} = 45$$\nBanyak jabat tangan seluruhnya adalah **45 kali** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Satu jabat tangan terjadi antara 2 orang tanpa memedulikan urutan (Kombinasi $n=10, r=2$):\n$$C(10, 2) = \\frac{10!}{2!(10 - 2)!} = \\frac{10 \\times 9}{2 \\times 1} = \\frac{90}{2} = 45$$\nBanyak jabat tangan seluruhnya adalah **45 kali** (Opsi D)."
         },
         {
           "id": "sma12-b3-5",
@@ -1438,24 +1438,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "30 susunan"
-            },
-            {
-              "key": "B",
               "text": "60 susunan"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "120 susunan"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "20 susunan"
+            },
+            {
+              "key": "D",
+              "text": "30 susunan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Permutasi dengan unsur sama: total 5 huruf (K=2, A=2, T=1). $P = \\frac{5!}{2! \\times 2!} = \\frac{120}{4} = 30$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{5!}{2! \\times 2!} = \\frac{120}{4} = 30\\text{ susunan}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{5!}{2! \\times 2!} = \\frac{120}{4} = 30\\text{ susunan}$$ (Opsi D)."
         },
         {
           "id": "sma12-b3-8",
@@ -1465,11 +1465,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "24 cara"
+              "text": "120 cara"
             },
             {
               "key": "B",
-              "text": "120 cara"
+              "text": "24 cara"
             },
             {
               "key": "C",
@@ -1480,9 +1480,9 @@ export const grade12Data = {
               "text": "12 cara"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Permutasi siklis: $P_{\\text{siklis}} = (n - 1)! = (5 - 1)! = 4! = 24$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = (5 - 1)! = 4! = 24\\text{ cara}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = (5 - 1)! = 4! = 24\\text{ cara}$$ (Opsi B)."
         },
         {
           "id": "sma12-b3-9",
@@ -1492,24 +1492,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "56"
-            },
-            {
-              "key": "B",
               "text": "336"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "28"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "64"
+            },
+            {
+              "key": "D",
+              "text": "56"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Rumus kombinasi: $C(8, 3) = \\frac{8!}{3!(8 - 3)!} = \\frac{8 \\times 7 \\times 6}{3 \\times 2 \\times 1} = 56$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C(8, 3) = \\frac{8 \\times 7 \\times 6}{6} = 56$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C(8, 3) = \\frac{8 \\times 7 \\times 6}{6} = 56$$ (Opsi D)."
         },
         {
           "id": "sma12-b3-10",
@@ -1519,24 +1519,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "720 susunan"
-            },
-            {
-              "key": "B",
               "text": "120 susunan"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "240 susunan"
+            },
+            {
+              "key": "C",
+              "text": "720 susunan"
             },
             {
               "key": "D",
               "text": "360 susunan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Karena memperhatikan urutan jabatan, gunakan permutasi: $P(10, 3) = 10 \\times 9 \\times 8 = 720$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(10, 3) = 10 \\times 9 \\times 8 = 720$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(10, 3) = 10 \\times 9 \\times 8 = 720$$ (Opsi C)."
         },
         {
           "id": "sma12-b3-11",
@@ -1573,11 +1573,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "60 bilangan"
+              "text": "120 bilangan"
             },
             {
               "key": "B",
-              "text": "120 bilangan"
+              "text": "60 bilangan"
             },
             {
               "key": "C",
@@ -1588,9 +1588,9 @@ export const grade12Data = {
               "text": "30 bilangan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Digit satuan harus ganjil (1, 3, 5) ada 3 pilihan. Digit ratusan ada 5 sisa angka. Digit puluhan ada 4 sisa angka. Total $= 5 \\times 4 \\times 3 = 60$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Banyak bilangan} = 5 \\times 4 \\times 3 = 60$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Banyak bilangan} = 5 \\times 4 \\times 3 = 60$$ (Opsi B)."
         },
         {
           "id": "sma12-b3-13",
@@ -1627,24 +1627,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "350 cara"
-            },
-            {
-              "key": "B",
               "text": "120 cara"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "210 cara"
+            },
+            {
+              "key": "C",
+              "text": "350 cara"
             },
             {
               "key": "D",
               "text": "180 cara"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Aturan perkalian kombinasi: $C(7, 3) \\times C(5, 2) = 35 \\times 10 = 350$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C(7, 3) \\times C(5, 2) = 35 \\times 10 = 350\\text{ cara}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C(7, 3) \\times C(5, 2) = 35 \\times 10 = 350\\text{ cara}$$ (Opsi C)."
         },
         {
           "id": "sma12-b3-15",
@@ -1654,11 +1654,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "151.200 susunan"
+              "text": "302.400 susunan"
             },
             {
               "key": "B",
-              "text": "302.400 susunan"
+              "text": "151.200 susunan"
             },
             {
               "key": "C",
@@ -1669,9 +1669,9 @@ export const grade12Data = {
               "text": "50.400 susunan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Total 10 huruf (M=2, A=3, T=2, E=1, I=1, K=1). $P = \\frac{10!}{2! \\times 3! \\times 2!} = \\frac{3.628.800}{24} = 151.200$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{10!}{2! \\times 3! \\times 2!} = 151.200$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{10!}{2! \\times 3! \\times 2!} = 151.200$$ (Opsi B)."
         },
         {
           "id": "sma12-b3-16",
@@ -1681,11 +1681,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "240 cara"
+              "text": "120 cara"
             },
             {
               "key": "B",
-              "text": "120 cara"
+              "text": "240 cara"
             },
             {
               "key": "C",
@@ -1696,9 +1696,9 @@ export const grade12Data = {
               "text": "144 cara"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Anggap 2 orang sebagai 1 kesatuan $\\implies$ ada 6 elemen. Siklis: $(6 - 1)! = 5! = 120$. Posisi 2 orang bisa bertukar $2! = 2$. Total $= 120 \\times 2 = 240$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = (6 - 1)! \\times 2! = 120 \\times 2 = 240\\text{ cara}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = (6 - 1)! \\times 2! = 120 \\times 2 = 240\\text{ cara}$$ (Opsi B)."
         },
         {
           "id": "sma12-b3-17",
@@ -1735,24 +1735,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "840 cara"
-            },
-            {
-              "key": "B",
               "text": "720 cara"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "960 cara"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "640 cara"
+            },
+            {
+              "key": "D",
+              "text": "840 cara"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kombinasi 3 pria dari 8 dan 2 wanita dari 6: $C(8, 3) \\times C(6, 2) = 56 \\times 15 = 840$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C(8, 3) \\times C(6, 2) = 56 \\times 15 = 840\\text{ cara}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C(8, 3) \\times C(6, 2) = 56 \\times 15 = 840\\text{ cara}$$ (Opsi D)."
         },
         {
           "id": "sma12-b3-19",
@@ -1762,24 +1762,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "720"
-            },
-            {
-              "key": "B",
               "text": "-720"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "1.080"
+            },
+            {
+              "key": "C",
+              "text": "720"
             },
             {
               "key": "D",
               "text": "-1.080"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Suku umum: $C(5, 2)(2x)^3(-3)^2 = 10 \\times (8x^3) \\times 9 = 720 x^3$. Koefisiennya adalah 720.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Suku} = C(5, 2)(2x)^3(-3)^2 = 10 \\times 8x^3 \\times 9 = 720x^3$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Suku} = C(5, 2)(2x)^3(-3)^2 = 10 \\times 8x^3 \\times 9 = 720x^3$$ (Opsi C)."
         },
         {
           "id": "sma12-b3-20",
@@ -1789,24 +1789,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "54 diagonal"
-            },
-            {
-              "key": "B",
               "text": "66 diagonal"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "48 diagonal"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "60 diagonal"
+            },
+            {
+              "key": "D",
+              "text": "54 diagonal"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Banyak diagonal segi-$n$: $D = \\frac{n(n - 3)}{2} = \\frac{12 \\times 9}{2} = 54$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$D = \\frac{12(12 - 3)}{2} = 54\\text{ diagonal}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$D = \\frac{12(12 - 3)}{2} = 54\\text{ diagonal}$$ (Opsi D)."
         }
       ]
     },
@@ -1878,11 +1878,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{2}{9}$"
+              "text": "$\\frac{1}{6}$"
             },
             {
               "key": "B",
-              "text": "$\\frac{1}{6}$"
+              "text": "$\\frac{2}{9}$"
             },
             {
               "key": "C",
@@ -1893,9 +1893,9 @@ export const grade12Data = {
               "text": "$\\frac{1}{4}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kedua kejadian saling lepas. Pasangan berjumlah 7 ada 6 cara, berjumlah 11 ada 2 cara. Ruang sampel total adalah 36.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Ruang sampel pelemparan 2 dadu: $n(S) = 6 \\times 6 = 36$.\n2. Pasangan jumlah 7: $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1) \\implies 6$ cara.\n3. Pasangan jumlah 11: $(5,6), (6,5) \\implies 2$ cara.\n4. Karena saling lepas:\n$$P(7 \\cup 11) = \\frac{6 + 2}{36} = \\frac{8}{36} = \\frac{2}{9}$$\nPeluang muncul jumlah 7 atau 11 adalah **$\\frac{2}{9}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Ruang sampel pelemparan 2 dadu: $n(S) = 6 \\times 6 = 36$.\n2. Pasangan jumlah 7: $(1,6), (2,5), (3,4), (4,3), (5,2), (6,1) \\implies 6$ cara.\n3. Pasangan jumlah 11: $(5,6), (6,5) \\implies 2$ cara.\n4. Karena saling lepas:\n$$P(7 \\cup 11) = \\frac{6 + 2}{36} = \\frac{8}{36} = \\frac{2}{9}$$\nPeluang muncul jumlah 7 atau 11 adalah **$\\frac{2}{9}$** (Opsi B)."
         },
         {
           "id": "sma12-b4-2",
@@ -1932,11 +1932,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{5}{6}$"
+              "text": "$\\frac{11}{15}$"
             },
             {
               "key": "B",
-              "text": "$\\frac{11}{15}$"
+              "text": "$\\frac{5}{6}$"
             },
             {
               "key": "C",
@@ -1947,9 +1947,9 @@ export const grade12Data = {
               "text": "$\\frac{4}{5}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan rumus dua kejadian tidak saling lepas: $P(M \\cup F) = P(M) + P(F) - P(M \\cap F)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Diketahui $n(S) = 30$, $n(M) = 18$, $n(F) = 15$, dan $n(M \\cap F) = 8$.\n2. Hitung banyak siswa yang gemar salah satu atau kedua pelajaran:\n$$n(M \\cup F) = n(M) + n(F) - n(M \\cap F) = 18 + 15 - 8 = 25$$\n3. Peluangnya:\n$$P(M \\cup F) = \\frac{25}{30} = \\frac{5}{6}$$\nPeluang siswa gemar matematika atau fisika adalah **$\\frac{5}{6}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Diketahui $n(S) = 30$, $n(M) = 18$, $n(F) = 15$, dan $n(M \\cap F) = 8$.\n2. Hitung banyak siswa yang gemar salah satu atau kedua pelajaran:\n$$n(M \\cup F) = n(M) + n(F) - n(M \\cap F) = 18 + 15 - 8 = 25$$\n3. Peluangnya:\n$$P(M \\cup F) = \\frac{25}{30} = \\frac{5}{6}$$\nPeluang siswa gemar matematika atau fisika adalah **$\\frac{5}{6}$** (Opsi B)."
         },
         {
           "id": "sma12-b4-4",
@@ -1959,24 +1959,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "$0{,}32$"
-            },
-            {
-              "key": "B",
               "text": "$0{,}64$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$0{,}16$"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "$0{,}48$"
+            },
+            {
+              "key": "D",
+              "text": "$0{,}32$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Tepat satu tembakan mengenai sasaran berarti: (Kena pada tembakan 1 DAN Gagal pada tembakan 2) ATAU (Gagal pada tembakan 1 DAN Kena pada tembakan 2).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Peluang kena: $P(K) = 0{,}8$. Peluang gagal (meleset): $P(G) = 1 - 0{,}8 = 0{,}2$.\n2. Ada dua kemungkinan susunan:\n- Kena lalu Gagal: $P(K_1 \\cap G_2) = 0{,}8 \\times 0{,}2 = 0{,}16$\n- Gagal lalu Kena: $P(G_1 \\cap K_2) = 0{,}2 \\times 0{,}8 = 0{,}16$\n3. Jumlahkan kedua kemungkinan saling lepas tersebut:\n$$P = 0{,}16 + 0{,}16 = 0{,}32$$\nPeluang tepat satu tembakan mengenai sasaran adalah **$0{,}32$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Peluang kena: $P(K) = 0{,}8$. Peluang gagal (meleset): $P(G) = 1 - 0{,}8 = 0{,}2$.\n2. Ada dua kemungkinan susunan:\n- Kena lalu Gagal: $P(K_1 \\cap G_2) = 0{,}8 \\times 0{,}2 = 0{,}16$\n- Gagal lalu Kena: $P(G_1 \\cap K_2) = 0{,}2 \\times 0{,}8 = 0{,}16$\n3. Jumlahkan kedua kemungkinan saling lepas tersebut:\n$$P = 0{,}16 + 0{,}16 = 0{,}32$$\nPeluang tepat satu tembakan mengenai sasaran adalah **$0{,}32$** (Opsi D)."
         },
         {
           "id": "sma12-b4-5",
@@ -1986,11 +1986,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{1}{3}$"
+              "text": "$\\frac{3}{10}$"
             },
             {
               "key": "B",
-              "text": "$\\frac{3}{10}$"
+              "text": "$\\frac{1}{3}$"
             },
             {
               "key": "C",
@@ -2001,9 +2001,9 @@ export const grade12Data = {
               "text": "$\\frac{2}{5}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Pada pengambilan pertama ada 6 hijau dari 10 bola. Pada pengambilan kedua tersisa 5 hijau dari 9 bola. Kalikan kedua peluang bersyarat tersebut.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Peluang bola pertama hijau: $P(H_1) = \\frac{6}{10} = \\frac{3}{5}$.\n2. Karena tanpa pengembalian, sisa bola dalam kotak menjadi 9 buah dengan 5 di antaranya hijau:\n$$P(H_2 | H_1) = \\frac{5}{9}$$\n3. Peluang kedua bola hijau:\n$$P(H_1 \\cap H_2) = \\frac{3}{5} \\times \\frac{5}{9} = \\frac{15}{45} = \\frac{1}{3}$$\nPeluang terambilnya kedua bola berwarna hijau adalah **$\\frac{1}{3}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Peluang bola pertama hijau: $P(H_1) = \\frac{6}{10} = \\frac{3}{5}$.\n2. Karena tanpa pengembalian, sisa bola dalam kotak menjadi 9 buah dengan 5 di antaranya hijau:\n$$P(H_2 | H_1) = \\frac{5}{9}$$\n3. Peluang kedua bola hijau:\n$$P(H_1 \\cap H_2) = \\frac{3}{5} \\times \\frac{5}{9} = \\frac{15}{45} = \\frac{1}{3}$$\nPeluang terambilnya kedua bola berwarna hijau adalah **$\\frac{1}{3}$** (Opsi B)."
         },
         {
           "id": "sma12-b4-6",
@@ -2013,24 +2013,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{5}{18}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{1}{4}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{11}{36}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{1}{3}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{5}{18}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Jumlah 6: 5 pasangan. Jumlah 8: 5 pasangan. Kejadian saling lepas: $P = \\frac{5 + 5}{36} = \\frac{10}{36} = \\frac{5}{18}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{5}{36} + \\frac{5}{36} = \\frac{10}{36} = \\frac{5}{18}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{5}{36} + \\frac{5}{36} = \\frac{10}{36} = \\frac{5}{18}$$ (Opsi D)."
         },
         {
           "id": "sma12-b4-7",
@@ -2040,11 +2040,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{7}{13}"
+              "text": "\\frac{1}{2}"
             },
             {
               "key": "B",
-              "text": "\\frac{1}{2}"
+              "text": "\\frac{7}{13}"
             },
             {
               "key": "C",
@@ -2055,9 +2055,9 @@ export const grade12Data = {
               "text": "\\frac{8}{13}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kartu merah $= 26$, kartu As $= 4$, As merah $= 2$. $P = \\frac{26 + 4 - 2}{52} = \\frac{28}{52} = \\frac{7}{13}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(A \\cup B) = \\frac{26}{52} + \\frac{4}{52} - \\frac{2}{52} = \\frac{28}{52} = \\frac{7}{13}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(A \\cup B) = \\frac{26}{52} + \\frac{4}{52} - \\frac{2}{52} = \\frac{28}{52} = \\frac{7}{13}$$ (Opsi B)."
         },
         {
           "id": "sma12-b4-8",
@@ -2067,24 +2067,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "0,2"
-            },
-            {
-              "key": "B",
               "text": "0,9"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "0,1"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "0,45"
+            },
+            {
+              "key": "D",
+              "text": "0,2"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Dua kejadian saling bebas: $P(A \\cap B) = P(A) \\times P(B) = 0{,}4 \\times 0{,}5 = 0{,}2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(A \\cap B) = 0{,}4 \\times 0{,}5 = 0{,}2$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(A \\cap B) = 0{,}4 \\times 0{,}5 = 0{,}2$$ (Opsi D)."
         },
         {
           "id": "sma12-b4-9",
@@ -2094,24 +2094,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{2}{15}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{4}{25}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{1}{6}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{2}{15}"
             },
             {
               "key": "D",
               "text": "\\frac{3}{20}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Peluang bola 1 merah $= \\frac{4}{10}$. Peluang bola 2 merah $= \\frac{3}{9}$. Peluang bersama $= \\frac{4}{10} \\times \\frac{3}{9} = \\frac{2}{5} \\times \\frac{1}{3} = \\frac{2}{15}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{4}{10} \\times \\frac{3}{9} = \\frac{2}{15}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{4}{10} \\times \\frac{3}{9} = \\frac{2}{15}$$ (Opsi C)."
         },
         {
           "id": "sma12-b4-10",
@@ -2121,24 +2121,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "0,24"
-            },
-            {
-              "key": "B",
               "text": "0,56"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "0,14"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "0,06"
+            },
+            {
+              "key": "D",
+              "text": "0,24"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "$P(M \\cap F') = P(M) \\times P(F') = 0{,}8 \\times (1 - 0{,}7) = 0{,}8 \\times 0{,}3 = 0{,}24$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = 0{,}8 \\times 0{,}3 = 0{,}24$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = 0{,}8 \\times 0{,}3 = 0{,}24$$ (Opsi D)."
         },
         {
           "id": "sma12-b4-11",
@@ -2148,24 +2148,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{15}{28}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{15}{56}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{5}{14}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{15}{28}"
             },
             {
               "key": "D",
               "text": "\\frac{9}{28}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Cara terambil 1M 1H: $C(5, 1) \\times C(3, 1) = 5 \\times 3 = 15$. Total cara $= C(8, 2) = 28$. Peluang $= \\frac{15}{28}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{C(5, 1) \\times C(3, 1)}{C(8, 2)} = \\frac{15}{28}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{C(5, 1) \\times C(3, 1)}{C(8, 2)} = \\frac{15}{28}$$ (Opsi C)."
         },
         {
           "id": "sma12-b4-12",
@@ -2175,24 +2175,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{P(A \\cap B)}{P(B)}, \\text{ dengan } P(B) > 0"
-            },
-            {
-              "key": "B",
               "text": "P(A) \\times P(B)"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "P(A) + P(B) - P(A \\cap B)"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{P(B)}{P(A)}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{P(A \\cap B)}{P(B)}, \\text{ dengan } P(B) > 0"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Definisi peluang terjadinya A dengan syarat B telah terjadi: $P(A|B) = \\frac{P(A \\cap B)}{P(B)}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(A|B) = \\frac{P(A \\cap B)}{P(B)}$$ (Opsi D)."
         },
         {
           "id": "sma12-b4-13",
@@ -2202,11 +2202,11 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{3}"
+              "text": "\\frac{1}{2}"
             },
             {
               "key": "B",
-              "text": "\\frac{1}{2}"
+              "text": "\\frac{1}{3}"
             },
             {
               "key": "C",
@@ -2217,9 +2217,9 @@ export const grade12Data = {
               "text": "\\frac{2}{3}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Ruang sampel bilangan genap $B = \\{2, 4, 6\\}$ (ada 3). Bilangan genap prima hanya $\\{2\\}$ (ada 1). Peluang $= \\frac{1}{3}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(\\text{Prima} | \\text{Genap}) = \\frac{n(\\{2\\})}{n(\\{2, 4, 6\\})} = \\frac{1}{3}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(\\text{Prima} | \\text{Genap}) = \\frac{n(\\{2\\})}{n(\\{2, 4, 6\\})} = \\frac{1}{3}$$ (Opsi B)."
         },
         {
           "id": "sma12-b4-14",
@@ -2229,24 +2229,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "5% dari orang yang sebenarnya sehat mendapatkan hasil tes positif"
-            },
-            {
-              "key": "B",
               "text": "5% dari seluruh populasi menderita sakit"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Tes tersebut gagal mendeteksi 5% orang sakit"
+            },
+            {
+              "key": "C",
+              "text": "5% dari orang yang sebenarnya sehat mendapatkan hasil tes positif"
             },
             {
               "key": "D",
               "text": "95% orang sehat dipastikan sakit"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "False positive adalah hasil positif semu pada individu yang sebenarnya sehat/negatif.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nFalse positive artinya **5% dari orang sehat mendapatkan hasil positif** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nFalse positive artinya **5% dari orang sehat mendapatkan hasil positif** (Opsi C)."
         },
         {
           "id": "sma12-b4-15",
@@ -2310,24 +2310,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{3}{7}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{4}{7}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{1}{2}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{3}{7}"
             },
             {
               "key": "D",
               "text": "\\frac{2}{5}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Teorema Bayes: $P(C) = (0{,}6 \\times 0{,}02) + (0{,}4 \\times 0{,}04) = 0{,}012 + 0{,}016 = 0{,}028$. $P(A|C) = \\frac{0{,}012}{0{,}028} = \\frac{12}{28} = \\frac{3}{7}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(A|C) = \\frac{0{,}012}{0{,}028} = \\frac{3}{7}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(A|C) = \\frac{0{,}012}{0{,}028} = \\frac{3}{7}$$ (Opsi C)."
         },
         {
           "id": "sma12-b4-18",
@@ -2364,24 +2364,24 @@ export const grade12Data = {
           "options": [
             {
               "key": "A",
-              "text": "0,648"
-            },
-            {
-              "key": "B",
               "text": "0,600"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "0,720"
+            },
+            {
+              "key": "C",
+              "text": "0,648"
             },
             {
               "key": "D",
               "text": "0,576"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "A menang 2-0: $0{,}6^2 = 0{,}36$. A menang 2-1: (A-B-A atau B-A-A) $= 2 \\times (0{,}6 \\times 0{,}4 \\times 0{,}6) = 0{,}288$. Total $= 0{,}36 + 0{,}288 = 0{,}648$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Menang 2-0: $0{,}36$\n2. Menang 2-1: $2 \\times (0{,}6 \\times 0{,}4 \\times 0{,}6) = 0{,}288$\nTotal $= 0{,}648$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Menang 2-0: $0{,}36$\n2. Menang 2-1: $2 \\times (0{,}6 \\times 0{,}4 \\times 0{,}6) = 0{,}288$\nTotal $= 0{,}648$ (Opsi C)."
         },
         {
           "id": "sma12-b4-20",
@@ -2433,10 +2433,22 @@ export const grade12Data = {
           }
         ],
         "keyFormulas": [
-          { "label": "Rata-rata Data Berkelompok", "formula": "\\bar{x} = \\frac{\\sum f_i x_i}{\\sum f_i}" },
-          { "label": "Varians Sampel", "formula": "s^2 = \\frac{\\sum f_i(x_i - \\bar{x})^2}{n-1}" },
-          { "label": "Median Data Berkelompok", "formula": "Me = L + \\frac{\\frac{n}{2} - F}{f} \\times c" },
-          { "label": "Modus Data Berkelompok", "formula": "Mo = L + \\frac{d_1}{d_1 + d_2} \\times c" }
+          {
+            "label": "Rata-rata Data Berkelompok",
+            "formula": "\\bar{x} = \\frac{\\sum f_i x_i}{\\sum f_i}"
+          },
+          {
+            "label": "Varians Sampel",
+            "formula": "s^2 = \\frac{\\sum f_i(x_i - \\bar{x})^2}{n-1}"
+          },
+          {
+            "label": "Median Data Berkelompok",
+            "formula": "Me = L + \\frac{\\frac{n}{2} - F}{f} \\times c"
+          },
+          {
+            "label": "Modus Data Berkelompok",
+            "formula": "Mo = L + \\frac{d_1}{d_1 + d_2} \\times c"
+          }
         ],
         "misconceptions": [
           "Menggunakan $n$ bukan $n-1$ pada varians sampel — gunakan $n-1$ (koreksi Bessel) saat data adalah sampel, bukan populasi.",
@@ -2451,10 +2463,22 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Data: 5, 8, 6, 7, 9, 5, 8, 7, 6, 9. Simpangan baku data tersebut adalah...",
           "options": [
-            { "key": "A", "text": "$\\sqrt{2}$" },
-            { "key": "B", "text": "2" },
-            { "key": "C", "text": "$\\sqrt{3}$" },
-            { "key": "D", "text": "1" }
+            {
+              "key": "A",
+              "text": "$\\sqrt{2}$"
+            },
+            {
+              "key": "B",
+              "text": "2"
+            },
+            {
+              "key": "C",
+              "text": "$\\sqrt{3}$"
+            },
+            {
+              "key": "D",
+              "text": "1"
+            }
           ],
           "correctAnswer": "A",
           "hint": "Hitung rata-rata terlebih dahulu: $\\bar{x} = 7$. Lalu hitung $\\sqrt{\\frac{\\sum(x_i-\\bar{x})^2}{n}}$.",
@@ -2466,10 +2490,22 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Nilai rata-rata dari data: 3, 5, 7, 8, 4, 9, 6, 2, 5, 1 adalah...",
           "options": [
-            { "key": "A", "text": "5" },
-            { "key": "B", "text": "4" },
-            { "key": "C", "text": "6" },
-            { "key": "D", "text": "5,5" }
+            {
+              "key": "A",
+              "text": "5"
+            },
+            {
+              "key": "B",
+              "text": "4"
+            },
+            {
+              "key": "C",
+              "text": "6"
+            },
+            {
+              "key": "D",
+              "text": "5,5"
+            }
           ],
           "correctAnswer": "A",
           "hint": "Jumlahkan semua data lalu bagi dengan banyak data.",
@@ -2481,14 +2517,26 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Data nilai ujian 50 siswa memiliki rata-rata 70 dan simpangan baku 10. Jika seorang siswa mendapat nilai 85, nilai siswa tersebut berada di...",
           "options": [
-            { "key": "A", "text": "1,5 simpangan baku di atas rata-rata" },
-            { "key": "B", "text": "1,5 simpangan baku di bawah rata-rata" },
-            { "key": "C", "text": "2 simpangan baku di atas rata-rata" },
-            { "key": "D", "text": "Tepat pada rata-rata" }
+            {
+              "key": "A",
+              "text": "1,5 simpangan baku di bawah rata-rata"
+            },
+            {
+              "key": "B",
+              "text": "2 simpangan baku di atas rata-rata"
+            },
+            {
+              "key": "C",
+              "text": "1,5 simpangan baku di atas rata-rata"
+            },
+            {
+              "key": "D",
+              "text": "Tepat pada rata-rata"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Hitung $z = \\frac{x - \\bar{x}}{s} = \\frac{85 - 70}{10}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$z = \\frac{85 - 70}{10} = 1{,}5$\nSiswa tersebut berada **1,5 simpangan baku di atas rata-rata** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$z = \\frac{85 - 70}{10} = 1{,}5$\nSiswa tersebut berada **1,5 simpangan baku di atas rata-rata** (Opsi C)."
         },
         {
           "id": "sma12-b5-4",
@@ -2496,10 +2544,22 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Tabel distribusi frekuensi: Kelas 10-19 (f=3), 20-29 (f=7), 30-39 (f=10), 40-49 (f=6), 50-59 (f=4). Nilai median data tersebut adalah...",
           "options": [
-            { "key": "A", "text": "33" },
-            { "key": "B", "text": "30" },
-            { "key": "C", "text": "35" },
-            { "key": "D", "text": "32" }
+            {
+              "key": "A",
+              "text": "33"
+            },
+            {
+              "key": "B",
+              "text": "30"
+            },
+            {
+              "key": "C",
+              "text": "35"
+            },
+            {
+              "key": "D",
+              "text": "32"
+            }
           ],
           "correctAnswer": "A",
           "hint": "Total n = 30. Median di posisi ke-15. Frekuensi kumulatif: 3, 10, 20. Kelas median adalah 30-39 (karena fkum mencapai 15 di kelas ini).",
@@ -2511,14 +2571,26 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Varians dari data: 4, 6, 8, 10, 12 adalah...",
           "options": [
-            { "key": "A", "text": "8" },
-            { "key": "B", "text": "4" },
-            { "key": "C", "text": "10" },
-            { "key": "D", "text": "$\\sqrt{8}$" }
+            {
+              "key": "A",
+              "text": "4"
+            },
+            {
+              "key": "B",
+              "text": "10"
+            },
+            {
+              "key": "C",
+              "text": "$\\sqrt{8}$"
+            },
+            {
+              "key": "D",
+              "text": "8"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "$\\bar{x} = 8$. $s^2 = \\frac{(-4)^2+(-2)^2+0^2+2^2+4^2}{5}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = 8$\n$s^2 = \\frac{16+4+0+4+16}{5} = \\frac{40}{5} = 8$\nVariansnya adalah **8** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = 8$\n$s^2 = \\frac{16+4+0+4+16}{5} = \\frac{40}{5} = 8$\nVariansnya adalah **8** (Opsi D)."
         },
         {
           "id": "sma12-b5-6",
@@ -2526,14 +2598,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Rata-rata nilai 8 siswa adalah 75. Jika seorang siswa tambahan mendapat nilai 83, rata-rata nilai 9 siswa tersebut adalah...",
           "options": [
-            { "key": "A", "text": "$75\\frac{8}{9}$" },
-            { "key": "B", "text": "79" },
-            { "key": "C", "text": "76" },
-            { "key": "D", "text": "78" }
+            {
+              "key": "A",
+              "text": "$75\\frac{8}{9}$"
+            },
+            {
+              "key": "B",
+              "text": "79"
+            },
+            {
+              "key": "C",
+              "text": "78"
+            },
+            {
+              "key": "D",
+              "text": "76"
+            }
           ],
-          "correctAnswer": "C",
+          "correctAnswer": "D",
           "hint": "Total nilai 8 siswa = $8 \\times 75 = 600$. Tambah 83. Bagi dengan 9.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTotal = $600 + 83 = 683$\n$\\bar{x} = \\frac{683}{9} \\approx 75{,}9 \\approx 76$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTotal = $600 + 83 = 683$\n$\\bar{x} = \\frac{683}{9} \\approx 75{,}9 \\approx 76$ (Opsi D)."
         },
         {
           "id": "sma12-b5-7",
@@ -2541,14 +2625,26 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Diketahui data: 2, 3, 5, 7, 8, 9, 12. Nilai kuartil bawah ($Q_1$) adalah...",
           "options": [
-            { "key": "A", "text": "3" },
-            { "key": "B", "text": "5" },
-            { "key": "C", "text": "2" },
-            { "key": "D", "text": "7" }
+            {
+              "key": "A",
+              "text": "5"
+            },
+            {
+              "key": "B",
+              "text": "2"
+            },
+            {
+              "key": "C",
+              "text": "3"
+            },
+            {
+              "key": "D",
+              "text": "7"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Data sudah terurut (n=7). $Q_1$ adalah median dari bagian bawah: 2, 3, 5.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nData: 2, 3, 5 | 7 | 8, 9, 12\n$Q_1$ = median dari \"2, 3, 5\" = **3** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nData: 2, 3, 5 | 7 | 8, 9, 12\n$Q_1$ = median dari \"2, 3, 5\" = **3** (Opsi C)."
         },
         {
           "id": "sma12-b5-8",
@@ -2556,14 +2652,26 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Rentang interkuartil ($IQR = Q_3 - Q_1$) dari data: 1, 3, 5, 7, 9, 11, 13 adalah...",
           "options": [
-            { "key": "A", "text": "8" },
-            { "key": "B", "text": "6" },
-            { "key": "C", "text": "12" },
-            { "key": "D", "text": "4" }
+            {
+              "key": "A",
+              "text": "6"
+            },
+            {
+              "key": "B",
+              "text": "8"
+            },
+            {
+              "key": "C",
+              "text": "12"
+            },
+            {
+              "key": "D",
+              "text": "4"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Data n=7. $Q_1$ = median bagian bawah (1,3,5) = 3. $Q_3$ = median bagian atas (9,11,13) = 11.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$Q_1 = 3$, $Q_3 = 11$\n$IQR = 11 - 3 = 8$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$Q_1 = 3$, $Q_3 = 11$\n$IQR = 11 - 3 = 8$ (Opsi B)."
         },
         {
           "id": "sma12-b5-9",
@@ -2571,14 +2679,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Dari tabel frekuensi kelas 60-64 (f=4), 65-69 (f=8), 70-74 (f=14), 75-79 (f=10), 80-84 (f=4), nilai modus data berkelompok tersebut adalah...",
           "options": [
-            { "key": "A", "text": "71" },
-            { "key": "B", "text": "72" },
-            { "key": "C", "text": "70" },
-            { "key": "D", "text": "73" }
+            {
+              "key": "A",
+              "text": "72"
+            },
+            {
+              "key": "B",
+              "text": "70"
+            },
+            {
+              "key": "C",
+              "text": "73"
+            },
+            {
+              "key": "D",
+              "text": "71"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kelas modus = kelas dengan frekuensi terbesar (70-74, f=14). $d_1 = 14-8=6$, $d_2 = 14-10=4$. $Mo = 69.5 + \\frac{6}{6+4} \\times 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$L = 69.5$, $d_1=6$, $d_2=4$, $c=5$\n$Mo = 69.5 + \\frac{6}{10} \\times 5 = 69.5 + 3 = 72.5 \\approx 71$ (Opsi A, pembulatan terdekat untuk pilihan tersedia)"
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$L = 69.5$, $d_1=6$, $d_2=4$, $c=5$\n$Mo = 69.5 + \\frac{6}{10} \\times 5 = 69.5 + 3 = 72.5 \\approx 71$ (Opsi D, pembulatan terdekat untuk pilihan tersedia)"
         },
         {
           "id": "sma12-b5-10",
@@ -2586,14 +2706,26 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Rata-rata berat badan 20 siswa putra adalah 65 kg dan 30 siswa putri adalah 55 kg. Rata-rata berat badan seluruh 50 siswa adalah...",
           "options": [
-            { "key": "A", "text": "59 kg" },
-            { "key": "B", "text": "60 kg" },
-            { "key": "C", "text": "62 kg" },
-            { "key": "D", "text": "58 kg" }
+            {
+              "key": "A",
+              "text": "60 kg"
+            },
+            {
+              "key": "B",
+              "text": "62 kg"
+            },
+            {
+              "key": "C",
+              "text": "59 kg"
+            },
+            {
+              "key": "D",
+              "text": "58 kg"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "$\\bar{x}_{gabungan} = \\frac{n_1\\bar{x}_1 + n_2\\bar{x}_2}{n_1 + n_2} = \\frac{20(65) + 30(55)}{50}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = \\frac{1300 + 1650}{50} = \\frac{2950}{50} = 59\\text{ kg}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = \\frac{1300 + 1650}{50} = \\frac{2950}{50} = 59\\text{ kg}$ (Opsi C)."
         },
         {
           "id": "sma12-b5-11",
@@ -2601,14 +2733,26 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Simpangan rata-rata dari data 4, 6, 8, 10, 12 adalah...",
           "options": [
-            { "key": "A", "text": "$\\frac{12}{5}$" },
-            { "key": "B", "text": "2" },
-            { "key": "C", "text": "4" },
-            { "key": "D", "text": "$\\sqrt{8}$" }
+            {
+              "key": "A",
+              "text": "2"
+            },
+            {
+              "key": "B",
+              "text": "$\\frac{12}{5}$"
+            },
+            {
+              "key": "C",
+              "text": "4"
+            },
+            {
+              "key": "D",
+              "text": "$\\sqrt{8}$"
+            }
           ],
-          "correctAnswer": "B",
+          "correctAnswer": "A",
           "hint": "$\\bar{x} = 8$. $SR = \\frac{|4-8|+|6-8|+|8-8|+|10-8|+|12-8|}{5} = \\frac{4+2+0+2+4}{5}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$SR = \\frac{12}{5} = 2{,}4$\n\n*(Opsi B = 2 adalah yang paling dekat untuk jawaban ini)*"
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$SR = \\frac{12}{5} = 2{,}4$\n\n*(Opsi A = 2 adalah yang paling dekat untuk jawaban ini)*"
         },
         {
           "id": "sma12-b5-12",
@@ -2616,14 +2760,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Data nilai ujian: rata-rata 72, varians 36. Jika semua nilai ditambah 5, nilai varians baru adalah...",
           "options": [
-            { "key": "A", "text": "36" },
-            { "key": "B", "text": "41" },
-            { "key": "C", "text": "61" },
-            { "key": "D", "text": "1296" }
+            {
+              "key": "A",
+              "text": "41"
+            },
+            {
+              "key": "B",
+              "text": "61"
+            },
+            {
+              "key": "C",
+              "text": "1296"
+            },
+            {
+              "key": "D",
+              "text": "36"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Menambahkan konstanta ke semua data TIDAK mengubah varians (hanya menggeser mean).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika semua nilai $x_i$ diganti $x_i + 5$, maka rata-rata baru = $72+5=77$, tetapi setiap selisih $(x_i+5)-(\\bar{x}+5) = x_i-\\bar{x}$ TIDAK BERUBAH.\nSehingga varians tetap **36** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika semua nilai $x_i$ diganti $x_i + 5$, maka rata-rata baru = $72+5=77$, tetapi setiap selisih $(x_i+5)-(\\bar{x}+5) = x_i-\\bar{x}$ TIDAK BERUBAH.\nSehingga varians tetap **36** (Opsi D)."
         },
         {
           "id": "sma12-b5-13",
@@ -2631,10 +2787,22 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Dalam sebuah kelas, nilai ulangan 10 siswa adalah 60, 65, 70, 75, 80, 85, 90, 95, 100, dan 50. Nilai median dari data tersebut adalah...",
           "options": [
-            { "key": "A", "text": "77,5" },
-            { "key": "B", "text": "75" },
-            { "key": "C", "text": "80" },
-            { "key": "D", "text": "70" }
+            {
+              "key": "A",
+              "text": "77,5"
+            },
+            {
+              "key": "B",
+              "text": "75"
+            },
+            {
+              "key": "C",
+              "text": "80"
+            },
+            {
+              "key": "D",
+              "text": "70"
+            }
           ],
           "correctAnswer": "A",
           "hint": "Urutkan data terlebih dahulu, lalu cari rata-rata dua nilai tengah (data genap, n=10).",
@@ -2646,14 +2814,26 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Jika data memiliki rata-rata 80 dan simpangan baku 5, maka koefisien variasi (CV) data tersebut adalah...",
           "options": [
-            { "key": "A", "text": "6,25%" },
-            { "key": "B", "text": "5%" },
-            { "key": "C", "text": "16%" },
-            { "key": "D", "text": "4%" }
+            {
+              "key": "A",
+              "text": "5%"
+            },
+            {
+              "key": "B",
+              "text": "6,25%"
+            },
+            {
+              "key": "C",
+              "text": "16%"
+            },
+            {
+              "key": "D",
+              "text": "4%"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "$CV = \\frac{s}{\\bar{x}} \\times 100\\% = \\frac{5}{80} \\times 100\\%$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$CV = \\frac{5}{80} \\times 100\\% = 6{,}25\\%$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$CV = \\frac{5}{80} \\times 100\\% = 6{,}25\\%$ (Opsi B)."
         },
         {
           "id": "sma12-b5-15",
@@ -2661,14 +2841,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Data nilai ujian: rata-rata 72, varians 36. Jika semua nilai dikalikan 2, nilai simpangan baku baru adalah...",
           "options": [
-            { "key": "A", "text": "12" },
-            { "key": "B", "text": "6" },
-            { "key": "C", "text": "72" },
-            { "key": "D", "text": "18" }
+            {
+              "key": "A",
+              "text": "6"
+            },
+            {
+              "key": "B",
+              "text": "12"
+            },
+            {
+              "key": "C",
+              "text": "72"
+            },
+            {
+              "key": "D",
+              "text": "18"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Jika semua data dikalikan $k$, varians baru = $k^2 \\times s^2$, sehingga $s_{baru} = k \\times s$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika data dikali 2: $s_{baru} = 2 \\times \\sqrt{36} = 2 \\times 6 = 12$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika data dikali 2: $s_{baru} = 2 \\times \\sqrt{36} = 2 \\times 6 = 12$ (Opsi B)."
         },
         {
           "id": "sma12-b5-16",
@@ -2676,12 +2868,24 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Data dalam tabel: nilai 10-20 (f=5), 20-30 (f=10), 30-40 (f=8), 40-50 (f=7). Rata-rata data berkelompok tersebut adalah...",
           "options": [
-            { "key": "A", "text": "28" },
-            { "key": "B", "text": "25" },
-            { "key": "C", "text": "30" },
-            { "key": "D", "text": "27" }
+            {
+              "key": "A",
+              "text": "25"
+            },
+            {
+              "key": "B",
+              "text": "30"
+            },
+            {
+              "key": "C",
+              "text": "28"
+            },
+            {
+              "key": "D",
+              "text": "27"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Titik tengah: 15, 25, 35, 45. $\\bar{x} = \\frac{5(15)+10(25)+8(35)+7(45)}{30}$.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = \\frac{75+250+280+315}{30} = \\frac{920}{30} \\approx 30{,}7$\n\n*(Pilihan terdekat adalah 28-30, ambil yang paling dekat dengan perhitungan aktual)*"
         },
@@ -2691,14 +2895,26 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Data: 5, 5, 6, 7, 8, 9, 9. Nilai modus dan mediannya adalah...",
           "options": [
-            { "key": "A", "text": "Modus = 5 dan 9, Median = 7" },
-            { "key": "B", "text": "Modus = 7, Median = 5" },
-            { "key": "C", "text": "Modus = 9, Median = 8" },
-            { "key": "D", "text": "Modus = 6, Median = 7" }
+            {
+              "key": "A",
+              "text": "Modus = 7, Median = 5"
+            },
+            {
+              "key": "B",
+              "text": "Modus = 5 dan 9, Median = 7"
+            },
+            {
+              "key": "C",
+              "text": "Modus = 9, Median = 8"
+            },
+            {
+              "key": "D",
+              "text": "Modus = 6, Median = 7"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Data sudah terurut. Modus = nilai yang paling sering muncul. Median = nilai tengah (n=7, nilai ke-4).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModus: 5 dan 9 (masing-masing muncul 2 kali) → bimodal\nMedian: nilai ke-4 dari 7 data = **7**\n**Modus = 5 dan 9, Median = 7** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModus: 5 dan 9 (masing-masing muncul 2 kali) → bimodal\nMedian: nilai ke-4 dari 7 data = **7**\n**Modus = 5 dan 9, Median = 7** (Opsi B)."
         },
         {
           "id": "sma12-b5-18",
@@ -2706,14 +2922,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Sebuah sampel data terdiri dari 5 nilai: $a$, 6, 8, 10, 11. Jika rata-rata sampel adalah 8, nilai $a$ dan varians sampelnya adalah...",
           "options": [
-            { "key": "A", "text": "$a = 5$, $s^2 = 5$" },
-            { "key": "B", "text": "$a = 5$, $s^2 = 4$" },
-            { "key": "C", "text": "$a = 5$, $s^2 = 6{,}25$" },
-            { "key": "D", "text": "$a = 6$, $s^2 = 4$" }
+            {
+              "key": "A",
+              "text": "$a = 5$, $s^2 = 4$"
+            },
+            {
+              "key": "B",
+              "text": "$a = 5$, $s^2 = 5$"
+            },
+            {
+              "key": "C",
+              "text": "$a = 5$, $s^2 = 6{,}25$"
+            },
+            {
+              "key": "D",
+              "text": "$a = 6$, $s^2 = 4$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "$\\bar{x} = 8 \\implies a + 6 + 8 + 10 + 11 = 40 \\implies a = 5$. Lalu hitung varians dengan $n-1=4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$a = 40 - 35 = 5$\n$s^2 = \\frac{(5-8)^2+(6-8)^2+(8-8)^2+(10-8)^2+(11-8)^2}{4} = \\frac{9+4+0+4+9}{4} = \\frac{26}{4} = 6{,}5 \\approx 5$ (Opsi A mendekati)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$a = 40 - 35 = 5$\n$s^2 = \\frac{(5-8)^2+(6-8)^2+(8-8)^2+(10-8)^2+(11-8)^2}{4} = \\frac{9+4+0+4+9}{4} = \\frac{26}{4} = 6{,}5 \\approx 5$ (Opsi B mendekati)."
         },
         {
           "id": "sma12-b5-19",
@@ -2721,14 +2949,26 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Histogram menunjukkan frekuensi kelas 20-29 = 4, 30-39 = 8, 40-49 = 12, 50-59 = 6. Modus data berkelompok tersebut adalah...",
           "options": [
-            { "key": "A", "text": "44" },
-            { "key": "B", "text": "40" },
-            { "key": "C", "text": "45" },
-            { "key": "D", "text": "43" }
+            {
+              "key": "A",
+              "text": "40"
+            },
+            {
+              "key": "B",
+              "text": "45"
+            },
+            {
+              "key": "C",
+              "text": "43"
+            },
+            {
+              "key": "D",
+              "text": "44"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kelas modus: 40-49 (f terbesar=12). $d_1=12-8=4$, $d_2=12-6=6$. $Mo = 39.5 + \\frac{4}{10} \\times 10$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$Mo = 39.5 + \\frac{4}{10} \\times 10 = 39.5 + 4 = 43.5 \\approx 44$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$Mo = 39.5 + \\frac{4}{10} \\times 10 = 39.5 + 4 = 43.5 \\approx 44$ (Opsi D)."
         },
         {
           "id": "sma12-b5-20",
@@ -2736,14 +2976,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Nilai ujian 6 siswa: 70, 75, 80, 85, 90, 100. Simpangan baku data tersebut adalah...",
           "options": [
-            { "key": "A", "text": "$\\sqrt{\\frac{350}{3}}$" },
-            { "key": "B", "text": "10" },
-            { "key": "C", "text": "$\\sqrt{250}$" },
-            { "key": "D", "text": "$\\sqrt{\\frac{500}{6}}$" }
+            {
+              "key": "A",
+              "text": "$\\sqrt{\\frac{350}{3}}$"
+            },
+            {
+              "key": "B",
+              "text": "10"
+            },
+            {
+              "key": "C",
+              "text": "$\\sqrt{\\frac{500}{6}}$"
+            },
+            {
+              "key": "D",
+              "text": "$\\sqrt{250}$"
+            }
           ],
-          "correctAnswer": "D",
+          "correctAnswer": "C",
           "hint": "$\\bar{x} = 83.3$. Hitung $\\sum(x_i-\\bar{x})^2$ lalu bagi dengan $n$ (simpangan baku populasi).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = \\frac{500}{6} \\approx 83.3$\nGunakan rumus simpangan baku populasi: $\\sigma = \\sqrt{\\frac{\\sum(x_i-\\bar{x})^2}{n}}$\nHasilnya adalah $\\sqrt{\\frac{500}{6}}$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$\\bar{x} = \\frac{500}{6} \\approx 83.3$\nGunakan rumus simpangan baku populasi: $\\sigma = \\sqrt{\\frac{\\sum(x_i-\\bar{x})^2}{n}}$\nHasilnya adalah $\\sqrt{\\frac{500}{6}}$ (Opsi C)."
         }
       ]
     },
@@ -2773,11 +3025,26 @@ export const grade12Data = {
           }
         ],
         "keyFormulas": [
-          { "label": "Translasi", "formula": "(x, y) \\xrightarrow{T(a,b)} (x+a, y+b)" },
-          { "label": "Refleksi sumbu-x", "formula": "(x, y) \\to (x, -y)" },
-          { "label": "Refleksi sumbu-y", "formula": "(x, y) \\to (-x, y)" },
-          { "label": "Rotasi 90° CCW", "formula": "(x, y) \\to (-y, x)" },
-          { "label": "Dilatasi pusat O", "formula": "(x, y) \\xrightarrow{D(O,k)} (kx, ky)" }
+          {
+            "label": "Translasi",
+            "formula": "(x, y) \\xrightarrow{T(a,b)} (x+a, y+b)"
+          },
+          {
+            "label": "Refleksi sumbu-x",
+            "formula": "(x, y) \\to (x, -y)"
+          },
+          {
+            "label": "Refleksi sumbu-y",
+            "formula": "(x, y) \\to (-x, y)"
+          },
+          {
+            "label": "Rotasi 90° CCW",
+            "formula": "(x, y) \\to (-y, x)"
+          },
+          {
+            "label": "Dilatasi pusat O",
+            "formula": "(x, y) \\xrightarrow{D(O,k)} (kx, ky)"
+          }
         ],
         "misconceptions": [
           "Pada rotasi $90^\\circ$ berlawanan arah jarum jam, bukan $(y, -x)$ melainkan $(-y, x)$. Gunakan matriks rotasi untuk memastikan.",
@@ -2792,10 +3059,22 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Titik $P(3, -4)$ ditranslasikan oleh $T(-2, 5)$. Koordinat bayangan $P'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(1, 1)$" },
-            { "key": "B", "text": "$(5, -9)$" },
-            { "key": "C", "text": "$(-3, 4)$" },
-            { "key": "D", "text": "$(1, -1)$" }
+            {
+              "key": "A",
+              "text": "$(1, 1)$"
+            },
+            {
+              "key": "B",
+              "text": "$(5, -9)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-3, 4)$"
+            },
+            {
+              "key": "D",
+              "text": "$(1, -1)$"
+            }
           ],
           "correctAnswer": "A",
           "hint": "Translasi: $(x+a, y+b) = (3+(-2), -4+5)$.",
@@ -2807,14 +3086,26 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Titik $Q(5, -3)$ dicerminkan terhadap sumbu-$x$. Koordinat bayangan $Q'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(5, 3)$" },
-            { "key": "B", "text": "$(-5, 3)$" },
-            { "key": "C", "text": "$(-5, -3)$" },
-            { "key": "D", "text": "$(3, 5)$" }
+            {
+              "key": "A",
+              "text": "$(-5, 3)$"
+            },
+            {
+              "key": "B",
+              "text": "$(-5, -3)$"
+            },
+            {
+              "key": "C",
+              "text": "$(3, 5)$"
+            },
+            {
+              "key": "D",
+              "text": "$(5, 3)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Refleksi terhadap sumbu-$x$: $(x, y) \\to (x, -y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$Q' = (5, -(-3)) = (5, 3)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$Q' = (5, -(-3)) = (5, 3)$ (Opsi D)."
         },
         {
           "id": "sma12-b6-3",
@@ -2822,14 +3113,26 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Titik $R(-2, 7)$ dicerminkan terhadap sumbu-$y$. Koordinat bayangan $R'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(2, 7)$" },
-            { "key": "B", "text": "$(-2, -7)$" },
-            { "key": "C", "text": "$(7, -2)$" },
-            { "key": "D", "text": "$(-7, -2)$" }
+            {
+              "key": "A",
+              "text": "$(-2, -7)$"
+            },
+            {
+              "key": "B",
+              "text": "$(7, -2)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-7, -2)$"
+            },
+            {
+              "key": "D",
+              "text": "$(2, 7)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Refleksi terhadap sumbu-$y$: $(x, y) \\to (-x, y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$R' = (-(-2), 7) = (2, 7)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$R' = (-(-2), 7) = (2, 7)$ (Opsi D)."
         },
         {
           "id": "sma12-b6-4",
@@ -2837,10 +3140,22 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Titik $S(4, 3)$ dirotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik asal. Koordinat bayangan $S'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(-3, 4)$" },
-            { "key": "B", "text": "$(3, -4)$" },
-            { "key": "C", "text": "$(-4, -3)$" },
-            { "key": "D", "text": "$(4, -3)$" }
+            {
+              "key": "A",
+              "text": "$(-3, 4)$"
+            },
+            {
+              "key": "B",
+              "text": "$(3, -4)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-4, -3)$"
+            },
+            {
+              "key": "D",
+              "text": "$(4, -3)$"
+            }
           ],
           "correctAnswer": "A",
           "hint": "Rotasi $90^\\circ$ CCW: $(x, y) \\to (-y, x)$.",
@@ -2852,10 +3167,22 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Titik $T(6, -2)$ didilatasi terhadap titik asal dengan faktor skala $k = \\frac{1}{2}$. Koordinat bayangan $T'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(3, -1)$" },
-            { "key": "B", "text": "$(12, -4)$" },
-            { "key": "C", "text": "$(-3, 1)$" },
-            { "key": "D", "text": "$(6, -1)$" }
+            {
+              "key": "A",
+              "text": "$(3, -1)$"
+            },
+            {
+              "key": "B",
+              "text": "$(12, -4)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-3, 1)$"
+            },
+            {
+              "key": "D",
+              "text": "$(6, -1)$"
+            }
           ],
           "correctAnswer": "A",
           "hint": "Dilatasi: $(kx, ky) = (\\frac{1}{2} \\times 6, \\frac{1}{2} \\times (-2))$.",
@@ -2867,14 +3194,26 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Titik $U(2, 5)$ dicerminkan terhadap garis $y = x$. Koordinat bayangan $U'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(5, 2)$" },
-            { "key": "B", "text": "$(-5, -2)$" },
-            { "key": "C", "text": "$(2, 5)$" },
-            { "key": "D", "text": "$(-2, -5)$" }
+            {
+              "key": "A",
+              "text": "$(-5, -2)$"
+            },
+            {
+              "key": "B",
+              "text": "$(2, 5)$"
+            },
+            {
+              "key": "C",
+              "text": "$(5, 2)$"
+            },
+            {
+              "key": "D",
+              "text": "$(-2, -5)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Refleksi terhadap $y = x$: $(x, y) \\to (y, x)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$U' = (5, 2)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$U' = (5, 2)$ (Opsi C)."
         },
         {
           "id": "sma12-b6-7",
@@ -2882,14 +3221,26 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Titik $V(3, 4)$ dirotasi $180^\\circ$ terhadap titik asal. Koordinat bayangan $V'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(-3, -4)$" },
-            { "key": "B", "text": "$(3, -4)$" },
-            { "key": "C", "text": "$(-4, 3)$" },
-            { "key": "D", "text": "$(4, -3)$" }
+            {
+              "key": "A",
+              "text": "$(3, -4)$"
+            },
+            {
+              "key": "B",
+              "text": "$(-4, 3)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-3, -4)$"
+            },
+            {
+              "key": "D",
+              "text": "$(4, -3)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Rotasi $180^\\circ$: $(x, y) \\to (-x, -y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$V' = (-3, -4)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$V' = (-3, -4)$ (Opsi C)."
         },
         {
           "id": "sma12-b6-8",
@@ -2897,14 +3248,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Titik $W(2, 3)$ ditranslasikan oleh $T(1, -2)$ kemudian dirotasi $90^\\circ$ CCW terhadap titik asal. Koordinat bayangan akhir $W''$ adalah...",
           "options": [
-            { "key": "A", "text": "$(-1, 3)$" },
-            { "key": "B", "text": "$(3, 1)$" },
-            { "key": "C", "text": "$(-3, 1)$" },
-            { "key": "D", "text": "$(1, 3)$" }
+            {
+              "key": "A",
+              "text": "$(3, 1)$"
+            },
+            {
+              "key": "B",
+              "text": "$(-1, 3)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-3, 1)$"
+            },
+            {
+              "key": "D",
+              "text": "$(1, 3)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Translasi dulu: $W(2,3) \\to W'(3,1)$. Kemudian rotasi $90^\\circ$ CCW: $(x,y)\\to(-y,x)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Translasi: $W' = (2+1, 3-2) = (3, 1)$\n2. Rotasi $90^\\circ$ CCW: $W'' = (-1, 3)$\nKoordinat akhir adalah **$(-1, 3)$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Translasi: $W' = (2+1, 3-2) = (3, 1)$\n2. Rotasi $90^\\circ$ CCW: $W'' = (-1, 3)$\nKoordinat akhir adalah **$(-1, 3)$** (Opsi B)."
         },
         {
           "id": "sma12-b6-9",
@@ -2912,14 +3275,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Segitiga $ABC$ dengan luas 12 cm² didilatasi dengan faktor skala $k = 3$. Luas segitiga bayangan $A'B'C'$ adalah...",
           "options": [
-            { "key": "A", "text": "108 cm²" },
-            { "key": "B", "text": "36 cm²" },
-            { "key": "C", "text": "12 cm²" },
-            { "key": "D", "text": "4 cm²" }
+            {
+              "key": "A",
+              "text": "36 cm²"
+            },
+            {
+              "key": "B",
+              "text": "12 cm²"
+            },
+            {
+              "key": "C",
+              "text": "108 cm²"
+            },
+            {
+              "key": "D",
+              "text": "4 cm²"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Dilatasi dengan faktor $k$ mengubah luas menjadi $k^2 \\times$ luas semula.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nLuas bayangan $= k^2 \\times L = 9 \\times 12 = 108\\text{ cm}^2$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nLuas bayangan $= k^2 \\times L = 9 \\times 12 = 108\\text{ cm}^2$ (Opsi C)."
         },
         {
           "id": "sma12-b6-10",
@@ -2927,10 +3302,22 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Garis dengan persamaan $y = 2x + 3$ dicerminkan terhadap sumbu-$x$. Persamaan bayangan garis tersebut adalah...",
           "options": [
-            { "key": "A", "text": "$y = -2x - 3$" },
-            { "key": "B", "text": "$y = 2x - 3$" },
-            { "key": "C", "text": "$y = -2x + 3$" },
-            { "key": "D", "text": "$y = 2x + 3$" }
+            {
+              "key": "A",
+              "text": "$y = -2x - 3$"
+            },
+            {
+              "key": "B",
+              "text": "$y = 2x - 3$"
+            },
+            {
+              "key": "C",
+              "text": "$y = -2x + 3$"
+            },
+            {
+              "key": "D",
+              "text": "$y = 2x + 3$"
+            }
           ],
           "correctAnswer": "A",
           "hint": "Refleksi terhadap sumbu-$x$: ganti $y$ dengan $-y$. Dari $-y = 2x+3$, diperoleh $y = -2x-3$.",
@@ -2942,14 +3329,26 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Titik $A(3, 5)$ dicerminkan terhadap garis $y = -x$. Koordinat bayangan $A'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(-5, -3)$" },
-            { "key": "B", "text": "$(5, 3)$" },
-            { "key": "C", "text": "$(-3, -5)$" },
-            { "key": "D", "text": "$(5, -3)$" }
+            {
+              "key": "A",
+              "text": "$(5, 3)$"
+            },
+            {
+              "key": "B",
+              "text": "$(-5, -3)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-3, -5)$"
+            },
+            {
+              "key": "D",
+              "text": "$(5, -3)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Refleksi terhadap $y = -x$: $(x, y) \\to (-y, -x)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$A' = (-5, -3)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$A' = (-5, -3)$ (Opsi B)."
         },
         {
           "id": "sma12-b6-12",
@@ -2957,14 +3356,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Titik $P(4, 2)$ dirotasi $90^\\circ$ searah jarum jam terhadap titik asal, lalu dicerminkan terhadap sumbu-$y$. Koordinat bayangan akhir adalah...",
           "options": [
-            { "key": "A", "text": "$(-2, -4)$" },
-            { "key": "B", "text": "$(2, -4)$" },
-            { "key": "C", "text": "$(-4, 2)$" },
-            { "key": "D", "text": "$(2, 4)$" }
+            {
+              "key": "A",
+              "text": "$(2, -4)$"
+            },
+            {
+              "key": "B",
+              "text": "$(-4, 2)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-2, -4)$"
+            },
+            {
+              "key": "D",
+              "text": "$(2, 4)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Rotasi $90^\\circ$ CW: $(x,y)\\to(y,-x)$. Lalu refleksi sumbu-$y$: $(x,y)\\to(-x,y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Rotasi $90^\\circ$ CW: $P' = (2, -4)$\n2. Refleksi sumbu-$y$: $P'' = (-2, -4)$\nKoordinat akhir adalah **$(-2, -4)$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Rotasi $90^\\circ$ CW: $P' = (2, -4)$\n2. Refleksi sumbu-$y$: $P'' = (-2, -4)$\nKoordinat akhir adalah **$(-2, -4)$** (Opsi C)."
         },
         {
           "id": "sma12-b6-13",
@@ -2972,10 +3383,22 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Titik $B(-3, 2)$ didilatasi terhadap titik asal dengan faktor skala $k = -2$. Koordinat bayangan $B'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(6, -4)$" },
-            { "key": "B", "text": "$(-6, 4)$" },
-            { "key": "C", "text": "$(6, 4)$" },
-            { "key": "D", "text": "$(-6, -4)$" }
+            {
+              "key": "A",
+              "text": "$(6, -4)$"
+            },
+            {
+              "key": "B",
+              "text": "$(-6, 4)$"
+            },
+            {
+              "key": "C",
+              "text": "$(6, 4)$"
+            },
+            {
+              "key": "D",
+              "text": "$(-6, -4)$"
+            }
           ],
           "correctAnswer": "A",
           "hint": "Dilatasi dengan $k = -2$: $(kx, ky) = (-2 \\times (-3), -2 \\times 2)$.",
@@ -2987,14 +3410,26 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Bayangan titik $C(a, b)$ dicerminkan terhadap sumbu-$x$ menghasilkan $C'(5, -3)$. Koordinat titik $C$ adalah...",
           "options": [
-            { "key": "A", "text": "$(5, 3)$" },
-            { "key": "B", "text": "$(-5, 3)$" },
-            { "key": "C", "text": "$(-5, -3)$" },
-            { "key": "D", "text": "$(5, -3)$" }
+            {
+              "key": "A",
+              "text": "$(-5, 3)$"
+            },
+            {
+              "key": "B",
+              "text": "$(5, 3)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-5, -3)$"
+            },
+            {
+              "key": "D",
+              "text": "$(5, -3)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Refleksi sumbu-$x$: $(x,-y) = (5,-3)$, sehingga $y = 3$. Titik asalnya $(5, 3)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika $C'(5,-3)$ adalah bayangan dari refleksi sumbu-$x$, maka $C = (5, 3)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika $C'(5,-3)$ adalah bayangan dari refleksi sumbu-$x$, maka $C = (5, 3)$ (Opsi B)."
         },
         {
           "id": "sma12-b6-15",
@@ -3002,14 +3437,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Titik $D(1, 2)$ ditranslasikan oleh $T(3, -1)$, kemudian didilatasi dengan pusat $O$ dan $k = 2$. Koordinat bayangan akhir $D''$ adalah...",
           "options": [
-            { "key": "A", "text": "$(8, 2)$" },
-            { "key": "B", "text": "$(4, 2)$" },
-            { "key": "C", "text": "$(8, -2)$" },
-            { "key": "D", "text": "$(2, 8)$" }
+            {
+              "key": "A",
+              "text": "$(4, 2)$"
+            },
+            {
+              "key": "B",
+              "text": "$(8, -2)$"
+            },
+            {
+              "key": "C",
+              "text": "$(2, 8)$"
+            },
+            {
+              "key": "D",
+              "text": "$(8, 2)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Translasi dulu: $D' = (1+3, 2-1) = (4, 1)$. Dilatasi $k=2$: $D'' = (8, 2)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Translasi: $D' = (4, 1)$\n2. Dilatasi $k=2$: $D'' = (8, 2)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Translasi: $D' = (4, 1)$\n2. Dilatasi $k=2$: $D'' = (8, 2)$ (Opsi D)."
         },
         {
           "id": "sma12-b6-16",
@@ -3017,14 +3464,26 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Sebuah persegi panjang dengan luas 20 cm² didilatasi dengan faktor skala $k = \\frac{1}{2}$. Luas bayangan persegi panjang tersebut adalah...",
           "options": [
-            { "key": "A", "text": "5 cm²" },
-            { "key": "B", "text": "10 cm²" },
-            { "key": "C", "text": "40 cm²" },
-            { "key": "D", "text": "80 cm²" }
+            {
+              "key": "A",
+              "text": "10 cm²"
+            },
+            {
+              "key": "B",
+              "text": "40 cm²"
+            },
+            {
+              "key": "C",
+              "text": "5 cm²"
+            },
+            {
+              "key": "D",
+              "text": "80 cm²"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Luas bayangan $= k^2 \\times$ luas asli $= (\\frac{1}{2})^2 \\times 20 = \\frac{1}{4} \\times 20 = 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nLuas bayangan $= (\\frac{1}{2})^2 \\times 20 = 5\\text{ cm}^2$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nLuas bayangan $= (\\frac{1}{2})^2 \\times 20 = 5\\text{ cm}^2$ (Opsi C)."
         },
         {
           "id": "sma12-b6-17",
@@ -3032,14 +3491,26 @@ export const grade12Data = {
           "difficulty": "Dasar",
           "question": "Titik $E(-4, 0)$ dirotasi $90^\\circ$ berlawanan arah jarum jam terhadap titik asal. Koordinat bayangan $E'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(0, -4)$" },
-            { "key": "B", "text": "$(0, 4)$" },
-            { "key": "C", "text": "$(4, 0)$" },
-            { "key": "D", "text": "$(-4, 0)$" }
+            {
+              "key": "A",
+              "text": "$(0, 4)$"
+            },
+            {
+              "key": "B",
+              "text": "$(4, 0)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-4, 0)$"
+            },
+            {
+              "key": "D",
+              "text": "$(0, -4)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Rotasi $90^\\circ$ CCW: $(x,y) \\to (-y, x) = (0, -4)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$E' = (-0, -4) = (0, -4)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$E' = (-0, -4) = (0, -4)$ (Opsi D)."
         },
         {
           "id": "sma12-b6-18",
@@ -3047,14 +3518,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Titik $F(2, -1)$ dicerminkan terhadap garis $x = 3$. Koordinat bayangan $F'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(4, -1)$" },
-            { "key": "B", "text": "$(3, -1)$" },
-            { "key": "C", "text": "$(2, 1)$" },
-            { "key": "D", "text": "$(-2, -1)$" }
+            {
+              "key": "A",
+              "text": "$(3, -1)$"
+            },
+            {
+              "key": "B",
+              "text": "$(2, 1)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-2, -1)$"
+            },
+            {
+              "key": "D",
+              "text": "$(4, -1)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Cermin terhadap $x = a$: $(x,y) \\to (2a-x, y)$. Di sini $a=3$: $F' = (6-2, -1) = (4, -1)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$F' = (2(3)-2, -1) = (4, -1)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$F' = (2(3)-2, -1) = (4, -1)$ (Opsi D)."
         },
         {
           "id": "sma12-b6-19",
@@ -3062,14 +3545,26 @@ export const grade12Data = {
           "difficulty": "Menengah",
           "question": "Titik $G(5, 3)$ dicerminkan terhadap titik asal $O(0,0)$. Koordinat bayangan $G'$ adalah...",
           "options": [
-            { "key": "A", "text": "$(-5, -3)$" },
-            { "key": "B", "text": "$(5, -3)$" },
-            { "key": "C", "text": "$(-5, 3)$" },
-            { "key": "D", "text": "$(3, 5)$" }
+            {
+              "key": "A",
+              "text": "$(5, -3)$"
+            },
+            {
+              "key": "B",
+              "text": "$(-5, -3)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-5, 3)$"
+            },
+            {
+              "key": "D",
+              "text": "$(3, 5)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Refleksi terhadap titik asal sama dengan rotasi $180^\\circ$: $(x,y) \\to (-x,-y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$G' = (-5, -3)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$G' = (-5, -3)$ (Opsi B)."
         },
         {
           "id": "sma12-b6-20",
@@ -3077,14 +3572,26 @@ export const grade12Data = {
           "difficulty": "Lanjut",
           "question": "Bayangan titik $H$ setelah dirotasi $90^\\circ$ CCW terhadap titik asal adalah $H'(3, -5)$. Koordinat titik $H$ semula adalah...",
           "options": [
-            { "key": "A", "text": "$(-5, -3)$" },
-            { "key": "B", "text": "$(5, 3)$" },
-            { "key": "C", "text": "$(-3, 5)$" },
-            { "key": "D", "text": "$(3, 5)$" }
+            {
+              "key": "A",
+              "text": "$(5, 3)$"
+            },
+            {
+              "key": "B",
+              "text": "$(-5, -3)$"
+            },
+            {
+              "key": "C",
+              "text": "$(-3, 5)$"
+            },
+            {
+              "key": "D",
+              "text": "$(3, 5)$"
+            }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rotasi $90^\\circ$ CCW: $(x,y) \\to (-y,x)$. Jadi jika $(-y,x) = (3,-5)$, maka $x=-5$ dan $y=-3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika rotasi $90^\\circ$ CCW: $(-y, x) = (3, -5)$\n$-y = 3 \\implies y = -3$; $x = -5$\nTitik $H = (-5, -3)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJika rotasi $90^\\circ$ CCW: $(-y, x) = (3, -5)$\n$-y = 3 \\implies y = -3$; $x = -5$\nTitik $H = (-5, -3)$ (Opsi B)."
         }
       ]
     }

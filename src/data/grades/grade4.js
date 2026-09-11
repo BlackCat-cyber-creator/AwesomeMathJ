@@ -91,24 +91,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Ratusan"
-            },
-            {
-              "key": "B",
               "text": "Ribuan"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Puluhan"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Satuan"
+            },
+            {
+              "key": "D",
+              "text": "Ratusan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Hitung dari belakang: 8 satuan, 1 puluhan, 6...",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nAngka 6 berada pada posisi digit kedua dari kiri atau ketiga dari kanan, yaitu bernilai tempat **ratusan** dengan nilai angka 600 (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nAngka 6 berada pada posisi digit kedua dari kiri atau ketiga dari kanan, yaitu bernilai tempat **ratusan** dengan nilai angka 600 (Opsi D)."
         },
         {
           "id": "sd4-b1-3",
@@ -118,24 +118,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "8.000 + 300 + 50 + 2"
-            },
-            {
-              "key": "B",
               "text": "800 + 300 + 50 + 2"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "8.000 + 30 + 50 + 2"
+            },
+            {
+              "key": "C",
+              "text": "8.000 + 300 + 50 + 2"
             },
             {
               "key": "D",
               "text": "8.000 + 300 + 5 + 20"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Uraikan nilai setiap angka: 8 ribuan, 3 ratusan, 5 puluhan, 2 satuan.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$8.352 = 8.000 + 300 + 50 + 2$$\nHasilnya adalah **8.000 + 300 + 50 + 2** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$8.352 = 8.000 + 300 + 50 + 2$$\nHasilnya adalah **8.000 + 300 + 50 + 2** (Opsi C)."
         },
         {
           "id": "sd4-b1-4",
@@ -199,24 +199,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "28 potong"
-            },
-            {
-              "key": "B",
               "text": "24 potong"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "32 potong"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "30 potong"
+            },
+            {
+              "key": "D",
+              "text": "28 potong"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Hitung total bolu: $7 \\times 24 = 168$, lalu bagi 6.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total bolu: $7 \\times 24 = 168$ potong.\n2. Dibagi ke 6 panti asuhan: $168 : 6 = 28$ potong.\nSetiap panti asuhan menerima **28 potong bolu** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total bolu: $7 \\times 24 = 168$ potong.\n2. Dibagi ke 6 panti asuhan: $168 : 6 = 28$ potong.\nSetiap panti asuhan menerima **28 potong bolu** (Opsi D)."
         },
         {
           "id": "sd4-b1-7",
@@ -226,11 +226,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "6.245"
+              "text": "6.235"
             },
             {
               "key": "B",
-              "text": "6.235"
+              "text": "6.245"
             },
             {
               "key": "C",
@@ -241,9 +241,9 @@ export const grade4Data = {
               "text": "6.345"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Jumlahkan dari nilai satuan: $6 + 9 = 15$ (tulis 5, simpan 1 ke puluhan).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Satuan: $6 + 9 = 15$ (simpan 1)\n2. Puluhan: $1 + 5 + 8 = 14$ (simpan 1)\n3. Ratusan: $1 + 4 + 7 = 12$ (simpan 1)\n4. Ribuan: $1 + 3 + 2 = 6$\nHasilnya adalah **6.245** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Satuan: $6 + 9 = 15$ (simpan 1)\n2. Puluhan: $1 + 5 + 8 = 14$ (simpan 1)\n3. Ratusan: $1 + 4 + 7 = 12$ (simpan 1)\n4. Ribuan: $1 + 3 + 2 = 6$\nHasilnya adalah **6.245** (Opsi B)."
         },
         {
           "id": "sd4-b1-8",
@@ -253,11 +253,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "3.535"
+              "text": "3.635"
             },
             {
               "key": "B",
-              "text": "3.635"
+              "text": "3.535"
             },
             {
               "key": "C",
@@ -268,9 +268,9 @@ export const grade4Data = {
               "text": "4.535"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan teknik meminjam secara berurutan dari digit ribuan ke ratusan dan puluhan.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Satuan: $10 - 5 = 5$\n2. Puluhan: $11 - 8 = 3$\n3. Ratusan: $9 - 4 = 5$\n4. Ribuan: $6 - 3 = 3$\nHasilnya adalah **3.535** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Satuan: $10 - 5 = 5$\n2. Puluhan: $11 - 8 = 3$\n3. Ratusan: $9 - 4 = 5$\n4. Ribuan: $6 - 3 = 3$\nHasilnya adalah **3.535** (Opsi B)."
         },
         {
           "id": "sd4-b1-9",
@@ -280,24 +280,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "870"
-            },
-            {
-              "key": "B",
               "text": "840"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "860"
+            },
+            {
+              "key": "C",
+              "text": "870"
             },
             {
               "key": "D",
               "text": "890"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kalikan tiap angka mulai dari satuan: $5 \\times 6$, $4 \\times 6$, lalu $1 \\times 6$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $5 \\times 6 = 30$ (simpan 3)\n2. $4 \\times 6 = 24 + 3 = 27$ (simpan 2)\n3. $1 \\times 6 = 6 + 2 = 8$\nHasilnya adalah **870** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $5 \\times 6 = 30$ (simpan 3)\n2. $4 \\times 6 = 24 + 3 = 27$ (simpan 2)\n3. $1 \\times 6 = 6 + 2 = 8$\nHasilnya adalah **870** (Opsi C)."
         },
         {
           "id": "sd4-b1-10",
@@ -307,24 +307,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "23 sisa 3"
-            },
-            {
-              "key": "B",
               "text": "24 sisa 1"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "22 sisa 7"
+            },
+            {
+              "key": "C",
+              "text": "23 sisa 3"
             },
             {
               "key": "D",
               "text": "23 sisa 2"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Bagi puluhan terlebih dahulu: $9 : 4 = 2$ sisa 1. Turunkan 5 menjadi 15, lalu $15 : 4 = 3$ sisa 3.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $9 : 4 = 2$ sisa 1 ($2 \\times 4 = 8$)\n2. Turunkan 5 menjadi 15\n3. $15 : 4 = 3$ sisa 3 ($3 \\times 4 = 12$, $15 - 12 = 3$)\nHasilnya adalah **23 sisa 3** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $9 : 4 = 2$ sisa 1 ($2 \\times 4 = 8$)\n2. Turunkan 5 menjadi 15\n3. $15 : 4 = 3$ sisa 3 ($3 \\times 4 = 12$, $15 - 12 = 3$)\nHasilnya adalah **23 sisa 3** (Opsi C)."
         },
         {
           "id": "sd4-b1-11",
@@ -334,11 +334,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "7.225 buku"
+              "text": "7.125 buku"
             },
             {
               "key": "B",
-              "text": "7.125 buku"
+              "text": "7.225 buku"
             },
             {
               "key": "C",
@@ -349,9 +349,9 @@ export const grade4Data = {
               "text": "6.225 buku"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Jumlahkan kedua jenis buku: $4.350 + 2.875$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4.350 + 2.875 = 7.225$$\nJumlah seluruh buku adalah **7.225 buku** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4.350 + 2.875 = 7.225$$\nJumlah seluruh buku adalah **7.225 buku** (Opsi B)."
         },
         {
           "id": "sd4-b1-12",
@@ -388,11 +388,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "960 kue"
+              "text": "940 kue"
             },
             {
               "key": "B",
-              "text": "940 kue"
+              "text": "960 kue"
             },
             {
               "key": "C",
@@ -403,9 +403,9 @@ export const grade4Data = {
               "text": "860 kue"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Hitung banyak kue per hari ($8 \\times 24$), lalu kalikan dengan 5 hari.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Produksi per hari: $8 \\times 24 = 192$ kue\n2. Dalam 5 hari: $192 \\times 5 = 960$ kue (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Produksi per hari: $8 \\times 24 = 192$ kue\n2. Dalam 5 hari: $192 \\times 5 = 960$ kue (Opsi B)."
         },
         {
           "id": "sd4-b1-14",
@@ -415,24 +415,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "15 buku"
-            },
-            {
-              "key": "B",
               "text": "14 buku"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "16 buku"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "12 buku"
+            },
+            {
+              "key": "D",
+              "text": "15 buku"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Gunakan pembagian: $120 : 8$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$120 : 8 = 15$$\nSetiap kelas menerima **15 buku tulis** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$120 : 8 = 15$$\nSetiap kelas menerima **15 buku tulis** (Opsi D)."
         },
         {
           "id": "sd4-b1-15",
@@ -442,11 +442,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "36, 42, 48"
+              "text": "36, 40, 48"
             },
             {
               "key": "B",
-              "text": "36, 40, 48"
+              "text": "36, 42, 48"
             },
             {
               "key": "C",
@@ -457,9 +457,9 @@ export const grade4Data = {
               "text": "36, 42, 46"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Daftar kelipatan 6: $6 \\times 6 = 36$, $6 \\times 7 = 42$, $6 \\times 8 = 48$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKelipatan 6 setelah 30 adalah $36, 42, 48$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKelipatan 6 setelah 30 adalah $36, 42, 48$ (Opsi B)."
         },
         {
           "id": "sd4-b1-16",
@@ -469,24 +469,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "5.063"
-            },
-            {
-              "key": "B",
               "text": "5.603"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "5.036"
+            },
+            {
+              "key": "C",
+              "text": "5.063"
             },
             {
               "key": "D",
               "text": "5.360"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Tentukan setiap nilai tempat: ribuan = 5, ratusan = 0, puluhan = $2 \\times 3 = 6$, satuan = 3.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Ribuan: 5\n2. Ratusan: 0\n3. Puluhan: $2 \\times 3 = 6$\n4. Satuan: 3\nMaka bilangan tersebut adalah **5.063** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Ribuan: 5\n2. Ratusan: 0\n3. Puluhan: $2 \\times 3 = 6$\n4. Satuan: 3\nMaka bilangan tersebut adalah **5.063** (Opsi C)."
         },
         {
           "id": "sd4-b1-17",
@@ -523,24 +523,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "55 botol"
-            },
-            {
-              "key": "B",
               "text": "65 botol"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "45 botol"
+            },
+            {
+              "key": "C",
+              "text": "55 botol"
             },
             {
               "key": "D",
               "text": "75 botol"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Hitung total air di pos minum ($7 \\times 135$), lalu kurangkan dari 1.000.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total air di pos: $7 \\times 135 = 945$ botol\n2. Sisa: $1.000 - 945 = 55$ botol (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total air di pos: $7 \\times 135 = 945$ botol\n2. Sisa: $1.000 - 945 = 55$ botol (Opsi C)."
         },
         {
           "id": "sd4-b1-19",
@@ -550,24 +550,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp13.000,00"
-            },
-            {
-              "key": "B",
               "text": "Rp15.000,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp17.000,00"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Rp12.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp13.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Hitung total belanja: $(4 \\times 48.000) + (3 \\times 65.000)$, lalu kurangkan dari Rp400.000,00.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Pupuk: $4 \\times 48.000 = 192.000$\n2. Semen: $3 \\times 65.000 = 195.000$\n3. Total belanja: $192.000 + 195.000 = 387.000$\n4. Kembalian: $400.000 - 387.000 = 13.000$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Pupuk: $4 \\times 48.000 = 192.000$\n2. Semen: $3 \\times 65.000 = 195.000$\n3. Total belanja: $192.000 + 195.000 = 387.000$\n4. Kembalian: $400.000 - 387.000 = 13.000$ (Opsi D)."
         },
         {
           "id": "sd4-b1-20",
@@ -577,24 +577,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "6 dan 12"
-            },
-            {
-              "key": "B",
               "text": "6 dan 8"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "8 dan 12"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "12 dan 18"
+            },
+            {
+              "key": "D",
+              "text": "6 dan 12"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Tentukan faktor persekutuan 24 dan 36: 1, 2, 3, 4, 6, 12. Pilih yang genap dan lebih dari 4.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nFaktor 24: 1, 2, 3, 4, 6, 8, 12, 24\nFaktor 36: 1, 2, 3, 4, 6, 9, 12, 18, 36\nFaktor persekutuan: 1, 2, 3, 4, 6, 12\nBilangan genap yang lebih dari 4 adalah **6 dan 12** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nFaktor 24: 1, 2, 3, 4, 6, 8, 12, 24\nFaktor 36: 1, 2, 3, 4, 6, 9, 12, 18, 36\nFaktor persekutuan: 1, 2, 3, 4, 6, 12\nBilangan genap yang lebih dari 4 adalah **6 dan 12** (Opsi D)."
         }
       ]
     },
@@ -647,24 +647,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{3}{9}$"
-            },
-            {
-              "key": "B",
               "text": "$\\frac{2}{5}$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$\\frac{3}{6}$"
+            },
+            {
+              "key": "C",
+              "text": "$\\frac{3}{9}$"
             },
             {
               "key": "D",
               "text": "$\\frac{4}{10}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kalikan pembilang dan penyebut dengan angka 3: $\\frac{1 \\times 3}{3 \\times 3}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1 \\times 3}{3 \\times 3} = \\frac{3}{9}$$\nPecahan yang senilai adalah **$\\frac{3}{9}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1 \\times 3}{3 \\times 3} = \\frac{3}{9}$$\nPecahan yang senilai adalah **$\\frac{3}{9}$** (Opsi C)."
         },
         {
           "id": "sd4-b2-2",
@@ -674,24 +674,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{3}{4}$"
-            },
-            {
-              "key": "B",
               "text": "$\\frac{2}{3}$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$\\frac{1}{2}$"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "$\\frac{3}{5}$"
+            },
+            {
+              "key": "D",
+              "text": "$\\frac{3}{4}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Bagi pembilang dan penyebut dengan angka 2.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{6 : 2}{8 : 2} = \\frac{3}{4}$$\nBentuk sederhananya adalah **$\\frac{3}{4}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{6 : 2}{8 : 2} = \\frac{3}{4}$$\nBentuk sederhananya adalah **$\\frac{3}{4}$** (Opsi D)."
         },
         {
           "id": "sd4-b2-3",
@@ -701,24 +701,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{5}{7}$"
-            },
-            {
-              "key": "B",
               "text": "$\\frac{5}{14}$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$\\frac{6}{7}$"
+            },
+            {
+              "key": "C",
+              "text": "$\\frac{5}{7}$"
             },
             {
               "key": "D",
               "text": "$\\frac{1}{7}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Penyebutnya sudah sama yaitu 7, jumlahkan pembilangnya: $3 + 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3}{7} + \\frac{2}{7} = \\frac{3 + 2}{7} = \\frac{5}{7}$$\nHasilnya adalah **$\\frac{5}{7}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3}{7} + \\frac{2}{7} = \\frac{3 + 2}{7} = \\frac{5}{7}$$\nHasilnya adalah **$\\frac{5}{7}$** (Opsi C)."
         },
         {
           "id": "sd4-b2-4",
@@ -782,24 +782,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{3}{4}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{2}{3}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{6}{8}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{4}{5}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{3}{4}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Bagi pembilang dan penyebut dengan FPB dari 12 dan 16 yaitu 4.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{12 : 4}{16 : 4} = \\frac{3}{4}$$\nBentuk paling sederhananya adalah **$\\frac{3}{4}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{12 : 4}{16 : 4} = \\frac{3}{4}$$\nBentuk paling sederhananya adalah **$\\frac{3}{4}$** (Opsi D)."
         },
         {
           "id": "sd4-b2-7",
@@ -809,11 +809,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{6}{15}"
+              "text": "\\frac{4}{15}"
             },
             {
               "key": "B",
-              "text": "\\frac{4}{15}"
+              "text": "\\frac{6}{15}"
             },
             {
               "key": "C",
@@ -824,9 +824,9 @@ export const grade4Data = {
               "text": "\\frac{6}{10}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kalikan pembilang dan penyebut dengan bilangan yang sama: $\\frac{2 \\times 3}{5 \\times 3}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2 \\times 3}{5 \\times 3} = \\frac{6}{15}$$\nPecahan yang senilai adalah **$\\frac{6}{15}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2 \\times 3}{5 \\times 3} = \\frac{6}{15}$$\nPecahan yang senilai adalah **$\\frac{6}{15}$** (Opsi B)."
         },
         {
           "id": "sd4-b2-8",
@@ -836,24 +836,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{5}{7}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{5}{14}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{6}{7}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{1}{7}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{5}{7}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Karena penyebut sudah sama, cukup jumlahkan pembilangnya: $2 + 3 = 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{7} + \\frac{3}{7} = \\frac{2 + 3}{7} = \\frac{5}{7}$$\nHasilnya adalah **$\\frac{5}{7}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{7} + \\frac{3}{7} = \\frac{2 + 3}{7} = \\frac{5}{7}$$\nHasilnya adalah **$\\frac{5}{7}$** (Opsi D)."
         },
         {
           "id": "sd4-b2-9",
@@ -863,24 +863,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{3}{9} = \\frac{1}{3}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{3}{0}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{11}{9}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{3}{9} = \\frac{1}{3}"
             },
             {
               "key": "D",
               "text": "\\frac{2}{9}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kurangkan pembilangnya: $7 - 4 = 3$, lalu sederhanakan $\\frac{3}{9}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{7 - 4}{9} = \\frac{3}{9} = \\frac{1}{3}$$\nHasilnya adalah **$\\frac{1}{3}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{7 - 4}{9} = \\frac{3}{9} = \\frac{1}{3}$$\nHasilnya adalah **$\\frac{1}{3}$** (Opsi C)."
         },
         {
           "id": "sd4-b2-10",
@@ -890,11 +890,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "2 \\frac{3}{4}"
+              "text": "3 \\frac{1}{4}"
             },
             {
               "key": "B",
-              "text": "3 \\frac{1}{4}"
+              "text": "2 \\frac{3}{4}"
             },
             {
               "key": "C",
@@ -905,9 +905,9 @@ export const grade4Data = {
               "text": "1 \\frac{7}{4}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Bagi 11 dengan 4: $11 : 4 = 2$ sisa 3, sehingga menjadi $2 \\frac{3}{4}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$11 : 4 = 2 \\text{ sisa } 3 \\implies 2\\frac{3}{4}$$\nBentuk campurannya adalah **$2\\frac{3}{4}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$11 : 4 = 2 \\text{ sisa } 3 \\implies 2\\frac{3}{4}$$\nBentuk campurannya adalah **$2\\frac{3}{4}$** (Opsi B)."
         },
         {
           "id": "sd4-b2-11",
@@ -917,11 +917,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{5}{8}"
+              "text": "\\frac{3}{8}"
             },
             {
               "key": "B",
-              "text": "\\frac{3}{8}"
+              "text": "\\frac{5}{8}"
             },
             {
               "key": "C",
@@ -932,9 +932,9 @@ export const grade4Data = {
               "text": "\\frac{4}{8}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Jumlahkan bagian Kakak dan Adik: $\\frac{2}{8} + \\frac{3}{8}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{8} + \\frac{3}{8} = \\frac{5}{8}$$\nBagian yang telah dimakan adalah **$\\frac{5}{8}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{8} + \\frac{3}{8} = \\frac{5}{8}$$\nBagian yang telah dimakan adalah **$\\frac{5}{8}$** (Opsi B)."
         },
         {
           "id": "sd4-b2-12",
@@ -971,24 +971,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "0,75"
-            },
-            {
-              "key": "B",
               "text": "0,50"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "0,25"
+            },
+            {
+              "key": "C",
+              "text": "0,75"
             },
             {
               "key": "D",
               "text": "0,34"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Ubah penyebut menjadi per 100 dengan mengalikan 25: $\\frac{3 \\times 25}{4 \\times 25} = \\frac{75}{100}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3 \\times 25}{4 \\times 25} = \\frac{75}{100} = 0{,}75$$\nBentuk desimalnya adalah **0,75** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3 \\times 25}{4 \\times 25} = \\frac{75}{100} = 0{,}75$$\nBentuk desimalnya adalah **0,75** (Opsi C)."
         },
         {
           "id": "sd4-b2-14",
@@ -998,11 +998,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "20%"
+              "text": "25%"
             },
             {
               "key": "B",
-              "text": "25%"
+              "text": "20%"
             },
             {
               "key": "C",
@@ -1013,9 +1013,9 @@ export const grade4Data = {
               "text": "10%"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Persen artinya per seratus: $\\frac{1}{5} \\times 100\\% = 20\\%$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{5} \\times 100\\% = 20\\%$$\nBentuk persennya adalah **20%** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{5} \\times 100\\% = 20\\%$$\nBentuk persennya adalah **20%** (Opsi B)."
         },
         {
           "id": "sd4-b2-15",
@@ -1025,24 +1025,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": ">"
-            },
-            {
-              "key": "B",
               "text": "<"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "="
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\le"
+            },
+            {
+              "key": "D",
+              "text": ">"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Samakan penyebut atau kali silang: $3 \\times 7 = 21$ dibandingkan $4 \\times 5 = 20$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKali silang:\n- $3 \\times 7 = 21$\n- $4 \\times 5 = 20$\nKarena $21 > 20$, maka $\\frac{3}{5} > \\frac{4}{7}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKali silang:\n- $3 \\times 7 = 21$\n- $4 \\times 5 = 20$\nKarena $21 > 20$, maka $\\frac{3}{5} > \\frac{4}{7}$ (Opsi D)."
         },
         {
           "id": "sd4-b2-16",
@@ -1052,24 +1052,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "2 meter"
-            },
-            {
-              "key": "B",
               "text": "1 meter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "2,5 meter"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "1,5 meter"
+            },
+            {
+              "key": "D",
+              "text": "2 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kurangkan bilangan bulat dan pecahannya: $(3 - 1) + (\\frac{1}{2} - \\frac{1}{2})$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3\\frac{1}{2} - 1\\frac{1}{2} = 2\\text{ meter}$$\nSisa tali Ayah adalah **2 meter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3\\frac{1}{2} - 1\\frac{1}{2} = 2\\text{ meter}$$\nSisa tali Ayah adalah **2 meter** (Opsi D)."
         },
         {
           "id": "sd4-b2-17",
@@ -1079,11 +1079,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{2}{5}, \\frac{1}{2}, \\frac{3}{4}"
+              "text": "\\frac{1}{2}, \\frac{2}{5}, \\frac{3}{4}"
             },
             {
               "key": "B",
-              "text": "\\frac{1}{2}, \\frac{2}{5}, \\frac{3}{4}"
+              "text": "\\frac{2}{5}, \\frac{1}{2}, \\frac{3}{4}"
             },
             {
               "key": "C",
@@ -1094,9 +1094,9 @@ export const grade4Data = {
               "text": "\\frac{2}{5}, \\frac{3}{4}, \\frac{1}{2}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Ubah ke bentuk desimal: $\\frac{2}{5} = 0,4$, $\\frac{1}{2} = 0,5$, $\\frac{3}{4} = 0,75$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $\\frac{2}{5} = 0{,}40$\n2. $\\frac{1}{2} = 0{,}50$\n3. $\\frac{3}{4} = 0{,}75$\nUrutan naik: **$\\frac{2}{5}, \\frac{1}{2}, \\frac{3}{4}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $\\frac{2}{5} = 0{,}40$\n2. $\\frac{1}{2} = 0{,}50$\n3. $\\frac{3}{4} = 0{,}75$\nUrutan naik: **$\\frac{2}{5}, \\frac{1}{2}, \\frac{3}{4}$** (Opsi B)."
         },
         {
           "id": "sd4-b2-18",
@@ -1160,24 +1160,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "18 buah"
-            },
-            {
-              "key": "B",
               "text": "12 buah"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "15 buah"
+            },
+            {
+              "key": "C",
+              "text": "18 buah"
             },
             {
               "key": "D",
               "text": "20 buah"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Apel merah: $\\frac{2}{5} \\times 30 = 12$. Apel hijau: $30 - 12 = 18$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Apel merah: $\\frac{2}{5} \\times 30 = 12$ buah\n2. Apel hijau: $30 - 12 = 18$ buah (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Apel merah: $\\frac{2}{5} \\times 30 = 12$ buah\n2. Apel hijau: $30 - 12 = 18$ buah (Opsi C)."
         }
       ]
     },
@@ -1229,24 +1229,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "21"
-            },
-            {
-              "key": "B",
               "text": "20"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "22"
+            },
+            {
+              "key": "C",
+              "text": "21"
             },
             {
               "key": "D",
               "text": "19"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Cari selisihnya: $9 - 5 = 4$. Tambahkan 4 ke angka 17.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Aturan pola: bertambah 4 ($+4$).\n2. Suku berikutnya: $17 + 4 = 21$.\nBilangan berikutnya adalah **21** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Aturan pola: bertambah 4 ($+4$).\n2. Suku berikutnya: $17 + 4 = 21$.\nBilangan berikutnya adalah **21** (Opsi C)."
         },
         {
           "id": "sd4-b3-2",
@@ -1256,24 +1256,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "15 dan 10"
-            },
-            {
-              "key": "B",
               "text": "15 dan 5"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "10 dan 5"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "18 dan 16"
+            },
+            {
+              "key": "D",
+              "text": "15 dan 10"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Aturan polanya berkurang 5: $20 - 5 = 15$, lalu $15 - 5 = 10$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Aturan pola: berkurang 5 ($-5$).\n2. Suku berikutnya: $20 - 5 = 15$ dan $15 - 5 = 10$.\nDua bilangan berikutnya adalah **15 dan 10** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Aturan pola: berkurang 5 ($-5$).\n2. Suku berikutnya: $20 - 5 = 15$ dan $15 - 5 = 10$.\nDua bilangan berikutnya adalah **15 dan 10** (Opsi D)."
         },
         {
           "id": "sd4-b3-3",
@@ -1283,11 +1283,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "14"
+              "text": "12"
             },
             {
               "key": "B",
-              "text": "12"
+              "text": "14"
             },
             {
               "key": "C",
@@ -1298,9 +1298,9 @@ export const grade4Data = {
               "text": "15"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Selisih polanya adalah $+4$: $10 + 4 = 14$ dan $14 + 4 = 18$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Beda pola: $6 - 2 = 4$ dan $10 - 6 = 4$.\n2. Angka pengisi titik-titik: $10 + 4 = 14$.\nBilangan yang tepat adalah **14** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Beda pola: $6 - 2 = 4$ dan $10 - 6 = 4$.\n2. Angka pengisi titik-titik: $10 + 4 = 14$.\nBilangan yang tepat adalah **14** (Opsi B)."
         },
         {
           "id": "sd4-b3-4",
@@ -1310,24 +1310,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "11 kelereng"
-            },
-            {
-              "key": "B",
               "text": "9 kelereng"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "13 kelereng"
+            },
+            {
+              "key": "C",
+              "text": "11 kelereng"
             },
             {
               "key": "D",
               "text": "15 kelereng"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Barisan bilangan ganjil bertambah 2: baris kelima $= 7 + 2 = 9$, baris keenam $= 9 + 2 = 11$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Pola bilangan ganjil: $1, 3, 5, 7, \\dots$ (bertambah 2).\n2. Baris ke-5: $7 + 2 = 9$.\n3. Baris ke-6: $9 + 2 = 11$.\nBanyak kelereng pada baris keenam adalah **11 kelereng** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Pola bilangan ganjil: $1, 3, 5, 7, \\dots$ (bertambah 2).\n2. Baris ke-5: $7 + 2 = 9$.\n3. Baris ke-6: $9 + 2 = 11$.\nBanyak kelereng pada baris keenam adalah **11 kelereng** (Opsi C)."
         },
         {
           "id": "sd4-b3-5",
@@ -1337,24 +1337,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Bertambah 2"
-            },
-            {
-              "key": "B",
               "text": "Berkurang 2"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Dikalikan 2"
+            },
+            {
+              "key": "C",
+              "text": "Bertambah 2"
             },
             {
               "key": "D",
               "text": "Bertambah 4"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Perhatikan selisih antar suku yang berurutan: $4 - 2 = 2, 6 - 4 = 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSelisih tiap suku adalah $+2$, jadi polanya **bertambah 2** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSelisih tiap suku adalah $+2$, jadi polanya **bertambah 2** (Opsi C)."
         },
         {
           "id": "sd4-b3-6",
@@ -1364,11 +1364,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "25 dan 30"
+              "text": "25 dan 35"
             },
             {
               "key": "B",
-              "text": "25 dan 35"
+              "text": "25 dan 30"
             },
             {
               "key": "C",
@@ -1379,9 +1379,9 @@ export const grade4Data = {
               "text": "30 dan 35"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Pola bilangan kelipatan 5 atau bertambah 5 secara berulang.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- $20 + 5 = 25$\n- $25 + 5 = 30$\nDua suku berikutnya adalah **25 dan 30** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- $20 + 5 = 25$\n- $25 + 5 = 30$\nDua suku berikutnya adalah **25 dan 30** (Opsi B)."
         },
         {
           "id": "sd4-b3-7",
@@ -1418,24 +1418,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "35"
-            },
-            {
-              "key": "B",
               "text": "36"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "38"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "32"
+            },
+            {
+              "key": "D",
+              "text": "35"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Pola berkurang 5: $40 - 5 = 35$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$40 - 5 = 35$$\nBilangannya adalah **35** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$40 - 5 = 35$$\nBilangannya adalah **35** (Opsi D)."
         },
         {
           "id": "sd4-b3-9",
@@ -1445,24 +1445,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "9 batang"
-            },
-            {
-              "key": "B",
               "text": "8 batang"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "10 batang"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "11 batang"
+            },
+            {
+              "key": "D",
+              "text": "9 batang"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Pola bertambah 2: $3, 5, 7, 9$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$7 + 2 = 9$$\nPola ke-4 membutuhkan **9 batang korek api** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$7 + 2 = 9$$\nPola ke-4 membutuhkan **9 batang korek api** (Opsi D)."
         },
         {
           "id": "sd4-b3-10",
@@ -1472,11 +1472,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "11"
+              "text": "9"
             },
             {
               "key": "B",
-              "text": "9"
+              "text": "11"
             },
             {
               "key": "C",
@@ -1487,9 +1487,9 @@ export const grade4Data = {
               "text": "15"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rumus suku ke-n bilangan ganjil adalah $2n - 1$. Untuk $n = 6$: $2(6) - 1 = 11$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBarisan: 1, 3, 5, 7, 9, 11\nSuku ke-6 adalah **11** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBarisan: 1, 3, 5, 7, 9, 11\nSuku ke-6 adalah **11** (Opsi B)."
         },
         {
           "id": "sd4-b3-11",
@@ -1499,24 +1499,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp3.000,00"
-            },
-            {
-              "key": "B",
               "text": "Rp2.500,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp3.500,00"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Rp4.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp3.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Pola bertambah Rp500,00 setiap hari: hari ke-4 Rp2.500, hari ke-5 Rp3.000.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- Hari 4: $2.000 + 500 = 2.500$\n- Hari 5: $2.500 + 500 = 3.000$\nUang tabungan hari ke-5 adalah **Rp3.000,00** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- Hari 4: $2.000 + 500 = 2.500$\n- Hari 5: $2.500 + 500 = 3.000$\nUang tabungan hari ke-5 adalah **Rp3.000,00** (Opsi D)."
         },
         {
           "id": "sd4-b3-12",
@@ -1553,24 +1553,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "16 jeruk"
-            },
-            {
-              "key": "B",
               "text": "15 jeruk"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "18 jeruk"
+            },
+            {
+              "key": "C",
+              "text": "16 jeruk"
             },
             {
               "key": "D",
               "text": "14 jeruk"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Jumlahkan seluruhnya: $1 + 3 + 5 + 7 = 16$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$1 + 3 + 5 + 7 = 16$$\nTotalnya adalah **16 jeruk** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$1 + 3 + 5 + 7 = 16$$\nTotalnya adalah **16 jeruk** (Opsi C)."
         },
         {
           "id": "sd4-b3-14",
@@ -1607,24 +1607,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "68, 60, 52"
-            },
-            {
-              "key": "B",
               "text": "68, 62, 54"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "70, 62, 54"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "66, 58, 50"
+            },
+            {
+              "key": "D",
+              "text": "68, 60, 52"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Pola berkurang 8 secara konsisten.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- $76 - 8 = 68$\n- $68 - 8 = 60$\n- $60 - 8 = 52$\nTiga suku berikutnya adalah **68, 60, 52** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- $76 - 8 = 68$\n- $68 - 8 = 60$\n- $60 - 8 = 52$\nTiga suku berikutnya adalah **68, 60, 52** (Opsi D)."
         },
         {
           "id": "sd4-b3-16",
@@ -1661,11 +1661,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "40 ubin"
+              "text": "36 ubin"
             },
             {
               "key": "B",
-              "text": "36 ubin"
+              "text": "40 ubin"
             },
             {
               "key": "C",
@@ -1676,9 +1676,9 @@ export const grade4Data = {
               "text": "48 ubin"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan rumus kelipatan 4: $4 \\times n$. Untuk $n = 10$: $4 \\times 10 = 40$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4 \\times 10 = 40$$\nBanyak ubin putih pada pola ke-10 adalah **40 ubin** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4 \\times 10 = 40$$\nBanyak ubin putih pada pola ke-10 adalah **40 ubin** (Opsi B)."
         },
         {
           "id": "sd4-b3-18",
@@ -1715,24 +1715,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "33 kursi"
-            },
-            {
-              "key": "B",
               "text": "30 kursi"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "36 kursi"
+            },
+            {
+              "key": "C",
+              "text": "33 kursi"
             },
             {
               "key": "D",
               "text": "27 kursi"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kursi baris ke-n: $12 + (n - 1) \\times 3$. Untuk $n = 8$: $12 + 7 \\times 3 = 33$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$12 + (7 \\times 3) = 12 + 21 = 33$$\nBanyak kursi baris ke-8 adalah **33 kursi** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$12 + (7 \\times 3) = 12 + 21 = 33$$\nBanyak kursi baris ke-8 adalah **33 kursi** (Opsi C)."
         },
         {
           "id": "sd4-b3-20",
@@ -1742,11 +1742,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "17"
+              "text": "9"
             },
             {
               "key": "B",
-              "text": "9"
+              "text": "17"
             },
             {
               "key": "C",
@@ -1757,9 +1757,9 @@ export const grade4Data = {
               "text": "15"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Hitung berurutan: S1 = 3, S2 = $2(3) - 1 = 5$, S3 = $2(5) - 1 = 9$, S4 = $2(9) - 1 = 17$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- Suku 1 = 3\n- Suku 2 = $2 \\times 3 - 1 = 5$\n- Suku 3 = $2 \\times 5 - 1 = 9$\n- Suku 4 = $2 \\times 9 - 1 = 17$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n- Suku 1 = 3\n- Suku 2 = $2 \\times 3 - 1 = 5$\n- Suku 3 = $2 \\times 5 - 1 = 9$\n- Suku 4 = $2 \\times 9 - 1 = 17$ (Opsi B)."
         }
       ]
     },
@@ -1811,24 +1811,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "24 petak satuan"
-            },
-            {
-              "key": "B",
               "text": "20 petak satuan"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "10 petak satuan"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "12 petak satuan"
+            },
+            {
+              "key": "D",
+              "text": "24 petak satuan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kalikan panjang petak dengan lebar petak: $6 \\times 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas} = 6 \\times 4 = 24\\text{ petak satuan}$$\nLuasnya adalah **24 petak satuan** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas} = 6 \\times 4 = 24\\text{ petak satuan}$$\nLuasnya adalah **24 petak satuan** (Opsi D)."
         },
         {
           "id": "sd4-b4-2",
@@ -1838,24 +1838,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "36 kubus satuan"
-            },
-            {
-              "key": "B",
               "text": "15 kubus satuan"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "24 kubus satuan"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "48 kubus satuan"
+            },
+            {
+              "key": "D",
+              "text": "36 kubus satuan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kalikan luas alas (12) dengan tinggi tumpukan (3): $12 \\times 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Volume} = 12 \\times 3 = 36\\text{ kubus satuan}$$\nVolumenya adalah **36 kubus satuan** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Volume} = 12 \\times 3 = 36\\text{ kubus satuan}$$\nVolumenya adalah **36 kubus satuan** (Opsi D)."
         },
         {
           "id": "sd4-b4-3",
@@ -1865,24 +1865,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "16 gelas air"
-            },
-            {
-              "key": "B",
               "text": "10 gelas air"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "12 gelas air"
+            },
+            {
+              "key": "C",
+              "text": "16 gelas air"
             },
             {
               "key": "D",
               "text": "14 gelas air"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kalikan banyak gayung dengan isi gelas per gayung: $8 \\times 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Volume} = 8 \\times 2 = 16\\text{ gelas air}$$\nDiperlukan **16 gelas air** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Volume} = 8 \\times 2 = 16\\text{ gelas air}$$\nDiperlukan **16 gelas air** (Opsi C)."
         },
         {
           "id": "sd4-b4-4",
@@ -1892,11 +1892,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "$50\\text{ cm}^2$"
+              "text": "$40\\text{ cm}^2$"
             },
             {
               "key": "B",
-              "text": "$40\\text{ cm}^2$"
+              "text": "$50\\text{ cm}^2$"
             },
             {
               "key": "C",
@@ -1907,9 +1907,9 @@ export const grade4Data = {
               "text": "$100\\text{ cm}^2$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Bagi luas kertas total dengan 4: $200 : 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas} = \\frac{200}{4} = 50\\text{ cm}^2$$\nLuas setiap potongan adalah **$50\\text{ cm}^2$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas} = \\frac{200}{4} = 50\\text{ cm}^2$$\nLuas setiap potongan adalah **$50\\text{ cm}^2$** (Opsi B)."
         },
         {
           "id": "sd4-b4-5",
@@ -1946,11 +1946,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "4 kubus satuan"
+              "text": "8 kubus satuan"
             },
             {
               "key": "B",
-              "text": "8 kubus satuan"
+              "text": "4 kubus satuan"
             },
             {
               "key": "C",
@@ -1961,9 +1961,9 @@ export const grade4Data = {
               "text": "2 kubus satuan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan $V = p \\times l \\times t$: $64 = 4 \\times 4 \\times t = 16 \\times t$. Bagi 64 dengan 16.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$64 = 16 \\times t \\implies t = \\frac{64}{16} = 4\\text{ kubus satuan}$$\nTinggi kotak adalah **4 kubus satuan** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$64 = 16 \\times t \\implies t = \\frac{64}{16} = 4\\text{ kubus satuan}$$\nTinggi kotak adalah **4 kubus satuan** (Opsi B)."
         },
         {
           "id": "sd4-b4-7",
@@ -1973,11 +1973,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "3 cangkir"
+              "text": "2 cangkir"
             },
             {
               "key": "B",
-              "text": "2 cangkir"
+              "text": "3 cangkir"
             },
             {
               "key": "C",
@@ -1988,9 +1988,9 @@ export const grade4Data = {
               "text": "6 cangkir"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "2 botol $= 6$ cangkir. Maka 1 botol $= 6 : 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Kapasitas 1 botol} = \\frac{6}{2} = 3\\text{ cangkir}$$\nHasilnya adalah **3 cangkir** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Kapasitas 1 botol} = \\frac{6}{2} = 3\\text{ cangkir}$$\nHasilnya adalah **3 cangkir** (Opsi B)."
         },
         {
           "id": "sd4-b4-8",
@@ -2027,11 +2027,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "144 cm²"
+              "text": "124 cm²"
             },
             {
               "key": "B",
-              "text": "124 cm²"
+              "text": "144 cm²"
             },
             {
               "key": "C",
@@ -2042,9 +2042,9 @@ export const grade4Data = {
               "text": "164 cm²"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rumus luas persegi: $L = s \\times s = 12 \\times 12$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 12 \\times 12 = 144\\text{ cm}^2$$\nLuasnya adalah **144 cm²** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 12 \\times 12 = 144\\text{ cm}^2$$\nLuasnya adalah **144 cm²** (Opsi B)."
         },
         {
           "id": "sd4-b4-10",
@@ -2054,24 +2054,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "12 cm"
-            },
-            {
-              "key": "B",
               "text": "14 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "11 cm"
+            },
+            {
+              "key": "C",
+              "text": "12 cm"
             },
             {
               "key": "D",
               "text": "13 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Panjang = Luas : lebar $= 84 : 7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$p = 84 : 7 = 12\\text{ cm}$$\nPanjangnya adalah **12 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$p = 84 : 7 = 12\\text{ cm}$$\nPanjangnya adalah **12 cm** (Opsi C)."
         },
         {
           "id": "sd4-b4-11",
@@ -2081,24 +2081,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "64 kubus satuan"
-            },
-            {
-              "key": "B",
               "text": "16 kubus satuan"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "48 kubus satuan"
+            },
+            {
+              "key": "C",
+              "text": "64 kubus satuan"
             },
             {
               "key": "D",
               "text": "32 kubus satuan"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Volume kubus: $s \\times s \\times s = 4 \\times 4 \\times 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 4 \\times 4 \\times 4 = 64\\text{ kubus satuan}$$\nVolumenya adalah **64 kubus satuan** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 4 \\times 4 \\times 4 = 64\\text{ kubus satuan}$$\nVolumenya adalah **64 kubus satuan** (Opsi C)."
         },
         {
           "id": "sd4-b4-12",
@@ -2108,11 +2108,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "120 cm³"
+              "text": "100 cm³"
             },
             {
               "key": "B",
-              "text": "100 cm³"
+              "text": "120 cm³"
             },
             {
               "key": "C",
@@ -2123,9 +2123,9 @@ export const grade4Data = {
               "text": "60 cm³"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Volume balok: $V = p \\times l \\times t = 6 \\times 4 \\times 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 6 \\times 4 \\times 5 = 120\\text{ cm}^3$$\nVolumenya adalah **120 cm³** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 6 \\times 4 \\times 5 = 120\\text{ cm}^3$$\nVolumenya adalah **120 cm³** (Opsi B)."
         },
         {
           "id": "sd4-b4-13",
@@ -2135,24 +2135,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "1,5 liter"
-            },
-            {
-              "key": "B",
               "text": "1,2 liter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "1,8 liter"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "2,0 liter"
+            },
+            {
+              "key": "D",
+              "text": "1,5 liter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Hitung total mL: $3 \\times 500 = 1.500$ mL, lalu ubah ke liter ($1.500 : 1.000$).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total volume: $3 \\times 500 = 1.500\\text{ mL}$\n2. Konversi ke liter: $1.500 : 1.000 = 1{,}5\\text{ liter}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total volume: $3 \\times 500 = 1.500\\text{ mL}$\n2. Konversi ke liter: $1.500 : 1.000 = 1{,}5\\text{ liter}$ (Opsi D)."
         },
         {
           "id": "sd4-b4-14",
@@ -2189,24 +2189,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "5 cm"
-            },
-            {
-              "key": "B",
               "text": "6 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "4 cm"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "8 cm"
+            },
+            {
+              "key": "D",
+              "text": "5 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Tinggi = Volume : $(p \\times l) = 240 : (8 \\times 6)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = 240 : 48 = 5\\text{ cm}$$\nTingginya adalah **5 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = 240 : 48 = 5\\text{ cm}$$\nTingginya adalah **5 cm** (Opsi D)."
         },
         {
           "id": "sd4-b4-16",
@@ -2243,24 +2243,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "30.000 cm³"
-            },
-            {
-              "key": "B",
               "text": "60.000 cm³"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "15.000 cm³"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "45.000 cm³"
+            },
+            {
+              "key": "D",
+              "text": "30.000 cm³"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Volume penuh = $50 \\times 30 \\times 40 = 60.000$ cm³. Setengahnya $= 60.000 : 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{2} \\times (50 \\times 30 \\times 40) = 30.000\\text{ cm}^3$$\nVolume air adalah **30.000 cm³** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{2} \\times (50 \\times 30 \\times 40) = 30.000\\text{ cm}^3$$\nVolume air adalah **30.000 cm³** (Opsi D)."
         },
         {
           "id": "sd4-b4-18",
@@ -2270,24 +2270,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "216 cm³"
-            },
-            {
-              "key": "B",
               "text": "54 cm³"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "108 cm³"
+            },
+            {
+              "key": "C",
+              "text": "216 cm³"
             },
             {
               "key": "D",
               "text": "72 cm³"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Rusuk kubus besar = $2 \\times 3 = 6$ cm. Volume kubus besar = $6 \\times 6 \\times 6$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 6 \\times 6 \\times 6 = 216\\text{ cm}^3$$\nVolumenya adalah **216 cm³** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 6 \\times 6 \\times 6 = 216\\text{ cm}^3$$\nVolumenya adalah **216 cm³** (Opsi C)."
         },
         {
           "id": "sd4-b4-19",
@@ -2297,24 +2297,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "20 karpet"
-            },
-            {
-              "key": "B",
               "text": "25 karpet"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "18 karpet"
+            },
+            {
+              "key": "C",
+              "text": "20 karpet"
             },
             {
               "key": "D",
               "text": "40 karpet"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Luas aula $= 80\\text{ m}^2$. Luas 1 karpet $= 4\\text{ m}^2$. Banyak karpet $= 80 : 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Banyak karpet} = \\frac{10 \\times 8}{2 \\times 2} = \\frac{80}{4} = 20\\text{ karpet}$$\nDibutuhkan **20 karpet** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Banyak karpet} = \\frac{10 \\times 8}{2 \\times 2} = \\frac{80}{4} = 20\\text{ karpet}$$\nDibutuhkan **20 karpet** (Opsi C)."
         },
         {
           "id": "sd4-b4-20",
@@ -2420,24 +2420,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Dua segitiga siku-siku sama kaki"
-            },
-            {
-              "key": "B",
               "text": "Dua persegi panjang"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Dua segitiga sama sisi"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Dua trapesium"
+            },
+            {
+              "key": "D",
+              "text": "Dua segitiga siku-siku sama kaki"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Sudut persegi adalah siku-siku ($90^\\circ$) dan kedua sisinya sama panjang.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nDiagonal persegi membagi sudut $90^\\circ$ dan menghubungkan dua sisi yang sama panjang, menghasilkan **dua segitiga siku-siku sama kaki** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nDiagonal persegi membagi sudut $90^\\circ$ dan menghubungkan dua sisi yang sama panjang, menghasilkan **dua segitiga siku-siku sama kaki** (Opsi D)."
         },
         {
           "id": "sd4-b5-3",
@@ -2474,24 +2474,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Belah ketupat"
-            },
-            {
-              "key": "B",
               "text": "Persegi panjang"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Jajar genjang"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Trapesium"
+            },
+            {
+              "key": "D",
+              "text": "Belah ketupat"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Keempat sisi luarnya memiliki panjang yang sama karena berasal dari kaki-kaki segitiga yang sama.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKarena keempat sisi luarnya sama panjang dan alas persekutuan menjadi diagonalnya, bangun yang terbentuk adalah **belah ketupat** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKarena keempat sisi luarnya sama panjang dan alas persekutuan menjadi diagonalnya, bangun yang terbentuk adalah **belah ketupat** (Opsi D)."
         },
         {
           "id": "sd4-b5-5",
@@ -2528,24 +2528,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Sama sisi"
-            },
-            {
-              "key": "B",
               "text": "Sama kaki"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Siku-siku"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Sembarang"
+            },
+            {
+              "key": "D",
+              "text": "Sama sisi"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Jika ketiga sisi memiliki panjang sama, maka disebut sama sisi.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSegitiga dengan tiga sisi sama panjang adalah **segitiga sama sisi** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSegitiga dengan tiga sisi sama panjang adalah **segitiga sama sisi** (Opsi D)."
         },
         {
           "id": "sd4-b5-7",
@@ -2555,11 +2555,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "180°"
+              "text": "360°"
             },
             {
               "key": "B",
-              "text": "360°"
+              "text": "180°"
             },
             {
               "key": "C",
@@ -2570,9 +2570,9 @@ export const grade4Data = {
               "text": "270°"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Total ketiga sudut segitiga selalu sama dengan sudut lurus ($180^\\circ$).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJumlah sudut segitiga $= 180^\\circ$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nJumlah sudut segitiga $= 180^\\circ$ (Opsi B)."
         },
         {
           "id": "sd4-b5-8",
@@ -2582,24 +2582,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Trapesium"
-            },
-            {
-              "key": "B",
               "text": "Jajargenjang"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Belah ketupat"
+            },
+            {
+              "key": "C",
+              "text": "Trapesium"
             },
             {
               "key": "D",
               "text": "Layang-layang"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Ciri khas trapesium adalah memiliki tepat sepasang sisi berhadapan yang sejajar.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBangun datar dengan sepasang sisi sejajar adalah **trapesium** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBangun datar dengan sepasang sisi sejajar adalah **trapesium** (Opsi C)."
         },
         {
           "id": "sd4-b5-9",
@@ -2636,24 +2636,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "2"
-            },
-            {
-              "key": "B",
               "text": "4"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "1"
+            },
+            {
+              "key": "C",
+              "text": "2"
             },
             {
               "key": "D",
               "text": "0"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Persegi panjang memiliki sumbu simetri vertikal dan horizontal (diagonal bukan sumbu simetri lipat).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPersegi panjang memiliki **2 sumbu simetri lipat** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPersegi panjang memiliki **2 sumbu simetri lipat** (Opsi C)."
         },
         {
           "id": "sd4-b5-11",
@@ -2663,24 +2663,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "55°"
-            },
-            {
-              "key": "B",
               "text": "45°"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "65°"
+            },
+            {
+              "key": "C",
+              "text": "55°"
             },
             {
               "key": "D",
               "text": "35°"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Sudut siku-siku $= 90^\\circ$. Sisa sudut $= 180^\\circ - (90^\\circ + 35^\\circ) = 55^\\circ$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$180^\\circ - 90^\\circ - 35^\\circ = 55^\\circ$$\nBesar sudut lainnya adalah **55°** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$180^\\circ - 90^\\circ - 35^\\circ = 55^\\circ$$\nBesar sudut lainnya adalah **55°** (Opsi C)."
         },
         {
           "id": "sd4-b5-12",
@@ -2690,24 +2690,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "27 cm"
-            },
-            {
-              "key": "B",
               "text": "18 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "81 cm"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "36 cm"
+            },
+            {
+              "key": "D",
+              "text": "27 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Keliling segitiga sama sisi $= 3 \\times s = 3 \\times 9$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$K = 3 \\times 9 = 27\\text{ cm}$$\nKelilingnya adalah **27 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$K = 3 \\times 9 = 27\\text{ cm}$$\nKelilingnya adalah **27 cm** (Opsi D)."
         },
         {
           "id": "sd4-b5-13",
@@ -2744,24 +2744,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "12 cm"
-            },
-            {
-              "key": "B",
               "text": "14 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "16 cm"
+            },
+            {
+              "key": "C",
+              "text": "12 cm"
             },
             {
               "key": "D",
               "text": "10 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Panjang sisi = Keliling : $4 = 48 : 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = 48 : 4 = 12\\text{ cm}$$\nPanjang sisinya adalah **12 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = 48 : 4 = 12\\text{ cm}$$\nPanjang sisinya adalah **12 cm** (Opsi C)."
         },
         {
           "id": "sd4-b5-15",
@@ -2771,24 +2771,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "40 cm"
-            },
-            {
-              "key": "B",
               "text": "84 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "20 cm"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "48 cm"
+            },
+            {
+              "key": "D",
+              "text": "40 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Keliling persegi panjang $= 2 \\times (p + l) = 2 \\times (14 + 6)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$K = 2 \\times (14 + 6) = 2 \\times 20 = 40\\text{ cm}$$\nKelilingnya adalah **40 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$K = 2 \\times (14 + 6) = 2 \\times 20 = 40\\text{ cm}$$\nKelilingnya adalah **40 cm** (Opsi D)."
         },
         {
           "id": "sd4-b5-16",
@@ -2798,11 +2798,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "13 meter"
+              "text": "12 meter"
             },
             {
               "key": "B",
-              "text": "12 meter"
+              "text": "13 meter"
             },
             {
               "key": "C",
@@ -2813,9 +2813,9 @@ export const grade4Data = {
               "text": "11 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Jumlah kedua kaki $= 36 - 10 = 26$ meter. Panjang tiap kaki $= 26 : 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Panjang satu kaki} = (36 - 10) : 2 = 26 : 2 = 13\\text{ meter}$$\nPanjang kakinya adalah **13 meter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Panjang satu kaki} = (36 - 10) : 2 = 26 : 2 = 13\\text{ meter}$$\nPanjang kakinya adalah **13 meter** (Opsi B)."
         },
         {
           "id": "sd4-b5-17",
@@ -2825,11 +2825,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "960 meter"
+              "text": "320 meter"
             },
             {
               "key": "B",
-              "text": "320 meter"
+              "text": "960 meter"
             },
             {
               "key": "C",
@@ -2840,9 +2840,9 @@ export const grade4Data = {
               "text": "1.200 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Keliling lapangan $= 2 \\times (100 + 60) = 320$ m. Dalam 3 putaran $= 3 \\times 320$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Keliling lapangan: $2 \\times (100 + 60) = 320\\text{ m}$\n2. 3 putaran: $3 \\times 320 = 960\\text{ m}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Keliling lapangan: $2 \\times (100 + 60) = 320\\text{ m}$\n2. 3 putaran: $3 \\times 320 = 960\\text{ m}$ (Opsi B)."
         },
         {
           "id": "sd4-b5-18",
@@ -2852,24 +2852,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "16 cm"
-            },
-            {
-              "key": "B",
               "text": "14 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "18 cm"
+            },
+            {
+              "key": "C",
+              "text": "16 cm"
             },
             {
               "key": "D",
               "text": "12 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Bagi panjang kawat dengan 4 sisi: $64 : 4 = 16$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = 64 : 4 = 16\\text{ cm}$$\nPanjang sisinya adalah **16 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = 64 : 4 = 16\\text{ cm}$$\nPanjang sisinya adalah **16 cm** (Opsi C)."
         },
         {
           "id": "sd4-b5-19",
@@ -2879,11 +2879,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "9 cm"
+              "text": "8 cm"
             },
             {
               "key": "B",
-              "text": "8 cm"
+              "text": "9 cm"
             },
             {
               "key": "C",
@@ -2894,9 +2894,9 @@ export const grade4Data = {
               "text": "12 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Keliling jajargenjang $= 2 \\times (a + b) = 50 \\implies a + b = 25$. Jika $a = 16$, maka $b = 25 - 16 = 9$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$b = (50 : 2) - 16 = 25 - 16 = 9\\text{ cm}$$\nPanjang sisi lainnya adalah **9 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$b = (50 : 2) - 16 = 25 - 16 = 9\\text{ cm}$$\nPanjang sisi lainnya adalah **9 cm** (Opsi B)."
         },
         {
           "id": "sd4-b5-20",
@@ -2906,11 +2906,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "16 segitiga"
+              "text": "12 segitiga"
             },
             {
               "key": "B",
-              "text": "12 segitiga"
+              "text": "16 segitiga"
             },
             {
               "key": "C",
@@ -2921,9 +2921,9 @@ export const grade4Data = {
               "text": "4 segitiga"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Banyak segitiga kecil $= 4^2 = 16$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4 \\times 4 = 16$$\nDibutuhkan **16 segitiga kecil** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4 \\times 4 = 16$$\nDibutuhkan **16 segitiga kecil** (Opsi B)."
         }
       ]
     },
@@ -2975,24 +2975,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "20 poin"
-            },
-            {
-              "key": "B",
               "text": "15 poin"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "25 poin"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "9 poin"
+            },
+            {
+              "key": "D",
+              "text": "20 poin"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kalikan jumlah bintang (4) dengan nilai tiap bintang (5).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4 \\times 5 = 20\\text{ poin}$$\nTotal poinnya adalah **20 poin** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4 \\times 5 = 20\\text{ poin}$$\nTotal poinnya adalah **20 poin** (Opsi D)."
         },
         {
           "id": "sd4-b6-2",
@@ -3002,24 +3002,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Diagram batang"
-            },
-            {
-              "key": "B",
               "text": "Diagram lingkaran"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Diagram garis"
+            },
+            {
+              "key": "C",
+              "text": "Diagram batang"
             },
             {
               "key": "D",
               "text": "Piktogram"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Diagram berbentuk balok tegak/mendatar disebut diagram batang.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nDiagram berbentuk persegi panjang tegak atau mendatar adalah **diagram batang** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nDiagram berbentuk persegi panjang tegak atau mendatar adalah **diagram batang** (Opsi C)."
         },
         {
           "id": "sd4-b6-3",
@@ -3029,24 +3029,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "90 siswa"
-            },
-            {
-              "key": "B",
               "text": "85 siswa"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "95 siswa"
+            },
+            {
+              "key": "C",
+              "text": "90 siswa"
             },
             {
               "key": "D",
               "text": "80 siswa"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Jumlahkan seluruh siswa: $15 + 25 + 20 + 30$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$15 + 25 + 20 + 30 = 90\\text{ siswa}$$\nTotalnya adalah **90 siswa** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$15 + 25 + 20 + 30 = 90\\text{ siswa}$$\nTotalnya adalah **90 siswa** (Opsi C)."
         },
         {
           "id": "sd4-b6-4",
@@ -3056,11 +3056,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "15 siswa"
+              "text": "10 siswa"
             },
             {
               "key": "B",
-              "text": "10 siswa"
+              "text": "15 siswa"
             },
             {
               "key": "C",
@@ -3071,9 +3071,9 @@ export const grade4Data = {
               "text": "5 siswa"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kurangkan peserta Silat (30) dengan Tari (15).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Selisih} = 30 - 15 = 15\\text{ siswa}$$\nSelisihnya adalah **15 siswa** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Selisih} = 30 - 15 = 15\\text{ siswa}$$\nSelisihnya adalah **15 siswa** (Opsi B)."
         },
         {
           "id": "sd4-b6-5",
@@ -3137,24 +3137,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "5 simbol"
-            },
-            {
-              "key": "B",
               "text": "4 simbol"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6 simbol"
+            },
+            {
+              "key": "C",
+              "text": "5 simbol"
             },
             {
               "key": "D",
               "text": "8 simbol"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Bagi jumlah siswa dengan nilai per simbol: $40 : 8 = 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$40 : 8 = 5\\text{ simbol}$$\nDibutuhkan **5 simbol** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$40 : 8 = 5\\text{ simbol}$$\nDibutuhkan **5 simbol** (Opsi C)."
         },
         {
           "id": "sd4-b6-8",
@@ -3164,24 +3164,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Frekuensi atau banyaknya data"
-            },
-            {
-              "key": "B",
               "text": "Nama kategori data"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Waktu pengamatan"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Rata-rata data"
+            },
+            {
+              "key": "D",
+              "text": "Frekuensi atau banyaknya data"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Tinggi batang berbanding lurus dengan frekuensi atau jumlah data.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTinggi batang menyatakan **banyaknya data (frekuensi)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTinggi batang menyatakan **banyaknya data (frekuensi)** (Opsi D)."
         },
         {
           "id": "sd4-b6-9",
@@ -3218,11 +3218,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "34 kg"
+              "text": "33 kg"
             },
             {
               "key": "B",
-              "text": "33 kg"
+              "text": "34 kg"
             },
             {
               "key": "C",
@@ -3233,9 +3233,9 @@ export const grade4Data = {
               "text": "32 kg"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Jumlahkan semua data lalu bagi 5: $(32 + 34 + 30 + 36 + 38) : 5 = 170 : 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Rata-rata} = 170 : 5 = 34\\text{ kg}$$\nRata-ratanya adalah **34 kg** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Rata-rata} = 170 : 5 = 34\\text{ kg}$$\nRata-ratanya adalah **34 kg** (Opsi B)."
         },
         {
           "id": "sd4-b6-11",
@@ -3245,24 +3245,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "Mangga"
-            },
-            {
-              "key": "B",
               "text": "Apel"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Pisang"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Jeruk"
+            },
+            {
+              "key": "D",
+              "text": "Mangga"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Bandingkan angka penjualan: Mangga hanya terjual 35 kg.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBuah dengan penjualan terendah adalah **Mangga (35 kg)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBuah dengan penjualan terendah adalah **Mangga (35 kg)** (Opsi D)."
         },
         {
           "id": "sd4-b6-12",
@@ -3272,24 +3272,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "10 kg"
-            },
-            {
-              "key": "B",
               "text": "15 kg"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "20 kg"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "5 kg"
+            },
+            {
+              "key": "D",
+              "text": "10 kg"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kurangkan penjualan Jeruk (60 kg) dengan Pisang (50 kg).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$60 - 50 = 10\\text{ kg}$$\nSelisihnya adalah **10 kg** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$60 - 50 = 10\\text{ kg}$$\nSelisihnya adalah **10 kg** (Opsi D)."
         },
         {
           "id": "sd4-b6-13",
@@ -3299,24 +3299,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "580 orang"
-            },
-            {
-              "key": "B",
               "text": "560 orang"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "600 orang"
+            },
+            {
+              "key": "C",
+              "text": "580 orang"
             },
             {
               "key": "D",
               "text": "540 orang"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Jumlahkan data: $120 + 150 + 130 + 180 = 580$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$120 + 150 + 130 + 180 = 580\\text{ orang}$$\nTotalnya adalah **580 orang** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$120 + 150 + 130 + 180 = 580\\text{ orang}$$\nTotalnya adalah **580 orang** (Opsi C)."
         },
         {
           "id": "sd4-b6-14",
@@ -3326,11 +3326,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "25,7%"
+              "text": "30%"
             },
             {
               "key": "B",
-              "text": "30%"
+              "text": "25,7%"
             },
             {
               "key": "C",
@@ -3341,9 +3341,9 @@ export const grade4Data = {
               "text": "18%"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Persentase sepeda $= \\frac{18}{70} \\times 100\\% \\approx 25,7\\%$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{18}{70} \\times 100\\% \\approx 25{,}7\\%$$\nPersentasenya adalah **25,7%** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{18}{70} \\times 100\\% \\approx 25{,}7\\%$$\nPersentasenya adalah **25,7%** (Opsi B)."
         },
         {
           "id": "sd4-b6-15",
@@ -3407,11 +3407,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "1.250 kg"
+              "text": "1.500 kg"
             },
             {
               "key": "B",
-              "text": "1.500 kg"
+              "text": "1.250 kg"
             },
             {
               "key": "C",
@@ -3422,9 +3422,9 @@ export const grade4Data = {
               "text": "750 kg"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Selisih simbol: $9 - 4 = 5$ simbol. Kenaikan panen: $5 \\times 250 = 1.250$ kg.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Kenaikan} = (9 - 4) \\times 250 = 5 \\times 250 = 1.250\\text{ kg}$$\nKenaikannya adalah **1.250 kg** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Kenaikan} = (9 - 4) \\times 250 = 5 \\times 250 = 1.250\\text{ kg}$$\nKenaikannya adalah **1.250 kg** (Opsi B)."
         },
         {
           "id": "sd4-b6-18",
@@ -3434,24 +3434,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "45 buku"
-            },
-            {
-              "key": "B",
               "text": "30 buku"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "60 buku"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "15 buku"
+            },
+            {
+              "key": "D",
+              "text": "45 buku"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Selisih persentase: $40\\% - 10\\% = 30\\%$. Selisih buku: $30\\% \\times 150 = 45$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Selisih} = (40\\% - 10\\%) \\times 150 = 30\\% \\times 150 = 45\\text{ buku}$$\nSelisihnya adalah **45 buku** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Selisih} = (40\\% - 10\\%) \\times 150 = 30\\% \\times 150 = 45\\text{ buku}$$\nSelisihnya adalah **45 buku** (Opsi D)."
         },
         {
           "id": "sd4-b6-19",
@@ -3461,11 +3461,11 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "60%"
+              "text": "55%"
             },
             {
               "key": "B",
-              "text": "55%"
+              "text": "60%"
             },
             {
               "key": "C",
@@ -3476,9 +3476,9 @@ export const grade4Data = {
               "text": "50%"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Siswa dengan nilai minimal 80: nilai 80 + 90 + 100 $= 7 + 4 + 1 = 12$ siswa. Persen $= \\frac{12}{20} \\times 100\\% = 60\\%$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{7 + 4 + 1}{20} \\times 100\\% = \\frac{12}{20} \\times 100\\% = 60\\%$$\nPersentasenya adalah **60%** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{7 + 4 + 1}{20} \\times 100\\% = \\frac{12}{20} \\times 100\\% = 60\\%$$\nPersentasenya adalah **60%** (Opsi B)."
         },
         {
           "id": "sd4-b6-20",
@@ -3488,24 +3488,24 @@ export const grade4Data = {
           "options": [
             {
               "key": "A",
-              "text": "150 orang"
-            },
-            {
-              "key": "B",
               "text": "140 orang"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "160 orang"
+            },
+            {
+              "key": "C",
+              "text": "150 orang"
             },
             {
               "key": "D",
               "text": "115 orang"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Jumlahkan 5 hari pertama: $40 + 55 + 70 + 85 + 100 = 350$. Hari keenam: $500 - 350 = 150$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total 5 hari: $40 + 55 + 70 + 85 + 100 = 350$ orang\n2. Target hari ke-6: $500 - 350 = 150$ orang (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total 5 hari: $40 + 55 + 70 + 85 + 100 = 350$ orang\n2. Target hari ke-6: $500 - 350 = 150$ orang (Opsi C)."
         }
       ]
     }

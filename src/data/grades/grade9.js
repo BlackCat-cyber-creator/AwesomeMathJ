@@ -62,24 +62,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "$(7, 3)$"
-            },
-            {
-              "key": "B",
               "text": "$(6, 4)$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$(8, 2)$"
+            },
+            {
+              "key": "C",
+              "text": "$(7, 3)$"
             },
             {
               "key": "D",
               "text": "$(5, 5)$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Jumlahkan kedua persamaan untuk mengeliminasi $y$: $(x + y) + (x - y) = 10 + 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Jumlahkan kedua persamaan:\n$$(x + y) + (x - y) = 10 + 4$$\n$$2x = 14 \\implies x = 7$$\n2. Substitusikan $x = 7$ ke dalam persamaan pertama:\n$$7 + y = 10 \\implies y = 3$$\nJadi, himpunan penyelesaiannya adalah **$(7, 3)$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Jumlahkan kedua persamaan:\n$$(x + y) + (x - y) = 10 + 4$$\n$$2x = 14 \\implies x = 7$$\n2. Substitusikan $x = 7$ ke dalam persamaan pertama:\n$$7 + y = 10 \\implies y = 3$$\nJadi, himpunan penyelesaiannya adalah **$(7, 3)$** (Opsi C)."
         },
         {
           "id": "smp9-b1-2",
@@ -116,24 +116,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "$96\\text{ cm}^2$"
-            },
-            {
-              "key": "B",
               "text": "$100\\text{ cm}^2$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$84\\text{ cm}^2$"
+            },
+            {
+              "key": "C",
+              "text": "$96\\text{ cm}^2$"
             },
             {
               "key": "D",
               "text": "$90\\text{ cm}^2$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Buat sistem persamaan: $p + l = 20$ dan $p - l = 4$. Cari $p$ dan $l$, lalu kalikan keduanya.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Keliling $= 2(p + l) = 40 \\implies p + l = 20$.\n2. Selisih: $p - l = 4$.\n3. Jumlahkan kedua persamaan:\n$$2p = 24 \\implies p = 12\\text{ cm}$$\n4. Lebar: $l = 20 - 12 = 8\\text{ cm}$.\n5. Luas persegi panjang:\n$$\\text{Luas} = p \\times l = 12 \\times 8 = 96\\text{ cm}^2$$\nLuasnya adalah **$96\\text{ cm}^2$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Keliling $= 2(p + l) = 40 \\implies p + l = 20$.\n2. Selisih: $p - l = 4$.\n3. Jumlahkan kedua persamaan:\n$$2p = 24 \\implies p = 12\\text{ cm}$$\n4. Lebar: $l = 20 - 12 = 8\\text{ cm}$.\n5. Luas persegi panjang:\n$$\\text{Luas} = p \\times l = 12 \\times 8 = 96\\text{ cm}^2$$\nLuasnya adalah **$96\\text{ cm}^2$** (Opsi C)."
         },
         {
           "id": "smp9-b1-4",
@@ -143,24 +143,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp125.000,00"
-            },
-            {
-              "key": "B",
               "text": "Rp130.000,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp120.000,00"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Rp140.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp125.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Misalkan motor $= m$ (2 roda) dan mobil $= c$ (4 roda): $m + c = 40$ dan $2m + 4c = 110$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sistem persamaan:\n$$m + c = 40 \\quad (\\times 2) \\implies 2m + 2c = 80$$\n$$2m + 4c = 110$$\n2. Kurangkan kedua persamaan:\n$$2c = 30 \\implies c = 15\\text{ mobil}$$\n3. Jumlah motor:\n$$m = 40 - 15 = 25\\text{ motor}$$\n4. Total pendapatan parkir:\n$$\\text{Total} = (25 \\times 2.000) + (15 \\times 5.000) = 50.000 + 75.000 = \\text{Rp}125.000,00$$\nTotal pendapatan adalah **Rp125.000,00** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sistem persamaan:\n$$m + c = 40 \\quad (\\times 2) \\implies 2m + 2c = 80$$\n$$2m + 4c = 110$$\n2. Kurangkan kedua persamaan:\n$$2c = 30 \\implies c = 15\\text{ mobil}$$\n3. Jumlah motor:\n$$m = 40 - 15 = 25\\text{ motor}$$\n4. Total pendapatan parkir:\n$$\\text{Total} = (25 \\times 2.000) + (15 \\times 5.000) = 50.000 + 75.000 = \\text{Rp}125.000,00$$\nTotal pendapatan adalah **Rp125.000,00** (Opsi D)."
         },
         {
           "id": "smp9-b1-5",
@@ -170,24 +170,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "38 tahun"
-            },
-            {
-              "key": "B",
               "text": "40 tahun"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "36 tahun"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "42 tahun"
+            },
+            {
+              "key": "D",
+              "text": "38 tahun"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Misalkan usia ayah $= x$ dan anak $= y$. Dua tahun lalu: $x - 2 = 4(y - 2)$. Tiga tahun lagi: $(x + 3) + (y + 3) = 55$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hubungan waktu lampau (2 tahun lalu):\n$$x - 2 = 4(y - 2) \\implies x - 2 = 4y - 8 \\implies x - 4y = -6$$\n2. Hubungan masa depan (3 tahun lagi):\n$$(x + 3) + (y + 3) = 55 \\implies x + y + 6 = 55 \\implies x + y = 49$$\n3. Eliminasi $x$ dengan mengurangkan kedua persamaan:\n$$(x + y) - (x - 4y) = 49 - (-6)$$\n$$5y = 55 \\implies y = 11\\text{ tahun}$$\n4. Usia ayah sekarang:\n$$x = 49 - 11 = 38\\text{ tahun}$$\nUsia ayah sekarang adalah **38 tahun** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hubungan waktu lampau (2 tahun lalu):\n$$x - 2 = 4(y - 2) \\implies x - 2 = 4y - 8 \\implies x - 4y = -6$$\n2. Hubungan masa depan (3 tahun lagi):\n$$(x + 3) + (y + 3) = 55 \\implies x + y + 6 = 55 \\implies x + y = 49$$\n3. Eliminasi $x$ dengan mengurangkan kedua persamaan:\n$$(x + y) - (x - 4y) = 49 - (-6)$$\n$$5y = 55 \\implies y = 11\\text{ tahun}$$\n4. Usia ayah sekarang:\n$$x = 49 - 11 = 38\\text{ tahun}$$\nUsia ayah sekarang adalah **38 tahun** (Opsi D)."
         },
         {
           "id": "smp9-b1-6",
@@ -224,11 +224,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "5"
+              "text": "6"
             },
             {
               "key": "B",
-              "text": "6"
+              "text": "5"
             },
             {
               "key": "C",
@@ -239,9 +239,9 @@ export const grade9Data = {
               "text": "7"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kurangkan kedua persamaan untuk mengeliminasi $y$, cari nilai $x$ lalu $y$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(3x + 2y) - (x + 2y) = 12 - 8 \\implies 2x = 4 \\implies x = 2$\n2. $2 + 2y = 8 \\implies 2y = 6 \\implies y = 3$\n3. Nilai $x + y = 2 + 3 = 5$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(3x + 2y) - (x + 2y) = 12 - 8 \\implies 2x = 4 \\implies x = 2$\n2. $2 + 2y = 8 \\implies 2y = 6 \\implies y = 3$\n3. Nilai $x + y = 2 + 3 = 5$ (Opsi B)."
         },
         {
           "id": "smp9-b1-8",
@@ -251,24 +251,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\begin{cases} 3x + 2y = 16.500 \\\\ 2x + 4y = 19.000 \\end{cases}"
-            },
-            {
-              "key": "B",
               "text": "\\begin{cases} 3x + 2y = 19.000 \\\\ 2x + 4y = 16.500 \\end{cases}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\begin{cases} 2x + 3y = 16.500 \\\\ 4x + 2y = 19.000 \\end{cases}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\begin{cases} 3x + 4y = 16.500 \\\\ 2x + 2y = 19.000 \\end{cases}"
+            },
+            {
+              "key": "D",
+              "text": "\\begin{cases} 3x + 2y = 16.500 \\\\ 2x + 4y = 19.000 \\end{cases}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Misalkan $x =$ harga buku tulis dan $y =$ harga pulpen.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModel matematika yang tepat adalah:\n$$\\begin{cases} 3x + 2y = 16.500 \\\\ 2x + 4y = 19.000 \\end{cases}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModel matematika yang tepat adalah:\n$$\\begin{cases} 3x + 2y = 16.500 \\\\ 2x + 4y = 19.000 \\end{cases}$$ (Opsi D)."
         },
         {
           "id": "smp9-b1-9",
@@ -278,24 +278,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "3"
-            },
-            {
-              "key": "B",
               "text": "2"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "4"
+            },
+            {
+              "key": "C",
+              "text": "3"
             },
             {
               "key": "D",
               "text": "1"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Substitusikan bentuk $x = 2y - 1$ langsung ke persamaan kedua: $3(2y - 1) + y = 11$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $3(2y - 1) + y = 11 \\implies 6y - 3 + y = 11 \\implies 7y = 14 \\implies y = 2$\n2. $x = 2(2) - 1 = 3$\nNilai $x$ adalah **3** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $3(2y - 1) + y = 11 \\implies 6y - 3 + y = 11 \\implies 7y = 14 \\implies y = 2$\n2. $x = 2(2) - 1 = 3$\nNilai $x$ adalah **3** (Opsi C)."
         },
         {
           "id": "smp9-b1-10",
@@ -332,24 +332,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "112 cm²"
-            },
-            {
-              "key": "B",
               "text": "120 cm²"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "108 cm²"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "96 cm²"
+            },
+            {
+              "key": "D",
+              "text": "112 cm²"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Misalkan $p = l + 6$. Keliling: $2(p + l) = 44 \\implies p + l = 22$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(l + 6) + l = 22 \\implies 2l = 16 \\implies l = 8\\text{ cm}$\n2. $p = 8 + 6 = 14\\text{ cm}$\n3. Luas $= 14 \\times 8 = 112\\text{ cm}^2$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(l + 6) + l = 22 \\implies 2l = 16 \\implies l = 8\\text{ cm}$\n2. $p = 8 + 6 = 14\\text{ cm}$\n3. Luas $= 14 \\times 8 = 112\\text{ cm}^2$ (Opsi D)."
         },
         {
           "id": "smp9-b1-12",
@@ -359,24 +359,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "12 tahun"
-            },
-            {
-              "key": "B",
               "text": "10 tahun"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "14 tahun"
+            },
+            {
+              "key": "C",
+              "text": "12 tahun"
             },
             {
               "key": "D",
               "text": "8 tahun"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Empat tahun lalu jumlah umur mereka adalah $48 - 8 = 40$ tahun. Umur Susi 4 tahun lalu: $40 : 5 = 8$ tahun.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Empat tahun lalu: $(I - 4) + (S - 4) = 40$\n2. Karena $I - 4 = 4(S - 4)$, maka $5(S - 4) = 40 \\implies S - 4 = 8$\n3. Umur Susi sekarang: $8 + 4 = 12\\text{ tahun}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Empat tahun lalu: $(I - 4) + (S - 4) = 40$\n2. Karena $I - 4 = 4(S - 4)$, maka $5(S - 4) = 40 \\implies S - 4 = 8$\n3. Umur Susi sekarang: $8 + 4 = 12\\text{ tahun}$ (Opsi C)."
         },
         {
           "id": "smp9-b1-13",
@@ -386,11 +386,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp240.000,00"
+              "text": "Rp255.000,00"
             },
             {
               "key": "B",
-              "text": "Rp255.000,00"
+              "text": "Rp240.000,00"
             },
             {
               "key": "C",
@@ -401,7 +401,7 @@ export const grade9Data = {
               "text": "Rp225.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "SPLDV: $m + k = 75$ dan $2m + 4k = 210$.",
           "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Bagi persamaan roda dengan 2: $m + 2k = 105$\n2. Kurangkan dengan $m + k = 75 \\implies k = 30$ mobil\n3. $m = 75 - 30 = 45$ motor\n4. Pendapatan $= (45 \\times 2.000) + (30 \\times 5.000) = 90.000 + 150.000 = 240.000$ (Opsi B)."
         },
@@ -440,24 +440,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "6"
-            },
-            {
-              "key": "B",
               "text": "5"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "4"
+            },
+            {
+              "key": "C",
+              "text": "6"
             },
             {
               "key": "D",
               "text": "8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Misalkan $u = \\frac{1}{x}$ dan $v = \\frac{1}{y}$. Maka $2u = 1 \\implies u = \\frac{1}{2} \\implies x = 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $2u = \\frac{6}{6} = 1 \\implies u = \\frac{1}{2} \\implies x = 2$\n2. $v = \\frac{5}{6} - \\frac{3}{6} = \\frac{2}{6} = \\frac{1}{3} \\implies y = 3$\n3. $x \\times y = 2 \\times 3 = 6$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $2u = \\frac{6}{6} = 1 \\implies u = \\frac{1}{2} \\implies x = 2$\n2. $v = \\frac{5}{6} - \\frac{3}{6} = \\frac{2}{6} = \\frac{1}{3} \\implies y = 3$\n3. $x \\times y = 2 \\times 3 = 6$ (Opsi C)."
         },
         {
           "id": "smp9-b1-16",
@@ -467,24 +467,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "6"
-            },
-            {
-              "key": "B",
               "text": "-6"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "3"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "-3"
+            },
+            {
+              "key": "D",
+              "text": "6"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Agar tak hingga banyak penyelesaian, rasio koefisien harus sama: $\\frac{2}{4} = \\frac{-3}{-k} = \\frac{7}{14}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{4} = \\frac{3}{k} \\implies \\frac{1}{2} = \\frac{3}{k} \\implies k = 6$$\nNilai $k$ adalah **6** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{4} = \\frac{3}{k} \\implies \\frac{1}{2} = \\frac{3}{k} \\implies k = 6$$\nNilai $k$ adalah **6** (Opsi D)."
         },
         {
           "id": "smp9-b1-17",
@@ -494,11 +494,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "3 km/jam"
+              "text": "12 km/jam"
             },
             {
               "key": "B",
-              "text": "12 km/jam"
+              "text": "3 km/jam"
             },
             {
               "key": "C",
@@ -509,9 +509,9 @@ export const grade9Data = {
               "text": "2 km/jam"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kecepatan lawan arus: $v_p - v_a = 36 : 3 = 12$. Kecepatan searah arus: $v_p + v_a = 36 : 2 = 18$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $v_p - v_a = 12$\n2. $v_p + v_a = 18$\n3. Kurangkan: $2v_a = 6 \\implies v_a = 3\\text{ km/jam}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $v_p - v_a = 12$\n2. $v_p + v_a = 18$\n3. Kurangkan: $2v_a = 6 \\implies v_a = 3\\text{ km/jam}$ (Opsi B)."
         },
         {
           "id": "smp9-b1-18",
@@ -548,11 +548,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "10 jam"
+              "text": "12 jam"
             },
             {
               "key": "B",
-              "text": "12 jam"
+              "text": "10 jam"
             },
             {
               "key": "C",
@@ -563,9 +563,9 @@ export const grade9Data = {
               "text": "8 jam"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Misalkan kecepatan $\\frac{1}{a} + \\frac{1}{b} = \\frac{1}{6}$ dan $\\frac{4}{a} + \\frac{9}{b} = 1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $4(\\frac{1}{a} + \\frac{1}{b}) + \\frac{5}{b} = 1 \\implies \\frac{4}{6} + \\frac{5}{b} = 1 \\implies \\frac{5}{b} = \\frac{1}{3} \\implies b = 15$ jam\n2. $\\frac{1}{a} = \\frac{1}{6} - \\frac{1}{15} = \\frac{5 - 2}{30} = \\frac{3}{30} = \\frac{1}{10} \\implies a = 10$ jam (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $4(\\frac{1}{a} + \\frac{1}{b}) + \\frac{5}{b} = 1 \\implies \\frac{4}{6} + \\frac{5}{b} = 1 \\implies \\frac{5}{b} = \\frac{1}{3} \\implies b = 15$ jam\n2. $\\frac{1}{a} = \\frac{1}{6} - \\frac{1}{15} = \\frac{5 - 2}{30} = \\frac{3}{30} = \\frac{1}{10} \\implies a = 10$ jam (Opsi B)."
         },
         {
           "id": "smp9-b1-20",
@@ -575,11 +575,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "10"
+              "text": "12"
             },
             {
               "key": "B",
-              "text": "12"
+              "text": "10"
             },
             {
               "key": "C",
@@ -590,9 +590,9 @@ export const grade9Data = {
               "text": "14"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Faktorkan: $(x - y)(x + y) = 33 \\implies (x - y)(11) = 33 \\implies x - y = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x + y = 11$\n2. $x - y = 3$\n3. Jumlahkan: $2x = 14 \\implies x = 7$\n4. $y = 11 - 7 = 4$\n5. $2(7) - 4 = 14 - 4 = 10$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x + y = 11$\n2. $x - y = 3$\n3. Jumlahkan: $2x = 14 \\implies x = 7$\n4. $y = 11 - 7 = 4$\n5. $2(7) - 4 = 14 - 4 = 10$ (Opsi B)."
         }
       ]
     },
@@ -655,24 +655,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "$1.540\\text{ cm}^3$"
-            },
-            {
-              "key": "B",
               "text": "$1.450\\text{ cm}^3$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$1.500\\text{ cm}^3$"
+            },
+            {
+              "key": "C",
+              "text": "$1.540\\text{ cm}^3$"
             },
             {
               "key": "D",
               "text": "$770\\text{ cm}^3$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Gunakan rumus volume tabung: $V = \\pi r^2 t$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 7^2 \\times 10 = \\frac{22}{7} \\times 49 \\times 10 = 22 \\times 7 \\times 10 = 1.540\\text{ cm}^3$$\nVolume tabung adalah **$1.540\\text{ cm}^3$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 7^2 \\times 10 = \\frac{22}{7} \\times 49 \\times 10 = 22 \\times 7 \\times 10 = 1.540\\text{ cm}^3$$\nVolume tabung adalah **$1.540\\text{ cm}^3$** (Opsi C)."
         },
         {
           "id": "smp9-b2-2",
@@ -709,11 +709,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "$616\\text{ cm}^2$"
+              "text": "$308\\text{ cm}^2$"
             },
             {
               "key": "B",
-              "text": "$308\\text{ cm}^2$"
+              "text": "$616\\text{ cm}^2$"
             },
             {
               "key": "C",
@@ -724,9 +724,9 @@ export const grade9Data = {
               "text": "$1.232\\text{ cm}^2$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan rumus luas permukaan bola: $L = 4\\pi r^2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 4 \\times \\frac{22}{7} \\times 7^2 = 4 \\times \\frac{22}{7} \\times 49 = 4 \\times 22 \\times 7 = 616\\text{ cm}^2$$\nLuas permukaannya adalah **$616\\text{ cm}^2$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 4 \\times \\frac{22}{7} \\times 7^2 = 4 \\times \\frac{22}{7} \\times 49 = 4 \\times 22 \\times 7 = 616\\text{ cm}^2$$\nLuas permukaannya adalah **$616\\text{ cm}^2$** (Opsi B)."
         },
         {
           "id": "smp9-b2-4",
@@ -736,24 +736,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "12 cm"
-            },
-            {
-              "key": "B",
               "text": "10 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "15 cm"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "9 cm"
+            },
+            {
+              "key": "D",
+              "text": "12 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Gunakan $V = \\frac{1}{3}\\pi r^2 t$, masukkan $V = 314$ dan $r = 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = \\frac{1}{3} \\times 3{,}14 \\times 5^2 \\times t$\n2. $314 = \\frac{1}{3} \\times 3{,}14 \\times 25 \\times t$\n3. Bagi kedua ruas dengan 3,14:\n$$100 = \\frac{25}{3} t \\implies t = \\frac{100 \\times 3}{25} = 4 \\times 3 = 12\\text{ cm}$$\nTinggi kerucut adalah **12 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = \\frac{1}{3} \\times 3{,}14 \\times 5^2 \\times t$\n2. $314 = \\frac{1}{3} \\times 3{,}14 \\times 25 \\times t$\n3. Bagi kedua ruas dengan 3,14:\n$$100 = \\frac{25}{3} t \\implies t = \\frac{100 \\times 3}{25} = 4 \\times 3 = 12\\text{ cm}$$\nTinggi kerucut adalah **12 cm** (Opsi D)."
         },
         {
           "id": "smp9-b2-5",
@@ -763,24 +763,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "1.540 liter"
-            },
-            {
-              "key": "B",
               "text": "1.500 liter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "1.450 liter"
+            },
+            {
+              "key": "C",
+              "text": "1.540 liter"
             },
             {
               "key": "D",
               "text": "770 liter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Ubah satuan ke cm: $r = 70\\text{ cm}$, tinggi $t = 1\\text{ m} = 100\\text{ cm}$. Cari volume dalam $\\text{cm}^3$, lalu bagi 1.000 untuk konversi ke liter.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Parameter: $r = \\frac{140}{2} = 70\\text{ cm}$ dan $t = 100\\text{ cm}$.\n2. Hitung volume tabung:\n$$V = \\frac{22}{7} \\times 70^2 \\times 100 = \\frac{22}{7} \\times 4.900 \\times 100 = 22 \\times 700 \\times 100 = 1.540.000\\text{ cm}^3$$\n3. Konversi ke liter:\n$$\\text{Volume} = \\frac{1.540.000}{1.000} = 1.540\\text{ liter}$$\nVolume minyak dalam drum adalah **1.540 liter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Parameter: $r = \\frac{140}{2} = 70\\text{ cm}$ dan $t = 100\\text{ cm}$.\n2. Hitung volume tabung:\n$$V = \\frac{22}{7} \\times 70^2 \\times 100 = \\frac{22}{7} \\times 4.900 \\times 100 = 22 \\times 700 \\times 100 = 1.540.000\\text{ cm}^3$$\n3. Konversi ke liter:\n$$\\text{Volume} = \\frac{1.540.000}{1.000} = 1.540\\text{ liter}$$\nVolume minyak dalam drum adalah **1.540 liter** (Opsi C)."
         },
         {
           "id": "smp9-b2-6",
@@ -790,24 +790,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "1.540 cm³"
-            },
-            {
-              "key": "B",
               "text": "1.450 cm³"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "1.520 cm³"
+            },
+            {
+              "key": "C",
+              "text": "1.540 cm³"
             },
             {
               "key": "D",
               "text": "1.600 cm³"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Rumus volume tabung: $V = \\pi r^2 t = \\frac{22}{7} \\times 7^2 \\times 10$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 49 \\times 10 = 154 \\times 10 = 1.540\\text{ cm}^3$$\nVolumenya adalah **1.540 cm³** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 49 \\times 10 = 154 \\times 10 = 1.540\\text{ cm}^3$$\nVolumenya adalah **1.540 cm³** (Opsi C)."
         },
         {
           "id": "smp9-b2-7",
@@ -844,11 +844,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "10 cm"
+              "text": "12 cm"
             },
             {
               "key": "B",
-              "text": "12 cm"
+              "text": "10 cm"
             },
             {
               "key": "C",
@@ -859,9 +859,9 @@ export const grade9Data = {
               "text": "9 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan teorema Pythagoras: $s = \\sqrt{r^2 + t^2} = \\sqrt{6^2 + 8^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$$\nPanjang garis pelukisnya adalah **10 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$$\nPanjang garis pelukisnya adalah **10 cm** (Opsi B)."
         },
         {
           "id": "smp9-b2-9",
@@ -871,24 +871,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "616 cm³"
-            },
-            {
-              "key": "B",
               "text": "528 cm³"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "640 cm³"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "580 cm³"
+            },
+            {
+              "key": "D",
+              "text": "616 cm³"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Volume kerucut $= \\frac{1}{3}\\pi r^2 t = \\frac{1}{3} \\times \\frac{22}{7} \\times 49 \\times 12$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{3} \\times 154 \\times 12 = 154 \\times 4 = 616\\text{ cm}^3$$\nVolumenya adalah **616 cm³** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{3} \\times 154 \\times 12 = 154 \\times 4 = 616\\text{ cm}^3$$\nVolumenya adalah **616 cm³** (Opsi D)."
         },
         {
           "id": "smp9-b2-10",
@@ -952,24 +952,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "385 liter"
-            },
-            {
-              "key": "B",
               "text": "350 liter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "420 liter"
+            },
+            {
+              "key": "C",
+              "text": "385 liter"
             },
             {
               "key": "D",
               "text": "320 liter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Jari-jari $= 35$ cm, tinggi $= 100$ cm. $V = \\frac{22}{7} \\times 35^2 \\times 100 = 385.000\\text{ cm}^3 = 385\\text{ liter}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 1.225 \\times 100 = 385.000\\text{ cm}^3 = 385\\text{ liter}$$\nVolume minyak adalah **385 liter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 1.225 \\times 100 = 385.000\\text{ cm}^3 = 385\\text{ liter}$$\nVolume minyak adalah **385 liter** (Opsi C)."
         },
         {
           "id": "smp9-b2-13",
@@ -1006,24 +1006,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "2 : 3"
-            },
-            {
-              "key": "B",
               "text": "1 : 2"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "3 : 4"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "1 : 3"
+            },
+            {
+              "key": "D",
+              "text": "2 : 3"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Volume bola $= \\frac{4}{3}\\pi r^3$. Volume tabung $= \\pi r^2 (2r) = 2\\pi r^3$. Rasio $= \\frac{4}{3} : 2 = 4 : 6 = 2 : 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{V_{\\text{bola}}}{V_{\\text{tabung}}} = \\frac{\\frac{4}{3}\\pi r^3}{2\\pi r^3} = \\frac{2}{3}$$\nPerbandingannya adalah **2 : 3** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{V_{\\text{bola}}}{V_{\\text{tabung}}} = \\frac{\\frac{4}{3}\\pi r^3}{2\\pi r^3} = \\frac{2}{3}$$\nPerbandingannya adalah **2 : 3** (Opsi D)."
         },
         {
           "id": "smp9-b2-15",
@@ -1033,11 +1033,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "942 cm²"
+              "text": "628 cm²"
             },
             {
               "key": "B",
-              "text": "628 cm²"
+              "text": "942 cm²"
             },
             {
               "key": "C",
@@ -1048,9 +1048,9 @@ export const grade9Data = {
               "text": "1.256 cm²"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Luas setengah bola pejal $= 3\\pi r^2 = 3 \\times 3{,}14 \\times 100$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 3\\pi r^2 = 3 \\times 314 = 942\\text{ cm}^2$$\nLuas permukaannya adalah **942 cm²** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 3\\pi r^2 = 3 \\times 314 = 942\\text{ cm}^2$$\nLuas permukaannya adalah **942 cm²** (Opsi B)."
         },
         {
           "id": "smp9-b2-16",
@@ -1060,24 +1060,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "2 : 1"
-            },
-            {
-              "key": "B",
               "text": "4 : 1"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "1 : 1"
+            },
+            {
+              "key": "C",
+              "text": "2 : 1"
             },
             {
               "key": "D",
               "text": "1 : 2"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "$V_2 = \\pi (2r)^2 (\\frac{1}{2}t) = \\pi (4r^2) (\\frac{1}{2}t) = 2\\pi r^2 t = 2 V_1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V_2 = \\pi (2r)^2 \\left(\\frac{1}{2}t\\right) = 2 \\pi r^2 t = 2V_1$$\nPerbandingannya adalah **2 : 1** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V_2 = \\pi (2r)^2 \\left(\\frac{1}{2}t\\right) = 2 \\pi r^2 t = 2V_1$$\nPerbandingannya adalah **2 : 1** (Opsi C)."
         },
         {
           "id": "smp9-b2-17",
@@ -1087,11 +1087,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "1.950,67 cm³"
+              "text": "1.840,33 cm³"
             },
             {
               "key": "B",
-              "text": "1.840,33 cm³"
+              "text": "1.950,67 cm³"
             },
             {
               "key": "C",
@@ -1102,9 +1102,9 @@ export const grade9Data = {
               "text": "1.750,25 cm³"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Volume kerucut: $\\frac{1}{3} \\times \\frac{22}{7} \\times 49 \\times 24 = 1.232$. Setengah bola: $\\frac{2}{3} \\times \\frac{22}{7} \\times 343 = 718{,}67$. Total $= 1.232 + 718{,}67 = 1.950{,}67$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V_{\\text{kerucut}} = \\frac{1}{3} \\times 154 \\times 24 = 1.232\\text{ cm}^3$\n2. $V_{\\text{setengah bola}} = \\frac{2}{3} \\times \\frac{22}{7} \\times 343 = 718{,}67\\text{ cm}^3$\n3. Total $= 1.232 + 718{,}67 = 1.950{,}67\\text{ cm}^3$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V_{\\text{kerucut}} = \\frac{1}{3} \\times 154 \\times 24 = 1.232\\text{ cm}^3$\n2. $V_{\\text{setengah bola}} = \\frac{2}{3} \\times \\frac{22}{7} \\times 343 = 718{,}67\\text{ cm}^3$\n3. Total $= 1.232 + 718{,}67 = 1.950{,}67\\text{ cm}^3$ (Opsi B)."
         },
         {
           "id": "smp9-b2-18",
@@ -1114,11 +1114,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "40 jam"
+              "text": "35 jam"
             },
             {
               "key": "B",
-              "text": "35 jam"
+              "text": "40 jam"
             },
             {
               "key": "C",
@@ -1129,9 +1129,9 @@ export const grade9Data = {
               "text": "50 jam"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Volume tangki $= \\frac{22}{7} \\times 1{,}4^2 \\times 2 = 12{,}32\\text{ m}^3 = 12.320\\text{ liter}$. Waktu $= 12.320 : 308 = 40$ jam.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = \\frac{22}{7} \\times 1{,}96 \\times 2 = 12{,}32\\text{ m}^3 = 12.320\\text{ liter}$\n2. Waktu $= 12.320 : 308 = 40\\text{ jam}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = \\frac{22}{7} \\times 1{,}96 \\times 2 = 12{,}32\\text{ m}^3 = 12.320\\text{ liter}$\n2. Waktu $= 12.320 : 308 = 40\\text{ jam}$ (Opsi B)."
         },
         {
           "id": "smp9-b2-19",
@@ -1141,24 +1141,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "1.306,24 cm³"
-            },
-            {
-              "key": "B",
               "text": "1.250,50 cm³"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "1.420,10 cm³"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "1.180,60 cm³"
+            },
+            {
+              "key": "D",
+              "text": "1.306,24 cm³"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Volume kerucut terpancung: $V = \\frac{1}{3}\\pi t (R^2 + Rr + r^2) = \\frac{1}{3} \\times 3{,}14 \\times 8 \\times (100 + 40 + 16) = \\frac{1}{3} \\times 25{,}12 \\times 156 = 1.306{,}24$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{3}\\pi t (R^2 + Rr + r^2) = \\frac{1}{3} \\times 3{,}14 \\times 8 \\times 156 = 1.306{,}24\\text{ cm}^3$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{3}\\pi t (R^2 + Rr + r^2) = \\frac{1}{3} \\times 3{,}14 \\times 8 \\times 156 = 1.306{,}24\\text{ cm}^3$$ (Opsi D)."
         },
         {
           "id": "smp9-b2-20",
@@ -1168,24 +1168,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "2.794,6 gram"
-            },
-            {
-              "key": "B",
               "text": "2.540,0 gram"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "2.980,0 gram"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "3.140,0 gram"
+            },
+            {
+              "key": "D",
+              "text": "2.794,6 gram"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Volume kawat $= \\pi r^2 t = 3{,}14 \\times (0{,}1)^2 \\times 10.000 = 314\\text{ cm}^3$. Massa $= 314 \\times 8{,}9 = 2.794{,}6$ gram.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = 3{,}14 \\times 0{,}01 \\times 10.000 = 314\\text{ cm}^3$\n2. $\\text{Massa} = 314 \\times 8{,}9 = 2.794{,}6\\text{ gram}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = 3{,}14 \\times 0{,}01 \\times 10.000 = 314\\text{ cm}^3$\n2. $\\text{Massa} = 314 \\times 8{,}9 = 2.794{,}6\\text{ gram}$ (Opsi D)."
         }
       ]
     },
@@ -1249,24 +1249,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "$(1, 2)$"
-            },
-            {
-              "key": "B",
               "text": "$(5, 2)$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$(1, -12)$"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "$(-6, -35)$"
+            },
+            {
+              "key": "D",
+              "text": "$(1, 2)$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Jumlahkan komponen absis dan ordinat: $x' = 3 + (-2)$ dan $y' = -5 + 7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x' = 3 + (-2) = 1$\n2. $y' = -5 + 7 = 2$\nKoordinat bayangannya adalah **$(1, 2)$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x' = 3 + (-2) = 1$\n2. $y' = -5 + 7 = 2$\nKoordinat bayangannya adalah **$(1, 2)$** (Opsi D)."
         },
         {
           "id": "smp9-b3-2",
@@ -1276,24 +1276,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "$(-4, -6)$"
-            },
-            {
-              "key": "B",
               "text": "$(4, 6)$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$(4, -6)$"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "$(6, -4)$"
+            },
+            {
+              "key": "D",
+              "text": "$(-4, -6)$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Pencerminan terhadap sumbu-$x$ mengubah tanda $y$ menjadi lawannya: $(x, y) \\to (x, -y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Absis $x$ tetap: $-4$.\n2. Ordinat $y$ dinegatifkan: $-(6) = -6$.\nBayangannya adalah **$(-4, -6)$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Absis $x$ tetap: $-4$.\n2. Ordinat $y$ dinegatifkan: $-(6) = -6$.\nBayangannya adalah **$(-4, -6)$** (Opsi D)."
         },
         {
           "id": "smp9-b3-3",
@@ -1303,11 +1303,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "$(-2, 5)$"
+              "text": "$(2, -5)$"
             },
             {
               "key": "B",
-              "text": "$(2, -5)$"
+              "text": "$(-2, 5)$"
             },
             {
               "key": "C",
@@ -1318,9 +1318,9 @@ export const grade9Data = {
               "text": "$(2, 5)$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rumus rotasi $[O, 90^\\circ]$ berlawanan arah jarum jam: $(x, y) \\to (-y, x)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x = 5, y = 2$\n2. Masukkan ke rumus: $(-y, x) = (-2, 5)$\nKoordinat bayangannya adalah **$(-2, 5)$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x = 5, y = 2$\n2. Masukkan ke rumus: $(-y, x) = (-2, 5)$\nKoordinat bayangannya adalah **$(-2, 5)$** (Opsi B)."
         },
         {
           "id": "smp9-b3-4",
@@ -1357,11 +1357,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "A'(5, 3)"
+              "text": "A'(5, 7)"
             },
             {
               "key": "B",
-              "text": "A'(5, 7)"
+              "text": "A'(5, 3)"
             },
             {
               "key": "C",
@@ -1372,9 +1372,9 @@ export const grade9Data = {
               "text": "A'(6, -10)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Jumlahkan koordinat awal dengan vektor translasi: $(x + a, y + b) = (2 + 3, 5 - 2)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A' = (2 + 3, 5 - 2) = (5, 3)$$\nKoordinat bayangannya adalah **A'(5, 3)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A' = (2 + 3, 5 - 2) = (5, 3)$$\nKoordinat bayangannya adalah **A'(5, 3)** (Opsi B)."
         },
         {
           "id": "smp9-b3-6",
@@ -1384,11 +1384,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "B'(-4, -7)"
+              "text": "B'(4, 7)"
             },
             {
               "key": "B",
-              "text": "B'(4, 7)"
+              "text": "B'(-4, -7)"
             },
             {
               "key": "C",
@@ -1399,9 +1399,9 @@ export const grade9Data = {
               "text": "B'(-7, -4)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Refleksi terhadap sumbu-$X$: $(x, y) \\to (x, -y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$B'(-4, -7)$$\nBayangannya adalah **B'(-4, -7)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$B'(-4, -7)$$\nBayangannya adalah **B'(-4, -7)** (Opsi B)."
         },
         {
           "id": "smp9-b3-7",
@@ -1438,24 +1438,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "D'(2, 5)"
-            },
-            {
-              "key": "B",
               "text": "D'(-5, -2)"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "D'(-2, -5)"
+            },
+            {
+              "key": "C",
+              "text": "D'(2, 5)"
             },
             {
               "key": "D",
               "text": "D'(5, -2)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Refleksi terhadap garis $y = x$: $(x, y) \\to (y, x)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$D'(2, 5)$$\nBayangannya adalah **D'(2, 5)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$D'(2, 5)$$\nBayangannya adalah **D'(2, 5)** (Opsi C)."
         },
         {
           "id": "smp9-b3-9",
@@ -1465,24 +1465,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "P'(3, 4)"
-            },
-            {
-              "key": "B",
               "text": "P'(-3, -4)"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "P'(-4, 3)"
+            },
+            {
+              "key": "C",
+              "text": "P'(3, 4)"
             },
             {
               "key": "D",
               "text": "P'(4, 3)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Rotasi $[O, 90^\\circ]$: $(x, y) \\to (-y, x)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P'(-(-3), 4) = P'(3, 4)$$\nBayangannya adalah **P'(3, 4)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P'(-(-3), 4) = P'(3, 4)$$\nBayangannya adalah **P'(3, 4)** (Opsi C)."
         },
         {
           "id": "smp9-b3-10",
@@ -1492,24 +1492,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "Q'(-6, 18)"
-            },
-            {
-              "key": "B",
               "text": "Q'(-6, 2)"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Q'(1, 9)"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Q'(6, -18)"
+            },
+            {
+              "key": "D",
+              "text": "Q'(-6, 18)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Dilatasi $[O, k]$: $(x, y) \\to (kx, ky) = (3(-2), 3(6))$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Q' = (3 \\times (-2), 3 \\times 6) = (-6, 18)$$\nBayangannya adalah **Q'(-6, 18)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Q' = (3 \\times (-2), 3 \\times 6) = (-6, 18)$$\nBayangannya adalah **Q'(-6, 18)** (Opsi D)."
         },
         {
           "id": "smp9-b3-11",
@@ -1519,24 +1519,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "A'(-1, 8)"
-            },
-            {
-              "key": "B",
               "text": "A'(3, 7)"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "A'(-1, 6)"
+            },
+            {
+              "key": "C",
+              "text": "A'(-1, 8)"
             },
             {
               "key": "D",
               "text": "A'(1, 8)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Translasi gabungan: $T = T_1 + T_2 = \\begin{pmatrix} 2 - 4 \\\\ 3 + 1 \\end{pmatrix} = \\begin{pmatrix} -2 \\\\ 4 \\end{pmatrix}$. $A' = (1 - 2, 4 + 4)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A' = (1 + 2 - 4, 4 + 3 + 1) = (-1, 8)$$\nBayangannya adalah **A'(-1, 8)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A' = (1 + 2 - 4, 4 + 3 + 1) = (-1, 8)$$\nBayangannya adalah **A'(-1, 8)** (Opsi C)."
         },
         {
           "id": "smp9-b3-12",
@@ -1546,11 +1546,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "K'(7, 7)"
+              "text": "K'(5, 7)"
             },
             {
               "key": "B",
-              "text": "K'(5, 7)"
+              "text": "K'(7, 7)"
             },
             {
               "key": "C",
@@ -1561,9 +1561,9 @@ export const grade9Data = {
               "text": "K'(8, 7)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Refleksi terhadap $x = h$: $x' = 2h - x = 2(5) - 3 = 7$, sedangkan $y' = y = 7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x' = 2(5) - 3 = 7, \\quad y' = 7 \\implies K'(7, 7)$$\nBayangannya adalah **K'(7, 7)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x' = 2(5) - 3 = 7, \\quad y' = 7 \\implies K'(7, 7)$$\nBayangannya adalah **K'(7, 7)** (Opsi B)."
         },
         {
           "id": "smp9-b3-13",
@@ -1600,24 +1600,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "R'(-5, 1)"
-            },
-            {
-              "key": "B",
               "text": "R'(5, 1)"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "R'(-1, 5)"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "R'(-5, -1)"
+            },
+            {
+              "key": "D",
+              "text": "R'(-5, 1)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Rotasi $[O, 180^\\circ]$: $(x, y) \\to (-x, -y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R'(-5, -(-1)) = R'(-5, 1)$$\nBayangannya adalah **R'(-5, 1)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R'(-5, -(-1)) = R'(-5, 1)$$\nBayangannya adalah **R'(-5, 1)** (Opsi D)."
         },
         {
           "id": "smp9-b3-15",
@@ -1627,24 +1627,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "240 cm²"
-            },
-            {
-              "key": "B",
               "text": "60 cm²"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "120 cm²"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "180 cm²"
+            },
+            {
+              "key": "D",
+              "text": "240 cm²"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Luas bangun hasil dilatasi $= k^2 \\times \\text{Luas awal} = 4^2 \\times 15 = 16 \\times 15 = 240$ cm².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas bayangan} = 4^2 \\times 15 = 16 \\times 15 = 240\\text{ cm}^2$$\nLuasnya adalah **240 cm²** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas bayangan} = 4^2 \\times 15 = 16 \\times 15 = 240\\text{ cm}^2$$\nLuasnya adalah **240 cm²** (Opsi D)."
         },
         {
           "id": "smp9-b3-16",
@@ -1654,11 +1654,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "2x + 3y = 2"
+              "text": "2x + 3y = 10"
             },
             {
               "key": "B",
-              "text": "2x + 3y = 10"
+              "text": "2x + 3y = 2"
             },
             {
               "key": "C",
@@ -1669,9 +1669,9 @@ export const grade9Data = {
               "text": "3x + 2y = 4"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan substitusi $x = x' - 1$ dan $y = y' + 2$: $2(x - 1) + 3(y + 2) = 6 \\implies 2x - 2 + 3y + 6 = 6 \\implies 2x + 3y = 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2(x - 1) + 3(y + 2) = 6 \\implies 2x + 3y + 4 = 6 \\implies 2x + 3y = 2$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2(x - 1) + 3(y + 2) = 6 \\implies 2x + 3y + 4 = 6 \\implies 2x + 3y = 2$$ (Opsi B)."
         },
         {
           "id": "smp9-b3-17",
@@ -1681,24 +1681,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "P'(2, 2)"
-            },
-            {
-              "key": "B",
               "text": "P'(4, 2)"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "P'(2, -2)"
+            },
+            {
+              "key": "C",
+              "text": "P'(2, 2)"
             },
             {
               "key": "D",
               "text": "P'(3, 1)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "1. Refleksi $y = -x$: $(x, y) \\to (-y, -x) = (3, -2)$. 2. Translasi: $(3 - 1, -2 + 4) = (2, 2)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Cermin $y = -x$: $P'(3, -2)$\n2. Translasi: $P''(3 - 1, -2 + 4) = P''(2, 2)$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Cermin $y = -x$: $P'(3, -2)$\n2. Translasi: $P''(3 - 1, -2 + 4) = P''(2, 2)$ (Opsi C)."
         },
         {
           "id": "smp9-b3-18",
@@ -1762,24 +1762,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "1.232 cm²"
-            },
-            {
-              "key": "B",
               "text": "1.386 cm²"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "1.540 cm²"
+            },
+            {
+              "key": "C",
+              "text": "1.232 cm²"
             },
             {
               "key": "D",
               "text": "1.078 cm²"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Luas awal $= \\frac{22}{7} \\times 49 = 154$ cm². Luas baru $= 3^2 \\times 154 = 9 \\times 154 = 1.386$ cm². Pertambahan luas $= 1.386 - 154 = 1.232$ cm².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Luas awal $= 154\\text{ cm}^2$\n2. Luas baru $= 9 \\times 154 = 1.386\\text{ cm}^2$\n3. Pertambahan $= 1.386 - 154 = 1.232\\text{ cm}^2$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Luas awal $= 154\\text{ cm}^2$\n2. Luas baru $= 9 \\times 154 = 1.386\\text{ cm}^2$\n3. Pertambahan $= 1.386 - 154 = 1.232\\text{ cm}^2$ (Opsi C)."
         }
       ]
     },
@@ -1890,11 +1890,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{5}{12}$"
+              "text": "$\\frac{1}{3}$"
             },
             {
               "key": "B",
-              "text": "$\\frac{1}{3}$"
+              "text": "$\\frac{5}{12}$"
             },
             {
               "key": "C",
@@ -1905,9 +1905,9 @@ export const grade9Data = {
               "text": "$\\frac{1}{2}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Total seluruh kelereng: $8 + 10 + 6 = 24$. Peluangnya adalah $\\frac{10}{24}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Ruang sampel: $n(S) = 8 + 10 + 6 = 24$.\n2. Kelereng kuning: $n(K) = 10$.\n3. Peluang: $P = \\frac{10}{24} = \\frac{5}{12}$.\nPeluangnya adalah **$\\frac{5}{12}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Ruang sampel: $n(S) = 8 + 10 + 6 = 24$.\n2. Kelereng kuning: $n(K) = 10$.\n3. Peluang: $P = \\frac{10}{24} = \\frac{5}{12}$.\nPeluangnya adalah **$\\frac{5}{12}$** (Opsi B)."
         },
         {
           "id": "smp9-b4-4",
@@ -1917,24 +1917,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "30 kali"
-            },
-            {
-              "key": "B",
               "text": "60 kali"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "20 kali"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "40 kali"
+            },
+            {
+              "key": "D",
+              "text": "30 kali"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Peluang sisi Gambar $= \\frac{1}{2}$, peluang mata dadu ganjil $\\{1, 3, 5\\} = \\frac{3}{6} = \\frac{1}{2}$. Kalikan keduanya, lalu kalikan 120.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Peluang gabungan saling bebas:\n$$P = P(\\text{Gambar}) \\times P(\\text{Ganjil}) = \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$$\n2. Frekuensi harapan:\n$$F_h = 120 \\times \\frac{1}{4} = 30\\text{ kali}$$\nFrekuensi harapan adalah **30 kali** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Peluang gabungan saling bebas:\n$$P = P(\\text{Gambar}) \\times P(\\text{Ganjil}) = \\frac{1}{2} \\times \\frac{1}{2} = \\frac{1}{4}$$\n2. Frekuensi harapan:\n$$F_h = 120 \\times \\frac{1}{4} = 30\\text{ kali}$$\nFrekuensi harapan adalah **30 kali** (Opsi D)."
         },
         {
           "id": "smp9-b4-5",
@@ -1944,11 +1944,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "Sebagian dari populasi yang diambil untuk mewakili populasi"
+              "text": "Data yang sudah diolah menjadi tabel"
             },
             {
               "key": "B",
-              "text": "Data yang sudah diolah menjadi tabel"
+              "text": "Sebagian dari populasi yang diambil untuk mewakili populasi"
             },
             {
               "key": "C",
@@ -1959,9 +1959,9 @@ export const grade9Data = {
               "text": "Jumlah frekuensi terbanyak"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Sampel merupakan bagian representatif yang diambil dari populasi.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSampel adalah **sebagian dari populasi yang mewakili populasi** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSampel adalah **sebagian dari populasi yang mewakili populasi** (Opsi B)."
         },
         {
           "id": "smp9-b4-6",
@@ -1971,24 +1971,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "Air sumur seluruh rumah di desa tersebut (500 rumah)"
-            },
-            {
-              "key": "B",
               "text": "Air sumur dari 25 rumah yang diambil"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Peneliti yang mengambil sampel"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Kedalaman sumur rata-rata"
+            },
+            {
+              "key": "D",
+              "text": "Air sumur seluruh rumah di desa tersebut (500 rumah)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Populasi mencakup seluruh sasaran: air sumur seluruh 500 rumah.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPopulasinya adalah **air sumur seluruh rumah di desa tersebut** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPopulasinya adalah **air sumur seluruh rumah di desa tersebut** (Opsi D)."
         },
         {
           "id": "smp9-b4-7",
@@ -1998,24 +1998,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{6}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{1}{12}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{1}{36}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{1}{4}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{1}{6}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Mata dadu kembar: (1,1), (2,2), (3,3), (4,4), (5,5), (6,6) ada 6 dari 36 kemungkinan. Peluang $= \\frac{6}{36} = \\frac{1}{6}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{36} = \\frac{1}{6}$$\nPeluangnya adalah **$\\frac{1}{6}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{36} = \\frac{1}{6}$$\nPeluangnya adalah **$\\frac{1}{6}$** (Opsi D)."
         },
         {
           "id": "smp9-b4-8",
@@ -2052,24 +2052,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "80 kali"
-            },
-            {
-              "key": "B",
               "text": "60 kali"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "90 kali"
+            },
+            {
+              "key": "C",
+              "text": "80 kali"
             },
             {
               "key": "D",
               "text": "40 kali"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Peluang faktor dari 6 $= \\frac{4}{6} = \\frac{2}{3}$. Frekuensi harapan $= 120 \\times \\frac{2}{3} = 80$ kali.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$F_h = 120 \\times \\frac{4}{6} = 80\\text{ kali}$$\nFrekuensi harapannya adalah **80 kali** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$F_h = 120 \\times \\frac{4}{6} = 80\\text{ kali}$$\nFrekuensi harapannya adalah **80 kali** (Opsi C)."
         },
         {
           "id": "smp9-b4-10",
@@ -2079,24 +2079,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{13}{20}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{7}{20}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{3}{5}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{13}{20}"
             },
             {
               "key": "D",
               "text": "\\frac{1}{2}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Bukan kuning $= 8 + 5 = 13$. Total $= 20$. Peluang $= \\frac{13}{20}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = 1 - \\frac{7}{20} = \\frac{13}{20}$$\nPeluangnya adalah **$\\frac{13}{20}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = 1 - \\frac{7}{20} = \\frac{13}{20}$$\nPeluangnya adalah **$\\frac{13}{20}$** (Opsi C)."
         },
         {
           "id": "smp9-b4-11",
@@ -2106,24 +2106,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{3}{8}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{1}{4}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{1}{2}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{1}{8}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{3}{8}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kejadian tepat 2 Gambar: (G,G,A), (G,A,G), (A,G,G) ada 3 dari 8 kemungkinan.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{3}{8}$$\nPeluangnya adalah **$\\frac{3}{8}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{3}{8}$$\nPeluangnya adalah **$\\frac{3}{8}$** (Opsi D)."
         },
         {
           "id": "smp9-b4-12",
@@ -2133,24 +2133,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "280 suara"
-            },
-            {
-              "key": "B",
               "text": "250 suara"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "300 suara"
+            },
+            {
+              "key": "C",
+              "text": "280 suara"
             },
             {
               "key": "D",
               "text": "320 suara"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Proporsi sampel $= \\frac{35}{50} = 0{,}7$. Estimasi total $= 0{,}7 \\times 400 = 280$ suara.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Estimasi} = \\frac{35}{50} \\times 400 = 280\\text{ suara}$$\nPerkiraannya adalah **280 suara** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Estimasi} = \\frac{35}{50} \\times 400 = 280\\text{ suara}$$\nPerkiraannya adalah **280 suara** (Opsi C)."
         },
         {
           "id": "smp9-b4-13",
@@ -2160,24 +2160,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{6}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{5}{36}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{1}{9}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{6}"
             },
             {
               "key": "D",
               "text": "\\frac{7}{36}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Pasangan jumlah < 5: jumlah 2 (1,1), jumlah 3 (1,2),(2,1), jumlah 4 (1,3),(2,2),(3,1) total 6 pasangan. Peluang $= \\frac{6}{36} = \\frac{1}{6}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{36} = \\frac{1}{6}$$\nPeluangnya adalah **$\\frac{1}{6}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{36} = \\frac{1}{6}$$\nPeluangnya adalah **$\\frac{1}{6}$** (Opsi C)."
         },
         {
           "id": "smp9-b4-14",
@@ -2214,11 +2214,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "6 kali"
+              "text": "8 kali"
             },
             {
               "key": "B",
-              "text": "8 kali"
+              "text": "6 kali"
             },
             {
               "key": "C",
@@ -2229,9 +2229,9 @@ export const grade9Data = {
               "text": "7 kali"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Peluang meleset $= 1 - 0{,}85 = 0{,}15$. Frekuensi meleset $= 40 \\times 0{,}15 = 6$ kali.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$F_h = 40 \\times (1 - 0{,}85) = 40 \\times 0{,}15 = 6\\text{ kali}$$\nFrekuensi meleset adalah **6 kali** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$F_h = 40 \\times (1 - 0{,}85) = 40 \\times 0{,}15 = 6\\text{ kali}$$\nFrekuensi meleset adalah **6 kali** (Opsi B)."
         },
         {
           "id": "smp9-b4-16",
@@ -2241,11 +2241,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{4}{15}"
+              "text": "\\frac{6}{25}"
             },
             {
               "key": "B",
-              "text": "\\frac{6}{25}"
+              "text": "\\frac{4}{15}"
             },
             {
               "key": "C",
@@ -2256,9 +2256,9 @@ export const grade9Data = {
               "text": "\\frac{2}{9}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Peluang merah pertama $= \\frac{6}{10}$. Peluang putih kedua $= \\frac{4}{9}$. Peluang bersama $= \\frac{6}{10} \\times \\frac{4}{9} = \\frac{24}{90} = \\frac{4}{15}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{10} \\times \\frac{4}{9} = \\frac{24}{90} = \\frac{4}{15}$$\nPeluangnya adalah **$\\frac{4}{15}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{10} \\times \\frac{4}{9} = \\frac{24}{90} = \\frac{4}{15}$$\nPeluangnya adalah **$\\frac{4}{15}$** (Opsi B)."
         },
         {
           "id": "smp9-b4-17",
@@ -2268,24 +2268,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{15}{36} = \\frac{5}{12}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{7}{18}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{1}{2}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{15}{36} = \\frac{5}{12}"
             },
             {
               "key": "D",
               "text": "\\frac{13}{36}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Jumlah 2: 1 pasang; Jumlah 3: 2 pasang; Jumlah 5: 4 pasang; Jumlah 7: 6 pasang; Jumlah 11: 2 pasang. Total $= 1 + 2 + 4 + 6 + 2 = 15$. Peluang $= \\frac{15}{36} = \\frac{5}{12}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{15}{36} = \\frac{5}{12}$$\nPeluangnya adalah **$\\frac{5}{12}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{15}{36} = \\frac{5}{12}$$\nPeluangnya adalah **$\\frac{5}{12}$** (Opsi C)."
         },
         {
           "id": "smp9-b4-18",
@@ -2295,24 +2295,24 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{7}{8}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{3}{4}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{1}{2}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{3}{8}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{7}{8}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Gunakan komplemen: $1 - P(\\text{semua perempuan}) = 1 - \\frac{1}{8} = \\frac{7}{8}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = 1 - \\left(\\frac{1}{2}\\right)^3 = 1 - \\frac{1}{8} = \\frac{7}{8}$$\nPeluangnya adalah **$\\frac{7}{8}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = 1 - \\left(\\frac{1}{2}\\right)^3 = 1 - \\frac{1}{8} = \\frac{7}{8}$$\nPeluangnya adalah **$\\frac{7}{8}$** (Opsi D)."
         },
         {
           "id": "smp9-b4-19",
@@ -2349,11 +2349,11 @@ export const grade9Data = {
           "options": [
             {
               "key": "A",
-              "text": "Stratified Random Sampling"
+              "text": "Simple Random Sampling"
             },
             {
               "key": "B",
-              "text": "Simple Random Sampling"
+              "text": "Stratified Random Sampling"
             },
             {
               "key": "C",
@@ -2364,9 +2364,9 @@ export const grade9Data = {
               "text": "Convenience Sampling"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Pengambilan sampel berstrata sesuai tingkatan disebut stratified random sampling.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTeknik tersebut adalah **Stratified Random Sampling** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTeknik tersebut adalah **Stratified Random Sampling** (Opsi B)."
         }
       ]
     }

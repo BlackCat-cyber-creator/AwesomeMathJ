@@ -61,24 +61,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "0"
-            },
-            {
-              "key": "B",
               "text": "-10"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "-14"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "4"
+            },
+            {
+              "key": "D",
+              "text": "0"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Ubah $-(-5)$ menjadi $+5$, lalu operasikan dari kiri: $-12 + 7 + 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $-12 + 7 = -5$\n2. $-5 - (-5) = -5 + 5 = 0$\nHasilnya adalah **0** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $-12 + 7 = -5$\n2. $-5 - (-5) = -5 + 5 = 0$\nHasilnya adalah **0** (Opsi D)."
         },
         {
           "id": "smp7-b1-2",
@@ -88,24 +88,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "12"
-            },
-            {
-              "key": "B",
               "text": "-12"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "8"
+            },
+            {
+              "key": "C",
+              "text": "12"
             },
             {
               "key": "D",
               "text": "-8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Perkalian tanda beda menghasilkan negatif: $(-6) \\times 4 = -24$. Lalu negatif dibagi negatif menghasilkan positif.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(-6) \\times 4 = -24$\n2. $-24 : (-2) = 12$\nHasilnya adalah **12** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(-6) \\times 4 = -24$\n2. $-24 : (-2) = 12$\nHasilnya adalah **12** (Opsi C)."
         },
         {
           "id": "smp7-b1-3",
@@ -142,24 +142,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "109"
-            },
-            {
-              "key": "B",
               "text": "112"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "115"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "105"
+            },
+            {
+              "key": "D",
+              "text": "109"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Hitung jumlah soal yang dijawab salah terlebih dahulu: $40 - 31 - 3 = 6$ soal salah.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Soal salah: $40 - (31 + 3) = 40 - 34 = 6$ soal.\n2. Hitung skor perolehan:\n- Benar: $31 \\times 4 = 124$\n- Salah: $6 \\times (-2) = -12$\n- Tidak dijawab: $3 \\times (-1) = -3$\n3. Total skor:\n$$\\text{Total} = 124 + (-12) + (-3) = 124 - 15 = 109$$\nTotal skor yang diperoleh adalah **109** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Soal salah: $40 - (31 + 3) = 40 - 34 = 6$ soal.\n2. Hitung skor perolehan:\n- Benar: $31 \\times 4 = 124$\n- Salah: $6 \\times (-2) = -12$\n- Tidak dijawab: $3 \\times (-1) = -3$\n3. Total skor:\n$$\\text{Total} = 124 + (-12) + (-3) = 124 - 15 = 109$$\nTotal skor yang diperoleh adalah **109** (Opsi D)."
         },
         {
           "id": "smp7-b1-5",
@@ -169,11 +169,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "-43"
+              "text": "43"
             },
             {
               "key": "B",
-              "text": "43"
+              "text": "-43"
             },
             {
               "key": "C",
@@ -184,9 +184,9 @@ export const grade7Data = {
               "text": "13"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Penjumlahan dua bilangan negatif menghasilkan bilangan negatif dengan menjumlahkan nilai mutlaknya: $-(15 + 28)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-15 + (-28) = -(15 + 28) = -43$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-15 + (-28) = -(15 + 28) = -43$$ (Opsi B)."
         },
         {
           "id": "smp7-b1-6",
@@ -196,24 +196,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "96"
-            },
-            {
-              "key": "B",
               "text": "-96"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "84"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "-84"
+            },
+            {
+              "key": "D",
+              "text": "96"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Perkalian dua bilangan bulat bertanda sama (negatif kali negatif) menghasilkan bilangan positif: $(-a) \\times (-b) = a \\times b$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(-8) \\times (-12) = 96$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(-8) \\times (-12) = 96$$ (Opsi D)."
         },
         {
           "id": "smp7-b1-7",
@@ -223,11 +223,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "-9"
+              "text": "9"
             },
             {
               "key": "B",
-              "text": "9"
+              "text": "-9"
             },
             {
               "key": "C",
@@ -238,9 +238,9 @@ export const grade7Data = {
               "text": "8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Pembagian bilangan berbeda tanda (negatif dibagi positif) menghasilkan bilangan negatif.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(-72) : 8 = -9$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(-72) : 8 = -9$$ (Opsi B)."
         },
         {
           "id": "smp7-b1-8",
@@ -277,24 +277,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "-1°C"
-            },
-            {
-              "key": "B",
               "text": "1°C"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "-5°C"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "2°C"
+            },
+            {
+              "key": "D",
+              "text": "-1°C"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Operasikan: $-3 + 8 - 6 = 5 - 6 = -1^\\circ\\text{C}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-3 + 8 - 6 = -1^\\circ\\text{C}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-3 + 8 - 6 = -1^\\circ\\text{C}$$ (Opsi D)."
         },
         {
           "id": "smp7-b1-10",
@@ -304,11 +304,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "15 meter di bawah permukaan laut"
+              "text": "21 meter di bawah permukaan laut"
             },
             {
               "key": "B",
-              "text": "21 meter di bawah permukaan laut"
+              "text": "15 meter di bawah permukaan laut"
             },
             {
               "key": "C",
@@ -319,9 +319,9 @@ export const grade7Data = {
               "text": "17 meter di bawah permukaan laut"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Posisi awal $-18$. Naik $+7$, turun $-4$: $-18 + 7 - 4 = -15$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-18 + 7 - 4 = -15\\text{ meter}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-18 + 7 - 4 = -15\\text{ meter}$$ (Opsi B)."
         },
         {
           "id": "smp7-b1-11",
@@ -331,24 +331,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "112"
-            },
-            {
-              "key": "B",
               "text": "118"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "124"
+            },
+            {
+              "key": "C",
+              "text": "112"
             },
             {
               "key": "D",
               "text": "106"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Soal salah $= 40 - 31 - 3 = 6$. Total skor $= (31 \\times 4) + (6 \\times (-2)) + (3 \\times 0) = 124 - 12 = 112$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Skor} = (31 \\times 4) + (6 \\times (-2)) = 124 - 12 = 112$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Skor} = (31 \\times 4) + (6 \\times (-2)) = 124 - 12 = 112$$ (Opsi C)."
         },
         {
           "id": "smp7-b1-12",
@@ -358,11 +358,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "3°C"
+              "text": "-3°C"
             },
             {
               "key": "B",
-              "text": "-3°C"
+              "text": "3°C"
             },
             {
               "key": "C",
@@ -373,9 +373,9 @@ export const grade7Data = {
               "text": "5°C"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kenaikan terjadi sebanyak $25 : 5 = 5$ kali. Kenaikan $= 5 \\times 3 = 15^\\circ\\text{C}$. Suhu akhir $= -12 + 15 = 3^\\circ\\text{C}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-12 + \\left(\\frac{25}{5} \\times 3\\right) = -12 + 15 = 3^\\circ\\text{C}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-12 + \\left(\\frac{25}{5} \\times 3\\right) = -12 + 15 = 3^\\circ\\text{C}$$ (Opsi B)."
         },
         {
           "id": "smp7-b1-13",
@@ -412,24 +412,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "24"
-            },
-            {
-              "key": "B",
               "text": "12"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "16"
+            },
+            {
+              "key": "C",
+              "text": "24"
             },
             {
               "key": "D",
               "text": "8"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Faktorisasi prima: $48 = 2^4 \\times 3$ dan $72 = 2^3 \\times 3^2$. $\\text{FPB} = 2^3 \\times 3 = 24$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{FPB} = 2^3 \\times 3 = 24$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{FPB} = 2^3 \\times 3 = 24$$ (Opsi C)."
         },
         {
           "id": "smp7-b1-15",
@@ -466,24 +466,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "24 detik"
-            },
-            {
-              "key": "B",
               "text": "36 detik"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "48 detik"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "18 detik"
+            },
+            {
+              "key": "D",
+              "text": "24 detik"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Cari KPK dari 6, 8, dan 12: $\\text{KPK}(6, 8, 12) = 24$ detik.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{KPK}(6, 8, 12) = 24\\text{ detik}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{KPK}(6, 8, 12) = 24\\text{ detik}$$ (Opsi D)."
         },
         {
           "id": "smp7-b1-17",
@@ -520,11 +520,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "48 menit"
+              "text": "45 menit"
             },
             {
               "key": "B",
-              "text": "45 menit"
+              "text": "48 menit"
             },
             {
               "key": "C",
@@ -535,9 +535,9 @@ export const grade7Data = {
               "text": "50 menit"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Total penurunan suhu $= 25 - (-7) = 32^\\circ\\text{C}$. Banyak kali penurunan $= 32 : 2 = 16$ kali. Waktu $= 16 \\times 3 = 48$ menit.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Penurunan suhu: $25 - (-7) = 32^\\circ\\text{C}$\n2. Waktu: $\\frac{32}{2} \\times 3 = 48\\text{ menit}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Penurunan suhu: $25 - (-7) = 32^\\circ\\text{C}$\n2. Waktu: $\\frac{32}{2} \\times 3 = 48\\text{ menit}$ (Opsi B)."
         },
         {
           "id": "smp7-b1-19",
@@ -547,24 +547,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "16"
-            },
-            {
-              "key": "B",
               "text": "24"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "8"
+            },
+            {
+              "key": "C",
+              "text": "16"
             },
             {
               "key": "D",
               "text": "20"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kelipatan 4 antara -50 dan 50: $\\pm 4, \\pm 8, \\dots, \\pm 48$ (ada $12 \\times 2 = 24$ bilangan, tambah 0 jika non-nol atau cek batas). Antara -50 dan 50: kelipatan 4 positif ada 12 (4..48), negatif ada 12 (-4..-48), total 24 (tidak termasuk 0). Kelipatan 12 (KPK 4 dan 6): positif ada 4 (12,24,36,48), negatif ada 4 (-12,-24,-36,-48), total 8. Sisa $= 24 - 8 = 16$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Kelipatan 4: $12 + 12 = 24$\n2. Kelipatan 12: $4 + 4 = 8$\n3. Banyak bilangan: $24 - 8 = 16$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Kelipatan 4: $12 + 12 = 24$\n2. Kelipatan 12: $4 + 4 = 8$\n3. Banyak bilangan: $24 - 8 = 16$ (Opsi C)."
         },
         {
           "id": "smp7-b1-20",
@@ -574,24 +574,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "13"
-            },
-            {
-              "key": "B",
               "text": "11"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "9"
+            },
+            {
+              "key": "C",
+              "text": "13"
             },
             {
               "key": "D",
               "text": "15"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Faktor dari $-36$ dengan jumlah $-5$ adalah $4$ dan $-9$. Karena $p > q$, maka $p = 4$ dan $q = -9$. $p - q = 4 - (-9) = 13$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $p = 4$ dan $q = -9$\n2. $p - q = 4 - (-9) = 13$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $p = 4$ dan $q = -9$\n2. $p - q = 4 - (-9) = 13$ (Opsi C)."
         }
       ]
     },
@@ -643,24 +643,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{11}{12}$"
-            },
-            {
-              "key": "B",
               "text": "$\\frac{3}{7}$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$\\frac{3}{12}$"
+            },
+            {
+              "key": "C",
+              "text": "$\\frac{11}{12}$"
             },
             {
               "key": "D",
               "text": "$\\frac{5}{12}$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Samakan penyebut dengan KPK dari 3 dan 4, yaitu 12.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{3} + \\frac{1}{4} = \\frac{8}{12} + \\frac{3}{12} = \\frac{11}{12}$$\nHasilnya adalah **$\\frac{11}{12}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{3} + \\frac{1}{4} = \\frac{8}{12} + \\frac{3}{12} = \\frac{11}{12}$$\nHasilnya adalah **$\\frac{11}{12}$** (Opsi C)."
         },
         {
           "id": "smp7-b2-2",
@@ -724,24 +724,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "50 botol"
-            },
-            {
-              "key": "B",
               "text": "48 botol"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "52 botol"
+            },
+            {
+              "key": "C",
+              "text": "50 botol"
             },
             {
               "key": "D",
               "text": "25 botol"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Ubah ke pecahan biasa: $12\\frac{1}{2} = \\frac{25}{2}$, lalu bagi dengan $\\frac{1}{4}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Banyak botol} = \\frac{25}{2} : \\frac{1}{4} = \\frac{25}{2} \\times \\frac{4}{1} = \\frac{100}{2} = 50$$\nBanyak botol yang diperlukan adalah **50 botol** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Banyak botol} = \\frac{25}{2} : \\frac{1}{4} = \\frac{25}{2} \\times \\frac{4}{1} = \\frac{100}{2} = 50$$\nBanyak botol yang diperlukan adalah **50 botol** (Opsi C)."
         },
         {
           "id": "smp7-b2-5",
@@ -751,11 +751,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "a dan b bilangan bulat serta b != 0"
+              "text": "a dan b bilangan asli"
             },
             {
               "key": "B",
-              "text": "a dan b bilangan asli"
+              "text": "a dan b bilangan bulat serta b != 0"
             },
             {
               "key": "C",
@@ -766,9 +766,9 @@ export const grade7Data = {
               "text": "b boleh bernilai nol"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Definisi formal bilangan rasional $\\mathbb{Q} = \\{\\frac{a}{b} \\mid a, b \\in \\mathbb{Z}, b \\neq 0\\}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSyaratnya adalah **$a, b \\in \\mathbb{Z}$ dan $b \\neq 0$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSyaratnya adalah **$a, b \\in \\mathbb{Z}$ dan $b \\neq 0$** (Opsi B)."
         },
         {
           "id": "smp7-b2-6",
@@ -778,11 +778,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{3}"
+              "text": "\\frac{3}{10}"
             },
             {
               "key": "B",
-              "text": "\\frac{3}{10}"
+              "text": "\\frac{1}{3}"
             },
             {
               "key": "C",
@@ -793,9 +793,9 @@ export const grade7Data = {
               "text": "\\frac{1}{4}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Misalkan $x = 0{,}333... \\implies 10x = 3{,}333... \\implies 9x = 3 \\implies x = \\frac{1}{3}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$9x = 3 \\implies x = \\frac{1}{3}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$9x = 3 \\implies x = \\frac{1}{3}$$ (Opsi B)."
         },
         {
           "id": "smp7-b2-7",
@@ -805,24 +805,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{6}"
-            },
-            {
-              "key": "B",
               "text": "-\\frac{1}{6}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{3}{6}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{7}{6}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{1}{6}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Samakan penyebut menjadi 6: $-\\frac{4}{6} + \\frac{5}{6} = \\frac{1}{6}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-\\frac{4}{6} + \\frac{5}{6} = \\frac{1}{6}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-\\frac{4}{6} + \\frac{5}{6} = \\frac{1}{6}$$ (Opsi D)."
         },
         {
           "id": "smp7-b2-8",
@@ -832,24 +832,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{2}{3}"
-            },
-            {
-              "key": "B",
               "text": "-\\frac{2}{3}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{6}{13}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{2}{3}"
             },
             {
               "key": "D",
               "text": "-\\frac{24}{36}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Negatif kali negatif menghasilkan positif: $\\frac{3 \\times 8}{4 \\times 9} = \\frac{24}{36} = \\frac{2}{3}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3 \\times 8}{4 \\times 9} = \\frac{24}{36} = \\frac{2}{3}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3 \\times 8}{4 \\times 9} = \\frac{24}{36} = \\frac{2}{3}$$ (Opsi C)."
         },
         {
           "id": "smp7-b2-9",
@@ -886,24 +886,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "-0,875"
-            },
-            {
-              "key": "B",
               "text": "-0,78"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "-0,85"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "-0,825"
+            },
+            {
+              "key": "D",
+              "text": "-0,875"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Bagi 7 dengan 8: $7 : 8 = 0{,}875$, sehingga $-\\frac{7}{8} = -0{,}875$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-\\frac{7}{8} = -0{,}875$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-\\frac{7}{8} = -0{,}875$$ (Opsi D)."
         },
         {
           "id": "smp7-b2-11",
@@ -940,24 +940,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "-1"
-            },
-            {
-              "key": "B",
               "text": "1"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "-0,5"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "0,5"
+            },
+            {
+              "key": "D",
+              "text": "-1"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Dalam kurung: $-0{,}5 + 0{,}75 = 0{,}25 = \\frac{1}{4}$. Pembagian: $\\frac{1}{4} : \\left(-\\frac{1}{4}\\right) = -1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{4} : \\left(-\\frac{1}{4}\\right) = -1$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{4} : \\left(-\\frac{1}{4}\\right) = -1$$ (Opsi D)."
         },
         {
           "id": "smp7-b2-13",
@@ -967,24 +967,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "0,95 kg"
-            },
-            {
-              "key": "B",
               "text": "1,05 kg"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "0,85 kg"
+            },
+            {
+              "key": "C",
+              "text": "0,95 kg"
             },
             {
               "key": "D",
               "text": "1,15 kg"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Ubah ke desimal: $3{,}5 - 1{,}75 - 0{,}8 = 1{,}75 - 0{,}8 = 0{,}95$ kg.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3{,}5 - 1{,}75 - 0{,}8 = 0{,}95\\text{ kg}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3{,}5 - 1{,}75 - 0{,}8 = 0{,}95\\text{ kg}$$ (Opsi C)."
         },
         {
           "id": "smp7-b2-14",
@@ -994,11 +994,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{5}{11}"
+              "text": "\\frac{9}{20}"
             },
             {
               "key": "B",
-              "text": "\\frac{9}{20}"
+              "text": "\\frac{5}{11}"
             },
             {
               "key": "C",
@@ -1009,9 +1009,9 @@ export const grade7Data = {
               "text": "\\frac{4}{9}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "$100x - x = 45 \\implies 99x = 45 \\implies x = \\frac{45}{99} = \\frac{5}{11}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x = \\frac{45}{99} = \\frac{5}{11}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x = \\frac{45}{99} = \\frac{5}{11}$$ (Opsi B)."
         },
         {
           "id": "smp7-b2-15",
@@ -1021,11 +1021,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{5}{12}"
+              "text": "\\frac{2}{5}"
             },
             {
               "key": "B",
-              "text": "\\frac{2}{5}"
+              "text": "\\frac{5}{12}"
             },
             {
               "key": "C",
@@ -1036,9 +1036,9 @@ export const grade7Data = {
               "text": "\\frac{3}{8}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rata-rata: $\\frac{1}{2}\\left(\\frac{1}{3} + \\frac{1}{2}\\right) = \\frac{1}{2}\\left(\\frac{5}{6}\\right) = \\frac{5}{12}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{\\frac{1}{3} + \\frac{1}{2}}{2} = \\frac{5}{12}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{\\frac{1}{3} + \\frac{1}{2}}{2} = \\frac{5}{12}$$ (Opsi B)."
         },
         {
           "id": "smp7-b2-16",
@@ -1048,24 +1048,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{3}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{2}{3}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{1}{2}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{3}{4}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{1}{3}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Penyebut: $1 + \\frac{1}{2} = \\frac{3}{2}$. Kebalikan: $\\frac{1}{\\frac{3}{2}} = \\frac{2}{3}$. Hasil $= 1 - \\frac{2}{3} = \\frac{1}{3}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$1 - \\frac{2}{3} = \\frac{1}{3}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$1 - \\frac{2}{3} = \\frac{1}{3}$$ (Opsi D)."
         },
         {
           "id": "smp7-b2-17",
@@ -1075,24 +1075,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{10}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{1}{5}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{9}{10}"
+            },
+            {
+              "key": "C",
+              "text": "\\frac{1}{10}"
             },
             {
               "key": "D",
               "text": "\\frac{1}{20}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Perkalian teleskopik: $\\frac{1}{2} \\times \\frac{2}{3} \\times \\frac{3}{4} \\times \\dots \\times \\frac{9}{10} = \\frac{1}{10}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{2} \\times \\frac{2}{3} \\times \\frac{3}{4} \\times \\dots \\times \\frac{9}{10} = \\frac{1}{10}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{2} \\times \\frac{2}{3} \\times \\frac{3}{4} \\times \\dots \\times \\frac{9}{10} = \\frac{1}{10}$$ (Opsi C)."
         },
         {
           "id": "smp7-b2-18",
@@ -1129,24 +1129,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\sqrt{5}"
-            },
-            {
-              "key": "B",
               "text": "-\\frac{22}{7}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "0{,}121212\\dots"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\sqrt{0{,}25}"
+            },
+            {
+              "key": "D",
+              "text": "\\sqrt{5}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "$\\sqrt{5}$ adalah bilangan irasional (desimal tak berulang dan tak terbatas). $\\sqrt{0{,}25} = 0{,}5 = \\frac{1}{2}$ adalah rasional.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\sqrt{5} \\text{ adalah bilangan irasional}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\sqrt{5} \\text{ adalah bilangan irasional}$$ (Opsi D)."
         },
         {
           "id": "smp7-b2-20",
@@ -1156,11 +1156,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{5}{2}"
+              "text": "2"
             },
             {
               "key": "B",
-              "text": "2"
+              "text": "\\frac{5}{2}"
             },
             {
               "key": "C",
@@ -1171,9 +1171,9 @@ export const grade7Data = {
               "text": "3"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kalikan kedua ruas dengan KPK(3, 4, 2, 6) = 12: $8x - 3 = 6x + 2 \\implies 2x = 5 \\implies x = \\frac{5}{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$8x - 3 = 6x + 2 \\implies 2x = 5 \\implies x = \\frac{5}{2}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$8x - 3 = 6x + 2 \\implies 2x = 5 \\implies x = \\frac{5}{2}$$ (Opsi B)."
         }
       ]
     },
@@ -1256,24 +1256,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "15 liter"
-            },
-            {
-              "key": "B",
               "text": "12 liter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "18 liter"
+            },
+            {
+              "key": "C",
+              "text": "15 liter"
             },
             {
               "key": "D",
               "text": "20 liter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Ini perbandingan senilai: $\\frac{5}{60} = \\frac{x}{180}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Perbandingan senilai:\n$$x = 5 \\times \\frac{180}{60} = 5 \\times 3 = 15\\text{ liter}$$\nBensin yang dibutuhkan adalah **15 liter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Perbandingan senilai:\n$$x = 5 \\times \\frac{180}{60} = 5 \\times 3 = 15\\text{ liter}$$\nBensin yang dibutuhkan adalah **15 liter** (Opsi C)."
         },
         {
           "id": "smp7-b3-3",
@@ -1283,24 +1283,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "80 km"
-            },
-            {
-              "key": "B",
               "text": "8 km"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "800 km"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "50 km"
+            },
+            {
+              "key": "D",
+              "text": "80 km"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kalikan 4 cm dengan 2.000.000 = 8.000.000 cm, lalu bagi 100.000 untuk konversi ke km.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$J_s = 4 \\times 2.000.000 = 8.000.000\\text{ cm} = \\frac{8.000.000}{100.000} = 80\\text{ km}$$\nJarak sebenarnya adalah **80 km** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$J_s = 4 \\times 2.000.000 = 8.000.000\\text{ cm} = \\frac{8.000.000}{100.000} = 80\\text{ km}$$\nJarak sebenarnya adalah **80 km** (Opsi D)."
         },
         {
           "id": "smp7-b3-4",
@@ -1337,24 +1337,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "2 : 3"
-            },
-            {
-              "key": "B",
               "text": "3 : 4"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "4 : 6"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "1 : 2"
+            },
+            {
+              "key": "D",
+              "text": "2 : 3"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Bagi kedua suku rasio dengan FPB yaitu 12: $24 : 12 = 2$ dan $36 : 12 = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$24 : 36 = 2 : 3$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$24 : 36 = 2 : 3$$ (Opsi D)."
         },
         {
           "id": "smp7-b3-6",
@@ -1364,24 +1364,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rp30.000,00"
-            },
-            {
-              "key": "B",
               "text": "Rp28.000,00"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rp32.000,00"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Rp35.000,00"
+            },
+            {
+              "key": "D",
+              "text": "Rp30.000,00"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Uang Caca $= \\frac{5}{4} \\times 24.000 = 30.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Uang Caca} = \\frac{5}{4} \\times 24.000 = 30.000\\text{ rupiah}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Uang Caca} = \\frac{5}{4} \\times 24.000 = 30.000\\text{ rupiah}$$ (Opsi D)."
         },
         {
           "id": "smp7-b3-7",
@@ -1391,11 +1391,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "60 km/jam"
+              "text": "55 km/jam"
             },
             {
               "key": "B",
-              "text": "55 km/jam"
+              "text": "60 km/jam"
             },
             {
               "key": "C",
@@ -1406,9 +1406,9 @@ export const grade7Data = {
               "text": "50 km/jam"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Laju perubahan (kecepatan) $= \\frac{\\text{jarak}}{\\text{waktu}} = \\frac{180}{3} = 60$ km/jam.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$v = \\frac{180}{3} = 60\\text{ km/jam}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$v = \\frac{180}{3} = 60\\text{ km/jam}$$ (Opsi B)."
         },
         {
           "id": "smp7-b3-8",
@@ -1445,11 +1445,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "1 : 500.000"
+              "text": "1 : 50.000"
             },
             {
               "key": "B",
-              "text": "1 : 50.000"
+              "text": "1 : 500.000"
             },
             {
               "key": "C",
@@ -1460,9 +1460,9 @@ export const grade7Data = {
               "text": "1 : 250.000"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Ubah km ke cm: $25\\text{ km} = 2.500.000\\text{ cm}$. Skala $= 5 : 2.500.000 = 1 : 500.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Skala} = 5 : 2.500.000 = 1 : 500.000$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Skala} = 5 : 2.500.000 = 1 : 500.000$$ (Opsi B)."
         },
         {
           "id": "smp7-b3-10",
@@ -1472,24 +1472,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "3 liter"
-            },
-            {
-              "key": "B",
               "text": "2,5 liter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "3,5 liter"
+            },
+            {
+              "key": "C",
+              "text": "3 liter"
             },
             {
               "key": "D",
               "text": "4 liter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Bahan bakar $= 135 : 45 = 3$ liter.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$135 : 45 = 3\\text{ liter}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$135 : 45 = 3\\text{ liter}$$ (Opsi C)."
         },
         {
           "id": "smp7-b3-11",
@@ -1526,11 +1526,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "108 cm²"
+              "text": "96 cm²"
             },
             {
               "key": "B",
-              "text": "96 cm²"
+              "text": "108 cm²"
             },
             {
               "key": "C",
@@ -1541,9 +1541,9 @@ export const grade7Data = {
               "text": "72 cm²"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Faktor perbesaran $k = 12 : 4 = 3$. Lebar baru $= 3 \\times 3 = 9$ cm. Luas baru $= 9 \\times 12 = 108$ cm².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas} = 9 \\times 12 = 108\\text{ cm}^2$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas} = 9 \\times 12 = 108\\text{ cm}^2$$ (Opsi B)."
         },
         {
           "id": "smp7-b3-13",
@@ -1553,11 +1553,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "16 menit"
+              "text": "15 menit"
             },
             {
               "key": "B",
-              "text": "15 menit"
+              "text": "16 menit"
             },
             {
               "key": "C",
@@ -1568,9 +1568,9 @@ export const grade7Data = {
               "text": "20 menit"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Waktu $= \\frac{\\text{Volume}}{\\text{Debit}} = \\frac{240}{15} = 16$ menit.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\frac{240}{15} = 16\\text{ menit}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\frac{240}{15} = 16\\text{ menit}$$ (Opsi B)."
         },
         {
           "id": "smp7-b3-14",
@@ -1580,24 +1580,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "18 butir"
-            },
-            {
-              "key": "B",
               "text": "15 butir"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "21 butir"
+            },
+            {
+              "key": "C",
+              "text": "18 butir"
             },
             {
               "key": "D",
               "text": "24 butir"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Bagian Amir + Candra $= 2 + 5 = 7$. Nilai 1 bagian $= 42 : 7 = 6$. Kelereng Budi $= 3 \\times 6 = 18$ butir.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Kelereng Budi} = \\frac{3}{2 + 5} \\times 42 = 18\\text{ butir}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Kelereng Budi} = \\frac{3}{2 + 5} \\times 42 = 18\\text{ butir}$$ (Opsi C)."
         },
         {
           "id": "smp7-b3-15",
@@ -1607,11 +1607,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "900 lembar"
+              "text": "800 lembar"
             },
             {
               "key": "B",
-              "text": "800 lembar"
+              "text": "900 lembar"
             },
             {
               "key": "C",
@@ -1622,9 +1622,9 @@ export const grade7Data = {
               "text": "850 lembar"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Kecepatan cetak $= 480 : 8 = 60$ lembar/menit. Dalam 15 menit $= 15 \\times 60 = 900$ lembar.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$15 \\times 60 = 900\\text{ lembar}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$15 \\times 60 = 900\\text{ lembar}$$ (Opsi B)."
         },
         {
           "id": "smp7-b3-16",
@@ -1634,24 +1634,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "12 hari"
-            },
-            {
-              "key": "B",
               "text": "14 hari"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "10 hari"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "15 hari"
+            },
+            {
+              "key": "D",
+              "text": "12 hari"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Total sapi $= 40 + 20 = 60$. Perbandingan berbalik nilai: $40 \\times 18 = 60 \\times H \\implies H = \\frac{720}{60} = 12$ hari.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$H = \\frac{40 \\times 18}{60} = 12\\text{ hari}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$H = \\frac{40 \\times 18}{60} = 12\\text{ hari}$$ (Opsi D)."
         },
         {
           "id": "smp7-b3-17",
@@ -1688,24 +1688,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "4 orang"
-            },
-            {
-              "key": "B",
               "text": "5 orang"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6 orang"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "3 orang"
+            },
+            {
+              "key": "D",
+              "text": "4 orang"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Sisa beban kerja: 16 pekerja selama 20 hari $= 320$ orang-hari. Sisa waktu tersedia: $20 - 4 = 16$ hari. Pekerja yang dibutuhkan: $320 : 16 = 20$ pekerja. Pekerja tambahan: $20 - 16 = 4$ orang.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sisa beban kerja: $16 \\times (30 - 10) = 320\\text{ orang-hari}$\n2. Sisa hari riil: $20 - 4 = 16\\text{ hari}$\n3. Pekerja total: $320 : 16 = 20\\text{ orang}$\n4. Tambahan pekerja: $20 - 16 = 4\\text{ orang}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sisa beban kerja: $16 \\times (30 - 10) = 320\\text{ orang-hari}$\n2. Sisa hari riil: $20 - 4 = 16\\text{ hari}$\n3. Pekerja total: $320 : 16 = 20\\text{ orang}$\n4. Tambahan pekerja: $20 - 16 = 4\\text{ orang}$ (Opsi D)."
         },
         {
           "id": "smp7-b3-19",
@@ -1715,24 +1715,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "9 : 25"
-            },
-            {
-              "key": "B",
               "text": "3 : 5"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "6 : 10"
+            },
+            {
+              "key": "C",
+              "text": "9 : 25"
             },
             {
               "key": "D",
               "text": "27 : 125"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Rasio keliling sama dengan rasio jari-jari $r_1 : r_2 = 3 : 5$. Rasio luas $= r_1^2 : r_2^2 = 3^2 : 5^2 = 9 : 25$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Rasio luas} = 3^2 : 5^2 = 9 : 25$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Rasio luas} = 3^2 : 5^2 = 9 : 25$$ (Opsi C)."
         },
         {
           "id": "smp7-b3-20",
@@ -1742,24 +1742,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "15 hari"
-            },
-            {
-              "key": "B",
               "text": "12 hari"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "14 hari"
+            },
+            {
+              "key": "C",
+              "text": "15 hari"
             },
             {
               "key": "D",
               "text": "16 hari"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "$\\frac{1}{B} = \\frac{1}{6} - \\frac{1}{10} = \\frac{5 - 3}{30} = \\frac{2}{30} = \\frac{1}{15} \\implies B = 15$ hari.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{B} = \\frac{1}{6} - \\frac{1}{10} = \\frac{1}{15} \\implies B = 15\\text{ hari}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{B} = \\frac{1}{6} - \\frac{1}{10} = \\frac{1}{15} \\implies B = 15\\text{ hari}$$ (Opsi C)."
         }
       ]
     },
@@ -1811,11 +1811,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "-7"
+              "text": "7"
             },
             {
               "key": "B",
-              "text": "7"
+              "text": "-7"
             },
             {
               "key": "C",
@@ -1826,9 +1826,9 @@ export const grade7Data = {
               "text": "9"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Perhatikan tanda minus di depan angka 7 yang melekat pada variabel $x$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBentuk aljabar $3x^2 - 7x + 9$ memiliki koefisien untuk variabel $x$ sebesar **-7** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBentuk aljabar $3x^2 - 7x + 9$ memiliki koefisien untuk variabel $x$ sebesar **-7** (Opsi B)."
         },
         {
           "id": "smp7-b4-2",
@@ -1838,24 +1838,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "$2a + 10b$"
-            },
-            {
-              "key": "B",
               "text": "$6a + 10b$"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "$2a + 4b$"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "$12ab$"
+            },
+            {
+              "key": "D",
+              "text": "$2a + 10b$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Gabungkan suku sejenis: $(4a - 2a) + (7b + 3b)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Suku $a$: $4a - 2a = 2a$\n2. Suku $b$: $7b + 3b = 10b$\nHasilnya adalah **$2a + 10b$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Suku $a$: $4a - 2a = 2a$\n2. Suku $b$: $7b + 3b = 10b$\nHasilnya adalah **$2a + 10b$** (Opsi D)."
         },
         {
           "id": "smp7-b4-3",
@@ -1892,11 +1892,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "42 cm"
+              "text": "38 cm"
             },
             {
               "key": "B",
-              "text": "38 cm"
+              "text": "42 cm"
             },
             {
               "key": "C",
@@ -1907,9 +1907,9 @@ export const grade7Data = {
               "text": "40 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Sederhanakan bentuk aljabar terlebih dahulu menjadi $10x + 2$, lalu masukkan $x = 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sederhanakan bentuk aljabar keliling:\n$$K = 6x + 4 + 4x - 2 = 10x + 2$$\n2. Substitusikan nilai $x = 4$:\n$$K = 10(4) + 2 = 40 + 2 = 42\\text{ cm}$$\nKeliling persegi panjang adalah **42 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sederhanakan bentuk aljabar keliling:\n$$K = 6x + 4 + 4x - 2 = 10x + 2$$\n2. Substitusikan nilai $x = 4$:\n$$K = 10(4) + 2 = 40 + 2 = 42\\text{ cm}$$\nKeliling persegi panjang adalah **42 cm** (Opsi B)."
         },
         {
           "id": "smp7-b4-5",
@@ -1919,11 +1919,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "-7"
+              "text": "7"
             },
             {
               "key": "B",
-              "text": "7"
+              "text": "-7"
             },
             {
               "key": "C",
@@ -1934,9 +1934,9 @@ export const grade7Data = {
               "text": "5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Koefisien adalah angka pengali yang berada tepat di depan variabel $x$, yaitu $-7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKoefisien dari $x$ adalah **-7** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKoefisien dari $x$ adalah **-7** (Opsi B)."
         },
         {
           "id": "smp7-b4-6",
@@ -1973,24 +1973,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "6a² - 15ab"
-            },
-            {
-              "key": "B",
               "text": "6a - 15ab"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "5a² - 15ab"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "6a² - 5b"
+            },
+            {
+              "key": "D",
+              "text": "6a² - 15ab"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Distribusikan $3a$: $3a \\times 2a - 3a \\times 5b = 6a^2 - 15ab$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3a(2a - 5b) = 6a^2 - 15ab$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3a(2a - 5b) = 6a^2 - 15ab$$ (Opsi D)."
         },
         {
           "id": "smp7-b4-8",
@@ -2000,11 +2000,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "2x² - 5x - 12"
+              "text": "2x² + 5x - 12"
             },
             {
               "key": "B",
-              "text": "2x² + 5x - 12"
+              "text": "2x² - 5x - 12"
             },
             {
               "key": "C",
@@ -2015,9 +2015,9 @@ export const grade7Data = {
               "text": "2x² - 5x + 12"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "$(2x)(x) + (2x)(-4) + (3)(x) + (3)(-4) = 2x^2 - 8x + 3x - 12 = 2x^2 - 5x - 12$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2x^2 - 8x + 3x - 12 = 2x^2 - 5x - 12$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2x^2 - 8x + 3x - 12 = 2x^2 - 5x - 12$$ (Opsi B)."
         },
         {
           "id": "smp7-b4-9",
@@ -2027,24 +2027,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "-2x - 6y"
-            },
-            {
-              "key": "B",
               "text": "2x + 6y"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "-2x + 2y"
+            },
+            {
+              "key": "C",
+              "text": "-2x - 6y"
             },
             {
               "key": "D",
               "text": "8x + 2y"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Pengurangan $A$ oleh $B$ berarti $A - B$: $(3x - 2y) - (5x + 4y) = 3x - 2y - 5x - 4y = -2x - 6y$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(3x - 2y) - (5x + 4y) = -2x - 6y$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(3x - 2y) - (5x + 4y) = -2x - 6y$$ (Opsi C)."
         },
         {
           "id": "smp7-b4-10",
@@ -2081,24 +2081,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "(x - 3)(x + 3)"
-            },
-            {
-              "key": "B",
               "text": "(x - 3)²"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "(x + 3)²"
+            },
+            {
+              "key": "C",
+              "text": "(x - 3)(x + 3)"
             },
             {
               "key": "D",
               "text": "(x - 9)(x + 1)"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Selisih dua kuadrat: $a^2 - b^2 = (a - b)(a + b) \\implies (x - 3)(x + 3)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x^2 - 9 = (x - 3)(x + 3)$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x^2 - 9 = (x - 3)(x + 3)$$ (Opsi C)."
         },
         {
           "id": "smp7-b4-12",
@@ -2108,24 +2108,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "8x + 12"
-            },
-            {
-              "key": "B",
               "text": "4x + 6"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "8x + 6"
+            },
+            {
+              "key": "C",
+              "text": "8x + 12"
             },
             {
               "key": "D",
               "text": "6x + 12"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "$K = 2[(3x + 2) + (x + 4)] = 2(4x + 6) = 8x + 12$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$K = 2(4x + 6) = 8x + 12\\text{ cm}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$K = 2(4x + 6) = 8x + 12\\text{ cm}$$ (Opsi C)."
         },
         {
           "id": "smp7-b4-13",
@@ -2162,24 +2162,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{2y + 3x}{xy}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{5}{x + y}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{5}{xy}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{2x + 3y}{xy}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{2y + 3x}{xy}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Samakan penyebut menjadi $xy$: $\\frac{2y}{xy} + \\frac{3x}{xy} = \\frac{2y + 3x}{xy}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{x} + \\frac{3}{y} = \\frac{2y + 3x}{xy}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{x} + \\frac{3}{y} = \\frac{2y + 3x}{xy}$$ (Opsi D)."
         },
         {
           "id": "smp7-b4-15",
@@ -2189,24 +2189,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "3x - 4"
-            },
-            {
-              "key": "B",
               "text": "3x + 4"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "3x - 5"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "2x - 4"
+            },
+            {
+              "key": "D",
+              "text": "3x - 4"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Faktorkan pembilang: $(2x + 5)(3x - 4) : (2x + 5) = 3x - 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{(2x + 5)(3x - 4)}{2x + 5} = 3x - 4$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{(2x + 5)(3x - 4)}{2x + 5} = 3x - 4$$ (Opsi D)."
         },
         {
           "id": "smp7-b4-16",
@@ -2216,24 +2216,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "4x² - 12x + 9"
-            },
-            {
-              "key": "B",
               "text": "4x² - 9"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "4x² + 12x + 9"
+            },
+            {
+              "key": "C",
+              "text": "4x² - 12x + 9"
             },
             {
               "key": "D",
               "text": "4x² - 6x + 9"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kuadrat suku dua: $(a - b)^2 = a^2 - 2ab + b^2 = (2x)^2 - 2(2x)(3) + 3^2 = 4x^2 - 12x + 9$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(2x - 3)^2 = 4x^2 - 12x + 9$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$(2x - 3)^2 = 4x^2 - 12x + 9$$ (Opsi C)."
         },
         {
           "id": "smp7-b4-17",
@@ -2270,24 +2270,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "\\frac{x - 3}{x + 2}"
-            },
-            {
-              "key": "B",
               "text": "\\frac{x - 3}{x - 2}"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "\\frac{x + 3}{x + 2}"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "\\frac{x - 2}{x + 2}"
+            },
+            {
+              "key": "D",
+              "text": "\\frac{x - 3}{x + 2}"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Faktorkan pembilang dan penyebut: $\\frac{(x - 2)(x - 3)}{(x - 2)(x + 2)} = \\frac{x - 3}{x + 2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{(x - 2)(x - 3)}{(x - 2)(x + 2)} = \\frac{x - 3}{x + 2}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{(x - 2)(x - 3)}{(x - 2)(x + 2)} = \\frac{x - 3}{x + 2}$$ (Opsi D)."
         },
         {
           "id": "smp7-b4-19",
@@ -2297,24 +2297,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "14"
-            },
-            {
-              "key": "B",
               "text": "16"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "18"
+            },
+            {
+              "key": "C",
+              "text": "14"
             },
             {
               "key": "D",
               "text": "12"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Kuadratkan kedua ruas: $(x + \\frac{1}{x})^2 = x^2 + 2 + \\frac{1}{x^2} = 16 \\implies x^2 + \\frac{1}{x^2} = 14$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x^2 + \\frac{1}{x^2} = 4^2 - 2 = 14$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x^2 + \\frac{1}{x^2} = 4^2 - 2 = 14$$ (Opsi C)."
         },
         {
           "id": "smp7-b4-20",
@@ -2324,11 +2324,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "3x + 3 tahun"
+              "text": "3x + 8 tahun"
             },
             {
               "key": "B",
-              "text": "3x + 8 tahun"
+              "text": "3x + 3 tahun"
             },
             {
               "key": "C",
@@ -2339,9 +2339,9 @@ export const grade7Data = {
               "text": "7x + 1 tahun"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Selisih umur selalu tetap: $(5x + 2) - (2x - 1) = 3x + 3$ tahun.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Selisih} = (5x + 2) - (2x - 1) = 3x + 3\\text{ tahun}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Selisih} = (5x + 2) - (2x - 1) = 3x + 3\\text{ tahun}$$ (Opsi B)."
         }
       ]
     },
@@ -2393,24 +2393,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "Dua buah persegi"
-            },
-            {
-              "key": "B",
               "text": "Dua buah persegi panjang"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Dua buah segitiga sama kaki"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Dua buah belah ketupat"
+            },
+            {
+              "key": "D",
+              "text": "Dua buah persegi"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Persegi selalu memiliki 4 sudut siku-siku ($90^\\circ$) dan keempat sisinya selalu sama panjang (perbandingan sisi seletak selalu 1:1).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSetiap persegi memiliki keempat sudut yang sama besar ($90^\\circ$) dan perbandingan sisi-sisinya selalu sama, sehingga **dua buah persegi** sudah pasti sebangun (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSetiap persegi memiliki keempat sudut yang sama besar ($90^\\circ$) dan perbandingan sisi-sisinya selalu sama, sehingga **dua buah persegi** sudah pasti sebangun (Opsi D)."
         },
         {
           "id": "smp7-b5-2",
@@ -2447,11 +2447,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "36 meter"
+              "text": "30 meter"
             },
             {
               "key": "B",
-              "text": "30 meter"
+              "text": "36 meter"
             },
             {
               "key": "C",
@@ -2462,9 +2462,9 @@ export const grade7Data = {
               "text": "32 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Gunakan perbandingan kesebangunan bayangan: $\\frac{T}{6} = \\frac{24}{4}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Perbandingan senilai:\n$$\\frac{T}{6} = \\frac{24}{4} = 6$$\n$$T = 6 \\times 6 = 36\\text{ meter}$$\nTinggi gedung tersebut adalah **36 meter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Perbandingan senilai:\n$$\\frac{T}{6} = \\frac{24}{4} = 6$$\n$$T = 6 \\times 6 = 36\\text{ meter}$$\nTinggi gedung tersebut adalah **36 meter** (Opsi B)."
         },
         {
           "id": "smp7-b5-4",
@@ -2474,11 +2474,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "$768\\text{ cm}^2$"
+              "text": "$720\\text{ cm}^2$"
             },
             {
               "key": "B",
-              "text": "$720\\text{ cm}^2$"
+              "text": "$768\\text{ cm}^2$"
             },
             {
               "key": "C",
@@ -2489,9 +2489,9 @@ export const grade7Data = {
               "text": "$640\\text{ cm}^2$"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Cari panjang foto $p$ dari perbandingan kesebangunan: $\\frac{p}{40} = \\frac{24}{30}$, lalu hitung luas $= p \\times 24$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Cari panjang foto dalam ($p$):\n$$\\frac{p}{40} = \\frac{24}{30} = \\frac{4}{5} \\implies p = 40 \\times \\frac{4}{5} = 32\\text{ cm}$$\n2. Hitung luas foto:\n$$\\text{Luas} = 32 \\times 24 = 768\\text{ cm}^2$$\nLuas foto bagian dalam adalah **$768\\text{ cm}^2$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Cari panjang foto dalam ($p$):\n$$\\frac{p}{40} = \\frac{24}{30} = \\frac{4}{5} \\implies p = 40 \\times \\frac{4}{5} = 32\\text{ cm}$$\n2. Hitung luas foto:\n$$\\text{Luas} = 32 \\times 24 = 768\\text{ cm}^2$$\nLuas foto bagian dalam adalah **$768\\text{ cm}^2$** (Opsi B)."
         },
         {
           "id": "smp7-b5-5",
@@ -2501,24 +2501,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "Bentuk dan ukurannya sama persis"
-            },
-            {
-              "key": "B",
               "text": "Bentuknya sama tetapi ukurannya berbeda"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Hanya memiliki sudut-sudut yang sama besar"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Hanya memiliki luas yang sama"
+            },
+            {
+              "key": "D",
+              "text": "Bentuk dan ukurannya sama persis"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Kongruen berarti bentuk dan ukuran identik sama persis.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKongruen berarti **bentuk dan ukuran sama persis** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKongruen berarti **bentuk dan ukuran sama persis** (Opsi D)."
         },
         {
           "id": "smp7-b5-6",
@@ -2528,24 +2528,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "Sudut-sudut yang bersesuaian sama besar dan sisi-sisi yang bersesuaian sebanding"
-            },
-            {
-              "key": "B",
               "text": "Sudut-sudut yang bersesuaian sama besar saja"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Sisi-sisi yang bersesuaian sama panjang"
+            },
+            {
+              "key": "C",
+              "text": "Sudut-sudut yang bersesuaian sama besar dan sisi-sisi yang bersesuaian sebanding"
             },
             {
               "key": "D",
               "text": "Luas dan kelilingnya sama"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Syarat kesebangunan: sudut bersesuaian sama besar dan sisi bersesuaian sebanding.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSyarat kesebangunan adalah **sudut sama besar dan sisi sebanding** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSyarat kesebangunan adalah **sudut sama besar dan sisi sebanding** (Opsi C)."
         },
         {
           "id": "smp7-b5-7",
@@ -2582,24 +2582,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "9 meter"
-            },
-            {
-              "key": "B",
               "text": "8 meter"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "10 meter"
+            },
+            {
+              "key": "C",
+              "text": "9 meter"
             },
             {
               "key": "D",
               "text": "7,5 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Perbandingan kesebangunan: $\\frac{T}{1{,}5} = \\frac{12}{2} \\implies T = 6 \\times 1{,}5 = 9$ meter.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$T = \\frac{12}{2} \\times 1{,}5 = 9\\text{ meter}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$T = \\frac{12}{2} \\times 1{,}5 = 9\\text{ meter}$$ (Opsi C)."
         },
         {
           "id": "smp7-b5-9",
@@ -2609,24 +2609,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "15 cm"
-            },
-            {
-              "key": "B",
               "text": "12 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "18 cm"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "20 cm"
+            },
+            {
+              "key": "D",
+              "text": "15 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Sisi terpendek $AB = 6$, pada $DEF = 9 \\implies$ faktor skala $k = \\frac{9}{6} = 1{,}5$. Sisi terpanjang $= 10 \\times 1{,}5 = 15$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Sisi terpanjang} = 10 \\times 1{,}5 = 15\\text{ cm}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Sisi terpanjang} = 10 \\times 1{,}5 = 15\\text{ cm}$$ (Opsi D)."
         },
         {
           "id": "smp7-b5-10",
@@ -2636,24 +2636,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "Dua buah persegi"
-            },
-            {
-              "key": "B",
               "text": "Dua buah persegi panjang"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Dua buah belah ketupat"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Dua buah segitiga sama kaki"
+            },
+            {
+              "key": "D",
+              "text": "Dua buah persegi"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Dua persegi selalu memiliki sudut-sudut $90^\\circ$ dan perbandingan sisi $1 : 1$, sehingga pasti sebangun.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPasangan yang pasti sebangun adalah **dua buah persegi** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPasangan yang pasti sebangun adalah **dua buah persegi** (Opsi D)."
         },
         {
           "id": "smp7-b5-11",
@@ -2663,24 +2663,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "6 cm"
-            },
-            {
-              "key": "B",
               "text": "5 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "8 cm"
+            },
+            {
+              "key": "C",
+              "text": "6 cm"
             },
             {
               "key": "D",
               "text": "4 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Lebar foto $= 40 - 8 = 32$ cm. Panjang foto $= 32 \\times \\frac{50}{40} = 40$ cm. Sisa bawah $= 50 - 4 - 40 = 6$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Lebar foto $= 32\\text{ cm}$\n2. Tinggi foto $= \\frac{32}{40} \\times 50 = 40\\text{ cm}$\n3. Sisa bawah $= 50 - 4 - 40 = 6\\text{ cm}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Lebar foto $= 32\\text{ cm}$\n2. Tinggi foto $= \\frac{32}{40} \\times 50 = 40\\text{ cm}$\n3. Sisa bawah $= 50 - 4 - 40 = 6\\text{ cm}$ (Opsi C)."
         },
         {
           "id": "smp7-b5-12",
@@ -2690,24 +2690,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "20 cm"
-            },
-            {
-              "key": "B",
               "text": "18 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "16 cm"
+            },
+            {
+              "key": "C",
+              "text": "20 cm"
             },
             {
               "key": "D",
               "text": "24 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Panjang $AB = 4 + 6 = 10$ cm. Kesebangunan: $\\frac{DE}{BC} = \\frac{AD}{AB} \\implies \\frac{8}{BC} = \\frac{4}{10} \\implies BC = 20$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$BC = \\frac{8 \\times 10}{4} = 20\\text{ cm}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$BC = \\frac{8 \\times 10}{4} = 20\\text{ cm}$$ (Opsi C)."
         },
         {
           "id": "smp7-b5-13",
@@ -2717,11 +2717,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "4 : 25"
+              "text": "2 : 5"
             },
             {
               "key": "B",
-              "text": "2 : 5"
+              "text": "4 : 25"
             },
             {
               "key": "C",
@@ -2732,9 +2732,9 @@ export const grade7Data = {
               "text": "1 : 4"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rasio luas dua bangun sebangun sama dengan kuadrat rasio sisinya/kelilingnya: $2^2 : 5^2 = 4 : 25$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Rasio luas} = 2^2 : 5^2 = 4 : 25$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Rasio luas} = 2^2 : 5^2 = 4 : 25$$ (Opsi B)."
         },
         {
           "id": "smp7-b5-14",
@@ -2798,24 +2798,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "10 cm"
-            },
-            {
-              "key": "B",
               "text": "12 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "14 cm"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "8 cm"
+            },
+            {
+              "key": "D",
+              "text": "10 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Rumus garis bagi trapesium: $EF = \\frac{AE \\times CD + ED \\times AB}{AE + ED} = \\frac{2(6) + 1(18)}{2 + 1} = \\frac{12 + 18}{3} = 10$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$EF = \\frac{2(6) + 1(18)}{3} = \\frac{30}{3} = 10\\text{ cm}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$EF = \\frac{2(6) + 1(18)}{3} = \\frac{30}{3} = 10\\text{ cm}$$ (Opsi D)."
         },
         {
           "id": "smp7-b5-17",
@@ -2852,11 +2852,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "6 cm"
+              "text": "5 cm"
             },
             {
               "key": "B",
-              "text": "5 cm"
+              "text": "6 cm"
             },
             {
               "key": "C",
@@ -2867,9 +2867,9 @@ export const grade7Data = {
               "text": "6,5 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Teorema air mancur (kesebangunan): $AD^2 = BD \\times CD = 4 \\times 9 = 36 \\implies AD = 6$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$AD = \\sqrt{4 \\times 9} = 6\\text{ cm}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$AD = \\sqrt{4 \\times 9} = 6\\text{ cm}$$ (Opsi B)."
         },
         {
           "id": "smp7-b5-19",
@@ -2879,24 +2879,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "2\\sqrt{13} cm"
-            },
-            {
-              "key": "B",
               "text": "6 cm"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "4\\sqrt{3} cm"
+            },
+            {
+              "key": "C",
+              "text": "2\\sqrt{13} cm"
             },
             {
               "key": "D",
               "text": "8 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "$AB^2 = BD \\times BC = 4 \\times (4 + 9) = 4 \\times 13 = 52 \\implies AB = \\sqrt{52} = 2\\sqrt{13}$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$AB = \\sqrt{4 \\times 13} = 2\\sqrt{13}\\text{ cm}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$AB = \\sqrt{4 \\times 13} = 2\\sqrt{13}\\text{ cm}$$ (Opsi C)."
         },
         {
           "id": "smp7-b5-20",
@@ -2906,11 +2906,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "2 meter"
+              "text": "2,5 meter"
             },
             {
               "key": "B",
-              "text": "2,5 meter"
+              "text": "2 meter"
             },
             {
               "key": "C",
@@ -2921,9 +2921,9 @@ export const grade7Data = {
               "text": "2,2 meter"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Rumus titik potong kabel silang: $\\frac{1}{h} = \\frac{1}{h_1} + \\frac{1}{h_2} = \\frac{1}{6} + \\frac{1}{3} = \\frac{3}{6} = \\frac{1}{2} \\implies h = 2$ meter.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$h = \\frac{6 \\times 3}{6 + 3} = \\frac{18}{9} = 2\\text{ meter}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$h = \\frac{6 \\times 3}{6 + 3} = \\frac{18}{9} = 2\\text{ meter}$$ (Opsi B)."
         }
       ]
     },
@@ -3002,24 +3002,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "Diagram garis"
-            },
-            {
-              "key": "B",
               "text": "Diagram lingkaran"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Piktogram"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Diagram batang bertingkat"
+            },
+            {
+              "key": "D",
+              "text": "Diagram garis"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Data yang dicatat secara berkesinambungan menurut waktu paling jelas ditampilkan dengan diagram garis.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nUntuk melihat tren fluktuasi data yang berkembang menurut urutan waktu (time-series), jenis diagram yang paling representatif adalah **diagram garis** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nUntuk melihat tren fluktuasi data yang berkembang menurut urutan waktu (time-series), jenis diagram yang paling representatif adalah **diagram garis** (Opsi D)."
         },
         {
           "id": "smp7-b6-3",
@@ -3083,24 +3083,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "100%"
-            },
-            {
-              "key": "B",
               "text": "360%"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "180%"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "90%"
+            },
+            {
+              "key": "D",
+              "text": "100%"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Total seluruh persentase lingkaran utuh adalah 100%.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTotal persentase adalah **100%** (atau $360^\\circ$) (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTotal persentase adalah **100%** (atau $360^\\circ$) (Opsi D)."
         },
         {
           "id": "smp7-b6-6",
@@ -3110,11 +3110,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "8"
+              "text": "7"
             },
             {
               "key": "B",
-              "text": "7"
+              "text": "8"
             },
             {
               "key": "C",
@@ -3125,9 +3125,9 @@ export const grade7Data = {
               "text": "8,5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Frekuensi kemunculan: 6 (1x), 7 (3x), 8 (4x), 9 (1x), 10 (1x). Nilai 8 paling sering muncul.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModus adalah **8** (frekuensi 4) (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModus adalah **8** (frekuensi 4) (Opsi B)."
         },
         {
           "id": "smp7-b6-7",
@@ -3137,11 +3137,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "7"
+              "text": "7,5"
             },
             {
               "key": "B",
-              "text": "7,5"
+              "text": "7"
             },
             {
               "key": "C",
@@ -3152,9 +3152,9 @@ export const grade7Data = {
               "text": "6,5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Urutkan data: 5, 6, 6, 7, 7, 8, 8, 9, 9. Data ke-5 (tengah) adalah 7.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nData terurut: 5, 6, 6, 7, **7**, 8, 8, 9, 9 $\\implies$ Median $= 7$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nData terurut: 5, 6, 6, 7, **7**, 8, 8, 9, 9 $\\implies$ Median $= 7$ (Opsi B)."
         },
         {
           "id": "smp7-b6-8",
@@ -3191,24 +3191,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "30%"
-            },
-            {
-              "key": "B",
               "text": "25%"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "35%"
+            },
+            {
+              "key": "C",
+              "text": "30%"
             },
             {
               "key": "D",
               "text": "20%"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Persentase $= \\frac{108}{360} \\times 100\\% = \\frac{3}{10} \\times 100\\% = 30\\%$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{108}{360} \\times 100\\% = 30\\%$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{108}{360} \\times 100\\% = 30\\%$$ (Opsi C)."
         },
         {
           "id": "smp7-b6-10",
@@ -3218,24 +3218,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "34"
-            },
-            {
-              "key": "B",
               "text": "30"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "38"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "28"
+            },
+            {
+              "key": "D",
+              "text": "34"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Jangkauan $= X_{\\text{maks}} - X_{\\text{min}} = 62 - 28 = 34$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R = 62 - 28 = 34$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R = 62 - 28 = 34$$ (Opsi D)."
         },
         {
           "id": "smp7-b6-11",
@@ -3245,24 +3245,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "91"
-            },
-            {
-              "key": "B",
               "text": "89"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "93"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "88"
+            },
+            {
+              "key": "D",
+              "text": "91"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Total nilai awal: $29 \\times 76 = 2.204$. Total nilai baru: $30 \\times 76{,}5 = 2.295$. Nilai susulan: $2.295 - 2.204 = 91$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x = (30 \\times 76{,}5) - (29 \\times 76) = 2.295 - 2.204 = 91$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x = (30 \\times 76{,}5) - (29 \\times 76) = 2.295 - 2.204 = 91$$ (Opsi D)."
         },
         {
           "id": "smp7-b6-12",
@@ -3272,11 +3272,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "159,67 cm"
+              "text": "160,00 cm"
             },
             {
               "key": "B",
-              "text": "160,00 cm"
+              "text": "159,67 cm"
             },
             {
               "key": "C",
@@ -3287,9 +3287,9 @@ export const grade7Data = {
               "text": "161,20 cm"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Mean gabungan: $\\frac{(16 \\times 155) + (14 \\times 165)}{30} = \\frac{2.480 + 2.310}{30} = \\frac{4.790}{30} \\approx 159{,}67$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{4.790}{30} \\approx 159{,}67\\text{ cm}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{4.790}{30} \\approx 159{,}67\\text{ cm}$$ (Opsi B)."
         },
         {
           "id": "smp7-b6-13",
@@ -3299,24 +3299,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "Data berkala yang menunjukkan perkembangan dari waktu ke waktu"
-            },
-            {
-              "key": "B",
               "text": "Data persentase pemilih pemilu"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Data perbandingan kategori tanpa urutan waktu"
+            },
+            {
+              "key": "C",
+              "text": "Data berkala yang menunjukkan perkembangan dari waktu ke waktu"
             },
             {
               "key": "D",
               "text": "Data frekuensi nilai tunggal"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Diagram garis digunakan untuk data kontinu yang berkembang secara kronologis (waktu).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nDiagram garis untuk **perkembangan data dari waktu ke waktu** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nDiagram garis untuk **perkembangan data dari waktu ke waktu** (Opsi C)."
         },
         {
           "id": "smp7-b6-14",
@@ -3326,11 +3326,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "76,67"
+              "text": "75,00"
             },
             {
               "key": "B",
-              "text": "75,00"
+              "text": "76,67"
             },
             {
               "key": "C",
@@ -3341,9 +3341,9 @@ export const grade7Data = {
               "text": "77,50"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Total nilai $= (4 \\times 60) + (8 \\times 70) + (12 \\times 80) + (6 \\times 90) = 240 + 560 + 960 + 540 = 2.300$. Total siswa $= 30$. Mean $= 2.300 : 30 \\approx 76{,}67$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{2.300}{30} \\approx 76{,}67$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{2.300}{30} \\approx 76{,}67$$ (Opsi B)."
         },
         {
           "id": "smp7-b6-15",
@@ -3353,24 +3353,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "4"
-            },
-            {
-              "key": "B",
               "text": "4,5"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "5"
+            },
+            {
+              "key": "C",
+              "text": "4"
             },
             {
               "key": "D",
               "text": "3,5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Median ($Q_2$) data ke-5 adalah 6. Separuh bawah: 3, 4, 4, 5. $Q_1 = \\frac{4 + 4}{2} = 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Q_1 = 4$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Q_1 = 4$$ (Opsi C)."
         },
         {
           "id": "smp7-b6-16",
@@ -3380,24 +3380,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "320"
-            },
-            {
-              "key": "B",
               "text": "315"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "324"
+            },
+            {
+              "key": "C",
+              "text": "320"
             },
             {
               "key": "D",
               "text": "308"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Bilangan tengah $= 18$. Kelima bilangan: 16, 17, 18, 19, 20. Hasil kali $= 16 \\times 20 = 320$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$16 \\times 20 = 320$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$16 \\times 20 = 320$$ (Opsi C)."
         },
         {
           "id": "smp7-b6-17",
@@ -3407,11 +3407,11 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "Q3 = 9,5 dan QR = 5"
+              "text": "Q3 = 10 dan QR = 5"
             },
             {
               "key": "B",
-              "text": "Q3 = 10 dan QR = 5"
+              "text": "Q3 = 9,5 dan QR = 5"
             },
             {
               "key": "C",
@@ -3422,9 +3422,9 @@ export const grade7Data = {
               "text": "Q3 = 9,5 dan QR = 4,5"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "B",
           "hint": "Median $= 7$. Bawah: 2, 4, 5, 6 $\\implies Q_1 = 4{,}5$. Atas: 8, 9, 10, 12 $\\implies Q_3 = 9{,}5$. $QR = 9{,}5 - 4{,}5 = 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $Q_1 = 4{,}5$\n2. $Q_3 = 9{,}5$\n3. $QR = 9{,}5 - 4{,}5 = 5$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $Q_1 = 4{,}5$\n2. $Q_3 = 9{,}5$\n3. $QR = 9{,}5 - 4{,}5 = 5$ (Opsi B)."
         },
         {
           "id": "smp7-b6-18",
@@ -3434,24 +3434,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "28"
-            },
-            {
-              "key": "B",
               "text": "24"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "30"
+            },
+            {
+              "key": "C",
+              "text": "28"
             },
             {
               "key": "D",
               "text": "26"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "C",
           "hint": "Total 8 siswa $= 600$. Total 7 siswa tanpa tertinggi $= 7 \\times 73 = 511 \\implies X_{\\text{maks}} = 600 - 511 = 89$. Total 7 siswa tanpa terendah $= 7 \\times 77 = 539 \\implies X_{\\text{min}} = 600 - 539 = 61$. Selisih $= 89 - 61 = 28$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$X_{\\text{maks}} - X_{\\text{min}} = 89 - 61 = 28$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$X_{\\text{maks}} - X_{\\text{min}} = 89 - 61 = 28$$ (Opsi C)."
         },
         {
           "id": "smp7-b6-19",
@@ -3461,24 +3461,24 @@ export const grade7Data = {
           "options": [
             {
               "key": "A",
-              "text": "Rata-rata bertambah dan simpangan kuartil bertambah 20%"
-            },
-            {
-              "key": "B",
               "text": "Keduanya tetap sama"
             },
             {
-              "key": "C",
+              "key": "B",
               "text": "Rata-rata tetap tetapi simpangan kuartil bertambah"
             },
             {
-              "key": "D",
+              "key": "C",
               "text": "Keduanya hanya bertambah 1"
+            },
+            {
+              "key": "D",
+              "text": "Rata-rata bertambah dan simpangan kuartil bertambah 20%"
             }
           ],
-          "correctAnswer": "A",
+          "correctAnswer": "D",
           "hint": "Operasi linear $Y = aX + b$: rata-rata berubah menjadi $a\\bar{X} + b$, ukuran penyebaran (simpangan kuartil) hanya dipengaruhi faktor skala $|a| = 1{,}2$ (bertambah 20%).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nUkuran penyebaran hanya terpengaruh pengali 20% (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nUkuran penyebaran hanya terpengaruh pengali 20% (Opsi D)."
         },
         {
           "id": "smp7-b6-20",
