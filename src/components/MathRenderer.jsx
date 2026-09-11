@@ -14,12 +14,15 @@ export function MathText({ text = "", className = "" }) {
     if (!text || typeof text !== "string") return null;
 
     let processedText = text;
-    // Auto-detect: Jika teks mengandung perintah LaTeX umum dan tidak memiliki $
-    const latexPatterns = [/\\frac/, /\\times/, /\\sum/, /\\int/, /\\sqrt/, /\\alpha/, /\\beta/, /\\gamma/, /\\theta/];
+    // Auto-detect: Jika teks mengandung perintah LaTeX atau notasi matematika (pangkat, indeks, simbol) tanpa $
     const hasDelimiters = /\$[\s\S]*?\$|\$\$[\s\S]*?\$\$/.test(processedText);
     
-    if (!hasDelimiters && latexPatterns.some(p => p.test(processedText))) {
-      processedText = `$${processedText}$`;
+    if (!hasDelimiters) {
+      const hasLatexCommand = /\\[a-zA-Z]+/.test(processedText);
+      const hasMathExp = /[\^_]\{?[0-9a-zA-Z+-]+\}?/.test(processedText);
+      if (hasLatexCommand || hasMathExp) {
+        processedText = `$${processedText}$`;
+      }
     }
 
     // Pisahkan teks berdasarkan pola $...$ atau $$...$$

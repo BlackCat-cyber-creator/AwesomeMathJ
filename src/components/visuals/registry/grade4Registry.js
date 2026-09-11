@@ -32,10 +32,10 @@ export const grade4VisualRegistry = {
     type: 'fraction-strip',
     props: {
       title: 'Penjumlahan Pecahan Berpenyebut Sama',
-      caption: '*Model penggabungan 3/7 dan 2/7 bagian',
+      caption: '*Biru: 3/7 bagian, Oranye: 2/7 bagian',
       totalParts: 7,
-      shadedParts: 5,
-      label: '3/7 + 2/7 = 5/7'
+      shadedGroups: [3, 2],
+      targetBadge: 'Total = ?'
     }
   },
 
@@ -64,11 +64,11 @@ export const grade4VisualRegistry = {
   'sd4-b2-6': {
     type: 'circle-fraction',
     props: {
-      title: 'Model Potongan Pizza Pecahan',
-      caption: '*3 dari 4 potongan juring pizza tersisa',
-      totalParts: 4,
-      shadedParts: 3,
-      label: '3/4 bagian'
+      title: 'Model Penyederhanaan Pecahan',
+      caption: '*12 dari 16 potongan juring lingkaran diarsir',
+      totalParts: 16,
+      shadedParts: 12,
+      targetBadge: 'Bentuk Paling Sederhana = ?'
     }
   },
 
@@ -112,8 +112,15 @@ export const grade4VisualRegistry = {
     props: {
       title: 'Pola Barisan Bilangan Berkurang',
       caption: '*Amati keteraturan selisih antar-bilangan yang mengecil',
-      items: [35, 30, 25, 20],
-      target: '?'
+      slots: [
+        { val: 35, sub: 'U₁' },
+        { val: 30, sub: 'U₂' },
+        { val: 25, sub: 'U₃' },
+        { val: 20, sub: 'U₄' },
+        { val: '?', sub: 'U₅', isTarget: true },
+        { val: '?', sub: 'U₆', isTarget: true }
+      ],
+      promptText: 'Berapakah dua bilangan berikutnya pada kotak bertanda tanya?'
     }
   },
 
@@ -121,9 +128,16 @@ export const grade4VisualRegistry = {
     type: 'number-line',
     props: {
       title: 'Mengisi Suku Barisan yang Rumpang',
-      caption: '*Temukan pola lompatan untuk mengisi kotak selanjutnya',
-      items: [2, 6, 10],
-      target: '?'
+      caption: '*Lengkapi barisan bilangan: 2, 6, 10, ..., 18, 22',
+      slots: [
+        { val: 2, sub: 'U₁' },
+        { val: 6, sub: 'U₂' },
+        { val: 10, sub: 'U₃' },
+        { val: '?', sub: 'U₄', isTarget: true },
+        { val: 18, sub: 'U₅' },
+        { val: 22, sub: 'U₆' }
+      ],
+      promptText: 'Berapakah bilangan yang tepat untuk mengisi posisi U₄?'
     }
   },
 
@@ -132,8 +146,14 @@ export const grade4VisualRegistry = {
     props: {
       title: 'Barisan Bilangan Rumpang',
       caption: '*Lengkapi titik-titik pada barisan: 12, 16, ..., 24, 28',
-      items: [12, 16],
-      target: '?'
+      slots: [
+        { val: 12, sub: 'U₁' },
+        { val: 16, sub: 'U₂' },
+        { val: '?', sub: 'U₃', isTarget: true },
+        { val: 24, sub: 'U₄' },
+        { val: 28, sub: 'U₅' }
+      ],
+      promptText: 'Berapakah bilangan yang tepat untuk mengisi posisi U₃?'
     }
   },
 
@@ -142,8 +162,14 @@ export const grade4VisualRegistry = {
     props: {
       title: 'Barisan Bilangan Berkurang',
       caption: '*Lengkapi suku yang hilang pada barisan: 50, 45, 40, ..., 30',
-      items: [50, 45, 40],
-      target: '?'
+      slots: [
+        { val: 50, sub: 'U₁' },
+        { val: 45, sub: 'U₂' },
+        { val: 40, sub: 'U₃' },
+        { val: '?', sub: 'U₄', isTarget: true },
+        { val: 30, sub: 'U₅' }
+      ],
+      promptText: 'Berapakah suku yang hilang pada posisi U₄?'
     }
   },
 
@@ -153,7 +179,9 @@ export const grade4VisualRegistry = {
       title: 'Pola Bilangan Ganjil',
       caption: '*Barisan ganjil berurutan: 1, 3, 5, 7, ...',
       items: [1, 3, 5, 7],
-      target: '?'
+      targetIndex: 6,
+      target: '?',
+      promptText: 'Berapakah suku ke-6 (U₆) pada kotak bertanda tanya?'
     }
   },
 
@@ -161,9 +189,11 @@ export const grade4VisualRegistry = {
     type: 'number-line',
     props: {
       title: 'Pola Barisan Bilangan',
-      caption: '*Tentukan bilangan ke-7 dari barisan: 3, 7, 11, 15, ...',
+      caption: '*Tentukan bilangan suku ke-7 (U₇) dari barisan: 3, 7, 11, 15, ...',
       items: [3, 7, 11, 15],
-      target: '?'
+      targetIndex: 7,
+      target: '?',
+      promptText: 'Berapakah nilai suku ke-7 (U₇) pada kotak bertanda tanya?'
     }
   },
 
@@ -189,7 +219,7 @@ export const grade4VisualRegistry = {
       lengthLabel: 'p = 4 kubus',
       widthLabel: 'l = 3 kubus',
       heightLabel: 't = 3 kubus',
-      targetLabel: 'Isi = 36 kubus'
+      targetLabel: 'Volume = ? kubus satuan'
     }
   },
 
@@ -281,7 +311,7 @@ export const grade4VisualRegistry = {
       lengthLabel: 'p = 8 cm',
       widthLabel: 'l = 6 cm',
       heightLabel: 't = ? cm',
-      targetLabel: 'V = 240 cm³'
+      targetLabel: 'Diketahui: V = 240 cm³'
     }
   },
 
@@ -329,11 +359,11 @@ export const grade4VisualRegistry = {
     type: 'quadrilateral',
     props: {
       title: 'Sudut Siku-Siku Persegi Panjang',
-      caption: '*Memiliki 4 pojok sudut siku-siku (90°)',
+      caption: '*Amati sudut pada setiap pojok persegi panjang',
       type: 'rectangle',
       dimA: 'panjang',
       dimB: 'lebar',
-      targetBadge: '4 Sudut 90°'
+      targetBadge: 'Banyak Sudut = ?'
     }
   },
 
@@ -341,10 +371,10 @@ export const grade4VisualRegistry = {
     type: 'kite',
     props: {
       title: 'Dua Segitiga Sama Kaki Bergabung',
-      caption: '*Dua segitiga digabungkan pada sisi alasnya membentuk bangun segiempat',
+      caption: '*Dua segitiga sama kaki digabungkan pada sisi alasnya yang berimpit',
       dimA: 'diagonal 1',
       dimB: 'diagonal 2',
-      targetBadge: 'Layang-layang'
+      targetBadge: 'Bangun Segiempat = ?'
     }
   },
 

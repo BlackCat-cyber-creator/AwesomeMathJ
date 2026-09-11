@@ -579,19 +579,19 @@ export const grade8Data = {
           "options": [
             {
               "key": "A",
-              "text": "300\\text{ m}^3"
+              "text": "$300\\text{ m}^3$"
             },
             {
               "key": "B",
-              "text": "30\\text{ m}^3"
+              "text": "$30\\text{ m}^3$"
             },
             {
               "key": "C",
-              "text": "3.000\\text{ m}^3"
+              "text": "$3.000\\text{ m}^3$"
             },
             {
               "key": "D",
-              "text": "30.000\\text{ m}^3"
+              "text": "$30.000\\text{ m}^3$"
             }
           ],
           "correctAnswer": "A",

@@ -138,5 +138,18 @@ export const grade8VisualRegistry = {
       dimT: '? cm',
       targetBadge: 'Luas = ? cm²'
     }
+  },
+
+  'smp8-b1-20': {
+    type: 'solid-3d',
+    props: {
+      title: 'Ruangan Laboratorium',
+      caption: '*Konversikan dimensi ke satuan meter: 1 m = 10² cm',
+      solid: 'box',
+      lengthLabel: 'p = 4 × 10³ cm',
+      widthLabel: 'l = 3 × 10³ cm',
+      heightLabel: 't = 2,5 × 10² cm',
+      targetLabel: 'Volume = ? m³'
+    }
   }
 };

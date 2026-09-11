@@ -225,7 +225,7 @@ export const grade9VisualRegistry = {
       solid: 'cone',
       radiusLabel: 'r = 5 cm',
       heightLabel: 't = ? cm',
-      targetLabel: 'V = 314 cm³'
+      targetLabel: 'Diketahui: V = 314 cm³'
     }
   },
 

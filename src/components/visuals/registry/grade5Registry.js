@@ -10,10 +10,10 @@ export const grade5VisualRegistry = {
     type: 'fraction-strip',
     props: {
       title: 'Penjumlahan Pecahan Berbeda Penyebut',
-      caption: '*Menyamakan penyebut menjadi per-enam',
+      caption: '*Biru: 3/6 bagian (= 1/2), Oranye: 2/6 bagian (= 1/3)',
       totalParts: 6,
-      shadedParts: 5,
-      label: '1/2 + 1/3 = 5/6'
+      shadedGroups: [3, 2],
+      targetBadge: 'Total = ?'
     }
   },
 
@@ -24,7 +24,7 @@ export const grade5VisualRegistry = {
       caption: '*2 utuh ditambah 3 bagian dari 5 petak',
       totalParts: 5,
       shadedParts: 3,
-      label: '2 3/5 = 13/5'
+      targetBadge: 'Pecahan biasa = ?'
     }
   },
 
@@ -35,7 +35,7 @@ export const grade5VisualRegistry = {
       caption: '*Pita sepanjang 4 1/2 m dipotong 1 1/4 m',
       totalParts: 4,
       shadedParts: 3,
-      label: 'Sisa Pita = ?'
+      targetBadge: 'Sisa Pita = ?'
     }
   },
 
@@ -43,10 +43,10 @@ export const grade5VisualRegistry = {
     type: 'circle-fraction',
     props: {
       title: 'Konversi Pecahan ke Persen',
-      caption: '*3 dari 4 bagian lingkaran sama dengan 75%',
+      caption: '*3 dari 4 bagian lingkaran',
       totalParts: 4,
       shadedParts: 3,
-      label: '3/4 = 75%'
+      targetBadge: 'Persen = ?'
     }
   },
 
@@ -54,10 +54,10 @@ export const grade5VisualRegistry = {
     type: 'fraction-strip',
     props: {
       title: 'Pengurangan Pecahan',
-      caption: '*Menyamakan penyebut menjadi per-dua belas (9/12 - 4/12)',
+      caption: '*Penyebut disamakan menjadi per-12 (9/12 dikurangi 4/12)',
       totalParts: 12,
       shadedParts: 5,
-      label: '3/4 - 1/3 = 5/12'
+      targetBadge: 'Sisa = ?'
     }
   },
 
@@ -268,8 +268,8 @@ export const grade5VisualRegistry = {
       caption: '*Jarum pendek di angka 3 dan jarum panjang di angka 12',
       hour: 3,
       minute: 0,
-      angleLabel: '90°',
-      angleType: 'Sudut Siku-Siku'
+      angleLabel: '?°',
+      angleType: 'Besar Sudut = ?'
     }
   },
 
@@ -280,8 +280,8 @@ export const grade5VisualRegistry = {
       caption: '*Jarum pendek di angka 5 dan jarum panjang di angka 12',
       hour: 5,
       minute: 0,
-      angleLabel: '150°',
-      angleType: 'Sudut Tumpul'
+      angleLabel: '?°',
+      angleType: 'Besar Sudut = ?'
     }
   },
 
@@ -292,7 +292,7 @@ export const grade5VisualRegistry = {
       caption: '*Satu per tiga dari 360° putaran penuh lingkaran',
       totalParts: 3,
       shadedParts: 1,
-      label: '120° (Tumpul)'
+      targetBadge: 'Besar Sudut = ?'
     }
   },
 
@@ -300,11 +300,11 @@ export const grade5VisualRegistry = {
     type: 'clock-angle',
     props: {
       title: 'Sudut Jarum Jam Pukul 03.00',
-      caption: '*Membentuk sudut siku-siku tepat 90°',
+      caption: '*Amati sudut antara jarum menit di angka 12 dan jarum jam di angka 3',
       hour: 3,
       minute: 0,
-      angleLabel: '90°',
-      angleType: 'Sudut Siku-Siku'
+      angleLabel: '?°',
+      angleType: 'Besar Sudut = ?'
     }
   },
 
@@ -315,8 +315,8 @@ export const grade5VisualRegistry = {
       caption: '*Jarum pendek di angka 4 dan jarum panjang di angka 12',
       hour: 4,
       minute: 0,
-      angleLabel: '120°',
-      angleType: 'Sudut Tumpul'
+      angleLabel: '?°',
+      angleType: 'Besar Sudut = ?'
     }
   },
 
@@ -350,11 +350,11 @@ export const grade5VisualRegistry = {
     type: 'clock-angle',
     props: {
       title: 'Sudut Jarum Jam Pukul 06.00',
-      caption: '*Membentuk satu garis lurus tepat (180°)',
+      caption: '*Amati sudut antara kedua jarum jam pada pukul 06.00',
       hour: 6,
       minute: 0,
-      angleLabel: '180°',
-      angleType: 'Sudut Lurus'
+      angleLabel: '?°',
+      angleType: 'Besar Sudut = ?'
     }
   },
 
@@ -365,8 +365,8 @@ export const grade5VisualRegistry = {
       caption: '*Jarum pendek di antara 3 dan 4, jarum panjang di angka 6',
       hour: 3,
       minute: 30,
-      angleLabel: '75°',
-      angleType: 'Sudut Lancip'
+      angleLabel: '?°',
+      angleType: 'Besar Sudut = ?'
     }
   },
 
@@ -388,8 +388,8 @@ export const grade5VisualRegistry = {
       caption: '*Sudut terkecil antara jarum jam dan jarum menit',
       hour: 8,
       minute: 20,
-      angleLabel: '130°',
-      angleType: 'Sudut Tumpul'
+      angleLabel: '?°',
+      angleType: 'Besar Sudut = ?'
     }
   },
 
@@ -410,10 +410,10 @@ export const grade5VisualRegistry = {
     type: 'rectangle',
     props: {
       title: 'Simetri Lipat Persegi Panjang',
-      caption: '*Memiliki 2 sumbu simetri lipat (horizontal & vertikal)',
+      caption: '*Amati kemungkinan garis lipatan simetri pada bangun persegi panjang',
       dimA: 'panjang',
       dimB: 'lebar',
-      targetBadge: '2 Simetri Lipat'
+      targetBadge: 'Simetri Lipat = ?'
     }
   },
 
@@ -443,9 +443,9 @@ export const grade5VisualRegistry = {
     type: 'square',
     props: {
       title: 'Sumbu Simetri Lipat Persegi',
-      caption: '*Persegi memiliki 4 sumbu simetri lipat',
+      caption: '*Amati kemungkinan sumbu simetri lipat pada bangun persegi',
       dimA: 'sisi s',
-      targetBadge: '4 Simetri Lipat'
+      targetBadge: 'Simetri Lipat = ?'
     }
   },
 
@@ -453,11 +453,11 @@ export const grade5VisualRegistry = {
     type: 'triangle',
     props: {
       title: 'Simetri Lipat Segitiga Sama Sisi',
-      caption: '*Segitiga sama sisi memiliki 3 sumbu simetri lipat',
+      caption: '*Amati garis lipatan simetri dari setiap titik sudut segitiga sama sisi',
       type: 'equilateral',
       baseLabel: 'sisi',
       heightLabel: '',
-      targetBadge: '3 Simetri Lipat'
+      targetBadge: 'Simetri Lipat = ?'
     }
   },
 

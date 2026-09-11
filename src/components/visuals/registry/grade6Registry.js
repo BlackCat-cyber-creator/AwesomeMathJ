@@ -9,11 +9,11 @@ export const grade6VisualRegistry = {
   'sd6-b1-2': {
     type: 'fraction-strip',
     props: {
-      title: 'Konversi Pecahan ke Desimal',
-      caption: '*3 dari 5 bagian sama dengan 0,6',
+      title: 'Model 3/5 Bagian',
+      caption: '*Nyatakan 3 dari 5 bagian ke bentuk desimal',
       totalParts: 5,
       shadedParts: 3,
-      label: '3/5 = 0,6'
+      targetBadge: 'Desimal = ?'
     }
   },
 
@@ -288,8 +288,8 @@ export const grade6VisualRegistry = {
           totalLabel: 'Jarak Tempuh'
         }
       ],
-      target: '15 km / liter',
-      targetLabel: 'Efisiensi'
+      target: '? liter',
+      targetLabel: 'Bahan Bakar 120 km'
     }
   },
 
@@ -381,7 +381,7 @@ export const grade6VisualRegistry = {
       lengthLabel: 's = ? cm',
       widthLabel: 's = ? cm',
       heightLabel: 's = ? cm',
-      targetLabel: '12 Rusuk = 96 cm'
+      targetLabel: 'Diketahui: 12 Rusuk = 96 cm'
     }
   },
 
@@ -541,7 +541,7 @@ export const grade6VisualRegistry = {
     type: 'dice',
     props: {
       title: 'Peluang Mata Dadu Ganjil',
-      caption: '*Mata dadu ganjil adalah {1, 3, 5} dari total 6 sisi',
+      caption: '*Dadu bersisi enam dengan mata dadu bernilai 1 sampai 6',
       diceValue: 3,
       targetLabel: 'Peluang Ganjil = ?'
     }

@@ -11,73 +11,164 @@ export function NumberLineVisual({
   caption = "*Temukan aturan pola untuk menentukan bilangan selanjutnya",
   items = [5, 9, 13, 17],
   target = "?",
-  width = 330,
-  heightSvg = 135
+  slots = null,
+  targetIndex = null,
+  promptText = "Berapakah bilangan pada kotak bertanda tanya?",
+  width = 345,
+  heightSvg = 145
 }) {
-  const totalSpots = items.length + 1;
-  const startX = 42;
-  const endX = width - 42;
-  const stepX = (endX - startX) / (totalSpots - 1);
-  const lineY = 82;
+  // Normalize slots data
+  let resolvedSlots = [];
+  if (Array.isArray(slots) && slots.length > 0) {
+    resolvedSlots = slots.map((s, idx) => {
+      if (typeof s === 'object' && s !== null) {
+        return {
+          val: s.val !== undefined ? s.val : '?',
+          sub: s.sub || `U${idx + 1}`,
+          isTarget: Boolean(s.isTarget || s.val === '?'),
+          isPlaceholder: Boolean(s.isPlaceholder)
+        };
+      }
+      return {
+        val: s,
+        sub: `U${idx + 1}`,
+        isTarget: s === '?',
+        isPlaceholder: false
+      };
+    });
+  } else if (targetIndex && targetIndex > items.length + 1) {
+    // Generate intermediate placeholder jumps to targetIndex (e.g. U7)
+    resolvedSlots = items.map((val, i) => ({
+      val,
+      sub: `U${i + 1}`,
+      isTarget: false,
+      isPlaceholder: false
+    }));
+    for (let u = items.length + 1; u < targetIndex; u++) {
+      resolvedSlots.push({
+        val: `U${u}`,
+        sub: `U${u}`,
+        isTarget: false,
+        isPlaceholder: true
+      });
+    }
+    resolvedSlots.push({
+      val: target,
+      sub: `U${targetIndex}`,
+      isTarget: true,
+      isPlaceholder: false
+    });
+  } else {
+    // Standard sequence items + target at end
+    resolvedSlots = items.map((val, i) => ({
+      val,
+      sub: `U${i + 1}`,
+      isTarget: false,
+      isPlaceholder: false
+    }));
+    resolvedSlots.push({
+      val: target,
+      sub: `U${items.length + 1}`,
+      isTarget: true,
+      isPlaceholder: false
+    });
+  }
+
+  const totalSpots = resolvedSlots.length;
+  const startX = 32;
+  const endX = width - 32;
+  const stepX = (endX - startX) / Math.max(1, totalSpots - 1);
+  const lineY = 68;
 
   return (
     <SvgContainer width={width} height={heightSvg} title={title} caption={caption}>
       {/* Garis Dasar Bilangan */}
       <line x1={startX - 15} y1={lineY} x2={endX + 15} y2={lineY} stroke="#CBD5E1" strokeWidth="2.5" strokeLinecap="round" />
 
-      {/* Titik / Nilai Bilangan yang Diketahui */}
-      {items.map((val, i) => {
+      {/* Titik / Nilai / Kotak Bilangan */}
+      {resolvedSlots.map((slot, i) => {
         const cx = startX + i * stepX;
         return (
-          <g key={`num-${i}`}>
-            <circle cx={cx} cy={lineY} r="18" fill={VISUAL_THEME.primarySoft} stroke={VISUAL_THEME.primary} strokeWidth="2" />
-            <text x={cx} y={lineY + 5} textAnchor="middle" fontSize="12" fontWeight="800" fill={VISUAL_THEME.primaryDark}>
-              {val}
+          <g key={`spot-${i}`}>
+            {slot.isTarget ? (
+              <rect 
+                x={cx - 16} y={lineY - 16} width="32" height="32" rx="6" 
+                fill={VISUAL_THEME.accentSoft} 
+                stroke={VISUAL_THEME.accent} 
+                strokeWidth="2" 
+                strokeDasharray="3 2" 
+              />
+            ) : slot.isPlaceholder ? (
+              <circle 
+                cx={cx} cy={lineY} r="15" 
+                fill="#F8FAFC" 
+                stroke="#94A3B8" 
+                strokeWidth="1.5" 
+                strokeDasharray="3 2" 
+              />
+            ) : (
+              <circle 
+                cx={cx} cy={lineY} r="16" 
+                fill={VISUAL_THEME.primarySoft} 
+                stroke={VISUAL_THEME.primary} 
+                strokeWidth="2" 
+              />
+            )}
+
+            {/* Label Nilai Utama */}
+            <text 
+              x={cx} 
+              y={lineY + (slot.isTarget ? 6 : slot.isPlaceholder ? 4 : 5)} 
+              textAnchor="middle" 
+              fontSize={slot.isTarget ? "15" : slot.isPlaceholder ? "10" : "11.5"} 
+              fontWeight={slot.isTarget ? "900" : slot.isPlaceholder ? "700" : "800"} 
+              fill={slot.isTarget ? VISUAL_THEME.accentDark : slot.isPlaceholder ? "#64748B" : VISUAL_THEME.primaryDark}
+            >
+              {slot.val}
             </text>
+
+            {/* Subscript Identifikasi Suku (U₁, U₂, dst.) */}
+            {slot.sub && (
+              <text 
+                x={cx} 
+                y={lineY + 28} 
+                textAnchor="middle" 
+                fontSize="9.5" 
+                fontWeight="700" 
+                fill={slot.isTarget ? VISUAL_THEME.accentDark : "#64748B"}
+              >
+                {slot.sub}
+              </text>
+            )}
           </g>
         );
       })}
 
-      {/* Kotak Target Bertanda Tanya */}
-      {(() => {
-        const cx = startX + items.length * stepX;
-        return (
-          <g>
-            <rect 
-              x={cx - 18} y={lineY - 18} width="36" height="36" rx="6" 
-              fill={VISUAL_THEME.accentSoft} 
-              stroke={VISUAL_THEME.accent} 
-              strokeWidth="2" 
-              strokeDasharray="3 2" 
-            />
-            <text x={cx} y={lineY + 6} textAnchor="middle" fontSize="16" fontWeight="900" fill={VISUAL_THEME.accentDark}>
-              {target}
-            </text>
-          </g>
-        );
-      })()}
-
-      {/* Busur Lompatan Tanpa Spoiler Angka (Siswa Menentukan Sendiri) */}
-      {items.map((_, i) => {
+      {/* Busur Lompatan Antar Suku Berurutan */}
+      {resolvedSlots.slice(0, -1).map((slot, i) => {
+        const nextSlot = resolvedSlots[i + 1];
         const x1 = startX + i * stepX;
         const x2 = startX + (i + 1) * stepX;
         const midX = (x1 + x2) / 2;
+        const isDashed = slot.isPlaceholder || nextSlot.isPlaceholder;
+
         return (
           <g key={`arc-${i}`}>
             <path 
-              d={`M ${x1} ${lineY - 18} Q ${midX} ${lineY - 42} ${x2} ${lineY - 18}`} 
+              d={`M ${x1} ${lineY - 17} Q ${midX} ${lineY - 40} ${x2} ${lineY - 17}`} 
               fill="none" 
-              stroke={VISUAL_THEME.primary} 
+              stroke={isDashed ? "#94A3B8" : VISUAL_THEME.primary} 
               strokeWidth="1.75" 
+              strokeDasharray={isDashed ? "3 2" : undefined}
             />
             {/* Titik Puncak Busur Halus */}
-            <circle cx={midX} cy={lineY - 30} r="2.5" fill={VISUAL_THEME.primary} />
+            <circle cx={midX} cy={lineY - 28.5} r="2.25" fill={isDashed ? "#94A3B8" : VISUAL_THEME.primary} />
           </g>
         );
       })}
 
       <text x={width / 2} y={heightSvg - 8} textAnchor="middle" fontSize="9.5" fontWeight="600" fill={VISUAL_THEME.textMuted}>
-        Berapakah bilangan selanjutnya pada kotak bertanda tanya?
+        {promptText}
       </text>
     </SvgContainer>
   );
@@ -92,7 +183,10 @@ export function FractionStripVisual({
   caption,
   totalParts = 5,
   shadedParts = 3,
-  label = "3 / 5",
+  shadedGroups = null, // e.g. [3, 2] for 3/7 + 2/7
+  label,
+  targetBadge = null,
+  showAnswerBadge = false,
   width = 320,
   heightSvg = 130
 }) {
@@ -102,12 +196,39 @@ export function FractionStripVisual({
   const barH = 34;
   const partW = barW / totalParts;
 
+  const getCellTheme = (index) => {
+    if (shadedGroups && Array.isArray(shadedGroups)) {
+      let cumulative = 0;
+      const palette = [
+        { fill: VISUAL_THEME.primarySoft, stroke: VISUAL_THEME.primary, text: VISUAL_THEME.primaryDark },
+        { fill: VISUAL_THEME.accentSoft, stroke: VISUAL_THEME.accent, text: VISUAL_THEME.accentDark },
+        { fill: '#DCFCE7', stroke: '#16A34A', text: '#15803D' }
+      ];
+      for (let g = 0; g < shadedGroups.length; g++) {
+        const count = shadedGroups[g];
+        if (index >= cumulative && index < cumulative + count) {
+          return palette[g % palette.length];
+        }
+        cumulative += count;
+      }
+      return { fill: '#FFFFFF', stroke: '#E2E8F0', text: VISUAL_THEME.textMuted };
+    }
+    const isShaded = index < shadedParts;
+    return {
+      fill: isShaded ? VISUAL_THEME.primarySoft : '#FFFFFF',
+      stroke: isShaded ? VISUAL_THEME.primary : '#E2E8F0',
+      text: isShaded ? VISUAL_THEME.primaryDark : VISUAL_THEME.textMuted
+    };
+  };
+
+  const badgeText = targetBadge || (showAnswerBadge ? `${shadedParts} dari ${totalParts} bagian` : null);
+
   return (
     <SvgContainer width={width} height={heightSvg} title={title} caption={caption}>
       <rect x={startX} y={startY} width={barW} height={barH} rx="5" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1.5" />
 
       {Array.from({ length: totalParts }).map((_, i) => {
-        const isShaded = i < shadedParts;
+        const theme = getCellTheme(i);
         return (
           <g key={`part-${i}`}>
             <rect 
@@ -115,8 +236,8 @@ export function FractionStripVisual({
               y={startY} 
               width={partW} 
               height={barH} 
-              fill={isShaded ? VISUAL_THEME.primarySoft : '#FFFFFF'} 
-              stroke={VISUAL_THEME.primary} 
+              fill={theme.fill} 
+              stroke={theme.stroke} 
               strokeWidth="1.25" 
             />
             <text 
@@ -125,7 +246,7 @@ export function FractionStripVisual({
               textAnchor="middle" 
               fontSize="10" 
               fontWeight="700" 
-              fill={isShaded ? VISUAL_THEME.primaryDark : VISUAL_THEME.textMuted}
+              fill={theme.text}
             >
               1/{totalParts}
             </text>
@@ -133,12 +254,14 @@ export function FractionStripVisual({
         );
       })}
 
-      <g transform={`translate(${width / 2}, ${startY + barH + 24})`}>
-        <rect x="-42" y="-12" width="84" height="24" rx="4" fill={VISUAL_THEME.primarySoft} stroke={VISUAL_THEME.primary} strokeWidth="1" />
-        <text x="0" y="4" textAnchor="middle" fontSize="11" fontWeight="800" fill={VISUAL_THEME.primaryDark}>
-          {shadedParts} dari {totalParts} bagian
-        </text>
-      </g>
+      {badgeText && (
+        <g transform={`translate(${width / 2}, ${startY + barH + 24})`}>
+          <rect x="-55" y="-12" width="110" height="24" rx="4" fill={VISUAL_THEME.primarySoft} stroke={VISUAL_THEME.primary} strokeWidth="1" />
+          <text x="0" y="4" textAnchor="middle" fontSize="11" fontWeight="800" fill={VISUAL_THEME.primaryDark}>
+            {badgeText}
+          </text>
+        </g>
+      )}
     </SvgContainer>
   );
 }
