@@ -40,7 +40,7 @@ export function sanitizeForFirestore(obj) {
  * Berlangganan (real-time listener) daftar murid pengajar
  */
 export function subscribeStudents(teacherId, onData, onError) {
-  if (!teacherId) return () => {};
+  if (!teacherId || !db) return () => {};
   const studentsCol = collection(db, "teachers", teacherId, "students");
   
   return onSnapshot(studentsCol, (snapshot) => {
@@ -110,7 +110,7 @@ export async function deleteStudentCloud(teacherId, studentId) {
  * Berlangganan (real-time listener) daftar tugas PR milik guru
  */
 export function subscribeQuests(teacherId, onData, onError) {
-  if (!teacherId) return () => {};
+  if (!teacherId || !db) return () => {};
   const questsCol = collection(db, "quests");
   const q = query(questsCol, where("teacherId", "==", teacherId));
 

@@ -37,6 +37,9 @@ export function getFriendlyAuthErrorMessage(error) {
  * Login Guru dengan Email & Password
  */
 export async function loginTeacherWithEmail(email, password) {
+  if (!auth) {
+    return { success: false, error: "Layanan autentikasi belum siap atau tidak tersedia." };
+  }
   try {
     const userCredential = await signInWithEmailAndPassword(auth, email.trim(), password);
     return { success: true, user: userCredential.user };
@@ -50,6 +53,9 @@ export async function loginTeacherWithEmail(email, password) {
  * Pendaftaran Akun Guru Baru dengan Email & Password
  */
 export async function registerTeacherWithEmail(email, password, displayName = "Guru AwesomeMathJ") {
+  if (!auth) {
+    return { success: false, error: "Layanan autentikasi belum siap atau tidak tersedia." };
+  }
   try {
     const userCredential = await createUserWithEmailAndPassword(auth, email.trim(), password);
     if (displayName) {
@@ -66,6 +72,9 @@ export async function registerTeacherWithEmail(email, password, displayName = "G
  * Logout Guru dari Firebase Auth
  */
 export async function logoutTeacher() {
+  if (!auth) {
+    return { success: true };
+  }
   try {
     await signOut(auth);
     return { success: true };
@@ -79,6 +88,10 @@ export async function logoutTeacher() {
  * Berlangganan perubahan status login Firebase
  */
 export function subscribeToTeacherAuth(callback) {
+  if (!auth) {
+    callback(null);
+    return () => {};
+  }
   return onAuthStateChanged(auth, (user) => {
     callback(user);
   });
@@ -88,5 +101,6 @@ export function subscribeToTeacherAuth(callback) {
  * Ambil user guru aktif saat ini
  */
 export function getCurrentTeacherUser() {
+  if (!auth) return null;
   return auth.currentUser;
 }
