@@ -47,18 +47,35 @@
 
 Semua materi diselaraskan langsung dari buku teks resmi Kemendikbudristek:
 
-| Jenjang | Fase | Kelas | Jumlah Bab | Soal Latihan | Status Penyelarasan |
+| Jenjang | Fase | Kelas | Jumlah Bab | Soal Latihan (Paket A-D) | Status Penyelarasan |
 | :--- | :---: | :---: | :---: | :---: | :---: |
-| **Sekolah Dasar (SD)** | Fase B & C | Kelas 4 | 6 Bab | 30 Soal | ✅ Aligned |
-| | Fase C | Kelas 5 | 9 Bab | 36 Soal | ✅ Aligned |
-| | Fase C | Kelas 6 | 4 Bab | 18 Soal | ✅ Aligned |
-| **SMP** | Fase D | Kelas 7 | 6 Bab | 24 Soal | ✅ Aligned |
-| | Fase D | Kelas 8 | 6 Bab | 24 Soal | ✅ Aligned |
-| | Fase D | Kelas 9 | 4 Bab | 18 Soal | ✅ Aligned |
-| **SMA** | Fase E | Kelas 10 | 8 Bab | 32 Soal | ✅ Aligned |
-| | Fase F | Kelas 11 (Wajib & Lanjut) | 3 Bab | 15 Soal | ✅ Aligned |
-| | Fase F | Kelas 12 (Wajib & Lanjut) | 4 Bab | 20 Soal | ✅ Aligned |
-| **TOTAL** | | **9 Kelas** | **50 Bab** | **217 Soal** | **100% Validated** |
+| **Sekolah Dasar (SD)** | Fase B & C | Kelas 4 | 6 Bab | 120 Soal | ✅ 100% Aligned |
+| | Fase C | Kelas 5 | 9 Bab | 180 Soal | ✅ 100% Aligned |
+| | Fase C | Kelas 6 | 4 Bab | 80 Soal | ✅ 100% Aligned |
+| **SMP** | Fase D | Kelas 7 | 6 Bab | 120 Soal | ✅ 100% Aligned |
+| | Fase D | Kelas 8 | 6 Bab | 120 Soal | ✅ 100% Aligned |
+| | Fase D | Kelas 9 | 4 Bab | 80 Soal | ✅ 100% Aligned |
+| **SMA** | Fase E | Kelas 10 | 8 Bab | 160 Soal | ✅ 100% Aligned |
+| | Fase F | Kelas 11 (Wajib & Lanjut) | 6 Bab | 120 Soal | ✅ 100% Aligned |
+| | Fase F | Kelas 12 (Wajib & Lanjut) | 6 Bab | 120 Soal | ✅ 100% Aligned |
+| **TOTAL** | | **9 Kelas** | **55 Bab** | **1.100 Soal** | **100% Validated** |
+
+---
+
+## 🧭 Arsitektur Routing Deklaratif & Deep Linking
+
+Aplikasi mengadopsi **React Router v7** dengan skema rute kanonik dan dukungan penuh mundur (*backward compatibility*) untuk QR code fisik yang sudah tercetak:
+
+| Rute Kanonik | Komponen | Deskripsi |
+| :--- | :--- | :--- |
+| `/` | `PublicHandbook` | Portal buku saku digital 55 bab dengan 6 pilar pedagogis dan kuis mandiri |
+| `/quest/:questId` | `StudentQuestView` | Player pengerjaan tugas/PR interaktif siswa dengan scratchpad kanvas |
+| `/worksheet/:questId` | `PrintableWorksheet` | Lembar Kerja Peserta Didik (LKPD) cetak A4 siap print dengan QR code |
+| `/solution/:grade/:chapterId` | `ChapterSolutionView` | Kunci jawaban & pembahasan bertahap resmi (target scan QR dari LKPD) |
+| `/teacher/login` | `TeacherLoginView` | Gerbang autentikasi guru (Login & Registrasi akun baru) |
+| `/teacher/*` | `TeacherDashboard` | Studio manajemen pengajar (CRM Siswa, Quest Generator, Monitor Pengerjaan) |
+
+> **Kompatibilitas QR Code Fisik**: Permintaan lawas seperti `/?pembahasan=1&grade=8&chapter=smp8-b2` atau `/?questId=...` secara otomatis diarahkan ke URL kanonik melalui `QueryRedirectHandler` tanpa memutus link cetak yang sudah tersebar.
 
 ---
 
@@ -67,39 +84,68 @@ Semua materi diselaraskan langsung dari buku teks resmi Kemendikbudristek:
 ```
 AwesomeMathJ/
 ├── public/                    # Aset statis & favicon
-├── scratch/                   # PDF buku teks referensi & skrip utilitas ekstraksi
+├── scratch/                   # Skrip utilitas & pipeline
 ├── pipeline/                  # Pipeline kurikulum otomatis
 │   ├── catalog_manifest.json  # Katalog silabus dan sumber resmi
-│   ├── extract_chapter.py     # Ekstraktor teks bab dari PDF
 │   ├── validator.cjs          # Validator integritas 6 pilar & sanitasi data
-│   ├── status.py              # Monitor status progres kurikulum
-│   └── builders/              # Skrip builder modul kurikulum per jenjang
+│   └── audit.cjs              # Audit konsistensi 20 soal per bab
 ├── src/
 │   ├── assets/                # Gambar vektor & ikon pendukung
-│   ├── components/            # Komponen antarmuka React
-│   │   ├── ChapterSolutionView.jsx  # Tampilan kunci pembahasan via scan QR
-│   │   ├── MathRenderer.jsx         # Render formula matematika KaTeX
-│   │   ├── PrintableWorksheet.jsx   # Generator LKPD cetak A4 + QR code
-│   │   ├── PublicHandbook.jsx       # Portal publik buku saku siswa
-│   │   ├── QuestionVisual.jsx       # Engine diagram stimulus SVG murni
-│   │   ├── ScratchpadModal.jsx      # Kanvas papan cakar digital
-│   │   ├── StudentQuestView.jsx     # Player latihan PR siswa
-│   │   ├── TeacherAuthModal.jsx     # Dialog login guru
-│   │   ├── TeacherDashboard.jsx     # Studio Guru (CRM & generator tugas)
-│   │   └── TeacherLoginView.jsx     # Halaman otentikasi Studio Guru (/teacher)
+│   ├── components/            # Komponen antarmuka React modular
+│   │   ├── handbook/          # Subkomponen Buku Saku Publik
+│   │   │   ├── ChapterQuiz.jsx       # Mesin kuis mandiri & filter paket A-D
+│   │   │   └── PillarsAccordion.jsx  # 6 pilar pedagogis materi dengan KaTeX
+│   │   ├── teacher/           # Subkomponen Studio Guru
+│   │   │   ├── QuestGeneratorTab.jsx # Pembuat paket tugas & kartu WhatsApp
+│   │   │   ├── QuestMonitorTab.jsx   # Monitoring status pengerjaan & modal inspeksi
+│   │   │   ├── StudentCrmTab.jsx     # Manajemen profil siswa & multi-tenant roster
+│   │   │   ├── TeacherHeader.jsx     # Header navigasi guru & status cloud
+│   │   │   └── teacherConstants.js   # Definisi paket PR & konstanta guru
+│   │   ├── visuals/           # Engine stimulus visual SVG murni
+│   │   │   ├── common/        # Elemen geometri dasar & kontainer SVG
+│   │   │   ├── engines/       # Engine Aljabar, Geometri, Koordinat, Aritmetika
+│   │   │   └── registry/      # Registry visual per jenjang (Kelas 4 s/d 12)
+│   │   ├── AcademicTimeline.jsx      # Peta jadwal kalender pendidikan
+│   │   ├── ChapterSolutionView.jsx   # Tampilan kunci pembahasan via scan QR
+│   │   ├── MathRenderer.jsx          # Render formula matematika KaTeX polimorfik
+│   │   ├── PrintableWorksheet.jsx    # Generator LKPD cetak A4 + QR code
+│   │   ├── PublicHandbook.jsx        # Koordinator portal publik buku saku siswa
+│   │   ├── QuestionVisual.jsx        # Registry dispatcher diagram stimulus SVG
+│   │   ├── ScratchpadModal.jsx       # Kanvas papan cakar digital siswa
+│   │   ├── StudentQuestView.jsx      # Player latihan PR siswa interaktif
+│   │   ├── TeacherDashboard.jsx      # Koordinator studio guru
+│   │   └── TeacherLoginView.jsx      # Form login & registrasi guru baru
+│   ├── context/
+│   │   └── AuthContext.jsx           # Provider autentikasi guru multi-tenant
 │   ├── data/
-│   │   ├── curriculumData.js        # Master kurikulum loader
-│   │   └── grades/                  # Modul silabus per kelas (grade4.js - grade12.js)
+│   │   ├── curriculumData.js         # Master kurikulum loader & code-splitting
+│   │   └── grades/                   # Modul silabus per kelas (grade4.js - grade12.js)
+│   ├── firebase/
+│   │   ├── auth.js                   # SDK Autentikasi Firebase
+│   │   ├── config.js                 # Inisialisasi Firebase aman berbasis .env
+│   │   └── firestore.js              # Sinkronisasi cloud Firestore & atomic increment
+│   ├── hooks/
+│   │   ├── useAuth.js                # Custom hook akses konteks auth
+│   │   └── useCurriculum.js          # Custom hook data kurikulum ter-cache
 │   ├── utils/
-│   │   └── storage.js               # LocalStorage manager (CRM, Quest, Auth, Score)
-│   ├── App.css
-│   ├── App.jsx                      # Routing top-level & state controller
-│   ├── index.css                    # Design system (tokens, responsive, print stylesheet)
-│   └── main.jsx                     # Vite React entrypoint
-├── index.html
+│   │   ├── idGenerator.js            # Generator ID unik std-, quest-, sub-
+│   │   └── storage.js                # LocalStorage fallback manager
+│   ├── App.jsx                       # Top-level declarative routing & redirects
+│   ├── index.css                     # Design system (Notion-editorial, print A4 CSS)
+│   └── main.jsx                      # Vite React entrypoint
+├── tests/                            # Vitest automated test suite (33 tests)
+│   ├── academicCalendar.test.js
+│   ├── answerDistribution.test.js
+│   ├── authAndSync.test.js
+│   ├── curriculum.test.js
+│   ├── idGenerator.test.js
+│   ├── routing.test.js
+│   └── visualAccuracy.test.js
+├── firestore.rules                   # Aturan keamanan Firestore tersanitasi
+├── index.html                        # HTML template tanpa KaTeX CDN ganda
 ├── package.json
 ├── vercel.json                      # Konfigurasi SPA routing Vercel
-└── vite.config.js
+└── vite.config.js                    # Vite configuration & chunk-splitting rules
 ```
 
 ---

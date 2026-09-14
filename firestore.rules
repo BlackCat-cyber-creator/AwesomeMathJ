@@ -40,7 +40,9 @@ service cloud.firestore {
     // 3. Submissions
     // Students can submit results without requiring teacher credentials
     match /submissions/{submissionId} {
-      allow create: if true;
+      allow create: if request.resource.data.keys().hasAll(['questId', 'score', 'submittedAt'])
+        && request.resource.data.score >= 0 
+        && request.resource.data.score <= 100;
       // Only authenticated teacher who assigned the quest can view submissions
       allow read: if isAuthenticated() && (resource.data.teacherId == request.auth.uid);
       allow update, delete: if isAuthenticated() && (resource.data.teacherId == request.auth.uid);

@@ -1,15 +1,38 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { QRCodeSVG } from 'qrcode.react';
 import { MathText } from './MathRenderer';
 import { QuestionVisual } from './QuestionVisual';
-import { Printer, ArrowLeft, Edit3 } from 'lucide-react';
+import { getQuestById } from '../utils/storage';
+import { Printer, ArrowLeft, Edit3, FileQuestion } from 'lucide-react';
 
 /**
  * PrintableWorksheet:
- * Format Lembar Kerja Ujian Resmi AwesomeMathJ oleh Sir Jevon.
+ * Format Lembar Kerja Ujian Resmi AwesomeMathJ.
  * Siap cetak ke format PDF / Kertas A4 dengan CSS print teroptimasi.
  */
-export function PrintableWorksheet({ quest, onBack }) {
+export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
+  const { questId } = useParams();
+  const location = useLocation();
+  const navigate = useNavigate();
+  const onBackAction = onBack || (() => navigate('/'));
+
+  const [quest] = useState(() => {
+    if (propQuest) return propQuest;
+    if (location.state?.quest) return location.state.quest;
+    if (questId) {
+      const fromStorage = getQuestById(questId);
+      if (fromStorage) return fromStorage;
+      try {
+        const fromCache = localStorage.getItem(`mathquest_worksheet_${questId}`);
+        if (fromCache) return JSON.parse(fromCache);
+        const fromPractice = localStorage.getItem(`mathquest_practice_${questId}`);
+        if (fromPractice) return JSON.parse(fromPractice);
+      } catch {}
+    }
+    return null;
+  });
+
   const [tutoringName, setTutoringName] = useState("AwesomeMathJ");
   const [teacherName, setTeacherName] = useState("Studio Guru Matematika");
   const [studentName, setStudentName] = useState(quest?.studentName || "Lembar Siswa");
@@ -21,18 +44,34 @@ export function PrintableWorksheet({ quest, onBack }) {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
 
-  if (!quest) return null;
+  if (!quest) {
+    return (
+      <div style={{ maxWidth: 680, margin: '4rem auto', textAlign: 'center', padding: '1rem' }}>
+        <div className="editorial-card" style={{ padding: '3rem 2rem' }}>
+          <FileQuestion size={48} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
+          <h3>Lembar Kerja Tidak Ditemukan</h3>
+          <p style={{ color: 'var(--text-secondary)', margin: '0.75rem 0 1.5rem' }}>
+            Data soal untuk lembar kerja ini tidak ditemukan di memori browser.
+          </p>
+          <button className="btn btn-royal" onClick={onBackAction}>
+            <ArrowLeft size={16} />
+            Kembali ke Beranda
+          </button>
+        </div>
+      </div>
+    );
+  }
 
   // URL solusi online dinamis untuk QR code yang bisa discan kamera smartphone
   const solutionUrl = typeof window !== 'undefined'
-    ? `${window.location.origin}/?pembahasan=1&grade=${quest.grade}&chapter=${encodeURIComponent(quest.chapterId || quest.id || '')}`
-    : `/?pembahasan=1&grade=${quest.grade}&chapter=${encodeURIComponent(quest.chapterId || quest.id || '')}`;
+    ? `${window.location.origin}/solution/${quest.grade || 4}/${encodeURIComponent(quest.chapterId || quest.id || '')}`
+    : `/solution/${quest.grade || 4}/${encodeURIComponent(quest.chapterId || quest.id || '')}`;
 
   return (
     <div style={{ maxWidth: 880, margin: '1.5rem auto 4rem', padding: '0 1rem' }}>
       {/* Control Bar (Hidden on Print) */}
       <div className="no-print editorial-card" style={{ padding: '1rem 1.25rem', marginBottom: '1.5rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.75rem' }}>
-        <button className="btn btn-outline" onClick={onBack}>
+        <button className="btn btn-outline" onClick={onBackAction}>
           <ArrowLeft size={16} />
           Kembali ke Beranda
         </button>
@@ -252,7 +291,7 @@ export function PrintableWorksheet({ quest, onBack }) {
 
         {/* Footer verification note */}
         <div style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid #D1D5DB', display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#6B7280' }}>
-          <span>AwesomeMathJ • Platform Pembelajaran Matematika oleh Sir Jevon</span>
+          <span>AwesomeMathJ • Platform Pembelajaran Matematika Kurikulum Merdeka</span>
           <span>Tanda Tangan Guru: _____________________</span>
         </div>
       </div>

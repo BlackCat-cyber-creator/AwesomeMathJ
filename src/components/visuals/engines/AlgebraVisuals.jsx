@@ -1,7 +1,6 @@
 import React from 'react';
 import { VISUAL_THEME } from '../theme';
 import { SvgContainer } from '../common/SvgContainer';
-import { DimensionLine, UnknownBadge } from '../common/VisualElements';
 
 /**
  * BarModelVisual:
@@ -10,7 +9,7 @@ import { DimensionLine, UnknownBadge } from '../common/VisualElements';
 export function BarModelVisual({ 
   title = "Diagram Model Pita SPLDV",
   caption,
-  bars = [], // [{ label: 'x', width: 130, color: 'blue' }, { label: 'y', width: 65, color: 'green' }]
+  bars: _bars = [], // [{ label: 'x', width: 130, color: 'blue' }, { label: 'y', width: 65, color: 'green' }]
   rows = [], // [{ segments: [...], totalLabel: '10' }, { segments: [...], diffLabel: '4' }]
   target = "(?, ?)",
   targetLabel = "Nilai (x, y)",
@@ -47,7 +46,6 @@ export function BarModelVisual({
             {row.segments.map((seg, sIdx) => {
               const baseWidth = seg.width || 60;
               const segWidth = Math.round(baseWidth * scaleFactor);
-              const isBlue = seg.color === 'blue' || !seg.color;
               const isGreen = seg.color === 'green';
               const isAmber = seg.color === 'amber';
 

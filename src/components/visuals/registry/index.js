@@ -1,16 +1,24 @@
-import { grade9VisualRegistry } from './grade9Registry.js';
-import { grade8VisualRegistry } from './grade8Registry.js';
 import { grade4VisualRegistry } from './grade4Registry.js';
 import { grade5VisualRegistry } from './grade5Registry.js';
 import { grade6VisualRegistry } from './grade6Registry.js';
+import { grade7VisualRegistry } from './grade7Registry.js';
+import { grade8VisualRegistry } from './grade8Registry.js';
+import { grade9VisualRegistry } from './grade9Registry.js';
+import { grade10VisualRegistry } from './grade10Registry.js';
+import { grade11VisualRegistry } from './grade11Registry.js';
+import { grade12VisualRegistry } from './grade12Registry.js';
 
-// Gabungan seluruh registry visual bertahap
+// Gabungan seluruh registry visual bertahap (Kelas 4 SD s/d 12 SMA)
 const MASTER_VISUAL_REGISTRY = {
   ...grade4VisualRegistry,
   ...grade5VisualRegistry,
   ...grade6VisualRegistry,
+  ...grade7VisualRegistry,
   ...grade8VisualRegistry,
-  ...grade9VisualRegistry
+  ...grade9VisualRegistry,
+  ...grade10VisualRegistry,
+  ...grade11VisualRegistry,
+  ...grade12VisualRegistry
 };
 
 /**

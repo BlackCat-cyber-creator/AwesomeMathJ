@@ -7,37 +7,60 @@ import {
   Mail,
   Loader2
 } from 'lucide-react';
-import { loginTeacherWithEmail } from '../firebase/auth';
+import { loginTeacherWithEmail, registerTeacherWithEmail } from '../firebase/auth';
 
 /**
  * TeacherLoginView:
- * Tampilan Halaman Login Pengajar Eksklusif
- * Hanya menerima autentikasi Email & Kata Sandi Pengajar resmi.
+ * Tampilan Halaman Login & Registrasi Pengajar
+ * Menerima autentikasi Email & Kata Sandi Pengajar resmi atau pendaftaran akun baru.
  */
 export function TeacherLoginView({ onBack, onSuccess }) {
+  const [authMode, setAuthMode] = useState("login"); // "login" | "register"
+  const [displayName, setDisplayName] = useState("");
   const [email, setEmail] = useState("");
   const [password, setPassword] = useState("");
+  const [confirmPassword, setConfirmPassword] = useState("");
   const [isLoading, setIsLoading] = useState(false);
   const [errorMessage, setErrorMessage] = useState("");
 
-  // Handle Login via Firebase Email/Password
-  const handleEmailLogin = async (e) => {
+  // Handle Login or Registration
+  const handleSubmit = async (e) => {
     if (e) e.preventDefault();
     if (!email.trim() || !password) {
       setErrorMessage("Silakan isi email dan kata sandi pengajar.");
       return;
     }
 
+    if (authMode === "register") {
+      if (!displayName.trim()) {
+        setErrorMessage("Silakan masukkan nama lengkap pengajar.");
+        return;
+      }
+      if (password.length < 6) {
+        setErrorMessage("Kata sandi minimal 6 karakter.");
+        return;
+      }
+      if (password !== confirmPassword) {
+        setErrorMessage("Konfirmasi kata sandi tidak cocok.");
+        return;
+      }
+    }
+
     setIsLoading(true);
     setErrorMessage("");
 
-    const res = await loginTeacherWithEmail(email, password);
+    let res;
+    if (authMode === "register") {
+      res = await registerTeacherWithEmail(email, password, displayName.trim());
+    } else {
+      res = await loginTeacherWithEmail(email, password);
+    }
     setIsLoading(false);
 
     if (res.success) {
       onSuccess(res.user);
     } else {
-      setErrorMessage(res.error || "Email atau kata sandi pengajar salah.");
+      setErrorMessage(res.error || (authMode === "register" ? "Pendaftaran gagal." : "Email atau kata sandi pengajar salah."));
     }
   };
 
@@ -87,6 +110,26 @@ export function TeacherLoginView({ onBack, onSuccess }) {
           </p>
         </div>
 
+        {/* Auth Mode Toggle Tabs */}
+        <div style={{ display: 'flex', backgroundColor: '#F1F5F9', padding: '4px', borderRadius: 'var(--radius-sm)', marginBottom: '1.25rem' }}>
+          <button
+            type="button"
+            className={`btn ${authMode === 'login' ? 'btn-royal' : 'btn-subtle'}`}
+            style={{ flex: 1, justifyContent: 'center', padding: '0.45rem', fontSize: '0.85rem' }}
+            onClick={() => { setAuthMode('login'); setErrorMessage(''); }}
+          >
+            Masuk (Login)
+          </button>
+          <button
+            type="button"
+            className={`btn ${authMode === 'register' ? 'btn-royal' : 'btn-subtle'}`}
+            style={{ flex: 1, justifyContent: 'center', padding: '0.45rem', fontSize: '0.85rem' }}
+            onClick={() => { setAuthMode('register'); setErrorMessage(''); }}
+          >
+            Daftar Akun Baru
+          </button>
+        </div>
+
         {/* Feedback Alert */}
         {errorMessage && (
           <div 
@@ -105,8 +148,25 @@ export function TeacherLoginView({ onBack, onSuccess }) {
           </div>
         )}
 
-        {/* LOGIN FORM (EMAIL & PASSWORD ONLY) */}
-        <form onSubmit={handleEmailLogin}>
+        {/* FORM */}
+        <form onSubmit={handleSubmit}>
+          {authMode === 'register' && (
+            <div className="form-group" style={{ marginBottom: '1.1rem' }}>
+              <label className="form-label" htmlFor="input-teacher-name" style={{ fontSize: '0.85rem', fontWeight: 600 }}>
+                Nama Lengkap & Gelar Pengajar:
+              </label>
+              <input
+                id="input-teacher-name"
+                type="text"
+                className="form-input"
+                placeholder="Contoh: Budi Santoso, S.Pd."
+                value={displayName}
+                onChange={(e) => setDisplayName(e.target.value)}
+                required
+              />
+            </div>
+          )}
+
           <div className="form-group" style={{ marginBottom: '1.1rem' }}>
             <label className="form-label" htmlFor="input-teacher-email" style={{ fontSize: '0.85rem', fontWeight: 600 }}>
               Email Pengajar:
@@ -116,7 +176,7 @@ export function TeacherLoginView({ onBack, onSuccess }) {
                 id="input-teacher-email"
                 type="email"
                 className="form-input"
-                placeholder="Masukkan email pengajar"
+                placeholder="guru@sekolah.id"
                 value={email}
                 onChange={(e) => setEmail(e.target.value)}
                 autoFocus
@@ -130,7 +190,7 @@ export function TeacherLoginView({ onBack, onSuccess }) {
             </div>
           </div>
 
-          <div className="form-group" style={{ marginBottom: '1.5rem' }}>
+          <div className="form-group" style={{ marginBottom: authMode === 'register' ? '1.1rem' : '1.5rem' }}>
             <label className="form-label" htmlFor="input-teacher-password" style={{ fontSize: '0.85rem', fontWeight: 600 }}>
               Kata Sandi:
             </label>
@@ -139,7 +199,7 @@ export function TeacherLoginView({ onBack, onSuccess }) {
                 id="input-teacher-password"
                 type="password"
                 className="form-input"
-                placeholder="Masukkan kata sandi"
+                placeholder="Minimal 6 karakter"
                 value={password}
                 onChange={(e) => setPassword(e.target.value)}
                 required
@@ -152,6 +212,30 @@ export function TeacherLoginView({ onBack, onSuccess }) {
             </div>
           </div>
 
+          {authMode === 'register' && (
+            <div className="form-group" style={{ marginBottom: '1.5rem' }}>
+              <label className="form-label" htmlFor="input-teacher-confirm-password" style={{ fontSize: '0.85rem', fontWeight: 600 }}>
+                Ulangi Kata Sandi:
+              </label>
+              <div style={{ position: 'relative' }}>
+                <input
+                  id="input-teacher-confirm-password"
+                  type="password"
+                  className="form-input"
+                  placeholder="Ulangi kata sandi di atas"
+                  value={confirmPassword}
+                  onChange={(e) => setConfirmPassword(e.target.value)}
+                  required
+                  style={{ paddingLeft: '2.5rem' }}
+                />
+                <Lock 
+                  size={17} 
+                  style={{ position: 'absolute', left: '0.85rem', top: '50%', transform: 'translateY(-50%)', color: 'var(--text-muted)' }} 
+                />
+              </div>
+            </div>
+          )}
+
           <button 
             id="btn-submit-teacher-login"
             type="submit" 
@@ -162,12 +246,12 @@ export function TeacherLoginView({ onBack, onSuccess }) {
             {isLoading ? (
               <>
                 <Loader2 size={18} className="spin-animation" style={{ marginRight: '0.5rem' }} />
-                Memproses Masuk...
+                {authMode === 'register' ? "Membuat Akun..." : "Memproses Masuk..."}
               </>
             ) : (
               <>
                 <ShieldCheck size={18} />
-                Masuk ke Studio Guru
+                {authMode === 'register' ? "Daftar Akun Pengajar" : "Masuk ke Studio Guru"}
                 <ArrowRight size={16} />
               </>
             )}

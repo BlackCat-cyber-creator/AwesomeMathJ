@@ -9,7 +9,10 @@ import 'katex/dist/katex.min.css';
  * - $$rumus$$ -> display/block math
  * Aman dari error parsing dan mempertahankan baris baru.
  */
-export function MathText({ text = "", className = "" }) {
+export function MathText({ text = "", className = "", as = null }) {
+  const containsBlockMath = typeof text === "string" && text.includes("$$");
+  const Wrapper = as || (containsBlockMath ? "div" : "span");
+
   const renderedElements = useMemo(() => {
     if (!text || typeof text !== "string") return null;
 
@@ -86,7 +89,7 @@ export function MathText({ text = "", className = "" }) {
     });
   }, [text]);
 
-  return <div className={`math-rendered-content ${className}`}>{renderedElements}</div>;
+  return <Wrapper className={`math-rendered-content ${className}`}>{renderedElements}</Wrapper>;
 }
 
 export default MathText;

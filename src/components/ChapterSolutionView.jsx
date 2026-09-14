@@ -1,28 +1,76 @@
-import React, { useEffect } from 'react';
+import React, { useEffect, useState } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import { MathText } from './MathRenderer';
 import { QuestionVisual } from './QuestionVisual';
+import { getChapterSolutionData } from '../data/curriculumData';
 import { 
   CheckCircle2, 
   ArrowLeft, 
   BookOpen, 
   Lightbulb, 
   Check, 
-  GraduationCap 
+  GraduationCap,
+  Loader2
 } from 'lucide-react';
 
 /**
  * ChapterSolutionView:
  * Halaman Kunci Jawaban & Pembahasan Online Resmi AwesomeMathJ.
- * Dibuka langsung saat siswa atau pengajar memindai QR Code di Lembar Kerja Cetak A4.
+ * Dibuka langsung saat siswa atau pengajar memindai QR Code di Lembar Kerja Cetak A4
+ * atau membuka URL rute /solution/:grade/:chapterId.
  */
 export function ChapterSolutionView({ 
-  chapterData, 
-  onBack 
+  chapterData: propData = null, 
+  onBack = null 
 }) {
+  const { grade: paramGrade, chapterId: paramChapterId } = useParams();
+  const navigate = useNavigate();
+  const [loadedData, setLoadedData] = useState(propData);
+  const [isLoading, setIsLoading] = useState(!propData && !!(paramGrade && paramChapterId));
+
+  const effectiveGrade = propData?.grade || (paramGrade ? Number(paramGrade) : null);
+  const effectiveChapterId = propData?.id || paramChapterId;
+
   // Pastikan saat dibuka langsung scroll ke paling atas
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
+
+  // Fetch solution if opened via URL route directly
+  useEffect(() => {
+    let active = true;
+    if (!propData && effectiveGrade && effectiveChapterId) {
+      getChapterSolutionData(effectiveGrade, effectiveChapterId)
+        .then((res) => {
+          if (active) {
+            setLoadedData(res);
+            setIsLoading(false);
+          }
+        })
+        .catch(() => {
+          if (active) setIsLoading(false);
+        });
+    }
+    return () => { active = false; };
+  }, [propData, effectiveGrade, effectiveChapterId]);
+
+  const handleBack = onBack || (() => navigate('/'));
+
+  if (isLoading) {
+    return (
+      <div style={{ maxWidth: 680, margin: '5rem auto', textAlign: 'center', padding: '1rem' }}>
+        <div className="editorial-card" style={{ padding: '3.5rem 2rem', display: 'flex', flexDirection: 'column', alignItems: 'center' }}>
+          <Loader2 size={36} className="spinner" style={{ color: 'var(--primary-blue)', animation: 'spin 1s linear infinite', marginBottom: '1rem' }} />
+          <h3 style={{ color: 'var(--primary-navy)', marginBottom: '0.4rem' }}>Memuat Kunci Pembahasan...</h3>
+          <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.9rem' }}>
+            Mengambil data pembahasan resmi bab matematika.
+          </p>
+        </div>
+      </div>
+    );
+  }
+
+  const chapterData = propData || loadedData;
 
   if (!chapterData || !chapterData.questions || chapterData.questions.length === 0) {
     return (
@@ -33,7 +81,7 @@ export function ChapterSolutionView({
           <p style={{ color: 'var(--text-secondary)', margin: '0.75rem 0 1.5rem' }}>
             Data pembahasan untuk bab ini belum tersedia atau tautan tidak lengkap.
           </p>
-          <button className="btn btn-royal" onClick={onBack}>
+          <button className="btn btn-royal" onClick={handleBack}>
             <ArrowLeft size={16} />
             Kembali ke Beranda AwesomeMathJ
           </button>

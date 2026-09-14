@@ -1,4 +1,5 @@
 import React, { useState, useEffect } from 'react';
+import { useParams, useNavigate } from 'react-router-dom';
 import confetti from 'canvas-confetti';
 import { MathText } from './MathRenderer';
 import { QuestionVisual } from './QuestionVisual';
@@ -20,9 +21,23 @@ import {
   Loader2
 } from 'lucide-react';
 
-export function StudentQuestView({ questId, onBackToDashboard }) {
-  const [quest, setQuest] = useState(() => (questId ? getQuestById(questId) : null));
-  const [isLoadingQuest, setIsLoadingQuest] = useState(!quest && !!questId);
+export function StudentQuestView({ questId: propQuestId = null, onBackToDashboard = null }) {
+  const { questId: paramQuestId } = useParams();
+  const navigate = useNavigate();
+  const questId = propQuestId || paramQuestId;
+  const onBack = onBackToDashboard || (() => navigate('/'));
+
+  const [quest, setQuest] = useState(() => {
+    if (!questId) return null;
+    const fromStorage = getQuestById(questId);
+    if (fromStorage) return fromStorage;
+    try {
+      const fromPractice = localStorage.getItem(`mathquest_practice_${questId}`);
+      if (fromPractice) return JSON.parse(fromPractice);
+    } catch {}
+    return null;
+  });
+  const [isLoadingQuest, setIsLoadingQuest] = useState(() => !quest && !!questId);
   const [currentIndex, setCurrentIndex] = useState(0);
   const [selectedOption, setSelectedOption] = useState(null);
   const [isAnswerChecked, setIsAnswerChecked] = useState(false);
@@ -36,7 +51,6 @@ export function StudentQuestView({ questId, onBackToDashboard }) {
   useEffect(() => {
     let isMounted = true;
     if (!quest && questId) {
-      setIsLoadingQuest(true);
       getQuestByIdCloud(questId)
         .then((cloudQuest) => {
           if (isMounted && cloudQuest) {
@@ -87,7 +101,7 @@ export function StudentQuestView({ questId, onBackToDashboard }) {
           <p style={{ color: 'var(--text-secondary)', margin: '1rem 0 1.5rem' }}>
             Tautan latihan ini mungkin sudah selesai atau belum diaktifkan oleh pengajar.
           </p>
-          <button id="btn-back-from-not-found" className="btn btn-royal" onClick={onBackToDashboard}>
+          <button id="btn-back-from-not-found" className="btn btn-royal" onClick={onBack}>
             Kembali ke Beranda AwesomeMathJ
           </button>
         </div>

@@ -1,25 +1,32 @@
 import { useState, useEffect, useMemo } from 'react';
-import { getGradeData, getLoadedGradeData, CURRICULUM_DATA, GRADE_METADATA, ALL_CHAPTERS_INDEX } from '../data/curriculumData';
+import { getGradeData, getLoadedGradeData, CURRICULUM_DATA } from '../data/curriculumData';
 
 /**
  * useGradeData hook
  * Loads full questions/solutions for a grade on-demand with caching
  */
 export function useGradeData(grade) {
+  const [currentGrade, setCurrentGrade] = useState(grade);
   const [data, setData] = useState(() => getLoadedGradeData(grade));
-  const [loading, setLoading] = useState(!getLoadedGradeData(grade));
+  const [loading, setLoading] = useState(() => !getLoadedGradeData(grade));
   const [error, setError] = useState(null);
 
-  useEffect(() => {
-    let active = true;
+  if (currentGrade !== grade) {
+    setCurrentGrade(grade);
     const cached = getLoadedGradeData(grade);
     if (cached) {
       setData(cached);
       setLoading(false);
-      return;
+    } else {
+      setData(null);
+      setLoading(true);
     }
+  }
 
-    setLoading(true);
+  useEffect(() => {
+    let active = true;
+    if (data) return;
+
     getGradeData(grade)
       .then((res) => {
         if (active) {
@@ -35,7 +42,7 @@ export function useGradeData(grade) {
       });
 
     return () => { active = false; };
-  }, [grade]);
+  }, [grade, data]);
 
   // Fallback to lightweight metadata while loading
   const safeData = useMemo(() => {

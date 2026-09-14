@@ -183,8 +183,6 @@ export function ChapterTimeline({ grade, chapters, date = new Date(), onChapterC
   const timeline = getChapterTimeline(grade, date);
   if (timeline.length === 0) return null;
 
-  const sem = getCurrentSemester(date);
-
   return (
     <div style={{ marginBottom: '1rem' }}>
       {/* Header */}
@@ -283,4 +281,5 @@ export function ChapterTimeline({ grade, chapters, date = new Date(), onChapterC
   );
 }
 
-export default { SemesterBadge, MateriSekarangCard, ChapterTimeline };
+export default ChapterTimeline;
+

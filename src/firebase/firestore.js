@@ -2,7 +2,6 @@ import {
   collection, 
   doc, 
   getDoc, 
-  getDocs, 
   setDoc, 
   updateDoc, 
   deleteDoc, 
@@ -10,7 +9,6 @@ import {
   where, 
   onSnapshot, 
   writeBatch,
-  serverTimestamp,
   increment
 } from "firebase/firestore";
 import { db } from "./config";
@@ -140,7 +138,7 @@ export async function createQuestCloud(teacherId, questData) {
   const newQuest = sanitizeForFirestore({
     ...questData,
     id: questId,
-    teacherId: teacherId || questData.teacherId || "sirjevon",
+    teacherId: teacherId || questData.teacherId || "teacher-default",
     createdAt: questData.createdAt || new Date().toISOString(),
     status: questData.status || "assigned",
     deadline: questData.deadline || null
@@ -227,22 +225,14 @@ export async function submitQuestResultCloud(submissionData) {
     }
   }
 
-  // 3. Update XP & Streak murid jika teacherId dan studentId terdata
+  // 3. Update XP murid jika teacherId dan studentId terdata (secara atomik tanpa read)
   if (submissionData.teacherId && submissionData.studentId) {
     try {
       const studentDoc = doc(db, "teachers", submissionData.teacherId, "students", submissionData.studentId);
-      const studentSnap = await getDoc(studentDoc);
-      if (studentSnap.exists()) {
-        const studentData = studentSnap.data();
-        const currentStreak = studentData.streak || 0;
-        const newStreak = studentData.lastActive !== today ? currentStreak + 1 : currentStreak;
-
-        await updateDoc(studentDoc, {
-          totalXp: (studentData.totalXp || 0) + (submissionData.earnedXp || 50),
-          streak: newStreak,
-          lastActive: today
-        });
-      }
+      await updateDoc(studentDoc, {
+        totalXp: increment(submissionData.earnedXp || 50),
+        lastActive: today
+      });
     } catch (e) {
       console.warn("Could not update student profile:", e);
     }

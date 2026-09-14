@@ -26,7 +26,7 @@ export function TeacherHeader({
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '1.5rem' }}>📐</span>
             <h2 style={{ color: 'var(--primary-navy)', fontSize: '1.45rem', margin: 0 }}>
-              Studio Guru Matematika • {currentTeacher?.displayName || "Sir Jevon"}
+              Studio Guru Matematika • {currentTeacher?.displayName || "Pengajar"}
             </h2>
             {isCloudConnected ? (
               <span 

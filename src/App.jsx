@@ -1,8 +1,6 @@
 import React, { useState, useEffect, Suspense, lazy } from 'react';
-import { useNavigate, useLocation, useSearchParams } from 'react-router-dom';
-import { useAuth } from './context/AuthContext';
-import { getQuestById } from './utils/storage';
-import { getChapterSolutionData } from './data/curriculumData';
+import { Routes, Route, Navigate, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
+import { useAuth } from './hooks/useAuth';
 import { 
   GraduationCap, 
   Lock, 
@@ -37,84 +35,85 @@ function RouteFallback() {
   );
 }
 
+/**
+ * Backward Compatibility Layer:
+ * Automatically redirects legacy query-string URLs (from previously printed QR codes or bookmarks):
+ * - /?questId=... -> /quest/:questId
+ * - /?pembahasan=1&grade=...&chapter=... -> /solution/:grade/:chapter
+ */
+function QueryRedirectHandler() {
+  const [searchParams] = useSearchParams();
+  const navigate = useNavigate();
+  const location = useLocation();
+
+  useEffect(() => {
+    if (location.pathname !== '/') return;
+
+    const questId = searchParams.get('questId');
+    const isSolution = searchParams.get('pembahasan') || searchParams.get('solution');
+    const grade = searchParams.get('grade');
+    const chapter = searchParams.get('chapter');
+
+    if (questId && !isSolution) {
+      navigate(`/quest/${encodeURIComponent(questId)}`, { replace: true });
+    } else if (isSolution && grade && chapter) {
+      navigate(`/solution/${encodeURIComponent(grade)}/${encodeURIComponent(chapter)}`, { replace: true });
+    }
+  }, [searchParams, location.pathname, navigate]);
+
+  return null;
+}
+
 export function App() {
   const navigate = useNavigate();
   const location = useLocation();
-  const [searchParams, setSearchParams] = useSearchParams();
-  const { user, teacherName, isAuthenticated, isLoading: isAuthLoading, logout } = useAuth();
-
-  const [activeWorksheetQuest, setActiveWorksheetQuest] = useState(null);
+  const { user, teacherName, isAuthenticated, logout } = useAuth();
   const [activeTeacherTab, setActiveTeacherTab] = useState("generator");
 
-  const questId = searchParams.get("questId");
-  const isSolutionParam = searchParams.get("pembahasan") || searchParams.get("solution");
-  const solutionGrade = searchParams.get("grade");
-  const solutionChapter = searchParams.get("chapter");
-
-  const isTeacherRoute = location.pathname === '/teacher' || location.pathname.startsWith('/teacher/');
-
-  // Async load solution data if URL has solution params
-  const [activeSolutionData, setActiveSolutionData] = useState(null);
-  useEffect(() => {
-    let active = true;
-    if (!isSolutionParam && !solutionGrade) {
-      setActiveSolutionData(null);
-      return;
-    }
-    if (solutionGrade && solutionChapter) {
-      getChapterSolutionData(solutionGrade, solutionChapter).then((data) => {
-        if (active && data) setActiveSolutionData(data);
-      });
-    } else if (questId) {
-      const quest = getQuestById(questId);
-      if (quest && active) {
-        setActiveSolutionData({
-          id: quest.id,
-          title: quest.chapterTitle || quest.title,
-          grade: quest.grade,
-          questions: quest.questions,
-          level: quest.trackLabel || ""
-        });
-      }
-    }
-    return () => { active = false; };
-  }, [isSolutionParam, solutionGrade, solutionChapter, questId]);
+  const isTeacherRoute = location.pathname.startsWith('/teacher');
+  const isFullScreenView = location.pathname.startsWith('/quest/') || 
+                           location.pathname.startsWith('/worksheet') || 
+                           location.pathname.startsWith('/solution/');
 
   const handleBackToHome = () => {
-    setActiveWorksheetQuest(null);
-    setActiveSolutionData(null);
-    setSearchParams({});
     navigate('/');
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
   const handleLaunchQuest = (qId) => {
-    setActiveWorksheetQuest(null);
-    setSearchParams({ questId: qId });
+    navigate(`/quest/${encodeURIComponent(qId)}`);
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
   const handleLaunchPracticeQuest = (practiceQuest) => {
+    try {
+      localStorage.setItem(`mathquest_practice_${practiceQuest.id}`, JSON.stringify(practiceQuest));
+    } catch {}
+    navigate(`/quest/${encodeURIComponent(practiceQuest.id)}`);
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    setActiveWorksheetQuest(null);
-    localStorage.setItem(`mathquest_practice_${practiceQuest.id}`, JSON.stringify(practiceQuest));
-    setSearchParams({ questId: practiceQuest.id });
   };
 
   const handlePrintQuest = (quest) => {
+    if (!quest) return;
+    try {
+      localStorage.setItem(`mathquest_worksheet_${quest.id || 'current'}`, JSON.stringify(quest));
+    } catch {}
+    navigate(`/worksheet/${encodeURIComponent(quest.id || 'current')}`, { state: { quest } });
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
-    setActiveWorksheetQuest(quest);
   };
 
   const handleSignOut = async () => {
     await logout();
-    navigate('/teacher');
+    navigate('/teacher/login');
   };
 
   return (
     <div className="app-layout">
-      {/* Top Navbar: Classy Minimalist Editorial */}
-      <header className="top-navbar">
+      {/* Backward-compatibility query redirector */}
+      <QueryRedirectHandler />
+
+      {/* Top Navbar */}
+      <header className="top-navbar no-print">
         <div className="nav-container">
           {/* Brand Logo */}
           <div 
@@ -146,7 +145,17 @@ export function App() {
 
           {/* Right Header Navigation & Actions */}
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem', flexWrap: 'wrap' }}>
-            {(questId || activeWorksheetQuest || activeSolutionData) ? null : isTeacherRoute ? (
+            {isFullScreenView ? (
+              <button
+                id="btn-nav-back-home"
+                className="btn btn-outline"
+                style={{ fontSize: '0.8rem', padding: '0.35rem 0.75rem' }}
+                onClick={handleBackToHome}
+              >
+                <BookOpen size={14} />
+                Portal Utama
+              </button>
+            ) : isTeacherRoute ? (
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.6rem' }}>
                 {isAuthenticated && (
                   <div 
@@ -219,48 +228,71 @@ export function App() {
         </div>
       </header>
 
-      {/* Main Content Area with Suspense Lazy Routing */}
+      {/* Main Content Area with Declarative React Router v7 */}
       <main>
         <Suspense fallback={<RouteFallback />}>
-          {activeWorksheetQuest ? (
-            <PrintableWorksheet
-              quest={activeWorksheetQuest}
-              onBack={handleBackToHome}
-            />
-          ) : activeSolutionData ? (
-            <ChapterSolutionView
-              chapterData={activeSolutionData}
-              onBack={handleBackToHome}
-            />
-          ) : questId ? (
-            <StudentQuestView 
-              questId={questId}
-              onBackToDashboard={handleBackToHome}
-            />
-          ) : isTeacherRoute ? (
-            isAuthenticated ? (
-              <TeacherDashboard 
-                onLaunchQuest={handleLaunchQuest}
+          <Routes>
+            {/* 1. Public Handbook */}
+            <Route path="/" element={
+              <PublicHandbook 
+                onLaunchPractice={handleLaunchPracticeQuest}
                 onPrintQuest={handlePrintQuest}
-                activeTab={activeTeacherTab}
-                setActiveTab={setActiveTeacherTab}
-                onBackToPublic={() => navigate('/')}
-                onSignOut={handleSignOut}
-                currentTeacher={user}
               />
-            ) : (
-              <TeacherLoginView 
-                onBack={() => navigate('/')}
-                onSuccess={() => navigate('/teacher')}
-              />
-            )
-          ) : (
-            <PublicHandbook 
-              onOpenAuth={() => navigate('/teacher')}
-              onLaunchPractice={handleLaunchPracticeQuest}
-              onPrintQuest={handlePrintQuest}
-            />
-          )}
+            } />
+
+            {/* 2. Interactive Student Quest Player */}
+            <Route path="/quest/:questId" element={
+              <StudentQuestView onBackToDashboard={handleBackToHome} />
+            } />
+
+            {/* 3. Printable Worksheet A4 with QR Code */}
+            <Route path="/worksheet/:questId" element={
+              <PrintableWorksheet onBack={handleBackToHome} />
+            } />
+            <Route path="/worksheet" element={
+              <PrintableWorksheet onBack={handleBackToHome} />
+            } />
+
+            {/* 4. Chapter Online Solution via QR Code Scan */}
+            <Route path="/solution/:grade/:chapterId" element={
+              <ChapterSolutionView onBack={handleBackToHome} />
+            } />
+
+            {/* 5. Teacher Authentication */}
+            <Route path="/teacher/login" element={
+              isAuthenticated ? <Navigate to="/teacher" replace /> : (
+                <TeacherLoginView 
+                  onBack={handleBackToHome}
+                  onSuccess={() => navigate('/teacher')}
+                />
+              )
+            } />
+
+            {/* 6. Teacher Studio Workspace (Protected) */}
+            <Route path="/teacher" element={
+              isAuthenticated ? (
+                <TeacherDashboard 
+                  onLaunchQuest={handleLaunchQuest}
+                  onPrintQuest={handlePrintQuest}
+                  activeTab={activeTeacherTab}
+                  setActiveTab={setActiveTeacherTab}
+                  onSignOut={handleSignOut}
+                  currentTeacher={user}
+                />
+              ) : (
+                <TeacherLoginView 
+                  onBack={handleBackToHome}
+                  onSuccess={() => navigate('/teacher')}
+                />
+              )
+            } />
+            <Route path="/teacher/*" element={
+              <Navigate to="/teacher" replace />
+            } />
+
+            {/* Catch-all fallback redirect */}
+            <Route path="*" element={<Navigate to="/" replace />} />
+          </Routes>
         </Suspense>
       </main>
     </div>
