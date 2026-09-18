@@ -72,7 +72,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
     <div className="handbook-container">
       {/* Top Banner */}
       <div className="handbook-hero">
-        <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.5rem' }}>
+        <div className="handbook-hero-badges">
           <span className="badge badge-sd" style={{ fontSize: '0.72rem' }}>
             Kurikulum Merdeka Kemendikbudristek
           </span>
@@ -80,10 +80,10 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
             55 Bab • 1.100 Soal Terverifikasi
           </span>
         </div>
-        <h1 style={{ fontSize: '2rem', fontWeight: 900, color: 'var(--primary-navy)', letterSpacing: '-0.02em', marginBottom: '0.5rem' }}>
+        <h1 className="handbook-hero-title">
           Buku Saku & Portal Mandiri Matematika
         </h1>
-        <p style={{ color: 'var(--text-secondary)', fontSize: '0.95rem', maxWidth: 720, margin: 0, lineHeight: 1.6 }}>
+        <p className="handbook-hero-desc">
           Akses bebas rangkuman konsep, rumus penting, miskonsepsi umum, dan latihan diagnostik interaktif untuk seluruh jenjang SD, SMP, hingga SMA.
         </p>
       </div>
@@ -241,9 +241,9 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
           {currentChapter ? (
             <div>
               {/* Active Chapter Header */}
-              <div className="editorial-card" style={{ padding: '1.75rem', marginBottom: '1.5rem', borderLeft: '5px solid var(--primary-navy)' }}>
-                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', flexWrap: 'wrap', gap: '0.75rem', marginBottom: '0.5rem' }}>
-                  <div style={{ display: 'flex', gap: '0.4rem', alignItems: 'center', flexWrap: 'wrap' }}>
+              <div className="editorial-card chapter-header-card">
+                <div className="chapter-header-top-bar">
+                  <div className="chapter-header-badges">
                     <span className="badge badge-sd" style={{ fontSize: '0.75rem' }}>
                       Kelas {currentGradeData.grade} {currentGradeData.level}
                     </span>
@@ -254,11 +254,11 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                     )}
                   </div>
 
-                  <div style={{ display: 'flex', gap: '0.5rem' }}>
+                  <div className="chapter-header-actions">
                     <button 
                       id="btn-copy-chapter-link"
                       className="btn btn-outline" 
-                      style={{ padding: '0.35rem 0.75rem', fontSize: '0.8rem' }}
+                      style={{ padding: '0.4rem 0.75rem', fontSize: '0.8rem' }}
                       onClick={handleCopyChapterLink}
                     >
                       {copiedLinkNotification ? (
@@ -277,7 +277,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                     <button 
                       id="btn-print-chapter-worksheet"
                       className="btn btn-primary allow-print"
-                      style={{ padding: '0.35rem 0.75rem', fontSize: '0.8rem' }}
+                      style={{ padding: '0.4rem 0.75rem', fontSize: '0.8rem' }}
                       onClick={() => onPrintQuest({
                         title: `Lembar Kerja: ${currentChapter.title}`,
                         grade: currentGradeData.grade,
@@ -292,7 +292,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                   </div>
                 </div>
 
-                <h2 style={{ fontSize: '1.45rem', fontWeight: 800, color: 'var(--primary-navy)', margin: '0.35rem 0 0.5rem' }}>
+                <h2 className="chapter-header-title">
                   {currentChapter.title}
                 </h2>
 

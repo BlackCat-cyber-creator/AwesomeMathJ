@@ -124,16 +124,16 @@ export function App() {
             <div className="brand-icon-wrapper">
               <GraduationCap size={22} color="#FFFFFF" />
             </div>
-            <div>
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem', flexWrap: 'wrap' }}>
-                <span style={{ fontSize: '1.25rem', fontWeight: 900, color: 'var(--primary-navy)', letterSpacing: '-0.02em' }}>
+            <div className="brand-text-content">
+              <div style={{ display: 'flex', alignItems: 'center', gap: '0.45rem', flexWrap: 'wrap' }}>
+                <span className="brand-name-title" style={{ fontSize: '1.2rem', fontWeight: 900, color: 'var(--primary-navy)', letterSpacing: '-0.02em' }}>
                   AwesomeMathJ
                 </span>
-                <span className="badge badge-sd" style={{ fontSize: '0.68rem' }}>
+                <span className="badge badge-sd" style={{ fontSize: '0.65rem', padding: '0.15rem 0.45rem' }}>
                   Kelas 4–12
                 </span>
               </div>
-              <div style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500 }}>
+              <div className="brand-subtitle" style={{ fontSize: '0.75rem', color: 'var(--text-muted)', fontWeight: 500 }}>
                 {isTeacherRoute ? (
                   <>Studio Guru Matematika</>
                 ) : (
