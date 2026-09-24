@@ -67,6 +67,11 @@ export const CURRICULUM_DATA = GRADE_METADATA.map((meta) => {
  */
 export async function getChapterSolutionData(grade, chapterId) {
   if (!grade || !chapterId) return null;
+  // If chapterId is an AMC competition chapter, delegate to AMC loader
+  if (typeof chapterId === 'string' && chapterId.startsWith('amc')) {
+    const { getAmcChapterSolutionData } = await import('./amc/amcData.js');
+    return getAmcChapterSolutionData(grade, chapterId);
+  }
   const gradeObj = await getGradeData(grade);
   if (!gradeObj || !gradeObj.chapters) return null;
   const chapter = gradeObj.chapters.find((ch) => ch.id === chapterId);

@@ -30,3 +30,7 @@ dist-ssr
 
 # Scratch directory
 scratch/
+
+# Agent and test caches
+.agents/
+.vitest/

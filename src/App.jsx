@@ -41,31 +41,51 @@ function RouteFallback() {
  * - /?questId=... -> /quest/:questId
  * - /?pembahasan=1&grade=...&chapter=... -> /solution/:grade/:chapter
  */
-function QueryRedirectHandler() {
+function resolveQueryRedirect(searchParams, pathname = '/') {
+  if (pathname !== '/') return null;
+
+  const questId = searchParams.get('questId');
+  const isSolution = searchParams.get('pembahasan') || searchParams.get('solution');
+  const grade = searchParams.get('grade');
+  const chapter = searchParams.get('chapter');
+  const mode = searchParams.get('mode');
+  const level = searchParams.get('level');
+  const view = searchParams.get('view');
+
+  if (view === 'worksheet') {
+    if (questId) {
+      return `/worksheet/${encodeURIComponent(questId)}`;
+    }
+    return '/worksheet';
+  }
+  if (questId && !isSolution) {
+    return `/quest/${encodeURIComponent(questId)}`;
+  }
+  if (isSolution && (mode === 'amc' || (chapter && String(chapter).toLowerCase().startsWith('amc'))) && (level || grade) && chapter) {
+    const amcLevel = level || grade || (String(chapter).match(/amc(\d+)/i)?.[1]) || '8';
+    return `/solution/amc/${encodeURIComponent(amcLevel)}/${encodeURIComponent(chapter)}`;
+  }
+  if (isSolution && grade && chapter) {
+    return `/solution/${encodeURIComponent(grade)}/${encodeURIComponent(chapter)}`;
+  }
+  return null;
+}
+
+export function QueryRedirectHandler() {
   const [searchParams] = useSearchParams();
   const navigate = useNavigate();
   const location = useLocation();
 
   useEffect(() => {
-    if (location.pathname !== '/') return;
-
-    const questId = searchParams.get('questId');
-    const isSolution = searchParams.get('pembahasan') || searchParams.get('solution');
-    const grade = searchParams.get('grade');
-    const chapter = searchParams.get('chapter');
-    const view = searchParams.get('view');
-
-    if (view === 'worksheet' && questId) {
-      navigate(`/worksheet/${encodeURIComponent(questId)}`, { replace: true });
-    } else if (questId && !isSolution) {
-      navigate(`/quest/${encodeURIComponent(questId)}`, { replace: true });
-    } else if (isSolution && grade && chapter) {
-      navigate(`/solution/${encodeURIComponent(grade)}/${encodeURIComponent(chapter)}`, { replace: true });
+    const target = resolveQueryRedirect(searchParams, location.pathname);
+    if (target) {
+      navigate(target, { replace: true });
     }
   }, [searchParams, location.pathname, navigate]);
 
   return null;
 }
+QueryRedirectHandler.resolve = resolveQueryRedirect;
 
 export function App() {
   const navigate = useNavigate();
@@ -257,6 +277,9 @@ export function App() {
             } />
 
             {/* 4. Chapter Online Solution via QR Code Scan */}
+            <Route path="/solution/amc/:level/:chapterId" element={
+              <ChapterSolutionView onBack={handleBackToHome} />
+            } />
             <Route path="/solution/:grade/:chapterId" element={
               <ChapterSolutionView onBack={handleBackToHome} />
             } />

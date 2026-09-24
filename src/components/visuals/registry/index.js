@@ -7,8 +7,9 @@ import { grade9VisualRegistry } from './grade9Registry.js';
 import { grade10VisualRegistry } from './grade10Registry.js';
 import { grade11VisualRegistry } from './grade11Registry.js';
 import { grade12VisualRegistry } from './grade12Registry.js';
+import { amcVisualRegistry } from './amcRegistry.js';
 
-// Gabungan seluruh registry visual bertahap (Kelas 4 SD s/d 12 SMA)
+// Gabungan seluruh registry visual bertahap (Kelas 4 SD s/d 12 SMA + Modul AMC)
 const MASTER_VISUAL_REGISTRY = {
   ...grade4VisualRegistry,
   ...grade5VisualRegistry,
@@ -18,7 +19,8 @@ const MASTER_VISUAL_REGISTRY = {
   ...grade9VisualRegistry,
   ...grade10VisualRegistry,
   ...grade11VisualRegistry,
-  ...grade12VisualRegistry
+  ...grade12VisualRegistry,
+  ...amcVisualRegistry
 };
 
 /**
@@ -36,10 +38,10 @@ export function getVisualConfig(question) {
     return question.visual;
   }
 
-  // 2. Lookup berdasarkan ID soal
-  const id = question.id || '';
-  if (id && MASTER_VISUAL_REGISTRY[id]) {
-    return MASTER_VISUAL_REGISTRY[id];
+  // 2. Lookup berdasarkan ID visual eksplisit atau ID soal
+  const visualKey = question.visualId || question.id || '';
+  if (visualKey && MASTER_VISUAL_REGISTRY[visualKey]) {
+    return MASTER_VISUAL_REGISTRY[visualKey];
   }
 
   return null;

@@ -41,7 +41,8 @@ export function MathText({ text = "", className = "", as = null }) {
         try {
           const html = katex.renderToString(mathContent, {
             displayMode: true,
-            throwOnError: false
+            throwOnError: false,
+            strict: 'ignore'
           });
           return (
             <div
@@ -60,7 +61,8 @@ export function MathText({ text = "", className = "", as = null }) {
         try {
           const html = katex.renderToString(mathContent, {
             displayMode: false,
-            throwOnError: false
+            throwOnError: false,
+            strict: 'ignore'
           });
           return (
             <span

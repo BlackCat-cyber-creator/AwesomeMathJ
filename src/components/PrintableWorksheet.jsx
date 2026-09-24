@@ -7,6 +7,8 @@ import { getQuestById } from '../utils/storage';
 import { getQuestByIdCloud } from '../firebase/firestore';
 import { ALL_CHAPTERS_INDEX } from '../data/chapterIndex';
 import { getGradeData } from '../data/curriculumData';
+import { ALL_AMC_CHAPTERS_INDEX } from '../data/amc/amcMetadata';
+import { getAmcModuleData, normalizeAmcLevel } from '../data/amc/amcData';
 import { exportWorksheetToPdf, triggerSafePrint } from '../utils/pdfExport';
 import { 
   Printer, 
@@ -18,6 +20,33 @@ import {
   AlertCircle,
   Loader2 
 } from 'lucide-react';
+
+function getWorksheetSolutionPath(quest) {
+  if (!quest) return '/';
+  const isAmcQuest = Boolean(
+    quest.level?.includes?.('AMC') ||
+    quest.levelTitle ||
+    (quest.id && String(quest.id).toLowerCase().startsWith('amc')) ||
+    (quest.chapterId && String(quest.chapterId).toLowerCase().startsWith('amc')) ||
+    (quest.grade && String(quest.grade).toLowerCase().startsWith('amc'))
+  );
+
+  const rawAmcLevel = quest.grade || (quest.level ? String(quest.level).replace(/\D/g, '') : '') || (String(quest.chapterId || quest.id || '').match(/amc(\d+)/i)?.[1]) || '8';
+  const amcLevelNum = normalizeAmcLevel(rawAmcLevel) || 8;
+
+  const targetChapterId = quest.chapterId || quest.id || '';
+  return isAmcQuest
+    ? `/solution/amc/${amcLevelNum}/${encodeURIComponent(targetChapterId)}`
+    : `/solution/${quest.grade || 4}/${encodeURIComponent(targetChapterId)}`;
+}
+
+function getWorksheetSolutionUrl(quest, customOrigin = null) {
+  const path = getWorksheetSolutionPath(quest);
+  const origin = customOrigin || ((typeof window !== 'undefined' && window.location?.origin && window.location.origin !== 'null')
+    ? window.location.origin
+    : 'https://awesomemathj.web.app');
+  return `${origin}${path}`;
+}
 
 /**
  * PrintableWorksheet:
@@ -100,6 +129,36 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
           }
         } catch (e) {
           console.warn("Gagal memuat dataset bab kurikulum:", e);
+        }
+      }
+
+      // 1b. Cek apakah questId adalah bab modul kompetisi AMC (contoh: "amc8-ch1-permutations")
+      const matchedAmc = ALL_AMC_CHAPTERS_INDEX.find(c => c.id === cleanId || c.id === questId);
+      if (matchedAmc) {
+        try {
+          const amcDataset = await getAmcModuleData(matchedAmc.level);
+          const fullChapter = amcDataset?.chapters?.find(c => c.id === matchedAmc.id);
+          if (fullChapter && isMounted) {
+            const reconstructed = {
+              id: questId || matchedAmc.id,
+              chapterId: matchedAmc.id,
+              chapterTitle: fullChapter.title,
+              title: fullChapter.title,
+              grade: matchedAmc.level,
+              level: `AMC ${matchedAmc.level}`,
+              levelTitle: amcDataset.title,
+              trackLabel: matchedAmc.domain,
+              questions: fullChapter.questions || [],
+              studentName: "Lembar Siswa",
+              timeLimit: 30
+            };
+            setQuest(reconstructed);
+            if (reconstructed.studentName) setStudentName(reconstructed.studentName);
+            setIsLoading(false);
+            return;
+          }
+        } catch (e) {
+          console.warn("Gagal memuat dataset bab AMC:", e);
         }
       }
 
@@ -199,10 +258,7 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
     );
   }
 
-  // URL solusi online dinamis untuk QR code yang bisa discan kamera smartphone
-  const solutionUrl = typeof window !== 'undefined'
-    ? `${window.location.origin}/solution/${quest.grade || 4}/${encodeURIComponent(quest.chapterId || quest.id || '')}`
-    : `/solution/${quest.grade || 4}/${encodeURIComponent(quest.chapterId || quest.id || '')}`;
+  const solutionUrl = getWorksheetSolutionUrl(quest);
 
   return (
     <div style={{ maxWidth: 880, margin: '1.5rem auto 4rem', padding: '0 1rem' }}>
@@ -329,149 +385,209 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
         style={{ padding: '2.5rem 3rem', backgroundColor: '#FFFFFF', border: '1px solid #D1D5DB' }}
       >
         {/* Official Header */}
-        <div className="print-header" style={{ borderBottom: '2px solid #111827', paddingBottom: '1.25rem', marginBottom: '1.5rem' }}>
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1.5rem' }}>
-            <div style={{ flex: 1 }}>
-              <div style={{ textTransform: 'uppercase', fontSize: '0.825rem', fontWeight: 800, letterSpacing: '0.06em', color: 'var(--primary-navy)' }}>
-                {tutoringName} • {teacherName}
-              </div>
-              <h2 style={{ fontSize: '1.5rem', fontWeight: 800, margin: '0.2rem 0 0.35rem', color: '#111827' }}>
-                LEMBAR LATIHAN & PR MATEMATIKA MANDIRI
-              </h2>
-              <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                Mata Pelajaran: <strong>Matematika{quest.trackLabel ? ` (${quest.trackLabel})` : ''}</strong> • Topik: <strong>{quest.chapterTitle || quest.title}</strong> (Kelas {quest.grade})
-              </div>
-            </div>
+        {(() => {
+          const isAmc = Boolean(
+            quest.level?.includes?.('AMC') ||
+            quest.levelTitle ||
+            (quest.id && String(quest.id).toLowerCase().startsWith('amc')) ||
+            (quest.chapterId && String(quest.chapterId).toLowerCase().startsWith('amc')) ||
+            (quest.grade && String(quest.grade).toLowerCase().startsWith('amc')) ||
+            (quest.questions && quest.questions.some(q => q.type === 'short_answer' || q.type === 'essay' || !q.options || q.options.length === 0))
+          );
 
-            {/* Scannable Vector QR Code & Online Access Badge */}
-            <div style={{ 
-              display: 'flex', 
-              flexDirection: 'column', 
-              alignItems: 'center', 
-              border: '1px solid #CBD5E1', 
-              padding: '0.45rem 0.6rem', 
-              borderRadius: '8px',
-              backgroundColor: '#FFFFFF',
-              minWidth: '105px',
-              textAlign: 'center'
-            }}>
-              <QRCodeSVG 
-                value={solutionUrl} 
-                size={70} 
-                level="M" 
-                fgColor="#1E3A8A"
-                bgColor="#FFFFFF"
-              />
-              <span style={{ fontSize: '0.62rem', fontWeight: 800, color: 'var(--primary-navy)', marginTop: '0.3rem', letterSpacing: '0.02em', textAlign: 'center' }}>
-                KUNCI & PEMBAHASAN ONLINE
-              </span>
-              <span style={{ fontSize: '0.55rem', color: 'var(--text-muted)', marginTop: '0.1rem' }}>
-                Pindai dengan Kamera HP
-              </span>
-            </div>
-          </div>
+          return (
+            <>
+              <div className="print-header" style={{ borderBottom: '2px solid #111827', paddingBottom: '1.25rem', marginBottom: '1.5rem' }}>
+                <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1.5rem' }}>
+                  <div style={{ flex: 1 }}>
+                    <div style={{ textTransform: 'uppercase', fontSize: '0.825rem', fontWeight: 800, letterSpacing: '0.06em', color: 'var(--primary-navy)' }}>
+                      {tutoringName} • {teacherName}
+                    </div>
+                    <h2 style={{ fontSize: '1.5rem', fontWeight: 800, margin: '0.2rem 0 0.35rem', color: '#111827' }}>
+                      {isAmc ? 'LEMBAR SOAL LATIHAN OLIMPIADE AMC' : 'LEMBAR LATIHAN & PR MATEMATIKA MANDIRI'}
+                    </h2>
+                    <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
+                      {isAmc ? (
+                        <>Modul: <strong>{quest.levelTitle || `AMC ${quest.grade || quest.level}`}</strong> • Domain: <strong>{quest.trackLabel || 'Kompetisi'}</strong> • Topik: <strong>{quest.chapterTitle || quest.title}</strong></>
+                      ) : (
+                        <>Mata Pelajaran: <strong>Matematika{quest.trackLabel ? ` (${quest.trackLabel})` : ''}</strong> • Topik: <strong>{quest.chapterTitle || quest.title}</strong> (Kelas {quest.grade})</>
+                      )}
+                    </div>
+                  </div>
 
-          {/* Student Meta Fill-in Table */}
-          <div style={{ 
-            display: 'grid', 
-            gridTemplateColumns: 'repeat(4, 1fr)', 
-            border: '1px solid #D1D5DB', 
-            borderRadius: '4px',
-            marginTop: '1.25rem',
-            backgroundColor: '#F9FAFB',
-            fontSize: '0.85rem'
-          }}>
-            <div style={{ padding: '0.5rem 0.75rem', borderRight: '1px solid #D1D5DB' }}>
-              <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', display: 'block' }}>NAMA SISWA:</span>
-              <strong>{studentName || "Lembar Siswa"}</strong>
-            </div>
-            <div style={{ padding: '0.5rem 0.75rem', borderRight: '1px solid #D1D5DB' }}>
-              <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', display: 'block' }}>KELAS / JENJANG:</span>
-              <strong>Kelas {quest.grade}</strong>
-            </div>
-            <div style={{ padding: '0.5rem 0.75rem', borderRight: '1px solid #D1D5DB' }}>
-              <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', display: 'block' }}>WAKTU PENGERJAAN:</span>
-              <strong>{timeAlloc}</strong>
-            </div>
-            <div style={{ padding: '0.5rem 0.75rem', textAlign: 'center', backgroundColor: '#EFF6FF' }}>
-              <span style={{ color: 'var(--primary-navy)', fontSize: '0.75rem', display: 'block', fontWeight: 700 }}>NILAI AKHIR:</span>
-              <strong style={{ fontSize: '1.1rem' }}>_____ / 100</strong>
-            </div>
-          </div>
-
-          {/* Instructions */}
-          <div style={{ marginTop: '0.85rem', fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
-            <strong>Petunjuk:</strong> Pilihlah salah satu jawaban yang paling tepat (A, B, C, atau D). Gunakan ruang kosong di bawah tiap nomor untuk mencakar hitungan. Setelah selesai, kumpulkan ke pengajar atau pindai QR Code di pojok atas untuk melihat pembahasan.
-          </div>
-        </div>
-
-        {/* Questions List */}
-        <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
-          {(quest.questions || []).map((q, idx) => (
-            <div 
-              key={q.id || idx} 
-              className="worksheet-question-item"
-              style={{ 
-                borderBottom: '1px dashed #E5E7EB', 
-                paddingBottom: '1.5rem',
-                breakInside: 'avoid',
-                pageBreakInside: 'avoid'
-              }}
-            >
-              {/* Question Number */}
-              <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
-                <span style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--primary-navy)' }}>
-                  {idx + 1}.
-                </span>
-              </div>
-
-              {/* Question Text */}
-              <div style={{ fontSize: '1.025rem', color: '#111827', marginBottom: '0.85rem', lineHeight: '1.65' }}>
-                <MathText text={q.question} />
-              </div>
-
-              <QuestionVisual question={q} />
-
-              {/* Options Grid */}
-              <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.5rem 1.5rem', marginBottom: '1rem' }}>
-                {q.options.map((opt) => (
-                  <div key={opt.key} style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', fontSize: '0.95rem' }}>
-                    <span style={{ 
-                      width: '22px', 
-                      height: '22px', 
-                      borderRadius: '50%', 
-                      border: '1.5px solid #4B5563', 
-                      display: 'inline-flex', 
-                      alignItems: 'center', 
-                      justifyContent: 'center',
-                      fontWeight: 700,
-                      fontSize: '0.8rem',
-                      color: '#111827'
-                    }}>
-                      {opt.key}
+                  {/* Scannable Vector QR Code & Online Access Badge */}
+                  <div style={{ 
+                    display: 'flex', 
+                    flexDirection: 'column', 
+                    alignItems: 'center', 
+                    border: '1px solid #CBD5E1', 
+                    padding: '0.45rem 0.6rem', 
+                    borderRadius: '8px',
+                    backgroundColor: '#FFFFFF',
+                    minWidth: '105px',
+                    textAlign: 'center'
+                  }}>
+                    <QRCodeSVG 
+                      value={solutionUrl} 
+                      size={70} 
+                      level="M" 
+                      fgColor="#1E3A8A"
+                      bgColor="#FFFFFF"
+                    />
+                    <span style={{ fontSize: '0.62rem', fontWeight: 800, color: 'var(--primary-navy)', marginTop: '0.3rem', letterSpacing: '0.02em', textAlign: 'center' }}>
+                      KUNCI & PEMBAHASAN ONLINE
                     </span>
-                    <div style={{ flex: 1 }}>
-                      <MathText text={opt.text} />
+                    <span style={{ fontSize: '0.55rem', color: 'var(--text-muted)', marginTop: '0.1rem' }}>
+                      Pindai dengan Kamera HP
+                    </span>
+                  </div>
+                </div>
+
+                {/* Student Meta Fill-in Table */}
+                <div style={{ 
+                  display: 'grid', 
+                  gridTemplateColumns: 'repeat(4, 1fr)', 
+                  border: '1px solid #D1D5DB', 
+                  borderRadius: '4px',
+                  marginTop: '1.25rem',
+                  backgroundColor: '#F9FAFB',
+                  fontSize: '0.85rem'
+                }}>
+                  <div style={{ padding: '0.5rem 0.75rem', borderRight: '1px solid #D1D5DB' }}>
+                    <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', display: 'block' }}>NAMA SISWA:</span>
+                    <strong>{studentName || "Lembar Siswa"}</strong>
+                  </div>
+                  <div style={{ padding: '0.5rem 0.75rem', borderRight: '1px solid #D1D5DB' }}>
+                    <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', display: 'block' }}>KELAS / JENJANG:</span>
+                    <strong>{isAmc ? (quest.level || `AMC ${quest.grade}`) : `Kelas ${quest.grade}`}</strong>
+                  </div>
+                  <div style={{ padding: '0.5rem 0.75rem', borderRight: '1px solid #D1D5DB' }}>
+                    <span style={{ color: 'var(--text-muted)', fontSize: '0.75rem', display: 'block' }}>WAKTU PENGERJAAN:</span>
+                    <strong>{timeAlloc}</strong>
+                  </div>
+                  <div style={{ padding: '0.5rem 0.75rem', textAlign: 'center', backgroundColor: '#EFF6FF' }}>
+                    <span style={{ color: 'var(--primary-navy)', fontSize: '0.75rem', display: 'block', fontWeight: 700 }}>NILAI AKHIR:</span>
+                    <strong style={{ fontSize: '1.1rem' }}>_____ / 100</strong>
+                  </div>
+                </div>
+
+                {/* Instructions */}
+                <div style={{ marginTop: '0.85rem', fontSize: '0.8rem', color: 'var(--text-secondary)', lineHeight: '1.5' }}>
+                  {isAmc ? (
+                    <><strong>Petunjuk Kompetisi:</strong> Tuliskan jawaban akhir Anda pada kotak yang disediakan dan sertakan langkah coretan / pembuktian pada ruang kerja yang tersedia. Pindai QR Code di kanan atas untuk melihat kunci & pembahasan resmi.</>
+                  ) : (
+                    <><strong>Petunjuk:</strong> Pilihlah salah satu jawaban yang paling tepat (A, B, C, atau D). Gunakan ruang kosong di bawah tiap nomor untuk mencakar hitungan. Setelah selesai, kumpulkan ke pengajar atau pindai QR Code di pojok atas untuk melihat pembahasan.</>
+                  )}
+                </div>
+              </div>
+
+              {/* Questions List */}
+              <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
+                {(quest.questions || []).map((q, idx) => (
+                  <div 
+                    key={q.id || idx} 
+                    className="worksheet-question-item"
+                    style={{ 
+                      borderBottom: '1px dashed #E5E7EB', 
+                      paddingBottom: '1.5rem',
+                      breakInside: 'avoid',
+                      pageBreakInside: 'avoid'
+                    }}
+                  >
+                    {/* Question Number */}
+                    <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.5rem' }}>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
+                        <span style={{ fontWeight: 800, fontSize: '1.05rem', color: 'var(--primary-navy)' }}>
+                          {idx + 1}.
+                        </span>
+                        {q.source && (
+                          <span style={{ fontSize: '0.72rem', color: '#6B7280', backgroundColor: '#F3F4F6', padding: '0.1rem 0.4rem', borderRadius: '4px' }}>
+                            {q.source}
+                          </span>
+                        )}
+                        {q.type === 'essay' && (
+                          <span style={{ fontSize: '0.72rem', color: '#6D28D9', backgroundColor: '#EDE9FE', padding: '0.1rem 0.4rem', borderRadius: '4px', fontWeight: 600 }}>
+                            Esai / Pembuktian
+                          </span>
+                        )}
+                      </div>
+                    </div>
+
+                    {/* Question Text */}
+                    <div style={{ fontSize: '1.025rem', color: '#111827', marginBottom: '0.85rem', lineHeight: '1.65' }}>
+                      <MathText text={q.question || q.problem || ''} />
+                    </div>
+
+                    <QuestionVisual question={q} />
+
+                    {/* Options Grid (For Multiple Choice) OR Final Answer Box (For Short Answer / Essay) */}
+                    {Array.isArray(q.options) && q.options.length > 0 ? (
+                      <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: '0.5rem 1.5rem', marginBottom: '1rem' }}>
+                        {q.options.map((opt) => (
+                          <div key={opt.key} style={{ display: 'flex', alignItems: 'baseline', gap: '0.5rem', fontSize: '0.95rem' }}>
+                            <span style={{ 
+                              width: '22px', 
+                              height: '22px', 
+                              borderRadius: '50%', 
+                              border: '1.5px solid #4B5563', 
+                              display: 'inline-flex', 
+                              alignItems: 'center', 
+                              justifyContent: 'center',
+                              fontWeight: 700,
+                              fontSize: '0.8rem',
+                              color: '#111827'
+                            }}>
+                              {opt.key}
+                            </span>
+                            <div style={{ flex: 1 }}>
+                              <MathText text={opt.text} />
+                            </div>
+                          </div>
+                        ))}
+                      </div>
+                    ) : (
+                      <div style={{ marginBottom: '0.85rem' }}>
+                        <div style={{
+                          display: 'flex',
+                          alignItems: 'center',
+                          gap: '0.75rem',
+                          backgroundColor: '#F8FAFC',
+                          border: '1.5px solid #CBD5E1',
+                          padding: '0.5rem 0.85rem',
+                          borderRadius: '6px',
+                          maxWidth: '380px'
+                        }}>
+                          <span style={{ fontWeight: 800, fontSize: '0.8rem', color: 'var(--primary-navy)' }}>
+                            {q.type === 'essay' ? 'KESIMPULAN JAWABAN AKHIR:' : 'KOTAK JAWABAN AKHIR SISWA:'}
+                          </span>
+                          <div style={{ flex: 1, borderBottom: '2px solid #1E293B', minHeight: '22px' }}></div>
+                        </div>
+                      </div>
+                    )}
+
+                    {/* Scratch Work Space on paper */}
+                    <div style={{ 
+                      minHeight: q.type === 'essay' ? '140px' : '90px', 
+                      border: '1px solid #E5E7EB', 
+                      borderRadius: '6px', 
+                      backgroundColor: '#FCFCFD',
+                      padding: '0.5rem 0.75rem',
+                      fontSize: '0.72rem',
+                      color: '#9CA3AF',
+                      display: 'flex',
+                      flexDirection: 'column',
+                      justifyContent: 'space-between'
+                    }}>
+                      <em>{q.type === 'essay' ? 'Ruang uraian langkah penyelesaian & pembuktian siswa:' : 'Ruang coretan hitungan siswa:'}</em>
+                      <div style={{ borderBottom: '1px dashed #E2E8F0', margin: '14px 0 0' }}></div>
+                      <div style={{ borderBottom: '1px dashed #E2E8F0', margin: '14px 0 0' }}></div>
                     </div>
                   </div>
                 ))}
               </div>
-
-              {/* Scratch Work Space on paper */}
-              <div style={{ 
-                height: '85px', 
-                border: '1px solid #E5E7EB', 
-                borderRadius: '6px', 
-                backgroundColor: '#FCFCFD',
-                padding: '0.4rem 0.6rem',
-                fontSize: '0.72rem',
-                color: '#9CA3AF'
-              }}>
-                <em>Ruang coretan hitungan siswa:</em>
-              </div>
-            </div>
-          ))}
-        </div>
+            </>
+          );
+        })()}
 
         {/* Footer verification note */}
         <div className="print-footer" style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid #D1D5DB', display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#6B7280' }}>
@@ -482,5 +598,8 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
     </div>
   );
 }
+
+PrintableWorksheet.getSolutionPath = getWorksheetSolutionPath;
+PrintableWorksheet.getSolutionUrl = getWorksheetSolutionUrl;
 
 export default PrintableWorksheet;
