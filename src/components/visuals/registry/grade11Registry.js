@@ -4,17 +4,6 @@
  */
 export const grade11VisualRegistry = {
   'sma11-b1-1': {
-    type: 'coordinate-point',
-    props: {
-      title: 'Persamaan Lingkaran Berpusat di (0,0)',
-      caption: '*Jari-jari r menghubungkan titik pusat (0,0) ke sembarang titik (x,y) pada kurva',
-      point: { x: 3, y: 4, label: 'P(3, 4)' },
-      xRange: [-6, 6],
-      yRange: [-6, 6]
-    }
-  },
-
-  'sma11-b2-1': {
     type: 'bar-model',
     props: {
       title: 'Model Komposisi Fungsi f(g(x))',
@@ -31,6 +20,16 @@ export const grade11VisualRegistry = {
       ],
       target: 'f(g(x))',
       targetLabel: 'Nilai Komposisi'
+    }
+  },
+
+  'sma11-b2-1': {
+    type: 'circle-angle',
+    props: {
+      title: 'Sudut Pusat & Keliling Lingkaran',
+      caption: '*Sudut pusat ∠AOB dan sudut keliling ∠ACB menghadap busur AB yang sama',
+      centralAngle: '84°',
+      inscribedAngle: '?°'
     }
   },
 

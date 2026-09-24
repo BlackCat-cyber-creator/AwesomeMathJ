@@ -53,8 +53,11 @@ function QueryRedirectHandler() {
     const isSolution = searchParams.get('pembahasan') || searchParams.get('solution');
     const grade = searchParams.get('grade');
     const chapter = searchParams.get('chapter');
+    const view = searchParams.get('view');
 
-    if (questId && !isSolution) {
+    if (view === 'worksheet' && questId) {
+      navigate(`/worksheet/${encodeURIComponent(questId)}`, { replace: true });
+    } else if (questId && !isSolution) {
       navigate(`/quest/${encodeURIComponent(questId)}`, { replace: true });
     } else if (isSolution && grade && chapter) {
       navigate(`/solution/${encodeURIComponent(grade)}/${encodeURIComponent(chapter)}`, { replace: true });

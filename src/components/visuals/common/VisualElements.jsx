@@ -65,7 +65,6 @@ export function DimensionLine({
  * RightAngleMarker: Penanda sudut siku-siku 90 derajat.
  */
 export function RightAngleMarker({ x, y, size = 10, dirX = 1, dirY = -1, color = VISUAL_THEME.primary }) {
-  const p1 = `${x},${y}`;
   const p2 = `${x + size * dirX},${y}`;
   const p3 = `${x + size * dirX},${y + size * dirY}`;
   const p4 = `${x},${y + size * dirY}`;

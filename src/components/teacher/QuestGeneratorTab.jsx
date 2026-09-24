@@ -81,6 +81,10 @@ export function QuestGeneratorTab({
             onChange={(e) => {
               const gr = Number(e.target.value);
               setGeneratorGrade(gr);
+              const targetGrade = CURRICULUM_DATA.find((g) => g.grade === gr);
+              if (targetGrade && targetGrade.chapters.length > 0) {
+                setGeneratorChapterId(targetGrade.chapters[0].id);
+              }
             }}
           >
             {CURRICULUM_DATA.map((g) => (

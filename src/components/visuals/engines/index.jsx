@@ -1,6 +1,6 @@
 import React from 'react';
 import { BarModelVisual, BalanceScaleVisual, ShoppingVisual } from './AlgebraVisuals.jsx';
-import { RightTriangleVisual, TriangleVisual, QuadrilateralVisual, Solid3DVisual } from './GeometryVisuals.jsx';
+import { RightTriangleVisual, TriangleVisual, QuadrilateralVisual, Solid3DVisual, CircleAngleVisual } from './GeometryVisuals.jsx';
 import { CartesianPlotVisual } from './CoordinateVisuals.jsx';
 import { 
   NumberLineVisual, 
@@ -37,6 +37,8 @@ export function renderVisualEngine(config, question) {
       return <RightTriangleVisual {...props} />;
     case 'triangle':
       return <TriangleVisual {...props} />;
+    case 'circle-angle':
+      return <CircleAngleVisual {...props} />;
     case 'quadrilateral':
     case 'rectangle':
     case 'square':
@@ -50,6 +52,7 @@ export function renderVisualEngine(config, question) {
 
     // Koordinat & Transformasi
     case 'cartesian-plot':
+    case 'coordinate-point':
       return <CartesianPlotVisual {...props} />;
 
     // Aritmetika, SD, Pecahan & Peluang

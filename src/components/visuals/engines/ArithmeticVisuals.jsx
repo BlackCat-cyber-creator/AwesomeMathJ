@@ -184,7 +184,7 @@ export function FractionStripVisual({
   totalParts = 5,
   shadedParts = 3,
   shadedGroups = null, // e.g. [3, 2] for 3/7 + 2/7
-  label,
+  _label,
   targetBadge = null,
   showAnswerBadge = false,
   width = 320,

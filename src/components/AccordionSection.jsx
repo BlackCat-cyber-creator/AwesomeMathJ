@@ -1,5 +1,6 @@
-import React, { useState, useRef, useEffect } from 'react';
+import React, { useState, useRef, useEffect, useMemo } from 'react';
 import { ChevronDown } from 'lucide-react';
+import { MathText } from './MathRenderer';
 
 /**
  * AccordionSection — Reusable collapsible content panel with smooth animation.
@@ -46,10 +47,20 @@ export function AccordionSection({
     return () => window.removeEventListener('resize', handleResize);
   }, []);
 
-  // Truncate preview to ~120 chars
-  const truncatedPreview = preview.length > 120 
-    ? preview.slice(0, 120).replace(/\s+\S*$/, '') + '...' 
-    : preview;
+  // Truncate preview safely and ensure balanced LaTeX delimiters
+  const safePreview = useMemo(() => {
+    if (!preview || typeof preview !== 'string') return '';
+    let p = preview.trim();
+    if (p.length > 130) {
+      p = p.slice(0, 130).replace(/\s+\S*$/, '') + '...';
+    }
+    // Balance unclosed LaTeX dollar signs if truncated midway
+    const dollarMatches = p.match(/\$/g);
+    if (dollarMatches && dollarMatches.length % 2 !== 0) {
+      p += '$';
+    }
+    return p;
+  }, [preview]);
 
   return (
     <div 
@@ -73,8 +84,10 @@ export function AccordionSection({
           </span>
           <div className="accordion-title-group">
             <span className="accordion-title">{title}</span>
-            {!isOpen && truncatedPreview && (
-              <span className="accordion-preview">{truncatedPreview}</span>
+            {!isOpen && safePreview && (
+              <span className="accordion-preview">
+                <MathText text={safePreview} />
+              </span>
             )}
           </div>
         </div>

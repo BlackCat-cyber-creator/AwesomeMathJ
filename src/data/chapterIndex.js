@@ -815,7 +815,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 0,
     "title": "Bab 1: Komposisi Fungsi dan Fungsi Invers",
-    "track": "wajib",
+    "track": "WAJIB",
+    "trackLabel": "Matematika Utama (Wajib)",
     "coreConcepts": [
       "Konsep dan Notasi Fungsi: Relasi khusus yang memasangkan setiap anggota himpunan daerah asal (domain $D_f$) dengan tepat satu anggota himpunan daerah kawan (kodomain $K_f$). Himpunan semua nilai luaran yang dihasilkan disebut daerah hasil (range $R_f$).",
       "Operasi Aljabar Fungsi: Dua fungsi atau lebih dapat dijumlahkan $(f + g)(x) = f(x) + g(x)$, dikurangkan $(f - g)(x) = f(x) - g(x)$, dikalikan $(f \\cdot g)(x) = f(x) \\cdot g(x)$, dan dibagi $(f/g)(x) = \\frac{f(x)}{g(x)}$ dengan syarat $g(x) \\neq 0$. Domain hasil operasi adalah irisan dari domain masing-masing fungsi.",
@@ -833,7 +834,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 1,
     "title": "Bab 2: Lingkaran",
-    "track": "wajib",
+    "track": "WAJIB",
+    "trackLabel": "Matematika Utama (Wajib)",
     "coreConcepts": [
       "Sudut Pusat dan Sudut Keliling: Sudut pusat adalah sudut yang titik sudutnya terletak pada titik pusat lingkaran, sedangkan sudut keliling titik sudutnya berada pada busur keliling lingkaran. Teorema utama: jika keduanya menghadap busur yang sama, maka $\\angle \\text{pusat} = 2 \\times \\angle \\text{keliling}$. Sebagai akibat wajar, semua sudut keliling yang menghadap busur yang sama besarnya sama, dan sudut keliling yang menghadap diameter selalu siku-siku ($90^\\circ$).",
       "Teorema Segiempat Tali Busur (Cyclic Quadrilateral): Segiempat yang keempat titik sudutnya terletak tepat pada keliling lingkaran. Sifat istimewa: jumlah pasangan sudut yang saling berhadapan selalu sama dengan dua sudut siku-siku atau $180^\\circ$, yaitu $\\angle A + \\angle C = 180^\\circ$ dan $\\angle B + \\angle D = 180^\\circ$.",
@@ -850,7 +852,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 2,
     "title": "Bab 3: Statistika (Diagram Pencar & Regresi Linear)",
-    "track": "wajib",
+    "track": "WAJIB",
+    "trackLabel": "Matematika Utama (Wajib)",
     "coreConcepts": [
       "Diagram Pencar (Scatter Plot) & Tren Pola: Visualisasi pasangan data bivariat $(x_i, y_i)$. Mengidentifikasi 3 kategori arah hubungan:\n- Korelasi Positif: Titik-titik condong naik dari kiri bawah ke kanan atas (penambahan variabel bebas $x$ diikuti peningkatan variabel terikat $y$)\n- Korelasi Negatif: Titik-titik condong turun dari kiri atas ke kanan bawah (penambahan nilai $x$ diikuti penurunan nilai $y$)\n- Tanpa Korelasi: Titik-titik menyebar acak seperti lingkaran atau awan tanpa arah garis yang jelas.",
       "Persamaan Garis Regresi Linear (Metode Kuadrat Terkecil): Model estimasi $\\hat{y} = a + bx$ yang meminimalkan jumlah kuadrat residu $\\Sigma (y_i - \\hat{y}_i)^2$:\n- Kemiringan garis (gradien): $b = \\frac{n\\Sigma xy - (\\Sigma x)(\\Sigma y)}{n\\Sigma x^2 - (\\Sigma x)^2}$\n- Titik potong sumbu-$y$ (intersep): $a = \\bar{y} - b\\bar{x}$, di mana $\\bar{x} = \\frac{\\Sigma x}{n}$ dan $\\bar{y} = \\frac{\\Sigma y}{n}$.",
@@ -868,7 +871,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 3,
     "title": "Bab 4: Limit Fungsi Aljabar",
-    "track": "wajib",
+    "track": "LANJUT",
+    "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
     "coreConcepts": [
       "Definisi Informal Limit: $\\lim_{x \\to a} f(x) = L$ berarti nilai $f(x)$ mendekati $L$ saat $x$ mendekati $a$ (dari kiri maupun dari kanan), meskipun $f(a)$ sendiri belum tentu terdefinisi.",
       "Sifat-sifat Limit: Jika $\\lim_{x \\to a} f(x) = L$ dan $\\lim_{x \\to a} g(x) = M$, maka:\n- Penjumlahan: $\\lim_{x \\to a} [f(x) + g(x)] = L + M$\n- Perkalian: $\\lim_{x \\to a} [f(x) \\cdot g(x)] = L \\cdot M$\n- Pembagian: $\\lim_{x \\to a} \\frac{f(x)}{g(x)} = \\frac{L}{M}$ (asalkan $M \\neq 0$)",
@@ -886,7 +890,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 4,
     "title": "Bab 5: Turunan Fungsi Aljabar dan Aplikasinya",
-    "track": "wajib",
+    "track": "LANJUT",
+    "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
     "coreConcepts": [
       "Definisi Turunan: $f'(x) = \\lim_{h \\to 0} \\frac{f(x+h) - f(x)}{h}$. Juga dilambangkan $\\frac{dy}{dx}$, $y'$, atau $Df(x)$.",
       "Aturan Diferensiasi Dasar:\n- Konstanta: $\\frac{d}{dx}[c] = 0$\n- Pangkat: $\\frac{d}{dx}[x^n] = nx^{n-1}$\n- Penjumlahan: $[f+g]' = f' + g'$\n- Perkalian konstanta: $[cf]' = cf'$",
@@ -905,7 +910,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 5,
     "title": "Bab 6: Integral Tak Tentu dan Tentu Fungsi Aljabar",
-    "track": "wajib",
+    "track": "LANJUT",
+    "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
     "coreConcepts": [
       "Integral Tak Tentu: $\\int f(x)\\,dx = F(x) + C$, di mana $F'(x) = f(x)$ dan $C$ adalah konstanta integrasi sembarang.",
       "Aturan Integral Pangkat: $\\int x^n\\,dx = \\frac{x^{n+1}}{n+1} + C$ (untuk $n \\neq -1$)",
@@ -923,7 +929,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 0,
     "title": "Bab 1: Barisan dan Deret",
-    "track": "wajib",
+    "track": "WAJIB",
+    "trackLabel": "Matematika Utama (Wajib)",
     "coreConcepts": [
       "Barisan Aritmetika & Beda Antarsuku: Barisan bilangan dengan selisih dua suku yang berurutan selalu bernilai tetap: $b = U_n - U_{n-1}$. Rumus suku ke-$n$ adalah $U_n = a + (n - 1)b$, di mana $a = U_1$ adalah suku pertama. Jika $b > 0$, barisan dikatakan monoton naik; jika $b < 0$, barisan monoton turun.",
       "Barisan Geometri & Rasio: Barisan bilangan dengan perbandingan atau hasil bagi antara dua suku yang berurutan selalu bernilai konstan: $r = \\frac{U_n}{U_{n-1}}$. Rumus suku ke-$n$ adalah $U_n = a \\cdot r^{n-1}$. Nilai rasio menentukan pertumbuhan eksponensial nilai suku.",
@@ -942,7 +949,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 1,
     "title": "Bab 2: Investasi dan Pinjaman",
-    "track": "wajib",
+    "track": "WAJIB",
+    "trackLabel": "Matematika Utama (Wajib)",
     "coreConcepts": [
       "Bunga Majemuk (Compound Interest): Bunga yang diperhitungkan berdasarkan saldo akhir modal periode sebelumnya (bunga berbunga). Formula modal akhir: $M_n = M_0(1 + i)^n$, di mana $M_0$ adalah modal awal, $i$ tingkat suku bunga per periode pemajemukan, dan $n$ jumlah periode pemajemukan.",
       "Pemajemukan Sub-Tahunan (Nominal vs Efektif): Jika bunga nominal tahunan $j$ dimajemukkan sebanyak $m$ kali dalam setahun (misal bulanan, $m=12$), maka suku bunga per periode adalah $\\frac{j}{m}$ dan jumlah total periode adalah $m \\times t$: $M_t = M_0\\left(1 + \\frac{j}{m}\\right)^{m \\cdot t}$.",
@@ -961,7 +969,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 2,
     "title": "Bab 3: Kaidah Pencacahan",
-    "track": "wajib",
+    "track": "WAJIB",
+    "trackLabel": "Matematika Utama (Wajib)",
     "coreConcepts": [
       "Aturan Penjumlahan: Digunakan apabila ada beberapa pilihan yang bersifat alternatif terpisah (saling lepas) di mana hanya SATU kejadian yang boleh dipilih: Banyak cara $= n_1 + n_2 + \\dots + n_k$. Kata kunci: 'ATAU'.",
       "Aturan Perkalian (Filling Slots): Digunakan apabila serangkaian kegiatan dilakukan secara berurutan atau bersamaan: Banyak cara $= n_1 \\times n_2 \\times \\dots \\times n_k$. Kata kunci: 'DAN'.",
@@ -981,7 +990,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 3,
     "title": "Bab 4: Peluang",
-    "track": "wajib",
+    "track": "LANJUT",
+    "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
     "coreConcepts": [
       "Ruang Sampel ($S$) dan Peluang Teoritik: Ruang sampel $S$ adalah himpunan semua hasil yang mungkin dari suatu percobaan acak. Peluang terjadinya peristiwa $A$ adalah $P(A) = \\frac{n(A)}{n(S)}$, dengan rentang nilai aksiomatis $0 \\le P(A) \\le 1$. Nilai $P(A)=0$ menyatakan kemustahilan dan $P(A)=1$ menyatakan kepastian.",
       "Komplemen Suatu Kejadian ($A'$ atau $A^c$): Peluang tidak terjadinya peristiwa $A$: $P(A') = 1 - P(A)$.",
@@ -1000,7 +1010,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 4,
     "title": "Bab 5: Statistika Inferensi",
-    "track": "wajib",
+    "track": "LANJUT",
+    "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
     "coreConcepts": [
       "Populasi dan Sampel: Populasi adalah keseluruhan objek yang diteliti; sampel adalah sebagian dari populasi. Statistik sampel (misal: $\\bar{x}$, $s$) digunakan untuk mengestimasi parameter populasi ($\\mu$, $\\sigma$).",
       "Rata-rata (Mean): $\\bar{x} = \\frac{\\sum x_i}{n}$ untuk data tunggal, atau $\\bar{x} = \\frac{\\sum f_i x_i}{\\sum f_i}$ untuk data berkelompok.",
@@ -1018,7 +1029,8 @@ export const ALL_CHAPTERS_INDEX = [
     "phase": "Fase F",
     "chapterIndex": 5,
     "title": "Bab 6: Geometri Transformasi",
-    "track": "wajib",
+    "track": "LANJUT",
+    "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
     "coreConcepts": [
       "Translasi $(a, b)$: Setiap titik $(x, y)$ dipetakan ke $(x+a, y+b)$. Bangun diterjemahkan $a$ satuan horizontal dan $b$ satuan vertikal tanpa mengubah bentuk atau orientasi.",
       "Refleksi (Pencerminan):\n- Terhadap sumbu-$x$: $(x, y) \\to (x, -y)$\n- Terhadap sumbu-$y$: $(x, y) \\to (-x, y)$\n- Terhadap $y = x$: $(x, y) \\to (y, x)$\n- Terhadap $y = -x$: $(x, y) \\to (-y, -x)$",

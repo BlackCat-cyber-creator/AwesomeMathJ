@@ -1,4 +1,5 @@
 import React, { useState, useMemo } from 'react';
+import { useSearchParams } from 'react-router-dom';
 import { CURRICULUM_DATA } from '../data/curriculumData';
 import { useGradeData } from '../hooks/useCurriculum';
 import { PillarsAccordion } from './handbook/PillarsAccordion';
@@ -14,8 +15,16 @@ import {
 } from 'lucide-react';
 
 export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
-  const [selectedGrade, setSelectedGrade] = useState(4);
-  const [selectedChapterId, setSelectedChapterId] = useState("sd4-bab1-bilangan-cacah");
+  const [searchParams, setSearchParams] = useSearchParams();
+
+  // URL Search Params as single source of truth
+  const selectedGrade = useMemo(() => {
+    const g = Number(searchParams.get('grade'));
+    return (g >= 4 && g <= 12) ? g : 4;
+  }, [searchParams]);
+
+  const activeChapterParam = searchParams.get('chapter');
+
   const [selectedTrackFilter, setSelectedTrackFilter] = useState("ALL");
   const [searchQuery, setSearchQuery] = useState("");
   const [copiedLinkNotification, setCopiedLinkNotification] = useState(false);
@@ -24,11 +33,14 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
   // Dynamic Grade Data Loader with caching
   const { gradeData: currentGradeData, fullGradeData, loading: isGradeLoading } = useGradeData(selectedGrade);
 
-  // Filter chapters by track (Wajib / Lanjut)
+  // Filter chapters by track (Wajib / Lanjut) - case-insensitive
   const filteredChaptersByTrack = useMemo(() => {
     if (!currentGradeData?.chapters) return [];
     if (selectedTrackFilter === "ALL") return currentGradeData.chapters;
-    return currentGradeData.chapters.filter((ch) => ch.track === selectedTrackFilter);
+    return currentGradeData.chapters.filter((ch) => {
+      const chTrack = (ch.track || "").toUpperCase();
+      return chTrack === selectedTrackFilter.toUpperCase();
+    });
   }, [currentGradeData, selectedTrackFilter]);
 
   // Filter chapters by search query
@@ -45,9 +57,12 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
   // Active Chapter (falls back to first chapter of grade)
   const currentChapter = useMemo(() => {
     if (!currentGradeData?.chapters || currentGradeData.chapters.length === 0) return null;
-    const found = currentGradeData.chapters.find((c) => c.id === selectedChapterId);
-    return found || currentGradeData.chapters[0];
-  }, [currentGradeData, selectedChapterId]);
+    if (activeChapterParam) {
+      const found = currentGradeData.chapters.find((c) => c.id === activeChapterParam);
+      if (found) return found;
+    }
+    return currentGradeData.chapters[0];
+  }, [currentGradeData, activeChapterParam]);
 
   // Full questions from loaded grade data if available
   const fullQuestionsForChapter = useMemo(() => {
@@ -59,6 +74,28 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
     }
     return currentChapter?.questions || [];
   }, [fullGradeData, currentChapter]);
+
+  // Track counts (for SMA Fase F)
+  const trackCounts = useMemo(() => {
+    if (!currentGradeData?.chapters) return { all: 0, wajib: 0, lanjut: 0 };
+    const all = currentGradeData.chapters.length;
+    const wajib = currentGradeData.chapters.filter(ch => (ch.track || '').toUpperCase() === 'WAJIB').length;
+    const lanjut = currentGradeData.chapters.filter(ch => (ch.track || '').toUpperCase() === 'LANJUT').length;
+    return { all, wajib, lanjut };
+  }, [currentGradeData]);
+
+  // Handle changing track filter
+  const handleSelectTrack = (track) => {
+    setSelectedTrackFilter(track);
+    if (!currentGradeData?.chapters) return;
+    const matching = track === 'ALL'
+      ? currentGradeData.chapters
+      : currentGradeData.chapters.filter(ch => (ch.track || '').toUpperCase() === track.toUpperCase());
+    if (matching.length > 0 && (!currentChapter || !matching.some(ch => ch.id === currentChapter.id))) {
+      const nextCh = matching[0].id;
+      setSearchParams({ grade: selectedGrade, chapter: nextCh });
+    }
+  };
 
   // Copy shareable link
   const handleCopyChapterLink = () => {
@@ -98,10 +135,8 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                 key={gradeObj.grade}
                 id={`btn-public-grade-${gradeObj.grade}`}
                 onClick={() => {
-                  setSelectedGrade(gradeObj.grade);
-                  if (gradeObj.chapters.length > 0) {
-                    setSelectedChapterId(gradeObj.chapters[0].id);
-                  }
+                  const firstCh = gradeObj.chapters?.[0]?.id || '';
+                  setSearchParams({ grade: gradeObj.grade, chapter: firstCh });
                   setSelectedTrackFilter("ALL");
                   setIsMobileChaptersOpen(false);
                 }}
@@ -115,8 +150,8 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
         </div>
       </div>
 
-      {/* SMA Track Filter (Wajib vs Lanjut) */}
-      {selectedGrade >= 10 && (
+      {/* SMA Fase F Track Filter (Wajib vs Lanjut for Grade 11 & 12) */}
+      {selectedGrade >= 11 && (
         <div className="editorial-card" style={{ padding: '0.75rem 1.25rem', marginBottom: '1.25rem', backgroundColor: '#F8FAFC' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '0.825rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
@@ -127,25 +162,25 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                 id="btn-filter-track-all"
                 className={`nav-pill ${selectedTrackFilter === 'ALL' ? 'active' : ''}`}
                 style={{ padding: '0.35rem 0.8rem', fontSize: '0.8rem' }}
-                onClick={() => setSelectedTrackFilter('ALL')}
+                onClick={() => handleSelectTrack('ALL')}
               >
-                Semua ({currentGradeData.chapters.length})
+                Semua ({trackCounts.all})
               </button>
               <button
                 id="btn-filter-track-wajib"
                 className={`nav-pill ${selectedTrackFilter === 'WAJIB' ? 'active' : ''}`}
                 style={{ padding: '0.35rem 0.8rem', fontSize: '0.8rem' }}
-                onClick={() => setSelectedTrackFilter('WAJIB')}
+                onClick={() => handleSelectTrack('WAJIB')}
               >
-                📘 Matematika Utama (Wajib)
+                📘 Matematika Utama ({trackCounts.wajib})
               </button>
               <button
                 id="btn-filter-track-lanjut"
                 className={`nav-pill ${selectedTrackFilter === 'LANJUT' ? 'active' : ''}`}
                 style={{ padding: '0.35rem 0.8rem', fontSize: '0.8rem' }}
-                onClick={() => setSelectedTrackFilter('LANJUT')}
+                onClick={() => handleSelectTrack('LANJUT')}
               >
-                🔬 Matematika Tingkat Lanjut (Pilihan)
+                🔬 Matematika Tingkat Lanjut ({trackCounts.lanjut})
               </button>
             </div>
           </div>
@@ -207,29 +242,33 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
           </div>
 
           {/* Chapters List */}
-          <div className="chapter-list-scrollable" style={{ display: 'flex', flexDirection: 'column', gap: '0.45rem' }}>
+          <div className="chapter-list-scrollable" style={{ display: 'flex', flexDirection: 'column', gap: '0.5rem' }}>
             {displayedChapters.map((ch, idx) => {
               const isSelected = currentChapter?.id === ch.id;
+              const isLanjut = (ch.track || '').toUpperCase() === 'LANJUT';
               return (
                 <button
                   key={ch.id}
                   id={`btn-sidebar-chapter-${ch.id}`}
                   onClick={() => {
-                    setSelectedChapterId(ch.id);
+                    setSearchParams({ grade: selectedGrade, chapter: ch.id });
                     setIsMobileChaptersOpen(false);
                     window.scrollTo({ top: 180, behavior: 'smooth' });
                   }}
                   className={`chapter-sidebar-item ${isSelected ? 'active' : ''}`}
                 >
-                  <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem', marginBottom: '0.2rem' }}>
+                  <div className="chapter-sidebar-item-header">
                     <span className="chapter-num-badge">Bab {idx + 1}</span>
                     {ch.trackLabel && (
-                      <span className="badge badge-cat-pas" style={{ fontSize: '0.65rem', padding: '0.1rem 0.4rem' }}>
-                        {ch.trackLabel}
+                      <span className={`badge ${isLanjut ? 'badge-cat-hots' : 'badge-subtle'}`} style={{ fontSize: '0.62rem', padding: '0.1rem 0.4rem' }}>
+                        {isLanjut ? 'Tingkat Lanjut' : 'Wajib'}
                       </span>
                     )}
                   </div>
                   <div className="chapter-item-title">{ch.title}</div>
+                  <div className="chapter-item-subtitle">
+                    20 butir latihan & pembahasan
+                  </div>
                 </button>
               );
             })}

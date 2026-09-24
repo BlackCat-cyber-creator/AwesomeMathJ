@@ -35,11 +35,9 @@ for (const g of grades) {
 
   const numChapters = data.chapters.length;
   let qCount = 0;
-  let all20 = true;
   for (const ch of data.chapters) {
     const chQ = (ch.questions || []).length;
     qCount += chQ;
-    if (chQ !== 20) all20 = false;
   }
   const target = numChapters * 20;
   const status = qCount === target ? '✅ COMPLETE (20/bab)' : `⏳ NEED EXPANSION (${qCount}/${target})`;
@@ -49,4 +47,4 @@ for (const g of grades) {
 }
 
 console.log('================================================================');
-console.log(`TOTAL:\t| ${totalBab} Bab\t| ${totalSoal} / ${totalBab * 20} Soal\t| ${totalSoal === totalBab * 20 ? '🎉 ALL 1,000 COMPLETE' : `Remaining: ${totalBab * 20 - totalSoal} Soal`}`);
+console.log(`TOTAL:\t| ${totalBab} Bab\t| ${totalSoal} / ${totalBab * 20} Soal\t| ${totalSoal === totalBab * 20 ? '🎉 ALL 1,100 COMPLETE' : `Remaining: ${totalBab * 20 - totalSoal} Soal`}`);

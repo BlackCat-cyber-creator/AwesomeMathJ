@@ -1,15 +1,30 @@
-import React, { useState, useEffect } from 'react';
+import React, { useState, useEffect, useRef } from 'react';
 import { useParams, useLocation, useNavigate } from 'react-router-dom';
 import { QRCodeSVG } from 'qrcode.react';
 import { MathText } from './MathRenderer';
 import { QuestionVisual } from './QuestionVisual';
 import { getQuestById } from '../utils/storage';
-import { Printer, ArrowLeft, Edit3, FileQuestion } from 'lucide-react';
+import { getQuestByIdCloud } from '../firebase/firestore';
+import { ALL_CHAPTERS_INDEX } from '../data/chapterIndex';
+import { getGradeData } from '../data/curriculumData';
+import { exportWorksheetToPdf, exportWorksheetToHtml, triggerSafePrint } from '../utils/pdfExport';
+import { 
+  Printer, 
+  ArrowLeft, 
+  Edit3, 
+  FileQuestion, 
+  Download, 
+  FileText, 
+  CheckCircle2, 
+  AlertCircle,
+  Loader2 
+} from 'lucide-react';
 
 /**
  * PrintableWorksheet:
  * Format Lembar Kerja Ujian Resmi AwesomeMathJ.
- * Siap cetak ke format PDF / Kertas A4 dengan CSS print teroptimasi.
+ * Siap cetak ke format PDF / Kertas A4 dengan CSS print teroptimasi,
+ * dukungan ekspor PDF langsung (.pdf), dan file HTML mandiri offline.
  */
 export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
   const { questId } = useParams();
@@ -17,7 +32,7 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
   const navigate = useNavigate();
   const onBackAction = onBack || (() => navigate('/'));
 
-  const [quest] = useState(() => {
+  const [quest, setQuest] = useState(() => {
     if (propQuest) return propQuest;
     if (location.state?.quest) return location.state.quest;
     if (questId) {
@@ -33,16 +48,154 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
     return null;
   });
 
+  const [isLoading, setIsLoading] = useState(!quest && Boolean(questId));
   const [tutoringName, setTutoringName] = useState("AwesomeMathJ");
   const [teacherName, setTeacherName] = useState("Studio Guru Matematika");
   const [studentName, setStudentName] = useState(quest?.studentName || "Lembar Siswa");
   const [timeAlloc, setTimeAlloc] = useState("20 Menit");
   const [isEditingHeader, setIsEditingHeader] = useState(false);
 
+  // PDF Export & Notification State
+  const [isExportingPdf, setIsExportingPdf] = useState(false);
+  const [pdfProgressText, setPdfProgressText] = useState("");
+  const [exportNotification, setExportNotification] = useState(null);
+  const worksheetRef = useRef(null);
+
   // Otomatis scroll ke paling atas saat lembar kerja dibuka
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   }, []);
+
+  // Async Recovery: jika quest tidak ada di local storage / state (misal dibuka via tautan langsung)
+  useEffect(() => {
+    if (quest) return;
+
+    let isMounted = true;
+    async function recoverQuest() {
+      setIsLoading(true);
+
+      // 1. Cek apakah questId adalah bab kurikulum (contoh: "sd4-bab1-bilangan-cacah" atau "chapter-sd4-bab1...")
+      const cleanId = (questId || "").replace(/^(chapter-|practice-)/, "");
+      const matchedChapter = ALL_CHAPTERS_INDEX.find(c => c.id === cleanId || c.id === questId);
+
+      if (matchedChapter) {
+        try {
+          const gradeDataset = await getGradeData(matchedChapter.grade);
+          const fullChapter = gradeDataset?.chapters?.find(c => c.id === matchedChapter.id);
+          if (fullChapter && isMounted) {
+            const reconstructed = {
+              id: questId || matchedChapter.id,
+              chapterId: matchedChapter.id,
+              chapterTitle: fullChapter.title,
+              title: fullChapter.title,
+              grade: matchedChapter.grade,
+              trackLabel: fullChapter.trackLabel || null,
+              questions: fullChapter.questions || [],
+              studentName: "Lembar Siswa",
+              timeLimit: 20
+            };
+            setQuest(reconstructed);
+            if (reconstructed.studentName) setStudentName(reconstructed.studentName);
+            setIsLoading(false);
+            return;
+          }
+        } catch (e) {
+          console.warn("Gagal memuat dataset bab kurikulum:", e);
+        }
+      }
+
+      // 2. Cek apakah questId adalah tugas PR dari Firestore Cloud
+      if (questId && questId.startsWith("quest-")) {
+        try {
+          const cloudQuest = await getQuestByIdCloud(questId);
+          if (cloudQuest && isMounted) {
+            setQuest(cloudQuest);
+            if (cloudQuest.studentName) setStudentName(cloudQuest.studentName);
+            setIsLoading(false);
+            return;
+          }
+        } catch (e) {
+          console.warn("Gagal memuat tugas dari Firestore:", e);
+        }
+      }
+
+      if (isMounted) {
+        setIsLoading(false);
+      }
+    }
+
+    recoverQuest();
+    return () => { isMounted = false; };
+  }, [questId, quest]);
+
+  // Handler: Langsung Unduh PDF (.pdf) via jsPDF & html2canvas
+  const handleDownloadPdf = async () => {
+    if (!worksheetRef.current || isExportingPdf) return;
+    setIsExportingPdf(true);
+    setPdfProgressText("Menyiapkan dokumen...");
+
+    const rawTitle = quest.chapterTitle || quest.title || 'Matematika';
+    const cleanTitle = rawTitle.replace(/[^a-zA-Z0-9_-]/g, '_');
+    const filename = `Lembar_Kerja_${quest.grade ? `Kelas_${quest.grade}_` : ''}${cleanTitle}.pdf`;
+
+    try {
+      await exportWorksheetToPdf(worksheetRef.current, filename, (status) => {
+        setPdfProgressText(status);
+      });
+      setExportNotification({
+        type: 'success',
+        message: 'File PDF berhasil diunduh ke perangkat Anda!'
+      });
+      setTimeout(() => setExportNotification(null), 4000);
+    } catch (err) {
+      console.warn("Direct PDF generation failed, offering print fallback:", err);
+      setExportNotification({
+        type: 'warning',
+        message: 'Gagal membuat file PDF langsung. Mengalihkan ke dialog cetak browser (Simpan sebagai PDF)...'
+      });
+      setTimeout(() => {
+        setExportNotification(null);
+        triggerSafePrint();
+      }, 1500);
+    } finally {
+      setIsExportingPdf(false);
+      setPdfProgressText("");
+    }
+  };
+
+  // Handler: Unduh File HTML Mandiri (Bisa dibuka offline di komputer/perangkat manapun)
+  const handleDownloadHtml = () => {
+    if (!worksheetRef.current) return;
+    const rawTitle = quest.chapterTitle || quest.title || 'Matematika';
+    const title = `Lembar_Kerja_${quest.grade ? `Kelas_${quest.grade}_` : ''}${rawTitle}`;
+    const ok = exportWorksheetToHtml(worksheetRef.current, title);
+    if (ok) {
+      setExportNotification({
+        type: 'success',
+        message: 'File HTML Mandiri berhasil diunduh! Siap dibuka & dicetak offline di mana saja.'
+      });
+      setTimeout(() => setExportNotification(null), 4000);
+    }
+  };
+
+  // Handler: Cetak via Printer Browser dengan pre-loading font KaTeX
+  const handlePrint = () => {
+    triggerSafePrint();
+  };
+
+  if (isLoading) {
+    return (
+      <div style={{ maxWidth: 680, margin: '4rem auto', textAlign: 'center', padding: '1rem' }}>
+        <div className="editorial-card" style={{ padding: '3rem 2rem' }}>
+          <Loader2 size={36} color="var(--primary-navy)" className="animate-spin" style={{ margin: '0 auto 1rem' }} />
+          <h3>Menyiapkan Lembar Kerja...</h3>
+          <p style={{ color: 'var(--text-secondary)', margin: '0.75rem 0' }}>
+            Mengambil butir-butir soal dan diagram visual resmi dari kurikulum...
+          </p>
+        </div>
+      </div>
+    );
+  }
 
   if (!quest) {
     return (
@@ -51,7 +204,7 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
           <FileQuestion size={48} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
           <h3>Lembar Kerja Tidak Ditemukan</h3>
           <p style={{ color: 'var(--text-secondary)', margin: '0.75rem 0 1.5rem' }}>
-            Data soal untuk lembar kerja ini tidak ditemukan di memori browser.
+            Data soal untuk lembar kerja ini tidak ditemukan di memori browser maupun cloud.
           </p>
           <button className="btn btn-royal" onClick={onBackAction}>
             <ArrowLeft size={16} />
@@ -76,25 +229,76 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
           Kembali ke Beranda
         </button>
 
-        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center' }}>
+        <div style={{ display: 'flex', gap: '0.5rem', alignItems: 'center', flexWrap: 'wrap' }}>
           <button 
             id="btn-toggle-customize-header"
             className="btn btn-subtle"
             onClick={() => setIsEditingHeader(!isEditingHeader)}
           >
             <Edit3 size={15} />
-            {isEditingHeader ? "Tutup Pengaturan Header" : "Atur Nama Bimbel, Guru & Siswa"}
+            {isEditingHeader ? "Tutup Header" : "Atur Nama Guru & Siswa"}
           </button>
+
+          <button 
+            id="btn-download-html"
+            className="btn btn-outline"
+            onClick={handleDownloadHtml}
+            title="Unduh file HTML mandiri yang bisa dicetak di komputer lain tanpa internet"
+          >
+            <FileText size={15} />
+            Unduh HTML Mandiri
+          </button>
+
+          <button 
+            id="btn-download-pdf"
+            className="btn btn-royal"
+            onClick={handleDownloadPdf}
+            disabled={isExportingPdf}
+            title="Langsung unduh sebagai file PDF A4 resmi"
+          >
+            {isExportingPdf ? (
+              <>
+                <Loader2 size={16} className="animate-spin" />
+                {pdfProgressText || "Membuat PDF..."}
+              </>
+            ) : (
+              <>
+                <Download size={16} />
+                Unduh PDF (.pdf)
+              </>
+            )}
+          </button>
+
           <button 
             id="btn-trigger-print"
             className="btn btn-primary allow-print"
-            onClick={() => window.print()}
+            onClick={handlePrint}
           >
             <Printer size={16} />
-            Cetak Lembar Kerja / Simpan PDF
+            Cetak via Printer
           </button>
         </div>
       </div>
+
+      {/* Export Notification Toast */}
+      {exportNotification && (
+        <div className="no-print" style={{ 
+          backgroundColor: exportNotification.type === 'success' ? '#ECFDF5' : '#FFFBEB',
+          border: `1px solid ${exportNotification.type === 'success' ? '#10B981' : '#F59E0B'}`,
+          color: exportNotification.type === 'success' ? '#065F46' : '#92400E',
+          padding: '0.75rem 1rem',
+          borderRadius: 'var(--radius-sm)',
+          marginBottom: '1rem',
+          display: 'flex',
+          alignItems: 'center',
+          gap: '0.5rem',
+          fontSize: '0.85rem',
+          fontWeight: 600
+        }}>
+          {exportNotification.type === 'success' ? <CheckCircle2 size={16} /> : <AlertCircle size={16} />}
+          {exportNotification.message}
+        </div>
+      )}
 
       {/* Editing Drawer (Hidden on Print) */}
       {isEditingHeader && (
@@ -145,7 +349,11 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
       )}
 
       {/* Official Examination Worksheet Paper */}
-      <div className="editorial-card printable-page" style={{ padding: '2.5rem 3rem', backgroundColor: '#FFFFFF', border: '1px solid #D1D5DB' }}>
+      <div 
+        ref={worksheetRef}
+        className="editorial-card printable-page" 
+        style={{ padding: '2.5rem 3rem', backgroundColor: '#FFFFFF', border: '1px solid #D1D5DB' }}
+      >
         {/* Official Header */}
         <div className="print-header" style={{ borderBottom: '2px solid #111827', paddingBottom: '1.25rem', marginBottom: '1.5rem' }}>
           <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', gap: '1.5rem' }}>
@@ -157,7 +365,7 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
                 LEMBAR LATIHAN & PR MATEMATIKA MANDIRI
               </h2>
               <div style={{ fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-                Mata Pelajaran: <strong>Matematika{quest.trackLabel ? ` (${quest.trackLabel})` : ''}</strong> • Topik: <strong>{quest.chapterTitle}</strong> (Kelas {quest.grade})
+                Mata Pelajaran: <strong>Matematika{quest.trackLabel ? ` (${quest.trackLabel})` : ''}</strong> • Topik: <strong>{quest.chapterTitle || quest.title}</strong> (Kelas {quest.grade})
               </div>
             </div>
 
@@ -225,13 +433,15 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
 
         {/* Questions List */}
         <div style={{ display: 'flex', flexDirection: 'column', gap: '1.75rem' }}>
-          {quest.questions.map((q, idx) => (
+          {(quest.questions || []).map((q, idx) => (
             <div 
               key={q.id || idx} 
+              className="worksheet-question-item"
               style={{ 
                 borderBottom: '1px dashed #E5E7EB', 
                 paddingBottom: '1.5rem',
-                breakInside: 'avoid'
+                breakInside: 'avoid',
+                pageBreakInside: 'avoid'
               }}
             >
               {/* Question Number */}

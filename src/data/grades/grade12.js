@@ -12,7 +12,8 @@ export const grade12Data = {
     {
       "id": "sma12-bab1-barisan-deret",
       "title": "Bab 1: Barisan dan Deret",
-      "track": "wajib",
+      "track": "WAJIB",
+      "trackLabel": "Matematika Utama (Wajib)",
       "summary": {
         "overview": "Pola keteraturan adalah salah satu bahasa paling fundamental di alam semesta dan peradaban manusia. Ketika seorang petani mengamati pertambahan tinggi tanaman jagung yang tumbuh konstan setiap minggu, seorang arsitek menyusun barisan kursi di gedung teater dengan kapasitas bertambah teratur di setiap baris belakangnya, atau seorang ilmuwan fisika mengamati lintasan pantulan bola tenis yang memantul berulang kali hingga akhirnya berhenti di lantai, seluruh fenomena dinamis tersebut tunduk pada hukum keteraturan Barisan dan Deret.\n\nDalam dunia ekonomi dan kehidupan sehari-hari, barisan dan deret menjadi instrumen utama untuk mengukur akumulasi kekayaan dan kewajiban finansial. Perhitungan bunga simpanan pada tabungan konvensional maupun koperasi desa sering kali menggunakan skema Bunga Tunggal, di mana imbal jasa dihitung secara proporsional terhadap modal awal yang disetorkan. Memahami barisan bilangan memungkinkan kita memprediksi nilai suku pada masa depan tanpa harus menghitungnya satu demi satu secara manual.\n\nBab ini membimbing siswa mengeksplorasi konsep barisan aritmetika dengan beda konstan, barisan geometri dengan rasio pelipatgandaan tetap, deret penjumlahan suku-sukunya, hingga deret geometri tak hingga yang konvergen ($|r| < 1$). Siswa dilatih memodelkan persoalan kontekstual nyata, mulai dari gerak pantulan elastisitas benda jatuh bebas hingga kalkulasi imbal hasil simpanan modal dengan presisi analitis.",
         "coreConcepts": [
@@ -614,7 +615,8 @@ export const grade12Data = {
     {
       "id": "sma12-bab2-investasi-pinjaman",
       "title": "Bab 2: Investasi dan Pinjaman",
-      "track": "wajib",
+      "track": "WAJIB",
+      "trackLabel": "Matematika Utama (Wajib)",
       "summary": {
         "overview": "Dalam dinamika perekonomian kontemporer, uang memiliki nilai waktu (time value of money). Uang sebesar satu juta rupiah hari ini memiliki nilai ekonomi yang berbeda dibandingkan satu juta rupiah sepuluh tahun mendatang. Prinsip ini mendasari seluruh operasional lembaga perbankan, pasar modal, lembaga pembiayaan syariah maupun konvensional, hingga program perencanaan dana pensiun hari tua.\n\nTidak seperti bunga tunggal yang pertumbuhannya linear, sebagian besar produk keuangan dunia nyata menerapkan sistem Bunga Majemuk (compound interest), di mana bunga yang diperoleh pada setiap periode dikapitalisasi menjadi modal pokok baru untuk menghasilkan bunga pada periode berikutnya. Fenomena 'bunga berbunga' ini menciptakan kurva pertumbuhan eksponensial yang sangat kuat. Di sisi lain, ketika seseorang mengambil kredit kepemilikan rumah (KPR) atau modal usaha UMKM, skema pembayaran yang paling lazim digunakan adalah Anuitas, yaitu rangkaian pembayaran berkala dengan jumlah nominal tetap yang mengurai porsi angsuran pokok dan bunga secara sistematis.\n\nBab ini membekali siswa SMA dengan literasi finansial kuantitatif yang kokoh. Siswa mempelajari: (1) Perhitungan nilai masa depan modal investasi bunga majemuk; (2) Pengaruh frekuensi penggabungan bunga (tahunan, semesteran, bulanan); (3) Formula anuitas dan konstruksi tabel pelunasan pinjaman; serta (4) Penyusutan (depresiasi) nilai ekonomis aset produktif seiring berjalannya waktu. Keterampilan ini memberdayakan murid menjadi pengambil keputusan finansial yang rasional dan terukur.",
         "coreConcepts": [
@@ -1215,7 +1217,8 @@ export const grade12Data = {
     {
       "id": "sma12-bab3-kaidah-pencacahan",
       "title": "Bab 3: Kaidah Pencacahan",
-      "track": "wajib",
+      "track": "WAJIB",
+      "trackLabel": "Matematika Utama (Wajib)",
       "summary": {
         "overview": "Setiap hari kita dihadapkan pada jutaan pilihan dan kombinasi konfigurasi. Mulai dari sistem pembuatan nomor plat kendaraan bermotor oleh kepolisian, variasi susunan kata sandi akun perbankan digital, pemilihan formasi pemain kesebelasan sepak bola oleh pelatih, hingga penjadwalan rute penerbangan maskapai internasional, kemampuan menghitung banyak kemungkinan yang terjadi secara cepat dan akurat adalah kebutuhan mutlak dalam sains komputasi dan manajemen logistik.\n\nDalam matematika diskrit, mencacah semua kemungkinan satu demi satu melalui pembuatan daftar diagram pohon sangat tidak efisien jika jumlah pilihannya mencapai ribuan atau jutaan. Oleh karena itu, matematikawan merumuskan Kaidah Pencacahan (combinatorics). Kaidah dasar dimulai dari Aturan Penjumlahan untuk kejadian yang bersifat alternatif saling lepas, dan Aturan Perkalian untuk kejadian yang terjadi secara berurutan atau simultan.\n\nLebih jauh, bab ini membahas pembedaan tajam antara dua konsep sentral: Permutasi, di mana urutan susunan objek sangat diperhatikan (seperti juara 1, 2, 3 atau penyusunan digit kode PIN), dan Kombinasi, di mana urutan penempatan objek diabaikan (seperti memilih anggota delegasi lomba atau mengambil bola dari kantong). Siswa juga mengeksplorasi permutasi khusus dengan unsur yang sama serta permutasi melingkar (siklis).",
         "coreConcepts": [
@@ -1813,7 +1816,8 @@ export const grade12Data = {
     {
       "id": "sma12-bab4-peluang",
       "title": "Bab 4: Peluang",
-      "track": "wajib",
+      "track": "LANJUT",
+      "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
       "summary": {
         "overview": "Ketidakpastian adalah bagian tak terpisahkan dari realitas kehidupan. Perusahaan asuransi jiwa memprediksi klaim nasabah, BMKG meramalkan persentase probabilitas terjadinya hujan badai, dokter ahli genetika menghitung peluang pewarisan sifat penyakit bawaan pada janin, serta investor pasar modal memperhitungkan risiko portofolio saham, seluruhnya bertumpu pada landasan kokoh Teori Peluang (Probability Theory).\n\nBerawal dari kajian analisis permainan peluang oleh Blaise Pascal dan Pierre de Fermat pada abad ke-17, teori peluang bertransformasi menjadi disiplin matematika formal yang menguantifikasi ketidakpastian. Peluang klasik mendefinisikan kemungkinan terjadinya suatu peristiwa sebagai rasio jumlah titik sampel yang diinginkan terhadap seluruh ruang sampel yang mungkin. Namun dalam fenomena kehidupan nyata, kejadian majemuk kerap kali saling berinteraksi, baik secara bebas, saling meniadakan, maupun terikat oleh kondisi prasyarat tertentu.\n\nBab ini menuntun siswa memahami spektrum penuh teori peluang kejadian majemuk: (1) Menentukan ruang sampel percobaan melalui kombinatorika; (2) Membedakan secara tajam kejadian saling lepas ($A \\cap B = \\emptyset$) dan tidak saling lepas; (3) Menganalisis kejadian saling bebas di mana terjadinya peristiwa pertama tidak memengaruhi peluang peristiwa kedua; serta (4) Menguasai konsep Peluang Bersyarat $P(A|B)$ dan Teorema Peluang Total, yang merupakan landasan matematika di balik algoritma klasifikasi Naive Bayes dalam teknologi kecerdasan buatan.",
         "coreConcepts": [
@@ -2415,7 +2419,8 @@ export const grade12Data = {
     {
       "id": "sma12-bab5-statistika-inferensi",
       "title": "Bab 5: Statistika Inferensi",
-      "track": "wajib",
+      "track": "LANJUT",
+      "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
       "summary": {
         "overview": "Statistika inferensi adalah cabang statistika yang memungkinkan kita menarik kesimpulan tentang populasi berdasarkan data dari sampel yang lebih kecil. Ini adalah fondasi dari riset ilmiah, survei opini publik, uji kualitas produk industri, dan pengambilan keputusan berbasis data.\n\nDua konsep inti statistika inferensi yang dipelajari di kelas 12 adalah: (1) **Estimasi** — menaksir parameter populasi (rata-rata, proporsi) dari statistik sampel dengan tingkat kepercayaan tertentu; dan (2) **Distribusi Data** — memahami distribusi frekuensi dan ukuran penyebaran data seperti varians dan simpangan baku yang menjadi dasar pengambilan keputusan statistik.",
         "coreConcepts": [
@@ -3002,7 +3007,8 @@ export const grade12Data = {
     {
       "id": "sma12-bab6-transformasi",
       "title": "Bab 6: Geometri Transformasi",
-      "track": "wajib",
+      "track": "LANJUT",
+      "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
       "summary": {
         "overview": "Geometri transformasi mempelajari perubahan posisi, bentuk, atau ukuran suatu bangun geometris melalui operasi matematis tertentu. Transformasi digunakan secara luas dalam desain grafis, animasi komputer, robotika, navigasi GPS, dan kriptografi geometris.\n\nEmpat jenis transformasi dasar yang dipelajari adalah: (1) **Translasi** (geseran), (2) **Refleksi** (pencerminan), (3) **Rotasi** (perputaran), dan (4) **Dilatasi** (perbesaran/pengecilan). Transformasi dapat dikomposisikan (digabungkan) untuk menghasilkan transformasi yang lebih kompleks.",
         "coreConcepts": [

@@ -1,7 +1,7 @@
 import React from 'react';
 import { VISUAL_THEME } from '../theme';
 import { SvgContainer } from '../common/SvgContainer';
-import { GridBackdrop, UnknownBadge } from '../common/VisualElements';
+import { GridBackdrop } from '../common/VisualElements';
 
 /**
  * CartesianPlotVisual:
@@ -13,7 +13,7 @@ export function CartesianPlotVisual({
   points = [], // [{ x: 3, y: -5, label: 'A(3, -5)', color: 'blue' }]
   arrow = null, // { from: {x: 3, y: -5}, to: {x: 1, y: 2}, label: 'T(-2, 7)', color: 'purple' }
   mirrorLine = null, // { type: 'x=2' | 'y=x' | 'axis-x' | 'axis-y' | 'x=h', label: 'Garis Cermin' }
-  rotationArc = null, // { center: {x: 0, y: 0}, angle: '90° CCW' }
+  _rotationArc = null, // { center: {x: 0, y: 0}, angle: '90° CCW' }
   targetPoint = null, // { label: "A'(?, ?)", x: 1, y: 2 }
   xRange: xRangeProp,
   yRange: yRangeProp,

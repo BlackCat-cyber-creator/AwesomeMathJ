@@ -12,7 +12,8 @@ export const grade11Data = {
     {
       "id": "sma11-bab1-fungsi-invers",
       "title": "Bab 1: Komposisi Fungsi dan Fungsi Invers",
-      "track": "wajib",
+      "track": "WAJIB",
+      "trackLabel": "Matematika Utama (Wajib)",
       "summary": {
         "overview": "Dalam dunia industri dan manufaktur modern, pengolahan bahan mentah menjadi produk jadi tidak terjadi dalam satu tahapan tunggal, melainkan melalui serangkaian mesin berantai. Bahan kayu gelondongan pertama-tama dipotong menjadi lembaran papan oleh mesin pertama, lalu lembaran tersebut dihaluskan dan dirakit menjadi furnitur oleh mesin kedua. Jika setiap tahapan mesin dimodelkan sebagai fungsi matematis, maka penggabungan proses berurutan tersebut adalah esensi dari konsep Komposisi Fungsi, di mana luaran (output) dari mesin pertama langsung menjadi masukan (input) bagi mesin berikutnya.\n\nSebaliknya, dalam bidang keamanan data, teknologi perbankan, dan kriptografi, informasi rahasia diacak menggunakan fungsi enkripsi tertentu. Agar pesan asli dapat dibaca kembali oleh penerima yang berhak, sistem memerlukan suatu proses pembalikan yang tepat dan terukur. Proses pembalikan ini dimodelkan melalui konsep Fungsi Invers. Fungsi invers memungkinkan kita melacak kembali nilai asal dari suatu hasil perhitungan, seperti halnya mengonversi skala suhu Celsius ke Fahrenheit dan sebaliknya, atau menghitung kebutuhan bahan baku awal berdasarkan target produksi akhir.\n\nSecara matematis, tidak semua hubungan atau relasi dapat dibalikkan secara unik. Bab ini membekali siswa dengan pemahaman mendalam mengenai syarat formal suatu relasi untuk menjadi fungsi (domain, kodomain, range), operasi aljabar fungsi, aljabar komposisi $(f \\circ g)(x)$, serta kriteria ketat fungsi bijektif (satu-satu dan pada) agar suatu fungsi memiliki fungsi invers yang valid. Pemahaman ini merupakan fondasi vital bagi kalkulus lanjut dan rekayasa perangkat lunak.",
         "coreConcepts": [
@@ -604,7 +605,8 @@ export const grade11Data = {
     {
       "id": "sma11-bab2-lingkaran",
       "title": "Bab 2: Lingkaran",
-      "track": "wajib",
+      "track": "WAJIB",
+      "trackLabel": "Matematika Utama (Wajib)",
       "summary": {
         "overview": "Bentuk lingkaran adalah wujud geometris paling simetris dan efisien di alam semesta. Mulai dari perancangan roda pedati kuno, roda gigi presisi pada transmisi mesin industri modern, optika lensa kacamata dan teleskop, hingga jangkauan sapuan radar pemantau cuaca dan mercusuar di pelabuhan laut, sifat-sifat lingkaran memegang peranan krusial dalam rekayasa teknologi manusia.\n\nDalam kurikulum matematika tingkat menengah atas, kajian lingkaran diperluas melampaui perhitungan keliling dan luas dasar. Matematikawan mengembangkan analisis hubungan sudut dan garis yang terbentuk oleh tali busur dan garis singgung. Mengapa sudut yang dibentuk oleh dua tali busur yang bertumpu pada diameter selalu tepat siku-siku ($90^\\circ$)? Mengapa sudut pusat lingkaran selalu berukuran dua kali lipat sudut keliling yang menghadap busur yang sama? Pertanyaan-pertanyaan geometris fundamental ini membimbing siswa membangun penalaran deduktif yang kokoh.\n\nBab ini mengulas tuntas empat topik inti: (1) Hubungan sudut pusat dan sudut keliling yang menghadap busur lingkaran yang sama; (2) Karakteristik dan teorema segiempat tali busur yang sudut-sudut berhadapannya selalu berjumlah $180^\\circ$; (3) Sifat ketegaklurusan garis singgung terhadap jari-jari pada titik singgung; serta (4) Konstruksi dan formula analitis panjang garis singgung persekutuan luar dan garis singgung persekutuan dalam antara dua lingkaran yang saling terpisah.",
         "coreConcepts": [
@@ -1195,7 +1197,8 @@ export const grade11Data = {
     {
       "id": "sma11-bab3-statistika-bivariat",
       "title": "Bab 3: Statistika (Diagram Pencar & Regresi Linear)",
-      "track": "wajib",
+      "track": "WAJIB",
+      "trackLabel": "Matematika Utama (Wajib)",
       "summary": {
         "overview": "Dalam era kecerdasan buatan, sains data, dan riset ekonomi modern, hampir tidak ada fenomena yang terjadi secara terisolasi. Pengambil kebijakan dan ilmuwan selalu berhadapan dengan pasangan dua variabel (data bivariat) untuk meneliti hubungan saling ketergantungan: Apakah kenaikan biaya promosi digital berbanding lurus dengan peningkatan volume penjualan produk? Apakah durasi tidur siswa berpengaruh terhadap skor konsentrasi belajar? Apakah kadar pupuk berbanding lurus dengan berat hasil panen tanaman pangan?\n\nUntuk menjawab pertanyaan-pertanyaan berbasis bukti tersebut, statistika bivariat menyediakan dua instrumen analisis utama: Diagram Pencar (Scatter Plot) dan Analisis Regresi Linear. Diagram pencar memvisualisasikan sebaran titik koordinat $(x_i, y_i)$ pada bidang Cartesius untuk mengenali kecenderungan arah hubungan (positif, negatif, atau acak tanpa pola). Jika tren titik-titik tersebut menyerupai garis lurus, matematikawan menerapkan metode kuadrat terkecil (least squares method) untuk memodelkan garis regresi linear $\\hat{y} = a + bx$ yang paling representatif meminimalkan galat prediksi.\n\nBab ini membimbing siswa menguasai: (1) Konstruksi dan interpretasi pola diagram pencar; (2) Perhitungan matematis gradien kemiringan ($b$) dan konstanta intersep ($a$) pada garis regresi linear; (3) Pengukuran kekuatan hubungan linear melalui Koefisien Korelasi Pearson ($r$); serta (4) Evaluasi akurasi model menggunakan Koefisien Determinasi ($r^2$). Pemahaman ini membekali siswa dengan literasi data kritis agar mampu membedakan antara korelasi statistik dengan kausalitas nyata.",
         "coreConcepts": [
@@ -1791,7 +1794,8 @@ export const grade11Data = {
     {
       "id": "sma11-bab4-limit",
       "title": "Bab 4: Limit Fungsi Aljabar",
-      "track": "wajib",
+      "track": "LANJUT",
+      "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
       "summary": {
         "overview": "Limit adalah konsep fundamental dalam kalkulus yang menjawab pertanyaan: \"Ke nilai berapakah suatu fungsi mendekati, saat nilai variabelnya mendekati suatu titik tertentu?\" Konsep ini menjadi fondasi bagi turunan dan integral yang digunakan secara luas dalam fisika, teknik, ekonomi, dan sains komputer. Misalnya, kecepatan sesaat sebuah benda bergerak pada waktu $t$ ditentukan melalui limit dari rasio perubahan posisi terhadap selang waktu yang mengecil mendekati nol.\n\nDalam bab ini, siswa mempelajari sifat-sifat limit fungsi aljabar, teknik substitusi dan pemfaktoran untuk mengevaluasi limit, serta konsep limit di tak hingga. Pemahaman limit yang kokoh akan menjadi kunci untuk memahami konsep turunan dan integral pada bab-bab berikutnya.",
         "coreConcepts": [
@@ -2379,7 +2383,8 @@ export const grade11Data = {
     {
       "id": "sma11-bab5-turunan",
       "title": "Bab 5: Turunan Fungsi Aljabar dan Aplikasinya",
-      "track": "wajib",
+      "track": "LANJUT",
+      "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
       "summary": {
         "overview": "Turunan fungsi adalah salah satu konsep terpenting dalam matematika modern dan menjadi bahasa utama ilmu fisika, teknik, ekonomi, dan biologi. Secara intuitif, turunan mengukur laju perubahan suatu kuantitas terhadap kuantitas lain. Kecepatan adalah turunan posisi terhadap waktu; akselerasi adalah turunan kecepatan; laju perubahan keuntungan suatu perusahaan adalah turunan fungsi keuntungan terhadap jumlah produksi.\n\nDalam bab ini, siswa mempelajari definisi turunan melalui konsep limit, aturan-aturan diferensiasi praktis (aturan pangkat, aturan perkalian, aturan pembagian), serta penerapan turunan untuk menentukan titik stasioner, nilai ekstrem (maksimum dan minimum), interval naik/turun fungsi, dan pemecahan masalah optimasi.",
         "coreConcepts": [
@@ -2972,7 +2977,8 @@ export const grade11Data = {
     {
       "id": "sma11-bab6-integral",
       "title": "Bab 6: Integral Tak Tentu dan Tentu Fungsi Aljabar",
-      "track": "wajib",
+      "track": "LANJUT",
+      "trackLabel": "Matematika Tingkat Lanjut (Pilihan)",
       "summary": {
         "overview": "Integral adalah operasi invers dari turunan. Jika turunan mengurai fungsi posisi menjadi fungsi kecepatan, maka integral merangkai fungsi kecepatan kembali menjadi fungsi posisi. Integral digunakan untuk menghitung luas daerah di bawah kurva, volume benda putar, panjang busur, dan berbagai besaran fisika lainnya.\n\nAda dua jenis integral: **integral tak tentu** (antiderivatif, menghasilkan fungsi dengan konstanta $+C$) dan **integral tentu** (menghasilkan nilai numerik, dihitung menggunakan Teorema Fundamental Kalkulus $\\int_a^b f(x)\\,dx = F(b) - F(a)$).",
         "coreConcepts": [

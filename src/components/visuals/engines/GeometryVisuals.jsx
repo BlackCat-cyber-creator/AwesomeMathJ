@@ -1,7 +1,7 @@
 import React from 'react';
 import { VISUAL_THEME } from '../theme';
 import { SvgContainer } from '../common/SvgContainer';
-import { DimensionLine, RightAngleMarker, UnknownBadge } from '../common/VisualElements';
+import { DimensionLine, RightAngleMarker } from '../common/VisualElements';
 
 /**
  * RightTriangleVisual:
@@ -11,9 +11,6 @@ import { DimensionLine, RightAngleMarker, UnknownBadge } from '../common/VisualE
 export function RightTriangleVisual({
   title = "Segitiga Siku-Siku",
   caption,
-  base = 8,
-  height = 6,
-  hypotenuse = "?",
   baseLabel = "8 cm",
   heightLabel = "6 cm",
   hypLabel = "? cm",
@@ -671,6 +668,109 @@ export function Solid3DVisual({
           </text>
         </g>
       )}
+    </SvgContainer>
+  );
+}
+
+/**
+ * CircleAngleVisual:
+ * Visualisasi sudut pusat dan sudut keliling lingkaran yang menghadap busur sama.
+ * Geometris presisi, label jelas, dan tidak membocorkan kunci jawaban (spoiler-free).
+ */
+export function CircleAngleVisual({
+  title = "Sudut Pusat & Sudut Keliling Lingkaran",
+  caption = "*Sudut pusat ∠AOB dan sudut keliling ∠ACB menghadap busur AB yang sama",
+  centralAngle = "84°",
+  inscribedAngle = "?°",
+  width = 340,
+  heightSvg = 200
+}) {
+  const cx = 170;
+  const cy = 96;
+  const r = 62;
+
+  // Koordinat titik sudut lingkaran:
+  const pC = { x: cx, y: cy - r }; // Puncak (170, 34)
+  const pA = { x: cx - 41.5, y: cy + 46 }; // Kaki busur kiri (128.5, 142)
+  const pB = { x: cx + 41.5, y: cy + 46 }; // Kaki busur kanan (211.5, 142)
+  const pO = { x: cx, y: cy }; // Titik pusat (170, 96)
+
+  return (
+    <SvgContainer width={width} height={heightSvg} title={title} caption={caption}>
+      {/* Lingkaran Utama */}
+      <circle
+        cx={cx}
+        cy={cy}
+        r={r}
+        fill="#F8FAFC"
+        stroke={VISUAL_THEME.borderMedium}
+        strokeWidth="2"
+      />
+
+      {/* Busur AB (busur minor yang dihadap) */}
+      <path
+        d={`M ${pA.x} ${pA.y} A ${r} ${r} 0 0 0 ${pB.x} ${pB.y}`}
+        fill="none"
+        stroke={VISUAL_THEME.accent}
+        strokeWidth="3.5"
+        strokeLinecap="round"
+      />
+
+      {/* Garis Jari-jari Sudut Pusat OA dan OB */}
+      <line x1={pO.x} y1={pO.y} x2={pA.x} y2={pA.y} stroke="#3B82F6" strokeWidth="2" strokeDasharray="3 2" />
+      <line x1={pO.x} y1={pO.y} x2={pB.x} y2={pB.y} stroke="#3B82F6" strokeWidth="2" strokeDasharray="3 2" />
+
+      {/* Garis Tali Busur Sudut Keliling CA dan CB */}
+      <line x1={pC.x} y1={pC.y} x2={pA.x} y2={pA.y} stroke={VISUAL_THEME.primary} strokeWidth="2.25" />
+      <line x1={pC.x} y1={pC.y} x2={pB.x} y2={pB.y} stroke={VISUAL_THEME.primary} strokeWidth="2.25" />
+
+      {/* Titik Pusat O */}
+      <circle cx={pO.x} cy={pO.y} r="3.5" fill="#1D4ED8" />
+
+      {/* Titik A, B, C */}
+      <circle cx={pA.x} cy={pA.y} r="3.5" fill={VISUAL_THEME.primary} />
+      <circle cx={pB.x} cy={pB.y} r="3.5" fill={VISUAL_THEME.primary} />
+      <circle cx={pC.x} cy={pC.y} r="3.5" fill={VISUAL_THEME.primary} />
+
+      {/* Label Titik C di atas */}
+      <g transform={`translate(${pC.x}, ${pC.y - 12})`}>
+        <rect x="-14" y="-8" width="28" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
+        <text x="0" y="4" textAnchor="middle" fontSize="10" fontWeight="800" fill={VISUAL_THEME.textDark}>C</text>
+      </g>
+
+      {/* Label Titik O */}
+      <g transform={`translate(${pO.x - 14}, ${pO.y - 8})`}>
+        <text x="0" y="4" textAnchor="middle" fontSize="10" fontWeight="800" fill="#1D4ED8">O</text>
+      </g>
+
+      {/* Label Titik A */}
+      <g transform={`translate(${pA.x - 16}, ${pA.y + 12})`}>
+        <rect x="-14" y="-8" width="28" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
+        <text x="0" y="4" textAnchor="middle" fontSize="10" fontWeight="800" fill={VISUAL_THEME.textDark}>A</text>
+      </g>
+
+      {/* Label Titik B */}
+      <g transform={`translate(${pB.x + 16}, ${pB.y + 12})`}>
+        <rect x="-14" y="-8" width="28" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
+        <text x="0" y="4" textAnchor="middle" fontSize="10" fontWeight="800" fill={VISUAL_THEME.textDark}>B</text>
+      </g>
+
+      {/* Badge Sudut Pusat ∠AOB */}
+      <g transform={`translate(${pO.x}, ${pO.y + 16})`}>
+        <rect x="-24" y="-8" width="48" height="17" rx="4" fill="#EFF6FF" stroke="#3B82F6" strokeWidth="1" />
+        <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill="#1D4ED8">{centralAngle}</text>
+      </g>
+
+      {/* Badge Sudut Keliling ∠ACB (Target ?) */}
+      <g transform={`translate(${pC.x}, ${pC.y + 18})`}>
+        <rect x="-24" y="-8" width="48" height="17" rx="4" fill={VISUAL_THEME.accentSoft} stroke={VISUAL_THEME.accent} strokeWidth="1.25" />
+        <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.accentDark}>{inscribedAngle}</text>
+      </g>
+
+      {/* Legenda Busur di samping kanan */}
+      <g transform={`translate(${width - 48}, 142)`}>
+        <text x="0" y="0" textAnchor="middle" fontSize="8" fontWeight="700" fill={VISUAL_THEME.accentDark}>Busur AB</text>
+      </g>
     </SvgContainer>
   );
 }

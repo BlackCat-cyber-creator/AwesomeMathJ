@@ -137,14 +137,25 @@ export function StudentQuestView({ questId: propQuestId = null, onBackToDashboar
   // Handle Next Question
   const handleNext = () => {
     if (isLastQuestion) {
+      // Build finalized answers state including current question without double counting
+      const isCurrentCorrect = selectedOption === currentQ.correctAnswer;
+      const finalAnswersState = {
+        ...answersState,
+        [currentIndex]: answersState[currentIndex] || {
+          selected: selectedOption,
+          isCorrect: isCurrentCorrect
+        }
+      };
+
       // Calculate final score
       let correctCount = 0;
-      Object.keys(answersState).forEach((idxKey) => {
-        if (answersState[idxKey].isCorrect) correctCount++;
+      Object.keys(finalAnswersState).forEach((idxKey) => {
+        if (finalAnswersState[idxKey].isCorrect) correctCount++;
       });
-      if (selectedOption === currentQ.correctAnswer) correctCount++;
 
-      const finalScore = Math.round((correctCount / quest.questions.length) * 100);
+      const totalQ = quest.questions.length || 1;
+      const rawScore = Math.round((correctCount / totalQ) * 100);
+      const finalScore = Math.min(100, Math.max(0, rawScore));
       const xp = correctCount * 30 + 20; // XP calculation
       setEarnedXp(xp);
 
@@ -170,13 +181,7 @@ export function StudentQuestView({ questId: propQuestId = null, onBackToDashboar
           earnedXp: xp,
           totalQuestions: quest.questions.length,
           correctCount,
-          answersState: {
-            ...answersState,
-            [currentIndex]: {
-              selected: selectedOption,
-              isCorrect: selectedOption === currentQ.correctAnswer
-            }
-          }
+          answersState: finalAnswersState
         };
 
         // Simpan lokal
