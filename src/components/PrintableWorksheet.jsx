@@ -7,14 +7,13 @@ import { getQuestById } from '../utils/storage';
 import { getQuestByIdCloud } from '../firebase/firestore';
 import { ALL_CHAPTERS_INDEX } from '../data/chapterIndex';
 import { getGradeData } from '../data/curriculumData';
-import { exportWorksheetToPdf, exportWorksheetToHtml, triggerSafePrint } from '../utils/pdfExport';
+import { exportWorksheetToPdf, triggerSafePrint } from '../utils/pdfExport';
 import { 
   Printer, 
   ArrowLeft, 
   Edit3, 
   FileQuestion, 
   Download, 
-  FileText, 
   CheckCircle2, 
   AlertCircle,
   Loader2 
@@ -24,7 +23,7 @@ import {
  * PrintableWorksheet:
  * Format Lembar Kerja Ujian Resmi AwesomeMathJ.
  * Siap cetak ke format PDF / Kertas A4 dengan CSS print teroptimasi,
- * dukungan ekspor PDF langsung (.pdf), dan file HTML mandiri offline.
+ * dukungan ekspor PDF langsung (.pdf) anti-potong.
  */
 export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
   const { questId } = useParams();
@@ -163,21 +162,6 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
     }
   };
 
-  // Handler: Unduh File HTML Mandiri (Bisa dibuka offline di komputer/perangkat manapun)
-  const handleDownloadHtml = () => {
-    if (!worksheetRef.current) return;
-    const rawTitle = quest.chapterTitle || quest.title || 'Matematika';
-    const title = `Lembar_Kerja_${quest.grade ? `Kelas_${quest.grade}_` : ''}${rawTitle}`;
-    const ok = exportWorksheetToHtml(worksheetRef.current, title);
-    if (ok) {
-      setExportNotification({
-        type: 'success',
-        message: 'File HTML Mandiri berhasil diunduh! Siap dibuka & dicetak offline di mana saja.'
-      });
-      setTimeout(() => setExportNotification(null), 4000);
-    }
-  };
-
   // Handler: Cetak via Printer Browser dengan pre-loading font KaTeX
   const handlePrint = () => {
     triggerSafePrint();
@@ -237,16 +221,6 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
           >
             <Edit3 size={15} />
             {isEditingHeader ? "Tutup Header" : "Atur Nama Guru & Siswa"}
-          </button>
-
-          <button 
-            id="btn-download-html"
-            className="btn btn-outline"
-            onClick={handleDownloadHtml}
-            title="Unduh file HTML mandiri yang bisa dicetak di komputer lain tanpa internet"
-          >
-            <FileText size={15} />
-            Unduh HTML Mandiri
           </button>
 
           <button 
@@ -500,7 +474,7 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
         </div>
 
         {/* Footer verification note */}
-        <div style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid #D1D5DB', display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#6B7280' }}>
+        <div className="print-footer" style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid #D1D5DB', display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#6B7280' }}>
           <span>AwesomeMathJ • Platform Pembelajaran Matematika Kurikulum Merdeka</span>
           <span>Tanda Tangan Guru: _____________________</span>
         </div>
