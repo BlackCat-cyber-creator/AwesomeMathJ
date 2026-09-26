@@ -90,7 +90,7 @@ QueryRedirectHandler.resolve = resolveQueryRedirect;
 export function App() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user, teacherName, isAuthenticated, logout } = useAuth();
+  const { user, teacherName, studentName, isAuthenticated, logout, loginStudent } = useAuth();
   const [activeTeacherTab, setActiveTeacherTab] = useState("generator");
 
   const isTeacherRoute = location.pathname.startsWith('/teacher');
@@ -225,25 +225,58 @@ export function App() {
             ) : (
               <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
                 {isAuthenticated ? (
-                  <button
-                    id="btn-nav-open-teacher-studio"
-                    className="btn btn-royal"
-                    style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
-                    onClick={() => navigate('/teacher')}
-                  >
-                    <ShieldCheck size={15} />
-                    Studio Guru
-                  </button>
+                  <>
+                    <div
+                      style={{
+                        display: 'flex',
+                        alignItems: 'center',
+                        gap: '0.4rem',
+                        backgroundColor: '#EFF6FF',
+                        padding: '0.35rem 0.75rem',
+                        borderRadius: 'var(--radius-sm)',
+                        border: '1px solid #BFDBFE',
+                        fontSize: '0.8rem'
+                      }}
+                    >
+                      <span style={{ color: '#1E3A8A', fontWeight: 700 }}>Hai, {studentName}</span>
+                    </div>
+                    <button
+                      className="btn btn-outline"
+                      style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
+                      onClick={logout}
+                    >
+                      <LogOut size={14} />
+                      Keluar
+                    </button>
+                    <button
+                      id="btn-nav-open-teacher-studio"
+                      className="btn btn-royal"
+                      style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
+                      onClick={() => navigate('/teacher')}
+                    >
+                      <ShieldCheck size={15} />
+                      Studio Guru
+                    </button>
+                  </>
                 ) : (
-                  <button
-                    id="btn-nav-teacher-signin"
-                    className="btn btn-royal"
-                    style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
-                    onClick={() => navigate('/teacher')}
-                  >
-                    <Lock size={14} />
-                    Portal Guru
-                  </button>
+                  <>
+                    <button
+                      className="btn btn-outline"
+                      style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
+                      onClick={loginStudent}
+                    >
+                      Masuk Siswa
+                    </button>
+                    <button
+                      id="btn-nav-teacher-signin"
+                      className="btn btn-royal"
+                      style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
+                      onClick={() => navigate('/teacher')}
+                    >
+                      <Lock size={14} />
+                      Portal Guru
+                    </button>
+                  </>
                 )}
               </div>
             )}

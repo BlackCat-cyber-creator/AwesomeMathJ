@@ -22,6 +22,8 @@ import {
   Trophy,
   Loader2
 } from 'lucide-react';
+import { useAuth } from '../hooks/useAuth';
+import { getStudentProgressCloud } from '../firebase/firestore';
 
 /**
  * Pure helper to parse handbook search parameters with backward compatibility.
@@ -94,6 +96,20 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
 
   // Dynamic Grade Data Loader (Kurikulum Merdeka)
   const { gradeData: currentGradeData, fullGradeData, loading: isGradeLoading } = useGradeData(selectedGrade);
+  const { studentId, isAuthenticated } = useAuth();
+  const [studentProgress, setStudentProgress] = useState({});
+
+  useEffect(() => {
+    let active = true;
+    if (isAuthenticated && studentId) {
+      getStudentProgressCloud(studentId).then(progress => {
+        if (active) setStudentProgress(progress || {});
+      });
+    } else {
+      setStudentProgress({});
+    }
+    return () => { active = false; };
+  }, [studentId, isAuthenticated]);
 
   // Dynamic AMC Module Data Loader (AMC 8, AMC 10, AMC 12)
   const [currentLevelState, setCurrentLevelState] = useState(selectedAmcLevel);
@@ -581,6 +597,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
               displayedChapters.map((ch, idx) => {
                 const isSelected = currentChapter?.id === ch.id;
                 const isLanjut = (ch.track || '').toUpperCase() === 'LANJUT';
+                const isCompleted = !!studentProgress[ch.id];
                 return (
                   <button
                     key={ch.id}
@@ -589,7 +606,10 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                     className={`chapter-sidebar-item ${isSelected ? 'active' : ''}`}
                   >
                     <div className="chapter-sidebar-item-header">
-                      <span className="chapter-num-badge">Bab {idx + 1}</span>
+                      <div style={{ display: 'flex', alignItems: 'center', gap: '0.4rem' }}>
+                        <span className="chapter-num-badge">Bab {idx + 1}</span>
+                        {isCompleted && <Check size={14} color="var(--status-emerald)" />}
+                      </div>
                       {ch.trackLabel && (
                         <span className={`badge ${isLanjut ? 'badge-cat-hots' : 'badge-subtle'}`} style={{ fontSize: '0.62rem', padding: '0.1rem 0.4rem' }}>
                           {isLanjut ? 'Tingkat Lanjut' : 'Wajib'}
@@ -712,6 +732,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                 <ChapterQuiz
                   questions={fullQuestionsForChapter}
                   chapterTitle={currentChapter.title}
+                  chapterId={currentChapter.id}
                   grade={currentGradeData.grade}
                   isLoadingQuestions={isGradeLoading}
                   onLaunchPractice={onLaunchPractice}

@@ -3,7 +3,9 @@ import {
   createUserWithEmailAndPassword, 
   signOut, 
   onAuthStateChanged,
-  updateProfile 
+  updateProfile,
+  signInWithPopup,
+  GoogleAuthProvider
 } from "firebase/auth";
 import { auth } from "./config";
 
@@ -103,4 +105,21 @@ export function subscribeToTeacherAuth(callback) {
 export function getCurrentTeacherUser() {
   if (!auth) return null;
   return auth.currentUser;
+}
+
+/**
+ * Login Siswa dengan Google
+ */
+export async function loginStudentWithGoogle() {
+  if (!auth) {
+    return { success: false, error: "Layanan autentikasi belum siap atau tidak tersedia." };
+  }
+  try {
+    const provider = new GoogleAuthProvider();
+    const userCredential = await signInWithPopup(auth, provider);
+    return { success: true, user: userCredential.user };
+  } catch (error) {
+    console.error("Firebase Google Login Error:", error);
+    return { success: false, error: getFriendlyAuthErrorMessage(error), rawError: error };
+  }
 }
