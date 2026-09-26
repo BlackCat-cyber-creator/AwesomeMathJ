@@ -33,12 +33,15 @@ import { PR_PACKETS } from './teacher/teacherConstants';
 
 export { PR_PACKETS };
 
-function getDefaultChapterForGrade(grade) {
-  const gData = CURRICULUM_DATA.find((g) => g.grade === Number(grade));
-  if (gData && gData.chapters && gData.chapters.length > 0) {
-    return gData.chapters[0].id;
+const DEFAULT_CHAPTER_MAP = CURRICULUM_DATA.reduce((acc, g) => {
+  if (g && g.chapters && g.chapters.length > 0) {
+    acc[g.grade] = g.chapters[0].id;
   }
-  return "sd4-bab1-bilangan-cacah";
+  return acc;
+}, {});
+
+function getDefaultChapterForGrade(grade) {
+  return DEFAULT_CHAPTER_MAP[Number(grade)] || "sd4-bab1-bilangan-cacah";
 }
 
 export function TeacherDashboard({ 
