@@ -4,7 +4,8 @@ import {
   loginTeacherWithEmail, 
   registerTeacherWithEmail, 
   logoutTeacher, 
-  getCurrentTeacherUser 
+  getCurrentTeacherUser,
+  loginStudentWithGoogle
 } from '../firebase/auth';
 
 const AuthContext = createContext(null);
@@ -23,6 +24,14 @@ export function AuthProvider({ children }) {
 
   const login = async (email, password) => {
     const result = await loginTeacherWithEmail(email, password);
+    if (result.success) {
+      setUser(result.user);
+    }
+    return result;
+  };
+
+  const loginStudent = async () => {
+    const result = await loginStudentWithGoogle();
     if (result.success) {
       setUser(result.user);
     }
@@ -50,11 +59,14 @@ export function AuthProvider({ children }) {
     teacherId: user?.uid || null,
     teacherEmail: user?.email || '',
     teacherName: user?.displayName || user?.email?.split('@')[0] || 'Guru',
+    studentId: user?.uid || null,
+    studentName: user?.displayName || user?.email?.split('@')[0] || 'Siswa',
     isAuthenticated: !!user,
     isLoading,
     login,
     register,
-    logout
+    logout,
+    loginStudent
   };
 
   return (

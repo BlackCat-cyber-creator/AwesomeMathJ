@@ -11,15 +11,19 @@ import {
 } from 'lucide-react';
 import { MathText } from '../MathRenderer';
 import { QuestionVisual } from '../QuestionVisual';
+import { useAuth } from '../../hooks/useAuth';
+import { saveStudentProgressCloud } from '../../firebase/firestore';
 
 export function ChapterQuiz({
   questions = [],
   chapterTitle,
+  chapterId,
   grade,
   isLoadingQuestions = false,
   onLaunchPractice: _onLaunchPractice,
   onPrintQuest
 }) {
+  const { studentId, isAuthenticated } = useAuth();
   const [selectedPacketFilter, setSelectedPacketFilter] = useState('ALL');
   const [selectedAnswers, setSelectedAnswers] = useState({}); // { [qId]: optionKey }
   const [isQuizSubmitted, setIsQuizSubmitted] = useState(false);
@@ -83,19 +87,37 @@ export function ChapterQuiz({
     setIsQuizSubmitted(true);
     // Reveal all solutions for review
     const allRevealed = {};
+    let correctCount = 0;
+
     filteredQuestions.forEach(q => {
       allRevealed[q.id] = true;
+      if (selectedAnswers[q.id] === q.correctAnswer) {
+        correctCount++;
+      }
     });
     setRevealedSolutions(allRevealed);
 
+    const finalScore = Math.round((correctCount / filteredQuestions.length) * 100) || 0;
+
     // Confetti
-    try {
-      confetti({
-        particleCount: 80,
-        spread: 60,
-        origin: { y: 0.6 }
+    if (finalScore >= 80) {
+      try {
+        confetti({
+          particleCount: 80,
+          spread: 60,
+          origin: { y: 0.6 }
+        });
+      } catch {}
+    }
+
+    if (isAuthenticated && studentId && chapterId) {
+      saveStudentProgressCloud(studentId, grade, chapterId, {
+        score: finalScore,
+        correct: correctCount,
+        total: filteredQuestions.length,
+        packet: selectedPacketFilter
       });
-    } catch {}
+    }
   };
 
   return (

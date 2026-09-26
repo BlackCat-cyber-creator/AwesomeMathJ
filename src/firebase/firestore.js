@@ -242,7 +242,52 @@ export async function submitQuestResultCloud(submissionData) {
 }
 
 // ---------------------------------------------------------------------------
-// 4. MIGRATION & BULK SYNC
+// 4. DATA PROGRES SISWA MANDIRI — studentProgress/{studentId}
+// ---------------------------------------------------------------------------
+
+/**
+ * Simpan progres baca/kuis murid (Mandiri via Buku Saku)
+ */
+export async function saveStudentProgressCloud(studentId, grade, chapterId, resultData) {
+  if (!studentId || !chapterId) return;
+  try {
+    const docRef = doc(db, "studentProgress", studentId);
+
+    // Gunakan nested field dinamis Firestore: chapters.{chapterId}
+    const updateData = {};
+    updateData[`chapters.${chapterId}`] = sanitizeForFirestore({
+      ...resultData,
+      completedAt: new Date().toISOString()
+    });
+
+    // setDoc dengan merge true agar tidak menimpa bab lain
+    await setDoc(docRef, updateData, { merge: true });
+  } catch (err) {
+    console.error("Firestore saveStudentProgressCloud error:", err);
+  }
+}
+
+/**
+ * Ambil progres murid (Mandiri via Buku Saku)
+ */
+export async function getStudentProgressCloud(studentId) {
+  if (!studentId) return null;
+  try {
+    const docRef = doc(db, "studentProgress", studentId);
+    const snap = await getDoc(docRef);
+    if (snap.exists()) {
+      return snap.data().chapters || {};
+    }
+    return {};
+  } catch (err) {
+    console.error("Firestore getStudentProgressCloud error:", err);
+    return {};
+  }
+}
+
+
+// ---------------------------------------------------------------------------
+// 5. MIGRATION & BULK SYNC
 // ---------------------------------------------------------------------------
 
 /**

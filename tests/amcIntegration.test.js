@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import { PublicHandbook } from '../src/components/PublicHandbook.jsx';
 import { AmcChapterView } from '../src/components/handbook/AmcChapterView.jsx';
+import { AuthContext } from '../src/context/AuthContext.jsx';
 import { getVisualConfig } from '../src/components/visuals/registry/index.js';
 import { 
   AMC_LEVELS_METADATA, 
@@ -255,10 +256,12 @@ describe('UI Component Integration & Rendering', () => {
       React.createElement(
         MemoryRouter,
         { initialEntries: ['/'] },
-        React.createElement(PublicHandbook, {
-          onLaunchPractice: () => {},
-          onPrintQuest: () => {}
-        })
+        React.createElement(AuthContext.Provider, { value: { isAuthenticated: false, studentId: null } },
+          React.createElement(PublicHandbook, {
+            onLaunchPractice: () => {},
+            onPrintQuest: () => {}
+          })
+        )
       )
     );
 
@@ -278,10 +281,12 @@ describe('UI Component Integration & Rendering', () => {
       React.createElement(
         MemoryRouter,
         { initialEntries: ['/?mode=amc&level=8'] },
-        React.createElement(PublicHandbook, {
-          onLaunchPractice: () => {},
-          onPrintQuest: () => {}
-        })
+        React.createElement(AuthContext.Provider, { value: { isAuthenticated: false, studentId: null } },
+          React.createElement(PublicHandbook, {
+            onLaunchPractice: () => {},
+            onPrintQuest: () => {}
+          })
+        )
       )
     );
 

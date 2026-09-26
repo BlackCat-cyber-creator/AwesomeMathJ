@@ -4,6 +4,7 @@ import { renderToString } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import { PublicHandbook } from '../src/components/PublicHandbook.jsx';
 import { AmcChapterView } from '../src/components/handbook/AmcChapterView.jsx';
+import { AuthContext } from '../src/context/AuthContext.jsx';
 import { 
   ALL_AMC_CHAPTERS_INDEX, 
   getAmcModuleData 
@@ -23,10 +24,12 @@ describe('Empirical Challenger M3: Mode Switching Permutations & Navigation', ()
       React.createElement(
         MemoryRouter,
         { initialEntries: ['/?mode=amc&level=8'] },
-        React.createElement(PublicHandbook, {
-          onLaunchPractice: () => {},
-          onPrintQuest: () => {}
-        })
+        React.createElement(AuthContext.Provider, { value: { isAuthenticated: false, studentId: null } },
+          React.createElement(PublicHandbook, {
+            onLaunchPractice: () => {},
+            onPrintQuest: () => {}
+          })
+        )
       )
     );
     const html = cleanHtml(rawHtml);
@@ -64,10 +67,12 @@ describe('Empirical Challenger M3: Mode Switching Permutations & Navigation', ()
       React.createElement(
         MemoryRouter,
         { initialEntries: ['/?mode=amc&level=10'] },
-        React.createElement(PublicHandbook, {
-          onLaunchPractice: () => {},
-          onPrintQuest: () => {}
-        })
+        React.createElement(AuthContext.Provider, { value: { isAuthenticated: false, studentId: null } },
+          React.createElement(PublicHandbook, {
+            onLaunchPractice: () => {},
+            onPrintQuest: () => {}
+          })
+        )
       )
     );
     const html = cleanHtml(rawHtml);
@@ -96,10 +101,12 @@ describe('Empirical Challenger M3: Mode Switching Permutations & Navigation', ()
       React.createElement(
         MemoryRouter,
         { initialEntries: ['/?mode=amc&level=12'] },
-        React.createElement(PublicHandbook, {
-          onLaunchPractice: () => {},
-          onPrintQuest: () => {}
-        })
+        React.createElement(AuthContext.Provider, { value: { isAuthenticated: false, studentId: null } },
+          React.createElement(PublicHandbook, {
+            onLaunchPractice: () => {},
+            onPrintQuest: () => {}
+          })
+        )
       )
     );
     const html = cleanHtml(rawHtml);
@@ -128,10 +135,12 @@ describe('Empirical Challenger M3: Mode Switching Permutations & Navigation', ()
       React.createElement(
         MemoryRouter,
         { initialEntries: ['/?grade=8'] },
-        React.createElement(PublicHandbook, {
-          onLaunchPractice: () => {},
-          onPrintQuest: () => {}
-        })
+        React.createElement(AuthContext.Provider, { value: { isAuthenticated: false, studentId: null } },
+          React.createElement(PublicHandbook, {
+            onLaunchPractice: () => {},
+            onPrintQuest: () => {}
+          })
+        )
       )
     );
     const html = cleanHtml(rawHtml);
@@ -173,10 +182,12 @@ describe('Empirical Challenger M3: Mode Switching Permutations & Navigation', ()
       React.createElement(
         MemoryRouter,
         { initialEntries: ['/?grade=8&chapter=smp8-bab2-teorema-pythagoras'] },
-        React.createElement(PublicHandbook, {
-          onLaunchPractice: () => {},
-          onPrintQuest: () => {}
-        })
+        React.createElement(AuthContext.Provider, { value: { isAuthenticated: false, studentId: null } },
+          React.createElement(PublicHandbook, {
+            onLaunchPractice: () => {},
+            onPrintQuest: () => {}
+          })
+        )
       )
     );
     const html = cleanHtml(rawHtml);
@@ -289,10 +300,12 @@ describe('Empirical Challenger M3: Malformed & Missing Params Fallback Stress Te
       React.createElement(
         MemoryRouter,
         { initialEntries: ['/?mode=amc&level=8&chapter=non-existent-chapter-uuid-404'] },
-        React.createElement(PublicHandbook, {
-          onLaunchPractice: () => {},
-          onPrintQuest: () => {}
-        })
+        React.createElement(AuthContext.Provider, { value: { isAuthenticated: false, studentId: null } },
+          React.createElement(PublicHandbook, {
+            onLaunchPractice: () => {},
+            onPrintQuest: () => {}
+          })
+        )
       )
     );
     const htmlAmc = cleanHtml(rawHtmlAmc);
@@ -304,10 +317,12 @@ describe('Empirical Challenger M3: Malformed & Missing Params Fallback Stress Te
       React.createElement(
         MemoryRouter,
         { initialEntries: ['/?grade=8&chapter=non-existent-chapter-uuid-404'] },
-        React.createElement(PublicHandbook, {
-          onLaunchPractice: () => {},
-          onPrintQuest: () => {}
-        })
+        React.createElement(AuthContext.Provider, { value: { isAuthenticated: false, studentId: null } },
+          React.createElement(PublicHandbook, {
+            onLaunchPractice: () => {},
+            onPrintQuest: () => {}
+          })
+        )
       )
     );
     const htmlSchool = cleanHtml(rawHtmlSchool);
