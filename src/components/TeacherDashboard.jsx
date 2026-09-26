@@ -159,9 +159,12 @@ export function TeacherDashboard({
   // Check which packets have already been assigned
   const assignedPacketsForTarget = useMemo(() => {
     if (!targetStudentId || !generatorChapterId) return [];
-    return quests
-      .filter((q) => q.studentId === targetStudentId && q.chapterId === generatorChapterId)
-      .map((q) => q.packetIndex || 1);
+    return quests.reduce((acc, q) => {
+      if (q.studentId === targetStudentId && q.chapterId === generatorChapterId) {
+        acc.push(q.packetIndex || 1);
+      }
+      return acc;
+    }, []);
   }, [quests, targetStudentId, generatorChapterId]);
 
   // Recommend packet
