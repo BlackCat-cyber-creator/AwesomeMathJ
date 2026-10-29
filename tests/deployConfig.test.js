@@ -11,11 +11,18 @@ describe('Konfigurasi deploy Vercel', () => {
     expect(vercel.buildCommand).toBe('npm run build');
   });
 
-  it('dengan cleanUrls, tujuan rewrite SPA tidak boleh berakhiran .html (menyebabkan 404 pada /quest, /teacher)', () => {
-    expect(vercel.cleanUrls).toBe(true);
-    for (const r of vercel.rewrites || []) {
-      expect(r.destination.endsWith('.html')).toBe(false);
-    }
-    expect(vercel.rewrites.some((r) => r.destination === '/app')).toBe(true);
+  it('cleanUrls tidak dipakai agar file verifikasi Google (*.html) tidak dialihkan', () => {
+    expect(vercel.cleanUrls).not.toBe(true);
+    expect(fs.existsSync(path.resolve(__dirname, '../public/googlebd291c9eb4b652d2.html'))).toBe(true);
+  });
+
+  it('alamat rapi diarahkan ke HTML hasil prerender, sisanya ke kerangka aplikasi', () => {
+    const map = Object.fromEntries(vercel.rewrites.map((r) => [r.source, r.destination]));
+    expect(map['/matematika/:kelas/:bab']).toBe('/matematika/:kelas/:bab.html');
+    expect(map['/matematika/:kelas']).toBe('/matematika/:kelas.html');
+    expect(map['/olimpiade/:level/:bab']).toBe('/olimpiade/:level/:bab.html');
+    expect(map['/olimpiade/:level']).toBe('/olimpiade/:level.html');
+    // Fallback SPA harus aturan terakhir
+    expect(vercel.rewrites[vercel.rewrites.length - 1]).toEqual({ source: '/(.*)', destination: '/app.html' });
   });
 });

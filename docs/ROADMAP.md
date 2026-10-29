@@ -72,7 +72,7 @@ Catatan akses: PDF buku disimpan di domain `static.buku.kemdikbud.go.id` (domain
 - Alamat rapi per bab: `/matematika/kelas-4/bab2-pecahan`, `/olimpiade/amc-8/ch1-permutations` (link lama `/?grade=` dialihkan otomatis).
 - `npm run build` menjalankan `scripts/prerender.mjs`. Hasilnya 104 halaman HTML berisi materi lengkap (rumus dirender KaTeX), dengan judul/deskripsi unik, canonical, Open Graph, dan JSON-LD (`LearningResource`, `BreadcrumbList`), plus `sitemap.xml`.
 - `public/robots.txt` menutup Studio Guru, link PR, lembar kerja, dan halaman kunci jawaban dari indeks.
-- `vercel.json`: `cleanUrls` aktif, dan rute aplikasi lain di-rewrite ke `/app` (bukan `/app.html`, yang menyebabkan 404). Hal ini dijaga oleh `tests/deployConfig.test.js`.
+- `vercel.json`: alamat rapi di-rewrite eksplisit ke file `.html` hasil prerender, dan rute lain ke `/app.html`. `cleanUrls` tidak dipakai, karena fitur itu mengalihkan file verifikasi Google `googlebd291c9eb4b652d2.html`. Hal ini dijaga oleh `tests/deployConfig.test.js`.
 - Perlu dilakukan pemilik situs: daftarkan `https://awesomemathj.vercel.app` di Google Search Console, lalu kirim `sitemap.xml`.
 
 ### Tahap 1 — Fondasi multi-mata pelajaran
