@@ -1,10 +1,19 @@
 import { describe, it, expect } from 'vitest';
-import { grade4VisualRegistry } from '../src/components/visuals/registry/grade4Registry';
-import { grade5VisualRegistry } from '../src/components/visuals/registry/grade5Registry';
-import { grade6VisualRegistry } from '../src/components/visuals/registry/grade6Registry';
-import { grade8VisualRegistry } from '../src/components/visuals/registry/grade8Registry';
-import { grade9VisualRegistry } from '../src/components/visuals/registry/grade9Registry';
+import { grade4Data } from '../src/data/grades/grade4';
+import { grade5Data } from '../src/data/grades/grade5';
+import { grade6Data } from '../src/data/grades/grade6';
 import { grade8Data } from '../src/data/grades/grade8';
+import { grade9Data } from '../src/data/grades/grade9';
+
+// Gambar kini tersimpan di dalam soal (q.visual); bangun peta id -> visual untuk pengujian
+const visualsOf = (data) => Object.fromEntries(
+  data.chapters.flatMap((ch) => ch.questions || []).filter((q) => q.visual).map((q) => [q.id, q.visual])
+);
+const grade4VisualRegistry = visualsOf(grade4Data);
+const grade5VisualRegistry = visualsOf(grade5Data);
+const grade6VisualRegistry = visualsOf(grade6Data);
+const grade8VisualRegistry = visualsOf(grade8Data);
+const grade9VisualRegistry = visualsOf(grade9Data);
 
 describe('Visual Accuracy, Mathematical Fidelity, and Zero-Spoiler Tests', () => {
   const allRegistries = [

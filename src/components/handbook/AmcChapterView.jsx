@@ -1,5 +1,4 @@
 import React, { useState } from 'react';
-import confetti from 'canvas-confetti';
 import { 
   Printer, 
   Share2, 
@@ -13,56 +12,8 @@ import {
 import { MathText } from '../MathRenderer';
 import { QuestionVisual } from '../QuestionVisual';
 import { PillarsAccordion } from './PillarsAccordion';
-
-function isNumericString(str) {
-  return /^[+-]?(?:\d+(?:\.\d+)?|\.\d+)(?:\/[+-]?(?:\d+(?:\.\d+)?|\.\d+))?$/.test(str);
-}
-
-function parseNumericValue(str) {
-  if (!str) return NaN;
-  const fracMatch = str.match(/^([+-]?\d+(?:\.\d+)?)\/([+-]?\d+(?:\.\d+)?)$/);
-  if (fracMatch) {
-    const num = parseFloat(fracMatch[1]);
-    const den = parseFloat(fracMatch[2]);
-    if (den !== 0) return num / den;
-  }
-  return parseFloat(str);
-}
-
-/**
- * Evaluasi jawaban soal AMC (short answer):
- * - Normalisasi spasi dan koma desimal
- * - Pencocokan eksak terhadap answer atau acceptedAnswers
- * - Kesetaraan numerik & pecahan (misal: "36.0" === "36", "0.75" === "3/4", "0,75" === "3/4")
- * - Menolak substring false-positives (misal: "123" vs "1")
- */
-function evaluateAmcAnswer(rawInput, q) {
-  if (!rawInput || !q) return false;
-  const cleanInput = String(rawInput).trim().toLowerCase().replace(/\s+/g, '').replace(/,/g, '.');
-  if (!cleanInput) return false;
-
-  const validAnswers = [
-    String(q.answer ?? '').toLowerCase().trim(),
-    ...(q.acceptedAnswers || []).map(a => String(a ?? '').toLowerCase().trim())
-  ].filter(Boolean);
-
-  if (validAnswers.length === 0) return false;
-
-  const isInputNumeric = isNumericString(cleanInput);
-  const inputNum = isInputNumeric ? parseNumericValue(cleanInput) : NaN;
-
-  return validAnswers.some(ans => {
-    const cleanAns = ans.replace(/\s+/g, '').replace(/,/g, '.');
-    if (cleanInput === cleanAns) return true;
-    if (isInputNumeric && isNumericString(cleanAns)) {
-      const ansNum = parseNumericValue(cleanAns);
-      if (!isNaN(inputNum) && !isNaN(ansNum) && Math.abs(inputNum - ansNum) < 1e-9) {
-        return true;
-      }
-    }
-    return false;
-  });
-}
+import { evaluateAmcAnswer } from '../../utils/answerCheck';
+import { amcChapterPath } from '../../utils/seoRoutes';
 
 /**
  * AmcChapterView:
@@ -83,7 +34,7 @@ export function AmcChapterView({
   if (!chapter) return null;
 
   const handleCopyLink = () => {
-    const url = `${window.location.origin}/?mode=amc&level=${levelMeta?.level || 8}&chapter=${chapter.id}`;
+    const url = `${window.location.origin}${amcChapterPath(levelMeta?.level || 8, chapter.id)}`;
     navigator.clipboard.writeText(url);
     setCopiedLink(true);
     setTimeout(() => setCopiedLink(false), 2500);
@@ -109,16 +60,6 @@ export function AmcChapterView({
     const isMatch = evaluateAmcAnswer(rawInput, q);
 
     setEvaluationResults(prev => ({ ...prev, [q.id]: isMatch }));
-
-    if (isMatch) {
-      try {
-        confetti({
-          particleCount: 70,
-          spread: 50,
-          origin: { y: 0.7 }
-        });
-      } catch {}
-    }
   };
 
   const toggleHint = (qId) => {

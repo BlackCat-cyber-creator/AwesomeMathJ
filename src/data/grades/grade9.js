@@ -79,7 +79,43 @@ export const grade9Data = {
           ],
           "correctAnswer": "C",
           "hint": "Jumlahkan kedua persamaan untuk mengeliminasi $y$: $(x + y) + (x - y) = 10 + 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Jumlahkan kedua persamaan:\n$$(x + y) + (x - y) = 10 + 4$$\n$$2x = 14 \\implies x = 7$$\n2. Substitusikan $x = 7$ ke dalam persamaan pertama:\n$$7 + y = 10 \\implies y = 3$$\nJadi, himpunan penyelesaiannya adalah **$(7, 3)$** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Jumlahkan kedua persamaan:\n$$(x + y) + (x - y) = 10 + 4$$\n$$2x = 14 \\implies x = 7$$\n2. Substitusikan $x = 7$ ke dalam persamaan pertama:\n$$7 + y = 10 \\implies y = 3$$\nJadi, himpunan penyelesaiannya adalah **$(7, 3)$** (Opsi C).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Model Pita Komparasi SPLDV",
+              "caption": "*Model gabungan dan selisih panjang",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "x",
+                      "width": 130,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "y",
+                      "width": 65,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "10"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "x",
+                      "width": 130,
+                      "color": "blue"
+                    }
+                  ],
+                  "note": "panjang x lebih panjang 4 dari y"
+                }
+              ],
+              "target": "( ? , ? )",
+              "targetLabel": "Nilai (x, y)"
+            }
+          }
         },
         {
           "id": "smp9-b1-2",
@@ -106,7 +142,36 @@ export const grade9Data = {
           ],
           "correctAnswer": "A",
           "hint": "Substitusikan nilai $x = 4$ langsung ke dalam persamaan: $2(4) + y = 13$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Masukkan $x = 4$:\n$$2(4) + y = 13$$\n$$8 + y = 13$$\n$$y = 13 - 8 = 5$$\nNilai $y$ adalah **5** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Masukkan $x = 4$:\n$$2(4) + y = 13$$\n$$8 + y = 13$$\n$$y = 13 - 8 = 5$$\nNilai $y$ adalah **5** (Opsi A).",
+          "visual": {
+            "type": "balance-scale",
+            "props": {
+              "title": "Model Timbangan Persamaan Linear",
+              "caption": "*Jika x = 4, berapakah beban nilai y agar neraca seimbang?",
+              "leftItems": [
+                {
+                  "type": "box",
+                  "label": "x",
+                  "count": 1
+                },
+                {
+                  "type": "box",
+                  "label": "x",
+                  "count": 1
+                },
+                {
+                  "type": "box",
+                  "label": "y",
+                  "count": 1
+                }
+              ],
+              "rightItems": [
+                {
+                  "val": "13"
+                }
+              ]
+            }
+          }
         },
         {
           "id": "smp9-b1-3",
@@ -133,7 +198,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "C",
           "hint": "Buat sistem persamaan: $p + l = 20$ dan $p - l = 4$. Cari $p$ dan $l$, lalu kalikan keduanya.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Keliling $= 2(p + l) = 40 \\implies p + l = 20$.\n2. Selisih: $p - l = 4$.\n3. Jumlahkan kedua persamaan:\n$$2p = 24 \\implies p = 12\\text{ cm}$$\n4. Lebar: $l = 20 - 12 = 8\\text{ cm}$.\n5. Luas persegi panjang:\n$$\\text{Luas} = p \\times l = 12 \\times 8 = 96\\text{ cm}^2$$\nLuasnya adalah **$96\\text{ cm}^2$** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Keliling $= 2(p + l) = 40 \\implies p + l = 20$.\n2. Selisih: $p - l = 4$.\n3. Jumlahkan kedua persamaan:\n$$2p = 24 \\implies p = 12\\text{ cm}$$\n4. Lebar: $l = 20 - 12 = 8\\text{ cm}$.\n5. Luas persegi panjang:\n$$\\text{Luas} = p \\times l = 12 \\times 8 = 96\\text{ cm}^2$$\nLuasnya adalah **$96\\text{ cm}^2$** (Opsi C).",
+          "visual": {
+            "type": "quadrilateral",
+            "props": {
+              "title": "Persegi Panjang (Keliling = 40 cm)",
+              "caption": "*Panjang (p) berukuran 4 cm lebih dari lebar (l)",
+              "type": "rectangle",
+              "dimA": "p = l + 4",
+              "dimB": "l",
+              "targetBadge": "Luas = ? cm²"
+            }
+          }
         },
         {
           "id": "smp9-b1-4",
@@ -160,7 +236,48 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Misalkan motor $= m$ (2 roda) dan mobil $= c$ (4 roda): $m + c = 40$ dan $2m + 4c = 110$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sistem persamaan:\n$$m + c = 40 \\quad (\\times 2) \\implies 2m + 2c = 80$$\n$$2m + 4c = 110$$\n2. Kurangkan kedua persamaan:\n$$2c = 30 \\implies c = 15\\text{ mobil}$$\n3. Jumlah motor:\n$$m = 40 - 15 = 25\\text{ motor}$$\n4. Total pendapatan parkir:\n$$\\text{Total} = (25 \\times 2.000) + (15 \\times 5.000) = 50.000 + 75.000 = \\text{Rp}125.000,00$$\nTotal pendapatan adalah **Rp125.000,00** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sistem persamaan:\n$$m + c = 40 \\quad (\\times 2) \\implies 2m + 2c = 80$$\n$$2m + 4c = 110$$\n2. Kurangkan kedua persamaan:\n$$2c = 30 \\implies c = 15\\text{ mobil}$$\n3. Jumlah motor:\n$$m = 40 - 15 = 25\\text{ motor}$$\n4. Total pendapatan parkir:\n$$\\text{Total} = (25 \\times 2.000) + (15 \\times 5.000) = 50.000 + 75.000 = \\text{Rp}125.000,00$$\nTotal pendapatan adalah **Rp125.000,00** (Opsi D).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Model Kombinasi Parkir (Motor & Mobil)",
+              "caption": "*Total 40 kendaraan dengan 110 buah roda",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "Motor (m)",
+                      "width": 90,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "Mobil (c)",
+                      "width": 90,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "40 Kendaraan"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "2 × m roda",
+                      "width": 90,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "4 × c roda",
+                      "width": 120,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "110 Roda"
+                }
+              ],
+              "target": "Pendapatan = ?",
+              "targetLabel": "Target"
+            }
+          }
         },
         {
           "id": "smp9-b1-5",
@@ -214,7 +331,48 @@ export const grade9Data = {
           ],
           "correctAnswer": "A",
           "hint": "Gunakan metode eliminasi dengan menjumlahkan kedua persamaan untuk menghilangkan variabel $y$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Jumlahkan kedua persamaan: $(2x + y) + (x - y) = 9 + 3 \\implies 3x = 12 \\implies x = 4$\n2. Substitusikan $x = 4$ ke persamaan kedua: $4 - y = 3 \\implies y = 1$\nHimpunan penyelesaiannya adalah **{(4, 1)}** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Jumlahkan kedua persamaan: $(2x + y) + (x - y) = 9 + 3 \\implies 3x = 12 \\implies x = 4$\n2. Substitusikan $x = 4$ ke persamaan kedua: $4 - y = 3 \\implies y = 1$\nHimpunan penyelesaiannya adalah **{(4, 1)}** (Opsi A).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Model Pita SPLDV",
+              "caption": "*Sistem: 2x + y = 9 dan x - y = 3",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "x",
+                      "width": 75,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "x",
+                      "width": 75,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "y",
+                      "width": 45,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "9"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "x",
+                      "width": 75,
+                      "color": "blue"
+                    }
+                  ],
+                  "note": "selisih dengan y adalah 3"
+                }
+              ],
+              "target": "( ? , ? )",
+              "targetLabel": "Himpunan (x, y)"
+            }
+          }
         },
         {
           "id": "smp9-b1-7",
@@ -241,7 +399,68 @@ export const grade9Data = {
           ],
           "correctAnswer": "B",
           "hint": "Kurangkan kedua persamaan untuk mengeliminasi $y$, cari nilai $x$ lalu $y$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(3x + 2y) - (x + 2y) = 12 - 8 \\implies 2x = 4 \\implies x = 2$\n2. $2 + 2y = 8 \\implies 2y = 6 \\implies y = 3$\n3. Nilai $x + y = 2 + 3 = 5$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(3x + 2y) - (x + 2y) = 12 - 8 \\implies 2x = 4 \\implies x = 2$\n2. $2 + 2y = 8 \\implies 2y = 6 \\implies y = 3$\n3. Nilai $x + y = 2 + 3 = 5$ (Opsi B).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Komparasi Pita Variabel",
+              "caption": "*Bandingkan selisih baris atas (3x + 2y) dan baris bawah (x + 2y)",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "x",
+                      "width": 50,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "x",
+                      "width": 50,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "x",
+                      "width": 50,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "y",
+                      "width": 40,
+                      "color": "green"
+                    },
+                    {
+                      "label": "y",
+                      "width": 40,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "12"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "x",
+                      "width": 50,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "y",
+                      "width": 40,
+                      "color": "green"
+                    },
+                    {
+                      "label": "y",
+                      "width": 40,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "8"
+                }
+              ],
+              "target": "x + y = ?",
+              "targetLabel": "Nilai Ditanya"
+            }
+          }
         },
         {
           "id": "smp9-b1-8",
@@ -268,7 +487,47 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Misalkan $x =$ harga buku tulis dan $y =$ harga pulpen.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModel matematika yang tepat adalah:\n$$\\begin{cases} 3x + 2y = 16.500 \\\\ 2x + 4y = 19.000 \\end{cases}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModel matematika yang tepat adalah:\n$$\\begin{cases} 3x + 2y = 16.500 \\\\ 2x + 4y = 19.000 \\end{cases}$$ (Opsi D).",
+          "visual": {
+            "type": "shopping",
+            "props": {
+              "title": "Paket Belanja Alat Tulis",
+              "caption": "*Buku tulis = x, Pulpen = y",
+              "packages": [
+                {
+                  "items": [
+                    {
+                      "type": "buku",
+                      "count": 3,
+                      "label": "x"
+                    },
+                    {
+                      "type": "pulpen",
+                      "count": 2,
+                      "label": "y"
+                    }
+                  ],
+                  "price": "Rp16.500"
+                },
+                {
+                  "items": [
+                    {
+                      "type": "buku",
+                      "count": 2,
+                      "label": "x"
+                    },
+                    {
+                      "type": "pulpen",
+                      "count": 4,
+                      "label": "y"
+                    }
+                  ],
+                  "price": "Rp19.000"
+                }
+              ],
+              "targetLabel": "Model Matematika SPLDV = ?"
+            }
+          }
         },
         {
           "id": "smp9-b1-9",
@@ -349,7 +608,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Misalkan $p = l + 6$. Keliling: $2(p + l) = 44 \\implies p + l = 22$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(l + 6) + l = 22 \\implies 2l = 16 \\implies l = 8\\text{ cm}$\n2. $p = 8 + 6 = 14\\text{ cm}$\n3. Luas $= 14 \\times 8 = 112\\text{ cm}^2$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(l + 6) + l = 22 \\implies 2l = 16 \\implies l = 8\\text{ cm}$\n2. $p = 8 + 6 = 14\\text{ cm}$\n3. Luas $= 14 \\times 8 = 112\\text{ cm}^2$ (Opsi D).",
+          "visual": {
+            "type": "quadrilateral",
+            "props": {
+              "title": "Persegi Panjang (Keliling = 44 cm)",
+              "caption": "*Panjang (p) berukuran 6 cm lebih dari lebar (l)",
+              "type": "rectangle",
+              "dimA": "p = l + 6",
+              "dimB": "l",
+              "targetBadge": "Luas = ? cm²"
+            }
+          }
         },
         {
           "id": "smp9-b1-12",
@@ -672,7 +942,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "C",
           "hint": "Gunakan rumus volume tabung: $V = \\pi r^2 t$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 7^2 \\times 10 = \\frac{22}{7} \\times 49 \\times 10 = 22 \\times 7 \\times 10 = 1.540\\text{ cm}^3$$\nVolume tabung adalah **$1.540\\text{ cm}^3$** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 7^2 \\times 10 = \\frac{22}{7} \\times 49 \\times 10 = 22 \\times 7 \\times 10 = 1.540\\text{ cm}^3$$\nVolume tabung adalah **$1.540\\text{ cm}^3$** (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Tabung Tertutup (Silinder)",
+              "caption": "*Kapasitas volume isi tabung",
+              "solid": "cylinder",
+              "radiusLabel": "r = 7 cm",
+              "heightLabel": "t = 10 cm",
+              "targetLabel": "Volume = ? cm³"
+            }
+          }
         },
         {
           "id": "smp9-b2-2",
@@ -699,7 +980,19 @@ export const grade9Data = {
           ],
           "correctAnswer": "A",
           "hint": "Gunakan teorema Pythagoras: $s = \\sqrt{r^2 + t^2} = \\sqrt{6^2 + 8^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$$\nPanjang garis pelukis adalah **10 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$$\nPanjang garis pelukis adalah **10 cm** (Opsi A).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Kerucut Geometris",
+              "caption": "*Hubungan Pythagoras antara jari-jari, tinggi, dan garis pelukis",
+              "solid": "cone",
+              "radiusLabel": "r = 6 cm",
+              "heightLabel": "t = 8 cm",
+              "slantLabel": "s = ? cm",
+              "targetLabel": "Garis Pelukis s = ?"
+            }
+          }
         },
         {
           "id": "smp9-b2-3",
@@ -726,7 +1019,17 @@ export const grade9Data = {
           ],
           "correctAnswer": "B",
           "hint": "Gunakan rumus luas permukaan bola: $L = 4\\pi r^2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 4 \\times \\frac{22}{7} \\times 7^2 = 4 \\times \\frac{22}{7} \\times 49 = 4 \\times 22 \\times 7 = 616\\text{ cm}^2$$\nLuas permukaannya adalah **$616\\text{ cm}^2$** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 4 \\times \\frac{22}{7} \\times 7^2 = 4 \\times \\frac{22}{7} \\times 49 = 4 \\times 22 \\times 7 = 616\\text{ cm}^2$$\nLuas permukaannya adalah **$616\\text{ cm}^2$** (Opsi B).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Bola Sempurna",
+              "caption": "*Luas permukaan kulit bola",
+              "solid": "sphere",
+              "radiusLabel": "r = 7 cm",
+              "targetLabel": "Luas Kulit = ? cm²"
+            }
+          }
         },
         {
           "id": "smp9-b2-4",
@@ -753,7 +1056,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Gunakan $V = \\frac{1}{3}\\pi r^2 t$, masukkan $V = 314$ dan $r = 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = \\frac{1}{3} \\times 3{,}14 \\times 5^2 \\times t$\n2. $314 = \\frac{1}{3} \\times 3{,}14 \\times 25 \\times t$\n3. Bagi kedua ruas dengan 3,14:\n$$100 = \\frac{25}{3} t \\implies t = \\frac{100 \\times 3}{25} = 4 \\times 3 = 12\\text{ cm}$$\nTinggi kerucut adalah **12 cm** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = \\frac{1}{3} \\times 3{,}14 \\times 5^2 \\times t$\n2. $314 = \\frac{1}{3} \\times 3{,}14 \\times 25 \\times t$\n3. Bagi kedua ruas dengan 3,14:\n$$100 = \\frac{25}{3} t \\implies t = \\frac{100 \\times 3}{25} = 4 \\times 3 = 12\\text{ cm}$$\nTinggi kerucut adalah **12 cm** (Opsi D).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Volume Kerucut (V = 314 cm³)",
+              "caption": "*Mencari tinggi kerucut dari volume dan jari-jari",
+              "solid": "cone",
+              "radiusLabel": "r = 5 cm",
+              "heightLabel": "t = ? cm",
+              "targetLabel": "Diketahui: V = 314 cm³"
+            }
+          }
         },
         {
           "id": "smp9-b2-5",
@@ -780,7 +1094,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "C",
           "hint": "Ubah satuan ke cm: $r = 70\\text{ cm}$, tinggi $t = 1\\text{ m} = 100\\text{ cm}$. Cari volume dalam $\\text{cm}^3$, lalu bagi 1.000 untuk konversi ke liter.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Parameter: $r = \\frac{140}{2} = 70\\text{ cm}$ dan $t = 100\\text{ cm}$.\n2. Hitung volume tabung:\n$$V = \\frac{22}{7} \\times 70^2 \\times 100 = \\frac{22}{7} \\times 4.900 \\times 100 = 22 \\times 700 \\times 100 = 1.540.000\\text{ cm}^3$$\n3. Konversi ke liter:\n$$\\text{Volume} = \\frac{1.540.000}{1.000} = 1.540\\text{ liter}$$\nVolume minyak dalam drum adalah **1.540 liter** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Parameter: $r = \\frac{140}{2} = 70\\text{ cm}$ dan $t = 100\\text{ cm}$.\n2. Hitung volume tabung:\n$$V = \\frac{22}{7} \\times 70^2 \\times 100 = \\frac{22}{7} \\times 4.900 \\times 100 = 22 \\times 700 \\times 100 = 1.540.000\\text{ cm}^3$$\n3. Konversi ke liter:\n$$\\text{Volume} = \\frac{1.540.000}{1.000} = 1.540\\text{ liter}$$\nVolume minyak dalam drum adalah **1.540 liter** (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Drum Minyak Tabung",
+              "caption": "*Diameter 140 cm (r = 70 cm), tinggi 1 meter (100 cm)",
+              "solid": "cylinder",
+              "radiusLabel": "r = 70 cm",
+              "heightLabel": "t = 100 cm",
+              "targetLabel": "Isi = ? liter"
+            }
+          }
         },
         {
           "id": "smp9-b2-6",
@@ -807,7 +1132,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "C",
           "hint": "Rumus volume tabung: $V = \\pi r^2 t = \\frac{22}{7} \\times 7^2 \\times 10$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 49 \\times 10 = 154 \\times 10 = 1.540\\text{ cm}^3$$\nVolumenya adalah **1.540 cm³** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 49 \\times 10 = 154 \\times 10 = 1.540\\text{ cm}^3$$\nVolumenya adalah **1.540 cm³** (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Volume Tabung",
+              "caption": "*Jari-jari 7 cm dan tinggi 10 cm",
+              "solid": "cylinder",
+              "radiusLabel": "r = 7 cm",
+              "heightLabel": "t = 10 cm",
+              "targetLabel": "Volume = ? cm³"
+            }
+          }
         },
         {
           "id": "smp9-b2-7",
@@ -834,34 +1170,57 @@ export const grade9Data = {
           ],
           "correctAnswer": "A",
           "hint": "Luas selimut $= 2\\pi r t = \\pi d t = \\frac{22}{7} \\times 14 \\times 20$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L_s = \\frac{22}{7} \\times 14 \\times 20 = 44 \\times 20 = 880\\text{ cm}^2$$\nLuas selimutnya adalah **880 cm²** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L_s = \\frac{22}{7} \\times 14 \\times 20 = 44 \\times 20 = 880\\text{ cm}^2$$\nLuas selimutnya adalah **880 cm²** (Opsi A).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Luas Selimut Tabung",
+              "caption": "*Diameter alas 14 cm (r = 7 cm) dan tinggi 20 cm",
+              "solid": "cylinder",
+              "radiusLabel": "d = 14 cm",
+              "heightLabel": "t = 20 cm",
+              "targetLabel": "Luas Selimut = ?"
+            }
+          }
         },
         {
           "id": "smp9-b2-8",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Sebuah kerucut memiliki jari-jari alas 6 cm dan tinggi 8 cm. Panjang garis pelukis ($s$) kerucut tersebut adalah...",
+          "question": "Sebuah kerucut memiliki jari-jari alas 5 cm dan panjang garis pelukis 13 cm. Tinggi kerucut tersebut adalah...",
           "options": [
             {
               "key": "A",
-              "text": "12 cm"
+              "text": "8 cm"
             },
             {
               "key": "B",
-              "text": "10 cm"
+              "text": "12 cm"
             },
             {
               "key": "C",
-              "text": "14 cm"
+              "text": "18 cm"
             },
             {
               "key": "D",
-              "text": "9 cm"
+              "text": "14 cm"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Gunakan teorema Pythagoras: $s = \\sqrt{r^2 + t^2} = \\sqrt{6^2 + 8^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$$\nPanjang garis pelukisnya adalah **10 cm** (Opsi B)."
+          "hint": "Tinggi, jari-jari, dan garis pelukis membentuk segitiga siku-siku dengan garis pelukis sebagai sisi miring: $t = \\sqrt{s^2 - r^2}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\sqrt{13^2 - 5^2} = \\sqrt{169 - 25} = \\sqrt{144} = 12\\text{ cm}$$\nTinggi kerucut adalah **12 cm** (Opsi B).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Tinggi Kerucut",
+              "caption": "*Jari-jari alas 5 cm dan garis pelukis 13 cm",
+              "solid": "cone",
+              "radiusLabel": "r = 5 cm",
+              "heightLabel": "t = ?",
+              "slantLabel": "s = 13 cm",
+              "targetLabel": "Tinggi t = ?"
+            }
+          }
         },
         {
           "id": "smp9-b2-9",
@@ -888,7 +1247,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Volume kerucut $= \\frac{1}{3}\\pi r^2 t = \\frac{1}{3} \\times \\frac{22}{7} \\times 49 \\times 12$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{3} \\times 154 \\times 12 = 154 \\times 4 = 616\\text{ cm}^3$$\nVolumenya adalah **616 cm³** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{3} \\times 154 \\times 12 = 154 \\times 4 = 616\\text{ cm}^3$$\nVolumenya adalah **616 cm³** (Opsi D).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Volume Kerucut",
+              "caption": "*Jari-jari alas 7 cm dan tinggi 12 cm",
+              "solid": "cone",
+              "radiusLabel": "r = 7 cm",
+              "heightLabel": "t = 12 cm",
+              "targetLabel": "Volume = ? cm³"
+            }
+          }
         },
         {
           "id": "smp9-b2-10",
@@ -915,7 +1285,17 @@ export const grade9Data = {
           ],
           "correctAnswer": "A",
           "hint": "Volume bola $= \\frac{4}{3}\\pi r^3 = \\frac{4}{3} \\times \\frac{22}{7} \\times 21^3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{4}{3} \\times \\frac{22}{7} \\times 9.261 = \\frac{88}{21} \\times 9.261 = 88 \\times 441 = 38.808\\text{ cm}^3$$\nVolumenya adalah **38.808 cm³** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{4}{3} \\times \\frac{22}{7} \\times 9.261 = \\frac{88}{21} \\times 9.261 = 88 \\times 441 = 38.808\\text{ cm}^3$$\nVolumenya adalah **38.808 cm³** (Opsi A).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Volume Bola",
+              "caption": "*Jari-jari bola 21 cm",
+              "solid": "sphere",
+              "radiusLabel": "r = 21 cm",
+              "targetLabel": "Volume = ? cm³"
+            }
+          }
         },
         {
           "id": "smp9-b2-11",
@@ -942,7 +1322,17 @@ export const grade9Data = {
           ],
           "correctAnswer": "A",
           "hint": "Luas bola $= 4\\pi r^2 = 4 \\times \\frac{22}{7} \\times 49$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 4 \\times 154 = 616\\text{ cm}^2$$\nLuas permukaannya adalah **616 cm²** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 4 \\times 154 = 616\\text{ cm}^2$$\nLuas permukaannya adalah **616 cm²** (Opsi A).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Luas Permukaan Bola",
+              "caption": "*Jari-jari bola 7 cm",
+              "solid": "sphere",
+              "radiusLabel": "r = 7 cm",
+              "targetLabel": "Luas Kulit = ? cm²"
+            }
+          }
         },
         {
           "id": "smp9-b2-12",
@@ -969,7 +1359,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "C",
           "hint": "Jari-jari $= 35$ cm, tinggi $= 100$ cm. $V = \\frac{22}{7} \\times 35^2 \\times 100 = 385.000\\text{ cm}^3 = 385\\text{ liter}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 1.225 \\times 100 = 385.000\\text{ cm}^3 = 385\\text{ liter}$$\nVolume minyak adalah **385 liter** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{22}{7} \\times 1.225 \\times 100 = 385.000\\text{ cm}^3 = 385\\text{ liter}$$\nVolume minyak adalah **385 liter** (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Drum Minyak (Diameter 70 cm)",
+              "caption": "*Jari-jari 35 cm dan tinggi 1 meter (100 cm)",
+              "solid": "cylinder",
+              "radiusLabel": "r = 35 cm",
+              "heightLabel": "t = 100 cm",
+              "targetLabel": "Kapasitas = ? liter"
+            }
+          }
         },
         {
           "id": "smp9-b2-13",
@@ -996,7 +1397,19 @@ export const grade9Data = {
           ],
           "correctAnswer": "A",
           "hint": "Topi ulang tahun tanpa alas: Luas selimut kerucut $= \\pi r s = \\frac{22}{7} \\times 7 \\times 25$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L_s = 22 \\times 25 = 550\\text{ cm}^2$$\nLuas kertas karton adalah **550 cm²** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L_s = 22 \\times 25 = 550\\text{ cm}^2$$\nLuas kertas karton adalah **550 cm²** (Opsi A).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Topi Ulang Tahun Kerucut (Tanpa Alas)",
+              "caption": "*Diameter 14 cm (r = 7 cm) dan garis pelukis s = 25 cm",
+              "solid": "cone",
+              "radiusLabel": "r = 7 cm",
+              "heightLabel": "t",
+              "slantLabel": "s = 25 cm",
+              "targetLabel": "Luas Karton = ?"
+            }
+          }
         },
         {
           "id": "smp9-b2-14",
@@ -1023,7 +1436,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Volume bola $= \\frac{4}{3}\\pi r^3$. Volume tabung $= \\pi r^2 (2r) = 2\\pi r^3$. Rasio $= \\frac{4}{3} : 2 = 4 : 6 = 2 : 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{V_{\\text{bola}}}{V_{\\text{tabung}}} = \\frac{\\frac{4}{3}\\pi r^3}{2\\pi r^3} = \\frac{2}{3}$$\nPerbandingannya adalah **2 : 3** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{V_{\\text{bola}}}{V_{\\text{tabung}}} = \\frac{\\frac{4}{3}\\pi r^3}{2\\pi r^3} = \\frac{2}{3}$$\nPerbandingannya adalah **2 : 3** (Opsi D).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Bola Besi di Dalam Tabung Air",
+              "caption": "*Jari-jari bola = jari-jari tabung (r = 6 cm), tinggi tabung = 12 cm",
+              "solid": "sphere-in-cylinder",
+              "radiusLabel": "r = 6 cm",
+              "heightLabel": "t = 12 cm",
+              "targetLabel": "V.Bola : V.Tabung = ?"
+            }
+          }
         },
         {
           "id": "smp9-b2-15",
@@ -1050,7 +1474,17 @@ export const grade9Data = {
           ],
           "correctAnswer": "B",
           "hint": "Luas setengah bola pejal $= 3\\pi r^2 = 3 \\times 3{,}14 \\times 100$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 3\\pi r^2 = 3 \\times 314 = 942\\text{ cm}^2$$\nLuas permukaannya adalah **942 cm²** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 3\\pi r^2 = 3 \\times 314 = 942\\text{ cm}^2$$\nLuas permukaannya adalah **942 cm²** (Opsi B).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Setengah Bola Padat (Pejal)",
+              "caption": "*Luas permukaan lengkung kubah ditambah bidang lingkaran alas (r = 10 cm)",
+              "solid": "hemisphere",
+              "radiusLabel": "r = 10 cm",
+              "targetLabel": "Luas Pejal = ? cm²"
+            }
+          }
         },
         {
           "id": "smp9-b2-16",
@@ -1077,7 +1511,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "C",
           "hint": "$V_2 = \\pi (2r)^2 (\\frac{1}{2}t) = \\pi (4r^2) (\\frac{1}{2}t) = 2\\pi r^2 t = 2 V_1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V_2 = \\pi (2r)^2 \\left(\\frac{1}{2}t\\right) = 2 \\pi r^2 t = 2V_1$$\nPerbandingannya adalah **2 : 1** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V_2 = \\pi (2r)^2 \\left(\\frac{1}{2}t\\right) = 2 \\pi r^2 t = 2V_1$$\nPerbandingannya adalah **2 : 1** (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Perubahan Dimensi Tabung",
+              "caption": "*Jari-jari diperbesar 2x dan tinggi diperkecil 1/2x",
+              "solid": "cylinder",
+              "radiusLabel": "r → 2r",
+              "heightLabel": "t → 1/2 t",
+              "targetLabel": "Rasio V₂ : V₁ = ?"
+            }
+          }
         },
         {
           "id": "smp9-b2-17",
@@ -1104,7 +1549,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "B",
           "hint": "Volume kerucut: $\\frac{1}{3} \\times \\frac{22}{7} \\times 49 \\times 24 = 1.232$. Setengah bola: $\\frac{2}{3} \\times \\frac{22}{7} \\times 343 = 718{,}67$. Total $= 1.232 + 718{,}67 = 1.950{,}67$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V_{\\text{kerucut}} = \\frac{1}{3} \\times 154 \\times 24 = 1.232\\text{ cm}^3$\n2. $V_{\\text{setengah bola}} = \\frac{2}{3} \\times \\frac{22}{7} \\times 343 = 718{,}67\\text{ cm}^3$\n3. Total $= 1.232 + 718{,}67 = 1.950{,}67\\text{ cm}^3$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V_{\\text{kerucut}} = \\frac{1}{3} \\times 154 \\times 24 = 1.232\\text{ cm}^3$\n2. $V_{\\text{setengah bola}} = \\frac{2}{3} \\times \\frac{22}{7} \\times 343 = 718{,}67\\text{ cm}^3$\n3. Total $= 1.232 + 718{,}67 = 1.950{,}67\\text{ cm}^3$ (Opsi B).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Bandul Timah Gabungan",
+              "caption": "*Kerucut (t = 24 cm) menempel pada belahan setengah bola (r = 7 cm)",
+              "solid": "composite-cone-sphere",
+              "radiusLabel": "r = 7 cm",
+              "heightLabel": "t = 24 cm",
+              "targetLabel": "V.Total = ? cm³"
+            }
+          }
         },
         {
           "id": "smp9-b2-18",
@@ -1131,7 +1587,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "B",
           "hint": "Volume tangki $= \\frac{22}{7} \\times 1{,}4^2 \\times 2 = 12{,}32\\text{ m}^3 = 12.320\\text{ liter}$. Waktu $= 12.320 : 308 = 40$ jam.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = \\frac{22}{7} \\times 1{,}96 \\times 2 = 12{,}32\\text{ m}^3 = 12.320\\text{ liter}$\n2. Waktu $= 12.320 : 308 = 40\\text{ jam}$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = \\frac{22}{7} \\times 1{,}96 \\times 2 = 12{,}32\\text{ m}^3 = 12.320\\text{ liter}$\n2. Waktu $= 12.320 : 308 = 40\\text{ jam}$ (Opsi B).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Tangki Air Tabung Bocor",
+              "caption": "*Jari-jari 1,4 m dan tinggi 2 m (debit bocor 308 liter/jam)",
+              "solid": "cylinder",
+              "radiusLabel": "r = 1,4 m",
+              "heightLabel": "t = 2 m",
+              "targetLabel": "Waktu Kosong = ?"
+            }
+          }
         },
         {
           "id": "smp9-b2-19",
@@ -1158,7 +1625,19 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Volume kerucut terpancung: $V = \\frac{1}{3}\\pi t (R^2 + Rr + r^2) = \\frac{1}{3} \\times 3{,}14 \\times 8 \\times (100 + 40 + 16) = \\frac{1}{3} \\times 25{,}12 \\times 156 = 1.306{,}24$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{3}\\pi t (R^2 + Rr + r^2) = \\frac{1}{3} \\times 3{,}14 \\times 8 \\times 156 = 1.306{,}24\\text{ cm}^3$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{3}\\pi t (R^2 + Rr + r^2) = \\frac{1}{3} \\times 3{,}14 \\times 8 \\times 156 = 1.306{,}24\\text{ cm}^3$$ (Opsi D).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Kerucut Terpancung",
+              "caption": "*Jari-jari alas R = 10 cm, jari-jari atas r = 4 cm, tinggi t = 8 cm",
+              "solid": "frustum-cone",
+              "radiusTopLabel": "r = 4 cm",
+              "radiusBottomLabel": "R = 10 cm",
+              "heightLabel": "t = 8 cm",
+              "targetLabel": "Volume = ? cm³"
+            }
+          }
         },
         {
           "id": "smp9-b2-20",
@@ -1185,7 +1664,18 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Volume kawat $= \\pi r^2 t = 3{,}14 \\times (0{,}1)^2 \\times 10.000 = 314\\text{ cm}^3$. Massa $= 314 \\times 8{,}9 = 2.794{,}6$ gram.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = 3{,}14 \\times 0{,}01 \\times 10.000 = 314\\text{ cm}^3$\n2. $\\text{Massa} = 314 \\times 8{,}9 = 2.794{,}6\\text{ gram}$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $V = 3{,}14 \\times 0{,}01 \\times 10.000 = 314\\text{ cm}^3$\n2. $\\text{Massa} = 314 \\times 8{,}9 = 2.794{,}6\\text{ gram}$ (Opsi D).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Kawat Silinder Tembaga",
+              "caption": "*Panjang kawat 100 meter (10.000 cm) dan jari-jari penampang 0,1 cm",
+              "solid": "cylinder",
+              "radiusLabel": "r = 0,1 cm",
+              "heightLabel": "p = 10.000 cm",
+              "targetLabel": "Massa = ? gram"
+            }
+          }
         }
       ]
     },
@@ -1266,7 +1756,24 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Jumlahkan komponen absis dan ordinat: $x' = 3 + (-2)$ dan $y' = -5 + 7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x' = 3 + (-2) = 1$\n2. $y' = -5 + 7 = 2$\nKoordinat bayangannya adalah **$(1, 2)$** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x' = 3 + (-2) = 1$\n2. $y' = -5 + 7 = 2$\nKoordinat bayangannya adalah **$(1, 2)$** (Opsi D).",
+          "visual": {
+            "type": "cartesian-plot",
+            "props": {
+              "title": "Translasi Titik pada Bidang Kartesius",
+              "caption": "*Titik A(3, -5) bergeser sejauh vektor T(-2, 7)",
+              "points": [
+                {
+                  "x": 3,
+                  "y": -5,
+                  "label": "A(3, -5)"
+                }
+              ],
+              "targetPoint": {
+                "label": "A'(?, ?)"
+              }
+            }
+          }
         },
         {
           "id": "smp9-b3-2",
@@ -1293,7 +1800,28 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Pencerminan terhadap sumbu-$x$ mengubah tanda $y$ menjadi lawannya: $(x, y) \\to (x, -y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Absis $x$ tetap: $-4$.\n2. Ordinat $y$ dinegatifkan: $-(6) = -6$.\nBayangannya adalah **$(-4, -6)$** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Absis $x$ tetap: $-4$.\n2. Ordinat $y$ dinegatifkan: $-(6) = -6$.\nBayangannya adalah **$(-4, -6)$** (Opsi D).",
+          "visual": {
+            "type": "cartesian-plot",
+            "props": {
+              "title": "Refleksi terhadap Sumbu-X",
+              "caption": "*Pencerminan titik B(-4, 6) menghasilkan bayangan dengan ordinat berlawanan tanda",
+              "points": [
+                {
+                  "x": -4,
+                  "y": 6,
+                  "label": "B(-4, 6)"
+                }
+              ],
+              "mirrorLine": {
+                "type": "axis-x",
+                "label": "Cermin Sumbu-X"
+              },
+              "targetPoint": {
+                "label": "B'(?, ?)"
+              }
+            }
+          }
         },
         {
           "id": "smp9-b3-3",
@@ -1320,7 +1848,24 @@ export const grade9Data = {
           ],
           "correctAnswer": "B",
           "hint": "Rumus rotasi $[O, 90^\\circ]$ berlawanan arah jarum jam: $(x, y) \\to (-y, x)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x = 5, y = 2$\n2. Masukkan ke rumus: $(-y, x) = (-2, 5)$\nKoordinat bayangannya adalah **$(-2, 5)$** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x = 5, y = 2$\n2. Masukkan ke rumus: $(-y, x) = (-2, 5)$\nKoordinat bayangannya adalah **$(-2, 5)$** (Opsi B).",
+          "visual": {
+            "type": "cartesian-plot",
+            "props": {
+              "title": "Rotasi 90° Berlawanan Jarum Jam Pusat O(0, 0)",
+              "caption": "*Titik P(5, 2) diputar sebesar 90° CCW",
+              "points": [
+                {
+                  "x": 5,
+                  "y": 2,
+                  "label": "P(5, 2)"
+                }
+              ],
+              "targetPoint": {
+                "label": "P'(?, ?)"
+              }
+            }
+          }
         },
         {
           "id": "smp9-b3-4",
@@ -1374,7 +1919,24 @@ export const grade9Data = {
           ],
           "correctAnswer": "B",
           "hint": "Jumlahkan koordinat awal dengan vektor translasi: $(x + a, y + b) = (2 + 3, 5 - 2)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A' = (2 + 3, 5 - 2) = (5, 3)$$\nKoordinat bayangannya adalah **A'(5, 3)** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A' = (2 + 3, 5 - 2) = (5, 3)$$\nKoordinat bayangannya adalah **A'(5, 3)** (Opsi B).",
+          "visual": {
+            "type": "cartesian-plot",
+            "props": {
+              "title": "Translasi Vektor T(3, -2)",
+              "caption": "*Pergeseran titik A(2, 5)",
+              "points": [
+                {
+                  "x": 2,
+                  "y": 5,
+                  "label": "A(2, 5)"
+                }
+              ],
+              "targetPoint": {
+                "label": "A'(?, ?)"
+              }
+            }
+          }
         },
         {
           "id": "smp9-b3-6",
@@ -1428,7 +1990,28 @@ export const grade9Data = {
           ],
           "correctAnswer": "A",
           "hint": "Refleksi terhadap sumbu-$Y$: $(x, y) \\to (-x, y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C'(-3, -8)$$\nBayangannya adalah **C'(-3, -8)** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C'(-3, -8)$$\nBayangannya adalah **C'(-3, -8)** (Opsi A).",
+          "visual": {
+            "type": "cartesian-plot",
+            "props": {
+              "title": "Refleksi terhadap Sumbu-Y",
+              "caption": "*Pencerminan titik C(3, -8) terhadap sumbu vertikal Y",
+              "points": [
+                {
+                  "x": 3,
+                  "y": -8,
+                  "label": "C(3, -8)"
+                }
+              ],
+              "mirrorLine": {
+                "type": "axis-y",
+                "label": "Cermin Sumbu-Y"
+              },
+              "targetPoint": {
+                "label": "C'(?, ?)"
+              }
+            }
+          }
         },
         {
           "id": "smp9-b3-8",
@@ -1455,7 +2038,28 @@ export const grade9Data = {
           ],
           "correctAnswer": "C",
           "hint": "Refleksi terhadap garis $y = x$: $(x, y) \\to (y, x)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$D'(2, 5)$$\nBayangannya adalah **D'(2, 5)** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$D'(2, 5)$$\nBayangannya adalah **D'(2, 5)** (Opsi C).",
+          "visual": {
+            "type": "cartesian-plot",
+            "props": {
+              "title": "Refleksi terhadap Garis y = x",
+              "caption": "*Pencerminan titik D(5, 2) menghasilkan pertukaran koordinat (x, y)",
+              "points": [
+                {
+                  "x": 5,
+                  "y": 2,
+                  "label": "D(5, 2)"
+                }
+              ],
+              "mirrorLine": {
+                "type": "y=x",
+                "label": "Garis y = x"
+              },
+              "targetPoint": {
+                "label": "D'(?, ?)"
+              }
+            }
+          }
         },
         {
           "id": "smp9-b3-9",
@@ -1509,7 +2113,24 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Dilatasi $[O, k]$: $(x, y) \\to (kx, ky) = (3(-2), 3(6))$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Q' = (3 \\times (-2), 3 \\times 6) = (-6, 18)$$\nBayangannya adalah **Q'(-6, 18)** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Q' = (3 \\times (-2), 3 \\times 6) = (-6, 18)$$\nBayangannya adalah **Q'(-6, 18)** (Opsi D).",
+          "visual": {
+            "type": "cartesian-plot",
+            "props": {
+              "title": "Dilatasi Pusat O(0,0) Faktor Skala k = 3",
+              "caption": "*Perbesaran jarak titik Q(-2, 6) dari pusat koordinat",
+              "points": [
+                {
+                  "x": -2,
+                  "y": 6,
+                  "label": "Q(-2, 6)"
+                }
+              ],
+              "targetPoint": {
+                "label": "Q'(?, ?)"
+              }
+            }
+          }
         },
         {
           "id": "smp9-b3-11",
@@ -1563,7 +2184,29 @@ export const grade9Data = {
           ],
           "correctAnswer": "B",
           "hint": "Refleksi terhadap $x = h$: $x' = 2h - x = 2(5) - 3 = 7$, sedangkan $y' = y = 7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x' = 2(5) - 3 = 7, \\quad y' = 7 \\implies K'(7, 7)$$\nBayangannya adalah **K'(7, 7)** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x' = 2(5) - 3 = 7, \\quad y' = 7 \\implies K'(7, 7)$$\nBayangannya adalah **K'(7, 7)** (Opsi B).",
+          "visual": {
+            "type": "cartesian-plot",
+            "props": {
+              "title": "Refleksi terhadap Garis Tegak x = 5",
+              "caption": "*Pencerminan titik K(3, 7) terhadap sumbu cermin vertikal x = 5",
+              "points": [
+                {
+                  "x": 3,
+                  "y": 7,
+                  "label": "K(3, 7)"
+                }
+              ],
+              "mirrorLine": {
+                "type": "x=h",
+                "val": 5,
+                "label": "Cermin x = 5"
+              },
+              "targetPoint": {
+                "label": "K'(?, ?)"
+              }
+            }
+          }
         },
         {
           "id": "smp9-b3-13",
@@ -1617,7 +2260,24 @@ export const grade9Data = {
           ],
           "correctAnswer": "D",
           "hint": "Rotasi $[O, 180^\\circ]$: $(x, y) \\to (-x, -y)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R'(-5, -(-1)) = R'(-5, 1)$$\nBayangannya adalah **R'(-5, 1)** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R'(-5, -(-1)) = R'(-5, 1)$$\nBayangannya adalah **R'(-5, 1)** (Opsi D).",
+          "visual": {
+            "type": "cartesian-plot",
+            "props": {
+              "title": "Rotasi 180° Pusat O(0, 0)",
+              "caption": "*Pemutaran setengah lingkaran titik R(5, -1) membalikkan tanda kedua koordinat",
+              "points": [
+                {
+                  "x": 5,
+                  "y": -1,
+                  "label": "R(5, -1)"
+                }
+              ],
+              "targetPoint": {
+                "label": "R'(?, ?)"
+              }
+            }
+          }
         },
         {
           "id": "smp9-b3-15",

@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { useSearchParams } from 'react-router-dom';
+import { useLocation, useNavigate } from 'react-router-dom';
 import { CURRICULUM_DATA } from '../data/curriculumData';
 import { useGradeData } from '../hooks/useCurriculum';
 import { 
@@ -22,8 +22,11 @@ import {
   Trophy,
   Loader2
 } from 'lucide-react';
-import { useAuth } from '../hooks/useAuth';
-import { getStudentProgressCloud } from '../firebase/firestore';
+import { getProgress, PROGRESS_EVENT } from '../utils/progress';
+import { getCp2025Note } from '../data/cp2025Mapping';
+import { handbookPath, parseHandbookPath } from '../utils/seoRoutes';
+import { useDocumentMeta } from '../hooks/useDocumentMeta';
+import { amcChapterMeta, amcLevelMeta, chapterMeta, gradeMeta } from '../utils/seoMeta';
 
 /**
  * Pure helper to parse handbook search parameters with backward compatibility.
@@ -51,42 +54,27 @@ function parseHandbookParams(searchParams) {
 }
 
 /**
- * Pure helper to construct bidirectional synchronized handbook URLs.
+ * Alamat rapi buku saku (lihat src/utils/seoRoutes.js), mis. /matematika/kelas-4/bab2-pecahan.
  */
-function buildHandbookUrl({ mode, grade, level, chapter }) {
-  const isAmc = mode === 'amc';
-  const params = new URLSearchParams();
-  if (isAmc) {
-    params.set('mode', 'amc');
-    params.set('level', String(level || 8));
-    if (chapter) params.set('chapter', chapter);
-  } else {
-    params.set('grade', String(grade || 4));
-    if (chapter) params.set('chapter', chapter);
-  }
-  return `/?${params.toString()}`;
+function buildHandbookUrl(state) {
+  return handbookPath(state);
 }
 
 export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
-  const [searchParams, setSearchParams] = useSearchParams();
+  const location = useLocation();
+  const navigate = useNavigate();
 
-  // Mode resolution: 'amc' vs standard school mode ('school')
-  const modeParam = searchParams.get('mode');
-  const isAmcMode = modeParam === 'amc';
+  // State dibaca dari alamat rapi (/matematika/kelas-4/...); alamat lama ?grade=... tetap didukung
+  const route = useMemo(
+    () => parseHandbookPath(location.pathname) || parseHandbookParams(location.search),
+    [location.pathname, location.search]
+  );
+  const isAmcMode = route.mode === 'amc';
+  const selectedGrade = route.grade;
+  const selectedAmcLevel = route.level;
+  const activeChapterParam = route.chapter;
 
-  // School Grade (4–12, default 4)
-  const selectedGrade = useMemo(() => {
-    const g = Number(searchParams.get('grade'));
-    return (g >= 4 && g <= 12) ? g : 4;
-  }, [searchParams]);
-
-  // AMC Competition Level (8, 10, 12, default 8)
-  const selectedAmcLevel = useMemo(() => {
-    const lvl = Number(searchParams.get('level'));
-    return [8, 10, 12].includes(lvl) ? lvl : 8;
-  }, [searchParams]);
-
-  const activeChapterParam = searchParams.get('chapter');
+  const goTo = (state) => navigate(handbookPath(state));
 
   // Filter and search states
   const [selectedTrackFilter, setSelectedTrackFilter] = useState("ALL");
@@ -96,20 +84,14 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
 
   // Dynamic Grade Data Loader (Kurikulum Merdeka)
   const { gradeData: currentGradeData, fullGradeData, loading: isGradeLoading } = useGradeData(selectedGrade);
-  const { studentId, isAuthenticated } = useAuth();
-  const [studentProgress, setStudentProgress] = useState({});
+  // Progres latihan mandiri tersimpan di perangkat pengunjung (tanpa akun)
+  const [studentProgress, setStudentProgress] = useState(() => getProgress());
 
   useEffect(() => {
-    let active = true;
-    if (isAuthenticated && studentId) {
-      getStudentProgressCloud(studentId).then(progress => {
-        if (active) setStudentProgress(progress || {});
-      });
-    } else {
-      setStudentProgress({});
-    }
-    return () => { active = false; };
-  }, [studentId, isAuthenticated]);
+    const refresh = () => setStudentProgress(getProgress());
+    window.addEventListener(PROGRESS_EVENT, refresh);
+    return () => window.removeEventListener(PROGRESS_EVENT, refresh);
+  }, []);
 
   // Dynamic AMC Module Data Loader (AMC 8, AMC 10, AMC 12)
   const [currentLevelState, setCurrentLevelState] = useState(selectedAmcLevel);
@@ -243,13 +225,20 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
     return amcLevelChapters[0];
   }, [amcLevelChapters, activeChapterParam]);
 
+  // Judul & deskripsi halaman mengikuti bab yang dibuka (sama dengan hasil prerender)
+  useDocumentMeta(
+    isAmcMode
+      ? (activeAmcChapter ? amcChapterMeta(selectedAmcLevel, activeAmcChapter) : amcLevelMeta(selectedAmcLevel))
+      : (currentChapter ? chapterMeta(selectedGrade, currentChapter) : gradeMeta(selectedGrade))
+  );
+
   // ----------------------------------------------------
   // NAVIGATION & MODE SWITCH HANDLERS
   // ----------------------------------------------------
   const handleSwitchToSchoolMode = () => {
     const gradeObj = CURRICULUM_DATA.find(g => g.grade === selectedGrade) || CURRICULUM_DATA[0];
     const firstCh = gradeObj?.chapters?.[0]?.id || '';
-    setSearchParams({ grade: selectedGrade, ...(firstCh ? { chapter: firstCh } : {}) });
+    goTo({ mode: 'school', grade: selectedGrade, chapter: firstCh });
     setSelectedTrackFilter("ALL");
     setSearchQuery("");
     setIsMobileChaptersOpen(false);
@@ -257,7 +246,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
 
   const handleSwitchToAmcMode = () => {
     const firstAmcCh = ALL_AMC_CHAPTERS_INDEX.find(c => c.level === selectedAmcLevel)?.id || 'amc8-ch1-permutations';
-    setSearchParams({ mode: 'amc', level: selectedAmcLevel, chapter: firstAmcCh });
+    goTo({ mode: 'amc', level: selectedAmcLevel, chapter: firstAmcCh });
     setSelectedAmcDomainFilter("ALL");
     setSearchQuery("");
     setIsMobileChaptersOpen(false);
@@ -266,7 +255,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
   const handleSelectGrade = (grade) => {
     const gradeObj = CURRICULUM_DATA.find(g => g.grade === grade);
     const firstCh = gradeObj?.chapters?.[0]?.id || '';
-    setSearchParams({ grade, ...(firstCh ? { chapter: firstCh } : {}) });
+    goTo({ mode: 'school', grade, chapter: firstCh });
     setSelectedTrackFilter("ALL");
     setSearchQuery("");
     setIsMobileChaptersOpen(false);
@@ -274,14 +263,14 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
 
   const handleSelectAmcLevel = (lvl) => {
     const firstCh = ALL_AMC_CHAPTERS_INDEX.find(c => c.level === lvl)?.id || '';
-    setSearchParams({ mode: 'amc', level: lvl, ...(firstCh ? { chapter: firstCh } : {}) });
+    goTo({ mode: 'amc', level: lvl, chapter: firstCh });
     setSelectedAmcDomainFilter("ALL");
     setSearchQuery("");
     setIsMobileChaptersOpen(false);
   };
 
   const handleSelectSchoolChapter = (chapterId) => {
-    setSearchParams({ grade: selectedGrade, chapter: chapterId });
+    goTo({ mode: 'school', grade: selectedGrade, chapter: chapterId });
     setIsMobileChaptersOpen(false);
     if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
       window.scrollTo({ top: 180, behavior: 'smooth' });
@@ -289,7 +278,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
   };
 
   const handleSelectAmcChapter = (chapterId) => {
-    setSearchParams({ mode: 'amc', level: selectedAmcLevel, chapter: chapterId });
+    goTo({ mode: 'amc', level: selectedAmcLevel, chapter: chapterId });
     setIsMobileChaptersOpen(false);
     if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
       window.scrollTo({ top: 180, behavior: 'smooth' });
@@ -304,15 +293,15 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
       : currentGradeData.chapters.filter(ch => (ch.track || '').toUpperCase() === track.toUpperCase());
     if (matching.length > 0 && (!currentChapter || !matching.some(ch => ch.id === currentChapter.id))) {
       const nextCh = matching[0].id;
-      setSearchParams({ grade: selectedGrade, chapter: nextCh });
+      goTo({ mode: 'school', grade: selectedGrade, chapter: nextCh });
     }
   };
 
 
   const handleCopyChapterLink = () => {
-    const url = isAmcMode
-      ? `${window.location.origin}/?mode=amc&level=${selectedAmcLevel}&chapter=${activeAmcChapter?.id || ''}`
-      : `${window.location.origin}/?grade=${selectedGrade}&chapter=${currentChapter?.id || ''}`;
+    const url = `${window.location.origin}${isAmcMode
+      ? handbookPath({ mode: 'amc', level: selectedAmcLevel, chapter: activeAmcChapter?.id })
+      : handbookPath({ mode: 'school', grade: selectedGrade, chapter: currentChapter?.id })}`;
     if (navigator?.clipboard?.writeText) {
       navigator.clipboard.writeText(url);
     }
@@ -713,6 +702,12 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                   <h2 className="chapter-header-title">
                     {currentChapter.title}
                   </h2>
+
+                  {getCp2025Note(currentChapter.id) && (
+                    <p className="cp2025-note">
+                      <strong>{getCp2025Note(currentChapter.id).label}.</strong> {getCp2025Note(currentChapter.id).note}
+                    </p>
+                  )}
 
                   {currentChapter.concepts && currentChapter.concepts.length > 0 && (
                     <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>

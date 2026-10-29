@@ -1,6 +1,7 @@
-import React, { useState, useEffect, Suspense, lazy } from 'react';
+import React, { useEffect, Suspense, lazy } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
+import { handbookPath } from './utils/seoRoutes';
 import { 
   GraduationCap, 
   Lock, 
@@ -68,6 +69,13 @@ function resolveQueryRedirect(searchParams, pathname = '/') {
   if (isSolution && grade && chapter) {
     return `/solution/${encodeURIComponent(grade)}/${encodeURIComponent(chapter)}`;
   }
+  // Link buku saku lama (?grade=... / ?mode=amc...) → alamat rapi
+  if (mode === 'amc') {
+    return handbookPath({ mode: 'amc', level: Number(level) || 8, chapter });
+  }
+  if (grade && Number(grade) >= 4 && Number(grade) <= 12) {
+    return handbookPath({ mode: 'school', grade: Number(grade), chapter });
+  }
   return null;
 }
 
@@ -90,8 +98,7 @@ QueryRedirectHandler.resolve = resolveQueryRedirect;
 export function App() {
   const navigate = useNavigate();
   const location = useLocation();
-  const { user, teacherName, studentName, isAuthenticated, logout, loginStudent } = useAuth();
-  const [activeTeacherTab, setActiveTeacherTab] = useState("generator");
+  const { user, teacherName, isAuthenticated, logout } = useAuth();
 
   const isTeacherRoute = location.pathname.startsWith('/teacher');
   const isFullScreenView = location.pathname.startsWith('/quest/') || 
@@ -103,8 +110,9 @@ export function App() {
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
+  // Dibuka dari Studio Guru: mode pratinjau agar jawaban guru tidak tercatat sebagai jawaban murid
   const handleLaunchQuest = (qId) => {
-    navigate(`/quest/${encodeURIComponent(qId)}`);
+    navigate(`/quest/${encodeURIComponent(qId)}?preview=1`);
     window.scrollTo({ top: 0, left: 0, behavior: 'instant' });
   };
 
@@ -223,62 +231,15 @@ export function App() {
                 )}
               </div>
             ) : (
-              <div style={{ display: 'flex', alignItems: 'center', gap: '0.65rem' }}>
-                {isAuthenticated ? (
-                  <>
-                    <div
-                      style={{
-                        display: 'flex',
-                        alignItems: 'center',
-                        gap: '0.4rem',
-                        backgroundColor: '#EFF6FF',
-                        padding: '0.35rem 0.75rem',
-                        borderRadius: 'var(--radius-sm)',
-                        border: '1px solid #BFDBFE',
-                        fontSize: '0.8rem'
-                      }}
-                    >
-                      <span style={{ color: '#1E3A8A', fontWeight: 700 }}>Hai, {studentName}</span>
-                    </div>
-                    <button
-                      className="btn btn-outline"
-                      style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
-                      onClick={logout}
-                    >
-                      <LogOut size={14} />
-                      Keluar
-                    </button>
-                    <button
-                      id="btn-nav-open-teacher-studio"
-                      className="btn btn-royal"
-                      style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
-                      onClick={() => navigate('/teacher')}
-                    >
-                      <ShieldCheck size={15} />
-                      Studio Guru
-                    </button>
-                  </>
-                ) : (
-                  <>
-                    <button
-                      className="btn btn-outline"
-                      style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
-                      onClick={loginStudent}
-                    >
-                      Masuk Siswa
-                    </button>
-                    <button
-                      id="btn-nav-teacher-signin"
-                      className="btn btn-royal"
-                      style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
-                      onClick={() => navigate('/teacher')}
-                    >
-                      <Lock size={14} />
-                      Portal Guru
-                    </button>
-                  </>
-                )}
-              </div>
+              <button
+                id="btn-nav-open-teacher-studio"
+                className="btn btn-royal"
+                style={{ fontSize: '0.825rem', padding: '0.4rem 0.9rem' }}
+                onClick={() => navigate('/teacher')}
+              >
+                {isAuthenticated ? <ShieldCheck size={15} /> : <Lock size={14} />}
+                Studio Guru
+              </button>
             )}
           </div>
         </div>
@@ -294,6 +255,14 @@ export function App() {
                 onLaunchPractice={handleLaunchPracticeQuest}
                 onPrintQuest={handlePrintQuest}
               />
+            } />
+
+            {/* 1b. Buku saku dengan alamat rapi (diindeks mesin pencari) */}
+            <Route path="/matematika/*" element={
+              <PublicHandbook onLaunchPractice={handleLaunchPracticeQuest} onPrintQuest={handlePrintQuest} />
+            } />
+            <Route path="/olimpiade/*" element={
+              <PublicHandbook onLaunchPractice={handleLaunchPracticeQuest} onPrintQuest={handlePrintQuest} />
             } />
 
             {/* 2. Interactive Student Quest Player */}
@@ -333,9 +302,6 @@ export function App() {
                 <TeacherDashboard 
                   onLaunchQuest={handleLaunchQuest}
                   onPrintQuest={handlePrintQuest}
-                  activeTab={activeTeacherTab}
-                  setActiveTab={setActiveTeacherTab}
-                  onSignOut={handleSignOut}
                   currentTeacher={user}
                 />
               ) : (

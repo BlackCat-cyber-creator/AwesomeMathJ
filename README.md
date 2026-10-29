@@ -22,19 +22,20 @@
      - *Miskonsepsi Umum & Jebakan Konsep*
      - *Tips Guru & Solusi Cepat*
    - Dilengkapi kuis diagnostik interaktif dengan evaluasi nilai terpusat (*deferred checking*).
+   - Progres latihan pengunjung tersimpan otomatis di perangkat mereka, tanpa perlu akun.
 
-2. **👨‍🏫 Studio Guru Matematika (`/teacher`)**
-   - **CRM Siswa**: Kelola profil murid les/bimbingan (nama, kelas, nomor kontak orang tua, catatan perkembangan belajar).
-   - **Quest / PR Generator**: Buat penugasan PR 5 butir soal secara instan untuk tiap murid sesuai bab kurikulum yang sedang dipelajari.
-   - **Gerbang WhatsApp Otomatis**: Buat pesan WhatsApp terformat rapi beserta tautan langsung tugas untuk dikirimkan ke orang tua atau siswa dalam 1 klik.
-   - **Pelacak Tugas Real-Time**: Pantau status pengerjaan siswa (*Belum Dikerjakan*, *Sedang Mengerjakan*, *Selesai*) lengkap dengan rekap nilai dan modal inspeksi rincian jawaban siswa.
+2. **👨‍🏫 Studio Guru (`/teacher`)** — satu halaman berbasis murid
+   - **Data murid**: nama, kelas, jalur (Reguler / Olimpiade AMC 8·10·12), sekolah, WhatsApp orang tua, catatan perkembangan.
+   - **Kirim PR**: 1 bab = 1 PR berisi seluruh soal bab, diurutkan dari mudah ke sulit. Materi bisa dari Kurikulum Merdeka kelas murid atau modul AMC.
+   - **WhatsApp & cetak**: kirim link PR ke orang tua dalam 1 klik, atau cetak LKPD A4 ber-QR.
+   - **Riwayat PR**: status (belum / sedang / selesai), nilai, dan jawaban murid per soal beserta kuncinya.
+   - Data guru disimpan di Firestore; tombol "Buka" dari Studio membuka PR dalam mode pratinjau (jawaban guru tidak tercatat).
 
-3. **🎮 Interactive Student Quest Player (`/?questId=...`)**
-   - Tautan pengerjaan PR yang ramah ponsel dan tablet.
-   - Formula matematika dirender tajam menggunakan KaTeX tanpa risiko pecah resolusi.
-   - Dilengkapi stimulus soal visual interaktif berbasis **SVG murni** (geometri, koordinat Kartesius, diagram Venn, statistik, dll.).
-   - **Papan Cakar Digital (Digital Scratchpad)**: Kanvas interaktif dengan kuas, penghapus, dan pilihan warna agar siswa dapat mencoret-coret hitungan langsung di layar.
-   - Gamifikasi: Perolehan XP, *streak counter*, dan efek selebrasi konfeti saat menyelesaikan latihan.
+3. **📝 Pemutar PR Murid (`/quest/:questId`)** — tanpa login
+   - Ramah HP: satu soal per layar dengan nomor soal untuk lompat; jawaban sementara tersimpan di perangkat.
+   - Mendukung pilihan ganda, isian singkat (AMC, setara numerik seperti `0,75` = `3/4`), dan uraian.
+   - Gambar soal SVG, petunjuk, dan **papan coret digital**.
+   - Setelah **Kumpulkan**: nilai, kunci, dan pembahasan per soal; jawaban otomatis terkirim ke guru. Link yang sudah dikumpulkan menampilkan hasil (tidak bisa dikerjakan ulang).
 
 4. **📄 Lembar Kerja Cetak A4 & Pembahasan QR (`PrintableWorksheet.jsx`)**
    - Hasilkan **Lembar Kerja Peserta Didik (LKPD)** siap cetak format A4 standar sekolah.
@@ -69,11 +70,13 @@ Aplikasi mengadopsi **React Router v7** dengan skema rute kanonik dan dukungan p
 | Rute Kanonik | Komponen | Deskripsi |
 | :--- | :--- | :--- |
 | `/` | `PublicHandbook` | Portal buku saku digital 55 bab dengan 6 pilar pedagogis dan kuis mandiri |
+| `/matematika/kelas-:n/:bab` | `PublicHandbook` | Halaman bab Kurikulum Merdeka (alamat rapi, diprerender untuk mesin pencari) |
+| `/olimpiade/amc-:n/:bab` | `PublicHandbook` | Halaman bab olimpiade AMC (alamat rapi, diprerender) |
 | `/quest/:questId` | `StudentQuestView` | Player pengerjaan tugas/PR interaktif siswa dengan scratchpad kanvas |
 | `/worksheet/:questId` | `PrintableWorksheet` | Lembar Kerja Peserta Didik (LKPD) cetak A4 siap print dengan QR code |
 | `/solution/:grade/:chapterId` | `ChapterSolutionView` | Kunci jawaban & pembahasan bertahap resmi (target scan QR dari LKPD) |
 | `/teacher/login` | `TeacherLoginView` | Gerbang autentikasi guru (Login & Registrasi akun baru) |
-| `/teacher/*` | `TeacherDashboard` | Studio manajemen pengajar (CRM Siswa, Quest Generator, Monitor Pengerjaan) |
+| `/teacher/*` | `TeacherDashboard` | Studio Guru: data murid, kirim PR per bab (Kurikulum/AMC), riwayat & jawaban |
 
 > **Kompatibilitas QR Code Fisik**: Permintaan lawas seperti `/?pembahasan=1&grade=8&chapter=smp8-b2` atau `/?questId=...` secara otomatis diarahkan ke URL kanonik melalui `QueryRedirectHandler` tanpa memutus link cetak yang sudah tersebar.
 
@@ -104,7 +107,7 @@ AwesomeMathJ/
 │   │   ├── visuals/           # Engine stimulus visual SVG murni
 │   │   │   ├── common/        # Elemen geometri dasar & kontainer SVG
 │   │   │   ├── engines/       # Engine Aljabar, Geometri, Koordinat, Aritmetika
-│   │   │   └── registry/      # Registry visual per jenjang (Kelas 4 s/d 12)
+│   │   │   └── registry/      # Lookup gambar (gambar Kelas 4–12 kini tersimpan di dalam soal: `visual`)
 │   │   ├── AcademicTimeline.jsx      # Peta jadwal kalender pendidikan
 │   │   ├── ChapterSolutionView.jsx   # Tampilan kunci pembahasan via scan QR
 │   │   ├── MathRenderer.jsx          # Render formula matematika KaTeX polimorfik
@@ -133,7 +136,7 @@ AwesomeMathJ/
 │   ├── App.jsx                       # Top-level declarative routing & redirects
 │   ├── index.css                     # Design system (Notion-editorial, print A4 CSS)
 │   └── main.jsx                      # Vite React entrypoint
-├── tests/                            # Vitest automated test suite (33 tests)
+├── tests/                            # Vitest test suite, termasuk contentAudit (gambar sesuai soal & cakupan kelas)
 │   ├── academicCalendar.test.js
 │   ├── answerDistribution.test.js
 │   ├── authAndSync.test.js
@@ -183,6 +186,13 @@ npm run lint
 
 ---
 
+## 🗺️ Roadmap & Audit
+
+- Rencana pengembangan Matematika + IPA (Kurikulum Merdeka CP 046/2025, Cambridge, Olimpiade): [`docs/ROADMAP.md`](docs/ROADMAP.md)
+- Laporan audit konten Oktober 2026 (gambar vs soal, cakupan kelas): [`docs/audit/AUDIT_2026-10.md`](docs/audit/AUDIT_2026-10.md)
+
+---
+
 ## 🛠️ Perintah Pipeline Kurikulum
 
 AwesomeMathJ menyertakan rangkaian alat untuk menjaga konsistensi konten kurikulum:
@@ -207,7 +217,7 @@ AwesomeMathJ menyertakan rangkaian alat untuk menjaga konsistensi konten kurikul
 | URL / Query Parameter | Tampilan / Fungsi |
 | :--- | :--- |
 | `/` | **Portal Buku Panduan Publik**: Eksplorasi materi, kuis mandiri, cetak lembar kerja. |
-| `/teacher` | **Studio Guru Sir Jevon**: Manajemen siswa CRM, penugasan PR, dan diseminasi WhatsApp. |
+| `/teacher` | **Studio Guru**: data murid, kirim PR per bab via WhatsApp, cetak LKPD, riwayat nilai & jawaban. |
 | `/?questId=<ID>` | **Latihan PR Murid**: Akses langsung penugasan PR interaktif untuk siswa. |
 | `/?pembahasan=1&grade=<G>&chapter=<C>` | **Pembahasan Online**: Dibuka melalui scan QR code pada LKPD cetak. |
 

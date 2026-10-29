@@ -664,7 +664,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "C",
           "hint": "Kalikan pembilang dan penyebut dengan angka 3: $\\frac{1 \\times 3}{3 \\times 3}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1 \\times 3}{3 \\times 3} = \\frac{3}{9}$$\nPecahan yang senilai adalah **$\\frac{3}{9}$** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1 \\times 3}{3 \\times 3} = \\frac{3}{9}$$\nPecahan yang senilai adalah **$\\frac{3}{9}$** (Opsi C).",
+          "visual": {
+            "type": "fraction-strip",
+            "props": {
+              "title": "Model Pecahan Senilai",
+              "caption": "*1 dari 3 bagian yang sama besar",
+              "totalParts": 3,
+              "shadedParts": 1,
+              "label": "1 / 3"
+            }
+          }
         },
         {
           "id": "sd4-b2-2",
@@ -691,7 +701,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Bagi pembilang dan penyebut dengan angka 2.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{6 : 2}{8 : 2} = \\frac{3}{4}$$\nBentuk sederhananya adalah **$\\frac{3}{4}$** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{6 : 2}{8 : 2} = \\frac{3}{4}$$\nBentuk sederhananya adalah **$\\frac{3}{4}$** (Opsi D).",
+          "visual": {
+            "type": "fraction-strip",
+            "props": {
+              "title": "Penyederhanaan Pecahan",
+              "caption": "*6 dari 8 bagian bidang berpetak",
+              "totalParts": 8,
+              "shadedParts": 6,
+              "label": "6 / 8"
+            }
+          }
         },
         {
           "id": "sd4-b2-3",
@@ -718,7 +738,20 @@ export const grade4Data = {
           ],
           "correctAnswer": "C",
           "hint": "Penyebutnya sudah sama yaitu 7, jumlahkan pembilangnya: $3 + 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3}{7} + \\frac{2}{7} = \\frac{3 + 2}{7} = \\frac{5}{7}$$\nHasilnya adalah **$\\frac{5}{7}$** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3}{7} + \\frac{2}{7} = \\frac{3 + 2}{7} = \\frac{5}{7}$$\nHasilnya adalah **$\\frac{5}{7}$** (Opsi C).",
+          "visual": {
+            "type": "fraction-strip",
+            "props": {
+              "title": "Penjumlahan Pecahan Berpenyebut Sama",
+              "caption": "*Biru: 3/7 bagian, Oranye: 2/7 bagian",
+              "totalParts": 7,
+              "shadedGroups": [
+                3,
+                2
+              ],
+              "targetBadge": "Total = ?"
+            }
+          }
         },
         {
           "id": "sd4-b2-4",
@@ -745,7 +778,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Karena penyebutnya sama (5), bandingkan pembilangnya: 3 lebih besar dari 2.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKarena $3 > 2$, maka $\\frac{3}{5} > \\frac{2}{5}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKarena $3 > 2$, maka $\\frac{3}{5} > \\frac{2}{5}$ (Opsi A).",
+          "visual": {
+            "type": "fraction-strip",
+            "props": {
+              "title": "Perbandingan Pecahan",
+              "caption": "*Arsiran 3 bagian dari 5 petak",
+              "totalParts": 5,
+              "shadedParts": 3,
+              "label": "3 / 5"
+            }
+          }
         },
         {
           "id": "sd4-b2-5",
@@ -772,7 +815,20 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Melon utuh $= \\frac{6}{6}$. Kurangkan dengan total yang dibagikan: $\\frac{6}{6} - (\\frac{2}{6} + \\frac{3}{6})$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Melon yang dibagikan: $\\frac{2}{6} + \\frac{3}{6} = \\frac{5}{6}$.\n2. Sisa melon: $\\frac{6}{6} - \\frac{5}{6} = \\frac{1}{6}$.\nSisa melon Ibu adalah **$\\frac{1}{6}$ bagian** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Melon yang dibagikan: $\\frac{2}{6} + \\frac{3}{6} = \\frac{5}{6}$.\n2. Sisa melon: $\\frac{6}{6} - \\frac{5}{6} = \\frac{1}{6}$.\nSisa melon Ibu adalah **$\\frac{1}{6}$ bagian** (Opsi A).",
+          "visual": {
+            "type": "fraction-strip",
+            "props": {
+              "title": "Pembagian Buah Melon",
+              "caption": "*Biru: bagian Dedi (2/6), Oranye: bagian Lani (3/6)",
+              "totalParts": 6,
+              "shadedGroups": [
+                2,
+                3
+              ],
+              "targetBadge": "Sisa = ?"
+            }
+          }
         },
         {
           "id": "sd4-b2-6",
@@ -799,7 +855,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Bagi pembilang dan penyebut dengan FPB dari 12 dan 16 yaitu 4.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{12 : 4}{16 : 4} = \\frac{3}{4}$$\nBentuk paling sederhananya adalah **$\\frac{3}{4}$** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{12 : 4}{16 : 4} = \\frac{3}{4}$$\nBentuk paling sederhananya adalah **$\\frac{3}{4}$** (Opsi D).",
+          "visual": {
+            "type": "circle-fraction",
+            "props": {
+              "title": "Model Penyederhanaan Pecahan",
+              "caption": "*12 dari 16 potongan juring lingkaran diarsir",
+              "totalParts": 16,
+              "shadedParts": 12,
+              "targetBadge": "Bentuk Paling Sederhana = ?"
+            }
+          }
         },
         {
           "id": "sd4-b2-7",
@@ -832,28 +898,28 @@ export const grade4Data = {
           "id": "sd4-b2-8",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Hasil dari penjumlahan $\\frac{2}{7} + \\frac{3}{7}$ adalah...",
+          "question": "Hasil dari pengurangan $\\frac{6}{8} - \\frac{3}{8}$ adalah...",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{5}{14}"
+              "text": "$\\frac{3}{16}$"
             },
             {
               "key": "B",
-              "text": "\\frac{6}{7}"
+              "text": "$\\frac{9}{8}$"
             },
             {
               "key": "C",
-              "text": "\\frac{1}{7}"
+              "text": "$\\frac{2}{8}$"
             },
             {
               "key": "D",
-              "text": "\\frac{5}{7}"
+              "text": "$\\frac{3}{8}$"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Karena penyebut sudah sama, cukup jumlahkan pembilangnya: $2 + 3 = 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2}{7} + \\frac{3}{7} = \\frac{2 + 3}{7} = \\frac{5}{7}$$\nHasilnya adalah **$\\frac{5}{7}$** (Opsi D)."
+          "hint": "Penyebutnya sudah sama, jadi cukup kurangkan pembilangnya: $6 - 3$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{6}{8} - \\frac{3}{8} = \\frac{6 - 3}{8} = \\frac{3}{8}$$\nHasilnya adalah **$\\frac{3}{8}$** (Opsi D)."
         },
         {
           "id": "sd4-b2-9",
@@ -940,7 +1006,7 @@ export const grade4Data = {
           "id": "sd4-b2-12",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Dari soal sebelumnya, sisa bagian semangka yang belum dimakan adalah...",
+          "question": "Ibu memotong sebuah semangka menjadi 8 bagian sama besar. Kakak memakan 2 potong dan Adik memakan 3 potong. Sisa bagian semangka yang belum dimakan adalah...",
           "options": [
             {
               "key": "A",
@@ -1015,7 +1081,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "B",
           "hint": "Persen artinya per seratus: $\\frac{1}{5} \\times 100\\% = 20\\%$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{5} \\times 100\\% = 20\\%$$\nBentuk persennya adalah **20%** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{5} \\times 100\\% = 20\\%$$\nBentuk persennya adalah **20%** (Opsi B).",
+          "visual": {
+            "type": "fraction-strip",
+            "props": {
+              "title": "Model Pecahan 1/5",
+              "caption": "*1 dari 5 bagian yang sama besar diarsir",
+              "totalParts": 5,
+              "shadedParts": 1,
+              "targetBadge": "Persen = ?"
+            }
+          }
         },
         {
           "id": "sd4-b2-15",
@@ -1246,7 +1322,21 @@ export const grade4Data = {
           ],
           "correctAnswer": "C",
           "hint": "Cari selisihnya: $9 - 5 = 4$. Tambahkan 4 ke angka 17.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Aturan pola: bertambah 4 ($+4$).\n2. Suku berikutnya: $17 + 4 = 21$.\nBilangan berikutnya adalah **21** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Aturan pola: bertambah 4 ($+4$).\n2. Suku berikutnya: $17 + 4 = 21$.\nBilangan berikutnya adalah **21** (Opsi C).",
+          "visual": {
+            "type": "number-line",
+            "props": {
+              "title": "Pola Barisan Bilangan",
+              "caption": "*Amati keteraturan lompatan antar-bilangan",
+              "items": [
+                5,
+                9,
+                13,
+                17
+              ],
+              "target": "?"
+            }
+          }
         },
         {
           "id": "sd4-b3-2",
@@ -1273,7 +1363,43 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Aturan polanya berkurang 5: $20 - 5 = 15$, lalu $15 - 5 = 10$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Aturan pola: berkurang 5 ($-5$).\n2. Suku berikutnya: $20 - 5 = 15$ dan $15 - 5 = 10$.\nDua bilangan berikutnya adalah **15 dan 10** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Aturan pola: berkurang 5 ($-5$).\n2. Suku berikutnya: $20 - 5 = 15$ dan $15 - 5 = 10$.\nDua bilangan berikutnya adalah **15 dan 10** (Opsi D).",
+          "visual": {
+            "type": "number-line",
+            "props": {
+              "title": "Pola Barisan Bilangan Berkurang",
+              "caption": "*Amati keteraturan selisih antar-bilangan yang mengecil",
+              "slots": [
+                {
+                  "val": 35,
+                  "sub": "U₁"
+                },
+                {
+                  "val": 30,
+                  "sub": "U₂"
+                },
+                {
+                  "val": 25,
+                  "sub": "U₃"
+                },
+                {
+                  "val": 20,
+                  "sub": "U₄"
+                },
+                {
+                  "val": "?",
+                  "sub": "U₅",
+                  "isTarget": true
+                },
+                {
+                  "val": "?",
+                  "sub": "U₆",
+                  "isTarget": true
+                }
+              ],
+              "promptText": "Berapakah dua bilangan berikutnya pada kotak bertanda tanya?"
+            }
+          }
         },
         {
           "id": "sd4-b3-3",
@@ -1300,7 +1426,42 @@ export const grade4Data = {
           ],
           "correctAnswer": "B",
           "hint": "Selisih polanya adalah $+4$: $10 + 4 = 14$ dan $14 + 4 = 18$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Beda pola: $6 - 2 = 4$ dan $10 - 6 = 4$.\n2. Angka pengisi titik-titik: $10 + 4 = 14$.\nBilangan yang tepat adalah **14** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Beda pola: $6 - 2 = 4$ dan $10 - 6 = 4$.\n2. Angka pengisi titik-titik: $10 + 4 = 14$.\nBilangan yang tepat adalah **14** (Opsi B).",
+          "visual": {
+            "type": "number-line",
+            "props": {
+              "title": "Mengisi Suku Barisan yang Rumpang",
+              "caption": "*Lengkapi barisan bilangan: 2, 6, 10, ..., 18, 22",
+              "slots": [
+                {
+                  "val": 2,
+                  "sub": "U₁"
+                },
+                {
+                  "val": 6,
+                  "sub": "U₂"
+                },
+                {
+                  "val": 10,
+                  "sub": "U₃"
+                },
+                {
+                  "val": "?",
+                  "sub": "U₄",
+                  "isTarget": true
+                },
+                {
+                  "val": 18,
+                  "sub": "U₅"
+                },
+                {
+                  "val": 22,
+                  "sub": "U₆"
+                }
+              ],
+              "promptText": "Berapakah bilangan yang tepat untuk mengisi posisi U₄?"
+            }
+          }
         },
         {
           "id": "sd4-b3-4",
@@ -1408,7 +1569,38 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Perhatikan beda suku: $16 - 12 = 4$, maka suku ketiga adalah $16 + 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$16 + 4 = 20$$\nBilangannya adalah **20** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$16 + 4 = 20$$\nBilangannya adalah **20** (Opsi A).",
+          "visual": {
+            "type": "number-line",
+            "props": {
+              "title": "Barisan Bilangan Rumpang",
+              "caption": "*Lengkapi titik-titik pada barisan: 12, 16, ..., 24, 28",
+              "slots": [
+                {
+                  "val": 12,
+                  "sub": "U₁"
+                },
+                {
+                  "val": 16,
+                  "sub": "U₂"
+                },
+                {
+                  "val": "?",
+                  "sub": "U₃",
+                  "isTarget": true
+                },
+                {
+                  "val": 24,
+                  "sub": "U₄"
+                },
+                {
+                  "val": 28,
+                  "sub": "U₅"
+                }
+              ],
+              "promptText": "Berapakah bilangan yang tepat untuk mengisi posisi U₃?"
+            }
+          }
         },
         {
           "id": "sd4-b3-8",
@@ -1435,7 +1627,38 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Pola berkurang 5: $40 - 5 = 35$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$40 - 5 = 35$$\nBilangannya adalah **35** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$40 - 5 = 35$$\nBilangannya adalah **35** (Opsi D).",
+          "visual": {
+            "type": "number-line",
+            "props": {
+              "title": "Barisan Bilangan Berkurang",
+              "caption": "*Lengkapi suku yang hilang pada barisan: 50, 45, 40, ..., 30",
+              "slots": [
+                {
+                  "val": 50,
+                  "sub": "U₁"
+                },
+                {
+                  "val": 45,
+                  "sub": "U₂"
+                },
+                {
+                  "val": 40,
+                  "sub": "U₃"
+                },
+                {
+                  "val": "?",
+                  "sub": "U₄",
+                  "isTarget": true
+                },
+                {
+                  "val": 30,
+                  "sub": "U₅"
+                }
+              ],
+              "promptText": "Berapakah suku yang hilang pada posisi U₄?"
+            }
+          }
         },
         {
           "id": "sd4-b3-9",
@@ -1489,7 +1712,23 @@ export const grade4Data = {
           ],
           "correctAnswer": "B",
           "hint": "Rumus suku ke-n bilangan ganjil adalah $2n - 1$. Untuk $n = 6$: $2(6) - 1 = 11$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBarisan: 1, 3, 5, 7, 9, 11\nSuku ke-6 adalah **11** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBarisan: 1, 3, 5, 7, 9, 11\nSuku ke-6 adalah **11** (Opsi B).",
+          "visual": {
+            "type": "number-line",
+            "props": {
+              "title": "Pola Bilangan Ganjil",
+              "caption": "*Barisan ganjil berurutan: 1, 3, 5, 7, ...",
+              "items": [
+                1,
+                3,
+                5,
+                7
+              ],
+              "targetIndex": 6,
+              "target": "?",
+              "promptText": "Berapakah suku ke-6 (U₆) pada kotak bertanda tanya?"
+            }
+          }
         },
         {
           "id": "sd4-b3-11",
@@ -1597,7 +1836,23 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Beda pola adalah $+4$. Lanjutkan hingga suku ke-7.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nS1=3, S2=7, S3=11, S4=15, S5=19, S6=23, S7=27.\nSuku ke-7 adalah **27** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nS1=3, S2=7, S3=11, S4=15, S5=19, S6=23, S7=27.\nSuku ke-7 adalah **27** (Opsi A).",
+          "visual": {
+            "type": "number-line",
+            "props": {
+              "title": "Pola Barisan Bilangan",
+              "caption": "*Tentukan bilangan suku ke-7 (U₇) dari barisan: 3, 7, 11, 15, ...",
+              "items": [
+                3,
+                7,
+                11,
+                15
+              ],
+              "targetIndex": 7,
+              "target": "?",
+              "promptText": "Berapakah nilai suku ke-7 (U₇) pada kotak bertanda tanya?"
+            }
+          }
         },
         {
           "id": "sd4-b3-15",
@@ -1828,7 +2083,16 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Kalikan panjang petak dengan lebar petak: $6 \\times 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas} = 6 \\times 4 = 24\\text{ petak satuan}$$\nLuasnya adalah **24 petak satuan** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas} = 6 \\times 4 = 24\\text{ petak satuan}$$\nLuasnya adalah **24 petak satuan** (Opsi D).",
+          "visual": {
+            "type": "unit-grid",
+            "props": {
+              "title": "Luas Petak Satuan",
+              "caption": "*Panjang 6 petak dan lebar 4 petak satuan",
+              "cols": 6,
+              "rows": 4
+            }
+          }
         },
         {
           "id": "sd4-b4-2",
@@ -1855,7 +2119,19 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Kalikan luas alas (12) dengan tinggi tumpukan (3): $12 \\times 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Volume} = 12 \\times 3 = 36\\text{ kubus satuan}$$\nVolumenya adalah **36 kubus satuan** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Volume} = 12 \\times 3 = 36\\text{ kubus satuan}$$\nVolumenya adalah **36 kubus satuan** (Opsi D).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Wadah Balok Kubus Satuan",
+              "caption": "*Alas wadah memuat 12 kubus, disusun setinggi 3 tumpukan",
+              "solid": "box",
+              "lengthLabel": "alas: 12 kubus",
+              "widthLabel": "alas",
+              "heightLabel": "3 tumpuk",
+              "targetLabel": "Volume = ?"
+            }
+          }
         },
         {
           "id": "sd4-b4-3",
@@ -1936,7 +2212,16 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Hitung luas lantai: $5 \\times 4 = 20\\text{ m}^2$. Karena luas 1 ubin adalah $1\\text{ m}^2$, dibutuhkan 20 ubin.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas lantai} = 5 \\times 4 = 20\\text{ m}^2$$\nBanyak ubin $= \\frac{20}{1} = 20$ ubin (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Luas lantai} = 5 \\times 4 = 20\\text{ m}^2$$\nBanyak ubin $= \\frac{20}{1} = 20$ ubin (Opsi A).",
+          "visual": {
+            "type": "unit-grid",
+            "props": {
+              "title": "Pemasangan Ubin Lantai Ruang",
+              "caption": "*Ukuran ruangan 5 petak × 4 petak",
+              "cols": 5,
+              "rows": 4
+            }
+          }
         },
         {
           "id": "sd4-b4-6",
@@ -2017,7 +2302,18 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Gunakan rumus luas persegi panjang: $L = p \\times l = 15 \\times 8$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 15 \\times 8 = 120\\text{ cm}^2$$\nLuasnya adalah **120 cm²** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 15 \\times 8 = 120\\text{ cm}^2$$\nLuasnya adalah **120 cm²** (Opsi A).",
+          "visual": {
+            "type": "rectangle",
+            "props": {
+              "title": "Luas Persegi Panjang",
+              "caption": "*Panjang 15 cm dan lebar 8 cm",
+              "type": "rectangle",
+              "dimA": "p = 15 cm",
+              "dimB": "l = 8 cm",
+              "targetBadge": "Luas = ? cm²"
+            }
+          }
         },
         {
           "id": "sd4-b4-9",
@@ -2044,7 +2340,16 @@ export const grade4Data = {
           ],
           "correctAnswer": "B",
           "hint": "Rumus luas persegi: $L = s \\times s = 12 \\times 12$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 12 \\times 12 = 144\\text{ cm}^2$$\nLuasnya adalah **144 cm²** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 12 \\times 12 = 144\\text{ cm}^2$$\nLuasnya adalah **144 cm²** (Opsi B).",
+          "visual": {
+            "type": "square",
+            "props": {
+              "title": "Luas Persegi",
+              "caption": "*Panjang sisi bujursangkar s = 12 cm",
+              "dimA": "s = 12 cm",
+              "targetBadge": "Luas = ? cm²"
+            }
+          }
         },
         {
           "id": "sd4-b4-10",
@@ -2071,7 +2376,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "C",
           "hint": "Panjang = Luas : lebar $= 84 : 7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$p = 84 : 7 = 12\\text{ cm}$$\nPanjangnya adalah **12 cm** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$p = 84 : 7 = 12\\text{ cm}$$\nPanjangnya adalah **12 cm** (Opsi C).",
+          "visual": {
+            "type": "rectangle",
+            "props": {
+              "title": "Mencari Panjang Persegi Panjang",
+              "caption": "*Luas 84 cm² dan lebar 7 cm",
+              "dimA": "p = ? cm",
+              "dimB": "l = 7 cm",
+              "targetBadge": "Luas = 84 cm²"
+            }
+          }
         },
         {
           "id": "sd4-b4-11",
@@ -2098,7 +2413,19 @@ export const grade4Data = {
           ],
           "correctAnswer": "C",
           "hint": "Volume kubus: $s \\times s \\times s = 4 \\times 4 \\times 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 4 \\times 4 \\times 4 = 64\\text{ kubus satuan}$$\nVolumenya adalah **64 kubus satuan** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 4 \\times 4 \\times 4 = 64\\text{ kubus satuan}$$\nVolumenya adalah **64 kubus satuan** (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Kubus Tersusun dari Kubus Satuan",
+              "caption": "*Panjang rusuk 4 kubus satuan",
+              "solid": "box",
+              "lengthLabel": "s = 4",
+              "widthLabel": "s = 4",
+              "heightLabel": "s = 4",
+              "targetLabel": "Volume = ? kubus"
+            }
+          }
         },
         {
           "id": "sd4-b4-12",
@@ -2125,7 +2452,19 @@ export const grade4Data = {
           ],
           "correctAnswer": "B",
           "hint": "Volume balok: $V = p \\times l \\times t = 6 \\times 4 \\times 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 6 \\times 4 \\times 5 = 120\\text{ cm}^3$$\nVolumenya adalah **120 cm³** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 6 \\times 4 \\times 5 = 120\\text{ cm}^3$$\nVolumenya adalah **120 cm³** (Opsi B).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Volume Balok Ruang",
+              "caption": "*Panjang 6 cm, lebar 4 cm, dan tinggi 5 cm",
+              "solid": "box",
+              "lengthLabel": "p = 6 cm",
+              "widthLabel": "l = 4 cm",
+              "heightLabel": "t = 5 cm",
+              "targetLabel": "Volume = ? cm³"
+            }
+          }
         },
         {
           "id": "sd4-b4-13",
@@ -2179,7 +2518,16 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Banyak ubin = Luas kamar : Luas ubin $= (4 \\times 3) : (1 \\times 1)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Banyak ubin} = 12 : 1 = 12\\text{ ubin}$$\nDibutuhkan **12 ubin** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Banyak ubin} = 12 : 1 = 12\\text{ ubin}$$\nDibutuhkan **12 ubin** (Opsi A).",
+          "visual": {
+            "type": "unit-grid",
+            "props": {
+              "title": "Pemasangan Ubin Kamar Tidur",
+              "caption": "*Ruangan 4 meter × 3 meter dengan ubin 1m × 1m",
+              "cols": 4,
+              "rows": 3
+            }
+          }
         },
         {
           "id": "sd4-b4-15",
@@ -2206,7 +2554,19 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Tinggi = Volume : $(p \\times l) = 240 : (8 \\times 6)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = 240 : 48 = 5\\text{ cm}$$\nTingginya adalah **5 cm** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = 240 : 48 = 5\\text{ cm}$$\nTingginya adalah **5 cm** (Opsi D).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Mencari Tinggi Wadah Balok",
+              "caption": "*Volume 240 cm³, panjang 8 cm, dan lebar 6 cm",
+              "solid": "box",
+              "lengthLabel": "p = 8 cm",
+              "widthLabel": "l = 6 cm",
+              "heightLabel": "t = ? cm",
+              "targetLabel": "Diketahui: V = 240 cm³"
+            }
+          }
         },
         {
           "id": "sd4-b4-16",
@@ -2260,7 +2620,19 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Volume penuh = $50 \\times 30 \\times 40 = 60.000$ cm³. Setengahnya $= 60.000 : 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{2} \\times (50 \\times 30 \\times 40) = 30.000\\text{ cm}^3$$\nVolume air adalah **30.000 cm³** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = \\frac{1}{2} \\times (50 \\times 30 \\times 40) = 30.000\\text{ cm}^3$$\nVolume air adalah **30.000 cm³** (Opsi D).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Akuarium Balok Terisi Air Setengah",
+              "caption": "*Panjang 50 cm, lebar 30 cm, dan tinggi 40 cm",
+              "solid": "box",
+              "lengthLabel": "p = 50 cm",
+              "widthLabel": "l = 30 cm",
+              "heightLabel": "t = 40 cm",
+              "targetLabel": "Setengah Isi = ?"
+            }
+          }
         },
         {
           "id": "sd4-b4-18",
@@ -2410,7 +2782,18 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Segitiga dengan ketiga sisi sama panjang dan sudut masing-masing $60^\\circ$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSegitiga yang ketiga sisinya sama panjang dan sudutnya sama besar adalah **segitiga sama sisi** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSegitiga yang ketiga sisinya sama panjang dan sudutnya sama besar adalah **segitiga sama sisi** (Opsi A).",
+          "visual": {
+            "type": "triangle",
+            "props": {
+              "title": "Bangun Datar Apakah Ini?",
+              "caption": "*Segibanyak beraturan dengan 3 sisi sama panjang dan 3 sudut sama",
+              "type": "equilateral",
+              "baseLabel": "sisi",
+              "heightLabel": "",
+              "targetBadge": "3 Sisi Sama"
+            }
+          }
         },
         {
           "id": "sd4-b5-2",
@@ -2464,7 +2847,18 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Keempat sudut pojok pada persegi panjang berbentuk siku-siku ($90^\\circ$).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPersegi panjang memiliki **4 sudut siku-siku** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPersegi panjang memiliki **4 sudut siku-siku** (Opsi A).",
+          "visual": {
+            "type": "quadrilateral",
+            "props": {
+              "title": "Sudut Siku-Siku Persegi Panjang",
+              "caption": "*Amati sudut pada setiap pojok persegi panjang",
+              "type": "rectangle",
+              "dimA": "panjang",
+              "dimB": "lebar",
+              "targetBadge": "Banyak Sudut = ?"
+            }
+          }
         },
         {
           "id": "sd4-b5-4",
@@ -2491,7 +2885,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Keempat sisi luarnya memiliki panjang yang sama karena berasal dari kaki-kaki segitiga yang sama.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKarena keempat sisi luarnya sama panjang dan alas persekutuan menjadi diagonalnya, bangun yang terbentuk adalah **belah ketupat** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKarena keempat sisi luarnya sama panjang dan alas persekutuan menjadi diagonalnya, bangun yang terbentuk adalah **belah ketupat** (Opsi D).",
+          "visual": {
+            "type": "kite",
+            "props": {
+              "title": "Dua Segitiga Sama Kaki Bergabung",
+              "caption": "*Dua segitiga sama kaki digabungkan pada sisi alasnya yang berimpit",
+              "dimA": "diagonal 1",
+              "dimB": "diagonal 2",
+              "targetBadge": "Bangun Segiempat = ?"
+            }
+          }
         },
         {
           "id": "sd4-b5-5",
@@ -2599,7 +3003,18 @@ export const grade4Data = {
           ],
           "correctAnswer": "C",
           "hint": "Ciri khas trapesium adalah memiliki tepat sepasang sisi berhadapan yang sejajar.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBangun datar dengan sepasang sisi sejajar adalah **trapesium** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBangun datar dengan sepasang sisi sejajar adalah **trapesium** (Opsi C).",
+          "visual": {
+            "type": "trapezoid",
+            "props": {
+              "title": "Bangun Datar Apakah Ini?",
+              "caption": "*Bangun datar segiempat dengan sepasang sisi sejajar tidak sama panjang",
+              "dimA": "sisi atas a",
+              "dimB": "sisi bawah b",
+              "dimT": "tinggi t",
+              "targetBadge": "1 Pasang Sejajar"
+            }
+          }
         },
         {
           "id": "sd4-b5-9",
@@ -2659,28 +3074,28 @@ export const grade4Data = {
           "id": "sd4-b5-11",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Sebuah segitiga siku-siku memiliki salah satu sudut lancip berukuran 35°. Besar sudut lancip lainnya adalah...",
+          "question": "Dua buah segitiga siku-siku yang sama besar disusun sehingga sisi miringnya saling berimpit. Bangun datar baru yang terbentuk adalah...",
           "options": [
             {
               "key": "A",
-              "text": "45°"
+              "text": "Lingkaran"
             },
             {
               "key": "B",
-              "text": "65°"
+              "text": "Segilima"
             },
             {
               "key": "C",
-              "text": "55°"
+              "text": "Persegi panjang"
             },
             {
               "key": "D",
-              "text": "35°"
+              "text": "Segienam"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Sudut siku-siku $= 90^\\circ$. Sisa sudut $= 180^\\circ - (90^\\circ + 35^\\circ) = 55^\\circ$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$180^\\circ - 90^\\circ - 35^\\circ = 55^\\circ$$\nBesar sudut lainnya adalah **55°** (Opsi C)."
+          "hint": "Bayangkan dua potongan segitiga siku-siku yang dipasang berhadapan pada sisi terpanjangnya. Sudut siku-sikunya berada di dua pojok yang berseberangan.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Kedua segitiga digabung pada sisi miring sehingga sisi miring menjadi garis diagonal.\n2. Bangun baru memiliki 4 sisi dan 4 sudut siku-siku, dengan sisi-sisi berhadapan sama panjang.\n3. Bangun tersebut adalah **persegi panjang** (Opsi C)."
         },
         {
           "id": "sd4-b5-12",
@@ -2707,7 +3122,18 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Keliling segitiga sama sisi $= 3 \\times s = 3 \\times 9$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$K = 3 \\times 9 = 27\\text{ cm}$$\nKelilingnya adalah **27 cm** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$K = 3 \\times 9 = 27\\text{ cm}$$\nKelilingnya adalah **27 cm** (Opsi D).",
+          "visual": {
+            "type": "triangle",
+            "props": {
+              "title": "Keliling Segitiga Sama Sisi",
+              "caption": "*Ketiga sisi memiliki panjang yang sama (s = 9 cm)",
+              "type": "equilateral",
+              "baseLabel": "s = 9 cm",
+              "heightLabel": "",
+              "targetBadge": "Keliling = ? cm"
+            }
+          }
         },
         {
           "id": "sd4-b5-13",
@@ -2734,7 +3160,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Belah ketupat memiliki 4 sisi sama panjang, sedangkan sudutnya terdiri dari 2 lancip dan 2 tumpul.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBangun tersebut adalah **belah ketupat** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBangun tersebut adalah **belah ketupat** (Opsi A).",
+          "visual": {
+            "type": "rhombus",
+            "props": {
+              "title": "Bangun Datar Apakah Ini?",
+              "caption": "*4 sisi sama panjang dengan sudut bukan siku-siku",
+              "dimA": "diagonal 1",
+              "dimB": "diagonal 2",
+              "targetBadge": "4 Sisi Sama"
+            }
+          }
         },
         {
           "id": "sd4-b5-14",
@@ -2761,7 +3197,16 @@ export const grade4Data = {
           ],
           "correctAnswer": "C",
           "hint": "Panjang sisi = Keliling : $4 = 48 : 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = 48 : 4 = 12\\text{ cm}$$\nPanjang sisinya adalah **12 cm** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = 48 : 4 = 12\\text{ cm}$$\nPanjang sisinya adalah **12 cm** (Opsi C).",
+          "visual": {
+            "type": "square",
+            "props": {
+              "title": "Mencari Panjang Sisi Persegi",
+              "caption": "*Keliling persegi K = 48 cm",
+              "dimA": "s = ? cm",
+              "targetBadge": "K = 48 cm"
+            }
+          }
         },
         {
           "id": "sd4-b5-15",
@@ -2788,7 +3233,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Keliling persegi panjang $= 2 \\times (p + l) = 2 \\times (14 + 6)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$K = 2 \\times (14 + 6) = 2 \\times 20 = 40\\text{ cm}$$\nKelilingnya adalah **40 cm** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$K = 2 \\times (14 + 6) = 2 \\times 20 = 40\\text{ cm}$$\nKelilingnya adalah **40 cm** (Opsi D).",
+          "visual": {
+            "type": "rectangle",
+            "props": {
+              "title": "Keliling Persegi Panjang",
+              "caption": "*Panjang 14 cm dan lebar 6 cm",
+              "dimA": "p = 14 cm",
+              "dimB": "l = 6 cm",
+              "targetBadge": "Keliling = ? cm"
+            }
+          }
         },
         {
           "id": "sd4-b5-16",
@@ -2815,7 +3270,18 @@ export const grade4Data = {
           ],
           "correctAnswer": "B",
           "hint": "Jumlah kedua kaki $= 36 - 10 = 26$ meter. Panjang tiap kaki $= 26 : 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Panjang satu kaki} = (36 - 10) : 2 = 26 : 2 = 13\\text{ meter}$$\nPanjang kakinya adalah **13 meter** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Panjang satu kaki} = (36 - 10) : 2 = 26 : 2 = 13\\text{ meter}$$\nPanjang kakinya adalah **13 meter** (Opsi B).",
+          "visual": {
+            "type": "triangle",
+            "props": {
+              "title": "Taman Segitiga Sama Kaki",
+              "caption": "*Keliling 36 meter dengan panjang alas 10 meter",
+              "type": "isosceles",
+              "baseLabel": "alas = 10 m",
+              "sideLabel": "kaki = ? m",
+              "targetBadge": "K = 36 m"
+            }
+          }
         },
         {
           "id": "sd4-b5-17",
@@ -2842,7 +3308,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "B",
           "hint": "Keliling lapangan $= 2 \\times (100 + 60) = 320$ m. Dalam 3 putaran $= 3 \\times 320$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Keliling lapangan: $2 \\times (100 + 60) = 320\\text{ m}$\n2. 3 putaran: $3 \\times 320 = 960\\text{ m}$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Keliling lapangan: $2 \\times (100 + 60) = 320\\text{ m}$\n2. 3 putaran: $3 \\times 320 = 960\\text{ m}$ (Opsi B).",
+          "visual": {
+            "type": "rectangle",
+            "props": {
+              "title": "Lapangan Sepak Bola",
+              "caption": "*Ukuran panjang 100 meter dan lebar 60 meter",
+              "dimA": "p = 100 m",
+              "dimB": "l = 60 m",
+              "targetBadge": "Keliling = ? m"
+            }
+          }
         },
         {
           "id": "sd4-b5-18",
@@ -2896,7 +3372,17 @@ export const grade4Data = {
           ],
           "correctAnswer": "B",
           "hint": "Keliling jajargenjang $= 2 \\times (a + b) = 50 \\implies a + b = 25$. Jika $a = 16$, maka $b = 25 - 16 = 9$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$b = (50 : 2) - 16 = 25 - 16 = 9\\text{ cm}$$\nPanjang sisi lainnya adalah **9 cm** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$b = (50 : 2) - 16 = 25 - 16 = 9\\text{ cm}$$\nPanjang sisi lainnya adalah **9 cm** (Opsi B).",
+          "visual": {
+            "type": "parallelogram",
+            "props": {
+              "title": "Keliling Jajar Genjang",
+              "caption": "*Keliling 50 cm dengan salah satu sisi 16 cm",
+              "dimA": "a = 16 cm",
+              "dimT": "",
+              "targetBadge": "Sisi Lain = ?"
+            }
+          }
         },
         {
           "id": "sd4-b5-20",
@@ -2992,7 +3478,22 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Kalikan jumlah bintang (4) dengan nilai tiap bintang (5).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4 \\times 5 = 20\\text{ poin}$$\nTotal poinnya adalah **20 poin** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4 \\times 5 = 20\\text{ poin}$$\nTotal poinnya adalah **20 poin** (Opsi D).",
+          "visual": {
+            "type": "pictogram",
+            "props": {
+              "title": "Piktogram Prestasi Bintang",
+              "caption": "*1 simbol bintang bernilai 5 poin prestasi",
+              "rows": [
+                {
+                  "label": "Melati",
+                  "count": 4
+                }
+              ],
+              "symbol": "⭐",
+              "unitLabel": "1 ⭐ = 5 poin"
+            }
+          }
         },
         {
           "id": "sd4-b6-2",
@@ -3046,13 +3547,40 @@ export const grade4Data = {
           ],
           "correctAnswer": "C",
           "hint": "Jumlahkan seluruh siswa: $15 + 25 + 20 + 30$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$15 + 25 + 20 + 30 = 90\\text{ siswa}$$\nTotalnya adalah **90 siswa** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$15 + 25 + 20 + 30 = 90\\text{ siswa}$$\nTotalnya adalah **90 siswa** (Opsi C).",
+          "visual": {
+            "type": "bar-chart",
+            "props": {
+              "title": "Peserta Ekstrakurikuler SD",
+              "caption": "*Banyak siswa peserta setiap kegiatan ekstrakurikuler",
+              "categories": [
+                {
+                  "label": "Tari",
+                  "val": 15
+                },
+                {
+                  "label": "Renang",
+                  "val": 25
+                },
+                {
+                  "label": "Lukis",
+                  "val": 20
+                },
+                {
+                  "label": "Silat",
+                  "val": 30
+                }
+              ],
+              "yMax": 35,
+              "yStep": 5
+            }
+          }
         },
         {
           "id": "sd4-b6-4",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Dari data pada soal sebelumnya, selisih jumlah siswa yang mengikuti Silat dan Tari adalah...",
+          "question": "Perhatikan diagram batang peserta ekstrakurikuler: Tari 15 siswa, Renang 25 siswa, Lukis 20 siswa, dan Silat 30 siswa. Selisih jumlah siswa yang mengikuti Silat dan Tari adalah...",
           "options": [
             {
               "key": "A",
@@ -3073,7 +3601,34 @@ export const grade4Data = {
           ],
           "correctAnswer": "B",
           "hint": "Kurangkan peserta Silat (30) dengan Tari (15).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Selisih} = 30 - 15 = 15\\text{ siswa}$$\nSelisihnya adalah **15 siswa** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Selisih} = 30 - 15 = 15\\text{ siswa}$$\nSelisihnya adalah **15 siswa** (Opsi B).",
+          "visual": {
+            "type": "bar-chart",
+            "props": {
+              "title": "Peserta Ekstrakurikuler SD",
+              "caption": "*Bandingkan tinggi batang Silat dan Tari",
+              "categories": [
+                {
+                  "label": "Tari",
+                  "val": 15
+                },
+                {
+                  "label": "Renang",
+                  "val": 25
+                },
+                {
+                  "label": "Lukis",
+                  "val": 20
+                },
+                {
+                  "label": "Silat",
+                  "val": 30
+                }
+              ],
+              "yMax": 35,
+              "yStep": 5
+            }
+          }
         },
         {
           "id": "sd4-b6-5",
@@ -3127,7 +3682,30 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Kalikan banyak simbol dengan nilai per simbol: $6 \\times 5 = 30$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$6 \\times 5 = 30\\text{ buku}$$\nJumlahnya adalah **30 buku** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$6 \\times 5 = 30\\text{ buku}$$\nJumlahnya adalah **30 buku** (Opsi A).",
+          "visual": {
+            "type": "pictogram",
+            "props": {
+              "title": "Piktogram Peminjaman Buku",
+              "caption": "*1 simbol buku mewakili 5 eksemplar",
+              "rows": [
+                {
+                  "label": "Senin",
+                  "count": 4
+                },
+                {
+                  "label": "Selasa",
+                  "count": 6
+                },
+                {
+                  "label": "Rabu",
+                  "count": 3
+                }
+              ],
+              "symbol": "📖",
+              "unitLabel": "1 📖 = 5 buku"
+            }
+          }
         },
         {
           "id": "sd4-b6-7",
@@ -3186,35 +3764,62 @@ export const grade4Data = {
         {
           "id": "sd4-b6-9",
           "category": "Latihan",
-          "difficulty": "Sedang",
-          "question": "Data nilai ulangan matematika: 70, 80, 80, 90, 70, 80, 100, 90. Nilai yang paling sering muncul (modus) adalah...",
+          "difficulty": "Mudah",
+          "question": "Diagram batang menunjukkan banyak buku yang dibaca siswa dalam sebulan: Andi 7 buku, Beni 4 buku, Citra 9 buku, dan Dewi 6 buku. Siswa yang paling banyak membaca buku adalah...",
           "options": [
             {
               "key": "A",
-              "text": "80"
+              "text": "Citra"
             },
             {
               "key": "B",
-              "text": "70"
+              "text": "Andi"
             },
             {
               "key": "C",
-              "text": "90"
+              "text": "Dewi"
             },
             {
               "key": "D",
-              "text": "100"
+              "text": "Beni"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Hitung kemunculan: nilai 70 ada 2, nilai 80 ada 3, nilai 90 ada 2, nilai 100 ada 1.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nNilai 80 muncul paling banyak (3 kali) sehingga modusnya adalah **80** (Opsi A)."
+          "hint": "Cari batang yang paling tinggi pada diagram.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nUrutkan banyak buku: $9 > 7 > 6 > 4$.\nBatang tertinggi adalah milik Citra dengan 9 buku, sehingga jawabannya **Citra** (Opsi A).",
+          "visual": {
+            "type": "bar-chart",
+            "props": {
+              "title": "Banyak Buku yang Dibaca dalam Sebulan",
+              "caption": "*Bandingkan tinggi batang setiap siswa",
+              "categories": [
+                {
+                  "label": "Andi",
+                  "val": 7
+                },
+                {
+                  "label": "Beni",
+                  "val": 4
+                },
+                {
+                  "label": "Citra",
+                  "val": 9
+                },
+                {
+                  "label": "Dewi",
+                  "val": 6
+                }
+              ],
+              "yMax": 10,
+              "yStep": 2
+            }
+          }
         },
         {
           "id": "sd4-b6-10",
           "category": "Latihan",
-          "difficulty": "Sedang",
-          "question": "Data berat badan 5 siswa (dalam kg): 32, 34, 30, 36, 38. Rata-rata berat badan kelima siswa tersebut adalah...",
+          "difficulty": "Mudah",
+          "question": "Catatan hasil panen jeruk Pak Rudi: hari Senin 12 kg, hari Selasa 15 kg, dan hari Rabu 9 kg. Jumlah panen jeruk selama tiga hari tersebut adalah...",
           "options": [
             {
               "key": "A",
@@ -3222,20 +3827,20 @@ export const grade4Data = {
             },
             {
               "key": "B",
-              "text": "34 kg"
+              "text": "36 kg"
             },
             {
               "key": "C",
-              "text": "35 kg"
+              "text": "27 kg"
             },
             {
               "key": "D",
-              "text": "32 kg"
+              "text": "39 kg"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Jumlahkan semua data lalu bagi 5: $(32 + 34 + 30 + 36 + 38) : 5 = 170 : 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Rata-rata} = 170 : 5 = 34\\text{ kg}$$\nRata-ratanya adalah **34 kg** (Opsi B)."
+          "hint": "Jumlahkan hasil panen setiap hari: $12 + 15 + 9$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$12 + 15 + 9 = 36\\text{ kg}$$\nJumlah panen jeruk adalah **36 kg** (Opsi B)."
         },
         {
           "id": "sd4-b6-11",
@@ -3262,13 +3867,40 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Bandingkan angka penjualan: Mangga hanya terjual 35 kg.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBuah dengan penjualan terendah adalah **Mangga (35 kg)** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBuah dengan penjualan terendah adalah **Mangga (35 kg)** (Opsi D).",
+          "visual": {
+            "type": "bar-chart",
+            "props": {
+              "title": "Penjualan Buah Toko Segar (kg)",
+              "caption": "*Data penjualan aneka buah per kilogram",
+              "categories": [
+                {
+                  "label": "Apel",
+                  "val": 45
+                },
+                {
+                  "label": "Jeruk",
+                  "val": 60
+                },
+                {
+                  "label": "Mangga",
+                  "val": 35
+                },
+                {
+                  "label": "Pisang",
+                  "val": 50
+                }
+              ],
+              "yMax": 70,
+              "yStep": 10
+            }
+          }
         },
         {
           "id": "sd4-b6-12",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Dari data penjualan buah pada soal sebelumnya, selisih penjualan Jeruk dan Pisang adalah...",
+          "question": "Perhatikan diagram batang penjualan buah: Apel 45 kg, Jeruk 60 kg, Mangga 35 kg, dan Pisang 50 kg. Selisih penjualan Jeruk dan Pisang adalah...",
           "options": [
             {
               "key": "A",
@@ -3289,7 +3921,34 @@ export const grade4Data = {
           ],
           "correctAnswer": "D",
           "hint": "Kurangkan penjualan Jeruk (60 kg) dengan Pisang (50 kg).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$60 - 50 = 10\\text{ kg}$$\nSelisihnya adalah **10 kg** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$60 - 50 = 10\\text{ kg}$$\nSelisihnya adalah **10 kg** (Opsi D).",
+          "visual": {
+            "type": "bar-chart",
+            "props": {
+              "title": "Penjualan Buah Toko Segar (kg)",
+              "caption": "*Bandingkan tinggi batang Jeruk dan Pisang",
+              "categories": [
+                {
+                  "label": "Apel",
+                  "val": 45
+                },
+                {
+                  "label": "Jeruk",
+                  "val": 60
+                },
+                {
+                  "label": "Mangga",
+                  "val": 35
+                },
+                {
+                  "label": "Pisang",
+                  "val": 50
+                }
+              ],
+              "yMax": 70,
+              "yStep": 10
+            }
+          }
         },
         {
           "id": "sd4-b6-13",
@@ -3322,28 +3981,28 @@ export const grade4Data = {
           "id": "sd4-b6-14",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Data jenis transportasi siswa: Jalan kaki 12 siswa, Sepeda 18 siswa, Angkutan kota 15 siswa, Diantar motor 25 siswa. Berapa persen siswa yang menggunakan sepeda jika total siswa 70 orang?",
+          "question": "Data jenis transportasi siswa: jalan kaki 12 siswa, sepeda 18 siswa, angkutan kota 15 siswa, dan diantar motor 25 siswa. Berapa banyak siswa yang berangkat dengan sepeda atau jalan kaki?",
           "options": [
             {
               "key": "A",
-              "text": "30%"
+              "text": "27 siswa"
             },
             {
               "key": "B",
-              "text": "25,7%"
+              "text": "30 siswa"
             },
             {
               "key": "C",
-              "text": "20%"
+              "text": "33 siswa"
             },
             {
               "key": "D",
-              "text": "18%"
+              "text": "37 siswa"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Persentase sepeda $= \\frac{18}{70} \\times 100\\% \\approx 25,7\\%$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{18}{70} \\times 100\\% \\approx 25{,}7\\%$$\nPersentasenya adalah **25,7%** (Opsi B)."
+          "hint": "Jumlahkan siswa yang naik sepeda dan yang berjalan kaki: $18 + 12$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$18 + 12 = 30\\text{ siswa}$$\nBanyak siswa yang bersepeda atau berjalan kaki adalah **30 siswa** (Opsi B)."
         },
         {
           "id": "sd4-b6-15",
@@ -3370,34 +4029,76 @@ export const grade4Data = {
           ],
           "correctAnswer": "A",
           "hint": "Bagi 48 pensil dengan 12: $48 : 12 = 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$48 : 12 = 4\\text{ simbol}$$\nDigambar sebanyak **4 simbol** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$48 : 12 = 4\\text{ simbol}$$\nDigambar sebanyak **4 simbol** (Opsi A).",
+          "visual": {
+            "type": "pictogram",
+            "props": {
+              "title": "Piktogram Pembagian Pensil",
+              "caption": "*Kelas 4A menerima 48 pensil",
+              "rows": [
+                {
+                  "label": "Kelas 4A",
+                  "count": "?"
+                }
+              ],
+              "symbol": "✏️",
+              "unitLabel": "1 ✏️ = 12 pensil"
+            }
+          }
         },
         {
           "id": "sd4-b6-16",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Diagram batang menunjukkan sumbangan buku: Kelas 4A (25 buku), Kelas 4B (30 buku), Kelas 4C (20 buku), Kelas 4D (x buku). Jika rata-rata sumbangan buku tiap kelas adalah 28 buku, berapakah nilai x (sumbangan Kelas 4D)?",
+          "question": "Diagram batang menunjukkan sumbangan buku: Kelas 4A 25 buku, Kelas 4B 30 buku, Kelas 4C 20 buku, dan Kelas 4D 37 buku. Kelas yang menyumbang paling sedikit dan selisihnya dengan kelas yang menyumbang paling banyak adalah...",
           "options": [
             {
               "key": "A",
-              "text": "37 buku"
+              "text": "Kelas 4C, selisih 17 buku"
             },
             {
               "key": "B",
-              "text": "35 buku"
+              "text": "Kelas 4A, selisih 12 buku"
             },
             {
               "key": "C",
-              "text": "32 buku"
+              "text": "Kelas 4C, selisih 10 buku"
             },
             {
               "key": "D",
-              "text": "30 buku"
+              "text": "Kelas 4B, selisih 7 buku"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Total sumbangan 4 kelas $= 4 \\times 28 = 112$. Nilai $x = 112 - (25 + 30 + 20)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total target: $4 \\times 28 = 112$ buku\n2. Jumlah 3 kelas: $25 + 30 + 20 = 75$ buku\n3. Sumbangan Kelas 4D: $112 - 75 = 37$ buku (Opsi A)."
+          "hint": "Cari batang terpendek dan batang tertinggi, lalu kurangkan nilainya.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Batang terpendek: Kelas 4C (20 buku).\n2. Batang tertinggi: Kelas 4D (37 buku).\n3. Selisih: $37 - 20 = 17$ buku.\nJawabannya **Kelas 4C, selisih 17 buku** (Opsi A).",
+          "visual": {
+            "type": "bar-chart",
+            "props": {
+              "title": "Sumbangan Buku Tiap Kelas",
+              "caption": "*Banyak buku yang disumbangkan setiap kelas",
+              "categories": [
+                {
+                  "label": "4A",
+                  "val": 25
+                },
+                {
+                  "label": "4B",
+                  "val": 30
+                },
+                {
+                  "label": "4C",
+                  "val": 20
+                },
+                {
+                  "label": "4D",
+                  "val": 37
+                }
+              ],
+              "yMax": 40,
+              "yStep": 10
+            }
+          }
         },
         {
           "id": "sd4-b6-17",
@@ -3430,55 +4131,74 @@ export const grade4Data = {
           "id": "sd4-b6-18",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Data koleksi buku di pojok baca: Cerita 40%, Pengetahuan 30%, Ensiklopedia 20%, Majalah 10%. Jika total buku adalah 150 buku, selisih buku Cerita dan Majalah adalah...",
+          "question": "Pada piktogram koleksi pojok baca, 1 simbol buku mewakili 10 buku. Buku cerita digambar dengan 6 simbol dan majalah dengan 2 simbol. Selisih banyak buku cerita dan majalah adalah...",
           "options": [
             {
               "key": "A",
-              "text": "30 buku"
+              "text": "4 buku"
             },
             {
               "key": "B",
-              "text": "60 buku"
+              "text": "20 buku"
             },
             {
               "key": "C",
-              "text": "15 buku"
+              "text": "60 buku"
             },
             {
               "key": "D",
-              "text": "45 buku"
+              "text": "40 buku"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Selisih persentase: $40\\% - 10\\% = 30\\%$. Selisih buku: $30\\% \\times 150 = 45$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Selisih} = (40\\% - 10\\%) \\times 150 = 30\\% \\times 150 = 45\\text{ buku}$$\nSelisihnya adalah **45 buku** (Opsi D)."
+          "hint": "Hitung selisih simbolnya dulu ($6 - 2$), lalu kalikan dengan 10.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Buku cerita: $6 \\times 10 = 60$ buku.\n2. Majalah: $2 \\times 10 = 20$ buku.\n3. Selisih: $60 - 20 = 40$ buku.\nSelisihnya adalah **40 buku** (Opsi D).",
+          "visual": {
+            "type": "pictogram",
+            "props": {
+              "title": "Piktogram Koleksi Pojok Baca",
+              "caption": "*1 simbol buku mewakili 10 buku",
+              "rows": [
+                {
+                  "label": "Cerita",
+                  "count": 6
+                },
+                {
+                  "label": "Majalah",
+                  "count": 2
+                }
+              ],
+              "symbol": "📚",
+              "unitLabel": "1 📚 = 10 buku"
+            }
+          }
         },
         {
           "id": "sd4-b6-19",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Tabel frekuensi nilai matematika 20 siswa: nilai 60 (3 siswa), nilai 70 (5 siswa), nilai 80 (7 siswa), nilai 90 (4 siswa), nilai 100 (1 siswa). Berapa persentase siswa yang memperoleh nilai minimal 80?",
+          "question": "Tabel nilai matematika 20 siswa: nilai 60 (3 siswa), nilai 70 (5 siswa), nilai 80 (7 siswa), nilai 90 (4 siswa), dan nilai 100 (1 siswa). Berapa banyak siswa yang memperoleh nilai 80 atau lebih?",
           "options": [
             {
               "key": "A",
-              "text": "55%"
+              "text": "11 siswa"
             },
             {
               "key": "B",
-              "text": "60%"
+              "text": "12 siswa"
             },
             {
               "key": "C",
-              "text": "65%"
+              "text": "8 siswa"
             },
             {
               "key": "D",
-              "text": "50%"
+              "text": "13 siswa"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Siswa dengan nilai minimal 80: nilai 80 + 90 + 100 $= 7 + 4 + 1 = 12$ siswa. Persen $= \\frac{12}{20} \\times 100\\% = 60\\%$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{7 + 4 + 1}{20} \\times 100\\% = \\frac{12}{20} \\times 100\\% = 60\\%$$\nPersentasenya adalah **60%** (Opsi B)."
+          "hint": "Jumlahkan siswa yang mendapat nilai 80, 90, dan 100.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$7 + 4 + 1 = 12\\text{ siswa}$$\nBanyak siswa yang memperoleh nilai 80 atau lebih adalah **12 siswa** (Opsi B)."
         },
         {
           "id": "sd4-b6-20",

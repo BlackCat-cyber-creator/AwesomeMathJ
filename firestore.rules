@@ -17,35 +17,23 @@ service cloud.firestore {
 
       match /students/{studentId} {
         allow read, write: if isTeacher(teacherId);
-        // Allow student completing quest to update their streak and totalXp
-        allow update: if isTeacher(teacherId) || 
-          request.resource.data.diff(resource.data).affectedKeys().hasOnly(['totalXp', 'streak', 'lastActive']);
       }
     }
 
     // 2. Quests (Homework)
-    // Public read so students can open their homework link directly
+    // Murid membuka PR lewat link (get by ID) tanpa login, tetapi daftar PR
+    // (list/query) hanya untuk guru pemiliknya agar nama murid tidak bisa dipanen.
     match /quests/{questId} {
-      allow read: if true;
+      allow get: if true;
+      allow list: if isAuthenticated() && resource.data.teacherId == request.auth.uid;
 
       // Only authenticated teacher can create and delete their quests
       allow create: if isAuthenticated() && request.resource.data.teacherId == request.auth.uid;
       allow delete: if isAuthenticated() && resource.data.teacherId == request.auth.uid;
 
-      // Teacher can edit; students can update completion status and answers
+      // Teacher can edit; students (without login) may only update progress and answers
       allow update: if (isAuthenticated() && resource.data.teacherId == request.auth.uid) ||
         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'lastScore', 'submittedAt', 'answers']);
-    }
-
-    // 3. Submissions
-    // Students can submit results without requiring teacher credentials
-    match /submissions/{submissionId} {
-      allow create: if request.resource.data.keys().hasAll(['questId', 'score', 'submittedAt'])
-        && request.resource.data.score >= 0 
-        && request.resource.data.score <= 100;
-      // Only authenticated teacher who assigned the quest can view submissions
-      allow read: if isAuthenticated() && (resource.data.teacherId == request.auth.uid);
-      allow update, delete: if isAuthenticated() && (resource.data.teacherId == request.auth.uid);
     }
   }
 }

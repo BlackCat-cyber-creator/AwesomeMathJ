@@ -301,7 +301,8 @@ export const ALL_CHAPTERS_INDEX = [
       "Tabel Distribusi Frekuensi: Menyajikan data dalam bentuk kolom kategori dan angka frekuensi (banyaknya data) sehingga mudah dibaca secara ringkas.",
       "Piktogram (Diagram Gambar): Diagram yang menyajikan data menggunakan simbol atau gambar tertentu, di mana setiap satu gambar mewakili sejumlah kuantitas tertentu (misal: 1 gambar buku mewakili 10 buah buku).",
       "Diagram Batang: Menyajikan data menggunakan batang-batang persegi panjang dengan tinggi sesuai frekuensi masing-masing kategori.",
-      "Membaca & Menginterpretasikan Data: Mengidentifikasi nilai tertinggi (modus), nilai terendah, menghitung selisih antardua kategori, dan menjumlahkan total seluruh data."
+      "Membaca & Menginterpretasikan Data: Mengidentifikasi kategori dengan data terbanyak dan paling sedikit, mengurutkan data, menghitung selisih antardua kategori, dan menjumlahkan total seluruh data.",
+      "Kemungkinan Kejadian: Dalam percobaan acak (misalnya mengambil kelereng tanpa melihat), kejadian yang didukung oleh lebih banyak benda atau hasil lebih mungkin terjadi. Contoh: dari 9 kelereng merah dan 3 kelereng biru, kelereng merah lebih mungkin terambil."
     ],
     "tutorTip": "Selalu perhatikan 'Keterangan Kunci' di bagian bawah diagram piktogram untuk mengetahui satu gambar mewakili berapa buah benda!",
     "questionCount": 20
@@ -368,11 +369,11 @@ export const ALL_CHAPTERS_INDEX = [
     "track": null,
     "coreConcepts": [
       "Ciri-Ciri Kubus dan Balok:\n- Memiliki 6 sisi, 12 rusuk, dan 8 titik sudut.\n- Kubus: Keenam sisinya berbentuk persegi yang sama dan sebangun (kongruen).\n- Balok: Memiliki 3 pasang sisi berbentuk persegi panjang yang saling berhadapan dan kongruen.",
-      "Jaring-Jaring Kubus dan Balok: Pola susunan 6 persegi (kubus) atau 6 persegi panjang (balok) pada bidang datar yang jika dilipat mengikuti garis rusuknya akan membentuk bangun ruang tertutup yang sempurna tanpa tumpang tindih.",
-      "Luas Permukaan:\n- Kubus dengan rusuk $s$: $L = 6 \\times s^2$.\n- Balok dengan panjang $p$, lebar $l$, dan tinggi $t$: $L = 2 \\times (p \\cdot l + p \\cdot t + l \\cdot t)$.",
-      "Volume (Kapasitas Isi Ruang):\n- Kubus: $V = s \\times s \\times s = s^3$.\n- Balok: $V = p \\times l \\times t$."
+      "Menyusun dan Mengurai: Kubus dan balok dapat disusun dari kubus-kubus satuan, dan dapat diurai (dibuka) menjadi jaring-jaring berupa 6 persegi (kubus) atau 6 persegi panjang (balok). Tidak semua susunan 6 persegi dapat dilipat menjadi kubus.",
+      "Visualisasi Spasial: Bangun ruang dapat digambarkan dari tampak depan, tampak samping, dan tampak atas. Kubus tampak persegi dari ketiga arah, sedangkan balok dapat tampak sebagai persegi panjang.",
+      "Volume dengan Kubus Satuan: Volume adalah banyak kubus satuan yang mengisi bangun ruang. Untuk balok: hitung kubus pada satu lapis (panjang × lebar), lalu kalikan dengan banyak lapis (tinggi), sehingga $V = p \\times l \\times t$. Untuk kubus: $V = s \\times s \\times s$."
     ],
-    "tutorTip": "Ingat: Luas permukaan kubus dikalikan 6 karena kubus memiliki 6 sisi berbentuk persegi yang sama luasnya: $6 \\times (s \\times s)$!",
+    "tutorTip": "Saat menghitung volume, bayangkan kotak diisi kubus-kubus kecil lapis demi lapis: hitung satu lapis dulu, lalu kalikan dengan banyak lapisnya!",
     "questionCount": 20
   },
   {
@@ -384,11 +385,12 @@ export const ALL_CHAPTERS_INDEX = [
     "title": "Bab 4: Peluang",
     "track": null,
     "coreConcepts": [
-      "Tingkat Kepastian Peristiwa:\n- Peristiwa Pasti: Kejadian yang sudah pasti terjadi (nilai peluang $= 1$), contoh: manusia pasti bernapas membutuhkan oksigen.\n- Peristiwa Mungkin: Kejadian yang bisa terjadi atau bisa tidak terjadi (nilai peluang antara 0 dan 1), contoh: besok sore turun hujan.\n- Peristiwa Mustahil: Kejadian yang tidak mungkin terjadi (nilai peluang $= 0$), contoh: matahari terbit dari arah barat.",
-      "Titik Sampel dan Ruang Sampel: Ruang sampel ($S$) adalah himpunan semua hasil yang mungkin dari suatu percobaan. Titik sampel adalah setiap anggota kemungkinan dalam ruang sampel. Contoh: pelemparan koin memiliki ruang sampel $\\{\\text{Angka}, \\text{Gambar}\\}$ dengan $n(S) = 2$.",
-      "Peluang Sederhana: Rasio antara banyaknya kejadian yang diharapkan ($n(A)$) terhadap seluruh ruang sampel ($n(S)$): $P(A) = \\frac{n(A)}{n(S)}$."
+      "Pasti, Mungkin, dan Mustahil:\n- Pasti terjadi: kejadian yang selalu terjadi, contoh: matahari terbit dari timur.\n- Mungkin terjadi: kejadian yang bisa terjadi atau tidak, contoh: besok sore turun hujan.\n- Mustahil terjadi: kejadian yang tidak mungkin terjadi, contoh: mendapat mata dadu 7 dari satu dadu biasa.",
+      "Mendaftar Hasil yang Mungkin: Sebelum membandingkan, tuliskan semua hasil yang dapat muncul. Koin: Angka atau Gambar (2 hasil). Dadu: 1, 2, 3, 4, 5, 6 (6 hasil). Kantong berisi 4 kelereng merah dan 2 kelereng biru: 6 kelereng yang masing-masing bisa terambil.",
+      "Membandingkan Kemungkinan: Kejadian yang didukung oleh lebih banyak hasil atau benda lebih mungkin terjadi. Jika banyaknya sama, kedua kejadian sama mungkin. Contoh: pada dadu, \"muncul kurang dari 5\" (1, 2, 3, 4) lebih mungkin daripada \"muncul lebih dari 4\" (5, 6).",
+      "Percobaan Adil: Sebuah undian adil jika setiap peserta memiliki kemungkinan yang sama. Hasil percobaan nyata bisa sedikit berbeda dari perkiraan (misalnya koin dilempar 20 kali menghasilkan 11 Angka dan 9 Gambar), dan itu wajar."
     ],
-    "tutorTip": "Ingat rumus sederhana peluang: 'Jumlah yang dicari dibagi Jumlah seluruhnya!' Misalnya ada 3 kelereng merah dari total 10 kelereng, peluangnya langsung $\\frac{3}{10}$!",
+    "tutorTip": "Biasakan menulis daftar semua hasil yang mungkin sebelum menjawab. Setelah daftar lengkap, cukup bandingkan mana yang hasilnya lebih banyak.",
     "questionCount": 20
   },
   {

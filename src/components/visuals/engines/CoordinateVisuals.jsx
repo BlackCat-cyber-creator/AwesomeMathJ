@@ -27,7 +27,8 @@ export function CartesianPlotVisual({
     allCoords.push({ x: arrow.from.x, y: arrow.from.y });
     allCoords.push({ x: arrow.to.x, y: arrow.to.y });
   }
-  if (targetPoint) allCoords.push({ x: targetPoint.x, y: targetPoint.y });
+  const targetHasPosition = targetPoint && targetPoint.x != null && targetPoint.y != null;
+  if (targetHasPosition) allCoords.push({ x: targetPoint.x, y: targetPoint.y });
   if (mirrorLine && mirrorLine.type === 'x=h' && mirrorLine.val != null) {
     allCoords.push({ x: mirrorLine.val, y: 0 });
   }
@@ -153,7 +154,16 @@ export function CartesianPlotVisual({
       })}
 
       {/* Titik Bayangan Target yang Dicari (?) */}
-      {targetPoint && (() => {
+      {targetPoint && !targetHasPosition && (
+        // Tanpa koordinat: hanya label pertanyaan, agar posisi jawaban tidak terbaca dari grid
+        <g transform={`translate(${width - 62}, 18)`}>
+          <rect x="-54" y="-10" width="108" height="20" rx="4" fill={VISUAL_THEME.accentSoft} stroke={VISUAL_THEME.accent} strokeWidth="1.25" />
+          <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="900" fill={VISUAL_THEME.accentDark}>
+            {targetPoint.label || "?"}
+          </text>
+        </g>
+      )}
+      {targetHasPosition && (() => {
         const tp = toCanvas(targetPoint.x, targetPoint.y);
         return (
           <g>

@@ -1,477 +1,215 @@
-import React, { useState, useEffect, useMemo, useRef } from 'react';
-import { 
-  getStudents, 
-  saveStudents, 
-  addStudent, 
-  deleteStudent,
-  getQuests, 
-  saveQuests, 
-  createQuest, 
-  deleteQuest, 
-  formatIndonesianDate, 
-  getDefaultDeadlineDate,
-  exportAllData,
-  importAllData,
-  resetToDefaultDemoData
-} from '../utils/storage';
-import { 
-  subscribeStudents, 
-  addStudentCloud, 
+import React, { useEffect, useMemo, useState } from 'react';
+import { UserPlus, Pencil, Trash2, Search } from 'lucide-react';
+import {
+  subscribeStudents,
+  saveStudentCloud,
   deleteStudentCloud,
-  subscribeQuests, 
-  createQuestCloud, 
-  deleteQuestCloud,
-  migrateLocalDataToCloud
+  subscribeQuests,
+  createQuestCloud,
+  deleteQuestCloud
 } from '../firebase/firestore';
-import { CURRICULUM_DATA, getLoadedGradeData, getGradeData } from '../data/curriculumData';
-import { getRecommendedChapter } from '../data/academicCalendar';
-import { TeacherHeader } from './teacher/TeacherHeader';
-import { QuestGeneratorTab } from './teacher/QuestGeneratorTab';
-import { StudentCrmTab } from './teacher/StudentCrmTab';
-import { QuestMonitorTab } from './teacher/QuestMonitorTab';
-import { PR_PACKETS } from './teacher/teacherConstants';
+import { formatIndonesianDate } from '../utils/storage';
+import { buildWhatsAppMessage, normalizePhone, trackLabel } from '../utils/questBuilder';
+import { StudentForm } from './teacher/StudentForm';
+import { AssignHomework } from './teacher/AssignHomework';
+import { HomeworkList } from './teacher/HomeworkList';
 
-export { PR_PACKETS };
-
-const DEFAULT_CHAPTER_MAP = CURRICULUM_DATA.reduce((acc, g) => {
-  if (g && g.chapters && g.chapters.length > 0) {
-    acc[g.grade] = g.chapters[0].id;
-  }
-  return acc;
-}, {});
-
-function getDefaultChapterForGrade(grade) {
-  return DEFAULT_CHAPTER_MAP[Number(grade)] || "sd4-bab1-bilangan-cacah";
+function pendingCount(quests, studentId) {
+  return quests.filter((q) => q.studentId === studentId && q.status !== 'completed').length;
 }
 
-export function TeacherDashboard({ 
-  onLaunchQuest, 
-  onPrintQuest, 
-  activeTab, 
-  setActiveTab, 
-  onSignOut, 
-  currentTeacher 
-}) {
-  const [students, setStudents] = useState(() => getStudents());
-  const [quests, setQuests] = useState(() => getQuests());
-  const [isCloudConnected, setIsCloudConnected] = useState(true);
+/**
+ * Studio Guru: satu halaman berbasis murid.
+ * Kiri: daftar murid. Kanan: data murid, kirim PR (1 bab = 1 PR), dan riwayat PR.
+ * Firestore adalah satu-satunya sumber data.
+ */
+export function TeacherDashboard({ onLaunchQuest, onPrintQuest, currentTeacher }) {
+  const teacherId = currentTeacher?.uid || null;
+  const teacherName = currentTeacher?.displayName || currentTeacher?.email?.split('@')[0] || 'Guru';
 
-  // Active Teacher ID
-  const teacherId = (currentTeacher?.uid && currentTeacher.uid !== "teacher-offline")
-    ? currentTeacher.uid
-    : "teacher-demo";
+  const [students, setStudents] = useState([]);
+  const [quests, setQuests] = useState([]);
+  const [isLoading, setIsLoading] = useState(true);
+  const [connectionError, setConnectionError] = useState('');
+  const [selectedId, setSelectedId] = useState(null);
+  const [formMode, setFormMode] = useState(null); // null | 'add' | 'edit'
+  const [search, setSearch] = useState('');
 
-  // Real-time Firestore synchronization for students and quests
   useEffect(() => {
-    // Subscribe to Students
-    const unsubStudents = subscribeStudents(
-      teacherId,
-      (cloudStudents) => {
-        if (cloudStudents) {
-          setStudents(cloudStudents);
-          saveStudents(cloudStudents);
-        }
-        setIsCloudConnected(true);
-      },
-      (err) => {
-        console.warn("Firestore students listener error:", err);
-        setIsCloudConnected(false);
-      }
-    );
-
-    // Subscribe to Quests
-    const unsubQuests = subscribeQuests(
-      teacherId,
-      (cloudQuests) => {
-        if (cloudQuests) {
-          setQuests(cloudQuests);
-          saveQuests(cloudQuests);
-        }
-        setIsCloudConnected(true);
-      },
-      (err) => {
-        console.warn("Firestore quests listener error:", err);
-        setIsCloudConnected(false);
-      }
-    );
-
+    if (!teacherId) return undefined;
+    const onError = () => setConnectionError('Tidak bisa terhubung ke database. Periksa internet lalu muat ulang halaman.');
+    const unsubStudents = subscribeStudents(teacherId, (list) => {
+      setStudents(list);
+      setIsLoading(false);
+      setConnectionError('');
+    }, onError);
+    const unsubQuests = subscribeQuests(teacherId, setQuests, onError);
     return () => {
       unsubStudents();
       unsubQuests();
     };
   }, [teacherId]);
 
-  // Quest Generator state - 4 segments (5 questions per packet)
-  const [targetStudentId, setTargetStudentId] = useState(() => students[0]?.id || "");
-  const [generatorGrade, setGeneratorGrade] = useState(() => students[0]?.grade || 4);
-  const [generatorChapterId, setGeneratorChapterId] = useState(() => getDefaultChapterForGrade(students[0]?.grade || 4));
-  const [selectedPacket, setSelectedPacket] = useState(1);
-  const [deadline, setDeadline] = useState(() => getDefaultDeadlineDate());
-  const [copiedNotification, setCopiedNotification] = useState(false);
-  const [createdQuestInfo, setCreatedQuestInfo] = useState(null);
+  const selected = students.find((s) => s.id === selectedId) || students[0] || null;
 
-  // New Student modal/form state
-  const [showAddStudent, setShowAddStudent] = useState(false);
-  const [newStudentName, setNewStudentName] = useState("");
-  const [newStudentGrade, setNewStudentGrade] = useState(4);
-  const [newStudentSchool, setNewStudentSchool] = useState("");
-  const [newStudentParentPhone, setNewStudentParentPhone] = useState("");
-  const [newStudentNotes, setNewStudentNotes] = useState("");
+  const filteredStudents = useMemo(() => {
+    const term = search.trim().toLowerCase();
+    if (!term) return students;
+    return students.filter((s) => `${s.name} ${s.school || ''} kelas ${s.grade}`.toLowerCase().includes(term));
+  }, [students, search]);
 
-  // Target student helper
-  const targetStudent = useMemo(() => {
-    return students.find((s) => s.id === targetStudentId) || students[0] || null;
-  }, [students, targetStudentId]);
+  const studentQuests = useMemo(
+    () => (selected ? quests.filter((q) => q.studentId === selected.id) : []),
+    [quests, selected]
+  );
 
-  // Handle student selection change
-  const handleStudentChange = (e) => {
-    const sId = e.target.value;
-    setTargetStudentId(sId);
-    const found = students.find((s) => s.id === sId);
-    if (found) {
-      setGeneratorGrade(found.grade);
-      setGeneratorChapterId(getDefaultChapterForGrade(found.grade));
-    }
+  // ---- Murid ----
+  const handleSaveStudent = async (data) => {
+    const saved = await saveStudentCloud(teacherId, {
+      ...data,
+      level: data.grade <= 6 ? 'SD' : data.grade <= 9 ? 'SMP' : 'SMA'
+    });
+    setSelectedId(saved.id);
+    setFormMode(null);
   };
 
-  // Grade data for generator
-  const genGradeData = useMemo(() => {
-    const full = getLoadedGradeData(generatorGrade);
-    if (full && full.grade === Number(generatorGrade)) return full;
-    return CURRICULUM_DATA.find((g) => g.grade === Number(generatorGrade)) || CURRICULUM_DATA[0];
-  }, [generatorGrade]);
-
-  // Fetch full grade questions in background if not yet loaded
-  useEffect(() => {
-    getGradeData(generatorGrade).catch(console.warn);
-  }, [generatorGrade]);
-
-  // Recommended chapter from academic calendar
-  const recChapterForGen = useMemo(() => {
-    const rec = getRecommendedChapter(generatorGrade);
-    if (!rec) return null;
-    const ch = genGradeData.chapters[rec.chapterIndex];
-    if (!ch) return null;
-    return {
-      ...ch,
-      babNumber: rec.chapterIndex + 1,
-      timeLabel: rec.pacing.label
-    };
-  }, [generatorGrade, genGradeData]);
-
-  // Check which packets have already been assigned
-  const assignedPacketsForTarget = useMemo(() => {
-    if (!targetStudentId || !generatorChapterId) return [];
-    return quests.reduce((acc, q) => {
-      if (q.studentId === targetStudentId && q.chapterId === generatorChapterId) {
-        acc.push(q.packetIndex || 1);
-      }
-      return acc;
-    }, []);
-  }, [quests, targetStudentId, generatorChapterId]);
-
-  // Recommend packet
-  const recommendedPacketForTarget = useMemo(() => {
-    for (let i = 1; i <= 4; i++) {
-      if (!assignedPacketsForTarget.includes(i)) return i;
-    }
-    return 1;
-  }, [assignedPacketsForTarget]);
-
-  // Sync selectedPacket when recommendedPacketForTarget changes
-  const prevRecPacketRef = useRef(recommendedPacketForTarget);
-  useEffect(() => {
-    if (prevRecPacketRef.current !== recommendedPacketForTarget) {
-      setSelectedPacket(recommendedPacketForTarget);
-      prevRecPacketRef.current = recommendedPacketForTarget;
-    }
-  }, [recommendedPacketForTarget]);
-
-  // Generate WhatsApp message text
-  const getWhatsAppShareText = (quest) => {
-    const origin = window.location.origin;
-    const questUrl = `${origin}/quest/${quest.id}`;
-    const trackInfo = quest.trackLabel ? ` [${quest.trackLabel}]` : "";
-    const packetInfo = quest.packetIndex ? `\n🎯 *Paket Soal*: Paket ${quest.packetIndex} (${quest.packetRange || '5 Butir Soal'})` : "";
-    const deadlineText = quest.deadline ? `\n📅 *Tenggat*: ${formatIndonesianDate(quest.deadline)}` : "";
-
-    const rawChapterTitle = (quest.chapterTitle || "").trim();
-    const chapterPrefix = rawChapterTitle.toLowerCase().startsWith("bab") ? "" : "Bab ";
-    const formattedChapter = `*${rawChapterTitle}*`;
-    const teacherDisplayName = currentTeacher?.displayName || "Pengajar";
-
-    return `Halo *${quest.studentName}* & Bapak/Ibu Wali Murid,\n\nBerikut link tugas latihan matematika dari *${teacherDisplayName}*:\n📚 *Materi*: ${chapterPrefix}${formattedChapter}${trackInfo}${packetInfo}${deadlineText}\n\nSilakan buka tautan berikut untuk mulai mengerjakan:\n🔗 ${questUrl}\n\n📌 *Petunjuk Pengerjaan*:\n1. Langsung dibuka di browser HP/laptop (tanpa perlu instal aplikasi).\n2. Tersedia *Papan Cakar Digital* di layar untuk corat-coret hitungan.\n3. Nilai & coretan otomatis tersimpan langsung ke evaluasi guru.\n\nSemangat belajar! Hubungi kami jika ada kendala ya. 🔥\n\nSalam hangat,\n*${teacherDisplayName} — AwesomeMathJ*`;
+  const handleDeleteStudent = async (student) => {
+    const count = quests.filter((q) => q.studentId === student.id).length;
+    const extra = count ? ` Riwayat ${count} PR-nya juga akan dihapus.` : '';
+    if (!window.confirm(`Hapus murid "${student.name}"?${extra}`)) return;
+    await Promise.all(quests.filter((q) => q.studentId === student.id).map((q) => deleteQuestCloud(q.id)));
+    await deleteStudentCloud(teacherId, student.id);
+    setSelectedId(null);
   };
 
-  const copyWhatsAppMessage = (quest) => {
-    const text = getWhatsAppShareText(quest);
-    navigator.clipboard.writeText(text);
-    setCopiedNotification(true);
-    setTimeout(() => setCopiedNotification(false), 3000);
-  };
+  // ---- PR ----
+  const handleCreateQuest = (payload) => createQuestCloud(teacherId, payload);
 
-  const openWhatsAppWeb = (quest) => {
-    const text = encodeURIComponent(getWhatsAppShareText(quest));
+  const messageFor = (quest) => buildWhatsAppMessage({
+    quest,
+    teacherName,
+    origin: window.location.origin,
+    formatDate: formatIndonesianDate
+  });
+
+  const handleShareWhatsApp = (quest) => {
     const student = students.find((s) => s.id === quest.studentId);
-    let cleanPhone = (student?.parentPhone || "").replace(/\D/g, '');
-    if (cleanPhone.startsWith('0')) {
-      cleanPhone = '62' + cleanPhone.slice(1);
-    }
-    
-    let url = `https://api.whatsapp.com/send?text=${text}`;
-    if (cleanPhone) {
-      url = `https://api.whatsapp.com/send?phone=${cleanPhone}&text=${text}`;
-    }
-    window.open(url, '_blank');
+    const phone = normalizePhone(student?.parentPhone);
+    const text = encodeURIComponent(messageFor(quest));
+    const url = phone ? `https://wa.me/${phone}?text=${text}` : `https://wa.me/?text=${text}`;
+    window.open(url, '_blank', 'noopener');
   };
 
-  // Create Quest
-  const handleCreateQuest = async () => {
-    if (!targetStudent) {
-      alert("Silakan pilih murid terlebih dahulu.");
-      return;
-    }
+  const handleCopyMessage = (quest) => navigator.clipboard.writeText(messageFor(quest));
 
-    const fullGrade = await getGradeData(generatorGrade);
-    const chapter = fullGrade?.chapters?.find((c) => c.id === generatorChapterId);
-    if (!chapter || !chapter.questions || chapter.questions.length === 0) {
-      alert("Materi bab ini sedang disiapkan atau tidak memiliki soal.");
-      return;
-    }
-
-    const packetDef = PR_PACKETS.find((p) => p.index === selectedPacket) || PR_PACKETS[0];
-    const startIndex = (packetDef.index - 1) * 5;
-    const selectedQuestions = chapter.questions.slice(startIndex, startIndex + 5);
-
-    if (selectedQuestions.length === 0) {
-      alert("Tidak ada butir soal dalam rentang paket ini.");
-      return;
-    }
-
-    const newQuestPayload = {
-      title: `Quest: ${chapter.title} - ${packetDef.title}`,
-      grade: generatorGrade,
-      chapterId: chapter.id,
-      chapterTitle: chapter.title,
-      track: chapter.track || null,
-      trackLabel: chapter.trackLabel || null,
-      category: "PR",
-      studentId: targetStudent.id,
-      studentName: targetStudent.name,
-      deadline: deadline || getDefaultDeadlineDate(),
-      packetIndex: packetDef.index,
-      packetRange: packetDef.range,
-      packetTitle: packetDef.title,
-      questions: selectedQuestions
-    };
-
-    const saved = createQuest(newQuestPayload);
-    createQuestCloud(teacherId, saved).catch((err) => {
-      console.warn("Gagal menyimpan quest ke Firestore:", err);
-    });
-
-    setQuests(getQuests());
-    setCreatedQuestInfo({
-      ...saved,
-      shareText: getWhatsAppShareText(saved)
-    });
-  };
-
-  // Student CRUD
-  const handleAddStudentSubmit = async (e) => {
-    e.preventDefault();
-    if (!newStudentName.trim()) return;
-
-    const studentPayload = {
-      name: newStudentName.trim(),
-      grade: newStudentGrade,
-      level: newStudentGrade <= 6 ? "SD" : newStudentGrade <= 9 ? "SMP" : "SMA",
-      school: newStudentSchool.trim() || null,
-      parentPhone: newStudentParentPhone.trim() || null,
-      notes: newStudentNotes.trim() || null
-    };
-
-    const created = addStudent(studentPayload);
-    addStudentCloud(teacherId, created).catch((err) => {
-      console.warn("Gagal menambah murid di Firestore:", err);
-    });
-
-    setStudents(getStudents());
-    setShowAddStudent(false);
-    setNewStudentName("");
-    setNewStudentSchool("");
-    setNewStudentParentPhone("");
-    setNewStudentNotes("");
-    setTargetStudentId(created.id);
-  };
-
-  const handleDeleteStudent = (studentId) => {
-    deleteStudent(studentId);
-    deleteStudentCloud(teacherId, studentId).catch((err) => {
-      console.warn("Gagal menghapus murid di Firestore:", err);
-    });
-    setStudents(getStudents());
-  };
-
-  const handleAssignToStudent = (student, specificChapterId = null) => {
-    setTargetStudentId(student.id);
-    setGeneratorGrade(student.grade);
-    if (specificChapterId) {
-      setGeneratorChapterId(specificChapterId);
-    } else {
-      setGeneratorChapterId(getDefaultChapterForGrade(student.grade));
-    }
-    setActiveTab('generator');
-  };
-
-  // Seed demo data manually if requested
-  const handleSeedDemoData = async () => {
-    const demo = resetToDefaultDemoData();
-    setStudents(demo.students);
-    setQuests(demo.quests);
-    try {
-      await migrateLocalDataToCloud(teacherId, demo.students, demo.quests);
-    } catch (e) {
-      console.warn("Demo migration failed:", e);
-    }
-  };
-
-  // Quest Deletion
-  const handleDeleteQuest = (questId) => {
-    deleteQuest(questId);
-    deleteQuestCloud(questId).catch((err) => {
-      console.warn("Gagal menghapus quest di Firestore:", err);
-    });
-    setQuests(getQuests());
-  };
-
-  // KPI Statistics for Monitor
-  const historyStats = useMemo(() => {
-    const total = quests.length;
-    const completed = quests.filter((q) => q.status === "completed").length;
-    const inProgress = quests.filter((q) => q.status === "in_progress").length;
-    const assigned = quests.filter((q) => q.status === "assigned" || !q.status).length;
-    const completedWithScore = quests.filter((q) => q.status === "completed" && q.lastScore !== undefined);
-    const avgScore = completedWithScore.length > 0
-      ? Math.round(completedWithScore.reduce((acc, q) => acc + (q.lastScore || 100), 0) / completedWithScore.length)
-      : null;
-
-    return { total, completed, inProgress, assigned, avgScore };
-  }, [quests]);
-
-  // Export JSON
-  const handleExportData = () => {
-    const data = exportAllData();
-    const blob = new Blob([JSON.stringify(data, null, 2)], { type: "application/json" });
-    const url = URL.createObjectURL(blob);
-    const a = document.createElement("a");
-    a.href = url;
-    a.download = `AwesomeMathJ_Backup_${new Date().toISOString().split("T")[0]}.json`;
-    a.click();
-    URL.revokeObjectURL(url);
-  };
-
-  // Import JSON
-  const handleImportData = (e) => {
-    const file = e.target.files[0];
-    if (!file) return;
-    const reader = new FileReader();
-    reader.onload = async (event) => {
-      try {
-        const parsed = JSON.parse(event.target.result);
-        importAllData(parsed);
-        setStudents(getStudents());
-        setQuests(getQuests());
-        await migrateLocalDataToCloud(teacherId, getStudents(), getQuests());
-        alert("Data berhasil diimpor!");
-      } catch (err) {
-        alert("Gagal mengimpor file: " + err.message);
-      }
-    };
-    reader.readAsText(file);
-  };
+  if (!teacherId) return null;
 
   return (
-    <div className="handbook-container">
-      {/* Header and Tabs Component */}
-      <TeacherHeader
-        currentTeacher={currentTeacher}
-        isCloudConnected={isCloudConnected}
-        activeTab={activeTab}
-        setActiveTab={setActiveTab}
-        onSignOut={onSignOut}
-        studentCount={students.length}
-        questCount={quests.length}
-      />
+    <div className="handbook-container studio">
+      {connectionError && <div className="studio-banner-error">{connectionError}</div>}
 
-      {/* TAB 1: GENERATOR PR */}
-      {activeTab === 'generator' && (
-        <QuestGeneratorTab
-          students={students}
-          targetStudentId={targetStudentId}
-          onStudentChange={handleStudentChange}
-          generatorGrade={generatorGrade}
-          setGeneratorGrade={setGeneratorGrade}
-          generatorChapterId={generatorChapterId}
-          setGeneratorChapterId={setGeneratorChapterId}
-          genGradeData={genGradeData}
-          recChapterForGen={recChapterForGen}
-          selectedPacket={selectedPacket}
-          setSelectedPacket={setSelectedPacket}
-          assignedPacketsForTarget={assignedPacketsForTarget}
-          recommendedPacketForTarget={recommendedPacketForTarget}
-          deadline={deadline}
-          setDeadline={setDeadline}
-          onCreateQuest={handleCreateQuest}
-          createdQuestInfo={createdQuestInfo}
-          copiedNotification={copiedNotification}
-          onCopyWhatsApp={copyWhatsAppMessage}
-          onOpenWhatsAppWeb={openWhatsAppWeb}
-          onLaunchQuest={onLaunchQuest}
-          onPrintQuest={onPrintQuest}
-        />
-      )}
+      <div className="studio-layout">
+        {/* ---------- Daftar murid ---------- */}
+        <aside className="editorial-card studio-sidebar">
+          <div className="studio-sidebar-head">
+            <h2 className="studio-heading">Murid ({students.length})</h2>
+            <button className="btn btn-royal" onClick={() => setFormMode('add')}>
+              <UserPlus size={15} /> Tambah
+            </button>
+          </div>
 
-      {/* TAB 2: CRM MURID */}
-      {activeTab === 'students' && (
-        <StudentCrmTab
-          students={students}
-          quests={quests}
-          showAddStudent={showAddStudent}
-          setShowAddStudent={setShowAddStudent}
-          newStudentName={newStudentName}
-          setNewStudentName={setNewStudentName}
-          newStudentGrade={newStudentGrade}
-          setNewStudentGrade={setNewStudentGrade}
-          newStudentSchool={newStudentSchool}
-          setNewStudentSchool={setNewStudentSchool}
-          newStudentParentPhone={newStudentParentPhone}
-          setNewStudentParentPhone={setNewStudentParentPhone}
-          newStudentNotes={newStudentNotes}
-          setNewStudentNotes={setNewStudentNotes}
-          onAddStudentSubmit={handleAddStudentSubmit}
-          onAssignToStudent={handleAssignToStudent}
-          onDeleteStudent={handleDeleteStudent}
-          onSeedDemoData={handleSeedDemoData}
-        />
-      )}
+          {students.length > 5 && (
+            <label className="studio-search">
+              <Search size={14} />
+              <input value={search} onChange={(e) => setSearch(e.target.value)} placeholder="Cari murid..." />
+            </label>
+          )}
 
-      {/* TAB 3: RIWAYAT / MONITOR */}
-      {activeTab === 'history' && (
-        <QuestMonitorTab
-          quests={quests}
-          students={students}
-          historyStats={historyStats}
-          onLaunchQuest={onLaunchQuest}
-          onPrintQuest={onPrintQuest}
-          onDeleteQuest={handleDeleteQuest}
-          onOpenWhatsAppWeb={openWhatsAppWeb}
-          onSwitchToGenerator={() => setActiveTab('generator')}
-          onExportData={handleExportData}
-          onImportData={handleImportData}
-          onResetDemoData={handleSeedDemoData}
-        />
-      )}
+          {isLoading ? (
+            <p className="studio-muted">Memuat murid...</p>
+          ) : students.length === 0 ? (
+            <p className="studio-muted">Belum ada murid. Klik <strong>Tambah</strong> untuk mulai.</p>
+          ) : (
+            <ul className="studio-student-list">
+              {filteredStudents.map((s) => {
+                const pending = pendingCount(quests, s.id);
+                return (
+                  <li key={s.id}>
+                    <button
+                      className={`studio-student-btn ${selected?.id === s.id ? 'is-active' : ''}`}
+                      onClick={() => { setSelectedId(s.id); setFormMode(null); }}
+                    >
+                      <span className="studio-student-name">{s.name}</span>
+                      <span className="studio-muted">
+                        Kelas {s.grade}{s.track && s.track !== 'reguler' ? ` · ${s.track.toUpperCase()}` : ''}
+                      </span>
+                      {pending > 0 && <span className="studio-pill" title="PR belum selesai">{pending}</span>}
+                    </button>
+                  </li>
+                );
+              })}
+            </ul>
+          )}
+        </aside>
+
+        {/* ---------- Panel murid ---------- */}
+        <div className="studio-main">
+          {formMode === 'add' && (
+            <StudentForm onSave={handleSaveStudent} onCancel={() => setFormMode(null)} />
+          )}
+          {formMode === 'edit' && selected && (
+            <StudentForm key={selected.id} student={selected} onSave={handleSaveStudent} onCancel={() => setFormMode(null)} />
+          )}
+
+          {!formMode && selected && (
+            <>
+              <section className="editorial-card studio-card">
+                <div className="studio-profile-head">
+                  <div>
+                    <h2 className="studio-heading">{selected.name}</h2>
+                    <p className="studio-muted">
+                      Kelas {selected.grade}{selected.school ? ` · ${selected.school}` : ''} · {trackLabel(selected.track)}
+                    </p>
+                  </div>
+                  <div className="studio-actions studio-actions-compact">
+                    <button className="btn btn-subtle" onClick={() => setFormMode('edit')}>
+                      <Pencil size={14} /> Ubah
+                    </button>
+                    <button className="btn btn-subtle studio-danger" onClick={() => handleDeleteStudent(selected)}>
+                      <Trash2 size={14} /> Hapus
+                    </button>
+                  </div>
+                </div>
+                {(selected.parentPhone || selected.notes) && (
+                  <dl className="studio-profile-details">
+                    {selected.parentPhone && (<><dt>WhatsApp ortu</dt><dd>{selected.parentPhone}</dd></>)}
+                    {selected.notes && (<><dt>Catatan</dt><dd>{selected.notes}</dd></>)}
+                  </dl>
+                )}
+              </section>
+
+              <AssignHomework
+                key={`${selected.id}-${selected.grade}-${selected.track}`}
+                student={selected}
+                quests={quests}
+                onCreate={handleCreateQuest}
+                onShareWhatsApp={handleShareWhatsApp}
+                onCopyMessage={handleCopyMessage}
+                onPrint={onPrintQuest}
+                onOpen={(q) => onLaunchQuest(q.id)}
+              />
+
+              <HomeworkList
+                quests={studentQuests}
+                onShareWhatsApp={handleShareWhatsApp}
+                onPrint={onPrintQuest}
+                onOpen={(q) => onLaunchQuest(q.id)}
+                onDelete={(id) => deleteQuestCloud(id)}
+              />
+            </>
+          )}
+        </div>
+      </div>
     </div>
   );
 }

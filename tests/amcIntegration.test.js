@@ -67,21 +67,21 @@ describe('AMC UI Integration: Mode Switching & Parameter Synchronization', () =>
     expect(parsed.grade).toBe(4);
   });
 
-  it('should construct clean bidirectional query URLs for school and AMC modes', () => {
+  it('should construct clean SEO paths for school and AMC modes', () => {
     const schoolUrl = PublicHandbook.buildUrl({
       mode: 'school',
       grade: 8,
       chapter: 'smp8-bab1-pola-bilangan'
     });
-    expect(schoolUrl).toBe('/?grade=8&chapter=smp8-bab1-pola-bilangan');
-    expect(schoolUrl).not.toContain('mode=');
+    expect(schoolUrl).toBe('/matematika/kelas-8/bab1-pola-bilangan');
+    expect(schoolUrl).not.toContain('?');
 
     const amcUrl = PublicHandbook.buildUrl({
       mode: 'amc',
       level: 10,
       chapter: 'amc10-ch1-advanced-combinatorics'
     });
-    expect(amcUrl).toBe('/?mode=amc&level=10&chapter=amc10-ch1-advanced-combinatorics');
+    expect(amcUrl).toBe('/olimpiade/amc-10/ch1-advanced-combinatorics');
   });
 });
 

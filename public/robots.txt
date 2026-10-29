@@ -1,0 +1,11 @@
+# Materi publik boleh diindeks; Studio Guru, link PR murid, lembar kerja,
+# dan halaman kunci jawaban tidak diindeks.
+User-agent: *
+Allow: /
+Disallow: /teacher
+Disallow: /quest/
+Disallow: /worksheet
+Disallow: /solution/
+Disallow: /app.html
+
+Sitemap: https://awesomemathj.vercel.app/sitemap.xml

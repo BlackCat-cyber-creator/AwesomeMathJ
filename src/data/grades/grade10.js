@@ -196,7 +196,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Gunakan sifat: $^a\\log b - ^a\\log c = ^a\\log (b/c)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$^2\\log 32 - ^2\\log 4 = ^2\\log \\left(\\frac{32}{4}\\right) = ^2\\log 8 = 3$$\\nNilainya adalah **3** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$^2\\log 32 - ^2\\log 4 = ^2\\log \\left(\\frac{32}{4}\\right) = ^2\\log 8 = 3$$\nNilainya adalah **3** (Opsi B)."
         },
         {
           "id": "sma10-b1-6",
@@ -223,7 +223,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Pangkatkan pembilang $(x^2)^2 y^{-6} = x^4 y^{-6}$, lalu kurangkan eksponen penyebut.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{x^4 y^{-6}}{x^{-1} y^2} = x^{4 - (-1)} y^{-6 - 2} = x^5 y^{-8} = \\frac{x^5}{y^8}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{x^4 y^{-6}}{x^{-1} y^2} = x^{4 - (-1)} y^{-6 - 2} = x^5 y^{-8} = \\frac{x^5}{y^8}$$ (Opsi D)."
         },
         {
           "id": "sma10-b1-7",
@@ -250,7 +250,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Ubah 32 menjadi $2^5$, lalu samakan eksponennya.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$2^{3x - 1} = 2^5 \\implies 3x - 1 = 5 \\implies 3x = 6 \\implies x = 2$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2^{3x - 1} = 2^5 \\implies 3x - 1 = 5 \\implies 3x = 6 \\implies x = 2$$ (Opsi C)."
         },
         {
           "id": "sma10-b1-8",
@@ -277,7 +277,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Faktorkan $12 = 2^2 \\times 3$. Gunakan sifat penjumlahan logaritma.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$^3\\log 12 = ^3\\log (2^2 \\times 3) = 2(^3\\log 2) + ^3\\log 3 = 2a + 1$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$^3\\log 12 = ^3\\log (2^2 \\times 3) = 2(^3\\log 2) + ^3\\log 3 = 2a + 1$$ (Opsi B)."
         },
         {
           "id": "sma10-b1-9",
@@ -304,7 +304,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Gunakan sifat perkalian berantai logaritma: $^a\\log b \\cdot ^b\\log c = ^a\\log c$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$^2\\log 3 \\cdot ^3\\log 5 \\cdot ^5\\log 8 = ^2\\log 8 = 3$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$^2\\log 3 \\cdot ^3\\log 5 \\cdot ^5\\log 8 = ^2\\log 8 = 3$$ (Opsi A)."
         },
         {
           "id": "sma10-b1-10",
@@ -331,7 +331,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Kalikan dengan sekawan: $\\frac{\\sqrt{7} + 2}{\\sqrt{7} + 2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{6(\\sqrt{7} + 2)}{7 - 4} = \\frac{6(\\sqrt{7} + 2)}{3} = 2\\sqrt{7} + 4$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{6(\\sqrt{7} + 2)}{7 - 4} = \\frac{6(\\sqrt{7} + 2)}{3} = 2\\sqrt{7} + 4$$ (Opsi D)."
         },
         {
           "id": "sma10-b1-11",
@@ -358,7 +358,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Eksponen harus sama dengan nol karena $5^0 = 1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x^2 - 3x - 4 = 0 \\implies (x - 4)(x + 1) = 0 \\implies x = 4 \\text{ atau } x = -1$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x^2 - 3x - 4 = 0 \\implies (x - 4)(x + 1) = 0 \\implies x = 4 \\text{ atau } x = -1$$ (Opsi A)."
         },
         {
           "id": "sma10-b1-12",
@@ -385,7 +385,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Rumus bunga majemuk: $M_3 = M_0 (1 + i)^3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$M_3 = 10.000.000 \\times (1{,}1)^3 = 10.000.000 \\times 1{,}331 = \\text{Rp}13.310.000,00$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$M_3 = 10.000.000 \\times (1{,}1)^3 = 10.000.000 \\times 1{,}331 = \\text{Rp}13.310.000,00$$ (Opsi D)."
         },
         {
           "id": "sma10-b1-13",
@@ -412,7 +412,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Periode $n = 16 / 4 = 4$. Rumus: $M = 160 \\times (1/2)^4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$M = 160 \\times \\left(\\frac{1}{2}\\right)^4 = 160 \\times \\frac{1}{16} = 10\\text{ gram}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$M = 160 \\times \\left(\\frac{1}{2}\\right)^4 = 160 \\times \\frac{1}{16} = 10\\text{ gram}$$ (Opsi D)."
         },
         {
           "id": "sma10-b1-14",
@@ -439,7 +439,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "$\\log 18 = \\log (2 \\times 3^2) = \\log 2 + 2\\log 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\log 18 = 0{,}3010 + 2(0{,}4771) = 0{,}3010 + 0{,}9542 = 1{,}2552$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\log 18 = 0{,}3010 + 2(0{,}4771) = 0{,}3010 + 0{,}9542 = 1{,}2552$$ (Opsi C)."
         },
         {
           "id": "sma10-b1-15",
@@ -466,7 +466,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Gabungkan logaritma: $(x+6)(x-3) = 10$. Periksa syarat numerus $x > 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. $x^2 + 3x - 18 = 10 \\implies x^2 + 3x - 28 = 0 \\implies (x + 7)(x - 4) = 0$\\n2. Syarat numerus: $x > 3$, sehingga yang memenuhi hanya $x = 4$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x^2 + 3x - 18 = 10 \\implies x^2 + 3x - 28 = 0 \\implies (x + 7)(x - 4) = 0$\n2. Syarat numerus: $x > 3$, sehingga yang memenuhi hanya $x = 4$ (Opsi B)."
         },
         {
           "id": "sma10-b1-16",
@@ -493,7 +493,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Misalkan $y = 3^x$, persamaan menjadi $y^2 - 12y + 27 = 0$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. $(y - 3)(y - 9) = 0 \\implies y = 3$ atau $y = 9$\\n2. $3^x = 3 \\implies x = 1$ dan $3^x = 9 \\implies x = 2$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $(y - 3)(y - 9) = 0 \\implies y = 3$ atau $y = 9$\n2. $3^x = 3 \\implies x = 1$ dan $3^x = 9 \\implies x = 2$ (Opsi C)."
         },
         {
           "id": "sma10-b1-17",
@@ -520,7 +520,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Ubah basis ke 3: $^{15}\\log 20 = \\frac{^3\\log 20}{^3\\log 15}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$^{15}\\log 20 = \\frac{2(^3\\log 2) + ^3\\log 5}{^3\\log 3 + ^3\\log 5} = \\frac{\\frac{2}{a} + b}{1 + b} = \\frac{2 + ab}{a(1 + b)}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$^{15}\\log 20 = \\frac{2(^3\\log 2) + ^3\\log 5}{^3\\log 3 + ^3\\log 5} = \\frac{\\frac{2}{a} + b}{1 + b} = \\frac{2 + ab}{a(1 + b)}$$ (Opsi B)."
         },
         {
           "id": "sma10-b1-18",
@@ -547,7 +547,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Ubah ke basis 3: $3^{-(2x - 1)} \\le 3^3 \\implies -2x + 1 \\le 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$-2x + 1 \\le 3 \\implies -2x \\le 2 \\implies x \\ge -1$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-2x + 1 \\le 3 \\implies -2x \\le 2 \\implies x \\ge -1$$ (Opsi C)."
         },
         {
           "id": "sma10-b1-19",
@@ -574,7 +574,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Selesaikan $x - 2 < 2^3 = 8$ dengan syarat numerus $x - 2 > 0$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. $x - 2 < 8 \\implies x < 10$\\n2. Syarat numerus: $x > 2$\\n3. Irisan: $2 < x < 10$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $x - 2 < 8 \\implies x < 10$\n2. Syarat numerus: $x > 2$\n3. Irisan: $2 < x < 10$ (Opsi B)."
         },
         {
           "id": "sma10-b1-20",
@@ -601,7 +601,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Faktorkan persamaan kuadrat terhadap $^x\\log 2$: $(^x\\log 2 - 1)(^x\\log 2 - 2) = 0$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. $^x\\log 2 = 1 \\implies x = 2$\\n2. $^x\\log 2 = 2 \\implies x^2 = 2 \\implies x = \\sqrt{2}$\\n3. Jumlah $= 2 + \\sqrt{2}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $^x\\log 2 = 1 \\implies x = 2$\n2. $^x\\log 2 = 2 \\implies x^2 = 2 \\implies x = \\sqrt{2}$\n3. Jumlah $= 2 + \\sqrt{2}$ (Opsi A)."
         }
       ]
     },
@@ -788,7 +788,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Gunakan rumus $U_n = a + (n - 1)b$ dengan $a = 3$ dan $b = 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$U_{15} = 3 + 14(4) = 3 + 56 = 59$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$U_{15} = 3 + 14(4) = 3 + 56 = 59$$ (Opsi C)."
         },
         {
           "id": "sma10-b2-6",
@@ -815,7 +815,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Gunakan rumus $S_n = \\frac{n}{2}(2a + (n - 1)b)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$S_{20} = 10(2(4) + 19(3)) = 10(8 + 57) = 650$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_{20} = 10(2(4) + 19(3)) = 10(8 + 57) = 650$$ (Opsi B)."
         },
         {
           "id": "sma10-b2-7",
@@ -842,7 +842,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Rumus $U_n = a r^{n-1}$ dengan $a = 2$ dan $r = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$U_7 = 2 \\times 3^6 = 2 \\times 729 = 1.458$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$U_7 = 2 \\times 3^6 = 2 \\times 729 = 1.458$$ (Opsi A)."
         },
         {
           "id": "sma10-b2-8",
@@ -869,7 +869,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Rumus $S_\\infty = \\frac{a}{1 - r}$ dengan $a = 18$ dan $r = 1/3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$S_\\infty = \\frac{18}{1 - \\frac{1}{3}} = 18 \\times \\frac{3}{2} = 27$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_\\infty = \\frac{18}{1 - \\frac{1}{3}} = 18 \\times \\frac{3}{2} = 27$$ (Opsi C)."
         },
         {
           "id": "sma10-b2-9",
@@ -896,7 +896,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$5b = U_8 - U_3 = 15 \\implies b = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$a = 11 - 2(3) = 5, \\quad b = 3$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$a = 11 - 2(3) = 5, \\quad b = 3$$ (Opsi B)."
         },
         {
           "id": "sma10-b2-10",
@@ -923,7 +923,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$5 + (n - 1)4 = 121 \\implies 4(n - 1) = 116$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$n - 1 = 29 \\implies n = 30$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$n - 1 = 29 \\implies n = 30$$ (Opsi B)."
         },
         {
           "id": "sma10-b2-11",
@@ -950,7 +950,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Rumus pantulan bola: $S = h \\times \\frac{b + a}{b - a}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$S = 12 \\times \\frac{3 + 2}{3 - 2} = 12 \\times 5 = 60\\text{ meter}$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S = 12 \\times \\frac{3 + 2}{3 - 2} = 12 \\times 5 = 60\\text{ meter}$$ (Opsi C)."
         },
         {
           "id": "sma10-b2-12",
@@ -977,7 +977,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$S_{12} = 6(2(15) + 11(3))$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$S_{12} = 6(30 + 33) = 6 \\times 63 = 378\\text{ kursi}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_{12} = 6(30 + 33) = 6 \\times 63 = 378\\text{ kursi}$$ (Opsi A)."
         },
         {
           "id": "sma10-b2-13",
@@ -1004,7 +1004,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Total gaji $= 12 \\times S_5$ (deret aritmetika tahunan).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. $S_5 = \\frac{5}{2}(8.000.000 + 4(200.000)) = 22.000.000$\\n2. Total $= 12 \\times 22.000.000 = \\text{Rp}264.000.000,00$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $S_5 = \\frac{5}{2}(8.000.000 + 4(200.000)) = 22.000.000$\n2. Total $= 12 \\times 22.000.000 = \\text{Rp}264.000.000,00$ (Opsi D)."
         },
         {
           "id": "sma10-b2-14",
@@ -1031,7 +1031,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Hasil kali tiga suku berurutan geometri: $(U_2)^3 = 216$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$a^3 = 216 \\implies a = 6$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$a^3 = 216 \\implies a = 6$$ (Opsi A)."
         },
         {
           "id": "sma10-b2-15",
@@ -1058,7 +1058,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "$U_8 = S_8 - S_7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$S_8 = 2(64) + 24 = 152, \\quad S_7 = 2(49) + 21 = 119 \\implies U_8 = 33$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_8 = 2(64) + 24 = 152, \\quad S_7 = 2(49) + 21 = 119 \\implies U_8 = 33$$ (Opsi C)."
         },
         {
           "id": "sma10-b2-16",
@@ -1085,7 +1085,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Rumus rasio sisipan: $r' = \\sqrt[k+1]{\\frac{b}{a}}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$r' = \\sqrt[4]{\\frac{48}{3}} = \\sqrt[4]{16} = 2$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$r' = \\sqrt[4]{\\frac{48}{3}} = \\sqrt[4]{16} = 2$$ (Opsi D)."
         },
         {
           "id": "sma10-b2-17",
@@ -1112,7 +1112,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$\\frac{S_{\\text{ganjil}}}{S} = \\frac{1}{1 + r} = \\frac{18}{24} = \\frac{3}{4}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$3(1 + r) = 4 \\implies 3r = 1 \\implies r = \\frac{1}{3}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3(1 + r) = 4 \\implies 3r = 1 \\implies r = \\frac{1}{3}$$ (Opsi B)."
         },
         {
           "id": "sma10-b2-18",
@@ -1139,7 +1139,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$3 r^5 = 96 \\implies r = 2$. Cari $S_6$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$S_6 = \\frac{3(2^6 - 1)}{2 - 1} = 3(63) = 189\\text{ cm}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$S_6 = \\frac{3(2^6 - 1)}{2 - 1} = 3(63) = 189\\text{ cm}$$ (Opsi D)."
         },
         {
           "id": "sma10-b2-19",
@@ -1166,7 +1166,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Syarat geometri: $(k + 1)^2 = (k - 2)(2k + 2)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$k^2 + 2k + 1 = 2k^2 - 2k - 4 \\implies k^2 - 4k - 5 = 0 \\implies k = 5$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$k^2 + 2k + 1 = 2k^2 - 2k - 4 \\implies k^2 - 4k - 5 = 0 \\implies k = 5$$ (Opsi C)."
         },
         {
           "id": "sma10-b2-20",
@@ -1193,7 +1193,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$U_n = n^2 + n$. Jumlahkan $\\sum n^2 + \\sum n$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{10 \\times 11 \\times 21}{6} + \\frac{10 \\times 11}{2} = 385 + 55 = 440$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{10 \\times 11 \\times 21}{6} + \\frac{10 \\times 11}{2} = 385 + 55 = 440$$ (Opsi D)."
         }
       ]
     },
@@ -1380,7 +1380,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Rumus $|\\vec{v}| = \\sqrt{x^2 + y^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$|\\vec{v}| = \\sqrt{6^2 + (-8)^2} = \\sqrt{100} = 10$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$|\\vec{v}| = \\sqrt{6^2 + (-8)^2} = \\sqrt{100} = 10$$ (Opsi C)."
         },
         {
           "id": "sma10-b3-6",
@@ -1407,7 +1407,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Jumlahkan komponen $\\vec{i}$ dan $\\vec{j}$ secara terpisah.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$2(3\\vec{i} - 2\\vec{j}) + 3(-\\vec{i} + 5\\vec{j}) = 3\\vec{i} + 11\\vec{j}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2(3\\vec{i} - 2\\vec{j}) + 3(-\\vec{i} + 5\\vec{j}) = 3\\vec{i} + 11\\vec{j}$$ (Opsi D)."
         },
         {
           "id": "sma10-b3-7",
@@ -1434,7 +1434,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "$\\vec{AB} = B - A$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\vec{AB} = \\begin{pmatrix} 7 - 2 \\\\ 9 - (-3) \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 12 \\end{pmatrix}$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\vec{AB} = \\begin{pmatrix} 7 - 2 \\\\ 9 - (-3) \\end{pmatrix} = \\begin{pmatrix} 5 \\\\ 12 \\end{pmatrix}$$ (Opsi C)."
         },
         {
           "id": "sma10-b3-8",
@@ -1461,7 +1461,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$\\vec{u} \\cdot \\vec{v} = x_1 x_2 + y_1 y_2 + z_1 z_2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\vec{u} \\cdot \\vec{v} = 12 - 12 + 5 = 5$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\vec{u} \\cdot \\vec{v} = 12 - 12 + 5 = 5$$ (Opsi D)."
         },
         {
           "id": "sma10-b3-9",
@@ -1488,7 +1488,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Bagi komponen vektor dengan panjangnya ($|\\vec{a}| = 5$).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\vec{e} = \\frac{1}{5}\\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix} = \\begin{pmatrix} \\frac{3}{5} \\\\ \\frac{4}{5} \\end{pmatrix}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\vec{e} = \\frac{1}{5}\\begin{pmatrix} 3 \\\\ 4 \\end{pmatrix} = \\begin{pmatrix} \\frac{3}{5} \\\\ \\frac{4}{5} \\end{pmatrix}$$ (Opsi B)."
         },
         {
           "id": "sma10-b3-10",
@@ -1515,7 +1515,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Syarat tegak lurus: $\\vec{p} \\cdot \\vec{q} = 0$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$6x - 12 = 0 \\implies x = 2$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$6x - 12 = 0 \\implies x = 2$$ (Opsi A)."
         },
         {
           "id": "sma10-b3-11",
@@ -1542,7 +1542,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$\\cos \\theta = \\frac{\\vec{a} \\cdot \\vec{b}}{|\\vec{a}||\\vec{b}|}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\cos \\theta = \\frac{1}{\\sqrt{1} \\cdot \\sqrt{2}} = \\frac{1}{2}\\sqrt{2} \\implies \\theta = 45^\\circ$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\cos \\theta = \\frac{1}{\\sqrt{1} \\cdot \\sqrt{2}} = \\frac{1}{2}\\sqrt{2} \\implies \\theta = 45^\\circ$$ (Opsi D)."
         },
         {
           "id": "sma10-b3-12",
@@ -1569,7 +1569,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Rumus $|\\vec{c}| = \\frac{\\vec{u} \\cdot \\vec{v}}{|\\vec{v}|}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{2(3) + 4(4)}{\\sqrt{3^2 + 4^2}} = \\frac{22}{5}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2(3) + 4(4)}{\\sqrt{3^2 + 4^2}} = \\frac{22}{5}$$ (Opsi B)."
         },
         {
           "id": "sma10-b3-13",
@@ -1596,7 +1596,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$M = \\frac{2B + A}{3}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$M = \\left(\\frac{14+1}{3}, \\frac{20+4}{3}\\right) = (5, 8)$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$M = \\left(\\frac{14+1}{3}, \\frac{20+4}{3}\\right) = (5, 8)$$ (Opsi A)."
         },
         {
           "id": "sma10-b3-14",
@@ -1623,7 +1623,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Resultan Pythagoras: $v = \\sqrt{8^2 + 6^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$v = \\sqrt{64 + 36} = 10\\text{ m/s}$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$v = \\sqrt{64 + 36} = 10\\text{ m/s}$$ (Opsi C)."
         },
         {
           "id": "sma10-b3-15",
@@ -1650,7 +1650,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$\\vec{a} \\cdot \\vec{b} = |\\vec{a}||\\vec{b}| \\cos 60^\\circ$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\vec{a} \\cdot \\vec{b} = 4 \\times 6 \\times \\frac{1}{2} = 12$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\vec{a} \\cdot \\vec{b} = 4 \\times 6 \\times \\frac{1}{2} = 12$$ (Opsi B)."
         },
         {
           "id": "sma10-b3-16",
@@ -1677,7 +1677,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Identitas jajar genjang: $|\\vec{u} + \\vec{v}|^2 + |\\vec{u} - \\vec{v}|^2 = 2(|\\vec{u}|^2 + |\\vec{v}|^2)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$|\\vec{u} + \\vec{v}|^2 + 49 = 2(25 + 9) = 68 \\implies |\\vec{u} + \\vec{v}| = \\sqrt{19}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$|\\vec{u} + \\vec{v}|^2 + 49 = 2(25 + 9) = 68 \\implies |\\vec{u} + \\vec{v}| = \\sqrt{19}$$ (Opsi A)."
         },
         {
           "id": "sma10-b3-17",
@@ -1704,7 +1704,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$\\vec{p} = \\frac{\\vec{a} \\cdot \\vec{b}}{|\\vec{b}|^2} \\vec{b}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\vec{p} = \\frac{4}{5}\\begin{pmatrix} 2 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} \\frac{8}{5} \\\\ \\frac{4}{5} \\end{pmatrix}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\vec{p} = \\frac{4}{5}\\begin{pmatrix} 2 \\\\ 1 \\end{pmatrix} = \\begin{pmatrix} \\frac{8}{5} \\\\ \\frac{4}{5} \\end{pmatrix}$$ (Opsi A)."
         },
         {
           "id": "sma10-b3-18",
@@ -1731,7 +1731,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Rasio vektor: $\\vec{BC} = 2\\vec{AB}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x - 2 = 2(1) \\implies x = 4; \\quad y - 5 = 2(2) \\implies y = 9 \\implies x + y = 13$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x - 2 = 2(1) \\implies x = 4; \\quad y - 5 = 2(2) \\implies y = 9 \\implies x + y = 13$$ (Opsi C)."
         },
         {
           "id": "sma10-b3-19",
@@ -1758,7 +1758,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Vektor posisi titik tengah $D = \\frac{B + C}{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\vec{AD} = \\frac{1}{2}(\\vec{u} + \\vec{v})$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\vec{AD} = \\frac{1}{2}(\\vec{u} + \\vec{v})$$ (Opsi B)."
         },
         {
           "id": "sma10-b3-20",
@@ -1785,7 +1785,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Resultan gaya $F_1$ dan $F_2$: $R = \\sqrt{F_1^2 + F_2^2 + 2F_1 F_2 \\cos 60^\\circ}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$R = \\sqrt{100 + 100 + 100} = \\sqrt{300} = 10\\sqrt{3}\\text{ N}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R = \\sqrt{100 + 100 + 100} = \\sqrt{300} = 10\\sqrt{3}\\text{ N}$$ (Opsi D)."
         }
       ]
     },
@@ -1860,7 +1860,22 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Cari sisi miring $AC$ dengan Pythagoras: $\\sqrt{8^2 + 6^2} = 10$. Sisi depan sudut $A$ adalah $BC = 6$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sisi miring $AC = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = 10\\text{ cm}$.\n2. Sisi depan sudut $A$ adalah $BC = 6\\text{ cm}$.\n3. Nilai sinus:\n$$\\sin \\angle A = \\frac{\\text{depan}}{\\text{miring}} = \\frac{6}{10} = \\frac{3}{5}$$\nNilai $\\sin \\angle A$ adalah **$\\frac{3}{5}$** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sisi miring $AC = \\sqrt{8^2 + 6^2} = \\sqrt{64 + 36} = 10\\text{ cm}$.\n2. Sisi depan sudut $A$ adalah $BC = 6\\text{ cm}$.\n3. Nilai sinus:\n$$\\sin \\angle A = \\frac{\\text{depan}}{\\text{miring}} = \\frac{6}{10} = \\frac{3}{5}$$\nNilai $\\sin \\angle A$ adalah **$\\frac{3}{5}$** (Opsi B).",
+          "visual": {
+            "type": "right-triangle",
+            "props": {
+              "title": "Segitiga Siku-Siku ABC",
+              "caption": "*Siku-siku di B. Menentukan sin ∠A = depan (BC) / miring (AC)",
+              "baseLabel": "AB = 8 cm",
+              "heightLabel": "BC = 6 cm",
+              "hypLabel": "AC = ? cm",
+              "vertices": {
+                "right": "B",
+                "top": "C",
+                "far": "A"
+              }
+            }
+          }
         },
         {
           "id": "sma10-b4-2",
@@ -1968,7 +1983,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$\\cos 60^\\circ = 1/2$ dan $\\sin 30^\\circ = 1/2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{1}{2} + \\frac{1}{2} = 1$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{1}{2} + \\frac{1}{2} = 1$$ (Opsi D)."
         },
         {
           "id": "sma10-b4-6",
@@ -1995,7 +2010,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Tripel Pythagoras 3-4-5, sisi samping $= 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\tan A = \\frac{\\text{depan}}{\\text{samping}} = \\frac{3}{4}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\tan A = \\frac{\\text{depan}}{\\text{samping}} = \\frac{3}{4}$$ (Opsi A)."
         },
         {
           "id": "sma10-b4-7",
@@ -2022,7 +2037,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$\\sin(180^\\circ - 30^\\circ) = \\sin 30^\\circ = \\frac{1}{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\sin 150^\\circ = \\frac{1}{2}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\sin 150^\\circ = \\frac{1}{2}$$ (Opsi B)."
         },
         {
           "id": "sma10-b4-8",
@@ -2049,7 +2064,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Kuadran III: $\\cos(180^\\circ + 60^\\circ) = -\\cos 60^\\circ = -\\frac{1}{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\cos 240^\\circ = -\\frac{1}{2}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\cos 240^\\circ = -\\frac{1}{2}$$ (Opsi B)."
         },
         {
           "id": "sma10-b4-9",
@@ -2076,7 +2091,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$1 - \\sin^2 \\theta = \\cos^2 \\theta$ dan $1 + \\tan^2 \\theta = \\sec^2 \\theta$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\cos^2 \\theta \\times \\frac{1}{\\cos^2 \\theta} = 1$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\cos^2 \\theta \\times \\frac{1}{\\cos^2 \\theta} = 1$$ (Opsi D)."
         },
         {
           "id": "sma10-b4-10",
@@ -2103,7 +2118,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$\\tan 45^\\circ = t / 30 \\implies t = 30$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$t = 30 \\times \\tan 45^\\circ = 30\\text{ meter}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = 30 \\times \\tan 45^\\circ = 30\\text{ meter}$$ (Opsi B)."
         },
         {
           "id": "sma10-b4-11",
@@ -2130,7 +2145,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Aturan sinus: $\\frac{a}{\\sin A} = \\frac{b}{\\sin B}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$b = \\frac{6 \\times \\sin 45^\\circ}{\\sin 30^\\circ} = \\frac{6 \\times \\frac{1}{2}\\sqrt{2}}{\\frac{1}{2}} = 6\\sqrt{2}\\text{ cm}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$b = \\frac{6 \\times \\sin 45^\\circ}{\\sin 30^\\circ} = \\frac{6 \\times \\frac{1}{2}\\sqrt{2}}{\\frac{1}{2}} = 6\\sqrt{2}\\text{ cm}$$ (Opsi A)."
         },
         {
           "id": "sma10-b4-12",
@@ -2157,7 +2172,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Aturan cosinus: $a^2 = b^2 + c^2 - 2bc\\cos 60^\\circ$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$a^2 = 25 + 64 - 80(1/2) = 49 \\implies a = 7\\text{ cm}$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$a^2 = 25 + 64 - 80(1/2) = 49 \\implies a = 7\\text{ cm}$$ (Opsi C)."
         },
         {
           "id": "sma10-b4-13",
@@ -2184,7 +2199,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Luas $= \\frac{1}{2} a b \\sin C$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L = \\frac{1}{2} \\times 10 \\times 12 \\times \\sin 30^\\circ = 60 \\times \\frac{1}{2} = 30\\text{ cm}^2$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = \\frac{1}{2} \\times 10 \\times 12 \\times \\sin 30^\\circ = 60 \\times \\frac{1}{2} = 30\\text{ cm}^2$$ (Opsi D)."
         },
         {
           "id": "sma10-b4-14",
@@ -2211,7 +2226,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Di Kuadran II, cosinus bernilai negatif: $-3/5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\cos \\alpha = -\\frac{3}{5}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\cos \\alpha = -\\frac{3}{5}$$ (Opsi D)."
         },
         {
           "id": "sma10-b4-15",
@@ -2238,7 +2253,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$\\sin 120^\\circ = \\frac{1}{2}\\sqrt{3}, \\cos 300^\\circ = \\frac{1}{2}, \\tan 225^\\circ = 1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{\\frac{1}{2}\\sqrt{3} \\times \\frac{1}{2}}{1} = \\frac{1}{4}\\sqrt{3}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{\\frac{1}{2}\\sqrt{3} \\times \\frac{1}{2}}{1} = \\frac{1}{4}\\sqrt{3}$$ (Opsi A)."
         },
         {
           "id": "sma10-b4-16",
@@ -2265,7 +2280,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Sudut apit $B$ adalah $120^\\circ$. Gunakan aturan cosinus.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$AC = \\sqrt{400 + 400 - 800(-1/2)} = \\sqrt{1.200} = 20\\sqrt{3}\\text{ mil}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$AC = \\sqrt{400 + 400 - 800(-1/2)} = \\sqrt{1.200} = 20\\sqrt{3}\\text{ mil}$$ (Opsi A)."
         },
         {
           "id": "sma10-b4-17",
@@ -2292,7 +2307,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Samakan penyebut: $\\frac{\\sin^2 x + (1 + \\cos x)^2}{(1 + \\cos x)\\sin x}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{2 + 2\\cos x}{(1 + \\cos x)\\sin x} = \\frac{2}{\\sin x} = 2\\csc x$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2 + 2\\cos x}{(1 + \\cos x)\\sin x} = \\frac{2}{\\sin x} = 2\\csc x$$ (Opsi C)."
         },
         {
           "id": "sma10-b4-18",
@@ -2319,7 +2334,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$\\sin x = \\frac{1}{2}\\sqrt{3}$ di Kuadran I dan II.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x = 60^\\circ \\text{ dan } x = 180^\\circ - 60^\\circ = 120^\\circ$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x = 60^\\circ \\text{ dan } x = 180^\\circ - 60^\\circ = 120^\\circ$$ (Opsi B)."
         },
         {
           "id": "sma10-b4-19",
@@ -2346,7 +2361,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Sudut terbesar di depan sisi 7. Aturan cosinus: $\\cos C = \\frac{25 + 36 - 49}{60}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\cos C = \\frac{12}{60} = \\frac{1}{5}$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\cos C = \\frac{12}{60} = \\frac{1}{5}$$ (Opsi C)."
         },
         {
           "id": "sma10-b4-20",
@@ -2373,7 +2388,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$\\sin 75^\\circ = \\cos 15^\\circ$. Gunakan $\\sin^2 \\theta + \\cos^2 \\theta = 1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\sin^2 15^\\circ + \\cos^2 15^\\circ = 1$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\sin^2 15^\\circ + \\cos^2 15^\\circ = 1$$ (Opsi A)."
         }
       ]
     },
@@ -2449,7 +2464,7 @@ export const grade10Data = {
           "id": "sma10-b5-2",
           "category": "Latihan",
           "difficulty": "Dasar",
-          "question": "Dari sistem persamaan pada soal sebelumnya, nilai dari $z$ adalah...",
+          "question": "Jika diketahui sistem persamaan:\n$$\\begin{cases} x + y + z = 9 \\\\ x + 2y + z = 12 \\\\ x + y + 3z = 17 \\end{cases}$$\nMaka nilai $z$ adalah...",
           "options": [
             {
               "key": "A",
@@ -2551,7 +2566,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Uji titik $(1, 2)$: $2(1) + 3(2) = 8 \\le 12$ (benar).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$2(1) + 3(2) = 8 \\le 12$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2(1) + 3(2) = 8 \\le 12$$ (Opsi A)."
         },
         {
           "id": "sma10-b5-6",
@@ -2578,7 +2593,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Kurangkan pers 2 dengan pers 1: $y = 2$. Lalu selesaikan untuk $x$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. $y = 2 \\implies x + z = 4$\\n2. $2x - 2 + z = 3 \\implies 2x + z = 5$\\n3. $x = 5 - 4 = 1$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $y = 2 \\implies x + z = 4$\n2. $2x - 2 + z = 3 \\implies 2x + z = 5$\n3. $x = 5 - 4 = 1$ (Opsi B)."
         },
         {
           "id": "sma10-b5-7",
@@ -2605,7 +2620,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Kalikan kuantitas masing-masing buah dengan variabel harga.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$2x + y + 3z = 87.000$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2x + y + 3z = 87.000$$ (Opsi C)."
         },
         {
           "id": "sma10-b5-8",
@@ -2632,7 +2647,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Syarat $x \\ge 0$ dan $y \\ge 0$ membatasi daerah hanya di Kuadran I.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nDaerah berada di **Kuadran I** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nDaerah berada di **Kuadran I** (Opsi B)."
         },
         {
           "id": "sma10-b5-9",
@@ -2659,7 +2674,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Uji $f(2, 3) = 3(2) + 4(3) = 18$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$f(2, 3) = 6 + 12 = 18$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$f(2, 3) = 6 + 12 = 18$$ (Opsi C)."
         },
         {
           "id": "sma10-b5-10",
@@ -2686,7 +2701,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Masukkan $y=0 \\implies x=2$ dan $x=0 \\implies y=-3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nTitik potongnya adalah **(2, 0) dan (0, -3)** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTitik potongnya adalah **(2, 0) dan (0, -3)** (Opsi D)."
         },
         {
           "id": "sma10-b5-11",
@@ -2713,7 +2728,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$A + (A - 2) + (A - 7) = 45 \\implies 3A = 54$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$A = 18\\text{ tahun}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$A = 18\\text{ tahun}$$ (Opsi A)."
         },
         {
           "id": "sma10-b5-12",
@@ -2740,7 +2755,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Kapasitas: $x + y \\le 100$. Modal: $15.000x + 10.000y \\le 1.200.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x + y \\le 100, \\quad 3x + 2y \\le 240, \\quad x \\ge 0, y \\ge 0$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x + y \\le 100, \\quad 3x + 2y \\le 240, \\quad x \\ge 0, y \\ge 0$$ (Opsi C)."
         },
         {
           "id": "sma10-b5-13",
@@ -2767,7 +2782,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Jumlahkan ketiga persamaan: $2(x + y + z) = 18$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x + y + z = 9$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x + y + z = 9$$ (Opsi C)."
         },
         {
           "id": "sma10-b5-14",
@@ -2794,7 +2809,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$6x + 24y \\le 360 \\implies x + 4y \\le 60$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x + y \\le 30, \\quad x + 4y \\le 60, \\quad x \\ge 0, y \\ge 0$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x + y \\le 30, \\quad x + 4y \\le 60, \\quad x \\ge 0, y \\ge 0$$ (Opsi D)."
         },
         {
           "id": "sma10-b5-15",
@@ -2821,7 +2836,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Uji titik pojok $(8, 0)$ dan $(0, 4)$. $Z(0, 4) = 8$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$Z_{\\min} = 5(0) + 2(4) = 8$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Z_{\\min} = 5(0) + 2(4) = 8$$ (Opsi A)."
         },
         {
           "id": "sma10-b5-16",
@@ -2848,7 +2863,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Misalkan $a, b, c$. Jumlahkan: $a + b + c = 9 \\implies x = 1/2, y = 1/3, z = 1/4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x + y + z = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{4} = \\frac{13}{12}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x + y + z = \\frac{1}{2} + \\frac{1}{3} + \\frac{1}{4} = \\frac{13}{12}$$ (Opsi B)."
         },
         {
           "id": "sma10-b5-17",
@@ -2875,7 +2890,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Uji $(20, 50)$: $40.000(20) + 30.000(50) = 800.000 + 1.500.000 = 2.300.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nKeuntungan maksimum adalah **Rp2.300.000,00** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKeuntungan maksimum adalah **Rp2.300.000,00** (Opsi B)."
         },
         {
           "id": "sma10-b5-18",
@@ -2902,7 +2917,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Jumlahkan pers 1 dan 2: $3x + y + 0z = 7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nKoefisien $z$ harus cocok: $a = 0$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKoefisien $z$ harus cocok: $a = 0$ (Opsi D)."
         },
         {
           "id": "sma10-b5-19",
@@ -2929,7 +2944,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$x^2 - 2x - 3 = 0 \\implies x = 3$ atau $x = -1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x = 3 \\implies y = 5; \\quad x = -1 \\implies y = -3$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x = 3 \\implies y = 5; \\quad x = -1 \\implies y = -3$$ (Opsi A)."
         },
         {
           "id": "sma10-b5-20",
@@ -2956,7 +2971,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Susun sistem: $3A + C = 13$ dan $10A + 6C = 62$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$10A + 6(13 - 3A) = 62 \\implies 8A = 16 \\implies A = 2 \\implies C = 7$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$10A + 6(13 - 3A) = 62 \\implies 8A = 16 \\implies A = 2 \\implies C = 7$$ (Opsi D)."
         }
       ]
     },
@@ -3138,7 +3153,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$x_p = -b / (2a) = 6 / 2 = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x = -\\frac{-6}{2} = 3$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x = -\\frac{-6}{2} = 3$$ (Opsi B)."
         },
         {
           "id": "sma10-b6-6",
@@ -3165,7 +3180,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "$x_p = 2$, lalu $f(2) = 4 - 8 - 5 = -9$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nPuncak berada di **(2, -9)** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPuncak berada di **(2, -9)** (Opsi C)."
         },
         {
           "id": "sma10-b6-7",
@@ -3192,7 +3207,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "$(x - 2)(x - 3) = 0 \\implies x = 2$ atau $x = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n**(2, 0) dan (3, 0)** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n**(2, 0) dan (3, 0)** (Opsi C)."
         },
         {
           "id": "sma10-b6-8",
@@ -3219,7 +3234,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$D = b^2 - 4ac = 16 - 24 = -8$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$D = (-4)^2 - 4(2)(3) = -8$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$D = (-4)^2 - 4(2)(3) = -8$$ (Opsi D)."
         },
         {
           "id": "sma10-b6-9",
@@ -3246,7 +3261,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Kurva selalu bernilai positif untuk setiap $x$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nSifat ini dinamakan **definit positif** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSifat ini dinamakan **definit positif** (Opsi A)."
         },
         {
           "id": "sma10-b6-10",
@@ -3273,7 +3288,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$f(x) = a(x - 1)^2 - 4$. Melalui $(0, -3) \\implies a = 1$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$f(x) = (x - 1)^2 - 4 = x^2 - 2x - 3$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$f(x) = (x - 1)^2 - 4 = x^2 - 2x - 3$$ (Opsi A)."
         },
         {
           "id": "sma10-b6-11",
@@ -3300,7 +3315,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$t_{\\max} = -40 / (2 \\times -5) = 4$ detik. $h(4) = 160 - 80 = 80$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$h(4) = 40(4) - 5(16) = 80\\text{ meter}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$h(4) = 40(4) - 5(16) = 80\\text{ meter}$$ (Opsi D)."
         },
         {
           "id": "sma10-b6-12",
@@ -3327,7 +3342,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "$p + 2l = 80 \\implies L(l) = l(80 - 2l)$. Puncak di $l = 20, p = 40$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L_{\\max} = 40 \\times 20 = 800\\text{ m}^2$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L_{\\max} = 40 \\times 20 = 800\\text{ m}^2$$ (Opsi C)."
         },
         {
           "id": "sma10-b6-13",
@@ -3354,7 +3369,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$P(x) = x(x - 10) = x^2 - 10x$. Minimum di $x = 5 \\implies P(5) = -25$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P_{\\min} = 5(5 - 10) = -25$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P_{\\min} = 5(5 - 10) = -25$$ (Opsi B)."
         },
         {
           "id": "sma10-b6-14",
@@ -3381,7 +3396,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$h(t) = a t(t - 6)$. $45 = a(3)(-3) \\implies a = -5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$h(t) = -5t(t - 6) = -5t^2 + 30t$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$h(t) = -5t(t - 6) = -5t^2 + 30t$$ (Opsi D)."
         },
         {
           "id": "sma10-b6-15",
@@ -3408,7 +3423,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Masukkan nilai $x = 0 \\implies f(0) = c$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nTitik potong sumbu-Y adalah **(0, c)** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nTitik potong sumbu-Y adalah **(0, c)** (Opsi C)."
         },
         {
           "id": "sma10-b6-16",
@@ -3435,7 +3450,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$x^2 - 6x + (10 - k) = 0$. Syarat menyinggung $D = 0 \\implies 36 - 4(10 - k) = 0$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$36 - 40 + 4k = 0 \\implies 4k = 4 \\implies k = 1$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$36 - 40 + 4k = 0 \\implies 4k = 4 \\implies k = 1$$ (Opsi A)."
         },
         {
           "id": "sma10-b6-17",
@@ -3462,7 +3477,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Syarat definit negatif: $a < 0$ dan $D < 0$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n1. $m < 1$\\n2. $16 - 4(m - 1)^2 < 0 \\implies (m - 1)^2 > 4 \\implies m > 3$ atau $m < -1$\\n3. Irisan: $m < -1$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $m < 1$\n2. $16 - 4(m - 1)^2 < 0 \\implies (m - 1)^2 > 4 \\implies m > 3$ atau $m < -1$\n3. Irisan: $m < -1$ (Opsi C)."
         },
         {
           "id": "sma10-b6-18",
@@ -3489,7 +3504,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Samakan kedua fungsi kuadrat: $2x^2 - 3x + 1 = x^2 + 2x - 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x^2 - 5x + 6 = 0$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x^2 - 5x + 6 = 0$$ (Opsi B)."
         },
         {
           "id": "sma10-b6-19",
@@ -3516,7 +3531,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$g(x) = f(x - 2) + 3$. Samakan koefisien.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$b - 4 = -2 \\implies b = 2; \\quad 7 - 4 + c = 6 \\implies c = 3 \\implies b + c = 5$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$b - 4 = -2 \\implies b = 2; \\quad 7 - 4 + c = 6 \\implies c = 3 \\implies b + c = 5$$ (Opsi B)."
         },
         {
           "id": "sma10-b6-20",
@@ -3543,7 +3558,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Puncak di $x = 2 \\in [0, 5]$. $f(2) = 8 - 16 + k = 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$k - 8 = 3 \\implies k = 11$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$k - 8 = 3 \\implies k = 11$$ (Opsi A)."
         }
       ]
     },
@@ -3725,7 +3740,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Rata-rata $= 8$. $SR = \\frac{4 + 2 + 0 + 2 + 4}{5}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$SR = \\frac{12}{5} = 2{,}4$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$SR = \\frac{12}{5} = 2{,}4$$ (Opsi B)."
         },
         {
           "id": "sma10-b7-6",
@@ -3752,7 +3767,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Rata-rata $= 6$. Kuadrat selisih $= 16 + 4 + 0 + 4 + 16 = 40$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$s^2 = \\frac{40}{5} = 8$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s^2 = \\frac{40}{5} = 8$$ (Opsi A)."
         },
         {
           "id": "sma10-b7-7",
@@ -3779,7 +3794,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Simpangan baku $s = \\sqrt{s^2} = \\sqrt{8} = 2\\sqrt{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$s = \\sqrt{8} = 2\\sqrt{2}$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{8} = 2\\sqrt{2}$$ (Opsi C)."
         },
         {
           "id": "sma10-b7-8",
@@ -3806,7 +3821,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Tepi bawah $= 41 - 0{,}5 = 40{,}5$. Panjang kelas $= 10$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$L = 40{,}5, \\quad c = 10$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 40{,}5, \\quad c = 10$$ (Opsi B)."
         },
         {
           "id": "sma10-b7-9",
@@ -3833,7 +3848,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Titik tengah $= \\frac{60 + 64}{2} = 62$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x_i = \\frac{60 + 64}{2} = 62$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x_i = \\frac{60 + 64}{2} = 62$$ (Opsi D)."
         },
         {
           "id": "sma10-b7-10",
@@ -3860,7 +3875,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Letak $D_3 = \\frac{3(20 + 1)}{10} = 6{,}3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\text{Letak } D_3 = 6{,}3$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Letak } D_3 = 6{,}3$$ (Opsi C)."
         },
         {
           "id": "sma10-b7-11",
@@ -3887,7 +3902,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$d_1 = 4, d_2 = 6$. $Mo = 50{,}5 + \\frac{4}{10} \\times 10 = 54{,}5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$Mo = 50{,}5 + 4 = 54{,}5$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Mo = 50{,}5 + 4 = 54{,}5$$ (Opsi D)."
         },
         {
           "id": "sma10-b7-12",
@@ -3914,7 +3929,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$Me = 60{,}5 + \\left(\\frac{20 - 15}{10}\\right)10 = 65{,}5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$Me = 60{,}5 + 5 = 65{,}5$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Me = 60{,}5 + 5 = 65{,}5$$ (Opsi A)."
         },
         {
           "id": "sma10-b7-13",
@@ -3941,7 +3956,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$\\bar{x} = 65 + \\frac{120}{40} = 68$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\bar{x} = 65 + 3 = 68$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = 65 + 3 = 68$$ (Opsi D)."
         },
         {
           "id": "sma10-b7-14",
@@ -3968,7 +3983,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Penambahan konstanta tidak mengubah $s$. Perkalian mengalikan $s$: $3 \\times 4 = 12$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$s_{\\text{baru}} = 3 \\times 4 = 12$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s_{\\text{baru}} = 3 \\times 4 = 12$$ (Opsi B)."
         },
         {
           "id": "sma10-b7-15",
@@ -3995,7 +4010,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "Kurva frekuensi kumulatif kurang dari selalu meningkat.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\nKurva tersebut adalah **Ogive positif** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKurva tersebut adalah **Ogive positif** (Opsi A)."
         },
         {
           "id": "sma10-b7-16",
@@ -4022,7 +4037,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$x_{\\min} = 15 - 8 = 7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$x_{\\min} = 7$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x_{\\min} = 7$$ (Opsi B)."
         },
         {
           "id": "sma10-b7-17",
@@ -4049,7 +4064,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Letak $Q_3 = 60$. $Q_3 = 70{,}5 + \\frac{60 - 50}{20} \\times 10 = 75{,}5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$Q_3 = 70{,}5 + 5 = 75{,}5$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$Q_3 = 70{,}5 + 5 = 75{,}5$$ (Opsi C)."
         },
         {
           "id": "sma10-b7-18",
@@ -4076,7 +4091,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$z = \\frac{86 - 70}{8} = 2{,}0$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$z = \\frac{16}{8} = 2{,}0$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$z = \\frac{16}{8} = 2{,}0$$ (Opsi A)."
         },
         {
           "id": "sma10-b7-19",
@@ -4103,7 +4118,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "$\\bar{x} = \\frac{3{,}5}{0{,}05} = 70$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\bar{x} = 70$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = 70$$ (Opsi C)."
         },
         {
           "id": "sma10-b7-20",
@@ -4130,7 +4145,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Data: $4, 4, 6, d, e$. Jumlah $= 35 \\implies d + e = 21$. Agar $e$ maksimal, $d = 7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$e = 21 - 7 = 14$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$e = 21 - 7 = 14$$ (Opsi C)."
         }
       ]
     },
@@ -4313,7 +4328,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Permutasi $P(7, 3) = 7 \\times 6 \\times 5 = 210$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P(7, 3) = 210$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(7, 3) = 210$$ (Opsi C)."
         },
         {
           "id": "sma10-b8-6",
@@ -4340,7 +4355,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$C(8, 3) = \\frac{8 \\times 7 \\times 6}{6} = 56$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$C(8, 3) = 56$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C(8, 3) = 56$$ (Opsi A)."
         },
         {
           "id": "sma10-b8-7",
@@ -4367,7 +4382,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Ada 6 pasangan berjumlah 7: $6 / 36 = 1/6$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P = \\frac{6}{36} = \\frac{1}{6}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{36} = \\frac{1}{6}$$ (Opsi B)."
         },
         {
           "id": "sma10-b8-8",
@@ -4394,7 +4409,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$P(A \\cup B) = \\frac{4 + 26 - 2}{52} = \\frac{28}{52} = \\frac{7}{13}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P = \\frac{28}{52} = \\frac{7}{13}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{28}{52} = \\frac{7}{13}$$ (Opsi A)."
         },
         {
           "id": "sma10-b8-9",
@@ -4421,7 +4436,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "A",
           "hint": "$P = \\frac{C(5, 2)}{C(8, 2)} = \\frac{10}{28} = \\frac{5}{14}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P = \\frac{10}{28} = \\frac{5}{14}$$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{10}{28} = \\frac{5}{14}$$ (Opsi A)."
         },
         {
           "id": "sma10-b8-10",
@@ -4448,7 +4463,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "$F_h = 120 \\times \\frac{1}{2} = 60$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$F_h = 60\\text{ kali}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$F_h = 60\\text{ kali}$$ (Opsi B)."
         },
         {
           "id": "sma10-b8-11",
@@ -4475,7 +4490,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Permutasi posisi: $P(10, 3) = 10 \\times 9 \\times 8 = 720$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P(10, 3) = 720$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(10, 3) = 720$$ (Opsi C)."
         },
         {
           "id": "sma10-b8-12",
@@ -4502,7 +4517,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Kombinasi $C(8, 2) = \\frac{8 \\times 7}{2} = 28$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$C(8, 2) = 28$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$C(8, 2) = 28$$ (Opsi D)."
         },
         {
           "id": "sma10-b8-13",
@@ -4529,7 +4544,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "$P = 0{,}85 \\times (1 - 0{,}70) = 0{,}255$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P = 0{,}85 \\times 0{,}30 = 0{,}255$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = 0{,}85 \\times 0{,}30 = 0{,}255$$ (Opsi C)."
         },
         {
           "id": "sma10-b8-14",
@@ -4556,7 +4571,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$P = \\frac{4}{10} \\times \\frac{6}{9} = \\frac{4}{15}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P = \\frac{4}{15}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{4}{15}$$ (Opsi D)."
         },
         {
           "id": "sma10-b8-15",
@@ -4583,7 +4598,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "C",
           "hint": "Satuan (1, 3, 5) ada 3 cara. Ratusan 5 cara, puluhan 4 cara: $3 \\times 5 \\times 4 = 60$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$3 \\times 5 \\times 4 = 60$$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$3 \\times 5 \\times 4 = 60$$ (Opsi C)."
         },
         {
           "id": "sma10-b8-16",
@@ -4610,7 +4625,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "Siklis 6 unsur: $(6 - 1)! \\times 2! = 120 \\times 2 = 240$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$5! \\times 2 = 240$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$5! \\times 2 = 240$$ (Opsi D)."
         },
         {
           "id": "sma10-b8-17",
@@ -4637,7 +4652,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Permutasi unsur berulang: $\\frac{10!}{2! 3! 2!} = 151.200$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$\\frac{3.628.800}{24} = 151.200$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3.628.800}{24} = 151.200$$ (Opsi B)."
         },
         {
           "id": "sma10-b8-18",
@@ -4664,7 +4679,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "B",
           "hint": "Komplemen: $1 - \\frac{C(6, 4)}{C(10, 4)} = 1 - \\frac{15}{210} = \\frac{13}{14}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P = 1 - \\frac{1}{14} = \\frac{13}{14}$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = 1 - \\frac{1}{14} = \\frac{13}{14}$$ (Opsi B)."
         },
         {
           "id": "sma10-b8-19",
@@ -4691,7 +4706,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$P = \\frac{4}{C(8, 2)} = \\frac{4}{28} = \\frac{1}{7}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P = \\frac{1}{7}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{1}{7}$$ (Opsi D)."
         },
         {
           "id": "sma10-b8-20",
@@ -4718,7 +4733,7 @@ export const grade10Data = {
           ],
           "correctAnswer": "D",
           "hint": "$n(> 9) = 6$, $n(\\text{kelipatan 4}) = 9$, irisan $= 1$. Total $(6 + 9 - 1) / 36 = 14 / 36 = 7 / 18$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\\n$$P = \\frac{14}{36} = \\frac{7}{18}$$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{14}{36} = \\frac{7}{18}$$ (Opsi D)."
         }
       ]
     }
