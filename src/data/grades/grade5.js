@@ -1894,7 +1894,7 @@ export const grade5Data = {
           }
         ],
         "misconceptions": [
-          "Tertukar antara keliling dan luas: keliling adalah panjang garis tepi luar (satuan meter/cm), bukan perkalian luas permukaan.",
+          "Tertukar antara keliling dan luas: keliling adalah panjang garis tepi luar (satuan meter/cm), bukan luas daerah di dalamnya.",
           "Lupa menjumlahkan semua sisi pada bangun segitiga atau trapesium sembarang."
         ],
         "tutorTip": "Bayangkan seekor semut berjalan menyusuri garis tepi bangun datar dari titik awal sampai kembali ke titik semula. Jarak perjalanan semut itulah Keliling!"

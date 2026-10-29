@@ -83,7 +83,8 @@ const FASE_C_RULES = [
   { topic: 'Keliling/luas lingkaran (Fase D)', pattern: /luas lingkaran|keliling lingkaran|\\pi|π/i },
   { topic: 'Skala peta/denah (Fase D)', pattern: /\bskala\s*1\s*:/i },
   { topic: 'Desimal lebih dari satu angka di belakang koma (Fase D)', pattern: /\d,(?!00\b)\d{2,}/ },
-  { topic: 'Akar pangkat (Fase D)', pattern: /\\sqrt|akar pangkat/i }
+  { topic: 'Akar pangkat (Fase D)', pattern: /\\sqrt|akar pangkat/i },
+  { topic: 'Luas permukaan bangun ruang (Fase D)', pattern: /luas permukaan|luas selimut/i }
 ];
 
 const FASE_D_RULES = [

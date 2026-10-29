@@ -369,11 +369,11 @@ export const ALL_CHAPTERS_INDEX = [
     "track": null,
     "coreConcepts": [
       "Ciri-Ciri Kubus dan Balok:\n- Memiliki 6 sisi, 12 rusuk, dan 8 titik sudut.\n- Kubus: Keenam sisinya berbentuk persegi yang sama dan sebangun (kongruen).\n- Balok: Memiliki 3 pasang sisi berbentuk persegi panjang yang saling berhadapan dan kongruen.",
-      "Jaring-Jaring Kubus dan Balok: Pola susunan 6 persegi (kubus) atau 6 persegi panjang (balok) pada bidang datar yang jika dilipat mengikuti garis rusuknya akan membentuk bangun ruang tertutup yang sempurna tanpa tumpang tindih.",
-      "Luas Permukaan:\n- Kubus dengan rusuk $s$: $L = 6 \\times s^2$.\n- Balok dengan panjang $p$, lebar $l$, dan tinggi $t$: $L = 2 \\times (p \\cdot l + p \\cdot t + l \\cdot t)$.",
-      "Volume (Kapasitas Isi Ruang):\n- Kubus: $V = s \\times s \\times s = s^3$.\n- Balok: $V = p \\times l \\times t$."
+      "Menyusun dan Mengurai: Kubus dan balok dapat disusun dari kubus-kubus satuan, dan dapat diurai (dibuka) menjadi jaring-jaring berupa 6 persegi (kubus) atau 6 persegi panjang (balok). Tidak semua susunan 6 persegi dapat dilipat menjadi kubus.",
+      "Visualisasi Spasial: Bangun ruang dapat digambarkan dari tampak depan, tampak samping, dan tampak atas. Kubus tampak persegi dari ketiga arah, sedangkan balok dapat tampak sebagai persegi panjang.",
+      "Volume dengan Kubus Satuan: Volume adalah banyak kubus satuan yang mengisi bangun ruang. Untuk balok: hitung kubus pada satu lapis (panjang × lebar), lalu kalikan dengan banyak lapis (tinggi), sehingga $V = p \\times l \\times t$. Untuk kubus: $V = s \\times s \\times s$."
     ],
-    "tutorTip": "Ingat: Luas permukaan kubus dikalikan 6 karena kubus memiliki 6 sisi berbentuk persegi yang sama luasnya: $6 \\times (s \\times s)$!",
+    "tutorTip": "Saat menghitung volume, bayangkan kotak diisi kubus-kubus kecil lapis demi lapis: hitung satu lapis dulu, lalu kalikan dengan banyak lapisnya!",
     "questionCount": 20
   },
   {

@@ -33,10 +33,10 @@ Folder `cp-046-2025/` berisi kutipan teks resmi lampiran keputusan untuk mata pe
 
 ## Ringkasan dampak pada konten (Oktober 2026)
 
-- **Kelas 4–9:** semua judul bab sesuai fasenya. 46 soal yang keluar fase sudah diganti:
+- **Kelas 4–9:** semua judul bab sesuai fasenya. 55 soal yang keluar fase sudah diganti:
   - 7 soal Kelas 4;
   - 15 soal Kelas 5 (rerata/median/modus, diagram lingkaran, luas lingkaran);
-  - 24 soal Kelas 6 (peluang berupa angka, operasi desimal dua angka, skala).
+  - 33 soal Kelas 6 (peluang berupa angka, operasi desimal dua angka, skala, luas permukaan, akar pangkat tiga, perubahan ukuran terhadap volume).
 - **Kelas X:** bab Logaritma, Barisan & Deret, Vektor, dan Peluang di CP 2025 berada di Fase F (Kelas XI–XII / Tingkat Lanjut). Bab-bab ini diberi keterangan, tidak dihapus.
 - **Teks materi ikut diselaraskan:** Kelas 5 Bab 8 (istilah modus dihapus) dan Kelas 6 Bab 4 (rumus peluang diganti dengan membandingkan kemungkinan). Test `contentAudit` kini juga memeriksa teks materi, bukan hanya soal.
-- **Masih di batas:** luas permukaan kubus/balok (Kelas 6 Bab 3). Fase C hanya menyebut "mengkonstruksi dan mengurai" kubus/balok, sedangkan luas permukaan secara eksplisit ada di Fase D. Perlu keputusan guru.
+- **Kelas 6 Bab 3 (Kubus dan Balok)** kini mengikuti Fase C: menyusun dan mengurai, jaring-jaring, tampak depan/samping/atas, membandingkan bangun ruang, dan volume dengan kubus satuan. Luas permukaan dipindah ke SMP, sesuai keputusan guru (Oktober 2026).

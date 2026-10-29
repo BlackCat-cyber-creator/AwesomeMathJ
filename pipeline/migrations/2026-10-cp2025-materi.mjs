@@ -69,6 +69,11 @@ bab8.summary = GRADE5_BAB8(bab8.summary);
 if (/modus/i.test(JSON.stringify(bab8.summary))) throw new Error('sd5-bab8-data masih menyebut modus');
 saveGrade(g5);
 
+const bab4k5 = g5.data.chapters.find((c) => c.id === 'sd5-bab4-keliling-bangun-datar');
+bab4k5.summary.misconceptions = bab4k5.summary.misconceptions.map((m) =>
+  m.replace('bukan perkalian luas permukaan.', 'bukan luas daerah di dalamnya.'));
+saveGrade(g5);
+
 const g6 = await loadGrade(6);
 const bab4 = g6.data.chapters.find((c) => c.id === 'sd6-bab4-peluang');
 bab4.summary = GRADE6_BAB4;

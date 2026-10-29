@@ -1605,18 +1605,18 @@ export const grade6Data = {
       "id": "sd6-bab3-kubus-balok",
       "title": "Bab 3: Kubus dan Balok",
       "summary": {
-        "overview": "Kotak kado ulang tahun, kardus kemasan mie instan, akuarium ikan hias di ruang tamu, hingga dadu permainan monopoli memiliki bentuk ruang tiga dimensi yang beraturan. Bentuk-bentuk ini dinamakan Kubus dan Balok. Keduanya merupakan bangun ruang sisi datar yang paling banyak dimanfaatkan dalam kehidupan sehari-hari. Bahkan peti kemas kontainer di pelabuhan peti kemas dirancang berbentuk balok agar dapat disusun rapi dan memaksimalkan ruang muat kapal kargo.\n\nMemahami sifat-sifat kubus dan balok sangat penting dalam berbagai bidang praktis. Saat kita ingin membungkus kotak kado dengan kertas kado bermotif, kita harus mengetahui luas permukaan seluruh sisinya agar kertas yang dibeli pas dan tidak kurang. Di sisi lain, saat kita ingin mengisi bak penampungan air atau menata kardus barang di dalam bagasi mobil, kita harus menghitung volume kapasitas isi ruangan tersebut.\n\nBab ini membimbing siswa Kelas 6 mengenali ciri-ciri dan sifat kubus serta balok (jumlah sisi, rusuk, titik sudut), membedah bentuk jaring-jaring yang valid jika lipatannya dirakit menjadi bangun utuh, menghitung luas permukaan, serta menghitung volume ruang kubus dan balok dalam berbagai situasi terapan.",
+        "overview": "Kotak kado ulang tahun, kardus kemasan mi instan, akuarium ikan hias, hingga dadu permainan memiliki bentuk ruang tiga dimensi yang beraturan. Bentuk-bentuk ini dinamakan Kubus dan Balok. Peti kemas di pelabuhan pun dibuat berbentuk balok agar mudah disusun rapi dan memaksimalkan ruang muat kapal.\n\nMengenal kubus dan balok membantu kita dalam banyak kegiatan: menyusun kardus di bagasi mobil, menghitung berapa kotak kecil yang muat di dalam kotak besar, atau memperkirakan banyak air untuk mengisi bak mandi. Kita juga belajar membayangkan bentuk benda dari berbagai arah, misalnya tampak depan, tampak samping, dan tampak atas.\n\nBab ini membimbing siswa Kelas 6 mengenali ciri-ciri kubus dan balok (sisi, rusuk, titik sudut), menyusun dan mengurai kubus dan balok termasuk jaring-jaringnya, mengenali tampak depan, samping, dan atas, membandingkan karakteristik bangun ruang, serta menghitung volume dengan menghitung kubus satuan.",
         "coreConcepts": [
           "Ciri-Ciri Kubus dan Balok:\n- Memiliki 6 sisi, 12 rusuk, dan 8 titik sudut.\n- Kubus: Keenam sisinya berbentuk persegi yang sama dan sebangun (kongruen).\n- Balok: Memiliki 3 pasang sisi berbentuk persegi panjang yang saling berhadapan dan kongruen.",
-          "Jaring-Jaring Kubus dan Balok: Pola susunan 6 persegi (kubus) atau 6 persegi panjang (balok) pada bidang datar yang jika dilipat mengikuti garis rusuknya akan membentuk bangun ruang tertutup yang sempurna tanpa tumpang tindih.",
-          "Luas Permukaan:\n- Kubus dengan rusuk $s$: $L = 6 \\times s^2$.\n- Balok dengan panjang $p$, lebar $l$, dan tinggi $t$: $L = 2 \\times (p \\cdot l + p \\cdot t + l \\cdot t)$.",
-          "Volume (Kapasitas Isi Ruang):\n- Kubus: $V = s \\times s \\times s = s^3$.\n- Balok: $V = p \\times l \\times t$."
+          "Menyusun dan Mengurai: Kubus dan balok dapat disusun dari kubus-kubus satuan, dan dapat diurai (dibuka) menjadi jaring-jaring berupa 6 persegi (kubus) atau 6 persegi panjang (balok). Tidak semua susunan 6 persegi dapat dilipat menjadi kubus.",
+          "Visualisasi Spasial: Bangun ruang dapat digambarkan dari tampak depan, tampak samping, dan tampak atas. Kubus tampak persegi dari ketiga arah, sedangkan balok dapat tampak sebagai persegi panjang.",
+          "Volume dengan Kubus Satuan: Volume adalah banyak kubus satuan yang mengisi bangun ruang. Untuk balok: hitung kubus pada satu lapis (panjang × lebar), lalu kalikan dengan banyak lapis (tinggi), sehingga $V = p \\times l \\times t$. Untuk kubus: $V = s \\times s \\times s$."
         ],
         "workedExamples": [
           {
-            "title": "Menghitung Luas Kertas Kado Pembungkus Kubus",
-            "problem": "Siti memiliki sebuah kotak kado berbentuk kubus dengan panjang rusuk 10 cm. Berapa sentimeter persegi luas kertas kado minimal yang dibutuhkan Siti untuk melapisi seluruh permukaan kotak kado tersebut?",
-            "solution": "Langkah 1: Identifikasi panjang rusuk kubus: $s = 10\\text{ cm}$.\n\nLangkah 2: Gunakan rumus luas permukaan kubus (terdiri dari 6 persegi identik):\n$$L = 6 \\times s^2$$\n\nLangkah 3: Hitung nilai numerik:\n$$L = 6 \\times 10^2 = 6 \\times 100 = 600\\text{ cm}^2$$\nLuas kertas kado minimal yang dibutuhkan adalah **$600\\text{ cm}^2$**."
+            "title": "Menghitung Kubus Satuan pada Balok",
+            "problem": "Sebuah balok disusun dari kubus satuan dengan panjang 5 kubus, lebar 3 kubus, dan tinggi 2 kubus. Berapa banyak kubus satuan yang digunakan?",
+            "solution": "Langkah 1: Hitung banyak kubus pada satu lapis:\n$$5 \\times 3 = 15\\text{ kubus}$$\n\nLangkah 2: Kalikan dengan banyak lapis (tinggi):\n$$15 \\times 2 = 30\\text{ kubus}$$\nBanyak kubus satuan yang digunakan adalah **30 kubus**."
           },
           {
             "title": "Menghitung Volume Air Akuarium Balok",
@@ -1626,27 +1626,24 @@ export const grade6Data = {
         ],
         "keyFormulas": [
           {
-            "label": "Volume Kubus",
-            "formula": "V = s^3"
-          },
-          {
-            "label": "Luas Permukaan Kubus",
-            "formula": "L = 6s^2"
-          },
-          {
-            "label": "Volume Balok",
+            "label": "Volume Balok (banyak kubus satuan)",
             "formula": "V = p \\times l \\times t"
           },
           {
-            "label": "Luas Permukaan Balok",
-            "formula": "L = 2(pl + pt + lt)"
+            "label": "Volume Kubus",
+            "formula": "V = s \\times s \\times s"
+          },
+          {
+            "label": "Unsur Kubus & Balok",
+            "formula": "6\\text{ sisi},\\; 12\\text{ rusuk},\\; 8\\text{ titik sudut}"
           }
         ],
         "misconceptions": [
-          "Tertukar antara rumus luas permukaan dengan volume: volume menyatakan kapasitas isi ($\text{cm}^3$), sedangkan luas permukaan menyatakan luas bentangan selimut luar ($\text{cm}^2$).",
-          "Mengira semua pola susunan 6 persegi pasti dapat dilipat membentuk kubus. Ada pola tertentu yang jika dilipat sisinya akan bertumpuk."
+          "Hanya menghitung kubus yang terlihat dari luar. Kubus satuan di bagian dalam bangun juga harus dihitung; gunakan cara per lapis.",
+          "Mengira semua susunan 6 persegi pasti dapat dilipat menjadi kubus. Ada susunan yang jika dilipat sisinya bertumpuk.",
+          "Tertukar satuan volume ($\\text{cm}^3$) dengan satuan panjang (cm) atau luas ($\\text{cm}^2$)."
         ],
-        "tutorTip": "Ingat: Luas permukaan kubus dikalikan 6 karena kubus memiliki 6 sisi berbentuk persegi yang sama luasnya: $6 \\times (s \\times s)$!"
+        "tutorTip": "Saat menghitung volume, bayangkan kotak diisi kubus-kubus kecil lapis demi lapis: hitung satu lapis dulu, lalu kalikan dengan banyak lapisnya!"
       },
       "questions": [
         {
@@ -1731,38 +1728,38 @@ export const grade6Data = {
           "id": "sd6-b3-3",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Luas permukaan sebuah kubus yang memiliki panjang rusuk 5 cm adalah...",
+          "question": "Sebuah bangun disusun dari kubus satuan. Lapisan paling bawah berisi 3 baris dengan 2 kubus pada setiap baris, lalu disusun sebanyak 4 lapis. Banyak kubus satuan yang digunakan adalah...",
           "options": [
             {
               "key": "A",
-              "text": "$125\\text{ cm}^2$"
+              "text": "20 kubus"
             },
             {
               "key": "B",
-              "text": "$150\\text{ cm}^2$"
+              "text": "24 kubus"
             },
             {
               "key": "C",
-              "text": "$100\\text{ cm}^2$"
+              "text": "9 kubus"
             },
             {
               "key": "D",
-              "text": "$175\\text{ cm}^2$"
+              "text": "18 kubus"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Gunakan rumus luas permukaan kubus: $L = 6 \\times s^2 = 6 \\times 5^2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 6 \\times (5 \\times 5) = 6 \\times 25 = 150\\text{ cm}^2$$\nLuas permukaan kubus adalah **$150\\text{ cm}^2$** (Opsi B).",
+          "hint": "Hitung dulu banyak kubus pada satu lapis, lalu kalikan dengan banyak lapis.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Satu lapis: $3 \\times 2 = 6$ kubus.\n2. Empat lapis: $6 \\times 4 = 24$ kubus.\n(Opsi B).",
           "visual": {
             "type": "solid-3d",
             "props": {
-              "title": "Luas Permukaan Kubus",
-              "caption": "*Memiliki 6 bidang sisi bujursangkar kongruen (s = 5 cm)",
+              "title": "Susunan Kubus Satuan",
+              "caption": "*Satu lapis 3 × 2 kubus, disusun 4 lapis",
               "solid": "box",
-              "lengthLabel": "s = 5 cm",
-              "widthLabel": "s = 5 cm",
-              "heightLabel": "s = 5 cm",
-              "targetLabel": "Luas = ? cm²"
+              "lengthLabel": "3 kubus",
+              "widthLabel": "2 kubus",
+              "heightLabel": "4 lapis",
+              "targetLabel": "Kubus = ?"
             }
           }
         },
@@ -1914,38 +1911,38 @@ export const grade6Data = {
           "id": "sd6-b3-8",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Luas permukaan sebuah kubus adalah 216 cm². Panjang rusuk kubus tersebut adalah...",
+          "question": "Andi menyusun kubus-kubus satuan menjadi sebuah kubus besar. Setiap rusuk kubus besar terdiri atas 3 kubus satuan. Banyak kubus satuan yang diperlukan Andi adalah...",
           "options": [
             {
               "key": "A",
-              "text": "4 cm"
+              "text": "9 kubus"
             },
             {
               "key": "B",
-              "text": "6 cm"
+              "text": "27 kubus"
             },
             {
               "key": "C",
-              "text": "8 cm"
+              "text": "18 kubus"
             },
             {
               "key": "D",
-              "text": "36 cm"
+              "text": "12 kubus"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Kubus memiliki 6 sisi persegi yang sama. Luas satu sisi $= 216 : 6$, lalu cari bilangan yang jika dikuadratkan menghasilkan luas tersebut.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Luas satu sisi: $216 : 6 = 36\\text{ cm}^2$.\n2. $s \\times s = 36$, maka $s = 6$ cm.\nPanjang rusuknya adalah **6 cm** (Opsi B).",
+          "hint": "Kubus besar terdiri atas 3 lapis, dan setiap lapis berisi $3 \\times 3$ kubus.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Satu lapis: $3 \\times 3 = 9$ kubus.\n2. Tiga lapis: $9 \\times 3 = 27$ kubus.\n(Opsi B).",
           "visual": {
             "type": "solid-3d",
             "props": {
-              "title": "Mencari Rusuk dari Luas Permukaan",
-              "caption": "*Luas permukaan kubus 216 cm²",
+              "title": "Kubus dari Kubus Satuan",
+              "caption": "*Setiap rusuk terdiri atas 3 kubus satuan",
               "solid": "box",
-              "lengthLabel": "s = ? cm",
-              "widthLabel": "s",
-              "heightLabel": "s",
-              "targetLabel": "Diketahui: L = 216 cm²"
+              "lengthLabel": "3 kubus",
+              "widthLabel": "3 kubus",
+              "heightLabel": "3 kubus",
+              "targetLabel": "Kubus = ?"
             }
           }
         },
@@ -1953,77 +1950,65 @@ export const grade6Data = {
           "id": "sd6-b3-9",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Luas permukaan sebuah balok dengan panjang 8 cm, lebar 5 cm, dan tinggi 3 cm adalah...",
+          "question": "Sebuah bangun ruang terlihat berbentuk persegi yang sama besar jika dilihat dari depan, dari samping, maupun dari atas. Bangun ruang tersebut adalah...",
           "options": [
             {
               "key": "A",
-              "text": "158 cm²"
+              "text": "Kubus"
             },
             {
               "key": "B",
-              "text": "120 cm²"
+              "text": "Balok dengan panjang, lebar, dan tinggi berbeda"
             },
             {
               "key": "C",
-              "text": "160 cm²"
+              "text": "Tabung"
             },
             {
               "key": "D",
-              "text": "148 cm²"
+              "text": "Limas segiempat"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Luas permukaan balok $= 2 \\times (pl + pt + lt) = 2 \\times (40 + 24 + 15) = 2 \\times 79 = 158$ cm².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 2 \\times (8\\times 5 + 8\\times 3 + 5\\times 3) = 2 \\times 79 = 158\\text{ cm}^2$$\nLuas permukaannya adalah **158 cm²** (Opsi A).",
-          "visual": {
-            "type": "solid-3d",
-            "props": {
-              "title": "Luas Permukaan Balok",
-              "caption": "*Panjang 8 cm, lebar 5 cm, dan tinggi 3 cm",
-              "solid": "box",
-              "lengthLabel": "p = 8 cm",
-              "widthLabel": "l = 5 cm",
-              "heightLabel": "t = 3 cm",
-              "targetLabel": "Luas = ? cm²"
-            }
-          }
+          "hint": "Bangun ruang mana yang semua sisinya berbentuk persegi yang sama?",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSemua sisi kubus berbentuk persegi yang sama, sehingga tampak depan, samping, dan atas sama-sama persegi. Bangun tersebut adalah **kubus**.\n(Opsi A)."
         },
         {
           "id": "sd6-b3-10",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Volume sebuah kubus adalah 512 cm³. Luas salah satu bidang sisi kubus tersebut adalah...",
+          "question": "Sebuah kotak berbentuk balok (bukan kubus) digunting pada beberapa rusuknya lalu dibuka menjadi jaring-jaring. Bangun datar yang terlihat pada jaring-jaring tersebut adalah...",
           "options": [
             {
               "key": "A",
-              "text": "36 cm²"
+              "text": "6 persegi yang sama besar"
             },
             {
               "key": "B",
-              "text": "81 cm²"
+              "text": "4 persegi panjang dan 2 segitiga"
             },
             {
               "key": "C",
-              "text": "64 cm²"
+              "text": "6 persegi panjang yang terdiri atas 3 pasang sama besar"
             },
             {
               "key": "D",
-              "text": "49 cm²"
+              "text": "5 persegi panjang"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Rusuk $s = \\sqrt[3]{512} = 8$ cm. Luas 1 sisi $= 8 \\times 8 = 64$ cm².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $s = \\sqrt[3]{512} = 8\\text{ cm}$\n2. Luas sisi $= 8^2 = 64\\text{ cm}^2$ (Opsi C).",
+          "hint": "Balok memiliki 6 sisi, dan sisi-sisi yang berhadapan sama besar.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBalok memiliki 6 sisi berbentuk persegi panjang. Sisi yang berhadapan sama besar, sehingga jaring-jaringnya terdiri atas **6 persegi panjang (3 pasang sama besar)**.\n(Opsi C).",
           "visual": {
             "type": "solid-3d",
             "props": {
-              "title": "Luas Bidang Sisi Kubus",
-              "caption": "*Volume kubus adalah 512 cm³",
+              "title": "Balok",
+              "caption": "*Sisi-sisi balok yang berhadapan sama besar",
               "solid": "box",
-              "lengthLabel": "s",
-              "widthLabel": "s",
-              "heightLabel": "s",
-              "targetLabel": "V = 512 cm³ (Luas sisi = ?)"
+              "lengthLabel": "p",
+              "widthLabel": "l",
+              "heightLabel": "t",
+              "targetLabel": "Jaring-jaring?"
             }
           }
         },
@@ -2136,38 +2121,38 @@ export const grade6Data = {
           "id": "sd6-b3-14",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Sebuah kotak kado berbentuk balok berukuran $15\\text{ cm} \\times 10\\text{ cm} \\times 8\\text{ cm}$ akan dibungkus kertas kado. Luas minimal kertas kado yang dibutuhkan adalah...",
+          "question": "Sebuah kardus berbentuk balok berukuran panjang 15 cm, lebar 10 cm, dan tinggi 8 cm. Bidang sisi kardus yang paling luas berukuran...",
           "options": [
             {
               "key": "A",
-              "text": "700 cm²"
+              "text": "15 cm × 10 cm"
             },
             {
               "key": "B",
-              "text": "650 cm²"
+              "text": "15 cm × 8 cm"
             },
             {
               "key": "C",
-              "text": "750 cm²"
+              "text": "10 cm × 8 cm"
             },
             {
               "key": "D",
-              "text": "800 cm²"
+              "text": "8 cm × 8 cm"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Luas $= 2 \\times (15\\times 10 + 15\\times 8 + 10\\times 8) = 2 \\times (150 + 120 + 80) = 2 \\times 350 = 700$ cm².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 2 \\times (150 + 120 + 80) = 700\\text{ cm}^2$$\nLuas minimal kertas kado adalah **700 cm²** (Opsi A).",
+          "hint": "Ada tiga macam sisi: alas (p × l), depan (p × t), dan samping (l × t). Bandingkan luasnya.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Alas: $15 \\times 10 = 150\\text{ cm}^2$.\n2. Depan: $15 \\times 8 = 120\\text{ cm}^2$.\n3. Samping: $10 \\times 8 = 80\\text{ cm}^2$.\nSisi terluas berukuran **15 cm × 10 cm**.\n(Opsi A).",
           "visual": {
             "type": "solid-3d",
             "props": {
-              "title": "Kotak Kado Balok",
-              "caption": "*Ukuran 15 cm × 10 cm × 8 cm",
+              "title": "Kardus Balok",
+              "caption": "*Panjang 15 cm, lebar 10 cm, tinggi 8 cm",
               "solid": "box",
               "lengthLabel": "p = 15 cm",
               "widthLabel": "l = 10 cm",
               "heightLabel": "t = 8 cm",
-              "targetLabel": "Luas Kertas = ?"
+              "targetLabel": "Sisi terluas?"
             }
           }
         },
@@ -2175,92 +2160,92 @@ export const grade6Data = {
           "id": "sd6-b3-15",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Perbandingan panjang rusuk dua buah kubus adalah 2 : 3. Jika volume kubus pertama adalah 64 cm³, berapakah volume kubus kedua?",
+          "question": "Bangun gabungan dibuat dari dua balok kubus satuan. Balok bawah berukuran 4 × 3 × 1 kubus dan balok atas berukuran 4 × 3 × 2 kubus. Banyak kubus satuan pada bangun gabungan tersebut adalah...",
           "options": [
             {
               "key": "A",
-              "text": "144 cm³"
+              "text": "30 kubus"
             },
             {
               "key": "B",
-              "text": "216 cm³"
+              "text": "36 kubus"
             },
             {
               "key": "C",
-              "text": "196 cm³"
+              "text": "24 kubus"
             },
             {
               "key": "D",
-              "text": "256 cm³"
+              "text": "12 kubus"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Rusuk kubus 1 $= \\sqrt[3]{64} = 4$ cm. Rusuk kubus 2 $= \\frac{3}{2} \\times 4 = 6$ cm. Volume kubus 2 $= 6^3 = 216$ cm³.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $s_1 = \\sqrt[3]{64} = 4\\text{ cm}$\n2. $s_2 = \\frac{3}{2} \\times 4 = 6\\text{ cm}$\n3. $V_2 = 6^3 = 216\\text{ cm}^3$ (Opsi B)."
+          "hint": "Hitung banyak kubus setiap balok, lalu jumlahkan.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Balok bawah: $4 \\times 3 \\times 1 = 12$ kubus.\n2. Balok atas: $4 \\times 3 \\times 2 = 24$ kubus.\n3. Gabungan: $12 + 24 = 36$ kubus.\n(Opsi B)."
         },
         {
           "id": "sd6-b3-16",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Sebuah balok memiliki perbandingan panjang : lebar : tinggi = 4 : 3 : 2. Jika volume balok tersebut adalah 192 cm³, maka panjang balok tersebut adalah...",
+          "question": "Sebuah balok tersusun dari 60 kubus satuan. Jika panjangnya 5 kubus dan lebarnya 4 kubus, tinggi balok tersebut adalah...",
           "options": [
             {
               "key": "A",
-              "text": "6 cm"
+              "text": "4 kubus"
             },
             {
               "key": "B",
-              "text": "4 cm"
+              "text": "2 kubus"
             },
             {
               "key": "C",
-              "text": "10 cm"
+              "text": "5 kubus"
             },
             {
               "key": "D",
-              "text": "8 cm"
+              "text": "3 kubus"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Misalkan $p = 4x, l = 3x, t = 2x$. Volume $= 24x^3 = 192 \\implies x^3 = 8 \\implies x = 2$. Panjang $= 4 \\times 2 = 8$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $4x \\times 3x \\times 2x = 24x^3 = 192$\n2. $x^3 = 8 \\implies x = 2$\n3. $p = 4 \\times 2 = 8\\text{ cm}$ (Opsi D)."
+          "hint": "Satu lapis berisi $5 \\times 4$ kubus. Berapa lapis yang dibutuhkan untuk 60 kubus?",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Satu lapis: $5 \\times 4 = 20$ kubus.\n2. Banyak lapis: $60 : 20 = 3$.\nTinggi balok adalah **3 kubus**.\n(Opsi D)."
         },
         {
           "id": "sd6-b3-17",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Sebuah kolam renang berukuran panjang 20 m, lebar 10 m, dan kedalaman 1,5 m. Dinding bagian dalam dan lantai kolam akan dipasangi keramik. Luas permukaan yang dipasangi keramik adalah...",
+          "question": "Sebuah kolam renang berbentuk balok berukuran panjang 20 m, lebar 10 m, dan kedalaman 2 m. Banyak air yang dibutuhkan untuk mengisi kolam sampai penuh adalah...",
           "options": [
             {
               "key": "A",
-              "text": "380 m²"
+              "text": "200 m³"
             },
             {
               "key": "B",
-              "text": "300 m²"
+              "text": "600 m³"
             },
             {
               "key": "C",
-              "text": "290 m²"
+              "text": "400 m³"
             },
             {
               "key": "D",
-              "text": "260 m²"
+              "text": "32 m³"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Kolam tanpa tutup: Luas $= pl + 2pt + 2lt = (20 \\times 10) + 2(20 \\times 1{,}5) + 2(10 \\times 1{,}5) = 200 + 60 + 30 = 290$ m².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Lantai: $20 \\times 10 = 200\\text{ m}^2$\n2. Dinding panjang: $2 \\times (20 \\times 1{,}5) = 60\\text{ m}^2$\n3. Dinding lebar: $2 \\times (10 \\times 1{,}5) = 30\\text{ m}^2$\nTotal luas $= 290\\text{ m}^2$ (Opsi C).",
+          "hint": "Volume balok = panjang × lebar × tinggi (kedalaman).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 20 \\times 10 \\times 2 = 400\\text{ m}^3$$\n(Opsi C).",
           "visual": {
             "type": "solid-3d",
             "props": {
               "title": "Kolam Renang Balok",
-              "caption": "*Panjang 20 m, lebar 10 m, kedalaman 1,5 m",
+              "caption": "*Panjang 20 m, lebar 10 m, kedalaman 2 m",
               "solid": "box",
               "lengthLabel": "p = 20 m",
               "widthLabel": "l = 10 m",
-              "heightLabel": "kedalaman 1,5 m",
-              "targetLabel": "Luas Keramik = ?"
+              "heightLabel": "kedalaman 2 m",
+              "targetLabel": "Volume = ?"
             }
           }
         },
@@ -2295,28 +2280,28 @@ export const grade6Data = {
           "id": "sd6-b3-19",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Balok A berukuran $12\\text{ cm} \\times 8\\text{ cm} \\times 6\\text{ cm}$. Balok B memiliki panjang, lebar, dan tinggi masing-masing 1,5 kali ukuran balok A. Perbandingan volume balok A dan balok B adalah...",
+          "question": "Balok A berukuran 12 cm × 8 cm × 6 cm. Balok B berukuran 10 cm × 10 cm × 6 cm. Pernyataan yang benar adalah...",
           "options": [
             {
               "key": "A",
-              "text": "8 : 27"
+              "text": "Volume balok B lebih besar 24 cm³"
             },
             {
               "key": "B",
-              "text": "2 : 3"
+              "text": "Volume balok A lebih besar 24 cm³"
             },
             {
               "key": "C",
-              "text": "4 : 9"
+              "text": "Volume kedua balok sama"
             },
             {
               "key": "D",
-              "text": "1 : 3"
+              "text": "Volume balok B lebih besar 4 cm³"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Perbandingan volume kubus/balok sebangun $= k^3 = (1 : 1{,}5)^3 = (2 : 3)^3 = 8 : 27$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Rasio volume} = 1 : (1{,}5)^3 = 1 : 3{,}375 = 8 : 27$$\nPerbandingannya adalah **8 : 27** (Opsi A)."
+          "hint": "Hitung volume masing-masing balok, lalu bandingkan.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Balok A: $12 \\times 8 \\times 6 = 576\\text{ cm}^3$.\n2. Balok B: $10 \\times 10 \\times 6 = 600\\text{ cm}^3$.\n3. Selisih: $600 - 576 = 24\\text{ cm}^3$, balok B lebih besar.\n(Opsi A)."
         },
         {
           "id": "sd6-b3-20",
