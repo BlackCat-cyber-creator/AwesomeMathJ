@@ -13,6 +13,7 @@ import { MathText } from '../MathRenderer';
 import { QuestionVisual } from '../QuestionVisual';
 import { PillarsAccordion } from './PillarsAccordion';
 import { evaluateAmcAnswer } from '../../utils/answerCheck';
+import { amcChapterPath } from '../../utils/seoRoutes';
 
 /**
  * AmcChapterView:
@@ -33,7 +34,7 @@ export function AmcChapterView({
   if (!chapter) return null;
 
   const handleCopyLink = () => {
-    const url = `${window.location.origin}/?mode=amc&level=${levelMeta?.level || 8}&chapter=${chapter.id}`;
+    const url = `${window.location.origin}${amcChapterPath(levelMeta?.level || 8, chapter.id)}`;
     navigator.clipboard.writeText(url);
     setCopiedLink(true);
     setTimeout(() => setCopiedLink(false), 2500);

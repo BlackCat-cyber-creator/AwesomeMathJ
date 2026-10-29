@@ -1,6 +1,7 @@
 import { describe, it, expect } from 'vitest';
 import { auditAll, ALL_GRADES } from './support/visualAuditRunner.jsx';
-import { extractNumbers } from '../src/utils/contentAudit.js';
+import { extractNumbers, findOutOfScope } from '../src/utils/contentAudit.js';
+import { ALL_CHAPTERS_INDEX } from '../src/data/chapterIndex.js';
 
 /**
  * Penjaga kualitas konten: gambar harus sesuai soal, tidak membocorkan jawaban,
@@ -68,6 +69,26 @@ describe('Audit konten: cakupan dan kerapian soal', () => {
     expect(offScope).toEqual([]);
   });
 
+  it('teks materi (6 pilar) Kelas 4–9 tidak memakai materi fase berikutnya (CP 046/2025)', () => {
+    const offScope = [];
+    for (const data of ALL_GRADES) {
+      for (const ch of data.chapters) {
+        const s = ch.summary || {};
+        const texts = [
+          s.overview, s.tutorTip,
+          ...(s.coreConcepts || []), ...(s.misconceptions || []),
+          ...(s.keyFormulas || []).map((f) => `${f.label} ${f.formula}`),
+          ...(s.workedExamples || []).map((e) => `${e.title} ${e.problem} ${e.solution}`)
+        ];
+        for (const t of texts) {
+          const hits = findOutOfScope(data.grade, t || '');
+          if (hits.length) offScope.push(`${ch.id}: ${hits.join(', ')}`);
+        }
+      }
+    }
+    expect(offScope).toEqual([]);
+  });
+
   it('tidak ada soal kembar dalam satu bab', () => {
     const norm = (s) => s.toLowerCase().replace(/\$|\\[a-z]+|[{}()\s.,:;?!]/g, '');
     const dupes = [];
@@ -100,6 +121,20 @@ describe('Audit konten: cakupan dan kerapian soal', () => {
     };
     for (const data of ALL_GRADES) walk(data, `grade${data.grade}`);
     expect(broken).toEqual([]);
+  });
+});
+
+describe('Indeks bab (chapterIndex.js)', () => {
+  it('sama dengan data kelas — jalankan `node pipeline/build_chapter_index.mjs` bila gagal', () => {
+    const fromData = ALL_GRADES.flatMap((data) => data.chapters.map((ch) => ({
+      id: ch.id,
+      title: ch.title,
+      coreConcepts: ch.summary?.coreConcepts || [],
+      tutorTip: ch.summary?.tutorTip || '',
+      questionCount: (ch.questions || []).length
+    })));
+    const fromIndex = ALL_CHAPTERS_INDEX.map(({ id, title, coreConcepts, tutorTip, questionCount }) => ({ id, title, coreConcepts, tutorTip, questionCount }));
+    expect(fromIndex).toEqual(fromData);
   });
 });
 

@@ -3,6 +3,7 @@ import React from 'react';
 import { renderToString } from 'react-dom/server';
 import { MemoryRouter } from 'react-router-dom';
 import { PublicHandbook } from '../src/components/PublicHandbook.jsx';
+import { QueryRedirectHandler } from '../src/App.jsx';
 import { AmcChapterView } from '../src/components/handbook/AmcChapterView.jsx';
 import { AuthContext } from '../src/context/AuthContext.jsx';
 import { 
@@ -330,28 +331,37 @@ describe('Empirical Challenger M3: Malformed & Missing Params Fallback Stress Te
     expect(htmlSchool).toContain('smp8-bab1-bilangan-berpangkat');
   });
 
-  it('buildUrl produces clean, spec-compliant URLs under all edge cases', () => {
+  it('buildUrl produces clean SEO paths under all edge cases', () => {
     const build = PublicHandbook.buildUrl;
 
     // School mode with grade and chapter
     expect(build({ mode: 'school', grade: 7, chapter: 'smp7-bab1' }))
-      .toBe('/?grade=7&chapter=smp7-bab1');
+      .toBe('/matematika/kelas-7/bab1');
 
     // School mode defaults
     expect(build({ mode: 'school' }))
-      .toBe('/?grade=4');
+      .toBe('/matematika/kelas-4');
 
     // AMC mode with level and chapter
     expect(build({ mode: 'amc', level: 12, chapter: 'amc12-ch1-advanced-recursion-states' }))
-      .toBe('/?mode=amc&level=12&chapter=amc12-ch1-advanced-recursion-states');
+      .toBe('/olimpiade/amc-12/ch1-advanced-recursion-states');
 
     // AMC mode defaults
     expect(build({ mode: 'amc' }))
-      .toBe('/?mode=amc&level=8');
+      .toBe('/olimpiade/amc-8');
 
     // Empty object
     expect(build({}))
-      .toBe('/?grade=4');
+      .toBe('/matematika/kelas-4');
+  });
+
+  it('legacy query links redirect to clean SEO paths', () => {
+    const resolve = QueryRedirectHandler.resolve;
+    expect(resolve(new URLSearchParams('grade=5&chapter=sd5-bab2-kpk-fpb'), '/'))
+      .toBe('/matematika/kelas-5/bab2-kpk-fpb');
+    expect(resolve(new URLSearchParams('mode=amc&level=10&chapter=amc10-ch1-advanced-combinatorics'), '/'))
+      .toBe('/olimpiade/amc-10/ch1-advanced-combinatorics');
+    expect(resolve(new URLSearchParams('grade=99'), '/')).toBeNull();
   });
 });
 

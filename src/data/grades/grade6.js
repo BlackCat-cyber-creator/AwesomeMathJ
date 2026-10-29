@@ -13,7 +13,7 @@ export const grade6Data = {
       "id": "sd6-bab1-pecahan-desimal",
       "title": "Bab 1: Pecahan dan Desimal",
       "summary": {
-        "overview": "Di kehidupan sehari-hari, kita sangat akrab dengan pembagian makanan dan pengukuran bahan. Ketika seorang ibu membagi kue tart menjadi beberapa bagian yang sama rata untuk tamu, seorang anak menakar $\\frac{1}{4}$ liter susu cair untuk membuat puding, atau seorang penjahit mengukur panjang kain 1,75 meter untuk membuat kemeja, kita menggunakan bilangan pecahan dan desimal. Petani di sawah juga menggunakan takaran pecahan saat melarutkan konsentrat pupuk cair ke dalam tangki semprot air agar tanaman tumbuh subur.\n\nPecahan dan desimal adalah dua cara berbeda untuk menyatakan besaran bagian dari satu kesatuan utuh. Dalam sains, teknologi, dan perdagangan, bilangan desimal mempermudah perhitungan menggunakan timbangan digital dan kasir pembayaran, sementara bentuk pecahan sangat memudahkan operasi pembagian proporsional tanpa pembulatan desimal yang panjang.\n\nBab ini membimbing siswa Kelas 6 mendalami operasi perkalian dan pembagian pecahan dengan bilangan asli, pembagian pecahan dengan pecahan lain menggunakan konsep kebalikan, mengubah pecahan menjadi bentuk desimal secara bersusun (porogapit), serta mengoperasikan perkalian dan pembagian desimal untuk menyelesaikan persoalan kontekstual sehari-hari secara akurat.",
+        "overview": "Di kehidupan sehari-hari, kita sangat akrab dengan pembagian makanan dan pengukuran bahan. Ketika seorang ibu membagi kue tart menjadi beberapa bagian yang sama rata untuk tamu, seorang anak menakar $\\frac{1}{4}$ liter susu cair untuk membuat puding, atau seorang penjahit mengukur panjang kain 1,5 meter untuk membuat kemeja, kita menggunakan bilangan pecahan dan desimal. Petani di sawah juga menggunakan takaran pecahan saat melarutkan konsentrat pupuk cair ke dalam tangki semprot air agar tanaman tumbuh subur.\n\nPecahan dan desimal adalah dua cara berbeda untuk menyatakan besaran bagian dari satu kesatuan utuh. Dalam sains, teknologi, dan perdagangan, bilangan desimal mempermudah perhitungan menggunakan timbangan digital dan kasir pembayaran, sementara bentuk pecahan sangat memudahkan operasi pembagian proporsional tanpa pembulatan desimal yang panjang.\n\nBab ini membimbing siswa Kelas 6 mendalami operasi perkalian dan pembagian pecahan dengan bilangan asli, pembagian pecahan dengan pecahan lain menggunakan konsep kebalikan, mengubah pecahan menjadi bentuk desimal secara bersusun (porogapit), serta mengoperasikan perkalian dan pembagian desimal untuk menyelesaikan persoalan kontekstual sehari-hari secara akurat.",
         "coreConcepts": [
           "Perkalian Pecahan dengan Bilangan Asli: Dilakukan dengan mengalikan bilangan asli dengan pembilang pecahan, sementara penyebutnya tetap: $n \\times \\frac{a}{b} = \\frac{n \\times a}{b}$.",
           "Pembagian Pecahan dengan Bilangan Asli: Dilakukan dengan mengalikan penyebut pecahan dengan bilangan asli tersebut: $\\frac{a}{b} : n = \\frac{a}{b \\times n}$.",
@@ -2363,39 +2363,41 @@ export const grade6Data = {
       "id": "sd6-bab4-peluang",
       "title": "Bab 4: Peluang",
       "summary": {
-        "overview": "Sebelum pertandingan sepak bola dimulai, wasit melempar koin logam ke udara untuk menentukan tim mana yang berhak memilih sisi gawang atau menendang bola pertama kali. Mengapa wasit menggunakan koin? Karena kedua kapten tim memiliki kesempatan atau peluang yang sama persis dan adil (50:50) untuk mendapatkan sisi Angka atau sisi Gambar. Prinsip keacakan ini juga digunakan dalam undian arisan keluarga dan pemilihan giliran presentasi kelompok di kelas.\n\nDalam kehidupan sehari-hari, kita sering membuat perkiraan mengenai kejadian yang belum terjadi: 'Apakah besok akan turun hujan?', 'Mungkinkah matahari terbit dari sebelah barat?', atau 'Berapa besar kemungkinan kita memenangkan undian doorprize berhadiah sepeda?'. Konsep derajat kemungkinan terjadinya suatu peristiwa inilah yang dipelajari dalam Teori Peluang Sederhana.\n\nBab ini membimbing siswa Kelas 6 mengenali skala kemungkinan suatu peristiwa (pasti terjadi, mungkin terjadi, atau mustahil terjadi), menentukan ruang sampel pada pelemparan koin logam dan dadu bermata enam, membandingkan peluang teoritik sederhana dalam bentuk pecahan, serta memahami arti keadilan (fairness) dalam permainan acak.",
+        "overview": "Sebelum pertandingan sepak bola dimulai, wasit melempar koin ke udara untuk menentukan tim mana yang memilih sisi lapangan lebih dahulu. Mengapa memakai koin? Karena sisi Angka dan sisi Gambar sama mungkin muncul, sehingga undian itu adil bagi kedua tim. Prinsip yang sama dipakai saat mengundi giliran presentasi kelompok atau arisan keluarga.\n\nDalam kehidupan sehari-hari kita sering memperkirakan kejadian yang belum terjadi: \"Apakah besok akan hujan?\", \"Mungkinkah matahari terbit dari barat?\", atau \"Warna kelereng apa yang paling mungkin terambil dari kantong?\". Kita tidak selalu bisa memastikan hasilnya, tetapi kita bisa membandingkan kejadian mana yang lebih mungkin, sama mungkin, atau kurang mungkin terjadi.\n\nBab ini membimbing siswa Kelas 6 mengenali kejadian yang pasti, mungkin, dan mustahil; mendaftar semua hasil yang dapat muncul pada percobaan sederhana seperti melempar koin, dadu, atau memutar roda putar; serta membandingkan kemungkinan dua kejadian dengan menghitung banyak hasil yang mendukung masing-masing kejadian.",
         "coreConcepts": [
-          "Tingkat Kepastian Peristiwa:\n- Peristiwa Pasti: Kejadian yang sudah pasti terjadi (nilai peluang $= 1$), contoh: manusia pasti bernapas membutuhkan oksigen.\n- Peristiwa Mungkin: Kejadian yang bisa terjadi atau bisa tidak terjadi (nilai peluang antara 0 dan 1), contoh: besok sore turun hujan.\n- Peristiwa Mustahil: Kejadian yang tidak mungkin terjadi (nilai peluang $= 0$), contoh: matahari terbit dari arah barat.",
-          "Titik Sampel dan Ruang Sampel: Ruang sampel ($S$) adalah himpunan semua hasil yang mungkin dari suatu percobaan. Titik sampel adalah setiap anggota kemungkinan dalam ruang sampel. Contoh: pelemparan koin memiliki ruang sampel $\\{\\text{Angka}, \\text{Gambar}\\}$ dengan $n(S) = 2$.",
-          "Peluang Sederhana: Rasio antara banyaknya kejadian yang diharapkan ($n(A)$) terhadap seluruh ruang sampel ($n(S)$): $P(A) = \\frac{n(A)}{n(S)}$."
+          "Pasti, Mungkin, dan Mustahil:\n- Pasti terjadi: kejadian yang selalu terjadi, contoh: matahari terbit dari timur.\n- Mungkin terjadi: kejadian yang bisa terjadi atau tidak, contoh: besok sore turun hujan.\n- Mustahil terjadi: kejadian yang tidak mungkin terjadi, contoh: mendapat mata dadu 7 dari satu dadu biasa.",
+          "Mendaftar Hasil yang Mungkin: Sebelum membandingkan, tuliskan semua hasil yang dapat muncul. Koin: Angka atau Gambar (2 hasil). Dadu: 1, 2, 3, 4, 5, 6 (6 hasil). Kantong berisi 4 kelereng merah dan 2 kelereng biru: 6 kelereng yang masing-masing bisa terambil.",
+          "Membandingkan Kemungkinan: Kejadian yang didukung oleh lebih banyak hasil atau benda lebih mungkin terjadi. Jika banyaknya sama, kedua kejadian sama mungkin. Contoh: pada dadu, \"muncul kurang dari 5\" (1, 2, 3, 4) lebih mungkin daripada \"muncul lebih dari 4\" (5, 6).",
+          "Percobaan Adil: Sebuah undian adil jika setiap peserta memiliki kemungkinan yang sama. Hasil percobaan nyata bisa sedikit berbeda dari perkiraan (misalnya koin dilempar 20 kali menghasilkan 11 Angka dan 9 Gambar), dan itu wajar."
         ],
         "workedExamples": [
           {
-            "title": "Peluang Munculnya Mata Dadu Genap",
-            "problem": "Sebuah dadu bermata enam dilempar satu kali. Berapakah peluang munculnya mata dadu bilangan genap?",
-            "solution": "Langkah 1: Tentukan ruang sampel pelemparan dadu:\n$$S = \\{1, 2, 3, 4, 5, 6\\} \\implies n(S) = 6$$\n\nLangkah 2: Tentukan kejadian muncul mata dadu genap:\n$$A = \\{2, 4, 6\\} \\implies n(A) = 3$$\n\nLangkah 3: Hitung peluangnya:\n$$P(A) = \\frac{n(A)}{n(S)} = \\frac{3}{6} = \\frac{1}{2}$$\nPeluang muncul mata dadu genap adalah **$\\frac{1}{2}$**."
+            "title": "Membandingkan Kemungkinan pada Dadu",
+            "problem": "Sebuah dadu dilempar satu kali. Manakah yang lebih mungkin: muncul mata dadu genap atau muncul mata dadu 1?",
+            "solution": "Langkah 1: Daftar hasil yang mendukung setiap kejadian:\n- Mata dadu genap: 2, 4, 6 (3 hasil)\n- Mata dadu 1: hanya 1 hasil\n\nLangkah 2: Bandingkan banyaknya hasil: $3 > 1$.\n\nJadi, **muncul mata dadu genap lebih mungkin** daripada muncul mata dadu 1."
           },
           {
-            "title": "Peluang Mengambil Kelereng dari Kantong",
-            "problem": "Di dalam sebuah kantong terdapat 3 kelereng merah, 5 kelereng biru, dan 2 kelereng kuning. Jika Budi mengambil satu kelereng secara acak, berapakah peluang terambilnya kelereng berwarna merah?",
-            "solution": "Langkah 1: Hitung total seluruh kelereng dalam kantong (ruang sampel):\n$$n(S) = 3 + 5 + 2 = 10$$\n\nLangkah 2: Banyak kelereng merah: $n(M) = 3$.\n\nLangkah 3: Hitung peluangnya:\n$$P(M) = \\frac{n(M)}{n(S)} = \\frac{3}{10}$$\nPeluang terambilnya kelereng merah adalah **$\\frac{3}{10}$** (atau 0,3)."
+            "title": "Kelereng Mana yang Paling Mungkin Terambil?",
+            "problem": "Di dalam kantong terdapat 3 kelereng merah, 5 kelereng biru, dan 2 kelereng kuning. Budi mengambil satu kelereng tanpa melihat. Urutkan warna dari yang paling mungkin sampai yang paling kecil kemungkinannya terambil.",
+            "solution": "Langkah 1: Bandingkan banyak kelereng setiap warna: biru 5, merah 3, kuning 2.\n\nLangkah 2: Warna dengan kelereng lebih banyak lebih mungkin terambil.\n\nUrutannya: **biru, merah, kuning**."
           }
         ],
         "keyFormulas": [
           {
-            "label": "Peluang Suatu Kejadian",
-            "formula": "P(A) = \\frac{n(A)}{n(S)}"
+            "label": "Membandingkan Kemungkinan",
+            "formula": "\\text{lebih banyak hasil yang mendukung} \\Rightarrow \\text{lebih mungkin terjadi}"
           },
           {
-            "label": "Rentang Nilai Peluang",
-            "formula": "0 \\le P(A) \\le 1"
+            "label": "Skala Kemungkinan",
+            "formula": "\\text{mustahil} \\;<\\; \\text{kurang mungkin} \\;<\\; \\text{sama mungkin} \\;<\\; \\text{lebih mungkin} \\;<\\; \\text{pasti}"
           }
         ],
         "misconceptions": [
-          "Menyatakan nilai peluang lebih dari 1. Nilai peluang selalu berkisar antara 0 (mustahil) sampai 1 (pasti terjadi).",
-          "Menganggap semua kejadian selalu memiliki peluang 50:50, padahal peluang sangat bergantung pada proporsi jumlah titik sampel terhadap total seluruhnya."
+          "Menganggap angka yang \"lebih besar\" lebih mudah muncul pada dadu. Setiap mata dadu sama mungkin muncul; yang dibandingkan adalah banyaknya hasil yang mendukung suatu kejadian.",
+          "Mengira setelah 3 kali muncul Angka, lemparan berikutnya pasti Gambar. Setiap lemparan koin tetap sama mungkin menghasilkan Angka atau Gambar.",
+          "Menganggap semua kejadian selalu 50:50, padahal kemungkinan bergantung pada banyaknya hasil atau benda yang mendukung kejadian itu."
         ],
-        "tutorTip": "Ingat rumus sederhana peluang: 'Jumlah yang dicari dibagi Jumlah seluruhnya!' Misalnya ada 3 kelereng merah dari total 10 kelereng, peluangnya langsung $\\frac{3}{10}$!"
+        "tutorTip": "Biasakan menulis daftar semua hasil yang mungkin sebelum menjawab. Setelah daftar lengkap, cukup bandingkan mana yang hasilnya lebih banyak."
       },
       "questions": [
         {

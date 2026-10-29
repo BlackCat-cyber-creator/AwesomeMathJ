@@ -70,6 +70,8 @@ Aplikasi mengadopsi **React Router v7** dengan skema rute kanonik dan dukungan p
 | Rute Kanonik | Komponen | Deskripsi |
 | :--- | :--- | :--- |
 | `/` | `PublicHandbook` | Portal buku saku digital 55 bab dengan 6 pilar pedagogis dan kuis mandiri |
+| `/matematika/kelas-:n/:bab` | `PublicHandbook` | Halaman bab Kurikulum Merdeka (alamat rapi, diprerender untuk mesin pencari) |
+| `/olimpiade/amc-:n/:bab` | `PublicHandbook` | Halaman bab olimpiade AMC (alamat rapi, diprerender) |
 | `/quest/:questId` | `StudentQuestView` | Player pengerjaan tugas/PR interaktif siswa dengan scratchpad kanvas |
 | `/worksheet/:questId` | `PrintableWorksheet` | Lembar Kerja Peserta Didik (LKPD) cetak A4 siap print dengan QR code |
 | `/solution/:grade/:chapterId` | `ChapterSolutionView` | Kunci jawaban & pembahasan bertahap resmi (target scan QR dari LKPD) |

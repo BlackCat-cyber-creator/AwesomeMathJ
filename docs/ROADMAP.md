@@ -68,6 +68,12 @@ Catatan akses: PDF buku disimpan di domain `static.buku.kemdikbud.go.id` (domain
 - 39 soal SD yang memakai materi Fase D diganti (statistika, diagram lingkaran, peluang berupa angka, lingkaran, desimal dua angka, skala). Bab Peluang Kelas 6 kini membahas kemungkinan kejadian sesuai Fase C.
 - Aturan otomatis cakupan fase untuk Kelas 4–9; keterangan CP 2025 untuk bab Kelas X yang berpindah fase.
 
+### Tahap 0d — Exposure mesin pencari (SEO) ✅ (Oktober 2026)
+- Alamat rapi per bab: `/matematika/kelas-4/bab2-pecahan`, `/olimpiade/amc-8/ch1-permutations` (link lama `/?grade=` dialihkan otomatis).
+- `npm run build` menjalankan `scripts/prerender.mjs`. Hasilnya 104 halaman HTML berisi materi lengkap (rumus dirender KaTeX), dengan judul/deskripsi unik, canonical, Open Graph, dan JSON-LD (`LearningResource`, `BreadcrumbList`), plus `sitemap.xml`.
+- `public/robots.txt` menutup Studio Guru, link PR, lembar kerja, dan halaman kunci jawaban dari indeks.
+- Perlu dilakukan pemilik situs: daftarkan `https://awesomemathj.vercel.app` di Google Search Console, lalu kirim `sitemap.xml`.
+
 ### Tahap 1 — Fondasi multi-mata pelajaran
 - Struktur data baru: `src/content/<subject>/<curriculum>/<grade>/<chapter>.json`, satu file per bab supaya mudah dibaca dan diedit guru tanpa coding.
 - Skema soal ditambah label `subject`, `curriculum`, `phase`, `cpElement`, dan `source`.

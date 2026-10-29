@@ -1,6 +1,7 @@
 import React, { useEffect, Suspense, lazy } from 'react';
 import { Routes, Route, Navigate, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
+import { handbookPath } from './utils/seoRoutes';
 import { 
   GraduationCap, 
   Lock, 
@@ -67,6 +68,13 @@ function resolveQueryRedirect(searchParams, pathname = '/') {
   }
   if (isSolution && grade && chapter) {
     return `/solution/${encodeURIComponent(grade)}/${encodeURIComponent(chapter)}`;
+  }
+  // Link buku saku lama (?grade=... / ?mode=amc...) → alamat rapi
+  if (mode === 'amc') {
+    return handbookPath({ mode: 'amc', level: Number(level) || 8, chapter });
+  }
+  if (grade && Number(grade) >= 4 && Number(grade) <= 12) {
+    return handbookPath({ mode: 'school', grade: Number(grade), chapter });
   }
   return null;
 }
@@ -247,6 +255,14 @@ export function App() {
                 onLaunchPractice={handleLaunchPracticeQuest}
                 onPrintQuest={handlePrintQuest}
               />
+            } />
+
+            {/* 1b. Buku saku dengan alamat rapi (diindeks mesin pencari) */}
+            <Route path="/matematika/*" element={
+              <PublicHandbook onLaunchPractice={handleLaunchPracticeQuest} onPrintQuest={handlePrintQuest} />
+            } />
+            <Route path="/olimpiade/*" element={
+              <PublicHandbook onLaunchPractice={handleLaunchPracticeQuest} onPrintQuest={handlePrintQuest} />
             } />
 
             {/* 2. Interactive Student Quest Player */}

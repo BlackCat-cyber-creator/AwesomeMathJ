@@ -38,4 +38,5 @@ Folder `cp-046-2025/` berisi kutipan teks resmi lampiran keputusan untuk mata pe
   - 15 soal Kelas 5 (rerata/median/modus, diagram lingkaran, luas lingkaran);
   - 24 soal Kelas 6 (peluang berupa angka, operasi desimal dua angka, skala).
 - **Kelas X:** bab Logaritma, Barisan & Deret, Vektor, dan Peluang di CP 2025 berada di Fase F (Kelas XI–XII / Tingkat Lanjut). Bab-bab ini diberi keterangan, tidak dihapus.
+- **Teks materi ikut diselaraskan:** Kelas 5 Bab 8 (istilah modus dihapus) dan Kelas 6 Bab 4 (rumus peluang diganti dengan membandingkan kemungkinan). Test `contentAudit` kini juga memeriksa teks materi, bukan hanya soal.
 - **Masih di batas:** luas permukaan kubus/balok (Kelas 6 Bab 3). Fase C hanya menyebut "mengkonstruksi dan mengurai" kubus/balok, sedangkan luas permukaan secara eksplisit ada di Fase D. Perlu keputusan guru.
