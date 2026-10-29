@@ -22,8 +22,7 @@ import {
   Trophy,
   Loader2
 } from 'lucide-react';
-import { useAuth } from '../hooks/useAuth';
-import { getStudentProgressCloud } from '../firebase/firestore';
+import { getProgress, PROGRESS_EVENT } from '../utils/progress';
 
 /**
  * Pure helper to parse handbook search parameters with backward compatibility.
@@ -96,20 +95,14 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
 
   // Dynamic Grade Data Loader (Kurikulum Merdeka)
   const { gradeData: currentGradeData, fullGradeData, loading: isGradeLoading } = useGradeData(selectedGrade);
-  const { studentId, isAuthenticated } = useAuth();
-  const [studentProgress, setStudentProgress] = useState({});
+  // Progres latihan mandiri tersimpan di perangkat pengunjung (tanpa akun)
+  const [studentProgress, setStudentProgress] = useState(() => getProgress());
 
   useEffect(() => {
-    let active = true;
-    if (isAuthenticated && studentId) {
-      getStudentProgressCloud(studentId).then(progress => {
-        if (active) setStudentProgress(progress || {});
-      });
-    } else {
-      setStudentProgress({});
-    }
-    return () => { active = false; };
-  }, [studentId, isAuthenticated]);
+    const refresh = () => setStudentProgress(getProgress());
+    window.addEventListener(PROGRESS_EVENT, refresh);
+    return () => window.removeEventListener(PROGRESS_EVENT, refresh);
+  }, []);
 
   // Dynamic AMC Module Data Loader (AMC 8, AMC 10, AMC 12)
   const [currentLevelState, setCurrentLevelState] = useState(selectedAmcLevel);

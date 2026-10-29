@@ -1,5 +1,4 @@
 import React, { useState, useMemo } from 'react';
-import confetti from 'canvas-confetti';
 import { 
   PenTool, 
   Lightbulb, 
@@ -11,8 +10,7 @@ import {
 } from 'lucide-react';
 import { MathText } from '../MathRenderer';
 import { QuestionVisual } from '../QuestionVisual';
-import { useAuth } from '../../hooks/useAuth';
-import { saveStudentProgressCloud } from '../../firebase/firestore';
+import { saveChapterResult } from '../../utils/progress';
 
 export function ChapterQuiz({
   questions = [],
@@ -23,7 +21,6 @@ export function ChapterQuiz({
   onLaunchPractice: _onLaunchPractice,
   onPrintQuest
 }) {
-  const { studentId, isAuthenticated } = useAuth();
   const [selectedPacketFilter, setSelectedPacketFilter] = useState('ALL');
   const [selectedAnswers, setSelectedAnswers] = useState({}); // { [qId]: optionKey }
   const [isQuizSubmitted, setIsQuizSubmitted] = useState(false);
@@ -99,19 +96,8 @@ export function ChapterQuiz({
 
     const finalScore = Math.round((correctCount / filteredQuestions.length) * 100) || 0;
 
-    // Confetti
-    if (finalScore >= 80) {
-      try {
-        confetti({
-          particleCount: 80,
-          spread: 60,
-          origin: { y: 0.6 }
-        });
-      } catch {}
-    }
-
-    if (isAuthenticated && studentId && chapterId) {
-      saveStudentProgressCloud(studentId, grade, chapterId, {
+    if (chapterId) {
+      saveChapterResult(chapterId, {
         score: finalScore,
         correct: correctCount,
         total: filteredQuestions.length,

@@ -34,6 +34,22 @@ Data ini berasal dari direktori sekolah pihak ketiga, jadi perlu dicek ulang lan
 4. **Tidak ada soal yang bergantung pada soal lain.** Paket PR mengambil soal secara terpisah.
 5. **Setiap perubahan konten lewat test.** Render gambar, cakupan fase, kunci jawaban, soal kembar.
 
+## Temuan katalog buku resmi (buku.kemendikdasmen.go.id, Oktober 2026)
+
+Katalog Kurikulum Merdeka resmi dibaca langsung lewat API publik situs:
+
+| Mapel | Edisi terbaru di katalog |
+| :--- | :--- |
+| Matematika SD Kelas IV–VI, SMP Kelas VII–IX | Edisi 2022 — **file PDF yang sama** dengan yang dipakai proyek ini (`Matematika-BS-KLS-IV.pdf`, dst.) |
+| Matematika SMA Kelas X | **Edisi Revisi** (`Matematika_BS_KLS_X_Rev.pdf`) |
+| Matematika Tingkat Lanjut Kelas XI | **Edisi Revisi** (`Matematika_BS_KLS_XI_TL_Rev.pdf`) |
+| Matematika Kelas XI, XII, Tingkat Lanjut XII | Edisi 2021/2022 |
+| IPA SMP Kelas VII & VIII, IPA SMA Kelas X, IPAS SD Kelas IV & V | **Edisi Revisi** |
+
+Artinya, ketidaksesuaian kelas (soal Kelas 4 berisi materi Kelas 5) **bukan karena buku lama**. Penyebabnya soal tambahan yang dibuat tanpa dicek ke CP (sudah diperbaiki di Tahap 0). Buku Matematika SD–SMP di katalog resmi belum diganti edisi baru. Yang perlu diselaraskan ulang dengan edisi revisi adalah **Kelas X** dan **Matematika Tingkat Lanjut XI**.
+
+Catatan akses: PDF buku disimpan di domain `static.buku.kemdikbud.go.id` (domain lama), yang masih harus diizinkan di pengaturan jaringan agar isi buku bisa dibaca.
+
 ## Tahapan
 
 ### Tahap 0 — Perbaikan darurat ✅ (Oktober 2026)
@@ -41,15 +57,22 @@ Data ini berasal dari direktori sekolah pihak ketiga, jadi perlu dicek ulang lan
 - Soal Kelas 4 di luar Fase B diganti; soal kembar dan soal yang merujuk "soal sebelumnya" dibereskan.
 - Audit otomatis dipasang. Rincian ada di `docs/audit/AUDIT_2026-10.md`.
 
+### Tahap 0b — Studio Guru sederhana ✅ (Oktober 2026)
+- Satu halaman berbasis murid; 1 bab = 1 PR (mudah → sulit); PR AMC untuk murid olimpiade.
+- Pemutar PR mendukung pilihan ganda, isian, dan uraian; jawaban per soal terlihat oleh guru.
+- Login Google murid dihapus; progres pengunjung publik tersimpan di perangkat.
+- Aturan Firestore diperketat (daftar PR hanya untuk guru pemilik). **Perlu di-deploy:** `firebase deploy --only firestore:rules`.
+
 ### Tahap 1 — Fondasi multi-mata pelajaran
 - Struktur data baru: `src/content/<subject>/<curriculum>/<grade>/<chapter>.json`, satu file per bab supaya mudah dibaca dan diedit guru tanpa coding.
 - Skema soal ditambah label `subject`, `curriculum`, `phase`, `cpElement`, dan `source`.
 - Rute publik: `/matematika/merdeka/kelas-4/bab-2`, `/ipa/cambridge/stage-7/...`, dan seterusnya, dengan pencarian materi dan link per soal.
 - Tombol **"Laporkan soal salah"** di setiap soal, masuk ke antrean tinjauan di Studio Guru.
-- Studio Guru: pilih mata pelajaran dan jalur saat membuat PR (Matematika Merdeka / Cambridge / AMC / IPA).
+- Studio Guru: tambah pilihan mata pelajaran IPA dan jalur Cambridge saat membuat PR.
 
 ### Tahap 2 — Matematika Kurikulum Merdeka edisi revisi
-- Selaraskan ulang Kelas 4–6 dengan buku siswa edisi revisi dan CP 046/2025: daftar bab, urutan materi, dan contoh soal. Dilanjutkan ke SMP, lalu SMA.
+- Selaraskan ulang **Kelas X** dan **Matematika Tingkat Lanjut XI** dengan edisi revisi.
+- Kelas 4–9: periksa setiap soal terhadap buku 2022 (yang masih berlaku) dan CP 046/2025; ganti soal yang keluar dari cakupan bab.
 - Ganti sisa soal kembar dan mirip (daftar di laporan audit).
 - **Butuh:** akses ke PDF buku resmi (lihat "Kebutuhan dari Anda").
 
@@ -67,7 +90,5 @@ Data ini berasal dari direktori sekolah pihak ketiga, jadi perlu dicek ulang lan
 
 ## Kebutuhan dari Anda
 
-1. **Akses buku resmi.** Sesi cloud ini tidak bisa membuka `buku.kemendikdasmen.go.id`, `kurikulum.kemendikdasmen.go.id`, dan `cambridgeinternational.org` karena diblokir pengaturan jaringan.
-   - Pilihan 1: tambahkan domain itu di *Network access* environment (lihat https://code.claude.com/docs/en/cloud-environments#network-access).
-   - Pilihan 2: unggah PDF buku siswa edisi revisi ke repo (misalnya folder `sources/`, tidak dipublikasikan).
+1. **Akses PDF buku resmi.** Katalog `buku.kemendikdasmen.go.id` sudah bisa dibaca, tetapi file PDF-nya ada di `static.buku.kemdikbud.go.id` yang masih diblokir. Tambahkan domain itu di *Network access* environment (https://code.claude.com/docs/en/cloud-environments#network-access), atau unggah PDF ke repo (misalnya folder `sources/`).
 2. **Contoh soal dari sekolah murid.** Lembar kerja atau ujian dari Immanuel, Tunas Bangsa, dan lainnya akan membantu menyesuaikan gaya dan tingkat kesulitan soal.

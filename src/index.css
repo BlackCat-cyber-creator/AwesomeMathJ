@@ -1519,3 +1519,507 @@ img, svg {
     gap: 0.5rem;
   }
 }
+
+/* =============================================================
+   STUDIO GURU (satu halaman berbasis murid) & PEMUTAR PR MURID
+   ============================================================= */
+.studio-layout {
+  display: grid;
+  grid-template-columns: 280px minmax(0, 1fr);
+  gap: 1rem;
+  align-items: start;
+}
+
+.studio-sidebar {
+  padding: 1rem;
+  position: sticky;
+  top: 5rem;
+}
+
+.studio-sidebar-head,
+.studio-profile-head {
+  display: flex;
+  align-items: flex-start;
+  justify-content: space-between;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.studio-heading {
+  font-size: 1.15rem;
+  margin: 0;
+  color: var(--primary-navy);
+}
+
+.studio-main {
+  display: flex;
+  flex-direction: column;
+  gap: 1rem;
+  min-width: 0;
+}
+
+.studio-card {
+  padding: 1.1rem 1.25rem;
+}
+
+.studio-card-success {
+  border-color: var(--status-emerald-border);
+  background: var(--status-emerald-light);
+}
+
+.studio-card-title {
+  font-size: 1rem;
+  margin: 0 0 0.75rem;
+  color: var(--primary-navy);
+}
+
+.studio-muted {
+  color: var(--text-muted);
+  font-size: 0.85rem;
+  margin: 0.25rem 0;
+}
+
+.studio-error {
+  color: var(--status-brick);
+  font-size: 0.85rem;
+  margin: 0.5rem 0;
+}
+
+.studio-banner-error,
+.studio-banner-info {
+  padding: 0.65rem 0.9rem;
+  border-radius: var(--radius-sm);
+  margin-bottom: 1rem;
+  font-size: 0.875rem;
+}
+
+.studio-banner-error {
+  background: var(--status-brick-light);
+  border: 1px solid var(--status-brick-border);
+  color: var(--status-brick);
+}
+
+.studio-banner-info {
+  background: var(--accent-amber-light);
+  border: 1px solid var(--accent-amber-border);
+  color: #92400E;
+}
+
+.studio-actions {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.5rem;
+  margin-top: 0.85rem;
+}
+
+.studio-actions-compact {
+  margin-top: 0.5rem;
+}
+
+.studio-actions-compact .btn {
+  padding: 0.35rem 0.65rem;
+  font-size: 0.8rem;
+}
+
+.studio-link-btn {
+  margin-top: 0.75rem;
+}
+
+.studio-danger {
+  color: var(--status-brick);
+}
+
+/* Form */
+.studio-form-grid {
+  display: grid;
+  grid-template-columns: repeat(2, minmax(0, 1fr));
+  gap: 0.75rem;
+}
+
+.studio-field {
+  display: flex;
+  flex-direction: column;
+  gap: 0.3rem;
+  font-size: 0.82rem;
+  font-weight: 600;
+  color: var(--text-secondary);
+}
+
+.studio-field-wide {
+  grid-column: 1 / -1;
+}
+
+.studio-field .form-select {
+  width: 100%;
+  font-weight: 400;
+}
+
+/* Daftar murid */
+.studio-search {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-top: 0.75rem;
+  padding: 0.4rem 0.6rem;
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  color: var(--text-muted);
+}
+
+.studio-search input {
+  border: none;
+  outline: none;
+  width: 100%;
+  font-size: 0.85rem;
+  background: transparent;
+}
+
+.studio-student-list {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.35rem;
+}
+
+.studio-student-btn {
+  width: 100%;
+  display: grid;
+  grid-template-columns: 1fr auto;
+  grid-template-rows: auto auto;
+  text-align: left;
+  padding: 0.55rem 0.7rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid transparent;
+  background: transparent;
+  cursor: pointer;
+}
+
+.studio-student-btn:hover {
+  background: var(--bg-surface-subtle);
+}
+
+.studio-student-btn.is-active {
+  background: var(--primary-light);
+  border-color: var(--primary-subtle);
+}
+
+.studio-student-btn .studio-muted {
+  grid-column: 1;
+  margin: 0;
+  font-size: 0.78rem;
+}
+
+.studio-student-name {
+  font-weight: 700;
+  color: var(--text-primary);
+}
+
+.studio-pill {
+  grid-column: 2;
+  grid-row: 1 / span 2;
+  align-self: center;
+  min-width: 1.4rem;
+  padding: 0.1rem 0.45rem;
+  border-radius: 999px;
+  background: var(--accent-amber-light);
+  border: 1px solid var(--accent-amber-border);
+  color: #92400E;
+  font-size: 0.75rem;
+  font-weight: 700;
+  text-align: center;
+}
+
+/* Profil */
+.studio-profile-details {
+  display: grid;
+  grid-template-columns: max-content 1fr;
+  gap: 0.3rem 0.9rem;
+  margin: 0.85rem 0 0;
+  font-size: 0.875rem;
+}
+
+.studio-profile-details dt {
+  color: var(--text-muted);
+}
+
+.studio-profile-details dd {
+  margin: 0;
+  white-space: pre-line;
+}
+
+/* Riwayat PR */
+.studio-homework-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+}
+
+.studio-homework-item {
+  padding: 0.85rem 0;
+  border-top: 1px solid var(--border-subtle);
+}
+
+.studio-homework-item:first-child {
+  border-top: none;
+  padding-top: 0;
+}
+
+.studio-homework-row {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  align-items: flex-start;
+}
+
+.studio-homework-info {
+  display: flex;
+  flex-direction: column;
+  min-width: 0;
+}
+
+.studio-homework-status {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  flex-shrink: 0;
+}
+
+.studio-status {
+  font-size: 0.75rem;
+  font-weight: 700;
+  padding: 0.15rem 0.55rem;
+  border-radius: 999px;
+  white-space: nowrap;
+}
+
+.studio-status-pending { background: var(--bg-surface-elevated); color: var(--text-secondary); }
+.studio-status-progress { background: var(--accent-amber-light); color: #92400E; }
+.studio-status-done { background: var(--status-emerald-light); color: #065F46; }
+
+.studio-score {
+  font-weight: 800;
+  font-size: 1.1rem;
+  color: var(--primary-navy);
+}
+
+.studio-review {
+  list-style: none;
+  margin: 0.75rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.5rem;
+}
+
+.studio-review-item {
+  display: flex;
+  gap: 0.6rem;
+  padding: 0.6rem 0.75rem;
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-subtle);
+  font-size: 0.875rem;
+}
+
+.studio-review-item.is-correct { background: var(--status-emerald-light); }
+.studio-review-item.is-wrong { background: var(--status-brick-light); }
+
+.studio-review-mark {
+  font-weight: 800;
+  width: 1rem;
+  flex-shrink: 0;
+}
+
+.studio-review-body {
+  min-width: 0;
+}
+
+.studio-review-answers {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.25rem 1.25rem;
+  margin-top: 0.35rem;
+  color: var(--text-secondary);
+}
+
+/* Pemutar PR murid */
+.quest-shell {
+  max-width: 760px;
+  margin: 1.5rem auto;
+  padding: 0 1rem;
+}
+
+.quest-center {
+  text-align: center;
+  padding-top: 3rem;
+}
+
+.quest-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: flex-start;
+  gap: 1rem;
+  margin-bottom: 0.75rem;
+}
+
+.quest-title {
+  font-size: 1.3rem;
+  margin: 0;
+  color: var(--primary-navy);
+}
+
+.quest-counter {
+  font-size: 0.85rem;
+  font-weight: 700;
+  color: var(--text-secondary);
+  white-space: nowrap;
+}
+
+.quest-nav {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.35rem;
+  margin-bottom: 1rem;
+}
+
+.quest-nav-btn {
+  width: 2.1rem;
+  height: 2.1rem;
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-medium);
+  background: #FFFFFF;
+  font-weight: 700;
+  font-size: 0.8rem;
+  cursor: pointer;
+}
+
+.quest-nav-btn.is-answered {
+  background: var(--primary-light);
+  border-color: var(--primary-subtle);
+  color: var(--primary-navy);
+}
+
+.quest-nav-btn.is-current {
+  border: 2px solid var(--primary-blue);
+}
+
+.quest-card {
+  padding: 1.25rem;
+}
+
+.quest-card-top {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-bottom: 0.6rem;
+}
+
+.quest-question {
+  display: block;
+  font-size: 1.05rem;
+  line-height: 1.6;
+  margin-bottom: 1rem;
+}
+
+.quest-answer-input {
+  width: 100%;
+  font-size: 1rem;
+  margin-top: 0.5rem;
+}
+
+.quest-hint,
+.quest-solution {
+  margin-top: 0.75rem;
+  padding: 0.75rem 0.9rem;
+  border-radius: var(--radius-sm);
+  background: var(--accent-amber-light);
+  border: 1px solid var(--accent-amber-border);
+  font-size: 0.9rem;
+}
+
+.quest-solution {
+  background: var(--bg-surface-subtle);
+  border-color: var(--border-subtle);
+}
+
+.quest-footer {
+  display: flex;
+  justify-content: space-between;
+  gap: 0.75rem;
+  margin-top: 1rem;
+}
+
+.quest-result-head {
+  padding: 1.5rem;
+  text-align: center;
+  margin-bottom: 1rem;
+}
+
+.quest-score {
+  font-size: 3rem;
+  font-weight: 900;
+  color: var(--primary-navy);
+  line-height: 1.1;
+  margin: 0.25rem 0;
+}
+
+.quest-review-list {
+  list-style: none;
+  padding: 0;
+  margin: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.quest-review-item {
+  padding: 1rem 1.1rem;
+}
+
+.quest-review-top {
+  display: flex;
+  align-items: center;
+  gap: 0.4rem;
+  margin-bottom: 0.4rem;
+}
+
+.quest-review-answer {
+  margin: 0.4rem 0;
+  font-size: 0.9rem;
+  color: var(--text-secondary);
+}
+
+.quest-ok { color: var(--status-emerald); }
+.quest-bad { color: var(--status-brick); }
+
+@media (max-width: 860px) {
+  .studio-layout {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-sidebar {
+    position: static;
+  }
+
+  .studio-student-list {
+    max-height: 260px;
+    overflow-y: auto;
+  }
+}
+
+@media (max-width: 560px) {
+  .studio-form-grid {
+    grid-template-columns: 1fr;
+  }
+
+  .studio-homework-row,
+  .quest-head {
+    flex-direction: column;
+  }
+
+  .quest-footer .btn {
+    flex: 1;
+    justify-content: center;
+  }
+}
