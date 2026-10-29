@@ -3100,28 +3100,28 @@ export const grade5Data = {
           "id": "sd5-b5-17",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Di tengah taman berbentuk persegi berukuran $14\\text{ m} \\times 14\\text{ m}$ dibuat kolam ikan berbentuk lingkaran dengan diameter 14 meter. Luas taman di luar kolam ikan adalah...",
+          "question": "Di tengah taman berbentuk persegi berukuran $14\\text{ m} \\times 14\\text{ m}$ dibuat kolam ikan berbentuk persegi panjang berukuran $8\\text{ m} \\times 6\\text{ m}$. Luas taman di luar kolam ikan adalah...",
           "options": [
             {
               "key": "A",
-              "text": "56 m^2"
+              "text": "156 m²"
             },
             {
               "key": "B",
-              "text": "38 m^2"
+              "text": "138 m²"
             },
             {
               "key": "C",
-              "text": "48 m^2"
+              "text": "160 m²"
             },
             {
               "key": "D",
-              "text": "42 m^2"
+              "text": "148 m²"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Luas persegi $= 196$. Luas lingkaran $= \\frac{22}{7} \\times 7^2 = 154$. Sisa $= 196 - 154 = 42$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$196 - 154 = 42\\text{ m}^2$$ (Opsi D)."
+          "hint": "Luas taman di luar kolam = luas persegi − luas persegi panjang.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Luas taman: $14 \\times 14 = 196\\text{ m}^2$.\n2. Luas kolam: $8 \\times 6 = 48\\text{ m}^2$.\n3. Sisa: $196 - 48 = 148\\text{ m}^2$.\n(Opsi D)."
         },
         {
           "id": "sd5-b5-18",
@@ -4652,28 +4652,28 @@ export const grade5Data = {
           "id": "sd5-b8-2",
           "category": "Latihan",
           "difficulty": "Dasar",
-          "question": "Data nilai ulangan matematika 5 orang siswa: $7, 8, 8, 9, 8$. Modus (data yang paling sering muncul) dari nilai tersebut adalah...",
+          "question": "Hasil pencatatan turus warna kesukaan siswa kelas 5: merah 6 siswa, biru 9 siswa, hijau 4 siswa, dan kuning 7 siswa. Banyak siswa yang menyukai warna biru atau kuning adalah...",
           "options": [
             {
               "key": "A",
-              "text": "7"
+              "text": "13 siswa"
             },
             {
               "key": "B",
-              "text": "8"
+              "text": "16 siswa"
             },
             {
               "key": "C",
-              "text": "9"
+              "text": "15 siswa"
             },
             {
               "key": "D",
-              "text": "8,5"
+              "text": "11 siswa"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Cari nilai yang muncul paling banyak: angka 8 muncul 3 kali.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nAngka 8 muncul sebanyak 3 kali, paling sering dibanding angka lain. Jadi, modusnya adalah **8** (Opsi B)."
+          "hint": "Jumlahkan banyak siswa penyuka biru dan penyuka kuning.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$9 + 7 = 16\\text{ siswa}$$\n(Opsi B)."
         },
         {
           "id": "sd5-b8-3",
@@ -4733,19 +4733,19 @@ export const grade5Data = {
           "id": "sd5-b8-4",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Sebuah tabel frekuensi mencatat jumlah pengunjung perpustakaan: Senin 25 orang, Selasa 30 orang, Rabu 35 orang, Kamis 20 orang, dan Jumat 40 orang. Rata-rata (mean) jumlah pengunjung perpustakaan per hari adalah...",
+          "question": "Tabel frekuensi pengunjung perpustakaan: Senin 25 orang, Selasa 30 orang, Rabu 35 orang, Kamis 20 orang, dan Jumat 40 orang. Selisih jumlah pengunjung pada dua hari teramai dengan dua hari tersepi adalah...",
           "options": [
             {
               "key": "A",
-              "text": "28 orang"
+              "text": "20 orang"
             },
             {
               "key": "B",
-              "text": "32 orang"
+              "text": "15 orang"
             },
             {
               "key": "C",
-              "text": "35 orang"
+              "text": "25 orang"
             },
             {
               "key": "D",
@@ -4753,22 +4753,22 @@ export const grade5Data = {
             }
           ],
           "correctAnswer": "D",
-          "hint": "Jumlahkan seluruh pengunjung ($25 + 30 + 35 + 20 + 40 = 150$), lalu bagi dengan 5 hari.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total pengunjung: $25 + 30 + 35 + 20 + 40 = 150\\text{ orang}$.\n2. Rata-rata per hari:\n$$\\text{Rata-rata} = \\frac{150}{5} = 30\\text{ orang}$$\nRata-rata pengunjung per hari adalah **30 orang** (Opsi D)."
+          "hint": "Dua hari teramai: Jumat dan Rabu. Dua hari tersepi: Kamis dan Senin.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Dua hari teramai: $40 + 35 = 75$ orang.\n2. Dua hari tersepi: $20 + 25 = 45$ orang.\n3. Selisih: $75 - 45 = 30$ orang.\n(Opsi D)."
         },
         {
           "id": "sd5-b8-5",
           "category": "Latihan",
           "difficulty": "Dasar",
-          "question": "Modus dari data berat badan (kg): 32, 34, 32, 35, 33, 32, 36 adalah...",
+          "question": "Data berat badan (kg) 7 siswa: 32, 34, 32, 35, 33, 32, 36. Jika data diurutkan dari yang paling ringan, berat badan pada urutan ketiga adalah...",
           "options": [
             {
               "key": "A",
-              "text": "34 kg"
+              "text": "33 kg"
             },
             {
               "key": "B",
-              "text": "33 kg"
+              "text": "34 kg"
             },
             {
               "key": "C",
@@ -4780,62 +4780,62 @@ export const grade5Data = {
             }
           ],
           "correctAnswer": "D",
-          "hint": "Nilai 32 muncul paling banyak (3 kali).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nModus adalah **32 kg** (Opsi D)."
+          "hint": "Urutkan dahulu: 32, 32, 32, 33, 34, 35, 36.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nData terurut: 32, 32, 32, 33, 34, 35, 36.\nUrutan ketiga adalah **32 kg**.\n(Opsi D)."
         },
         {
           "id": "sd5-b8-6",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Median dari data terurut: 5, 6, 7, 8, 9, 10, 11 adalah...",
+          "question": "Hasil pengukuran tinggi 5 tanaman kacang (cm): 12, 15, 9, 18, 14. Urutan tinggi tanaman dari yang terpendek adalah...",
           "options": [
             {
               "key": "A",
-              "text": "7"
+              "text": "18, 15, 14, 12, 9"
             },
             {
               "key": "B",
-              "text": "9"
+              "text": "9, 12, 15, 14, 18"
             },
             {
               "key": "C",
-              "text": "8"
+              "text": "9, 12, 14, 15, 18"
             },
             {
               "key": "D",
-              "text": "7,5"
+              "text": "12, 9, 14, 15, 18"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Data tengah dari 7 data ganjil adalah data ke-4.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nMedian data tersebut adalah **8** (Opsi C)."
+          "hint": "Cari nilai terkecil lebih dahulu, lalu yang lebih besar berikutnya.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nDari yang terpendek: 9, 12, 14, 15, 18.\n(Opsi C)."
         },
         {
           "id": "sd5-b8-7",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Nilai rata-rata dari data: 7, 8, 9, 6, 10 adalah...",
+          "question": "Data ukuran sepatu 12 siswa: 33, 34, 33, 35, 34, 33, 36, 34, 33, 35, 34, 33. Pada tabel frekuensi, frekuensi ukuran sepatu 33 adalah...",
           "options": [
             {
               "key": "A",
-              "text": "8"
+              "text": "5"
             },
             {
               "key": "B",
-              "text": "7,5"
+              "text": "4"
             },
             {
               "key": "C",
-              "text": "8,5"
+              "text": "6"
             },
             {
               "key": "D",
-              "text": "9"
+              "text": "3"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Mean $= (7 + 8 + 9 + 6 + 10) / 5 = 40 / 5 = 8$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\bar{x} = \\frac{40}{5} = 8$$ (Opsi A)."
+          "hint": "Hitung berapa kali angka 33 muncul (gunakan turus).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nUkuran 33 muncul 5 kali, ukuran 34 muncul 4 kali, ukuran 35 muncul 2 kali, dan ukuran 36 muncul 1 kali (total 12).\nFrekuensi ukuran 33 adalah **5**.\n(Opsi A)."
         },
         {
           "id": "sd5-b8-8",
@@ -4945,55 +4945,82 @@ export const grade5Data = {
           "id": "sd5-b8-10",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Median dari data genap: 10, 12, 14, 16, 18, 20 adalah...",
+          "question": "Diagram batang menunjukkan hasil panen jagung: Pak Ali 45 kg, Pak Budi 60 kg, Pak Candra 55 kg, dan Pak Dedi 40 kg. Berapa kg hasil panen Pak Budi lebih banyak daripada Pak Dedi?",
           "options": [
             {
               "key": "A",
-              "text": "14"
+              "text": "15 kg"
             },
             {
               "key": "B",
-              "text": "16"
+              "text": "5 kg"
             },
             {
               "key": "C",
-              "text": "15"
+              "text": "20 kg"
             },
             {
               "key": "D",
-              "text": "14,5"
+              "text": "25 kg"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Rata-rata dua data tengah: $(14 + 16) / 2 = 15$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{14 + 16}{2} = 15$$ (Opsi C)."
+          "hint": "Kurangkan hasil panen Pak Budi dengan hasil panen Pak Dedi.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$60 - 40 = 20\\text{ kg}$$\n(Opsi C).",
+          "visual": {
+            "type": "bar-chart",
+            "props": {
+              "title": "Hasil Panen Jagung (kg)",
+              "caption": "*Bandingkan tinggi batang Pak Budi dan Pak Dedi",
+              "categories": [
+                {
+                  "label": "Ali",
+                  "val": 45
+                },
+                {
+                  "label": "Budi",
+                  "val": 60
+                },
+                {
+                  "label": "Candra",
+                  "val": 55
+                },
+                {
+                  "label": "Dedi",
+                  "val": 40
+                }
+              ],
+              "yMax": 70,
+              "yStep": 10
+            }
+          }
         },
         {
           "id": "sd5-b8-11",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Nilai ulangan matematika 5 orang siswa adalah 75, 80, 85, 90, 70. Nilai rata-rata ulangan mereka adalah...",
+          "question": "Nilai ulangan 5 siswa: Ani 75, Budi 80, Citra 85, Dodi 90, dan Eka 70. Siswa dengan nilai tertinggi kedua adalah...",
           "options": [
             {
               "key": "A",
-              "text": "78"
+              "text": "Dodi"
             },
             {
               "key": "B",
-              "text": "80"
+              "text": "Citra"
             },
             {
               "key": "C",
-              "text": "82"
+              "text": "Budi"
             },
             {
               "key": "D",
-              "text": "79"
+              "text": "Eka"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Total $= 400 / 5 = 80$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{400}{5} = 80$$ (Opsi B)."
+          "hint": "Urutkan nilai dari yang terbesar: 90, 85, 80, 75, 70.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nUrutan dari terbesar: Dodi (90), Citra (85), Budi (80), Ani (75), Eka (70).\nNilai tertinggi kedua milik **Citra**.\n(Opsi B)."
         },
         {
           "id": "sd5-b8-12",
@@ -5026,38 +5053,65 @@ export const grade5Data = {
           "id": "sd5-b8-13",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Diagram lingkaran menunjukkan hobi siswa: Futsal $40\\%$, Musik $25\\%$, Menari $15\\%$, sisanya Membaca. Persentase siswa yang gemar membaca adalah...",
+          "question": "Piktogram hobi siswa: futsal 8 simbol, musik 5 simbol, menari 3 simbol, dan membaca 4 simbol. Jika 1 simbol mewakili 5 siswa, banyak siswa yang gemar membaca adalah...",
           "options": [
             {
               "key": "A",
-              "text": "20%"
+              "text": "20 siswa"
             },
             {
               "key": "B",
-              "text": "25%"
+              "text": "4 siswa"
             },
             {
               "key": "C",
-              "text": "15%"
+              "text": "25 siswa"
             },
             {
               "key": "D",
-              "text": "30%"
+              "text": "15 siswa"
             }
           ],
           "correctAnswer": "A",
-          "hint": "$100\\% - (40\\% + 25\\% + 15\\%) = 100\\% - 80\\% = 20\\%$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$100\\% - 80\\% = 20\\%$$ (Opsi A)."
+          "hint": "Kalikan banyak simbol membaca dengan nilai satu simbol.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$4 \\times 5 = 20\\text{ siswa}$$\n(Opsi A).",
+          "visual": {
+            "type": "pictogram",
+            "props": {
+              "title": "Piktogram Hobi Siswa",
+              "caption": "*1 simbol mewakili 5 siswa",
+              "rows": [
+                {
+                  "label": "Futsal",
+                  "count": 8
+                },
+                {
+                  "label": "Musik",
+                  "count": 5
+                },
+                {
+                  "label": "Menari",
+                  "count": 3
+                },
+                {
+                  "label": "Membaca",
+                  "count": 4
+                }
+              ],
+              "symbol": "⭐",
+              "unitLabel": "1 ⭐ = 5 siswa"
+            }
+          }
         },
         {
           "id": "sd5-b8-14",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Jika persentase gemar membaca adalah $20\\%$ dari total 150 siswa, banyak siswa yang gemar membaca adalah...",
+          "question": "Tabel frekuensi ekstrakurikuler 150 siswa: Pramuka 45 siswa, Futsal 40 siswa, Tari 35 siswa, dan sisanya memilih Klub Baca. Banyak siswa yang memilih Klub Baca adalah...",
           "options": [
             {
               "key": "A",
-              "text": "25 siswa"
+              "text": "20 siswa"
             },
             {
               "key": "B",
@@ -5069,93 +5123,117 @@ export const grade5Data = {
             },
             {
               "key": "D",
-              "text": "40 siswa"
+              "text": "25 siswa"
             }
           ],
           "correctAnswer": "C",
-          "hint": "$20\\% \\times 150 = 30$ siswa.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$0{,}20 \\times 150 = 30\\text{ siswa}$$ (Opsi C)."
+          "hint": "Kurangkan total siswa dengan jumlah siswa pada tiga kegiatan lainnya.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Tiga kegiatan: $45 + 40 + 35 = 120$ siswa.\n2. Klub Baca: $150 - 120 = 30$ siswa.\n(Opsi C)."
         },
         {
           "id": "sd5-b8-15",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Data hasil panen padi (ton) selama 5 tahun: 24, 28, 26, 30, 32. Rata-rata hasil panen per tahun adalah...",
+          "question": "Data hasil panen padi sebuah desa: tahun 2021 sebanyak 24 ton, 2022 sebanyak 28 ton, 2023 sebanyak 26 ton, 2024 sebanyak 30 ton, dan 2025 sebanyak 32 ton. Pada tahun berapa hasil panen menurun dibandingkan tahun sebelumnya?",
           "options": [
             {
               "key": "A",
-              "text": "27 ton"
+              "text": "2022"
             },
             {
               "key": "B",
-              "text": "29 ton"
+              "text": "2024"
             },
             {
               "key": "C",
-              "text": "30 ton"
+              "text": "2025"
             },
             {
               "key": "D",
-              "text": "28 ton"
+              "text": "2023"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Total $= 140 / 5 = 28$ ton.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{140}{5} = 28\\text{ ton}$$ (Opsi D)."
+          "hint": "Bandingkan hasil setiap tahun dengan tahun sebelumnya.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nHasil panen naik setiap tahun, kecuali dari 2022 (28 ton) ke 2023 (26 ton).\nPenurunan terjadi pada tahun **2023**.\n(Opsi D)."
         },
         {
           "id": "sd5-b8-16",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Rata-rata nilai ulangan 9 orang siswa adalah 78. Jika seorang siswa lain bernama Edo digabungkan, nilai rata-ratanya menjadi 80. Nilai ulangan Edo adalah...",
+          "question": "Sebuah kantong berisi 9 kelereng merah dan 3 kelereng biru. Jika diambil satu kelereng tanpa melihat, pernyataan yang benar adalah...",
           "options": [
             {
               "key": "A",
-              "text": "96"
+              "text": "Kelereng biru lebih mungkin terambil"
             },
             {
               "key": "B",
-              "text": "98"
+              "text": "Kelereng merah lebih mungkin terambil"
             },
             {
               "key": "C",
-              "text": "95"
+              "text": "Kedua warna sama mungkin terambil"
             },
             {
               "key": "D",
-              "text": "92"
+              "text": "Kelereng biru pasti terambil"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Total 10 siswa $= 800$. Total 9 siswa $= 702$. Nilai Edo $= 800 - 702 = 98$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$10(80) - 9(78) = 800 - 702 = 98$$ (Opsi B)."
+          "hint": "Warna yang jumlahnya lebih banyak lebih mungkin terambil.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKelereng merah (9) lebih banyak daripada kelereng biru (3), sehingga **kelereng merah lebih mungkin terambil**.\n(Opsi B).",
+          "visual": {
+            "type": "probability-bag",
+            "props": {
+              "title": "Kelereng dalam Kantong",
+              "caption": "*9 kelereng merah dan 3 kelereng biru",
+              "targetLabel": "Bandingkan!",
+              "items": [
+                {
+                  "color": "red",
+                  "count": 9,
+                  "fill": "#FCA5A5",
+                  "stroke": "#DC2626",
+                  "label": "9 Merah"
+                },
+                {
+                  "color": "blue",
+                  "count": 3,
+                  "fill": "#93C5FD",
+                  "stroke": "#2563EB",
+                  "label": "3 Biru"
+                }
+              ]
+            }
+          }
         },
         {
           "id": "sd5-b8-17",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Nilai rata-rata tes matematika dari 20 siswa perempuan adalah 82, sedangkan 10 siswa laki-laki memiliki rata-rata 76. Rata-rata seluruh siswa adalah...",
+          "question": "Sebuah dadu dilempar satu kali. Kejadian manakah yang paling mungkin terjadi?",
           "options": [
             {
               "key": "A",
-              "text": "79"
+              "text": "Muncul mata dadu 6"
             },
             {
               "key": "B",
-              "text": "80"
+              "text": "Muncul mata dadu lebih dari 2"
             },
             {
               "key": "C",
-              "text": "81"
+              "text": "Muncul mata dadu 1"
             },
             {
               "key": "D",
-              "text": "78,5"
+              "text": "Muncul mata dadu 7"
             }
           ],
           "correctAnswer": "B",
-          "hint": "$\\bar{x} = \\frac{20(82) + 10(76)}{30} = \\frac{1.640 + 760}{30} = \\frac{2.400}{30} = 80$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{2.400}{30} = 80$$ (Opsi B)."
+          "hint": "Hitung ada berapa mata dadu yang memenuhi setiap kejadian.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Mata dadu 6: hanya 1 kemungkinan.\n2. Lebih dari 2: mata dadu 3, 4, 5, 6 (4 kemungkinan).\n3. Mata dadu 1: 1 kemungkinan.\n4. Mata dadu 7: mustahil.\nYang paling mungkin adalah **muncul mata dadu lebih dari 2**.\n(Opsi B)."
         },
         {
           "id": "sd5-b8-18",
@@ -5188,55 +5266,55 @@ export const grade5Data = {
           "id": "sd5-b8-19",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Data nilai: 6, 7, 7, $x$, 8, 9 memiliki rata-rata 7,5. Nilai $x$ adalah...",
+          "question": "Tabel frekuensi nilai ulangan: nilai 6 diperoleh 3 siswa, nilai 7 diperoleh 5 siswa, nilai 8 diperoleh beberapa siswa, dan nilai 9 diperoleh 2 siswa. Jika jumlah seluruh siswa 18 orang, banyak siswa yang mendapat nilai 8 adalah...",
           "options": [
             {
               "key": "A",
-              "text": "8"
+              "text": "8 siswa"
             },
             {
               "key": "B",
-              "text": "7"
+              "text": "10 siswa"
             },
             {
               "key": "C",
-              "text": "9"
+              "text": "6 siswa"
             },
             {
               "key": "D",
-              "text": "6"
+              "text": "7 siswa"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Total $= 6 \\times 7{,}5 = 45$. $6 + 7 + 7 + 8 + 9 = 37 \\implies x = 45 - 37 = 8$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$x = 45 - 37 = 8$$ (Opsi A)."
+          "hint": "Kurangkan jumlah seluruh siswa dengan siswa yang mendapat nilai 6, 7, dan 9.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Nilai 6, 7, dan 9: $3 + 5 + 2 = 10$ siswa.\n2. Nilai 8: $18 - 10 = 8$ siswa.\n(Opsi A)."
         },
         {
           "id": "sd5-b8-20",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Sebuah toko buku mencatat penjualan buku selama 6 hari dengan data: 20, 25, 22, 28, 25, $y$. Jika rata-rata penjualannya 24 buku per hari, maka nilai $y$ adalah...",
+          "question": "Penjualan buku sebuah toko selama 6 hari: Senin 20, Selasa 25, Rabu 22, Kamis 28, Jumat 25, dan Sabtu tidak tercatat. Jika total penjualan selama 6 hari adalah 144 buku, penjualan hari Sabtu adalah...",
           "options": [
             {
               "key": "A",
-              "text": "23"
+              "text": "20 buku"
             },
             {
               "key": "B",
-              "text": "25"
+              "text": "26 buku"
             },
             {
               "key": "C",
-              "text": "22"
+              "text": "22 buku"
             },
             {
               "key": "D",
-              "text": "24"
+              "text": "24 buku"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Total $= 6 \\times 24 = 144$. $20 + 25 + 22 + 28 + 25 = 120 \\implies y = 144 - 120 = 24$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$y = 144 - 120 = 24\\text{ buku}$$ (Opsi D)."
+          "hint": "Jumlahkan penjualan Senin sampai Jumat, lalu kurangkan dari total.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Senin–Jumat: $20 + 25 + 22 + 28 + 25 = 120$ buku.\n2. Sabtu: $144 - 120 = 24$ buku.\n(Opsi D)."
         }
       ]
     },

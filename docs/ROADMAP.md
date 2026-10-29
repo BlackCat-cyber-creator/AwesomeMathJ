@@ -63,6 +63,11 @@ Catatan akses: PDF buku disimpan di domain `static.buku.kemdikbud.go.id` (domain
 - Login Google murid dihapus; progres pengunjung publik tersimpan di perangkat.
 - Aturan Firestore diperketat (daftar PR hanya untuk guru pemilik). **Perlu di-deploy:** `firebase deploy --only firestore:rules`.
 
+### Tahap 0c — Penyelarasan CP 046/2025 ✅ (Oktober 2026)
+- Teks resmi CP Matematika, Matematika Tingkat Lanjut, IPAS, IPA, Fisika, Kimia, dan Biologi disimpan di `docs/kurikulum/cp-046-2025/`.
+- 39 soal SD yang memakai materi Fase D diganti (statistika, diagram lingkaran, peluang berupa angka, lingkaran, desimal dua angka, skala). Bab Peluang Kelas 6 kini membahas kemungkinan kejadian sesuai Fase C.
+- Aturan otomatis cakupan fase untuk Kelas 4–9; keterangan CP 2025 untuk bab Kelas X yang berpindah fase.
+
 ### Tahap 1 — Fondasi multi-mata pelajaran
 - Struktur data baru: `src/content/<subject>/<curriculum>/<grade>/<chapter>.json`, satu file per bab supaya mudah dibaca dan diedit guru tanpa coding.
 - Skema soal ditambah label `subject`, `curriculum`, `phase`, `cpElement`, dan `source`.

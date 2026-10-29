@@ -72,19 +72,40 @@ export function numbersOnlyInVisual(questionText, visualTexts, allowed = []) {
 }
 
 /**
- * Topik yang belum diajarkan pada suatu kelas SD menurut CP Kurikulum Merdeka
- * (Keputusan Kepala BSKAP 046/H/KR/2025). Fase B = Kelas 3–4, Fase C = Kelas 5–6.
- * Fase B: data hanya tabel, piktogram, diagram batang; geometri sebatas ciri bangun datar.
- * Ukuran pemusatan data (modus, median, rata-rata) dan pengukuran sudut baru di Fase C+.
+ * Topik yang belum diajarkan pada suatu kelas menurut CP Matematika
+ * Keputusan Kepala BSKAP 046/H/KR/2025 (teks resmi: docs/kurikulum/cp-046-2025/matematika.md).
+ * Fase B = Kelas 3–4, Fase C = Kelas 5–6, Fase D = Kelas 7–9.
  */
+const FASE_C_RULES = [
+  { topic: 'Rerata/median/modus/jangkauan (Fase D)', pattern: /rata-rata|\bmean\b|\bmedian\b|\bmodus\b|jangkauan/i },
+  { topic: 'Diagram lingkaran (Fase D)', pattern: /diagram lingkaran/i },
+  { topic: 'Peluang berupa angka / frekuensi harapan (Fase D)', pattern: /\bpeluang\b|frekuensi harapan/i },
+  { topic: 'Keliling/luas lingkaran (Fase D)', pattern: /luas lingkaran|keliling lingkaran|\\pi|π/i },
+  { topic: 'Skala peta/denah (Fase D)', pattern: /\bskala\s*1\s*:/i },
+  { topic: 'Desimal lebih dari satu angka di belakang koma (Fase D)', pattern: /\d,(?!00\b)\d{2,}/ },
+  { topic: 'Akar pangkat (Fase D)', pattern: /\\sqrt|akar pangkat/i }
+];
+
+const FASE_D_RULES = [
+  { topic: 'Persamaan/fungsi kuadrat (Fase E)', pattern: /persamaan kuadrat|fungsi kuadrat|diskriminan/i },
+  { topic: 'Trigonometri (Fase E)', pattern: /\\(sin|cos|tan)\b|\b(sinus|cosinus|tangen)\b|trigonometri/i },
+  { topic: 'Logaritma (Fase F, Tingkat Lanjut)', pattern: /\\log|logaritma/i },
+  { topic: 'Barisan & deret aritmetika/geometri (Fase F)', pattern: /\bderet\b|barisan aritmetika|barisan geometri/i },
+  { topic: 'Kalkulus (Tingkat Lanjut)', pattern: /\blimit\b|turunan fungsi|\bintegral\b/i }
+];
+
 export const OUT_OF_SCOPE_RULES = {
   4: [
-    { topic: 'Rata-rata (Fase C/D)', pattern: /rata-rata/i },
-    { topic: 'Modus/median (Fase C/D)', pattern: /\bmodus\b|\bmedian\b/i },
-    { topic: 'Persentase data (Fase C)', pattern: /berapa persen|\d+\s*%/i },
+    { topic: 'Rerata/median/modus (Fase D)', pattern: /rata-rata|\bmodus\b|\bmedian\b/i },
+    { topic: 'Persentase data (Fase B hanya mengubah pecahan ke persen)', pattern: /berapa persen|\d+\s*%/i },
     { topic: 'Ukuran sudut dalam derajat (Fase C)', pattern: /°|\bderajat\b/i },
     { topic: 'Bilangan jutaan (Fase C)', pattern: /\b\d{1,3}\.\d{3}\.\d{3}\b/ }
-  ]
+  ],
+  5: FASE_C_RULES,
+  6: FASE_C_RULES,
+  7: FASE_D_RULES,
+  8: FASE_D_RULES,
+  9: FASE_D_RULES
 };
 
 export function findOutOfScope(grade, questionText) {

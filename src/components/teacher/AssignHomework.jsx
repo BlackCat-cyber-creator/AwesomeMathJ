@@ -3,6 +3,7 @@ import { Send, Copy, Printer, ExternalLink, Check } from 'lucide-react';
 import { ALL_CHAPTERS_INDEX, getGradeData } from '../../data/curriculumData';
 import { ALL_AMC_CHAPTERS_INDEX, getAmcModuleData } from '../../data/amc/amcData';
 import { getRecommendedChapter } from '../../data/academicCalendar';
+import { getCp2025Note } from '../../data/cp2025Mapping';
 import { amcLevelOfTrack, buildQuest } from '../../utils/questBuilder';
 import { getDefaultDeadlineDate } from '../../utils/storage';
 
@@ -156,6 +157,9 @@ export function AssignHomework({ student, quests, onCreate, onShareWhatsApp, onC
           {selected.questionCount || 'Semua'} soal dari bab ini, diurutkan dari mudah ke sulit.
           {sentChapterIds.has(selected.id) && ' Bab ini sudah pernah dikirim ke murid ini.'}
         </p>
+      )}
+      {selected && getCp2025Note(selected.id) && (
+        <p className="cp2025-note">{getCp2025Note(selected.id).note}</p>
       )}
 
       {error && <p className="studio-error">{error}</p>}

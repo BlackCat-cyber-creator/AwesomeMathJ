@@ -370,42 +370,42 @@ export const grade6Data = {
           "id": "sd6-b1-11",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Ibu membeli $2\\frac{1}{2}$ kg gula pasir. Jika setiap cangkir teh membutuhkan 0,05 kg gula, berapa cangkir teh yang dapat dibuat Ibu?",
+          "question": "Ibu memiliki 5 kg gula pasir yang akan dibagi sama banyak ke dalam 4 toples. Berapa kg gula dalam setiap toples?",
           "options": [
             {
               "key": "A",
-              "text": "40 cangkir"
+              "text": "$1\\frac{1}{2}$ kg"
             },
             {
               "key": "B",
-              "text": "60 cangkir"
+              "text": "$\\frac{3}{4}$ kg"
             },
             {
               "key": "C",
-              "text": "50 cangkir"
+              "text": "$1\\frac{1}{4}$ kg"
             },
             {
               "key": "D",
-              "text": "25 cangkir"
+              "text": "2 kg"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Ubah $2\\frac{1}{2}$ kg ke desimal $= 2{,}5$ kg, lalu bagi dengan 0,05.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$2{,}5 : 0{,}05 = 250 : 5 = 50$$\nDapat dibuat **50 cangkir teh** (Opsi C)."
+          "hint": "Bagilah 5 dengan 4, lalu nyatakan dalam pecahan campuran.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$5 : 4 = \\frac{5}{4} = 1\\frac{1}{4}\\text{ kg}$$\n(Opsi C)."
         },
         {
           "id": "sd6-b1-12",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Pak Budi memiliki sebidang tanah seluas 400 m². Sebanyak 0,35 bagian dibangun rumah dan $\\frac{1}{4}$ bagian dijadikan kebun. Sisa tanah untuk halaman adalah...",
+          "question": "Pak Budi memiliki sebidang tanah seluas 400 m². Sebanyak 0,4 bagian dibangun rumah dan $\\frac{1}{4}$ bagian dijadikan kebun. Sisa tanah untuk halaman adalah...",
           "options": [
             {
               "key": "A",
-              "text": "140 m²"
+              "text": "160 m²"
             },
             {
               "key": "B",
-              "text": "160 m²"
+              "text": "140 m²"
             },
             {
               "key": "C",
@@ -417,18 +417,18 @@ export const grade6Data = {
             }
           ],
           "correctAnswer": "B",
-          "hint": "Hitung luas rumah ($0{,}35 \\times 400 = 140$) dan kebun ($\\frac{1}{4} \\times 400 = 100$). Sisa $= 400 - 240$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Rumah: $0{,}35 \\times 400 = 140\\text{ m}^2$\n2. Kebun: $\\frac{1}{4} \\times 400 = 100\\text{ m}^2$\n3. Sisa: $400 - (140 + 100) = 160\\text{ m}^2$ (Opsi B).",
+          "hint": "Ubah 0,4 menjadi pecahan $\\frac{4}{10}$, lalu hitung luas rumah dan kebun.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Rumah: $\\frac{4}{10} \\times 400 = 160\\text{ m}^2$.\n2. Kebun: $\\frac{1}{4} \\times 400 = 100\\text{ m}^2$.\n3. Halaman: $400 - (160 + 100) = 140\\text{ m}^2$.\n(Opsi B).",
           "visual": {
             "type": "bar-model",
             "props": {
               "title": "Pembagian Lahan Tanah",
-              "caption": "*Tanah 400 m²: 0,35 bagian rumah dan ¼ bagian kebun",
+              "caption": "*Tanah 400 m²: 0,4 bagian rumah dan ¼ bagian kebun",
               "rows": [
                 {
                   "segments": [
                     {
-                      "label": "Rumah 0,35",
+                      "label": "Rumah 0,4",
                       "width": 95,
                       "color": "green"
                     },
@@ -439,7 +439,7 @@ export const grade6Data = {
                     },
                     {
                       "label": "Halaman ?",
-                      "width": 90,
+                      "width": 80,
                       "color": "amber"
                     }
                   ],
@@ -482,28 +482,28 @@ export const grade6Data = {
           "id": "sd6-b1-14",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Bentuk pecahan biasa paling sederhana dari bilangan desimal 0,375 adalah...",
+          "question": "Bentuk pecahan biasa paling sederhana dari bilangan desimal 0,6 adalah...",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{3}{8}"
+              "text": "$\\frac{3}{5}$"
             },
             {
               "key": "B",
-              "text": "\\frac{3}{4}"
+              "text": "$\\frac{6}{100}$"
             },
             {
               "key": "C",
-              "text": "\\frac{7}{20}"
+              "text": "$\\frac{2}{3}$"
             },
             {
               "key": "D",
-              "text": "\\frac{15}{40}"
+              "text": "$\\frac{6}{10}$"
             }
           ],
           "correctAnswer": "A",
-          "hint": "0,375 $= \\frac{375}{1000}$. Bagi pembilang dan penyebut dengan 125.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{375 : 125}{1000 : 125} = \\frac{3}{8}$$\nBentuk sederhananya adalah **$\\frac{3}{8}$** (Opsi A)."
+          "hint": "0,6 dibaca \"enam persepuluh\". Sederhanakan $\\frac{6}{10}$.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$0{,}6 = \\frac{6}{10} = \\frac{6 : 2}{10 : 2} = \\frac{3}{5}$$\n(Opsi A)."
         },
         {
           "id": "sd6-b1-15",
@@ -600,28 +600,28 @@ export const grade6Data = {
           "id": "sd6-b1-18",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Sebuah mobil menempuh jarak $150\\frac{1}{2}$ km dengan menghabiskan 10,75 liter bensin. Konsumsi bensin rata-rata mobil tersebut per liter adalah...",
+          "question": "Sebuah botol berisi $1\\frac{1}{2}$ liter jus yang dibagikan sama banyak kepada 6 anak. Setiap anak mendapat jus sebanyak...",
           "options": [
             {
               "key": "A",
-              "text": "14 km/liter"
+              "text": "$\\frac{1}{4}$ liter"
             },
             {
               "key": "B",
-              "text": "15 km/liter"
+              "text": "$\\frac{1}{3}$ liter"
             },
             {
               "key": "C",
-              "text": "13 km/liter"
+              "text": "$\\frac{1}{2}$ liter"
             },
             {
               "key": "D",
-              "text": "16 km/liter"
+              "text": "$\\frac{1}{6}$ liter"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Bagi jarak dengan konsumsi bensin: $150{,}5 : 10{,}75 = 14$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$150{,}5 : 10{,}75 = 15.050 : 1.075 = 14\\text{ km/liter}$$\nKonsumsinya adalah **14 km/liter** (Opsi A)."
+          "hint": "Ubah $1\\frac{1}{2}$ menjadi $\\frac{3}{2}$, lalu bagi dengan 6.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3}{2} : 6 = \\frac{3}{2 \\times 6} = \\frac{3}{12} = \\frac{1}{4}\\text{ liter}$$\n(Opsi A)."
         },
         {
           "id": "sd6-b1-19",
@@ -1549,28 +1549,28 @@ export const grade6Data = {
           "id": "sd6-b2-19",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Sebuah kolam renang memiliki denah berukuran $8\\text{ cm} \\times 5\\text{ cm}$ pada skala 1 : 250. Luas sebenarnya dari kolam renang tersebut adalah...",
+          "question": "Sebuah resep kue untuk 4 orang membutuhkan 300 gram tepung. Berapa gram tepung yang dibutuhkan untuk membuat kue bagi 10 orang?",
           "options": [
             {
               "key": "A",
-              "text": "200 m²"
+              "text": "600 gram"
             },
             {
               "key": "B",
-              "text": "250 m²"
+              "text": "750 gram"
             },
             {
               "key": "C",
-              "text": "300 m²"
+              "text": "900 gram"
             },
             {
               "key": "D",
-              "text": "400 m²"
+              "text": "700 gram"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Panjang asli $= 8 \\times 250 = 2.000\\text{ cm} = 20\\text{ m}$. Lebar asli $= 5 \\times 250 = 1.250\\text{ cm} = 12{,}5\\text{ m}$. Luas $= 20 \\times 12{,}5 = 250\\text{ m}^2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $p = 8 \\times 250\\text{ cm} = 20\\text{ m}$\n2. $l = 5 \\times 250\\text{ cm} = 12{,}5\\text{ m}$\n3. Luas $= 20 \\times 12{,}5 = 250\\text{ m}^2$ (Opsi B)."
+          "hint": "Hitung dahulu tepung untuk 1 orang (rasio satuan).",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Untuk 1 orang: $300 : 4 = 75$ gram.\n2. Untuk 10 orang: $75 \\times 10 = 750$ gram.\n(Opsi B)."
         },
         {
           "id": "sd6-b2-20",
@@ -2402,34 +2402,34 @@ export const grade6Data = {
           "id": "sd6-b4-1",
           "category": "Latihan",
           "difficulty": "Dasar",
-          "question": "Sebuah koin logam dilempar satu kali. Peluang munculnya sisi Gambar adalah...",
+          "question": "Sebuah koin dilempar satu kali. Pernyataan yang benar tentang munculnya sisi Angka dan sisi Gambar adalah...",
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{1}{3}$"
+              "text": "Sisi Angka lebih mungkin muncul"
             },
             {
               "key": "B",
-              "text": "1"
+              "text": "Sisi Gambar lebih mungkin muncul"
             },
             {
               "key": "C",
-              "text": "$\\frac{1}{2}$"
+              "text": "Keduanya sama mungkin muncul"
             },
             {
               "key": "D",
-              "text": "0"
+              "text": "Sisi Gambar mustahil muncul"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Koin memiliki 2 sisi (Angka dan Gambar). Peluang sisi Gambar adalah 1 dari 2.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{1}{2}$$\nPeluang muncul sisi Gambar adalah **$\\frac{1}{2}$** (Opsi C).",
+          "hint": "Koin hanya memiliki dua sisi yang sama-sama bisa muncul.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKoin memiliki 2 sisi (Angka dan Gambar) dan masing-masing hanya 1 sisi, sehingga **keduanya sama mungkin muncul**.\n(Opsi C).",
           "visual": {
             "type": "coin",
             "props": {
-              "title": "Peluang Pelemparan Uang Logam",
-              "caption": "*Peluang munculnya sisi Gambar dari dua kemungkinan (Angka & Gambar)",
-              "targetLabel": "Peluang (G) = ?"
+              "title": "Pelemparan Koin",
+              "caption": "*Koin memiliki sisi Angka dan sisi Gambar",
+              "targetLabel": "Bandingkan!"
             }
           }
         },
@@ -2464,35 +2464,35 @@ export const grade6Data = {
           "id": "sd6-b4-3",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Sebuah dadu bermata enam dilempar satu kali. Peluang munculnya mata dadu lebih dari 4 adalah...",
+          "question": "Sebuah dadu dilempar satu kali. Manakah yang lebih mungkin: muncul mata dadu lebih dari 4, atau muncul mata dadu kurang dari 5?",
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{1}{2}$"
+              "text": "Lebih dari 4, karena angkanya besar"
             },
             {
               "key": "B",
-              "text": "$\\frac{1}{6}$"
+              "text": "Keduanya sama mungkin"
             },
             {
               "key": "C",
-              "text": "$\\frac{1}{3}$"
+              "text": "Kurang dari 5, karena ada 4 mata dadu yang memenuhi (1, 2, 3, 4)"
             },
             {
               "key": "D",
-              "text": "$\\frac{2}{3}$"
+              "text": "Lebih dari 4, karena ada 3 mata dadu yang memenuhi"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Mata dadu yang lebih dari 4 adalah $\\{5, 6\\}$ (ada 2 dari 6). Sederhanakan $\\frac{2}{6}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Angka lebih dari 4: $\\{5, 6\\} \\implies 2$ kemungkinan.\n2. Total kemungkinan mata dadu: 6.\n3. Peluang: $\\frac{2}{6} = \\frac{1}{3}$.\nPeluangnya adalah **$\\frac{1}{3}$** (Opsi C).",
+          "hint": "Daftar mata dadu yang lebih dari 4, lalu yang kurang dari 5.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Lebih dari 4: mata dadu 5 dan 6 (2 kemungkinan).\n2. Kurang dari 5: mata dadu 1, 2, 3, 4 (4 kemungkinan).\nJadi **kurang dari 5 lebih mungkin**.\n(Opsi C).",
           "visual": {
             "type": "dice",
             "props": {
-              "title": "Peluang Dadu Bermata Enam",
-              "caption": "*Peluang munculnya mata dadu lebih dari 4",
+              "title": "Pelemparan Dadu",
+              "caption": "*Dadu bermata 1 sampai 6",
               "diceValue": 5,
-              "targetLabel": "Peluang (> 4) = ?"
+              "targetLabel": "Lebih mungkin?"
             }
           }
         },
@@ -2500,33 +2500,34 @@ export const grade6Data = {
           "id": "sd6-b4-4",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Dalam sebuah kotak terdapat 4 bola merah, 6 bola biru, dan 5 bola hijau. Jika diambil satu bola secara acak, peluang terambilnya bola yang BUKAN berwarna biru adalah...",
+          "question": "Sebuah kotak berisi 4 bola merah, 6 bola biru, dan 5 bola hijau. Diambil satu bola tanpa melihat. Urutan warna dari yang paling mungkin sampai yang paling kecil kemungkinannya terambil adalah...",
           "options": [
             {
               "key": "A",
-              "text": "$\\frac{2}{5}$"
+              "text": "merah, hijau, biru"
             },
             {
               "key": "B",
-              "text": "$\\frac{3}{5}$"
+              "text": "biru, hijau, merah"
             },
             {
               "key": "C",
-              "text": "$\\frac{1}{3}$"
+              "text": "hijau, biru, merah"
             },
             {
               "key": "D",
-              "text": "$\\frac{4}{15}$"
+              "text": "biru, merah, hijau"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Bukan biru artinya merah atau hijau: $4 + 5 = 9$ bola. Total seluruh bola: $4 + 6 + 5 = 15$. Sederhanakan $\\frac{9}{15}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Bola bukan biru (merah + hijau): $4 + 5 = 9$ bola.\n2. Total seluruh bola: $4 + 6 + 5 = 15$ bola.\n3. Peluang:\n$$P = \\frac{9}{15} = \\frac{9 : 3}{15 : 3} = \\frac{3}{5}$$\nPeluang terambil bola bukan biru adalah **$\\frac{3}{5}$** (Opsi B).",
+          "hint": "Semakin banyak bola suatu warna, semakin besar kemungkinannya terambil.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBanyak bola: biru 6, hijau 5, merah 4.\nUrutan dari yang paling mungkin: **biru, hijau, merah**.\n(Opsi B).",
           "visual": {
             "type": "probability-bag",
             "props": {
-              "title": "Peluang Pengambilan Bola",
-              "caption": "*Isi kotak: 4 bola merah, 6 bola biru, dan 5 bola hijau",
+              "title": "Bola dalam Kotak",
+              "caption": "*4 bola merah, 6 bola biru, dan 5 bola hijau",
+              "targetLabel": "Bandingkan!",
               "items": [
                 {
                   "color": "red",
@@ -2557,62 +2558,62 @@ export const grade6Data = {
           "id": "sd6-b4-5",
           "category": "Latihan",
           "difficulty": "Dasar",
-          "question": "Sebuah uang logam dilempar satu kali. Peluang munculnya sisi gambar adalah...",
+          "question": "Kejadian berikut yang mustahil terjadi adalah...",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{4}"
+              "text": "Hari ini turun hujan"
             },
             {
               "key": "B",
-              "text": "1"
+              "text": "Besok hari Senin"
             },
             {
               "key": "C",
-              "text": "\\frac{1}{2}"
+              "text": "Mendapat mata dadu 7 saat melempar satu dadu biasa"
             },
             {
               "key": "D",
-              "text": "0"
+              "text": "Koin yang dilempar menunjukkan sisi Angka"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Titik sampel uang logam ada 2 (Angka dan Gambar). Peluang Gambar $= \\frac{1}{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(\\text{Gambar}) = \\frac{1}{2}$$\nPeluangnya adalah **$\\frac{1}{2}$** (Opsi C)."
+          "hint": "Dadu biasa hanya memiliki mata dadu 1 sampai 6.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nDadu biasa tidak memiliki mata dadu 7, sehingga **mendapat mata dadu 7** adalah kejadian mustahil.\n(Opsi C)."
         },
         {
           "id": "sd6-b4-6",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Sebuah dadu bersisi 6 dilempar satu kali. Peluang munculnya mata dadu ganjil adalah...",
+          "question": "Sebuah dadu dilempar satu kali. Bagaimana kemungkinan muncul mata dadu ganjil dibandingkan mata dadu genap?",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{3}"
+              "text": "Mata dadu ganjil lebih mungkin"
             },
             {
               "key": "B",
-              "text": "\\frac{2}{3}"
+              "text": "Mata dadu genap lebih mungkin"
             },
             {
               "key": "C",
-              "text": "\\frac{1}{2}"
+              "text": "Sama mungkin, karena masing-masing ada 3 mata dadu"
             },
             {
               "key": "D",
-              "text": "\\frac{1}{6}"
+              "text": "Mata dadu ganjil mustahil muncul"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Mata dadu ganjil: 1, 3, 5 (ada 3). Ruang sampel $= 6$. Peluang $= \\frac{3}{6} = \\frac{1}{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{3}{6} = \\frac{1}{2}$$\nPeluangnya adalah **$\\frac{1}{2}$** (Opsi C).",
+          "hint": "Mata dadu ganjil: 1, 3, 5. Mata dadu genap: 2, 4, 6.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nGanjil (1, 3, 5) dan genap (2, 4, 6) sama-sama ada 3 mata dadu, sehingga keduanya **sama mungkin**.\n(Opsi C).",
           "visual": {
             "type": "dice",
             "props": {
-              "title": "Peluang Mata Dadu Ganjil",
-              "caption": "*Dadu bersisi enam dengan mata dadu bernilai 1 sampai 6",
+              "title": "Mata Dadu Ganjil dan Genap",
+              "caption": "*Dadu bermata 1 sampai 6",
               "diceValue": 3,
-              "targetLabel": "Peluang Ganjil = ?"
+              "targetLabel": "Bandingkan!"
             }
           }
         },
@@ -2620,33 +2621,34 @@ export const grade6Data = {
           "id": "sd6-b4-7",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Dalam sebuah kotak terdapat 4 bola merah, 5 bola biru, dan 3 bola hijau. Jika diambil satu bola secara acak, peluang terambilnya bola biru adalah...",
+          "question": "Sebuah kotak berisi 4 bola merah, 5 bola biru, dan 3 bola hijau. Diambil satu bola tanpa melihat. Warna yang paling mungkin terambil adalah...",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{3}"
+              "text": "Merah"
             },
             {
               "key": "B",
-              "text": "\\frac{5}{12}"
+              "text": "Biru"
             },
             {
               "key": "C",
-              "text": "\\frac{1}{4}"
+              "text": "Hijau"
             },
             {
               "key": "D",
-              "text": "\\frac{5}{7}"
+              "text": "Ketiganya sama mungkin"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Total bola $= 4 + 5 + 3 = 12$. Bola biru $= 5$. Peluang $= \\frac{5}{12}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{5}{12}$$\nPeluangnya adalah **$\\frac{5}{12}$** (Opsi B).",
+          "hint": "Bandingkan banyak bola setiap warna.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBola biru paling banyak (5 bola), sehingga **biru** paling mungkin terambil.\n(Opsi B).",
           "visual": {
             "type": "probability-bag",
             "props": {
-              "title": "Peluang Pengambilan Bola",
-              "caption": "*Isi kotak: 4 bola merah, 5 bola biru, dan 3 bola hijau",
+              "title": "Bola dalam Kotak",
+              "caption": "*4 bola merah, 5 bola biru, dan 3 bola hijau",
+              "targetLabel": "Bandingkan!",
               "items": [
                 {
                   "color": "red",
@@ -2677,167 +2679,181 @@ export const grade6Data = {
           "id": "sd6-b4-8",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Peluang terjadinya suatu peristiwa yang pasti terjadi memiliki nilai sebesar...",
+          "question": "Andi memasukkan 10 kelereng merah ke dalam kantong kosong, lalu mengambil satu kelereng tanpa melihat. Kejadian \"terambil kelereng merah\" termasuk kejadian yang...",
           "options": [
             {
               "key": "A",
-              "text": "0"
+              "text": "mustahil"
             },
             {
               "key": "B",
-              "text": "0,5"
+              "text": "kurang mungkin"
             },
             {
               "key": "C",
-              "text": "100"
+              "text": "sama mungkin"
             },
             {
               "key": "D",
-              "text": "1"
+              "text": "pasti"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Kepastian dalam teori peluang memiliki nilai probabilitas 1.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPeluang kepastian adalah **1** (Opsi D)."
+          "hint": "Apa saja isi kantong tersebut?",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSemua kelereng di kantong berwarna merah, sehingga kelereng yang terambil **pasti** merah.\n(Opsi D)."
         },
         {
           "id": "sd6-b4-9",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Pada pelemparan sebuah dadu, peluang muncul mata dadu lebih dari 4 adalah...",
+          "question": "Sebuah roda putar dibagi menjadi 4 bagian sama besar: 3 bagian biru dan 1 bagian merah. Jika roda diputar satu kali, pernyataan yang benar adalah...",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{2}"
+              "text": "Jarum lebih mungkin berhenti di merah"
             },
             {
               "key": "B",
-              "text": "\\frac{1}{3}"
+              "text": "Jarum lebih mungkin berhenti di biru"
             },
             {
               "key": "C",
-              "text": "\\frac{2}{3}"
+              "text": "Biru dan merah sama mungkin"
             },
             {
               "key": "D",
-              "text": "\\frac{1}{6}"
+              "text": "Jarum pasti berhenti di merah"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Mata dadu > 4 adalah 5 dan 6 (2 angka). Peluang $= \\frac{2}{6} = \\frac{1}{3}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{2}{6} = \\frac{1}{3}$$\nPeluangnya adalah **$\\frac{1}{3}$** (Opsi B)."
+          "hint": "Warna dengan bagian lebih banyak lebih mungkin ditunjuk jarum.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nBagian biru (3) lebih banyak daripada merah (1), sehingga jarum **lebih mungkin berhenti di biru**.\n(Opsi B).",
+          "visual": {
+            "type": "spinner",
+            "props": {
+              "title": "Roda Putar",
+              "caption": "*3 bagian biru dan 1 bagian merah",
+              "sectors": [
+                "biru",
+                "biru",
+                "biru",
+                "merah"
+              ],
+              "targetLabel": "Bandingkan!"
+            }
+          }
         },
         {
           "id": "sd6-b4-10",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Dalam sebuah kantong terdapat 20 kelereng bernomor 1 sampai 20. Jika diambil satu kelereng secara acak, peluang terambil kelereng bernomor kelipatan 5 adalah...",
+          "question": "Sebuah kantong berisi 20 kartu bernomor 1 sampai 20. Diambil satu kartu tanpa melihat. Kejadian manakah yang paling kecil kemungkinannya?",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{4}"
+              "text": "Terambil kartu bernomor genap"
             },
             {
               "key": "B",
-              "text": "\\frac{1}{10}"
+              "text": "Terambil kartu bernomor kurang dari 15"
             },
             {
               "key": "C",
-              "text": "\\frac{2}{5}"
+              "text": "Terambil kartu bernomor ganjil"
             },
             {
               "key": "D",
-              "text": "\\frac{1}{5}"
+              "text": "Terambil kartu bernomor kelipatan 5"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Nomor kelipatan 5: 5, 10, 15, 20 (ada 4 kelereng). Peluang $= \\frac{4}{20} = \\frac{1}{5}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{4}{20} = \\frac{1}{5}$$\nPeluangnya adalah **$\\frac{1}{5}$** (Opsi D)."
+          "hint": "Hitung banyak kartu yang memenuhi setiap kejadian.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Genap: 10 kartu.\n2. Kurang dari 15: 14 kartu.\n3. Ganjil: 10 kartu.\n4. Kelipatan 5 (5, 10, 15, 20): 4 kartu.\nYang paling kecil kemungkinannya adalah **kelipatan 5**.\n(Opsi D)."
         },
         {
           "id": "sd6-b4-11",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Sebuah dadu dilempar sebanyak 60 kali. Frekuensi harapan munculnya mata dadu prima (2, 3, 5) adalah...",
+          "question": "Lia melempar koin 20 kali dan mencatat hasilnya: Angka 11 kali dan Gambar 9 kali. Kesimpulan yang tepat adalah...",
           "options": [
             {
               "key": "A",
-              "text": "30 kali"
+              "text": "Hasil itu wajar, karena Angka dan Gambar sama mungkin sehingga jumlahnya hampir sama"
             },
             {
               "key": "B",
-              "text": "20 kali"
+              "text": "Koin pasti rusak karena hasilnya tidak tepat 10 dan 10"
             },
             {
               "key": "C",
-              "text": "15 kali"
+              "text": "Pada lemparan berikutnya pasti muncul Gambar"
             },
             {
               "key": "D",
-              "text": "40 kali"
+              "text": "Angka selalu lebih mungkin muncul daripada Gambar"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Peluang prima $= \\frac{3}{6} = \\frac{1}{2}$. Frekuensi harapan $= 60 \\times \\frac{1}{2} = 30$ kali.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$F_h = 60 \\times \\frac{1}{2} = 30\\text{ kali}$$\nFrekuensi harapannya adalah **30 kali** (Opsi A)."
+          "hint": "Kejadian yang sama mungkin tidak harus muncul dengan jumlah yang persis sama.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nAngka dan Gambar sama mungkin, tetapi hasil percobaan bisa sedikit berbeda. Angka 11 dan Gambar 9 masih **wajar** karena jumlahnya hampir sama.\n(Opsi A)."
         },
         {
           "id": "sd6-b4-12",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Dari satu set kartu angka 1 sampai 10, diambil satu kartu secara acak. Peluang terambilnya kartu bilangan bukan genap adalah...",
+          "question": "Dari kartu angka 1 sampai 10 diambil satu kartu tanpa melihat. Manakah yang lebih mungkin: terambil kartu bilangan prima atau kartu bilangan bukan prima?",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{2}"
+              "text": "Bukan prima, karena ada 6 kartu"
             },
             {
               "key": "B",
-              "text": "\\frac{2}{5}"
+              "text": "Prima, karena ada 4 kartu"
             },
             {
               "key": "C",
-              "text": "\\frac{3}{5}"
+              "text": "Keduanya sama mungkin"
             },
             {
               "key": "D",
-              "text": "\\frac{1}{10}"
+              "text": "Kartu prima mustahil terambil"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Bukan genap artinya ganjil: 1, 3, 5, 7, 9 (5 kartu). Peluang $= \\frac{5}{10} = \\frac{1}{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{5}{10} = \\frac{1}{2}$$\nPeluangnya adalah **$\\frac{1}{2}$** (Opsi A)."
+          "hint": "Bilangan prima dari 1 sampai 10 adalah 2, 3, 5, dan 7.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Prima: 2, 3, 5, 7 (4 kartu).\n2. Bukan prima: 1, 4, 6, 8, 9, 10 (6 kartu).\nJadi **kartu bukan prima lebih mungkin** terambil.\n(Opsi A)."
         },
         {
           "id": "sd6-b4-13",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Sebuah roda putar dibagi menjadi 8 juring sama besar: 3 juring merah, 3 juring kuning, dan 2 juring hijau. Peluang jarum penunjuk berhenti di warna hijau adalah...",
+          "question": "Sebuah roda putar dibagi menjadi 8 juring sama besar: 3 juring merah, 3 juring kuning, dan 2 juring hijau. Pernyataan yang benar adalah...",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{3}{8}"
+              "text": "Hijau paling mungkin ditunjuk jarum"
             },
             {
               "key": "B",
-              "text": "\\frac{1}{4}"
+              "text": "Merah dan kuning sama mungkin, dan keduanya lebih mungkin daripada hijau"
             },
             {
               "key": "C",
-              "text": "\\frac{1}{2}"
+              "text": "Ketiga warna sama mungkin"
             },
             {
               "key": "D",
-              "text": "\\frac{1}{8}"
+              "text": "Hijau mustahil ditunjuk jarum"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Juring hijau $= 2$ dari total 8. Peluang $= \\frac{2}{8} = \\frac{1}{4}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{2}{8} = \\frac{1}{4}$$\nPeluangnya adalah **$\\frac{1}{4}$** (Opsi B).",
+          "hint": "Bandingkan banyak juring setiap warna.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nMerah (3) dan kuning (3) sama banyak, sedangkan hijau hanya 2. Jadi **merah dan kuning sama mungkin dan lebih mungkin daripada hijau**.\n(Opsi B).",
           "visual": {
             "type": "spinner",
             "props": {
-              "title": "Roda Putar (Spinner) Peluang",
+              "title": "Roda Putar",
               "caption": "*8 juring sama besar: 3 merah, 3 kuning, 2 hijau",
               "sectors": [
                 "merah",
@@ -2849,7 +2865,7 @@ export const grade6Data = {
                 "hijau",
                 "hijau"
               ],
-              "targetLabel": "P(Hijau) = ?"
+              "targetLabel": "Bandingkan!"
             }
           }
         },
@@ -2857,190 +2873,190 @@ export const grade6Data = {
           "id": "sd6-b4-14",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Peluang hari esok turun hujan adalah 0,35. Peluang hari esok tidak turun hujan adalah...",
+          "question": "Urutkan kejadian berikut dari yang paling mungkin: (1) Matahari terbit besok pagi, (2) Mendapat mata dadu 6 saat melempar satu dadu, (3) Seekor kucing berbicara bahasa Indonesia.",
           "options": [
             {
               "key": "A",
-              "text": "0,75"
+              "text": "2, 1, 3"
             },
             {
               "key": "B",
-              "text": "0,55"
+              "text": "3, 2, 1"
             },
             {
               "key": "C",
-              "text": "0,45"
+              "text": "1, 3, 2"
             },
             {
               "key": "D",
-              "text": "0,65"
+              "text": "1, 2, 3"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Peluang komplemen $= 1 - P = 1 - 0{,}35 = 0{,}65$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P(\\text{tidak hujan}) = 1 - 0{,}35 = 0{,}65$$\nPeluangnya adalah **0,65** (Opsi D)."
+          "hint": "Tentukan mana yang pasti, mana yang mungkin, dan mana yang mustahil.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n(1) pasti terjadi, (2) mungkin terjadi, (3) mustahil terjadi.\nUrutannya **1, 2, 3**.\n(Opsi D)."
         },
         {
           "id": "sd6-b4-15",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Dua keping uang logam dilempar bersamaan. Peluang munculnya kedua-duanya sisi gambar (G, G) adalah...",
+          "question": "Kantong A berisi 2 bola merah dan 8 bola putih. Kantong B berisi 5 bola merah dan 5 bola putih. Dina ingin mendapat bola merah dengan sekali ambil. Dari kantong mana sebaiknya ia mengambil?",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{4}"
+              "text": "Kantong B"
             },
             {
               "key": "B",
-              "text": "\\frac{1}{2}"
+              "text": "Kantong A"
             },
             {
               "key": "C",
-              "text": "\\frac{3}{4}"
+              "text": "Sama saja"
             },
             {
               "key": "D",
-              "text": "\\frac{1}{3}"
+              "text": "Tidak dapat ditentukan"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Ruang sampel 2 koin: (A,A), (A,G), (G,A), (G,G) ada 4 kemungkinan. Peluang (G,G) $= \\frac{1}{4}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{1}{4}$$\nPeluangnya adalah **$\\frac{1}{4}$** (Opsi A)."
+          "hint": "Kedua kantong berisi 10 bola. Kantong mana yang bola merahnya lebih banyak?",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nKedua kantong berisi 10 bola, tetapi kantong B memiliki lebih banyak bola merah (5) daripada kantong A (2). Jadi sebaiknya mengambil dari **kantong B**.\n(Opsi A)."
         },
         {
           "id": "sd6-b4-16",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Dalam sebuah kotak terdapat 6 kelereng merah dan sejumlah kelereng putih. Jika peluang terambilnya kelereng merah adalah $\\frac{2}{5}$, berapakah jumlah seluruh kelereng di dalam kotak?",
+          "question": "Sebuah kotak berisi 6 kelereng merah dan 9 kelereng putih. Paling sedikit berapa kelereng merah yang harus ditambahkan agar kelereng merah lebih mungkin terambil daripada kelereng putih?",
           "options": [
             {
               "key": "A",
-              "text": "15 kelereng"
+              "text": "4 kelereng"
             },
             {
               "key": "B",
-              "text": "12 kelereng"
+              "text": "3 kelereng"
             },
             {
               "key": "C",
-              "text": "18 kelereng"
+              "text": "9 kelereng"
             },
             {
               "key": "D",
-              "text": "20 kelereng"
+              "text": "6 kelereng"
             }
           ],
           "correctAnswer": "A",
-          "hint": "$\\frac{6}{\\text{Total}} = \\frac{2}{5} \\implies \\text{Total} = \\frac{6 \\times 5}{2} = 15$ kelereng.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Total} = \\frac{6 \\times 5}{2} = 15\\text{ kelereng}$$\nJumlah seluruh kelereng adalah **15 butir** (Opsi A)."
+          "hint": "Kelereng merah harus lebih banyak daripada 9.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nAgar lebih mungkin, kelereng merah harus lebih dari 9, yaitu paling sedikit 10.\n$$10 - 6 = 4\\text{ kelereng}$$\n(Opsi A)."
         },
         {
           "id": "sd6-b4-17",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Dua buah dadu dilempar bersamaan satu kali. Peluang munculnya jumlah kedua mata dadu sama dengan 7 adalah...",
+          "question": "Setiap huruf dari kata MATEMATIKA ditulis pada sebuah kartu, lalu semua kartu dimasukkan ke dalam kantong. Diambil satu kartu tanpa melihat. Huruf yang paling mungkin terambil adalah...",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{5}{36}"
+              "text": "M"
             },
             {
               "key": "B",
-              "text": "\\frac{7}{36}"
+              "text": "T"
             },
             {
               "key": "C",
-              "text": "\\frac{1}{12}"
+              "text": "K"
             },
             {
               "key": "D",
-              "text": "\\frac{6}{36} = \\frac{1}{6}"
+              "text": "A"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Pasangan berjumlah 7: (1,6), (2,5), (3,4), (4,3), (5,2), (6,1) ada 6 pasangan. Total $= 36$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{6}{36} = \\frac{1}{6}$$\nPeluangnya adalah **$\\frac{1}{6}$** (Opsi D)."
+          "hint": "Hitung berapa kali setiap huruf muncul pada kata MATEMATIKA.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nM: 2 kali, A: 3 kali, T: 2 kali, E: 1 kali, I: 1 kali, K: 1 kali.\nHuruf **A** paling banyak, sehingga paling mungkin terambil.\n(Opsi D)."
         },
         {
           "id": "sd6-b4-18",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Sebuah kantong berisi 5 permen rasa jeruk, 8 permen rasa mangga, dan 7 permen rasa stroberi. Jika diambil 2 permen satu per satu tanpa pengembalian, peluang terambil permen pertama jeruk dan kedua jeruk adalah...",
+          "question": "Sebuah kantong berisi 5 permen rasa jeruk, 8 permen rasa mangga, dan 7 permen rasa stroberi. Rina mengambil 1 permen mangga lalu memakannya. Jika ia mengambil satu permen lagi tanpa melihat, rasa yang paling mungkin terambil sekarang adalah...",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{16}"
+              "text": "Jeruk"
             },
             {
               "key": "B",
-              "text": "\\frac{5}{38}"
+              "text": "Mangga"
             },
             {
               "key": "C",
-              "text": "\\frac{1}{20}"
+              "text": "Stroberi"
             },
             {
               "key": "D",
-              "text": "\\frac{1}{19}"
+              "text": "Mangga dan stroberi sama mungkin"
             }
           ],
           "correctAnswer": "D",
-          "hint": "Peluang pertama $= \\frac{5}{20} = \\frac{1}{4}$. Peluang kedua $= \\frac{4}{19}$. Peluang bersama $= \\frac{5}{20} \\times \\frac{4}{19} = \\frac{1}{19}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{5}{20} \\times \\frac{4}{19} = \\frac{1}{4} \\times \\frac{4}{19} = \\frac{1}{19}$$\nPeluangnya adalah **$\\frac{1}{19}$** (Opsi D)."
+          "hint": "Hitung sisa permen setiap rasa setelah 1 permen mangga dimakan.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nSisa permen: jeruk 5, mangga 7, stroberi 7.\nMangga dan stroberi sama banyak, sehingga **mangga dan stroberi sama mungkin** terambil.\n(Opsi D)."
         },
         {
           "id": "sd6-b4-19",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Tiga keping uang logam dilempar bersamaan. Peluang munculnya minimal 2 sisi angka adalah...",
+          "question": "Tiga koin dilempar bersamaan. Manakah yang lebih mungkin: muncul 3 Angka semua, atau muncul 2 Angka dan 1 Gambar?",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{3}{8}"
+              "text": "3 Angka semua"
             },
             {
               "key": "B",
-              "text": "\\frac{5}{8}"
+              "text": "Keduanya sama mungkin"
             },
             {
               "key": "C",
-              "text": "\\frac{1}{2}"
+              "text": "2 Angka dan 1 Gambar, karena dapat terjadi dengan 3 cara (AAG, AGA, GAA)"
             },
             {
               "key": "D",
-              "text": "\\frac{7}{8}"
+              "text": "Tidak dapat dibandingkan"
             }
           ],
           "correctAnswer": "C",
-          "hint": "Ruang sampel 3 koin $= 8$. Kejadian minimal 2 angka: (A,A,G), (A,G,A), (G,A,A), (A,A,A) ada 4 kejadian. Peluang $= \\frac{4}{8} = \\frac{1}{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{4}{8} = \\frac{1}{2}$$\nPeluangnya adalah **$\\frac{1}{2}$** (Opsi C)."
+          "hint": "Tuliskan semua cara agar setiap kejadian terjadi.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. 3 Angka: hanya 1 cara (AAA).\n2. 2 Angka dan 1 Gambar: 3 cara (AAG, AGA, GAA).\nJadi **2 Angka dan 1 Gambar lebih mungkin**.\n(Opsi C)."
         },
         {
           "id": "sd6-b4-20",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Hasil survei 50 siswa: 30 gemar renang, 25 gemar bulu tangkis, dan 10 gemar keduanya. Jika dipilih satu siswa secara acak, peluang terpilih siswa yang tidak gemar renang maupun bulu tangkis adalah...",
+          "question": "Guru mengundi 1 nama ketua kelas dari kertas berisi nama 12 siswa perempuan dan 18 siswa laki-laki. Pernyataan yang benar adalah...",
           "options": [
             {
               "key": "A",
-              "text": "\\frac{1}{10}"
+              "text": "Siswa laki-laki lebih mungkin terpilih"
             },
             {
               "key": "B",
-              "text": "\\frac{1}{5}"
+              "text": "Siswa perempuan lebih mungkin terpilih"
             },
             {
               "key": "C",
-              "text": "\\frac{3}{25}"
+              "text": "Keduanya sama mungkin terpilih"
             },
             {
               "key": "D",
-              "text": "\\frac{1}{25}"
+              "text": "Siswa perempuan pasti terpilih"
             }
           ],
           "correctAnswer": "A",
-          "hint": "Gemar renang saja $= 20$, bulu tangkis saja $= 15$, keduanya $= 10$. Total gemar $= 45$. Tidak gemar $= 5$. Peluang $= \\frac{5}{50} = \\frac{1}{10}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Jumlah gemar setidaknya satu olahraga: $30 + 25 - 10 = 45$\n2. Tidak gemar keduanya: $50 - 45 = 5$\n3. Peluang: $\\frac{5}{50} = \\frac{1}{10}$ (Opsi A)."
+          "hint": "Bandingkan banyak nama siswa laki-laki dan perempuan.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nNama siswa laki-laki (18) lebih banyak daripada siswa perempuan (12), sehingga **siswa laki-laki lebih mungkin terpilih**.\n(Opsi A)."
         }
       ]
     }

@@ -23,6 +23,7 @@ import {
   Loader2
 } from 'lucide-react';
 import { getProgress, PROGRESS_EVENT } from '../utils/progress';
+import { getCp2025Note } from '../data/cp2025Mapping';
 
 /**
  * Pure helper to parse handbook search parameters with backward compatibility.
@@ -706,6 +707,12 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                   <h2 className="chapter-header-title">
                     {currentChapter.title}
                   </h2>
+
+                  {getCp2025Note(currentChapter.id) && (
+                    <p className="cp2025-note">
+                      <strong>{getCp2025Note(currentChapter.id).label}.</strong> {getCp2025Note(currentChapter.id).note}
+                    </p>
+                  )}
 
                   {currentChapter.concepts && currentChapter.concepts.length > 0 && (
                     <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginTop: '0.5rem' }}>

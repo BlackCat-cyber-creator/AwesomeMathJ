@@ -526,6 +526,7 @@ export function ProbabilityBagVisual({
   title = "Peluang Pengambilan Objek",
   caption,
   items = [],
+  targetLabel = "Peluang Terambil = ?",
   width = 330,
   heightSvg = 150
 }) {
@@ -565,7 +566,7 @@ export function ProbabilityBagVisual({
         <g transform="translate(0, 90)">
           <rect width="115" height="24" rx="4" fill={VISUAL_THEME.accentSoft} stroke={VISUAL_THEME.accent} strokeWidth="1.25" />
           <text x="57" y="16" textAnchor="middle" fontSize="10" fontWeight="800" fill={VISUAL_THEME.accentDark}>
-            Peluang Terambil = ?
+            {targetLabel}
           </text>
         </g>
       </g>

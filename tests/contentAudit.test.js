@@ -21,6 +21,8 @@ const REVIEWED_DERIVED = {
   'sd5-b7-1': ['90'], // sudut siku-siku
   'sd5-b7-3': ['2'], // "diagonal 1 / diagonal 2"
   'sd6-b2-9': ['3'], // selisih rasio 7 − 4 pada model batang
+  'sd6-b4-3': ['6'], // dadu bermata 1 sampai 6
+  'sd6-b4-6': ['6'], // dadu bermata 1 sampai 6
   'sd6-b3-3': ['6'], // kubus memiliki 6 sisi
   'sd6-b3-6': ['12'], // kubus memiliki 12 rusuk
   'sd6-b3-12': ['100'], // 1 m = 100 cm
@@ -61,7 +63,7 @@ describe('Audit konten: gambar sesuai soal', () => {
 });
 
 describe('Audit konten: cakupan dan kerapian soal', () => {
-  it('soal Kelas 4 tidak memakai materi Fase C (modus, rata-rata, persentase data, ukuran sudut)', () => {
+  it('soal Kelas 4–9 tidak memakai materi fase berikutnya (CP 046/2025)', () => {
     const offScope = rows.filter((r) => r.outOfScope.length > 0).map((r) => `${r.id}: ${r.outOfScope.join(', ')}`);
     expect(offScope).toEqual([]);
   });
