@@ -6,17 +6,79 @@ import { SvgContainer } from '../common/SvgContainer';
  * NumberLineVisual:
  * Garis bilangan dengan busur lompatan pola berulang (Pola Bilangan, Lompatan, Barisan).
  */
+/**
+ * IntegerNumberLine:
+ * Garis bilangan bulat berskala. Hanya menandai bilangan yang diketahui di soal
+ * (marks); hasil akhir tidak pernah digambar agar tidak membocorkan jawaban.
+ */
+function IntegerNumberLine({ title, caption, min, max, step, marks, targetLabel, width, heightSvg }) {
+  const startX = 24;
+  const endX = width - 24;
+  const lineY = 70;
+  const toX = (v) => startX + ((v - min) / (max - min)) * (endX - startX);
+  const ticks = [];
+  for (let v = min; v <= max; v += step) ticks.push(v);
+  const labelEvery = Math.max(1, Math.ceil(ticks.length / 11));
+
+  return (
+    <SvgContainer width={width} height={heightSvg} title={title} caption={caption}>
+      <line x1={startX - 10} y1={lineY} x2={endX + 10} y2={lineY} stroke={VISUAL_THEME.textSecondary} strokeWidth="2" />
+      <polygon points={`${endX + 14},${lineY} ${endX + 6},${lineY - 4} ${endX + 6},${lineY + 4}`} fill={VISUAL_THEME.textSecondary} />
+      <polygon points={`${startX - 14},${lineY} ${startX - 6},${lineY - 4} ${startX - 6},${lineY + 4}`} fill={VISUAL_THEME.textSecondary} />
+      {ticks.map((v, i) => (
+        <g key={`tick-${v}`}>
+          <line x1={toX(v)} y1={lineY - 5} x2={toX(v)} y2={lineY + 5} stroke={VISUAL_THEME.textSecondary} strokeWidth={v === 0 ? 2 : 1.25} />
+          {(i % labelEvery === 0 || v === 0) && (
+            <text x={toX(v)} y={lineY + 18} textAnchor="middle" fontSize="9" fontWeight={v === 0 ? 800 : 600} fill={VISUAL_THEME.textDark}>
+              {v < 0 ? `−${Math.abs(v)}` : v}
+            </text>
+          )}
+        </g>
+      ))}
+      {marks.map((m, i) => (
+        <g key={`mark-${i}`}>
+          <circle cx={toX(m.val)} cy={lineY} r="5" fill={VISUAL_THEME.primary} stroke="#FFFFFF" strokeWidth="1.5" />
+          <text x={toX(m.val)} y={lineY - 12} textAnchor="middle" fontSize="10" fontWeight="800" fill={VISUAL_THEME.primaryDark}>
+            {m.label}
+          </text>
+        </g>
+      ))}
+      {targetLabel && (
+        <g transform={`translate(${width - 70}, 22)`}>
+          <rect x="-58" y="-11" width="116" height="22" rx="5" fill={VISUAL_THEME.accentSoft} stroke={VISUAL_THEME.accent} strokeWidth="1.5" />
+          <text x="0" y="4" textAnchor="middle" fontSize="10" fontWeight="800" fill={VISUAL_THEME.accentDark}>{targetLabel}</text>
+        </g>
+      )}
+    </SvgContainer>
+  );
+}
+
 export function NumberLineVisual({
   title = "Pola Barisan Bilangan",
   caption = "*Temukan aturan pola untuk menentukan bilangan selanjutnya",
-  items = [5, 9, 13, 17],
+  items = [],
   target = "?",
   slots = null,
   targetIndex = null,
   promptText = "Berapakah bilangan pada kotak bertanda tanya?",
+  min,
+  max,
+  step = 1,
+  marks = [],
+  targetLabel,
   width = 345,
   heightSvg = 145
 }) {
+  // Mode garis bilangan bulat (Kelas 7): sumbu berskala dengan titik awal yang diketahui
+  if (min !== undefined && max !== undefined) {
+    return (
+      <IntegerNumberLine
+        title={title} caption={caption} min={min} max={max} step={step}
+        marks={marks} targetLabel={targetLabel} width={width} heightSvg={heightSvg}
+      />
+    );
+  }
+
   // Normalize slots data
   let resolvedSlots = [];
   if (Array.isArray(slots) && slots.length > 0) {
@@ -46,7 +108,7 @@ export function NumberLineVisual({
     }));
     for (let u = items.length + 1; u < targetIndex; u++) {
       resolvedSlots.push({
-        val: `U${u}`,
+        val: '…',
         sub: `U${u}`,
         isTarget: false,
         isPlaceholder: true
@@ -275,8 +337,8 @@ export function ClockAngleVisual({
   caption,
   hour = 3,
   minute = 0,
-  angleLabel = "90°",
-  angleType = "Sudut Siku-Siku",
+  angleLabel = "?°",
+  angleType = "Besar Sudut = ?",
   width = 330,
   heightSvg = 150
 }) {
@@ -403,13 +465,9 @@ export function UnitGridVisual({
 export function PictogramVisual({
   title = "Piktogram (Diagram Gambar)",
   caption,
-  rows = [
-    { label: 'Senin', count: 4 },
-    { label: 'Selasa', count: 5 },
-    { label: 'Rabu', count: 3 }
-  ],
+  rows = [],
   symbol = "⭐",
-  unitLabel = "1 ⭐ = 5 poin prestasi",
+  unitLabel = "",
   width = 330,
   heightSvg = 150
 }) {
@@ -427,23 +485,35 @@ export function PictogramVisual({
 
             {/* Simbol-Simbol Berulang */}
             <g transform="translate(68, 0)">
-              {Array.from({ length: row.count }).map((_, sIdx) => (
-                <text key={`sym-${sIdx}`} x={sIdx * 24} y="15" fontSize="15">
-                  {symbol}
-                </text>
-              ))}
+              {typeof row.count === 'number' ? (
+                Array.from({ length: row.count }).map((_, sIdx) => (
+                  <text key={`sym-${sIdx}`} x={sIdx * 24} y="15" fontSize="15">
+                    {symbol}
+                  </text>
+                ))
+              ) : (
+                // Jumlah simbol yang ditanyakan: tampilkan kotak tanya, bukan jawabannya
+                <g>
+                  <rect x="0" y="-1" width="60" height="22" rx="4" fill={VISUAL_THEME.accentSoft} stroke={VISUAL_THEME.accent} strokeWidth="1.5" strokeDasharray="3 2" />
+                  <text x="30" y="14" textAnchor="middle" fontSize="11" fontWeight="800" fill={VISUAL_THEME.accentDark}>
+                    {row.count || '?'}
+                  </text>
+                </g>
+              )}
             </g>
           </g>
         );
       })}
 
       {/* Kunci Legenda Piktogram di Bawah */}
-      <g transform={`translate(${width / 2}, ${heightSvg - 12})`}>
-        <rect x="-70" y="-10" width="140" height="20" rx="4" fill={VISUAL_THEME.primarySoft} stroke={VISUAL_THEME.primary} strokeWidth="1" />
-        <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.primaryDark}>
-          Kunci: {unitLabel}
-        </text>
-      </g>
+      {unitLabel && (
+        <g transform={`translate(${width / 2}, ${heightSvg - 12})`}>
+          <rect x="-70" y="-10" width="140" height="20" rx="4" fill={VISUAL_THEME.primarySoft} stroke={VISUAL_THEME.primary} strokeWidth="1" />
+          <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.primaryDark}>
+            Kunci: {unitLabel}
+          </text>
+        </g>
+      )}
     </SvgContainer>
   );
 }
@@ -455,11 +525,7 @@ export function PictogramVisual({
 export function ProbabilityBagVisual({
   title = "Peluang Pengambilan Objek",
   caption,
-  items = [
-    { color: 'red', count: 5, fill: '#FCA5A5', stroke: '#DC2626', label: '5 Merah' },
-    { color: 'blue', count: 4, fill: '#93C5FD', stroke: '#2563EB', label: '4 Biru' },
-    { color: 'green', count: 3, fill: '#86EFAC', stroke: '#16A34A', label: '3 Hijau' }
-  ],
+  items = [],
   width = 330,
   heightSvg = 150
 }) {
@@ -516,7 +582,7 @@ export function CircleFractionVisual({
   caption,
   totalParts = 4,
   shadedParts = 3,
-  label = "3/4",
+  label = "?",
   width = 330,
   heightSvg = 155
 }) {
@@ -578,11 +644,21 @@ export function CircleFractionVisual({
  * ProbabilityObjectVisual:
  * Model visual koin, dadu, atau roda putar untuk bab Peluang.
  */
+const SPINNER_COLORS = {
+  merah: '#FCA5A5',
+  kuning: '#FDE68A',
+  hijau: '#86EFAC',
+  biru: '#93C5FD',
+  ungu: '#C4B5FD',
+  oranye: '#FDBA74'
+};
+
 export function ProbabilityObjectVisual({
   title = "Peluang Kejadian",
   caption,
   type = "coin", // 'coin' | 'dice' | 'spinner'
   diceValue = 4,
+  sectors = null, // spinner: daftar warna tiap juring, mis. ['merah', 'merah', 'kuning', 'hijau']
   targetLabel = "Peluang = ?",
   width = 330,
   heightSvg = 155
@@ -649,21 +725,22 @@ export function ProbabilityObjectVisual({
         </g>
       ) : (
         <g>
-          {/* Roda Putar (Spinner) 8 Juring */}
+          {/* Roda Putar (Spinner): juring sesuai data soal bila `sectors` diisi */}
           <g transform="translate(125, 78)">
-            {[0, 45, 90, 135, 180, 225, 270, 315].map((deg, i) => {
-              const r1 = (deg * Math.PI) / 180;
-              const r2 = ((deg + 45) * Math.PI) / 180;
+            {(sectors || ['#FEE2E2', '#FEF3C7', '#DCFCE7', '#E0E7FF', '#FCE7F3', '#FEF9C3', '#E0F2FE', '#F3E8FF']).map((color, i, arr) => {
+              const step = 360 / arr.length;
+              const r1 = ((i * step - 90) * Math.PI) / 180;
+              const r2 = (((i + 1) * step - 90) * Math.PI) / 180;
               const x1 = 45 * Math.cos(r1);
               const y1 = 45 * Math.sin(r1);
               const x2 = 45 * Math.cos(r2);
               const y2 = 45 * Math.sin(r2);
-              const colors = ['#FEE2E2', '#FEF3C7', '#DCFCE7', '#E0E7FF', '#FCE7F3', '#FEF9C3', '#E0F2FE', '#F3E8FF'];
+              const largeArc = step > 180 ? 1 : 0;
               return (
                 <path 
                   key={`spin-${i}`} 
-                  d={`M 0 0 L ${x1} ${y1} A 45 45 0 0 1 ${x2} ${y2} Z`} 
-                  fill={colors[i]} 
+                  d={`M 0 0 L ${x1} ${y1} A 45 45 0 ${largeArc} 1 ${x2} ${y2} Z`} 
+                  fill={SPINNER_COLORS[color] || color} 
                   stroke={VISUAL_THEME.textDark} 
                   strokeWidth="1.25" 
                 />

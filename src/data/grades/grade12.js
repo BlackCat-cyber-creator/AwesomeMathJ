@@ -973,7 +973,7 @@ export const grade12Data = {
           "id": "sma12-b2-12",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Dari soal sebelumnya, besar angsuran pokok pada bulan pertama adalah...",
+          "question": "Pak Dani meminjam uang sebesar Rp12.000.000,00 di koperasi dengan suku bunga 1% per bulan. Pinjaman dilunasi dengan anuitas bulanan Rp1.100.000,00 dan bunga pada bulan pertama adalah Rp120.000,00. Besar angsuran pokok pada bulan pertama adalah...",
           "options": [
             {
               "key": "A",

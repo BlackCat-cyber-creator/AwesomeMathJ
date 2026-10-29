@@ -85,7 +85,38 @@ export const grade11Data = {
           ],
           "correctAnswer": "C",
           "hint": "Hitung terlebih dahulu luaran fungsi dalam yaitu $g(2)$, lalu masukkan hasilnya sebagai masukan fungsi luar $f$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hitung nilai fungsi dalam $g(2)$:\n$$g(2) = (2)^2 + 1 = 4 + 1 = 5$$\n2. Masukkan hasil tersebut ke dalam fungsi luar $f$:\n$$(f \\circ g)(2) = f(g(2)) = f(5) = 2(5) - 3 = 10 - 3 = 7$$\nJadi, nilai dari $(f \\circ g)(2)$ adalah **7** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Hitung nilai fungsi dalam $g(2)$:\n$$g(2) = (2)^2 + 1 = 4 + 1 = 5$$\n2. Masukkan hasil tersebut ke dalam fungsi luar $f$:\n$$(f \\circ g)(2) = f(g(2)) = f(5) = 2(5) - 3 = 10 - 3 = 7$$\nJadi, nilai dari $(f \\circ g)(2)$ adalah **7** (Opsi C).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Model Komposisi Fungsi f(g(x))",
+              "caption": "*Transformasi input domain bertahap melalui mesin pemetaan g lalu f",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "Domain x",
+                      "width": 80,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "Mesin g(x)",
+                      "width": 100,
+                      "color": "green"
+                    },
+                    {
+                      "label": "Output f(g(x))",
+                      "width": 120,
+                      "color": "amber"
+                    }
+                  ],
+                  "totalLabel": "f ∘ g"
+                }
+              ],
+              "target": "f(g(x))",
+              "targetLabel": "Nilai Komposisi"
+            }
+          }
         },
         {
           "id": "sma11-b1-2",
@@ -677,7 +708,16 @@ export const grade11Data = {
           ],
           "correctAnswer": "D",
           "hint": "Sudut keliling sama dengan setengah dari sudut pusat jika keduanya menghadap busur yang sama.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Teorema hubungan sudut:\n$$\\angle \\text{keliling} = \\frac{1}{2} \\times \\angle \\text{pusat}$$\n2. Substitusikan nilai sudut pusat yang diketahui:\n$$\\angle ACB = \\frac{1}{2} \\times 84^\\circ = 42^\\circ$$\nJadi, besar sudut keliling $\\angle ACB$ adalah **$42^\\circ$** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Teorema hubungan sudut:\n$$\\angle \\text{keliling} = \\frac{1}{2} \\times \\angle \\text{pusat}$$\n2. Substitusikan nilai sudut pusat yang diketahui:\n$$\\angle ACB = \\frac{1}{2} \\times 84^\\circ = 42^\\circ$$\nJadi, besar sudut keliling $\\angle ACB$ adalah **$42^\\circ$** (Opsi D).",
+          "visual": {
+            "type": "circle-angle",
+            "props": {
+              "title": "Sudut Pusat & Keliling Lingkaran",
+              "caption": "*Sudut pusat ∠AOB dan sudut keliling ∠ACB menghadap busur AB yang sama",
+              "centralAngle": "84°",
+              "inscribedAngle": "?°"
+            }
+          }
         },
         {
           "id": "sma11-b2-2",
@@ -3424,7 +3464,45 @@ export const grade11Data = {
           ],
           "correctAnswer": "C",
           "hint": "Cari perpotongan: $x^2-1=3 \\implies x=\\pm 2$. Integrasikan selisih dari $-2$ ke $2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$L = \\int_{-2}^{2} [3-(x^2-1)]dx = \\int_{-2}^{2}(4-x^2)dx$\n$= [4x-\\frac{x^3}{3}]_{-2}^{2} = (8-\\frac{8}{3})-(-8+\\frac{8}{3}) = \\frac{32}{3}$\nLuasnya adalah $\\frac{32}{3}$ satuan luas (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$L = \\int_{-2}^{2} [3-(x^2-1)]dx = \\int_{-2}^{2}(4-x^2)dx$\n$= [4x-\\frac{x^3}{3}]_{-2}^{2} = (8-\\frac{8}{3})-(-8+\\frac{8}{3}) = \\frac{32}{3}$\nLuasnya adalah $\\frac{32}{3}$ satuan luas (Opsi C).",
+          "visual": {
+            "type": "cartesian-plot",
+            "props": {
+              "title": "Daerah di Antara Parabola y = x² - 1 dan Garis y = 3",
+              "caption": "*Titik potong kurva terletak pada x = -2 dan x = 2",
+              "xRange": [
+                -4,
+                4
+              ],
+              "yRange": [
+                -2,
+                5
+              ],
+              "points": [
+                {
+                  "x": -2,
+                  "y": 3,
+                  "label": "(-2, 3)",
+                  "color": "blue"
+                },
+                {
+                  "x": 2,
+                  "y": 3,
+                  "label": "(2, 3)",
+                  "color": "blue"
+                },
+                {
+                  "x": 0,
+                  "y": -1,
+                  "label": "(0, -1)",
+                  "color": "amber"
+                }
+              ],
+              "targetPoint": {
+                "label": "Luas Arsiran = ?"
+              }
+            }
+          }
         },
         {
           "id": "sma11-b6-16",

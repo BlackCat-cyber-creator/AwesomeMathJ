@@ -596,7 +596,19 @@ export const grade8Data = {
           ],
           "correctAnswer": "B",
           "hint": "Konversikan ukuran ke meter terlebih dahulu: $1\\text{ m} = 10^2\\text{ cm}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Panjang $= 40\\text{ m}$, Lebar $= 30\\text{ m}$, Tinggi $= 2{,}5\\text{ m}$\n2. Volume $= 40 \\times 30 \\times 2{,}5 = 300\\text{ m}^3$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Panjang $= 40\\text{ m}$, Lebar $= 30\\text{ m}$, Tinggi $= 2{,}5\\text{ m}$\n2. Volume $= 40 \\times 30 \\times 2{,}5 = 300\\text{ m}^3$ (Opsi B).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Ruangan Laboratorium",
+              "caption": "*Konversikan dimensi ke satuan meter: 1 m = 10² cm",
+              "solid": "box",
+              "lengthLabel": "p = 4 × 10³ cm",
+              "widthLabel": "l = 3 × 10³ cm",
+              "heightLabel": "t = 2,5 × 10² cm",
+              "targetLabel": "Volume = ? m³"
+            }
+          }
         }
       ]
     },
@@ -669,7 +681,24 @@ export const grade8Data = {
           ],
           "correctAnswer": "D",
           "hint": "Gunakan rumus $c = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$c = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$$\nPanjang sisi miringnya adalah **10 cm** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$c = \\sqrt{6^2 + 8^2} = \\sqrt{36 + 64} = \\sqrt{100} = 10\\text{ cm}$$\nPanjang sisi miringnya adalah **10 cm** (Opsi D).",
+          "visual": {
+            "type": "right-triangle",
+            "props": {
+              "title": "Segitiga Siku-Siku Standar",
+              "caption": "*Mencari panjang hipotenusa dengan Teorema Pythagoras",
+              "base": 8,
+              "height": 6,
+              "baseLabel": "8 cm",
+              "heightLabel": "6 cm",
+              "hypLabel": "? cm",
+              "vertices": {
+                "right": "B",
+                "top": "A",
+                "far": "C"
+              }
+            }
+          }
         },
         {
           "id": "smp8-b2-2",
@@ -723,7 +752,24 @@ export const grade8Data = {
           ],
           "correctAnswer": "A",
           "hint": "Gunakan tripel Pythagoras: $\\sqrt{24^2 + 7^2} = \\sqrt{576 + 49} = \\sqrt{625}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sisi tegak $t = 24\\text{ m}$, sisi alas $a = 7\\text{ m}$.\n2. Panjang kawat $k$:\n$$k = \\sqrt{24^2 + 7^2} = \\sqrt{576 + 49} = \\sqrt{625} = 25\\text{ meter}$$\nPanjang kawat baja yang diperlukan adalah **25 meter** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Sisi tegak $t = 24\\text{ m}$, sisi alas $a = 7\\text{ m}$.\n2. Panjang kawat $k$:\n$$k = \\sqrt{24^2 + 7^2} = \\sqrt{576 + 49} = \\sqrt{625} = 25\\text{ meter}$$\nPanjang kawat baja yang diperlukan adalah **25 meter** (Opsi A).",
+          "visual": {
+            "type": "right-triangle",
+            "props": {
+              "title": "Aplikasi Pythagoras: Kawat Tiang Pemancar",
+              "caption": "*Tinggi tiang 24 m dan jarak patok tanah 7 m",
+              "base": 7,
+              "height": 24,
+              "baseLabel": "7 m",
+              "heightLabel": "24 m",
+              "hypLabel": "Kawat = ? m",
+              "vertices": {
+                "right": "Pangkal",
+                "top": "Puncak",
+                "far": "Patok"
+              }
+            }
+          }
         },
         {
           "id": "smp8-b2-4",
@@ -777,7 +823,24 @@ export const grade8Data = {
           ],
           "correctAnswer": "C",
           "hint": "Gunakan rumus Pythagoras: $c = \\sqrt{a^2 + b^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$c = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\\text{ cm}$$\nPanjang hipotenusa adalah **15 cm** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$c = \\sqrt{9^2 + 12^2} = \\sqrt{81 + 144} = \\sqrt{225} = 15\\text{ cm}$$\nPanjang hipotenusa adalah **15 cm** (Opsi C).",
+          "visual": {
+            "type": "right-triangle",
+            "props": {
+              "title": "Segitiga Siku-Siku (Tripel Pythagoras)",
+              "caption": "*Sisi siku-siku 9 cm dan 12 cm",
+              "base": 12,
+              "height": 9,
+              "baseLabel": "12 cm",
+              "heightLabel": "9 cm",
+              "hypLabel": "? cm",
+              "vertices": {
+                "right": "Q",
+                "top": "P",
+                "far": "R"
+              }
+            }
+          }
         },
         {
           "id": "smp8-b2-6",
@@ -858,7 +921,24 @@ export const grade8Data = {
           ],
           "correctAnswer": "D",
           "hint": "Dinding dan tanah membentuk sudut siku-siku. Tinggi dinding $t = \\sqrt{10^2 - 6^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\sqrt{10^2 - 6^2} = \\sqrt{100 - 36} = \\sqrt{64} = 8\\text{ meter}$$\nTinggi dinding adalah **8 meter** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\sqrt{10^2 - 6^2} = \\sqrt{100 - 36} = \\sqrt{64} = 8\\text{ meter}$$\nTinggi dinding adalah **8 meter** (Opsi D).",
+          "visual": {
+            "type": "right-triangle",
+            "props": {
+              "title": "Aplikasi Pythagoras: Tangga pada Dinding",
+              "caption": "*Panjang tangga 10 m disandarkan 6 m dari dinding tembok",
+              "base": 6,
+              "height": 8,
+              "baseLabel": "Alas = 6 m",
+              "heightLabel": "Tinggi ? m",
+              "hypLabel": "Tangga = 10 m",
+              "vertices": {
+                "right": "Tembok",
+                "top": "Atas",
+                "far": "Kaki"
+              }
+            }
+          }
         },
         {
           "id": "smp8-b2-9",
@@ -885,7 +965,24 @@ export const grade8Data = {
           ],
           "correctAnswer": "D",
           "hint": "Perbandingan sisi pada segitiga siku-siku sama kaki adalah $1 : 1 : \\sqrt{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPanjang hipotenusa $= 6 \\times \\sqrt{2} = 6\\sqrt{2}\\text{ cm}$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nPanjang hipotenusa $= 6 \\times \\sqrt{2} = 6\\sqrt{2}\\text{ cm}$ (Opsi D).",
+          "visual": {
+            "type": "right-triangle",
+            "props": {
+              "title": "Segitiga Siku-Siku Sama Kaki (45° - 45° - 90°)",
+              "caption": "*Kedua sisi tegak sama panjang (6 cm)",
+              "base": 6,
+              "height": 6,
+              "baseLabel": "6 cm",
+              "heightLabel": "6 cm",
+              "hypLabel": "? cm",
+              "vertices": {
+                "right": "C",
+                "top": "A",
+                "far": "B"
+              }
+            }
+          }
         },
         {
           "id": "smp8-b2-10",
@@ -912,7 +1009,24 @@ export const grade8Data = {
           ],
           "correctAnswer": "C",
           "hint": "Perbandingan sisi di depan sudut $30^\\circ : 60^\\circ : 90^\\circ$ adalah $1 : \\sqrt{3} : 2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nHipotenusa $= 2 \\times 5 = 10\\text{ cm}$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\nHipotenusa $= 2 \\times 5 = 10\\text{ cm}$ (Opsi C).",
+          "visual": {
+            "type": "right-triangle",
+            "props": {
+              "title": "Segitiga Istimewa (30° - 60° - 90°)",
+              "caption": "*Sisi di depan sudut 30° berukuran 5 cm",
+              "base": 8.66,
+              "height": 5,
+              "baseLabel": "Alas",
+              "heightLabel": "5 cm",
+              "hypLabel": "Hipotenusa = ? cm",
+              "vertices": {
+                "right": "C",
+                "top": "A",
+                "far": "B"
+              }
+            }
+          }
         },
         {
           "id": "smp8-b2-11",
@@ -939,7 +1053,18 @@ export const grade8Data = {
           ],
           "correctAnswer": "A",
           "hint": "Diagonal persegi panjang membagi persegi panjang menjadi dua segitiga siku-siku: $d = \\sqrt{p^2 + l^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$d = \\sqrt{16^2 + 12^2} = \\sqrt{256 + 144} = \\sqrt{400} = 20\\text{ cm}$$\nPanjang diagonalnya adalah **20 cm** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$d = \\sqrt{16^2 + 12^2} = \\sqrt{256 + 144} = \\sqrt{400} = 20\\text{ cm}$$\nPanjang diagonalnya adalah **20 cm** (Opsi A).",
+          "visual": {
+            "type": "quadrilateral",
+            "props": {
+              "title": "Diagonal Persegi Panjang",
+              "caption": "*Panjang 16 cm dan lebar 12 cm",
+              "type": "rectangle",
+              "dimA": "16 cm",
+              "dimB": "12 cm",
+              "targetBadge": "Diagonal = ? cm"
+            }
+          }
         },
         {
           "id": "smp8-b2-12",
@@ -966,7 +1091,24 @@ export const grade8Data = {
           ],
           "correctAnswer": "B",
           "hint": "Arah utara dan timur saling tegak lurus ($90^\\circ$). Jarak terdekat adalah hipotenusa: $s = \\sqrt{24^2 + 10^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{24^2 + 10^2} = \\sqrt{576 + 100} = \\sqrt{676} = 26\\text{ km}$$\nJarak terdekatnya adalah **26 km** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = \\sqrt{24^2 + 10^2} = \\sqrt{576 + 100} = \\sqrt{676} = 26\\text{ km}$$\nJarak terdekatnya adalah **26 km** (Opsi B).",
+          "visual": {
+            "type": "right-triangle",
+            "props": {
+              "title": "Lintasan Pelayaran Kapal Laut",
+              "caption": "*Kapal berlayar 24 km ke Utara, lalu 10 km ke Timur",
+              "base": 10,
+              "height": 24,
+              "baseLabel": "Timur 10 km",
+              "heightLabel": "Utara 24 km",
+              "hypLabel": "Jarak Terdekat = ? km",
+              "vertices": {
+                "right": "Belokan",
+                "top": "Tujuan",
+                "far": "Pelabuhan"
+              }
+            }
+          }
         },
         {
           "id": "smp8-b2-13",
@@ -1047,7 +1189,24 @@ export const grade8Data = {
           ],
           "correctAnswer": "D",
           "hint": "Tinggi layang-layang adalah salah satu sisi tegak segitiga siku-siku: $t = \\sqrt{25^2 - 15^2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\sqrt{625 - 225} = \\sqrt{400} = 20\\text{ meter}$$\nTinggi layang-layang adalah **20 meter** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$t = \\sqrt{625 - 225} = \\sqrt{400} = 20\\text{ meter}$$\nTinggi layang-layang adalah **20 meter** (Opsi D).",
+          "visual": {
+            "type": "right-triangle",
+            "props": {
+              "title": "Tali Layang-Layang di Udara",
+              "caption": "*Panjang tali 25 m dan jarak mendatar 15 m",
+              "base": 15,
+              "height": 20,
+              "baseLabel": "Mendatar 15 m",
+              "heightLabel": "Tinggi ? m",
+              "hypLabel": "Tali = 25 m",
+              "vertices": {
+                "right": "Bawah",
+                "top": "Layang-layang",
+                "far": "Anak"
+              }
+            }
+          }
         },
         {
           "id": "smp8-b2-16",
@@ -1155,7 +1314,19 @@ export const grade8Data = {
           ],
           "correctAnswer": "D",
           "hint": "Cari tinggi trapesium dengan Pythagoras pada salah satu segitiga di sisi samping.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Proyeksi alas: $\\frac{22 - 10}{2} = 6\\text{ cm}$\n2. Tinggi trapesium: $t = \\sqrt{10^2 - 6^2} = 8\\text{ cm}$\n3. Luas $= \\frac{22 + 10}{2} \\times 8 = 16 \\times 8 = 128\\text{ cm}^2$ (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Proyeksi alas: $\\frac{22 - 10}{2} = 6\\text{ cm}$\n2. Tinggi trapesium: $t = \\sqrt{10^2 - 6^2} = 8\\text{ cm}$\n3. Luas $= \\frac{22 + 10}{2} \\times 8 = 16 \\times 8 = 128\\text{ cm}^2$ (Opsi D).",
+          "visual": {
+            "type": "quadrilateral",
+            "props": {
+              "title": "Trapesium Sama Kaki ABCD",
+              "caption": "*Sisi sejajar 10 cm dan 22 cm, panjang sisi miring 10 cm",
+              "type": "trapezoid",
+              "dimA": "10 cm",
+              "dimB": "22 cm",
+              "dimT": "? cm",
+              "targetBadge": "Luas = ? cm²"
+            }
+          }
         },
         {
           "id": "smp8-b2-20",

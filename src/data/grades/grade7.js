@@ -78,7 +78,24 @@ export const grade7Data = {
           ],
           "correctAnswer": "D",
           "hint": "Ubah $-(-5)$ menjadi $+5$, lalu operasikan dari kiri: $-12 + 7 + 5$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $-12 + 7 = -5$\n2. $-5 - (-5) = -5 + 5 = 0$\nHasilnya adalah **0** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $-12 + 7 = -5$\n2. $-5 - (-5) = -5 + 5 = 0$\nHasilnya adalah **0** (Opsi D).",
+          "visual": {
+            "type": "number-line",
+            "props": {
+              "title": "Garis Bilangan Bulat",
+              "caption": "*Mulai dari −12, tambah 7, lalu kurangi −5",
+              "min": -15,
+              "max": 5,
+              "step": 1,
+              "marks": [
+                {
+                  "val": -12,
+                  "label": "−12"
+                }
+              ],
+              "targetLabel": "Hasil = ?"
+            }
+          }
         },
         {
           "id": "smp7-b1-2",
@@ -132,7 +149,24 @@ export const grade7Data = {
           ],
           "correctAnswer": "A",
           "hint": "Diturunkan artinya dikurangi: $-4 - 7$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Suhu} = -4 - 7 = -11^\\circ\\text{C}$$\nSuhu ruangan sekarang adalah **$-11^\\circ\\text{C}$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Suhu} = -4 - 7 = -11^\\circ\\text{C}$$\nSuhu ruangan sekarang adalah **$-11^\\circ\\text{C}$** (Opsi A).",
+          "visual": {
+            "type": "number-line",
+            "props": {
+              "title": "Penurunan Suhu Ruang Pendingin",
+              "caption": "*Suhu awal −4°C, kemudian turun 7°C",
+              "min": -15,
+              "max": 5,
+              "step": 1,
+              "marks": [
+                {
+                  "val": -4,
+                  "label": "−4°C"
+                }
+              ],
+              "targetLabel": "Suhu Akhir = ?"
+            }
+          }
         },
         {
           "id": "smp7-b1-4",
@@ -186,7 +220,24 @@ export const grade7Data = {
           ],
           "correctAnswer": "B",
           "hint": "Penjumlahan dua bilangan negatif menghasilkan bilangan negatif dengan menjumlahkan nilai mutlaknya: $-(15 + 28)$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-15 + (-28) = -(15 + 28) = -43$$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$-15 + (-28) = -(15 + 28) = -43$$ (Opsi B).",
+          "visual": {
+            "type": "number-line",
+            "props": {
+              "title": "Penjumlahan Bilangan Negatif",
+              "caption": "*Mulai dari −15, lalu tambah −28 (bergeser ke kiri)",
+              "min": -50,
+              "max": 10,
+              "step": 5,
+              "marks": [
+                {
+                  "val": -15,
+                  "label": "−15"
+                }
+              ],
+              "targetLabel": "Hasil = ?"
+            }
+          }
         },
         {
           "id": "smp7-b1-6",
@@ -1246,7 +1297,38 @@ export const grade7Data = {
           ],
           "correctAnswer": "A",
           "hint": "Samakan satuan terlebih dahulu: $1\\text{ kg} = 1.000\\text{ gram}$. Lalu bagi keduanya dengan 250.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Samakan satuan: 250 gram : 1.000 gram\n2. Sederhanakan:\n$$\\frac{250}{1.000} = \\frac{1}{4} = 1 : 4$$\nBentuk sederhananya adalah **1 : 4** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Samakan satuan: 250 gram : 1.000 gram\n2. Sederhanakan:\n$$\\frac{250}{1.000} = \\frac{1}{4} = 1 : 4$$\nBentuk sederhananya adalah **1 : 4** (Opsi A).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Perbandingan Massa",
+              "caption": "*Samakan satuan terlebih dahulu: 1 kg = 1.000 gram",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "250 g",
+                      "width": 50,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "250 gram"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "1 kg",
+                      "width": 200,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "1 kg"
+                }
+              ],
+              "target": "? : ?",
+              "targetLabel": "Rasio Sederhana"
+            }
+          }
         },
         {
           "id": "smp7-b3-2",
@@ -2875,7 +2957,7 @@ export const grade7Data = {
           "id": "smp7-b5-19",
           "category": "Latihan",
           "difficulty": "Tantangan",
-          "question": "Dari soal sebelumnya, panjang sisi $AB$ adalah...",
+          "question": "Pada segitiga siku-siku $ABC$ siku-siku di $A$, ditarik garis tinggi $AD$ tegak lurus $BC$. Jika $BD = 4$ cm dan $CD = 9$ cm, maka panjang sisi $AB$ adalah...",
           "options": [
             {
               "key": "A",

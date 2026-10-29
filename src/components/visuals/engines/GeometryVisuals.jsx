@@ -11,9 +11,9 @@ import { DimensionLine, RightAngleMarker } from '../common/VisualElements';
 export function RightTriangleVisual({
   title = "Segitiga Siku-Siku",
   caption,
-  baseLabel = "8 cm",
-  heightLabel = "6 cm",
-  hypLabel = "? cm",
+  baseLabel = "a",
+  heightLabel = "t",
+  hypLabel = "c",
   vertices = { right: 'B', top: 'A', far: 'C' },
   width = 340,
   heightSvg = 165
@@ -142,10 +142,12 @@ export function QuadrilateralVisual({
   title = "Bangun Datar",
   caption,
   type = "rectangle",
-  dimA = "15 cm",
-  dimB = "9 cm",
+  dimA = "a",
+  dimB = "b",
   dimT,
-  targetBadge = "Luas = ?",
+  sideA,
+  sideB,
+  targetBadge = null,
   width = 330,
   heightSvg = 155
 }) {
@@ -191,6 +193,15 @@ export function QuadrilateralVisual({
             </g>
           )}
           <DimensionLine x1={60} y1={127} x2={220} y2={127} label={dimA} />
+          {/* Label sisi miring (untuk soal keliling) */}
+          {sideB && (
+            <g transform="translate(44, 72)">
+              <rect x="-26" y="-8" width="52" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
+              <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.textDark}>
+                {sideB}
+              </text>
+            </g>
+          )}
         </g>
       ) : type === 'rhombus' ? (
         <g>
@@ -225,6 +236,15 @@ export function QuadrilateralVisual({
               </text>
             </g>
           )}
+          {/* Label sisi (untuk soal keliling) */}
+          {sideA && (
+            <g transform="translate(92, 42)">
+              <rect x="-26" y="-8" width="52" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
+              <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.textDark}>
+                {sideA}
+              </text>
+            </g>
+          )}
         </g>
       ) : type === 'kite' ? (
         <g>
@@ -252,6 +272,23 @@ export function QuadrilateralVisual({
               <rect x="-26" y="-8" width="52" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
               <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.dangerDark}>
                 {dimB}
+              </text>
+            </g>
+          )}
+          {/* Label sisi pendek & sisi panjang (untuk soal keliling) */}
+          {sideA && (
+            <g transform="translate(94, 38)">
+              <rect x="-26" y="-8" width="52" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
+              <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.textDark}>
+                {sideA}
+              </text>
+            </g>
+          )}
+          {sideB && (
+            <g transform="translate(94, 108)">
+              <rect x="-26" y="-8" width="52" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
+              <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.textDark}>
+                {sideB}
               </text>
             </g>
           )}
@@ -312,10 +349,10 @@ export function TriangleVisual({
   title = "Segitiga",
   caption,
   type = "isosceles",
-  baseLabel = "alas = 10 cm",
-  heightLabel = "tinggi = 8 cm",
+  baseLabel = "alas",
+  heightLabel = "tinggi",
   sideLabel,
-  targetBadge = "Luas = ?",
+  targetBadge = null,
   width = 330,
   heightSvg = 155
 }) {
@@ -415,10 +452,10 @@ export function Solid3DVisual({
   title = "Bangun Ruang",
   caption,
   solid = "cylinder",
-  radiusLabel = "r = 7 cm",
-  radiusTopLabel = "r = 4 cm",
-  radiusBottomLabel = "R = 10 cm",
-  heightLabel = "t = 10 cm",
+  radiusLabel = "r",
+  radiusTopLabel = "r",
+  radiusBottomLabel = "R",
+  heightLabel = "t",
   slantLabel,
   lengthLabel,
   widthLabel,
@@ -642,19 +679,19 @@ export function Solid3DVisual({
           {/* Label Panjang p di Bawah Depan */}
           <g transform="translate(83, 126)">
             <rect x="-28" y="-8" width="56" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
-            <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.textDark}>{lengthLabel || 'p = 12 cm'}</text>
+            <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.textDark}>{lengthLabel || 'p'}</text>
           </g>
 
           {/* Label Tinggi t di Sisi Kiri */}
           <g transform="translate(14, 88)">
             <rect x="-22" y="-8" width="44" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
-            <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.textDark}>{heightLabel || 't = 4 cm'}</text>
+            <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.textDark}>{heightLabel || 't'}</text>
           </g>
 
           {/* Label Lebar l di Rusuk Atas Miring */}
           <g transform="translate(150, 46)">
             <rect x="-24" y="-8" width="48" height="16" rx="3" fill="#FFFFFF" stroke={VISUAL_THEME.borderSubtle} strokeWidth="1" />
-            <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.textDark}>{widthLabel || 'l = 5 cm'}</text>
+            <text x="0" y="4" textAnchor="middle" fontSize="9.5" fontWeight="800" fill={VISUAL_THEME.textDark}>{widthLabel || 'l'}</text>
           </g>
         </g>
       )}
@@ -680,7 +717,7 @@ export function Solid3DVisual({
 export function CircleAngleVisual({
   title = "Sudut Pusat & Sudut Keliling Lingkaran",
   caption = "*Sudut pusat ∠AOB dan sudut keliling ∠ACB menghadap busur AB yang sama",
-  centralAngle = "84°",
+  centralAngle = "?°",
   inscribedAngle = "?°",
   width = 340,
   heightSvg = 200

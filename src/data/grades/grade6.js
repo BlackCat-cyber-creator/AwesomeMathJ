@@ -102,7 +102,17 @@ export const grade6Data = {
           ],
           "correctAnswer": "D",
           "hint": "Ubah penyebut menjadi 10 dengan mengalikan pembilang dan penyebut dengan 2: $\\frac{3 \\times 2}{5 \\times 2} = \\frac{6}{10}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3}{5} = \\frac{3 \\times 2}{5 \\times 2} = \\frac{6}{10} = 0{,}6$$\nBentuk desimalnya adalah **0,6** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\frac{3}{5} = \\frac{3 \\times 2}{5 \\times 2} = \\frac{6}{10} = 0{,}6$$\nBentuk desimalnya adalah **0,6** (Opsi D).",
+          "visual": {
+            "type": "fraction-strip",
+            "props": {
+              "title": "Model 3/5 Bagian",
+              "caption": "*Nyatakan 3 dari 5 bagian ke bentuk desimal",
+              "totalParts": 5,
+              "shadedParts": 3,
+              "targetBadge": "Desimal = ?"
+            }
+          }
         },
         {
           "id": "sd6-b1-3",
@@ -156,7 +166,43 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Ubah $1\\frac{1}{4}$ menjadi $\\frac{5}{4}$, lalu hitung $15 : \\frac{5}{4}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Ubah ke pecahan biasa: $1\\frac{1}{4} = \\frac{5}{4}$\n2. Hitung pembagian:\n$$15 : \\frac{5}{4} = 15 \\times \\frac{4}{5} = \\frac{60}{5} = 12$$\nBanyak potongan tali adalah **12 potongan** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Ubah ke pecahan biasa: $1\\frac{1}{4} = \\frac{5}{4}$\n2. Hitung pembagian:\n$$15 : \\frac{5}{4} = 15 \\times \\frac{4}{5} = \\frac{60}{5} = 12$$\nBanyak potongan tali adalah **12 potongan** (Opsi C).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Pemotongan Panjang Tali",
+              "caption": "*Tali 15 meter dipotong-potong, masing-masing 1¼ meter",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "1¼ m",
+                      "width": 45,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "1¼ m",
+                      "width": 45,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "...",
+                      "width": 60,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "1¼ m",
+                      "width": 45,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "Total 15 m"
+                }
+              ],
+              "target": "? potong",
+              "targetLabel": "Banyak Potongan"
+            }
+          }
         },
         {
           "id": "sd6-b1-5",
@@ -372,7 +418,38 @@ export const grade6Data = {
           ],
           "correctAnswer": "B",
           "hint": "Hitung luas rumah ($0{,}35 \\times 400 = 140$) dan kebun ($\\frac{1}{4} \\times 400 = 100$). Sisa $= 400 - 240$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Rumah: $0{,}35 \\times 400 = 140\\text{ m}^2$\n2. Kebun: $\\frac{1}{4} \\times 400 = 100\\text{ m}^2$\n3. Sisa: $400 - (140 + 100) = 160\\text{ m}^2$ (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Rumah: $0{,}35 \\times 400 = 140\\text{ m}^2$\n2. Kebun: $\\frac{1}{4} \\times 400 = 100\\text{ m}^2$\n3. Sisa: $400 - (140 + 100) = 160\\text{ m}^2$ (Opsi B).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Pembagian Lahan Tanah",
+              "caption": "*Tanah 400 m²: 0,35 bagian rumah dan ¼ bagian kebun",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "Rumah 0,35",
+                      "width": 95,
+                      "color": "green"
+                    },
+                    {
+                      "label": "Kebun ¼",
+                      "width": 75,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "Halaman ?",
+                      "width": 90,
+                      "color": "amber"
+                    }
+                  ],
+                  "totalLabel": "400 m²"
+                }
+              ],
+              "target": "? m²",
+              "targetLabel": "Luas Halaman"
+            }
+          }
         },
         {
           "id": "sd6-b1-13",
@@ -453,7 +530,17 @@ export const grade6Data = {
           ],
           "correctAnswer": "A",
           "hint": "Air yang diminum $= \\frac{1}{3} \\times 1{,}2 = 0{,}4$ liter. Sisa $= 1{,}2 - 0{,}4 = 0{,}8$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Diminum: $1{,}2 \\times \\frac{1}{3} = 0{,}4\\text{ liter}$\n2. Sisa: $1{,}2 - 0{,}4 = 0{,}8\\text{ liter}$ (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Diminum: $1{,}2 \\times \\frac{1}{3} = 0{,}4\\text{ liter}$\n2. Sisa: $1{,}2 - 0{,}4 = 0{,}8\\text{ liter}$ (Opsi A).",
+          "visual": {
+            "type": "fraction-strip",
+            "props": {
+              "title": "Kapasitas Air Botol Minum",
+              "caption": "*Isi 1,2 liter diminum 1/3 bagiannya",
+              "totalParts": 3,
+              "shadedParts": 1,
+              "label": "1/3 Diminum"
+            }
+          }
         },
         {
           "id": "sd6-b1-16",
@@ -657,7 +744,38 @@ export const grade6Data = {
           ],
           "correctAnswer": "B",
           "hint": "Bagi kedua angka dengan angka 5 (FPB dari 15 dan 25).",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$15 : 5 = 3 \\quad \\text{dan} \\quad 25 : 5 = 5$$\nRasio paling sederhananya adalah **3 : 5** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$15 : 5 = 3 \\quad \\text{dan} \\quad 25 : 5 = 5$$\nRasio paling sederhananya adalah **3 : 5** (Opsi B).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Penyederhanaan Rasio 15 : 25",
+              "caption": "*Bagi kedua bilangan dengan faktor persekutuan terbesarnya",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "15",
+                      "width": 75,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "Bilangan pertama"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "25",
+                      "width": 125,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "Bilangan kedua"
+                }
+              ],
+              "target": "? : ?",
+              "targetLabel": "Rasio Sederhana"
+            }
+          }
         },
         {
           "id": "sd6-b2-2",
@@ -684,7 +802,38 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Hitung total seluruh ternak terlebih dahulu: $12 + 18 = 30$. Lalu bandingkan ayam terhadap total: $12 : 30$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total ternak: $12 + 18 = 30$\n2. Rasio ayam terhadap total: $12 : 30$\n3. Sederhanakan dengan membagi 6: $2 : 5$\nRasionya adalah **2 : 5** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total ternak: $12 + 18 = 30$\n2. Rasio ayam terhadap total: $12 : 30$\n3. Sederhanakan dengan membagi 6: $2 : 5$\nRasionya adalah **2 : 5** (Opsi C).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Ternak di Kandang",
+              "caption": "*12 ekor ayam dan 18 ekor bebek",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "Ayam (12)",
+                      "width": 60,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "12 Ekor"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "Bebek (18)",
+                      "width": 90,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "18 Ekor"
+                }
+              ],
+              "target": "? : ?",
+              "targetLabel": "Ayam : Seluruh Ternak"
+            }
+          }
         },
         {
           "id": "sd6-b2-3",
@@ -711,7 +860,68 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Nilai 1 bagian rasio: $15 : 5 = 3$ tahun. Kalikan bagian adik dengan 3: $3 \\times 3$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Nilai 1 bagian: $15 : 5 = 3\\text{ tahun}$\n2. Umur adik (3 bagian): $3 \\times 3 = 9\\text{ tahun}$\nUmur adik adalah **9 tahun** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Nilai 1 bagian: $15 : 5 = 3\\text{ tahun}$\n2. Umur adik (3 bagian): $3 \\times 3 = 9\\text{ tahun}$\nUmur adik adalah **9 tahun** (Opsi C).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Model Bar Perbandingan Umur",
+              "caption": "*Rasio umur Rina (5 kotak) dan adik (3 kotak)",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "1",
+                      "width": 18,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "1",
+                      "width": 18,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "1",
+                      "width": 18,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "1",
+                      "width": 18,
+                      "color": "blue"
+                    },
+                    {
+                      "label": "1",
+                      "width": 18,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "Rina (5)"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "1",
+                      "width": 18,
+                      "color": "green"
+                    },
+                    {
+                      "label": "1",
+                      "width": 18,
+                      "color": "green"
+                    },
+                    {
+                      "label": "1",
+                      "width": 18,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "Adik (3)"
+                }
+              ],
+              "target": "5 : 3",
+              "targetLabel": "Rasio Umur"
+            }
+          }
         },
         {
           "id": "sd6-b2-4",
@@ -738,7 +948,38 @@ export const grade6Data = {
           ],
           "correctAnswer": "D",
           "hint": "Hitung per 1 bagian: $600 : 4 = 150$ gram. Lalu kalikan untuk gula: $3 \\times 150$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Nilai 1 bagian rasio: $\\frac{600}{4} = 150\\text{ gram}$\n2. Gula pasir yang dibutuhkan: $3 \\times 150 = 450\\text{ gram}$\nGula yang harus ditambahkan adalah **450 gram** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Nilai 1 bagian rasio: $\\frac{600}{4} = 150\\text{ gram}$\n2. Gula pasir yang dibutuhkan: $3 \\times 150 = 450\\text{ gram}$\nGula yang harus ditambahkan adalah **450 gram** (Opsi D).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Resep Kue (Tepung & Gula)",
+              "caption": "*Rasio 4 bagian tepung dan 3 bagian gula",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "Tepung (4)",
+                      "width": 80,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "4 Bagian"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "Gula (3)",
+                      "width": 60,
+                      "color": "amber"
+                    }
+                  ],
+                  "totalLabel": "3 Bagian"
+                }
+              ],
+              "target": "4 : 3",
+              "targetLabel": "Rasio Bahan"
+            }
+          }
         },
         {
           "id": "sd6-b2-5",
@@ -765,7 +1006,38 @@ export const grade6Data = {
           ],
           "correctAnswer": "D",
           "hint": "Total bagian $= 3 + 5 = 8$. Nilai per bagian $= 120.000 : 8 = 15.000$. Selisih bagian $= 5 - 3 = 2$ bagian. Kalikan $2 \\times 15.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total bagian: $3 + 5 = 8$ bagian.\n2. Nilai 1 bagian: $\\frac{120.000}{8} = 15.000$.\n3. Selisih rasio: $5 - 3 = 2$ bagian.\n4. Selisih uang: $2 \\times 15.000 = \\text{Rp}30.000,00$.\nSelisih tabungan mereka adalah **Rp30.000,00** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Total bagian: $3 + 5 = 8$ bagian.\n2. Nilai 1 bagian: $\\frac{120.000}{8} = 15.000$.\n3. Selisih rasio: $5 - 3 = 2$ bagian.\n4. Selisih uang: $2 \\times 15.000 = \\text{Rp}30.000,00$.\nSelisih tabungan mereka adalah **Rp30.000,00** (Opsi D).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Tabungan Dimas dan Fajar",
+              "caption": "*Jumlah tabungan Rp120.000 dengan rasio 3 : 5",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "Dimas (3)",
+                      "width": 60,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "3 Bagian"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "Fajar (5)",
+                      "width": 100,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "5 Bagian"
+                }
+              ],
+              "target": "Rp120.000",
+              "targetLabel": "Total Tabungan"
+            }
+          }
         },
         {
           "id": "sd6-b2-6",
@@ -819,7 +1091,38 @@ export const grade6Data = {
           ],
           "correctAnswer": "B",
           "hint": "Nilai 1 bagian rasio $= 35 : 5 = 7$. Kelereng Doni $= 3 \\times 7 = 21$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Kelereng Doni} = \\frac{3}{5} \\times 35 = 21\\text{ butir}$$\nBanyak kelereng Doni adalah **21 butir** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Kelereng Doni} = \\frac{3}{5} \\times 35 = 21\\text{ butir}$$\nBanyak kelereng Doni adalah **21 butir** (Opsi B).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Kelereng Doni dan Budi",
+              "caption": "*Rasio 3 : 5, kelereng Budi berjumlah 35 butir",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "Doni (3)",
+                      "width": 60,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "? Butir"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "Budi (5)",
+                      "width": 100,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "35 Butir"
+                }
+              ],
+              "target": "? butir",
+              "targetLabel": "Kelereng Doni"
+            }
+          }
         },
         {
           "id": "sd6-b2-8",
@@ -846,7 +1149,38 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Jumlah bagian rasio $= 7 + 2 = 9$. Umur Dimas $= \\frac{2}{9} \\times 45 = 10$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Umur Dimas} = \\frac{2}{7 + 2} \\times 45 = \\frac{2}{9} \\times 45 = 10\\text{ tahun}$$\nUmur Dimas adalah **10 tahun** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Umur Dimas} = \\frac{2}{7 + 2} \\times 45 = \\frac{2}{9} \\times 45 = 10\\text{ tahun}$$\nUmur Dimas adalah **10 tahun** (Opsi C).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Perbandingan Umur Ayah dan Dimas",
+              "caption": "*Rasio 7 : 2, jumlah umur keduanya adalah 45 tahun",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "Ayah (7 kotak)",
+                      "width": 105,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "7 Unit"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "Dimas (2 kotak)",
+                      "width": 35,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "2 Unit"
+                }
+              ],
+              "target": "45 Tahun",
+              "targetLabel": "Jumlah Umur"
+            }
+          }
         },
         {
           "id": "sd6-b2-9",
@@ -873,7 +1207,38 @@ export const grade6Data = {
           ],
           "correctAnswer": "D",
           "hint": "Selisih bagian rasio $= 7 - 4 = 3$. Nilai 1 bagian $= 15.000 : 3 = 5.000$. Uang Riko $= 4 \\times 5.000$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Uang Riko} = \\frac{4}{7 - 4} \\times 15.000 = \\frac{4}{3} \\times 15.000 = 20.000$$\nUang saku Riko adalah **Rp20.000,00** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Uang Riko} = \\frac{4}{7 - 4} \\times 15.000 = \\frac{4}{3} \\times 15.000 = 20.000$$\nUang saku Riko adalah **Rp20.000,00** (Opsi D).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Selisih Uang Saku Riko dan Andi",
+              "caption": "*Rasio 4 : 7 dengan selisih uang saku Rp15.000",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "Riko (4)",
+                      "width": 60,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "4 Bagian"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "Andi (7)",
+                      "width": 105,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "7 Bagian"
+                }
+              ],
+              "target": "Rp15.000",
+              "targetLabel": "Selisih (3 Unit)"
+            }
+          }
         },
         {
           "id": "sd6-b2-10",
@@ -900,7 +1265,38 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Rasio bensin : jarak $= 3 : 45 = 1 : 15$ km/liter. Untuk 120 km $= 120 : 15 = 8$ liter.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Bensin} = \\frac{120}{15} = 8\\text{ liter}$$\nDibutuhkan **8 liter bensin** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Bensin} = \\frac{120}{15} = 8\\text{ liter}$$\nDibutuhkan **8 liter bensin** (Opsi C).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Konsumsi Bensin Mobil",
+              "caption": "*3 liter bensin untuk menempuh jarak 45 km",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "3 Liter",
+                      "width": 60,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "Bahan Bakar"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "45 km",
+                      "width": 150,
+                      "color": "green"
+                    }
+                  ],
+                  "totalLabel": "Jarak Tempuh"
+                }
+              ],
+              "target": "? liter",
+              "targetLabel": "Bahan Bakar 120 km"
+            }
+          }
         },
         {
           "id": "sd6-b2-11",
@@ -1035,7 +1431,38 @@ export const grade6Data = {
           ],
           "correctAnswer": "B",
           "hint": "Laki-laki $= \\frac{3}{4} \\times 20 = 15$. Total siswa $= 15 + 20 = 35$ orang.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Siswa laki-laki: $\\frac{3}{4} \\times 20 = 15$ orang\n2. Total siswa: $15 + 20 = 35$ orang (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Siswa laki-laki: $\\frac{3}{4} \\times 20 = 15$ orang\n2. Total siswa: $15 + 20 = 35$ orang (Opsi B).",
+          "visual": {
+            "type": "bar-model",
+            "props": {
+              "title": "Siswa Laki-Laki dan Perempuan",
+              "caption": "*Rasio 3 : 4 di kelas 6",
+              "rows": [
+                {
+                  "segments": [
+                    {
+                      "label": "Laki-laki (3)",
+                      "width": 75,
+                      "color": "blue"
+                    }
+                  ],
+                  "totalLabel": "3 Bagian"
+                },
+                {
+                  "segments": [
+                    {
+                      "label": "Perempuan (4)",
+                      "width": 100,
+                      "color": "pink"
+                    }
+                  ],
+                  "totalLabel": "4 Bagian"
+                }
+              ],
+              "target": "3 : 4",
+              "targetLabel": "Perbandingan"
+            }
+          }
         },
         {
           "id": "sd6-b2-16",
@@ -1247,7 +1674,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "A",
           "hint": "Gunakan rumus volume kubus: $V = s \\times s \\times s = 8 \\times 8 \\times 8$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 8 \\times 8 \\times 8 = 64 \\times 8 = 512\\text{ cm}^3$$\nVolume kubus adalah **$512\\text{ cm}^3$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 8 \\times 8 \\times 8 = 64 \\times 8 = 512\\text{ cm}^3$$\nVolume kubus adalah **$512\\text{ cm}^3$** (Opsi A).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Volume Kubus",
+              "caption": "*Panjang rusuk s = 8 cm",
+              "solid": "box",
+              "lengthLabel": "s = 8 cm",
+              "widthLabel": "s = 8 cm",
+              "heightLabel": "s = 8 cm",
+              "targetLabel": "Volume = ? cm³"
+            }
+          }
         },
         {
           "id": "sd6-b3-2",
@@ -1274,7 +1713,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "A",
           "hint": "Kalikan panjang, lebar, dan tinggi: $12 \\times 5 \\times 4$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 12 \\times 5 \\times 4 = 60 \\times 4 = 240\\text{ cm}^3$$\nVolume balok adalah **$240\\text{ cm}^3$** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 12 \\times 5 \\times 4 = 60 \\times 4 = 240\\text{ cm}^3$$\nVolume balok adalah **$240\\text{ cm}^3$** (Opsi A).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Volume Balok",
+              "caption": "*Panjang 12 cm, lebar 5 cm, dan tinggi 4 cm",
+              "solid": "box",
+              "lengthLabel": "p = 12 cm",
+              "widthLabel": "l = 5 cm",
+              "heightLabel": "t = 4 cm",
+              "targetLabel": "Volume = ? cm³"
+            }
+          }
         },
         {
           "id": "sd6-b3-3",
@@ -1301,7 +1752,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "B",
           "hint": "Gunakan rumus luas permukaan kubus: $L = 6 \\times s^2 = 6 \\times 5^2$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 6 \\times (5 \\times 5) = 6 \\times 25 = 150\\text{ cm}^2$$\nLuas permukaan kubus adalah **$150\\text{ cm}^2$** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 6 \\times (5 \\times 5) = 6 \\times 25 = 150\\text{ cm}^2$$\nLuas permukaan kubus adalah **$150\\text{ cm}^2$** (Opsi B).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Luas Permukaan Kubus",
+              "caption": "*Memiliki 6 bidang sisi bujursangkar kongruen (s = 5 cm)",
+              "solid": "box",
+              "lengthLabel": "s = 5 cm",
+              "widthLabel": "s = 5 cm",
+              "heightLabel": "s = 5 cm",
+              "targetLabel": "Luas = ? cm²"
+            }
+          }
         },
         {
           "id": "sd6-b3-4",
@@ -1328,7 +1791,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Hitung volume total balok: $80 \\times 60 \\times 50 = 240.000\\text{ cm}^3 = 240\\text{ liter}$. Karena sudah terisi setengah, sisa yang perlu ditambahkan adalah setengahnya.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Volume total bak mandi:\n$$V = 80 \\times 60 \\times 50 = 240.000\\text{ cm}^3 = 240\\text{ liter}$$\n2. Air yang perlu ditambahkan adalah setengah bagian:\n$$\\text{Air tambahan} = \\frac{1}{2} \\times 240 = 120\\text{ liter}$$\nVolume air yang perlu ditambahkan adalah **120 liter** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Volume total bak mandi:\n$$V = 80 \\times 60 \\times 50 = 240.000\\text{ cm}^3 = 240\\text{ liter}$$\n2. Air yang perlu ditambahkan adalah setengah bagian:\n$$\\text{Air tambahan} = \\frac{1}{2} \\times 240 = 120\\text{ liter}$$\nVolume air yang perlu ditambahkan adalah **120 liter** (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Bak Mandi Balok",
+              "caption": "*Ukuran panjang 80 cm, lebar 60 cm, dan tinggi 50 cm",
+              "solid": "box",
+              "lengthLabel": "p = 80 cm",
+              "widthLabel": "l = 60 cm",
+              "heightLabel": "t = 50 cm",
+              "targetLabel": "Volume = ? liter"
+            }
+          }
         },
         {
           "id": "sd6-b3-5",
@@ -1382,7 +1857,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Kubus memiliki 12 rusuk sama panjang: $s = 96 : 12 = 8$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = 96 : 12 = 8\\text{ cm}$$\nPanjang rusuknya adalah **8 cm** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$s = 96 : 12 = 8\\text{ cm}$$\nPanjang rusuknya adalah **8 cm** (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Panjang Seluruh Rusuk Kubus",
+              "caption": "*Panjang 12 rusuk kubus adalah 96 cm",
+              "solid": "box",
+              "lengthLabel": "s = ? cm",
+              "widthLabel": "s = ? cm",
+              "heightLabel": "s = ? cm",
+              "targetLabel": "Diketahui: 12 Rusuk = 96 cm"
+            }
+          }
         },
         {
           "id": "sd6-b3-7",
@@ -1409,34 +1896,58 @@ export const grade6Data = {
           ],
           "correctAnswer": "B",
           "hint": "Total panjang rusuk balok $= 4 \\times (p + l + t) = 4 \\times (10 + 6 + 4) = 4 \\times 20 = 80$ cm.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R = 4 \\times (10 + 6 + 4) = 4 \\times 20 = 80\\text{ cm}$$\nPanjang seluruh rusuk adalah **80 cm** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$R = 4 \\times (10 + 6 + 4) = 4 \\times 20 = 80\\text{ cm}$$\nPanjang seluruh rusuk adalah **80 cm** (Opsi B).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Kerangka Balok",
+              "caption": "*Panjang 10 cm, lebar 6 cm, dan tinggi 4 cm",
+              "solid": "box",
+              "lengthLabel": "p = 10 cm",
+              "widthLabel": "l = 6 cm",
+              "heightLabel": "t = 4 cm",
+              "targetLabel": "Total Rusuk = ?"
+            }
+          }
         },
         {
           "id": "sd6-b3-8",
           "category": "Latihan",
           "difficulty": "Sedang",
-          "question": "Luas permukaan kubus yang memiliki panjang rusuk 5 cm adalah...",
+          "question": "Luas permukaan sebuah kubus adalah 216 cm². Panjang rusuk kubus tersebut adalah...",
           "options": [
             {
               "key": "A",
-              "text": "125 cm²"
+              "text": "4 cm"
             },
             {
               "key": "B",
-              "text": "150 cm²"
+              "text": "6 cm"
             },
             {
               "key": "C",
-              "text": "100 cm²"
+              "text": "8 cm"
             },
             {
               "key": "D",
-              "text": "175 cm²"
+              "text": "36 cm"
             }
           ],
           "correctAnswer": "B",
-          "hint": "Luas permukaan kubus $= 6 \\times s^2 = 6 \\times 5^2 = 6 \\times 25 = 150$ cm².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 6 \\times 5^2 = 6 \\times 25 = 150\\text{ cm}^2$$\nLuas permukaannya adalah **150 cm²** (Opsi B)."
+          "hint": "Kubus memiliki 6 sisi persegi yang sama. Luas satu sisi $= 216 : 6$, lalu cari bilangan yang jika dikuadratkan menghasilkan luas tersebut.",
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Luas satu sisi: $216 : 6 = 36\\text{ cm}^2$.\n2. $s \\times s = 36$, maka $s = 6$ cm.\nPanjang rusuknya adalah **6 cm** (Opsi B).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Mencari Rusuk dari Luas Permukaan",
+              "caption": "*Luas permukaan kubus 216 cm²",
+              "solid": "box",
+              "lengthLabel": "s = ? cm",
+              "widthLabel": "s",
+              "heightLabel": "s",
+              "targetLabel": "Diketahui: L = 216 cm²"
+            }
+          }
         },
         {
           "id": "sd6-b3-9",
@@ -1463,7 +1974,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "A",
           "hint": "Luas permukaan balok $= 2 \\times (pl + pt + lt) = 2 \\times (40 + 24 + 15) = 2 \\times 79 = 158$ cm².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 2 \\times (8\\times 5 + 8\\times 3 + 5\\times 3) = 2 \\times 79 = 158\\text{ cm}^2$$\nLuas permukaannya adalah **158 cm²** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 2 \\times (8\\times 5 + 8\\times 3 + 5\\times 3) = 2 \\times 79 = 158\\text{ cm}^2$$\nLuas permukaannya adalah **158 cm²** (Opsi A).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Luas Permukaan Balok",
+              "caption": "*Panjang 8 cm, lebar 5 cm, dan tinggi 3 cm",
+              "solid": "box",
+              "lengthLabel": "p = 8 cm",
+              "widthLabel": "l = 5 cm",
+              "heightLabel": "t = 3 cm",
+              "targetLabel": "Luas = ? cm²"
+            }
+          }
         },
         {
           "id": "sd6-b3-10",
@@ -1490,7 +2013,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Rusuk $s = \\sqrt[3]{512} = 8$ cm. Luas 1 sisi $= 8 \\times 8 = 64$ cm².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $s = \\sqrt[3]{512} = 8\\text{ cm}$\n2. Luas sisi $= 8^2 = 64\\text{ cm}^2$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. $s = \\sqrt[3]{512} = 8\\text{ cm}$\n2. Luas sisi $= 8^2 = 64\\text{ cm}^2$ (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Luas Bidang Sisi Kubus",
+              "caption": "*Volume kubus adalah 512 cm³",
+              "solid": "box",
+              "lengthLabel": "s",
+              "widthLabel": "s",
+              "heightLabel": "s",
+              "targetLabel": "V = 512 cm³ (Luas sisi = ?)"
+            }
+          }
         },
         {
           "id": "sd6-b3-11",
@@ -1517,7 +2052,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "D",
           "hint": "Hitung kapasitas tiap dimensi: $(40 : 10) \\times (30 : 10) \\times (20 : 10) = 4 \\times 3 \\times 2 = 24$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Banyak kotak} = \\frac{40 \\times 30 \\times 20}{10 \\times 10 \\times 10} = 4 \\times 3 \\times 2 = 24\\text{ kotak}$$\nDapat memuat **24 kotak mainan** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$\\text{Banyak kotak} = \\frac{40 \\times 30 \\times 20}{10 \\times 10 \\times 10} = 4 \\times 3 \\times 2 = 24\\text{ kotak}$$\nDapat memuat **24 kotak mainan** (Opsi D).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Kardus Balok",
+              "caption": "*Ukuran 40 cm × 30 cm × 20 cm",
+              "solid": "box",
+              "lengthLabel": "p = 40 cm",
+              "widthLabel": "l = 30 cm",
+              "heightLabel": "t = 20 cm",
+              "targetLabel": "Banyak Kotak = ?"
+            }
+          }
         },
         {
           "id": "sd6-b3-12",
@@ -1544,7 +2091,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Volume penuh $= 1\\text{ m}^3 = 1.000$ liter. Kekurangan $= 1.000 - 650 = 350$ liter.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$1.000 - 650 = 350\\text{ liter}$$\nHarus ditambahkan **350 liter air** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$1.000 - 650 = 350\\text{ liter}$$\nHarus ditambahkan **350 liter air** (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Bak Penampungan Air Kubus",
+              "caption": "*Panjang rusuk bagian dalam 1 meter (100 cm)",
+              "solid": "box",
+              "lengthLabel": "s = 1 m",
+              "widthLabel": "s = 1 m",
+              "heightLabel": "s = 1 m",
+              "targetLabel": "V = ? liter"
+            }
+          }
         },
         {
           "id": "sd6-b3-13",
@@ -1598,7 +2157,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "A",
           "hint": "Luas $= 2 \\times (15\\times 10 + 15\\times 8 + 10\\times 8) = 2 \\times (150 + 120 + 80) = 2 \\times 350 = 700$ cm².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 2 \\times (150 + 120 + 80) = 700\\text{ cm}^2$$\nLuas minimal kertas kado adalah **700 cm²** (Opsi A)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$L = 2 \\times (150 + 120 + 80) = 700\\text{ cm}^2$$\nLuas minimal kertas kado adalah **700 cm²** (Opsi A).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Kotak Kado Balok",
+              "caption": "*Ukuran 15 cm × 10 cm × 8 cm",
+              "solid": "box",
+              "lengthLabel": "p = 15 cm",
+              "widthLabel": "l = 10 cm",
+              "heightLabel": "t = 8 cm",
+              "targetLabel": "Luas Kertas = ?"
+            }
+          }
         },
         {
           "id": "sd6-b3-15",
@@ -1679,7 +2250,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Kolam tanpa tutup: Luas $= pl + 2pt + 2lt = (20 \\times 10) + 2(20 \\times 1{,}5) + 2(10 \\times 1{,}5) = 200 + 60 + 30 = 290$ m².",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Lantai: $20 \\times 10 = 200\\text{ m}^2$\n2. Dinding panjang: $2 \\times (20 \\times 1{,}5) = 60\\text{ m}^2$\n3. Dinding lebar: $2 \\times (10 \\times 1{,}5) = 30\\text{ m}^2$\nTotal luas $= 290\\text{ m}^2$ (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Lantai: $20 \\times 10 = 200\\text{ m}^2$\n2. Dinding panjang: $2 \\times (20 \\times 1{,}5) = 60\\text{ m}^2$\n3. Dinding lebar: $2 \\times (10 \\times 1{,}5) = 30\\text{ m}^2$\nTotal luas $= 290\\text{ m}^2$ (Opsi C).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Kolam Renang Balok",
+              "caption": "*Panjang 20 m, lebar 10 m, kedalaman 1,5 m",
+              "solid": "box",
+              "lengthLabel": "p = 20 m",
+              "widthLabel": "l = 10 m",
+              "heightLabel": "kedalaman 1,5 m",
+              "targetLabel": "Luas Keramik = ?"
+            }
+          }
         },
         {
           "id": "sd6-b3-18",
@@ -1760,7 +2343,19 @@ export const grade6Data = {
           ],
           "correctAnswer": "D",
           "hint": "Volume batu = Luas alas $\\times$ kenaikan tinggi air $= 80 \\times 50 \\times (33 - 30) = 4.000 \\times 3 = 12.000$ cm³.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 80 \\times 50 \\times 3 = 12.000\\text{ cm}^3$$\nVolume batu adalah **12.000 cm³** (Opsi D)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$V = 80 \\times 50 \\times 3 = 12.000\\text{ cm}^3$$\nVolume batu adalah **12.000 cm³** (Opsi D).",
+          "visual": {
+            "type": "solid-3d",
+            "props": {
+              "title": "Akuarium Balok",
+              "caption": "*Tinggi air naik dari 30 cm menjadi 33 cm setelah batu dimasukkan",
+              "solid": "box",
+              "lengthLabel": "p = 80 cm",
+              "widthLabel": "l = 50 cm",
+              "heightLabel": "30 → 33 cm",
+              "targetLabel": "V Batu = ?"
+            }
+          }
         }
       ]
     },
@@ -1828,7 +2423,15 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Koin memiliki 2 sisi (Angka dan Gambar). Peluang sisi Gambar adalah 1 dari 2.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{1}{2}$$\nPeluang muncul sisi Gambar adalah **$\\frac{1}{2}$** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{1}{2}$$\nPeluang muncul sisi Gambar adalah **$\\frac{1}{2}$** (Opsi C).",
+          "visual": {
+            "type": "coin",
+            "props": {
+              "title": "Peluang Pelemparan Uang Logam",
+              "caption": "*Peluang munculnya sisi Gambar dari dua kemungkinan (Angka & Gambar)",
+              "targetLabel": "Peluang (G) = ?"
+            }
+          }
         },
         {
           "id": "sd6-b4-2",
@@ -1882,7 +2485,16 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Mata dadu yang lebih dari 4 adalah $\\{5, 6\\}$ (ada 2 dari 6). Sederhanakan $\\frac{2}{6}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Angka lebih dari 4: $\\{5, 6\\} \\implies 2$ kemungkinan.\n2. Total kemungkinan mata dadu: 6.\n3. Peluang: $\\frac{2}{6} = \\frac{1}{3}$.\nPeluangnya adalah **$\\frac{1}{3}$** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Angka lebih dari 4: $\\{5, 6\\} \\implies 2$ kemungkinan.\n2. Total kemungkinan mata dadu: 6.\n3. Peluang: $\\frac{2}{6} = \\frac{1}{3}$.\nPeluangnya adalah **$\\frac{1}{3}$** (Opsi C).",
+          "visual": {
+            "type": "dice",
+            "props": {
+              "title": "Peluang Dadu Bermata Enam",
+              "caption": "*Peluang munculnya mata dadu lebih dari 4",
+              "diceValue": 5,
+              "targetLabel": "Peluang (> 4) = ?"
+            }
+          }
         },
         {
           "id": "sd6-b4-4",
@@ -1909,7 +2521,37 @@ export const grade6Data = {
           ],
           "correctAnswer": "B",
           "hint": "Bukan biru artinya merah atau hijau: $4 + 5 = 9$ bola. Total seluruh bola: $4 + 6 + 5 = 15$. Sederhanakan $\\frac{9}{15}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Bola bukan biru (merah + hijau): $4 + 5 = 9$ bola.\n2. Total seluruh bola: $4 + 6 + 5 = 15$ bola.\n3. Peluang:\n$$P = \\frac{9}{15} = \\frac{9 : 3}{15 : 3} = \\frac{3}{5}$$\nPeluang terambil bola bukan biru adalah **$\\frac{3}{5}$** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n1. Bola bukan biru (merah + hijau): $4 + 5 = 9$ bola.\n2. Total seluruh bola: $4 + 6 + 5 = 15$ bola.\n3. Peluang:\n$$P = \\frac{9}{15} = \\frac{9 : 3}{15 : 3} = \\frac{3}{5}$$\nPeluang terambil bola bukan biru adalah **$\\frac{3}{5}$** (Opsi B).",
+          "visual": {
+            "type": "probability-bag",
+            "props": {
+              "title": "Peluang Pengambilan Bola",
+              "caption": "*Isi kotak: 4 bola merah, 6 bola biru, dan 5 bola hijau",
+              "items": [
+                {
+                  "color": "red",
+                  "count": 4,
+                  "fill": "#FCA5A5",
+                  "stroke": "#DC2626",
+                  "label": "4 Merah"
+                },
+                {
+                  "color": "blue",
+                  "count": 6,
+                  "fill": "#93C5FD",
+                  "stroke": "#2563EB",
+                  "label": "6 Biru"
+                },
+                {
+                  "color": "green",
+                  "count": 5,
+                  "fill": "#86EFAC",
+                  "stroke": "#16A34A",
+                  "label": "5 Hijau"
+                }
+              ]
+            }
+          }
         },
         {
           "id": "sd6-b4-5",
@@ -1963,7 +2605,16 @@ export const grade6Data = {
           ],
           "correctAnswer": "C",
           "hint": "Mata dadu ganjil: 1, 3, 5 (ada 3). Ruang sampel $= 6$. Peluang $= \\frac{3}{6} = \\frac{1}{2}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{3}{6} = \\frac{1}{2}$$\nPeluangnya adalah **$\\frac{1}{2}$** (Opsi C)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{3}{6} = \\frac{1}{2}$$\nPeluangnya adalah **$\\frac{1}{2}$** (Opsi C).",
+          "visual": {
+            "type": "dice",
+            "props": {
+              "title": "Peluang Mata Dadu Ganjil",
+              "caption": "*Dadu bersisi enam dengan mata dadu bernilai 1 sampai 6",
+              "diceValue": 3,
+              "targetLabel": "Peluang Ganjil = ?"
+            }
+          }
         },
         {
           "id": "sd6-b4-7",
@@ -1990,7 +2641,37 @@ export const grade6Data = {
           ],
           "correctAnswer": "B",
           "hint": "Total bola $= 4 + 5 + 3 = 12$. Bola biru $= 5$. Peluang $= \\frac{5}{12}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{5}{12}$$\nPeluangnya adalah **$\\frac{5}{12}$** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{5}{12}$$\nPeluangnya adalah **$\\frac{5}{12}$** (Opsi B).",
+          "visual": {
+            "type": "probability-bag",
+            "props": {
+              "title": "Peluang Pengambilan Bola",
+              "caption": "*Isi kotak: 4 bola merah, 5 bola biru, dan 3 bola hijau",
+              "items": [
+                {
+                  "color": "red",
+                  "count": 4,
+                  "fill": "#FCA5A5",
+                  "stroke": "#DC2626",
+                  "label": "4 Merah"
+                },
+                {
+                  "color": "blue",
+                  "count": 5,
+                  "fill": "#93C5FD",
+                  "stroke": "#2563EB",
+                  "label": "5 Biru"
+                },
+                {
+                  "color": "green",
+                  "count": 3,
+                  "fill": "#86EFAC",
+                  "stroke": "#16A34A",
+                  "label": "3 Hijau"
+                }
+              ]
+            }
+          }
         },
         {
           "id": "sd6-b4-8",
@@ -2152,7 +2833,25 @@ export const grade6Data = {
           ],
           "correctAnswer": "B",
           "hint": "Juring hijau $= 2$ dari total 8. Peluang $= \\frac{2}{8} = \\frac{1}{4}$.",
-          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{2}{8} = \\frac{1}{4}$$\nPeluangnya adalah **$\\frac{1}{4}$** (Opsi B)."
+          "bestSolution": "**Langkah Penyelesaian Terstruktur:**\n$$P = \\frac{2}{8} = \\frac{1}{4}$$\nPeluangnya adalah **$\\frac{1}{4}$** (Opsi B).",
+          "visual": {
+            "type": "spinner",
+            "props": {
+              "title": "Roda Putar (Spinner) Peluang",
+              "caption": "*8 juring sama besar: 3 merah, 3 kuning, 2 hijau",
+              "sectors": [
+                "merah",
+                "merah",
+                "merah",
+                "kuning",
+                "kuning",
+                "kuning",
+                "hijau",
+                "hijau"
+              ],
+              "targetLabel": "P(Hijau) = ?"
+            }
+          }
         },
         {
           "id": "sd6-b4-14",

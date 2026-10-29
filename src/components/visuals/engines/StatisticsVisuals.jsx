@@ -9,12 +9,7 @@ import { SvgContainer } from '../common/SvgContainer';
 export function BarChartVisual({
   title = "Diagram Batang",
   caption,
-  categories = [
-    { label: 'Basket', val: 12 },
-    { label: 'Futsal', val: 18 },
-    { label: 'Renang', val: 8 },
-    { label: 'Musik', val: 14 }
-  ],
+  categories = [],
   yMax = 20,
   yStep = 5,
   width = 330,

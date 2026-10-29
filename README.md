@@ -104,7 +104,7 @@ AwesomeMathJ/
 │   │   ├── visuals/           # Engine stimulus visual SVG murni
 │   │   │   ├── common/        # Elemen geometri dasar & kontainer SVG
 │   │   │   ├── engines/       # Engine Aljabar, Geometri, Koordinat, Aritmetika
-│   │   │   └── registry/      # Registry visual per jenjang (Kelas 4 s/d 12)
+│   │   │   └── registry/      # Lookup gambar (gambar Kelas 4–12 kini tersimpan di dalam soal: `visual`)
 │   │   ├── AcademicTimeline.jsx      # Peta jadwal kalender pendidikan
 │   │   ├── ChapterSolutionView.jsx   # Tampilan kunci pembahasan via scan QR
 │   │   ├── MathRenderer.jsx          # Render formula matematika KaTeX polimorfik
@@ -133,7 +133,7 @@ AwesomeMathJ/
 │   ├── App.jsx                       # Top-level declarative routing & redirects
 │   ├── index.css                     # Design system (Notion-editorial, print A4 CSS)
 │   └── main.jsx                      # Vite React entrypoint
-├── tests/                            # Vitest automated test suite (33 tests)
+├── tests/                            # Vitest test suite, termasuk contentAudit (gambar sesuai soal & cakupan kelas)
 │   ├── academicCalendar.test.js
 │   ├── answerDistribution.test.js
 │   ├── authAndSync.test.js
@@ -180,6 +180,13 @@ Hasil build produksi siap saji akan dibuat di folder `dist/`.
 ```bash
 npm run lint
 ```
+
+---
+
+## 🗺️ Roadmap & Audit
+
+- Rencana pengembangan Matematika + IPA (Kurikulum Merdeka CP 046/2025, Cambridge, Olimpiade): [`docs/ROADMAP.md`](docs/ROADMAP.md)
+- Laporan audit konten Oktober 2026 (gambar vs soal, cakupan kelas): [`docs/audit/AUDIT_2026-10.md`](docs/audit/AUDIT_2026-10.md)
 
 ---
 

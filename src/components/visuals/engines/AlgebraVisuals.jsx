@@ -125,8 +125,8 @@ export function BarModelVisual({
 export function BalanceScaleVisual({
   title = "Model Timbangan Neraca Seimbang",
   caption,
-  leftItems = [{ type: 'box', label: 'x', count: 2 }, { type: 'weight', val: 5 }],
-  rightItems = [{ type: 'weight', val: 13 }],
+  leftItems = [],
+  rightItems = [],
   width = 340,
   height = 155
 }) {
