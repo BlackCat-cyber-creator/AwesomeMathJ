@@ -1,7 +1,8 @@
 import React, { useEffect, Suspense, lazy } from 'react';
-import { Routes, Route, Navigate, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
+import { Routes, Route, Navigate, Link, useNavigate, useLocation, useSearchParams } from 'react-router-dom';
 import { useAuth } from './hooks/useAuth';
 import { handbookPath } from './utils/seoRoutes';
+import { AUTHOR } from './data/siteInfo';
 import { 
   GraduationCap, 
   Lock, 
@@ -17,6 +18,7 @@ const StudentQuestView = lazy(() => import('./components/StudentQuestView').then
 const PrintableWorksheet = lazy(() => import('./components/PrintableWorksheet').then(m => ({ default: m.PrintableWorksheet })));
 const ChapterSolutionView = lazy(() => import('./components/ChapterSolutionView').then(m => ({ default: m.ChapterSolutionView })));
 const PublicHandbook = lazy(() => import('./components/PublicHandbook').then(m => ({ default: m.PublicHandbook })));
+const AboutPage = lazy(() => import('./components/AboutPage').then(m => ({ default: m.AboutPage })));
 const TeacherLoginView = lazy(() => import('./components/TeacherLoginView').then(m => ({ default: m.TeacherLoginView })));
 
 function RouteFallback() {
@@ -265,6 +267,8 @@ export function App() {
               <PublicHandbook onLaunchPractice={handleLaunchPracticeQuest} onPrintQuest={handlePrintQuest} />
             } />
 
+            <Route path="/tentang" element={<AboutPage />} />
+
             {/* 2. Interactive Student Quest Player */}
             <Route path="/quest/:questId" element={
               <StudentQuestView onBackToDashboard={handleBackToHome} />
@@ -320,6 +324,12 @@ export function App() {
           </Routes>
         </Suspense>
       </main>
+
+      {!isTeacherRoute && !isFullScreenView && (
+        <footer className="site-footer no-print">
+          AwesomeMathJ — dibuat dan dikelola oleh <Link to="/tentang">{AUTHOR.name}</Link>, {AUTHOR.jobTitle}.
+        </footer>
+      )}
     </div>
   );
 }

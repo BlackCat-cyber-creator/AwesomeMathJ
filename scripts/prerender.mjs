@@ -33,7 +33,8 @@ import { amc10Data } from '../src/data/amc/amc10Data.js';
 import { amc12Data } from '../src/data/amc/amc12Data.js';
 import { getCp2025Note } from '../src/data/cp2025Mapping.js';
 import { SITE_URL, SITE_NAME, gradePath, chapterPath, amcLevelPath, amcChapterPath } from '../src/utils/seoRoutes.js';
-import { HOME_META, gradeMeta, chapterMeta, amcLevelMeta, amcChapterMeta, levelLabel } from '../src/utils/seoMeta.js';
+import { HOME_META, ABOUT_META, gradeMeta, chapterMeta, amcLevelMeta, amcChapterMeta, levelLabel } from '../src/utils/seoMeta.js';
+import { AUTHOR, ABOUT } from '../src/data/siteInfo.js';
 
 const DIST = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../dist');
 const GRADES = [grade4Data, grade5Data, grade6Data, grade7Data, grade8Data, grade9Data, grade10Data, grade11Data, grade12Data];
@@ -104,8 +105,19 @@ function renderPage({ meta, body, jsonLd = [] }) {
     .replace(/<title>[\s\S]*?<\/title>/, '')
     .replace(/<meta name="description"[^>]*>/, '')
     .replace('</head>', `    ${head}\n  </head>`)
-    .replace('<div id="root"></div>', `<div id="root"><div class="handbook-container seo-page">${body}</div></div>`);
+    .replace('<div id="root"></div>', `<div id="root"><div class="handbook-container seo-page">${body}${FOOTER_HTML}</div></div>`);
 }
+
+const FOOTER_HTML = `<footer class="seo-footer"><p>${SITE_NAME} — dibuat dan dikelola oleh <a href="/tentang">${escapeHtml(AUTHOR.name)}</a>, ${escapeHtml(AUTHOR.jobTitle)}.</p></footer>`;
+
+// Data terstruktur pembuat situs (dipakai sebagai author/creator di setiap halaman)
+const PERSON_LD = {
+  '@type': 'Person',
+  name: AUTHOR.name,
+  jobTitle: AUTHOR.jobTitle,
+  url: `${SITE_URL}/tentang`,
+  ...(AUTHOR.sameAs.length ? { sameAs: AUTHOR.sameAs } : {})
+};
 
 function writePage(routePath, html) {
   const file = routePath === '/' ? path.join(DIST, 'index.html') : path.join(DIST, `${routePath.slice(1)}.html`);
@@ -134,7 +146,8 @@ const learningResourceLd = ({ meta, educationalLevel, subject = 'Matematika' }) 
   educationalLevel,
   learningResourceType: ['Ringkasan materi', 'Contoh soal', 'Latihan soal'],
   about: { '@type': 'Thing', name: subject },
-  provider: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL }
+  provider: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL },
+  author: PERSON_LD
 });
 
 function questionList(questions) {
@@ -177,6 +190,7 @@ const addToSitemap = (p, priority) => sitemap.push({ loc: `${SITE_URL}${p === '/
   const body = `
     <h1>Belajar Matematika Kelas 4–12 dan Olimpiade AMC</h1>
     <p>${escapeHtml(HOME_META.description)}</p>
+    <p>Disusun oleh <a href="/tentang">${escapeHtml(AUTHOR.name)}</a>, ${escapeHtml(AUTHOR.jobTitle)}.</p>
     <section><h2>Kurikulum Merdeka</h2><ul>${gradeList}</ul></section>
     <section><h2>Olimpiade Matematika AMC</h2><ul>${amcList}</ul></section>`;
   const ld = [{
@@ -185,10 +199,35 @@ const addToSitemap = (p, priority) => sitemap.push({ loc: `${SITE_URL}${p === '/
     name: SITE_NAME,
     url: SITE_URL,
     inLanguage: 'id',
-    description: HOME_META.description
+    description: HOME_META.description,
+    creator: PERSON_LD,
+    author: PERSON_LD
   }];
   writePage('/', renderPage({ meta: HOME_META, body, jsonLd: ld }));
   addToSitemap('/', '1.0');
+}
+
+// ---------------------------------------------------------------------------
+// Tentang (pembuat situs)
+// ---------------------------------------------------------------------------
+{
+  const body = `
+    <h1>${escapeHtml(ABOUT.title)}</h1>
+    <p><strong>${escapeHtml(ABOUT.intro)}</strong></p>
+    ${ABOUT.paragraphs.map((p) => `<p>${escapeHtml(p)}</p>`).join('\n')}
+    <h2>Pembuat</h2>
+    <p>${escapeHtml(AUTHOR.name)} — ${escapeHtml(AUTHOR.jobTitle)}</p>
+    <h2>Mulai Belajar</h2>
+    <ul>${GRADES.map((g) => `<li><a href="${gradePath(g.grade)}">Matematika Kelas ${g.grade}</a></li>`).join('')}${AMC.map((d) => `<li><a href="${amcLevelPath(d.level)}">Olimpiade AMC ${d.level}</a></li>`).join('')}</ul>`;
+  const ld = [{
+    '@context': 'https://schema.org',
+    '@type': 'ProfilePage',
+    url: `${SITE_URL}${ABOUT_META.path}`,
+    name: ABOUT_META.title,
+    mainEntity: { ...PERSON_LD, description: ABOUT.intro, worksFor: { '@type': 'Organization', name: SITE_NAME, url: SITE_URL } }
+  }];
+  writePage(ABOUT_META.path, renderPage({ meta: ABOUT_META, body, jsonLd: ld }));
+  addToSitemap(ABOUT_META.path, '0.6');
 }
 
 // ---------------------------------------------------------------------------

@@ -6,6 +6,7 @@
     { "source": "/matematika/:kelas", "destination": "/matematika/:kelas.html" },
     { "source": "/olimpiade/:level/:bab", "destination": "/olimpiade/:level/:bab.html" },
     { "source": "/olimpiade/:level", "destination": "/olimpiade/:level.html" },
+    { "source": "/tentang", "destination": "/tentang.html" },
     { "source": "/(.*)", "destination": "/app.html" }
   ]
 }

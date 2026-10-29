@@ -22,6 +22,7 @@ describe('Konfigurasi deploy Vercel', () => {
     expect(map['/matematika/:kelas']).toBe('/matematika/:kelas.html');
     expect(map['/olimpiade/:level/:bab']).toBe('/olimpiade/:level/:bab.html');
     expect(map['/olimpiade/:level']).toBe('/olimpiade/:level.html');
+    expect(map['/tentang']).toBe('/tentang.html');
     // Fallback SPA harus aturan terakhir
     expect(vercel.rewrites[vercel.rewrites.length - 1]).toEqual({ source: '/(.*)', destination: '/app.html' });
   });
