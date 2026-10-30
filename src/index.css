@@ -2083,7 +2083,7 @@ img, svg {
 .report-trigger {
   padding: 0.2rem 0.55rem;
   font-size: 0.75rem;
-  color: var(--text-muted);
+  color: var(--text-secondary);
 }
 
 .report-done {
@@ -2471,7 +2471,7 @@ img, svg {
   cursor: pointer;
   font-size: 0.85rem;
   font-weight: 700;
-  color: var(--status-emerald);
+  color: #047857;
 }
 
 .chapter-example-solution[open] summary { margin-bottom: 0.4rem; }
