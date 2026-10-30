@@ -1,6 +1,5 @@
 import React, { useState } from 'react';
 import { Flag, X } from 'lucide-react';
-import { createReportCloud } from '../firebase/firestore';
 import {
   REPORT_CATEGORIES,
   REPORT_NOTE_MAX,
@@ -31,6 +30,8 @@ export function ReportQuestion({ questionId, chapterId, context, path, questionN
     setStatus('sending');
     setError('');
     try {
+      // Firebase baru diunduh saat laporan benar-benar dikirim
+      const { createReportCloud } = await import('../firebase/firestore');
       await createReportCloud(payload);
       markQuestionReported(questionId);
       setStatus('sent');

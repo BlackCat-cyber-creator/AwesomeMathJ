@@ -9,7 +9,34 @@ export default defineConfig({
     VitePWA({
       registerType: 'autoUpdate',
       injectRegister: false,
-      workbox: { cleanupOutdatedCaches: true, clientsClaim: true, skipWaiting: true },
+      workbox: {
+        cleanupOutdatedCaches: true,
+        clientsClaim: true,
+        skipWaiting: true,
+        // Hanya kerangka aplikasi yang diunduh di awal (bukan 3,7 MB bank soal semua kelas).
+        globPatterns: [
+          'app.html',
+          'assets/index-*.{js,css}',
+          'assets/rolldown-runtime-*.js',
+          'assets/vendor-react-*.js',
+          'assets/vendor-icons-*.js',
+          'assets/vendor-katex-*.css'
+        ],
+        // Halaman dibuka dari jaringan (HTML prerender per bab); salinannya dipakai saat offline.
+        navigateFallback: null,
+        runtimeCaching: [
+          {
+            urlPattern: ({ request }) => request.mode === 'navigate',
+            handler: 'NetworkFirst',
+            options: { cacheName: 'halaman', networkTimeoutSeconds: 4, expiration: { maxEntries: 60 } }
+          },
+          {
+            urlPattern: ({ url }) => url.pathname.startsWith('/assets/'),
+            handler: 'CacheFirst',
+            options: { cacheName: 'aset', expiration: { maxEntries: 150, maxAgeSeconds: 60 * 60 * 24 * 60 } }
+          }
+        ]
+      },
       includeAssets: ['favicon.svg', 'apple-touch-icon.png', 'masked-icon.svg'],
       manifest: {
         name: 'AwesomeMathJ',
