@@ -1,6 +1,6 @@
 /**
- * Bangun ulang src/data/chapterIndex.js dari data kelas (src/data/grades/gradeX.js).
- * Indeks ringan ini dipakai navigasi, pencarian, dan Studio Guru tanpa memuat 1.100 soal.
+ * Bangun ulang src/data/chapterIndex.js (Matematika) dan src/data/ipa/chapterIndex.js (IPA)
+ * dari data kelas. Indeks ringan ini dipakai navigasi, pencarian, dan Studio Guru tanpa memuat soal.
  * Jalankan setiap kali judul/konsep/tips bab berubah:
  *   node pipeline/build_chapter_index.mjs
  */
@@ -34,6 +34,37 @@ export async function buildChapterIndex() {
   return entries;
 }
 
+export async function buildIpaChapterIndex() {
+  const grades = [
+    (await import('../src/data/ipa/grade7.js')).ipaGrade7Data,
+    (await import('../src/data/ipa/grade8.js')).ipaGrade8Data,
+    (await import('../src/data/ipa/grade9.js')).ipaGrade9Data
+  ];
+  const meta = grades.map((g) => ({
+    subject: 'ipa',
+    grade: g.grade,
+    level: g.level,
+    phase: g.phase,
+    description: g.description,
+    chaptersCount: g.chapters.length
+  }));
+  const entries = grades.flatMap((g) => g.chapters.map((ch, i) => ({
+    id: ch.id,
+    subject: 'ipa',
+    grade: g.grade,
+    level: g.level,
+    phase: g.phase,
+    chapterIndex: i,
+    title: ch.title,
+    track: null,
+    element: ch.element || null,
+    coreConcepts: ch.summary?.coreConcepts || [],
+    tutorTip: ch.summary?.tutorTip || '',
+    questionCount: (ch.questions || []).length
+  })));
+  return { meta, entries };
+}
+
 if (import.meta.url === `file://${process.argv[1]}`) {
   const file = path.join(ROOT, 'src/data/chapterIndex.js');
   const src = fs.readFileSync(file, 'utf8');
@@ -42,4 +73,16 @@ if (import.meta.url === `file://${process.argv[1]}`) {
   const entries = await buildChapterIndex();
   fs.writeFileSync(file, `${head}${marker}${JSON.stringify(entries, null, 2)};\n`);
   console.log(`chapterIndex.js diperbarui: ${entries.length} bab`);
+
+  const ipa = await buildIpaChapterIndex();
+  fs.writeFileSync(path.join(ROOT, 'src/data/ipa/chapterIndex.js'), `/**
+ * Indeks ringan IPA Kurikulum Merdeka (tanpa soal). Dibuat otomatis oleh
+ * pipeline/build_chapter_index.mjs — jangan diedit manual; edit file bab di src/data/ipa/kelasN/.
+ */
+
+export const IPA_GRADE_METADATA = ${JSON.stringify(ipa.meta, null, 2)};
+
+export const ALL_IPA_CHAPTERS_INDEX = ${JSON.stringify(ipa.entries, null, 2)};
+`);
+  console.log(`ipa/chapterIndex.js diperbarui: ${ipa.entries.length} bab`);
 }

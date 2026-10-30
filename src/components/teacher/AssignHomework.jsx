@@ -1,16 +1,19 @@
 import React, { useMemo, useState } from 'react';
 import { Send, Copy, Printer, ExternalLink, Check } from 'lucide-react';
-import { ALL_CHAPTERS_INDEX, getGradeData } from '../../data/curriculumData';
+import { ALL_CHAPTERS_INDEX, ALL_IPA_CHAPTERS_INDEX, getGradeData } from '../../data/curriculumData';
 import { ALL_AMC_CHAPTERS_INDEX, getAmcModuleData } from '../../data/amc/amcData';
 import { getRecommendedChapter } from '../../data/academicCalendar';
 import { getCp2025Note } from '../../data/cp2025Mapping';
 import { amcLevelOfTrack, buildQuest } from '../../utils/questBuilder';
 import { getDefaultDeadlineDate } from '../../utils/storage';
 
-/** Sumber materi: kurikulum kelas murid atau salah satu level AMC. */
+const hasIpa = (student) => ALL_IPA_CHAPTERS_INDEX.some((c) => c.grade === Number(student.grade));
+
+/** Sumber materi: Matematika/IPA kelas murid atau salah satu level AMC. */
 function sourceOptions(student) {
   return [
-    { value: 'merdeka', label: `Kurikulum Merdeka Kelas ${student.grade}` },
+    { value: 'merdeka', label: `Matematika Kelas ${student.grade}` },
+    ...(hasIpa(student) ? [{ value: 'ipa', label: `IPA Kelas ${student.grade}` }] : []),
     { value: 'amc8', label: 'Olimpiade AMC 8' },
     { value: 'amc10', label: 'Olimpiade AMC 10' },
     { value: 'amc12', label: 'Olimpiade AMC 12' }
@@ -24,7 +27,8 @@ function defaultSource(student) {
 function chaptersFor(student, source) {
   const amcLevel = amcLevelOfTrack(source);
   if (amcLevel) return ALL_AMC_CHAPTERS_INDEX.filter((c) => c.level === amcLevel);
-  return ALL_CHAPTERS_INDEX.filter((c) => c.grade === Number(student.grade));
+  const index = source === 'ipa' ? ALL_IPA_CHAPTERS_INDEX : ALL_CHAPTERS_INDEX;
+  return index.filter((c) => c.grade === Number(student.grade));
 }
 
 function recommendedChapterId(student, source, chapters) {
@@ -71,7 +75,7 @@ export function AssignHomework({ student, quests, onCreate, onShareWhatsApp, onC
         const data = await getAmcModuleData(amcLevel);
         chapter = data?.chapters?.find((c) => c.id === chapterId);
       } else {
-        const data = await getGradeData(student.grade);
+        const data = await getGradeData(student.grade, source === 'ipa' ? 'ipa' : 'matematika');
         chapter = data?.chapters?.find((c) => c.id === chapterId);
       }
       if (!chapter?.questions?.length) throw new Error('Bab ini belum memiliki soal.');
@@ -79,7 +83,7 @@ export function AssignHomework({ student, quests, onCreate, onShareWhatsApp, onC
       const payload = buildQuest({
         student,
         deadline,
-        source: amcLevel ? { kind: 'amc', level: amcLevel, chapter } : { kind: 'merdeka', grade: student.grade, chapter }
+        source: amcLevel ? { kind: 'amc', level: amcLevel, chapter } : { kind: source, grade: student.grade, chapter }
       });
       setCreated(await onCreate(payload));
     } catch (err) {

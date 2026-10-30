@@ -1,19 +1,21 @@
 import { useState, useEffect, useMemo } from 'react';
-import { getGradeData, getLoadedGradeData, CURRICULUM_DATA } from '../data/curriculumData';
+import { getGradeData, getLoadedGradeData, curriculumFor } from '../data/curriculumData';
 
 /**
  * useGradeData hook
- * Loads full questions/solutions for a grade on-demand with caching
+ * Loads full questions/solutions for a grade on-demand with caching.
+ * subject: 'matematika' (bawaan) atau 'ipa'.
  */
-export function useGradeData(grade) {
-  const [currentGrade, setCurrentGrade] = useState(grade);
-  const [data, setData] = useState(() => getLoadedGradeData(grade));
-  const [loading, setLoading] = useState(() => !getLoadedGradeData(grade));
+export function useGradeData(grade, subject = 'matematika') {
+  const key = `${subject}:${grade}`;
+  const [currentKey, setCurrentKey] = useState(key);
+  const [data, setData] = useState(() => getLoadedGradeData(grade, subject));
+  const [loading, setLoading] = useState(() => !getLoadedGradeData(grade, subject));
   const [error, setError] = useState(null);
 
-  if (currentGrade !== grade) {
-    setCurrentGrade(grade);
-    const cached = getLoadedGradeData(grade);
+  if (currentKey !== key) {
+    setCurrentKey(key);
+    const cached = getLoadedGradeData(grade, subject);
     if (cached) {
       setData(cached);
       setLoading(false);
@@ -27,7 +29,7 @@ export function useGradeData(grade) {
     let active = true;
     if (data) return;
 
-    getGradeData(grade)
+    getGradeData(grade, subject)
       .then((res) => {
         if (active) {
           setData(res);
@@ -42,13 +44,15 @@ export function useGradeData(grade) {
       });
 
     return () => { active = false; };
-  }, [grade, data]);
+  }, [grade, subject, data]);
 
   // Fallback to lightweight metadata while loading
   const safeData = useMemo(() => {
-    if (data && data.grade === Number(grade)) return data;
-    return CURRICULUM_DATA.find((g) => g.grade === Number(grade)) || CURRICULUM_DATA[0];
-  }, [data, grade]);
+    const sameSubject = (d) => (d.subject || 'matematika') === subject;
+    if (data && data.grade === Number(grade) && sameSubject(data)) return data;
+    const index = curriculumFor(subject);
+    return index.find((g) => g.grade === Number(grade)) || index[0];
+  }, [data, grade, subject]);
 
   return { gradeData: safeData, fullGradeData: data, loading, error };
 }

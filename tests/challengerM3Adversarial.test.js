@@ -38,7 +38,7 @@ describe('Empirical Challenger M3: Mode Switching Permutations & Navigation', ()
     // Verify mode selector reflects AMC mode
     expect(html).toContain('id="btn-mode-amc"');
     expect(html).toContain('aria-selected="true"');
-    expect(html).toContain('Olimpiade AMC (AMC 8, AMC 10, AMC 12)');
+    expect(html).toContain('Olimpiade AMC');
 
     // Verify AMC Level selector tabs
     expect(html).toContain('id="btn-public-amc-8"');
@@ -149,7 +149,8 @@ describe('Empirical Challenger M3: Mode Switching Permutations & Navigation', ()
     // School mode active
     expect(html).toContain('id="btn-mode-school"');
     expect(html).toContain('aria-selected="true"');
-    expect(html).toContain('Kurikulum Merdeka (Kelas 4–12)');
+    expect(html).toContain('Matematika (Kelas 4–12)');
+    expect(html).toContain('id="btn-mode-ipa"');
 
     // School Grade 8 tab rendered
     expect(html).toContain('id="btn-public-grade-8"');

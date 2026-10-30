@@ -45,7 +45,7 @@ export function amcLevelOfTrack(track) {
 
 /**
  * Bangun payload PR.
- * source: { kind: 'merdeka', grade, chapter } atau { kind: 'amc', level, chapter }
+ * source: { kind: 'merdeka' | 'ipa', grade, chapter } atau { kind: 'amc', level, chapter }
  */
 export function buildQuest({ student, source, deadline }) {
   const { chapter } = source;
@@ -61,7 +61,8 @@ export function buildQuest({ student, source, deadline }) {
     ...(isAmc
       ? { level: `AMC ${source.level}`, levelTitle: `AMC ${source.level}`, trackLabel: chapter.domain || 'Olimpiade' }
       : { track: chapter.track || null, trackLabel: chapter.trackLabel || null }),
-    source: isAmc ? 'amc' : 'merdeka',
+    source: isAmc ? 'amc' : source.kind === 'ipa' ? 'ipa' : 'merdeka',
+    subject: source.kind === 'ipa' ? 'ipa' : 'matematika',
     studentId: student.id,
     studentName: student.name,
     deadline: deadline || null,
@@ -73,7 +74,7 @@ export function buildQuest({ student, source, deadline }) {
 export function buildWhatsAppMessage({ quest, teacherName, origin, formatDate }) {
   const link = `${origin}/quest/${quest.id}`;
   const deadlineLine = quest.deadline ? `\n📅 Tenggat: ${formatDate(quest.deadline)}` : '';
-  const sourceLine = quest.source === 'amc' ? ` (${quest.level})` : '';
+  const sourceLine = quest.source === 'amc' ? ` (${quest.level})` : quest.source === 'ipa' ? ' (IPA)' : '';
   return [
     `Halo *${quest.studentName}* & Bapak/Ibu,`,
     '',

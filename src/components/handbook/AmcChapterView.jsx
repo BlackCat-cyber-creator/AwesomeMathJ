@@ -11,7 +11,7 @@ import {
 } from 'lucide-react';
 import { MathText } from '../MathRenderer';
 import { QuestionVisual } from '../QuestionVisual';
-import { PillarsAccordion } from './PillarsAccordion';
+import { ChapterArticle } from './ChapterArticle';
 import { evaluateAmcAnswer } from '../../utils/answerCheck';
 import { amcChapterPath } from '../../utils/seoRoutes';
 import { ReportQuestion } from '../ReportQuestion';
@@ -155,10 +155,10 @@ export function AmcChapterView({
       </div>
 
       {/* 6 Pedagogical Pillars Accordion (Teori, Rumus KaTeX, Contoh Terbimbing) */}
-      <PillarsAccordion summary={chapter.summary} />
+      <ChapterArticle summary={chapter.summary} practiceCount={(chapter.questions || []).length} />
 
       {/* Interactive AMC Practice Problems Section */}
-      <div style={{ marginTop: '2.5rem' }}>
+      <div id="latihan-soal" className="chapter-practice" style={{ marginTop: '2.5rem' }}>
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '1.25rem', flexWrap: 'wrap', gap: '0.75rem' }}>
           <div>
             <h3 style={{ fontSize: '1.15rem', color: 'var(--primary-navy)', display: 'flex', alignItems: 'center', gap: '0.45rem', margin: 0 }}>

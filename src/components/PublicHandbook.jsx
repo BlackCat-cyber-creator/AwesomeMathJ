@@ -1,6 +1,6 @@
 import React, { useState, useMemo, useEffect } from 'react';
 import { useLocation, useNavigate } from 'react-router-dom';
-import { CURRICULUM_DATA } from '../data/curriculumData';
+import { curriculumFor, SUBJECT_LABELS } from '../data/curriculumData';
 import { useGradeData } from '../hooks/useCurriculum';
 import { 
   AMC_LEVELS_METADATA, 
@@ -8,7 +8,8 @@ import {
   getAmcModuleData, 
   getLoadedAmcModuleData 
 } from '../data/amc';
-import { PillarsAccordion } from './handbook/PillarsAccordion';
+import { ChapterArticle } from './handbook/ChapterArticle';
+import { ChapterNav } from './handbook/ChapterNav';
 import { ChapterQuiz } from './handbook/ChapterQuiz';
 import { AmcChapterView } from './handbook/AmcChapterView';
 import { SiteSearch } from './SiteSearch';
@@ -21,7 +22,8 @@ import {
   X,
   Compass,
   Trophy,
-  Loader2
+  Loader2,
+  FlaskConical
 } from 'lucide-react';
 import { getProgress, PROGRESS_EVENT } from '../utils/progress';
 import { getCp2025Note } from '../data/cp2025Mapping';
@@ -71,6 +73,9 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
     [location.pathname, location.search]
   );
   const isAmcMode = route.mode === 'amc';
+  // Mata pelajaran kurikulum: 'matematika' (Kelas 4–12) atau 'ipa' (Kelas 7–9)
+  const subject = route.subject || 'matematika';
+  const subjectIndex = curriculumFor(subject);
   const selectedGrade = route.grade;
   const selectedAmcLevel = route.level;
   const activeChapterParam = route.chapter;
@@ -84,7 +89,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
   const [isMobileChaptersOpen, setIsMobileChaptersOpen] = useState(false);
 
   // Dynamic Grade Data Loader (Kurikulum Merdeka)
-  const { gradeData: currentGradeData, fullGradeData, loading: isGradeLoading } = useGradeData(selectedGrade);
+  const { gradeData: currentGradeData, fullGradeData, loading: isGradeLoading } = useGradeData(selectedGrade, subject);
   // Progres latihan mandiri tersimpan di perangkat pengunjung (tanpa akun)
   const [studentProgress, setStudentProgress] = useState(() => getProgress());
 
@@ -230,16 +235,17 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
   useDocumentMeta(
     isAmcMode
       ? (activeAmcChapter ? amcChapterMeta(selectedAmcLevel, activeAmcChapter) : amcLevelMeta(selectedAmcLevel))
-      : (currentChapter ? chapterMeta(selectedGrade, currentChapter) : gradeMeta(selectedGrade))
+      : (currentChapter ? chapterMeta(selectedGrade, currentChapter) : gradeMeta(selectedGrade, subject))
   );
 
   // ----------------------------------------------------
   // NAVIGATION & MODE SWITCH HANDLERS
   // ----------------------------------------------------
-  const handleSwitchToSchoolMode = () => {
-    const gradeObj = CURRICULUM_DATA.find(g => g.grade === selectedGrade) || CURRICULUM_DATA[0];
+  const handleSwitchToSchoolMode = (nextSubject = 'matematika') => {
+    const index = curriculumFor(nextSubject);
+    const gradeObj = index.find(g => g.grade === selectedGrade) || index[0];
     const firstCh = gradeObj?.chapters?.[0]?.id || '';
-    goTo({ mode: 'school', grade: selectedGrade, chapter: firstCh });
+    goTo({ mode: 'school', subject: nextSubject, grade: gradeObj.grade, chapter: firstCh });
     setSelectedTrackFilter("ALL");
     setSearchQuery("");
     setIsMobileChaptersOpen(false);
@@ -254,9 +260,9 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
   };
 
   const handleSelectGrade = (grade) => {
-    const gradeObj = CURRICULUM_DATA.find(g => g.grade === grade);
+    const gradeObj = subjectIndex.find(g => g.grade === grade);
     const firstCh = gradeObj?.chapters?.[0]?.id || '';
-    goTo({ mode: 'school', grade, chapter: firstCh });
+    goTo({ mode: 'school', subject, grade, chapter: firstCh });
     setSelectedTrackFilter("ALL");
     setSearchQuery("");
     setIsMobileChaptersOpen(false);
@@ -271,7 +277,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
   };
 
   const handleSelectSchoolChapter = (chapterId) => {
-    goTo({ mode: 'school', grade: selectedGrade, chapter: chapterId });
+    goTo({ mode: 'school', subject, grade: selectedGrade, chapter: chapterId });
     setIsMobileChaptersOpen(false);
     if (typeof window !== 'undefined' && typeof window.scrollTo === 'function') {
       window.scrollTo({ top: 180, behavior: 'smooth' });
@@ -294,7 +300,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
       : currentGradeData.chapters.filter(ch => (ch.track || '').toUpperCase() === track.toUpperCase());
     if (matching.length > 0 && (!currentChapter || !matching.some(ch => ch.id === currentChapter.id))) {
       const nextCh = matching[0].id;
-      goTo({ mode: 'school', grade: selectedGrade, chapter: nextCh });
+      goTo({ mode: 'school', subject, grade: selectedGrade, chapter: nextCh });
     }
   };
 
@@ -302,7 +308,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
   const handleCopyChapterLink = () => {
     const url = `${window.location.origin}${isAmcMode
       ? handbookPath({ mode: 'amc', level: selectedAmcLevel, chapter: activeAmcChapter?.id })
-      : handbookPath({ mode: 'school', grade: selectedGrade, chapter: currentChapter?.id })}`;
+      : handbookPath({ mode: 'school', subject, grade: selectedGrade, chapter: currentChapter?.id })}`;
     if (navigator?.clipboard?.writeText) {
       navigator.clipboard.writeText(url);
     }
@@ -315,96 +321,66 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
       {/* Top Hero Banner */}
       <div className="handbook-hero">
         <div className="handbook-hero-badges">
-          {isAmcMode ? (
-            <>
-              <span className="badge badge-sd" style={{ fontSize: '0.72rem' }}>
-                Olimpiade Matematika AMC (American Mathematics Competitions)
-              </span>
-              <span className="badge badge-cat-pas" style={{ fontSize: '0.72rem' }}>
-                36 Bab • 216 Soal Kompetisi
-              </span>
-            </>
-          ) : (
-            <>
-              <span className="badge badge-sd" style={{ fontSize: '0.72rem' }}>
-                Kurikulum Merdeka Kemendikbudristek
-              </span>
-              <span className="badge badge-cat-pas" style={{ fontSize: '0.72rem' }}>
-                55 Bab • 1.100 Soal Terverifikasi
-              </span>
-            </>
-          )}
+          <span className="badge badge-sd" style={{ fontSize: '0.72rem' }}>
+            {isAmcMode ? 'Olimpiade Matematika AMC (American Mathematics Competitions)' : 'Kurikulum Merdeka · CP 046/2025'}
+          </span>
+          <span className="badge badge-cat-pas" style={{ fontSize: '0.72rem' }}>
+            {isAmcMode
+              ? '36 Bab • 216 Soal Kompetisi'
+              : `${subjectIndex.reduce((n, g) => n + g.chapters.length, 0)} Bab • ${subjectIndex.reduce((n, g) => n + g.chapters.reduce((m, c) => m + (c.questionCount || 0), 0), 0).toLocaleString('id-ID')} Soal dengan Pembahasan`}
+          </span>
         </div>
         <h1 className="handbook-hero-title">
-          {isAmcMode ? "Buku Panduan & Latihan Soal Olimpiade AMC" : "Buku Saku & Portal Mandiri Matematika"}
+          {isAmcMode
+            ? 'Buku Panduan & Latihan Soal Olimpiade AMC'
+            : subject === 'ipa' ? 'Materi & Latihan IPA SMP' : 'Buku Saku & Portal Mandiri Matematika'}
         </h1>
         <p className="handbook-hero-desc">
-          {isAmcMode 
-            ? "Materi komprehensif 6 pilar teori, pembuktian bertahap, dan bank soal isian singkat untuk persiapan kompetisi AMC 8, AMC 10, dan AMC 12."
-            : "Akses bebas rangkuman konsep, rumus penting, miskonsepsi umum, dan latihan diagnostik interaktif untuk seluruh jenjang SD, SMP, hingga SMA."}
+          {isAmcMode
+            ? 'Materi konsep, pembuktian bertahap, dan bank soal isian singkat untuk persiapan kompetisi AMC 8, AMC 10, dan AMC 12.'
+            : subject === 'ipa'
+              ? 'Ringkasan materi per subbab, istilah dan rumus penting, contoh soal dengan pembahasan, serta latihan IPA Kelas 7–9 sesuai buku siswa Kurikulum Merdeka.'
+              : 'Ringkasan materi per subbab, rumus penting, contoh soal dengan pembahasan, kesalahan yang sering terjadi, dan latihan untuk Kelas 4 SD sampai 12 SMA.'}
         </p>
       </div>
 
       <SiteSearch />
 
-      {/* Mode Selector Segmented Controls (Kurikulum Merdeka vs Olimpiade AMC) */}
-      <div className="handbook-mode-selector" style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>
-        <div 
-          role="tablist"
-          aria-label="Mode Pembelajaran"
-          style={{
-            display: 'inline-flex',
-            backgroundColor: '#F1F5F9',
-            padding: '0.35rem',
-            borderRadius: '12px',
-            border: '1px solid #CBD5E1',
-            gap: '0.35rem',
-            maxWidth: '100%',
-            overflowX: 'auto'
-          }}
-        >
+      {/* Pilihan mata pelajaran: Matematika, IPA, Olimpiade AMC */}
+      <div className="handbook-mode-selector">
+        <div role="tablist" aria-label="Mata pelajaran" className="handbook-mode-tabs">
           <button
             id="btn-mode-school"
             type="button"
             role="tab"
-            aria-selected={!isAmcMode}
-            className={`btn ${!isAmcMode ? 'btn-royal' : 'btn-ghost'}`}
-            style={{
-              padding: '0.55rem 1.25rem',
-              borderRadius: '8px',
-              fontWeight: !isAmcMode ? 700 : 500,
-              fontSize: '0.875rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              boxShadow: !isAmcMode ? '0 2px 6px rgba(15, 23, 42, 0.15)' : 'none'
-            }}
-            onClick={handleSwitchToSchoolMode}
+            aria-selected={!isAmcMode && subject === 'matematika'}
+            className={`btn ${!isAmcMode && subject === 'matematika' ? 'btn-royal' : 'btn-ghost'}`}
+            onClick={() => handleSwitchToSchoolMode('matematika')}
           >
             <BookOpen size={16} />
-            <span>Kurikulum Merdeka (Kelas 4–12)</span>
+            <span>Matematika (Kelas 4–12)</span>
           </button>
-
+          <button
+            id="btn-mode-ipa"
+            type="button"
+            role="tab"
+            aria-selected={!isAmcMode && subject === 'ipa'}
+            className={`btn ${!isAmcMode && subject === 'ipa' ? 'btn-royal' : 'btn-ghost'}`}
+            onClick={() => handleSwitchToSchoolMode('ipa')}
+          >
+            <FlaskConical size={16} />
+            <span>IPA (Kelas 7–9)</span>
+          </button>
           <button
             id="btn-mode-amc"
             type="button"
             role="tab"
             aria-selected={isAmcMode}
             className={`btn ${isAmcMode ? 'btn-royal' : 'btn-ghost'}`}
-            style={{
-              padding: '0.55rem 1.25rem',
-              borderRadius: '8px',
-              fontWeight: isAmcMode ? 700 : 500,
-              fontSize: '0.875rem',
-              display: 'flex',
-              alignItems: 'center',
-              gap: '0.5rem',
-              boxShadow: isAmcMode ? '0 2px 6px rgba(15, 23, 42, 0.15)' : 'none'
-            }}
             onClick={handleSwitchToAmcMode}
           >
             <Trophy size={16} />
-            <span>Olimpiade AMC (AMC 8, AMC 10, AMC 12)</span>
+            <span>Olimpiade AMC</span>
           </button>
         </div>
       </div>
@@ -429,8 +405,8 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
               );
             })
           ) : (
-            /* Standard School Grade Buttons (Kelas 4 - 12) */
-            CURRICULUM_DATA.map((gradeObj) => {
+            /* Tombol kelas sesuai mata pelajaran (Matematika 4–12, IPA 7–9) */
+            subjectIndex.map((gradeObj) => {
               const isSelected = Number(selectedGrade) === gradeObj.grade;
               return (
                 <button
@@ -449,7 +425,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
       </div>
 
       {/* Track Filter Pills (Only for SMA Fase F Grade 11 & 12) */}
-      {!isAmcMode && selectedGrade >= 11 && (
+      {!isAmcMode && subject === 'matematika' && selectedGrade >= 11 && (
         <div className="editorial-card" style={{ padding: '0.75rem 1.25rem', marginBottom: '1.25rem', backgroundColor: '#F8FAFC' }}>
           <div style={{ display: 'flex', alignItems: 'center', gap: '0.75rem', flexWrap: 'wrap' }}>
             <span style={{ fontSize: '0.825rem', fontWeight: 600, color: 'var(--text-secondary)' }}>
@@ -610,7 +586,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                     </div>
                     <div className="chapter-item-title">{ch.title}</div>
                     <div className="chapter-item-subtitle">
-                      20 butir latihan & pembahasan
+                      {ch.questionCount || 20} butir latihan & pembahasan
                     </div>
                   </button>
                 );
@@ -632,11 +608,18 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                 </p>
               </div>
             ) : activeAmcChapter ? (
-              <AmcChapterView
-                chapter={activeAmcChapter}
-                levelMeta={currentAmcLevelMeta}
-                onPrintQuest={onPrintQuest}
-              />
+              <>
+                <AmcChapterView
+                  chapter={activeAmcChapter}
+                  levelMeta={currentAmcLevelMeta}
+                  onPrintQuest={onPrintQuest}
+                />
+                <ChapterNav
+                  chapters={amcLevelChapters}
+                  currentId={activeAmcChapter.id}
+                  onSelect={handleSelectAmcChapter}
+                />
+              </>
             ) : (
               <div className="editorial-card" style={{ padding: '3rem 2rem', textAlign: 'center' }}>
                 <Compass size={40} color="var(--text-muted)" style={{ margin: '0 auto 1rem' }} />
@@ -655,8 +638,13 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                   <div className="chapter-header-top-bar">
                     <div className="chapter-header-badges">
                       <span className="badge badge-sd" style={{ fontSize: '0.75rem' }}>
-                        Kelas {currentGradeData.grade} {currentGradeData.level}
+                        {SUBJECT_LABELS[subject]} · Kelas {currentGradeData.grade} {currentGradeData.level}
                       </span>
+                      {currentGradeData.phase && (
+                        <span className="badge badge-subtle" style={{ fontSize: '0.72rem' }}>
+                          {currentGradeData.phase} · CP 046/2025
+                        </span>
+                      )}
                       {currentChapter.trackLabel && (
                         <span className="badge badge-cat-pas" style={{ fontSize: '0.75rem' }}>
                           {currentChapter.trackLabel}
@@ -723,8 +711,8 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                   )}
                 </div>
 
-                {/* 6 Pedagogical Pillars Accordion */}
-                <PillarsAccordion summary={currentChapter.summary} />
+                {/* Materi berbentuk artikel: daftar isi, subbab, rumus, contoh, kesalahan umum */}
+                <ChapterArticle summary={currentChapter.summary} practiceCount={fullQuestionsForChapter.length} />
 
                 {/* Interactive Diagnostic Quiz */}
                 <ChapterQuiz
@@ -735,6 +723,12 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                   isLoadingQuestions={isGradeLoading}
                   onLaunchPractice={onLaunchPractice}
                   onPrintQuest={onPrintQuest}
+                />
+
+                <ChapterNav
+                  chapters={currentGradeData.chapters || []}
+                  currentId={currentChapter.id}
+                  onSelect={handleSelectSchoolChapter}
                 />
               </div>
             ) : (

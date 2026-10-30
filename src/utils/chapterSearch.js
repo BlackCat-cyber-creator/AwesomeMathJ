@@ -1,9 +1,10 @@
 import { ALL_CHAPTERS_INDEX } from '../data/chapterIndex';
+import { ALL_IPA_CHAPTERS_INDEX } from '../data/ipa/chapterIndex';
 import { ALL_AMC_CHAPTERS_INDEX } from '../data/amc/amcMetadata';
 import { chapterPath, amcChapterPath } from './seoRoutes';
 
 /**
- * Pencarian materi di semua kelas (Kelas 4–12) dan AMC, tanpa memuat bank soal.
+ * Pencarian materi di semua kelas: Matematika Kelas 4–12, IPA Kelas 7–9, dan AMC, tanpa memuat bank soal.
  * Setiap kata kunci harus muncul; kecocokan di judul bab diberi skor lebih tinggi.
  */
 
@@ -22,13 +23,13 @@ function conceptLabels(concepts = []) {
 }
 
 function buildEntries() {
-  const school = ALL_CHAPTERS_INDEX.map((ch) => ({
+  const school = [...ALL_CHAPTERS_INDEX, ...ALL_IPA_CHAPTERS_INDEX].map((ch) => ({
     id: ch.id,
     title: ch.title,
-    label: `Kelas ${ch.grade} ${ch.level}`,
+    label: `${ch.subject === 'ipa' ? 'IPA' : 'Matematika'} ${ch.grade}`,
     path: chapterPath(ch.grade, ch.id),
     titleText: normalizeSearchText(ch.title),
-    labelText: normalizeSearchText(`kelas ${ch.grade} ${ch.level} ${ch.phase || ''}`),
+    labelText: normalizeSearchText(`${ch.subject === 'ipa' ? 'ipa sains' : 'matematika mtk'} kelas ${ch.grade} ${ch.level} ${ch.phase || ''}`),
     bodyText: normalizeSearchText((ch.coreConcepts || []).join(' ')),
     conceptText: normalizeSearchText(conceptLabels(ch.coreConcepts).join(' '))
   }));

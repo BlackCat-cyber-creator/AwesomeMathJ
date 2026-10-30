@@ -20,6 +20,8 @@ describe('Konfigurasi deploy Vercel', () => {
     const map = Object.fromEntries(vercel.rewrites.map((r) => [r.source, r.destination]));
     expect(map['/matematika/:kelas/:bab']).toBe('/matematika/:kelas/:bab.html');
     expect(map['/matematika/:kelas']).toBe('/matematika/:kelas.html');
+    expect(map['/ipa/:kelas/:bab']).toBe('/ipa/:kelas/:bab.html');
+    expect(map['/ipa/:kelas']).toBe('/ipa/:kelas.html');
     expect(map['/olimpiade/:level/:bab']).toBe('/olimpiade/:level/:bab.html');
     expect(map['/olimpiade/:level']).toBe('/olimpiade/:level.html');
     expect(map['/tentang']).toBe('/tentang.html');

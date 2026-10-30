@@ -31,6 +31,14 @@ function axisNumbers(config) {
   if (config.type === 'clock-angle') {
     for (let v = 1; v <= 12; v++) out.push(v);
   }
+  // Grafik gerak: angka sumbu adalah data yang dibaca dari grafik
+  if (config.type === 'motion-graph') {
+    out.push(...(p.xTicks || []), ...(p.yTicks || []));
+  }
+  // Termometer: titik tetap skala (0/100 °C, 32/212 °F, 0/80 °R, 273/373 K) adalah fakta umum
+  if (config.type === 'thermometer') {
+    for (const s of p.scales || []) out.push(Math.abs(Number(s.top)), Math.abs(Number(s.bottom)));
+  }
   if (config.type === 'number-line' && p.min !== undefined && p.max !== undefined) {
     for (let v = p.min; v <= p.max; v += p.step || 1) out.push(Math.abs(v));
   }

@@ -2,11 +2,37 @@
   "buildCommand": "npm run build",
   "outputDirectory": "dist",
   "rewrites": [
-    { "source": "/matematika/:kelas/:bab", "destination": "/matematika/:kelas/:bab.html" },
-    { "source": "/matematika/:kelas", "destination": "/matematika/:kelas.html" },
-    { "source": "/olimpiade/:level/:bab", "destination": "/olimpiade/:level/:bab.html" },
-    { "source": "/olimpiade/:level", "destination": "/olimpiade/:level.html" },
-    { "source": "/tentang", "destination": "/tentang.html" },
-    { "source": "/(.*)", "destination": "/app.html" }
+    {
+      "source": "/matematika/:kelas/:bab",
+      "destination": "/matematika/:kelas/:bab.html"
+    },
+    {
+      "source": "/matematika/:kelas",
+      "destination": "/matematika/:kelas.html"
+    },
+    {
+      "source": "/ipa/:kelas/:bab",
+      "destination": "/ipa/:kelas/:bab.html"
+    },
+    {
+      "source": "/ipa/:kelas",
+      "destination": "/ipa/:kelas.html"
+    },
+    {
+      "source": "/olimpiade/:level/:bab",
+      "destination": "/olimpiade/:level/:bab.html"
+    },
+    {
+      "source": "/olimpiade/:level",
+      "destination": "/olimpiade/:level.html"
+    },
+    {
+      "source": "/tentang",
+      "destination": "/tentang.html"
+    },
+    {
+      "source": "/(.*)",
+      "destination": "/app.html"
+    }
   ]
 }

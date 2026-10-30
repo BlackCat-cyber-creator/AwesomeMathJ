@@ -15,6 +15,7 @@ import { ReportQuestion } from '../ReportQuestion';
 import { questionAnchor } from '../../utils/reports';
 import { chapterPath } from '../../utils/seoRoutes';
 import { useQuestionHash } from '../../hooks/useQuestionHash';
+import { practicePackets } from '../../utils/chapterOutline';
 
 export function ChapterQuiz({
   questions = [],
@@ -63,12 +64,14 @@ export function ChapterQuiz({
 
   useQuestionHash(questions.length);
 
+  const packets = useMemo(() => practicePackets(questions.length), [questions.length]);
+
   // Filtered questions based on packet
   const filteredQuestions = useMemo(() => {
     if (selectedPacketFilter === 'ALL') return questions;
-    const pIndex = Number(selectedPacketFilter);
-    return questions.slice((pIndex - 1) * 5, pIndex * 5);
-  }, [questions, selectedPacketFilter]);
+    const packet = packets.find((p) => p.index === selectedPacketFilter);
+    return packet ? questions.slice(packet.start, packet.end) : questions;
+  }, [questions, packets, selectedPacketFilter]);
 
   // Scoring calculation
   const scoreStats = useMemo(() => {
@@ -113,15 +116,15 @@ export function ChapterQuiz({
   };
 
   return (
-    <div style={{ marginTop: '1rem' }}>
+    <div id="latihan-soal" className="chapter-practice" style={{ marginTop: '1rem' }}>
       {/* Header */}
       <div style={{ marginBottom: '0.85rem', display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: '0.5rem' }}>
         <h3 style={{ fontSize: '1.15rem', color: 'var(--primary-navy)', display: 'flex', alignItems: 'center', gap: '0.45rem', margin: 0 }}>
           <PenTool size={18} color="var(--primary-blue)" />
-          Latihan Soal & Pemahaman Konsep
+          Latihan Soal
         </h3>
         <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-          {questions.length} Soal Lengkap (4 Paket)
+          {questions.length} soal · {packets.length} paket
         </span>
       </div>
 
@@ -136,42 +139,18 @@ export function ChapterQuiz({
         >
           Semua ({questions.length} Soal)
         </button>
-        <button
-          type="button"
-          id="filter-packet-1"
-          className={`btn ${selectedPacketFilter === 1 ? 'btn-royal' : 'btn-outline'}`}
-          style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
-          onClick={() => { setSelectedPacketFilter(1); handleResetQuiz(); }}
-        >
-          Paket 1 (Soal 1–5: Dasar)
-        </button>
-        <button
-          type="button"
-          id="filter-packet-2"
-          className={`btn ${selectedPacketFilter === 2 ? 'btn-royal' : 'btn-outline'}`}
-          style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
-          onClick={() => { setSelectedPacketFilter(2); handleResetQuiz(); }}
-        >
-          Paket 2 (Soal 6–10: Sedang)
-        </button>
-        <button
-          type="button"
-          id="filter-packet-3"
-          className={`btn ${selectedPacketFilter === 3 ? 'btn-royal' : 'btn-outline'}`}
-          style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
-          onClick={() => { setSelectedPacketFilter(3); handleResetQuiz(); }}
-        >
-          Paket 3 (Soal 11–15: Terapan)
-        </button>
-        <button
-          type="button"
-          id="filter-packet-4"
-          className={`btn ${selectedPacketFilter === 4 ? 'btn-royal' : 'btn-outline'}`}
-          style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
-          onClick={() => { setSelectedPacketFilter(4); handleResetQuiz(); }}
-        >
-          Paket 4 (Soal 16–20: Tantangan)
-        </button>
+        {packets.map((p) => (
+          <button
+            key={p.index}
+            type="button"
+            id={`filter-packet-${p.index}`}
+            className={`btn ${selectedPacketFilter === p.index ? 'btn-royal' : 'btn-outline'}`}
+            style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
+            onClick={() => { setSelectedPacketFilter(p.index); handleResetQuiz(); }}
+          >
+            {p.label}
+          </button>
+        ))}
       </div>
 
       {/* Score Result Card (if submitted) */}

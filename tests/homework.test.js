@@ -29,6 +29,16 @@ describe('Penyusun PR: 1 bab = 1 PR, mudah → sulit', () => {
     expect(quest).toMatchObject({ chapterId: chapter.id, grade: 5, source: 'merdeka', studentId: 'std-1' });
   });
 
+  it('PR IPA memuat bab IPA kelas murid dan ditandai sebagai IPA', async () => {
+    const data = await getGradeData(7, 'ipa');
+    const chapter = data.chapters[2];
+    const quest = buildQuest({ student: { ...student, grade: 7 }, source: { kind: 'ipa', grade: 7, chapter } });
+    expect(quest).toMatchObject({ chapterId: 'ipa7-bab3-suhu-kalor-pemuaian', grade: 7, source: 'ipa', subject: 'ipa' });
+    expect(quest.questions).toHaveLength(15);
+    const msg = buildWhatsAppMessage({ quest: { ...quest, id: 'q1' }, teacherName: 'Sir Jevon', origin: 'https://x', formatDate: (d) => d });
+    expect(msg).toContain('(IPA)');
+  });
+
   it('PR AMC memakai level untuk tautan QR pembahasan', async () => {
     const data = await getAmcModuleData(8);
     const chapter = data.chapters[0];

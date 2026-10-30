@@ -4,7 +4,7 @@
  * Dipakai oleh aplikasi (useDocumentMeta) dan prerender (scripts/prerender.mjs)
  * agar teks yang dibaca Google sama dengan yang tampil di browser.
  */
-import { SITE_NAME, gradePath, chapterPath, amcLevelPath, amcChapterPath } from './seoRoutes.js';
+import { SITE_NAME, gradePath, chapterPath, amcLevelPath, amcChapterPath, subjectOfChapter } from './seoRoutes.js';
 import { AUTHOR } from '../data/siteInfo.js';
 
 /** Teks polos dari string bercampur LaTeX/markdown. */
@@ -32,9 +32,11 @@ export function levelLabel(grade) {
   return g <= 6 ? 'SD' : g <= 9 ? 'SMP' : 'SMA';
 }
 
+export const SUBJECT_NAME = { matematika: 'Matematika', ipa: 'IPA' };
+
 export const HOME_META = {
-  title: `${SITE_NAME} oleh ${AUTHOR.name} • Materi & Latihan Matematika Kelas 4–12 dan Olimpiade AMC`,
-  description: `Belajar matematika gratis tanpa daftar bersama ${AUTHOR.name}: ringkasan materi, rumus, contoh soal, dan latihan Kurikulum Merdeka Kelas 4 SD sampai 12 SMA, plus persiapan olimpiade AMC 8, 10, dan 12.`,
+  title: `${SITE_NAME} oleh ${AUTHOR.name} • Materi & Latihan Matematika Kelas 4–12, IPA SMP, dan Olimpiade AMC`,
+  description: `Belajar gratis tanpa daftar bersama ${AUTHOR.name}: ringkasan materi, rumus, contoh soal, dan latihan Matematika Kurikulum Merdeka Kelas 4 SD sampai 12 SMA, IPA SMP Kelas 7–9, plus persiapan olimpiade AMC 8, 10, dan 12.`,
   path: '/'
 };
 
@@ -44,23 +46,26 @@ export const ABOUT_META = {
   path: '/tentang'
 };
 
-export function gradeMeta(grade) {
+export function gradeMeta(grade, subject = 'matematika') {
   const lvl = levelLabel(grade);
+  const name = SUBJECT_NAME[subject] || SUBJECT_NAME.matematika;
+  const extra = subject === 'ipa' ? 'ringkasan materi, rumus dan istilah penting' : 'ringkasan materi, rumus penting';
   return {
-    title: `Matematika Kelas ${grade} ${lvl} Kurikulum Merdeka — Materi & Latihan | ${SITE_NAME}`,
-    description: `Daftar bab Matematika Kelas ${grade} ${lvl} Kurikulum Merdeka lengkap dengan ringkasan materi, rumus penting, contoh soal, dan latihan soal pilihan ganda beserta pembahasan.`,
-    path: gradePath(grade)
+    title: `${name} Kelas ${grade} ${lvl} Kurikulum Merdeka — Materi & Latihan | ${SITE_NAME}`,
+    description: `Daftar bab ${name} Kelas ${grade} ${lvl} Kurikulum Merdeka lengkap dengan ${extra}, contoh soal, dan latihan soal pilihan ganda beserta pembahasan.`,
+    path: gradePath(grade, subject)
   };
 }
 
 export function chapterMeta(grade, chapter) {
   const lvl = levelLabel(grade);
+  const name = SUBJECT_NAME[subjectOfChapter(chapter.id)];
   const overview = chapter?.summary?.overview || '';
   return {
-    title: `${chapter.title} — Matematika Kelas ${grade} ${lvl} | ${SITE_NAME}`,
+    title: `${chapter.title} — ${name} Kelas ${grade} ${lvl} | ${SITE_NAME}`,
     description: overview
       ? truncate(overview)
-      : `Materi ${plainText(chapter.title)} Matematika Kelas ${grade} ${lvl}: ringkasan, rumus, contoh soal, dan latihan.`,
+      : `Materi ${plainText(chapter.title)} ${name} Kelas ${grade} ${lvl}: ringkasan, rumus, contoh soal, dan latihan.`,
     path: chapterPath(grade, chapter.id)
   };
 }

@@ -5,8 +5,7 @@ import { MathText } from './MathRenderer';
 import { QuestionVisual } from './QuestionVisual';
 import { getQuestById } from '../utils/storage';
 import { getQuestByIdCloud } from '../firebase/firestore';
-import { ALL_CHAPTERS_INDEX } from '../data/chapterIndex';
-import { getGradeData } from '../data/curriculumData';
+import { getGradeData, findChapterIndex, subjectOf } from '../data/curriculumData';
 import { ALL_AMC_CHAPTERS_INDEX } from '../data/amc/amcMetadata';
 import { getAmcModuleData, normalizeAmcLevel } from '../data/amc/amcData';
 import { exportWorksheetToPdf, triggerSafePrint } from '../utils/pdfExport';
@@ -104,11 +103,11 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
 
       // 1. Cek apakah questId adalah bab kurikulum (contoh: "sd4-bab1-bilangan-cacah" atau "chapter-sd4-bab1...")
       const cleanId = (questId || "").replace(/^(chapter-|practice-)/, "");
-      const matchedChapter = ALL_CHAPTERS_INDEX.find(c => c.id === cleanId || c.id === questId);
+      const matchedChapter = findChapterIndex(cleanId) || findChapterIndex(questId);
 
       if (matchedChapter) {
         try {
-          const gradeDataset = await getGradeData(matchedChapter.grade);
+          const gradeDataset = await getGradeData(matchedChapter.grade, subjectOf(matchedChapter.id));
           const fullChapter = gradeDataset?.chapters?.find(c => c.id === matchedChapter.id);
           if (fullChapter && isMounted) {
             const reconstructed = {
@@ -410,7 +409,7 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
                       {isAmc ? (
                         <>Modul: <strong>{quest.levelTitle || `AMC ${quest.grade || quest.level}`}</strong> • Domain: <strong>{quest.trackLabel || 'Kompetisi'}</strong> • Topik: <strong>{quest.chapterTitle || quest.title}</strong></>
                       ) : (
-                        <>Mata Pelajaran: <strong>Matematika{quest.trackLabel ? ` (${quest.trackLabel})` : ''}</strong> • Topik: <strong>{quest.chapterTitle || quest.title}</strong> (Kelas {quest.grade})</>
+                        <>Mata Pelajaran: <strong>{subjectOf(quest.chapterId) === 'ipa' ? 'IPA' : 'Matematika'}{quest.trackLabel ? ` (${quest.trackLabel})` : ''}</strong> • Topik: <strong>{quest.chapterTitle || quest.title}</strong> (Kelas {quest.grade})</>
                       )}
                     </div>
                   </div>
@@ -591,7 +590,7 @@ export function PrintableWorksheet({ quest: propQuest = null, onBack = null }) {
 
         {/* Footer verification note */}
         <div className="print-footer" style={{ marginTop: '2rem', paddingTop: '1rem', borderTop: '1px solid #D1D5DB', display: 'flex', justifyContent: 'space-between', fontSize: '0.78rem', color: '#6B7280' }}>
-          <span>AwesomeMathJ • Platform Pembelajaran Matematika Kurikulum Merdeka</span>
+          <span>AwesomeMathJ • Materi Matematika &amp; IPA Kurikulum Merdeka</span>
           <span>Tanda Tangan Guru: _____________________</span>
         </div>
       </div>

@@ -13,6 +13,17 @@ import {
   PictogramVisual
 } from './ArithmeticVisuals.jsx';
 import { BarChartVisual, ScatterPlotVisual } from './StatisticsVisuals.jsx';
+import {
+  ThermometerVisual,
+  LeverVisual,
+  CircuitVisual,
+  WaveVisual,
+  ForceVisual,
+  MotionGraphVisual,
+  FoodWebVisual,
+  HydraulicVisual,
+  PendulumVisual
+} from './ScienceVisuals.jsx';
 
 /**
  * renderVisualEngine:
@@ -81,6 +92,26 @@ export function renderVisualEngine(config, question) {
       return <BarChartVisual {...props} />;
     case 'scatter-plot':
       return <ScatterPlotVisual {...props} />;
+
+    // IPA
+    case 'thermometer':
+      return <ThermometerVisual {...props} />;
+    case 'lever':
+      return <LeverVisual {...props} />;
+    case 'circuit':
+      return <CircuitVisual {...props} />;
+    case 'wave':
+      return <WaveVisual {...props} />;
+    case 'force':
+      return <ForceVisual {...props} />;
+    case 'motion-graph':
+      return <MotionGraphVisual {...props} />;
+    case 'food-web':
+      return <FoodWebVisual {...props} />;
+    case 'hydraulic':
+      return <HydraulicVisual {...props} />;
+    case 'pendulum':
+      return <PendulumVisual {...props} />;
 
     // Kustom JSX / Spesifik
     case 'custom':

@@ -263,6 +263,9 @@ export function App() {
             <Route path="/matematika/*" element={
               <PublicHandbook onLaunchPractice={handleLaunchPracticeQuest} onPrintQuest={handlePrintQuest} />
             } />
+            <Route path="/ipa/*" element={
+              <PublicHandbook onLaunchPractice={handleLaunchPracticeQuest} onPrintQuest={handlePrintQuest} />
+            } />
             <Route path="/olimpiade/*" element={
               <PublicHandbook onLaunchPractice={handleLaunchPracticeQuest} onPrintQuest={handlePrintQuest} />
             } />

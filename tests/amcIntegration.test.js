@@ -236,7 +236,7 @@ describe('UI Component Integration & Rendering', () => {
     expect(html).toContain(chapter1.title.replace(/&/g, '&amp;'));
 
     // Verify 6 Pedagogical Pillars Accordion
-    expect(html).toContain('Pahami Materi');
+    expect(html).toContain('Daftar Isi');
     expect(html).toContain('Rumus Kunci');
 
     // Verify action buttons
@@ -268,8 +268,9 @@ describe('UI Component Integration & Rendering', () => {
     // Mode Switchers
     expect(html).toContain('id="btn-mode-school"');
     expect(html).toContain('id="btn-mode-amc"');
-    expect(html).toContain('Kurikulum Merdeka (Kelas 4–12)');
-    expect(html).toContain('Olimpiade AMC (AMC 8, AMC 10, AMC 12)');
+    expect(html).toContain('Matematika (Kelas 4–12)');
+    expect(html).toContain('id="btn-mode-ipa"');
+    expect(html).toContain('Olimpiade AMC');
 
     // School Grade Tabs
     expect(html).toContain('id="btn-public-grade-4"');

@@ -6,13 +6,15 @@
  *   /matematika/kelas-4                     → daftar bab Kelas 4
  *   /matematika/kelas-4/bab2-pecahan        → bab "sd4-bab2-pecahan"
  *   /olimpiade/amc-8                        → daftar bab AMC 8
+ *   /ipa/kelas-7                            → daftar bab IPA Kelas 7
+ *   /ipa/kelas-7/bab2-zat-dan-perubahannya  → bab "ipa7-bab2-zat-dan-perubahannya"
  *   /olimpiade/amc-8/ch1-permutations       → bab "amc8-ch1-permutations"
  */
 
 export const SITE_URL = 'https://awesomemathj.vercel.app';
 export const SITE_NAME = 'AwesomeMathJ';
 
-const GRADE_PREFIX = /^(sd|smp|sma)(\d+)-/;
+const GRADE_PREFIX = /^(sd|smp|sma|ipa)(\d+)-/;
 const AMC_PREFIX = /^amc(\d+)-/;
 
 export function chapterSlug(chapterId) {
@@ -24,17 +26,32 @@ export function levelOfGrade(grade) {
   return g <= 6 ? 'sd' : g <= 9 ? 'smp' : 'sma';
 }
 
+/** Mata pelajaran kurikulum beserta kelas yang tersedia (alamat: /<id>/kelas-N). */
+export const SUBJECT_GRADES = {
+  matematika: [4, 5, 6, 7, 8, 9, 10, 11, 12],
+  ipa: [7, 8, 9]
+};
+
+/** Mata pelajaran dari ID bab: "ipa7-..." → ipa, selain itu matematika. */
+export function subjectOfChapter(chapterId) {
+  return /^ipa\d+-/.test(String(chapterId || '')) ? 'ipa' : 'matematika';
+}
+
 /** Kebalikan dari chapterSlug untuk bab kurikulum. */
-export function chapterIdFromSlug(grade, slug) {
-  return slug ? `${levelOfGrade(grade)}${Number(grade)}-${slug}` : null;
+export function chapterIdFromSlug(grade, slug, subject = 'matematika') {
+  if (!slug) return null;
+  const prefix = subject === 'ipa' ? 'ipa' : levelOfGrade(grade);
+  return `${prefix}${Number(grade)}-${slug}`;
 }
 
-export function gradePath(grade) {
-  return `/matematika/kelas-${Number(grade)}`;
+export function gradePath(grade, subject = 'matematika') {
+  return `/${subject === 'ipa' ? 'ipa' : 'matematika'}/kelas-${Number(grade)}`;
 }
 
-export function chapterPath(grade, chapterId) {
-  return chapterId ? `${gradePath(grade)}/${chapterSlug(chapterId)}` : gradePath(grade);
+/** Mata pelajaran ditentukan dari ID bab, jadi pemanggil lama tidak perlu berubah. */
+export function chapterPath(grade, chapterId, subject) {
+  const subj = subject || subjectOfChapter(chapterId);
+  return chapterId ? `${gradePath(grade, subj)}/${chapterSlug(chapterId)}` : gradePath(grade, subj);
 }
 
 export function amcLevelPath(level) {
@@ -50,11 +67,12 @@ export function amcChapterPath(level, chapterId) {
  * Mengembalikan null bila pathname bukan alamat buku saku.
  */
 export function parseHandbookPath(pathname) {
-  const school = String(pathname || '').match(/^\/matematika\/kelas-(\d+)(?:\/([^/]+))?\/?$/);
+  const school = String(pathname || '').match(/^\/(matematika|ipa)\/kelas-(\d+)(?:\/([^/]+))?\/?$/);
   if (school) {
-    const grade = Number(school[1]);
-    if (grade < 4 || grade > 12) return null;
-    return { mode: 'school', grade, level: 8, chapter: chapterIdFromSlug(grade, school[2]) };
+    const subject = school[1];
+    const grade = Number(school[2]);
+    if (!SUBJECT_GRADES[subject].includes(grade)) return null;
+    return { mode: 'school', subject, grade, level: 8, chapter: chapterIdFromSlug(grade, school[3], subject) };
   }
   const amc = String(pathname || '').match(/^\/olimpiade\/amc-(\d+)(?:\/([^/]+))?\/?$/);
   if (amc) {
@@ -66,6 +84,8 @@ export function parseHandbookPath(pathname) {
 }
 
 /** Alamat rapi dari state buku saku. */
-export function handbookPath({ mode, grade, level, chapter }) {
-  return mode === 'amc' ? amcChapterPath(level || 8, chapter) : chapterPath(grade || 4, chapter);
+export function handbookPath({ mode, subject, grade, level, chapter }) {
+  if (mode === 'amc') return amcChapterPath(level || 8, chapter);
+  const subj = subject || subjectOfChapter(chapter);
+  return chapterPath(grade || SUBJECT_GRADES[subj][0], chapter, subj);
 }

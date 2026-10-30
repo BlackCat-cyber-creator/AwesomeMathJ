@@ -111,7 +111,7 @@ export function ChapterSolutionView({
           <Loader2 size={36} className="spinner" style={{ color: 'var(--primary-blue)', animation: 'spin 1s linear infinite', marginBottom: '1rem' }} />
           <h3 style={{ color: 'var(--primary-navy)', marginBottom: '0.4rem' }}>Memuat Kunci Pembahasan...</h3>
           <p style={{ color: 'var(--text-secondary)', margin: 0, fontSize: '0.9rem' }}>
-            Mengambil data pembahasan resmi bab matematika.
+            Mengambil data pembahasan bab.
           </p>
         </div>
       </div>
@@ -193,7 +193,7 @@ export function ChapterSolutionView({
           Kunci Jawaban & Pembahasan: {chapterData.title}
         </h2>
         <p style={{ margin: 0, fontSize: '0.9rem', color: 'var(--text-secondary)' }}>
-          Panduan penyelesaian resmi AwesomeMathJ. Disertai metode terstruktur, rumus matematika, dan penjabaran detail per butir soal.
+          Panduan penyelesaian resmi AwesomeMathJ. Disertai langkah terstruktur, rumus, dan penjabaran detail per butir soal.
         </p>
       </div>
 
@@ -483,7 +483,7 @@ export function ChapterSolutionView({
         <p style={{ margin: '0 0 1.25rem', fontSize: '0.875rem', color: 'var(--text-secondary)' }}>
           {isAmc 
             ? 'Jelajahi seluruh materi kompetisi AMC dan modul mandiri kelas 4 sampai 12 di AwesomeMathJ.' 
-            : 'Jelajahi seluruh materi matematika kelas 4 sampai 12 secara mandiri di AwesomeMathJ.'}
+            : 'Jelajahi materi Matematika Kelas 4–12 dan IPA Kelas 7–9 secara mandiri di AwesomeMathJ.'}
         </p>
         <div style={{ display: 'flex', justifyContent: 'center' }}>
           <button className="btn btn-royal" onClick={handleBack} style={{ padding: '0.65rem 1.5rem' }}>

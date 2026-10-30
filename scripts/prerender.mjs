@@ -20,6 +20,10 @@ import katex from 'katex';
 import { GRADE_METADATA } from '../src/data/chapterIndex.js';
 import { AMC_LEVELS_METADATA } from '../src/data/amc/amcMetadata.js';
 import { questionAnchor } from '../src/utils/reports.js';
+import { splitSubbab, articleSections } from '../src/utils/chapterOutline.js';
+import { ipaGrade7Data } from '../src/data/ipa/grade7.js';
+import { ipaGrade8Data } from '../src/data/ipa/grade8.js';
+import { ipaGrade9Data } from '../src/data/ipa/grade9.js';
 import { grade4Data } from '../src/data/grades/grade4.js';
 import { grade5Data } from '../src/data/grades/grade5.js';
 import { grade6Data } from '../src/data/grades/grade6.js';
@@ -34,11 +38,12 @@ import { amc10Data } from '../src/data/amc/amc10Data.js';
 import { amc12Data } from '../src/data/amc/amc12Data.js';
 import { getCp2025Note } from '../src/data/cp2025Mapping.js';
 import { SITE_URL, SITE_NAME, gradePath, chapterPath, amcLevelPath, amcChapterPath } from '../src/utils/seoRoutes.js';
-import { HOME_META, ABOUT_META, gradeMeta, chapterMeta, amcLevelMeta, amcChapterMeta, levelLabel } from '../src/utils/seoMeta.js';
+import { HOME_META, ABOUT_META, gradeMeta, chapterMeta, amcLevelMeta, amcChapterMeta, levelLabel, SUBJECT_NAME } from '../src/utils/seoMeta.js';
 import { AUTHOR, ABOUT } from '../src/data/siteInfo.js';
 
 const DIST = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../dist');
 const GRADES = [grade4Data, grade5Data, grade6Data, grade7Data, grade8Data, grade9Data, grade10Data, grade11Data, grade12Data];
+const IPA = [ipaGrade7Data, ipaGrade8Data, ipaGrade9Data].filter((g) => g.chapters.length > 0);
 const AMC = [amc8Data, amc10Data, amc12Data];
 const PHASE = Object.fromEntries(GRADE_METADATA.map((g) => [g.grade, g.phase]));
 
@@ -160,19 +165,40 @@ function questionList(questions) {
   }).join('\n')}</ol>`;
 }
 
+/** Isi bab dengan struktur yang sama seperti ChapterArticle (daftar isi, subbab bernomor, anchor). */
 function chapterBody(chapter) {
   const s = chapter.summary || {};
-  const parts = [];
-  if (s.overview) parts.push(`<section><h2>Ringkasan Materi</h2>${paragraphs(s.overview)}</section>`);
-  if (s.coreConcepts?.length) parts.push(`<section><h2>Konsep Kunci</h2><ul>${s.coreConcepts.map((c) => `<li>${rich(c)}</li>`).join('')}</ul></section>`);
-  if (s.keyFormulas?.length) parts.push(`<section><h2>Rumus Penting</h2><ul>${s.keyFormulas.map((f) => `<li><strong>${rich(f.label)}</strong>: ${renderMath(f.formula, false)}</li>`).join('')}</ul></section>`);
-  if (s.workedExamples?.length) {
-    parts.push(`<section><h2>Contoh Soal &amp; Pembahasan</h2>${s.workedExamples.map((ex) => `
-      <article><h3>${rich(ex.title)}</h3><p>${rich(ex.problem)}</p><div>${rich(ex.solution)}</div></article>`).join('')}</section>`);
+  const practiceCount = chapter.questions?.length || 0;
+  const subbab = (s.coreConcepts || []).map(splitSubbab);
+  const toc = articleSections(s, practiceCount).map((sec) => {
+    const sub = sec.id === 'materi'
+      ? `<ol type="a">${subbab.map((sb, i) => `<li><a href="#materi-${i + 1}">${rich(sb.title)}</a></li>`).join('')}</ol>`
+      : '';
+    return `<li><a href="#${sec.id}">${escapeHtml(sec.label)}</a>${sub}</li>`;
+  }).join('');
+  const parts = [`<nav class="seo-toc" aria-label="Daftar isi bab"><h2>Daftar Isi</h2><ol>${toc}</ol></nav>`];
+  if (s.overview) parts.push(`<section id="pengantar"><h2>Pengantar</h2>${paragraphs(s.overview)}</section>`);
+  if (subbab.length) {
+    parts.push(`<section id="materi"><h2>Materi</h2>${subbab.map((sb, i) => `
+      <div id="materi-${i + 1}"><h3>${i + 1}. ${rich(sb.title)}</h3><p>${rich(sb.body)}</p></div>`).join('')}</section>`);
   }
-  if (s.misconceptions?.length) parts.push(`<section><h2>Kesalahan yang Sering Terjadi</h2><ul>${s.misconceptions.map((m) => `<li>${rich(m)}</li>`).join('')}</ul></section>`);
+  if (s.keyFormulas?.length) parts.push(`<section id="rumus"><h2>Rumus Kunci</h2><ul>${s.keyFormulas.map((f) => `<li><strong>${rich(f.label)}</strong>: ${renderMath(f.formula, false)}</li>`).join('')}</ul></section>`);
+  if (s.workedExamples?.length) {
+    parts.push(`<section id="contoh"><h2>Contoh Soal dan Pembahasan</h2>${s.workedExamples.map((ex, i) => `
+      <article><h3>Contoh ${i + 1}${ex.title ? `: ${rich(ex.title)}` : ''}</h3><p>${rich(ex.problem)}</p><details><summary>Lihat pembahasan</summary><div>${rich(ex.solution)}</div></details></article>`).join('')}</section>`);
+  }
+  if (s.misconceptions?.length) parts.push(`<section id="kesalahan"><h2>Kesalahan yang Sering Terjadi</h2><ul>${s.misconceptions.map((m) => `<li>${rich(m)}</li>`).join('')}</ul></section>`);
   if (s.tutorTip) parts.push(`<section><h2>Tips</h2><p>${rich(s.tutorTip)}</p></section>`);
   return parts.join('\n');
+}
+
+/** Daftar isi satu kelas: setiap bab beserta subbabnya (seperti halaman indeks materi). */
+function gradeToc(chapters, toPath) {
+  return `<ol class="seo-grade-toc">${chapters.map((c) => {
+    const subs = (c.summary?.coreConcepts || []).map(splitSubbab);
+    return `<li><a href="${toPath(c)}"><strong>${escapeHtml(c.title)}</strong></a>${c.trackLabel ? ` (${escapeHtml(c.trackLabel)})` : ''}
+      <ul>${subs.map((sb, i) => `<li><a href="${toPath(c)}#materi-${i + 1}">${rich(sb.title)}</a></li>`).join('')}</ul></li>`;
+  }).join('\n')}</ol>`;
 }
 
 const siblingLinks = (items, currentId, toPath) => `<nav class="seo-chapters"><h2>Bab Lainnya</h2><ul>${items
@@ -187,12 +213,14 @@ const addToSitemap = (p, priority) => sitemap.push({ loc: `${SITE_URL}${p === '/
 // ---------------------------------------------------------------------------
 {
   const gradeList = GRADES.map((g) => `<li><a href="${gradePath(g.grade)}"><strong>Matematika Kelas ${g.grade} ${levelLabel(g.grade)}</strong></a> — ${g.chapters.map((c) => `<a href="${chapterPath(g.grade, c.id)}">${escapeHtml(c.title)}</a>`).join(', ')}</li>`).join('\n');
+  const ipaList = IPA.map((g) => `<li><a href="${gradePath(g.grade, 'ipa')}"><strong>IPA Kelas ${g.grade} ${levelLabel(g.grade)}</strong></a> — ${g.chapters.map((c) => `<a href="${chapterPath(g.grade, c.id)}">${escapeHtml(c.title)}</a>`).join(', ')}</li>`).join('\n');
   const amcList = AMC.map((d) => `<li><a href="${amcLevelPath(d.level)}"><strong>AMC ${d.level}</strong></a> — ${d.chapters.map((c) => `<a href="${amcChapterPath(d.level, c.id)}">${escapeHtml(c.title)}</a>`).join(', ')}</li>`).join('\n');
   const body = `
-    <h1>Belajar Matematika Kelas 4–12 dan Olimpiade AMC</h1>
+    <h1>Belajar Matematika Kelas 4–12, IPA SMP, dan Olimpiade AMC</h1>
     <p>${escapeHtml(HOME_META.description)}</p>
     <p>Disusun oleh <a href="/tentang">${escapeHtml(AUTHOR.name)}</a>, ${escapeHtml(AUTHOR.jobTitle)}.</p>
-    <section><h2>Kurikulum Merdeka</h2><ul>${gradeList}</ul></section>
+    <section><h2>Matematika Kurikulum Merdeka</h2><ul>${gradeList}</ul></section>
+    ${ipaList ? `<section><h2>IPA Kurikulum Merdeka</h2><ul>${ipaList}</ul></section>` : ''}
     <section><h2>Olimpiade Matematika AMC</h2><ul>${amcList}</ul></section>`;
   const ld = [{
     '@context': 'https://schema.org',
@@ -219,7 +247,7 @@ const addToSitemap = (p, priority) => sitemap.push({ loc: `${SITE_URL}${p === '/
     <h2>Pembuat</h2>
     <p>${escapeHtml(AUTHOR.name)} — ${escapeHtml(AUTHOR.jobTitle)}</p>
     <h2>Mulai Belajar</h2>
-    <ul>${GRADES.map((g) => `<li><a href="${gradePath(g.grade)}">Matematika Kelas ${g.grade}</a></li>`).join('')}${AMC.map((d) => `<li><a href="${amcLevelPath(d.level)}">Olimpiade AMC ${d.level}</a></li>`).join('')}</ul>`;
+    <ul>${GRADES.map((g) => `<li><a href="${gradePath(g.grade)}">Matematika Kelas ${g.grade}</a></li>`).join('')}${IPA.map((g) => `<li><a href="${gradePath(g.grade, 'ipa')}">IPA Kelas ${g.grade}</a></li>`).join('')}${AMC.map((d) => `<li><a href="${amcLevelPath(d.level)}">Olimpiade AMC ${d.level}</a></li>`).join('')}</ul>`;
   const ld = [{
     '@context': 'https://schema.org',
     '@type': 'ProfilePage',
@@ -232,42 +260,49 @@ const addToSitemap = (p, priority) => sitemap.push({ loc: `${SITE_URL}${p === '/
 }
 
 // ---------------------------------------------------------------------------
-// Kurikulum Merdeka
+// Kurikulum Merdeka: Matematika dan IPA
 // ---------------------------------------------------------------------------
-for (const g of GRADES) {
-  const lvl = levelLabel(g.grade);
-  const phase = PHASE[g.grade] || '';
-  const crumbsBase = [['Beranda', '/'], [`Matematika Kelas ${g.grade}`, gradePath(g.grade)]];
+function renderCurriculum(subject, grades) {
+  const name = SUBJECT_NAME[subject];
+  for (const g of grades) {
+    const lvl = levelLabel(g.grade);
+    const phase = g.phase || PHASE[g.grade] || '';
+    const crumbsBase = [['Beranda', '/'], [`${name} Kelas ${g.grade}`, gradePath(g.grade, subject)]];
 
-  const gMeta = gradeMeta(g.grade);
-  const gradeBody = `
-    ${breadcrumbHtml(crumbsBase)}
-    <h1>Matematika Kelas ${g.grade} ${lvl} Kurikulum Merdeka</h1>
-    <p>${escapeHtml(phase)} · ${g.chapters.length} bab · ${g.chapters.reduce((n, c) => n + (c.questions?.length || 0), 0)} latihan soal dengan pembahasan.</p>
-    <ul>${g.chapters.map((c) => `<li><a href="${chapterPath(g.grade, c.id)}">${escapeHtml(c.title)}</a>${c.trackLabel ? ` (${escapeHtml(c.trackLabel)})` : ''}</li>`).join('')}</ul>`;
-  writePage(gMeta.path, renderPage({ meta: gMeta, body: gradeBody, jsonLd: [breadcrumbLd(crumbsBase)] }));
-  addToSitemap(gMeta.path, '0.8');
+    const gMeta = gradeMeta(g.grade, subject);
+    const gradeBody = `
+      ${breadcrumbHtml(crumbsBase)}
+      <h1>${name} Kelas ${g.grade} ${lvl} Kurikulum Merdeka</h1>
+      <p>${escapeHtml(phase)} · ${g.chapters.length} bab · ${g.chapters.reduce((n, c) => n + (c.questions?.length || 0), 0)} latihan soal dengan pembahasan.</p>
+      <h2>Daftar Isi</h2>
+      ${gradeToc(g.chapters, (c) => chapterPath(g.grade, c.id))}`;
+    writePage(gMeta.path, renderPage({ meta: gMeta, body: gradeBody, jsonLd: [breadcrumbLd(crumbsBase)] }));
+    addToSitemap(gMeta.path, '0.8');
 
-  for (const ch of g.chapters) {
-    const meta = chapterMeta(g.grade, ch);
-    const crumbs = [...crumbsBase, [ch.title, meta.path]];
-    const note = getCp2025Note(ch.id);
-    const body = `
-      ${breadcrumbHtml(crumbs)}
-      <h1>${escapeHtml(ch.title)}</h1>
-      <p class="seo-subtitle">Matematika Kelas ${g.grade} ${lvl} · ${escapeHtml(phase)} · Kurikulum Merdeka${ch.trackLabel ? ` · ${escapeHtml(ch.trackLabel)}` : ''}</p>
-      ${note ? `<p class="cp2025-note"><strong>${escapeHtml(note.label)}.</strong> ${escapeHtml(note.note)}</p>` : ''}
-      ${chapterBody(ch)}
-      <section><h2>Latihan Soal (${ch.questions?.length || 0} soal)</h2>
-        <p>Kerjakan latihan interaktif di halaman ini untuk melihat nilai dan pembahasan setiap soal.</p>
-        ${questionList(ch.questions || [])}
-      </section>
-      ${siblingLinks(g.chapters, ch.id, (c) => chapterPath(g.grade, c.id))}`;
-    const ld = [learningResourceLd({ meta, educationalLevel: `Kelas ${g.grade} ${lvl} (${phase})` }), breadcrumbLd(crumbs)];
-    writePage(meta.path, renderPage({ meta, body, jsonLd: ld }));
-    addToSitemap(meta.path, '0.7');
+    for (const ch of g.chapters) {
+      const meta = chapterMeta(g.grade, ch);
+      const crumbs = [...crumbsBase, [ch.title, meta.path]];
+      const note = getCp2025Note(ch.id);
+      const body = `
+        ${breadcrumbHtml(crumbs)}
+        <h1>${escapeHtml(ch.title)}</h1>
+        <p class="seo-subtitle">${name} Kelas ${g.grade} ${lvl} · ${escapeHtml(phase)} · Kurikulum Merdeka${ch.trackLabel ? ` · ${escapeHtml(ch.trackLabel)}` : ''}</p>
+        ${note ? `<p class="cp2025-note"><strong>${escapeHtml(note.label)}.</strong> ${escapeHtml(note.note)}</p>` : ''}
+        ${chapterBody(ch)}
+        <section id="latihan-soal"><h2>Latihan Soal (${ch.questions?.length || 0} soal)</h2>
+          <p>Kerjakan latihan interaktif di halaman ini untuk melihat nilai dan pembahasan setiap soal.</p>
+          ${questionList(ch.questions || [])}
+        </section>
+        ${siblingLinks(g.chapters, ch.id, (c) => chapterPath(g.grade, c.id))}`;
+      const ld = [learningResourceLd({ meta, educationalLevel: `Kelas ${g.grade} ${lvl} (${phase})`, subject: name }), breadcrumbLd(crumbs)];
+      writePage(meta.path, renderPage({ meta, body, jsonLd: ld }));
+      addToSitemap(meta.path, '0.7');
+    }
   }
 }
+
+renderCurriculum('matematika', GRADES);
+renderCurriculum('ipa', IPA);
 
 // ---------------------------------------------------------------------------
 // Olimpiade AMC
@@ -292,7 +327,7 @@ for (const d of AMC) {
       <h1>${escapeHtml(ch.title)}</h1>
       <p class="seo-subtitle">Olimpiade AMC ${d.level}${ch.domain ? ` · ${escapeHtml(ch.domain)}` : ''}</p>
       ${chapterBody(ch)}
-      <section><h2>Soal Latihan Kompetisi (${ch.questions?.length || 0} soal)</h2>${questionList(ch.questions || [])}</section>
+      <section id="latihan-soal"><h2>Soal Latihan Kompetisi (${ch.questions?.length || 0} soal)</h2>${questionList(ch.questions || [])}</section>
       ${siblingLinks(d.chapters, ch.id, (c) => amcChapterPath(d.level, c.id))}`;
     const ld = [learningResourceLd({ meta, educationalLevel: `Olimpiade AMC ${d.level}` }), breadcrumbLd(crumbs)];
     writePage(meta.path, renderPage({ meta, body, jsonLd: ld }));

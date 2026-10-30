@@ -59,12 +59,18 @@ describe('Laporan soal salah', () => {
 describe('Cari materi di semua kelas', () => {
   it('menemukan bab dari judul di beberapa kelas', () => {
     const labels = searchChapters('pecahan').map((r) => r.label);
-    expect(labels).toEqual(expect.arrayContaining(['Kelas 4 SD', 'Kelas 5 SD', 'Kelas 6 SD']));
+    expect(labels).toEqual(expect.arrayContaining(['Matematika 4', 'Matematika 5', 'Matematika 6']));
   });
 
   it('kata "kelas N" mempersempit hasil', () => {
     const results = searchChapters('kelas 5 pecahan');
-    expect(results[0]).toMatchObject({ label: 'Kelas 5 SD', path: '/matematika/kelas-5/bab3-bilangan-pecahan' });
+    expect(results[0]).toMatchObject({ label: 'Matematika 5', path: '/matematika/kelas-5/bab3-bilangan-pecahan' });
+  });
+
+  it('mencakup bab IPA dengan alamat /ipa', () => {
+    const top = searchChapters('ipa kalor')[0];
+    expect(top).toMatchObject({ label: 'IPA 7', path: '/ipa/kelas-7/bab3-suhu-kalor-pemuaian' });
+    expect(searchChapters('fotosintesis').length + searchChapters('gerak').length).toBeGreaterThan(0);
   });
 
   it('mencakup bab AMC dengan alamat olimpiade', () => {
