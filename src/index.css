@@ -2069,3 +2069,238 @@ img, svg {
   color: var(--primary-blue);
   font-weight: 600;
 }
+
+/* ---------- Laporkan soal salah ---------- */
+.question-card { scroll-margin-top: 5rem; }
+.question-card.is-linked { box-shadow: 0 0 0 3px var(--primary-subtle); }
+
+.question-card-foot {
+  display: flex;
+  justify-content: flex-end;
+  margin-top: 0.85rem;
+}
+
+.report-trigger {
+  padding: 0.2rem 0.55rem;
+  font-size: 0.75rem;
+  color: var(--text-muted);
+}
+
+.report-done {
+  font-size: 0.75rem;
+  color: var(--status-emerald);
+  align-self: center;
+}
+
+.report-form {
+  flex-basis: 100%;
+  width: 100%;
+  display: flex;
+  flex-direction: column;
+  gap: 0.6rem;
+  padding: 0.85rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-sm);
+  background: var(--bg-surface-subtle);
+  font-size: 0.85rem;
+  text-align: left;
+}
+
+.report-form-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+}
+
+.report-close { padding: 0.2rem; }
+
+.report-options {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 0.4rem;
+}
+
+.report-option {
+  display: inline-flex;
+  align-items: center;
+  gap: 0.35rem;
+  padding: 0.3rem 0.6rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  cursor: pointer;
+  font-size: 0.8rem;
+}
+
+.report-option input { margin: 0; }
+
+.report-option.is-active {
+  border-color: var(--primary-blue);
+  background: var(--primary-light);
+  color: var(--primary-navy);
+  font-weight: 600;
+}
+
+.report-form textarea {
+  width: 100%;
+  box-sizing: border-box;
+  padding: 0.5rem 0.6rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-xs);
+  font: inherit;
+  resize: vertical;
+}
+
+.report-actions {
+  display: flex;
+  align-items: center;
+  gap: 0.75rem;
+  flex-wrap: wrap;
+}
+
+.report-privacy { font-size: 0.75rem; color: var(--text-muted); }
+.report-error { margin: 0; color: var(--status-brick); font-size: 0.8rem; }
+
+/* Studio Guru: antrean laporan */
+.studio-report-btn { margin-top: 0.75rem; width: 100%; }
+.studio-report-btn .studio-student-name { display: inline-flex; align-items: center; gap: 0.35rem; }
+
+.studio-report-list {
+  list-style: none;
+  margin: 1rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.75rem;
+}
+
+.studio-report-item {
+  border: 1px solid var(--border-subtle);
+  border-radius: var(--radius-sm);
+  padding: 0.75rem 0.85rem;
+}
+
+.studio-report-head {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  gap: 0.5rem;
+  flex-wrap: wrap;
+  overflow-wrap: anywhere;
+}
+
+.studio-report-entries {
+  list-style: none;
+  margin: 0.6rem 0 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: 0.4rem;
+  font-size: 0.83rem;
+}
+
+.studio-report-entries li {
+  display: flex;
+  flex-wrap: wrap;
+  align-items: baseline;
+  gap: 0.4rem;
+}
+
+.studio-pill-soft {
+  padding: 0.05rem 0.5rem;
+  border-radius: var(--radius-full);
+  background: var(--status-brick-light);
+  border: 1px solid var(--status-brick-border);
+  color: var(--status-brick);
+  font-size: 0.75rem;
+  font-weight: 600;
+}
+
+.studio-report-note { color: var(--text-primary); }
+
+/* ---------- Cari materi (semua kelas) ---------- */
+.site-search {
+  position: relative;
+  max-width: 640px;
+  margin: 0 auto 1.25rem;
+}
+
+.site-search-box {
+  display: flex;
+  align-items: center;
+  gap: 0.5rem;
+  padding: 0.6rem 0.85rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-full);
+  background: var(--bg-surface);
+  color: var(--text-muted);
+  box-shadow: var(--shadow-subtle);
+}
+
+.site-search-box:focus-within { border-color: var(--border-focus); }
+
+.site-search-box input {
+  flex: 1;
+  min-width: 0;
+  border: none;
+  outline: none;
+  background: transparent;
+  font: inherit;
+  font-size: 0.9rem;
+  color: var(--text-primary);
+}
+
+.site-search-box input::-webkit-search-cancel-button { display: none; }
+
+.site-search-clear {
+  border: none;
+  background: none;
+  cursor: pointer;
+  color: var(--text-muted);
+  display: inline-flex;
+  padding: 0.1rem;
+}
+
+.site-search-results {
+  list-style: none;
+  margin: 0.4rem 0 0;
+  padding: 0.35rem;
+  border: 1px solid var(--border-medium);
+  border-radius: var(--radius-md);
+  background: var(--bg-surface);
+  box-shadow: var(--shadow-elevated);
+  position: absolute;
+  left: 0;
+  right: 0;
+  z-index: 30;
+}
+
+.site-search-results a {
+  display: flex;
+  align-items: baseline;
+  gap: 0.6rem;
+  padding: 0.5rem 0.6rem;
+  border-radius: var(--radius-sm);
+  color: var(--text-primary);
+  text-decoration: none;
+  font-size: 0.88rem;
+}
+
+.site-search-results a:hover,
+.site-search-results a:focus { background: var(--primary-light); }
+
+.site-search-label {
+  flex-shrink: 0;
+  min-width: 5.5rem;
+  font-size: 0.75rem;
+  font-weight: 700;
+  color: var(--primary-blue);
+}
+
+.site-search-empty {
+  margin: 0.4rem 0 0;
+  text-align: center;
+  font-size: 0.82rem;
+  color: var(--text-muted);
+}

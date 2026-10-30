@@ -5,6 +5,7 @@ import {
   setDoc,
   updateDoc,
   deleteDoc,
+  addDoc,
   query,
   where,
   onSnapshot
@@ -140,4 +141,30 @@ export async function submitQuestAnswersCloud(questId, { score, answers }) {
 export async function deleteQuestCloud(questId) {
   if (!questId) return;
   await deleteDoc(doc(requireDb(), "quests", questId));
+}
+
+// ---------------------------------------------------------------------------
+// 3. LAPORAN SOAL — reports/{reportId}
+// Siapa pun boleh mengirim laporan (tanpa login); hanya guru yang login yang bisa membaca.
+// ---------------------------------------------------------------------------
+
+/** payload dari buildReportPayload (src/utils/reports.js). */
+export async function createReportCloud(payload) {
+  if (!payload) throw new Error("Data laporan tidak lengkap");
+  await addDoc(collection(requireDb(), "reports"), payload);
+}
+
+export function subscribeReports(onData, onError) {
+  if (!db) return () => {};
+  return onSnapshot(collection(db, "reports"), (snapshot) => {
+    onData(snapshot.docs.map((d) => ({ id: d.id, ...d.data() })));
+  }, (err) => {
+    console.error("Firestore subscribeReports error:", err);
+    if (onError) onError(err);
+  });
+}
+
+export async function deleteReportCloud(reportId) {
+  if (!reportId) return;
+  await deleteDoc(doc(requireDb(), "reports", reportId));
 }

@@ -75,12 +75,18 @@ Catatan akses: PDF buku disimpan di domain `static.buku.kemdikbud.go.id` (domain
 - `vercel.json`: alamat rapi di-rewrite eksplisit ke file `.html` hasil prerender, dan rute lain ke `/app.html`. `cleanUrls` tidak dipakai, karena fitur itu mengalihkan file verifikasi Google `googlebd291c9eb4b652d2.html`. Hal ini dijaga oleh `tests/deployConfig.test.js`.
 - Perlu dilakukan pemilik situs: daftarkan `https://awesomemathj.vercel.app` di Google Search Console, lalu kirim `sitemap.xml`.
 
-### Tahap 1 — Fondasi multi-mata pelajaran
-- Struktur data baru: `src/content/<subject>/<curriculum>/<grade>/<chapter>.json`, satu file per bab supaya mudah dibaca dan diedit guru tanpa coding.
-- Skema soal ditambah label `subject`, `curriculum`, `phase`, `cpElement`, dan `source`.
-- Rute publik: `/matematika/merdeka/kelas-4/bab-2`, `/ipa/cambridge/stage-7/...`, dan seterusnya, dengan pencarian materi dan link per soal.
-- Tombol **"Laporkan soal salah"** di setiap soal, masuk ke antrean tinjauan di Studio Guru.
-- Studio Guru: tambah pilihan mata pelajaran IPA dan jalur Cambridge saat membuat PR.
+### Tahap 1 — Fondasi multi-mata pelajaran (berjalan)
+Sudah selesai (Oktober 2026):
+- ✅ Tombol **"Laporkan soal"** di setiap soal buku saku, AMC, dan PR murid. Pelapor memilih jenis masalah (gambar tidak sesuai, kunci salah, bukan materi kelas ini, soal tidak jelas, lainnya) dan bisa menulis catatan; nama dan email tidak disimpan. Laporan masuk ke `reports/{id}` di Firestore dan tampil di Studio Guru → **Laporan soal**, dikelompokkan per soal, dengan link langsung ke soal dan tombol **Selesai**.
+- ✅ **Link per soal**: `/matematika/kelas-4/bab2-pecahan#soal-sd4-b2-3` langsung menggulir ke soal itu (juga di HTML prerender).
+- ✅ **Cari materi di semua kelas** di beranda (Kelas 4–12 dan AMC), misalnya "pecahan", "kelas 5 pecahan", "pythagoras".
+- ✅ Alamat publik sudah memuat mata pelajaran (`/matematika/...`), jadi IPA cukup ditambah sebagai `/ipa/...` tanpa mengubah link lama.
+
+Berikutnya:
+- Skema soal ditambah label `subject`, `curriculum`, `phase`, `cpElement`, dan `source` (fase sudah ada per kelas di `chapterIndex.js`).
+- Data per bab (`src/content/<subject>/<curriculum>/<grade>/<chapter>.json`) agar guru bisa mengedit satu bab tanpa coding. Ditunda sampai IPA mulai ditulis: file kelas sekarang sudah berupa JSON murni yang aman diedit lewat `pipeline/migrations/lib.mjs`.
+- Studio Guru: pilihan mata pelajaran IPA dan jalur Cambridge saat membuat PR.
+- **Perlu dilakukan pemilik:** deploy ulang aturan Firestore (`docs/prompts/DEPLOY_FIREBASE_RULES.md`). Sebelum itu, tombol laporan menampilkan "gagal terkirim".
 
 ### Tahap 2 — Matematika Kurikulum Merdeka edisi revisi
 - Selaraskan ulang **Kelas X** dan **Matematika Tingkat Lanjut XI** dengan edisi revisi.

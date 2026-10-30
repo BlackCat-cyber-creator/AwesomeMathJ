@@ -1,18 +1,21 @@
 import React, { useEffect, useMemo, useState } from 'react';
-import { UserPlus, Pencil, Trash2, Search } from 'lucide-react';
+import { UserPlus, Pencil, Trash2, Search, Flag } from 'lucide-react';
 import {
   subscribeStudents,
   saveStudentCloud,
   deleteStudentCloud,
   subscribeQuests,
   createQuestCloud,
-  deleteQuestCloud
+  deleteQuestCloud,
+  subscribeReports,
+  deleteReportCloud
 } from '../firebase/firestore';
 import { formatIndonesianDate } from '../utils/storage';
 import { buildWhatsAppMessage, normalizePhone, trackLabel } from '../utils/questBuilder';
 import { StudentForm } from './teacher/StudentForm';
 import { AssignHomework } from './teacher/AssignHomework';
 import { HomeworkList } from './teacher/HomeworkList';
+import { ReportList } from './teacher/ReportList';
 
 function pendingCount(quests, studentId) {
   return quests.filter((q) => q.studentId === studentId && q.status !== 'completed').length;
@@ -34,6 +37,8 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, currentTeacher }
   const [selectedId, setSelectedId] = useState(null);
   const [formMode, setFormMode] = useState(null); // null | 'add' | 'edit'
   const [search, setSearch] = useState('');
+  const [reports, setReports] = useState([]);
+  const [view, setView] = useState('students'); // 'students' | 'reports'
 
   useEffect(() => {
     if (!teacherId) return undefined;
@@ -44,9 +49,12 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, currentTeacher }
       setConnectionError('');
     }, onError);
     const unsubQuests = subscribeQuests(teacherId, setQuests, onError);
+    // Laporan soal bersifat opsional: bila aturan Firestore belum di-deploy, abaikan saja
+    const unsubReports = subscribeReports(setReports, () => setReports([]));
     return () => {
       unsubStudents();
       unsubQuests();
+      unsubReports();
     };
   }, [teacherId]);
 
@@ -102,6 +110,9 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, currentTeacher }
 
   const handleCopyMessage = (quest) => navigator.clipboard.writeText(messageFor(quest));
 
+  const handleResolveReports = (ids) => Promise.all(ids.map((id) => deleteReportCloud(id)));
+  const reportedQuestionCount = new Set(reports.map((r) => r.questionId)).size;
+
   if (!teacherId) return null;
 
   return (
@@ -113,7 +124,7 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, currentTeacher }
         <aside className="editorial-card studio-sidebar">
           <div className="studio-sidebar-head">
             <h2 className="studio-heading">Murid ({students.length})</h2>
-            <button className="btn btn-royal" onClick={() => setFormMode('add')}>
+            <button className="btn btn-royal" onClick={() => { setFormMode('add'); setView('students'); }}>
               <UserPlus size={15} /> Tambah
             </button>
           </div>
@@ -136,8 +147,8 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, currentTeacher }
                 return (
                   <li key={s.id}>
                     <button
-                      className={`studio-student-btn ${selected?.id === s.id ? 'is-active' : ''}`}
-                      onClick={() => { setSelectedId(s.id); setFormMode(null); }}
+                      className={`studio-student-btn ${view === 'students' && selected?.id === s.id ? 'is-active' : ''}`}
+                      onClick={() => { setSelectedId(s.id); setFormMode(null); setView('students'); }}
                     >
                       <span className="studio-student-name">{s.name}</span>
                       <span className="studio-muted">
@@ -150,18 +161,29 @@ export function TeacherDashboard({ onLaunchQuest, onPrintQuest, currentTeacher }
               })}
             </ul>
           )}
+
+          <button
+            className={`studio-student-btn studio-report-btn ${view === 'reports' ? 'is-active' : ''}`}
+            onClick={() => setView('reports')}
+          >
+            <span className="studio-student-name"><Flag size={14} /> Laporan soal</span>
+            <span className="studio-muted">Soal yang dilaporkan salah</span>
+            {reportedQuestionCount > 0 && <span className="studio-pill">{reportedQuestionCount}</span>}
+          </button>
         </aside>
 
         {/* ---------- Panel murid ---------- */}
         <div className="studio-main">
-          {formMode === 'add' && (
+          {view === 'reports' && <ReportList reports={reports} onResolve={handleResolveReports} />}
+
+          {view === 'students' && formMode === 'add' && (
             <StudentForm onSave={handleSaveStudent} onCancel={() => setFormMode(null)} />
           )}
-          {formMode === 'edit' && selected && (
+          {view === 'students' && formMode === 'edit' && selected && (
             <StudentForm key={selected.id} student={selected} onSave={handleSaveStudent} onCancel={() => setFormMode(null)} />
           )}
 
-          {!formMode && selected && (
+          {view === 'students' && !formMode && selected && (
             <>
               <section className="editorial-card studio-card">
                 <div className="studio-profile-head">

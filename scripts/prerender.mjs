@@ -19,6 +19,7 @@ import path from 'path';
 import katex from 'katex';
 import { GRADE_METADATA } from '../src/data/chapterIndex.js';
 import { AMC_LEVELS_METADATA } from '../src/data/amc/amcMetadata.js';
+import { questionAnchor } from '../src/utils/reports.js';
 import { grade4Data } from '../src/data/grades/grade4.js';
 import { grade5Data } from '../src/data/grades/grade5.js';
 import { grade6Data } from '../src/data/grades/grade6.js';
@@ -155,7 +156,7 @@ function questionList(questions) {
     const options = (q.options || []).length
       ? `<ul class="seo-options">${q.options.map((o) => `<li><strong>${escapeHtml(o.key)}.</strong> ${rich(o.text)}</li>`).join('')}</ul>`
       : '';
-    return `<li><div>${rich(q.question)}</div>${options}</li>`;
+    return `<li id="${questionAnchor(q.id)}"><div>${rich(q.question)}</div>${options}</li>`;
   }).join('\n')}</ol>`;
 }
 

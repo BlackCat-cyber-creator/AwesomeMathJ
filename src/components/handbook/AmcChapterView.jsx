@@ -14,6 +14,9 @@ import { QuestionVisual } from '../QuestionVisual';
 import { PillarsAccordion } from './PillarsAccordion';
 import { evaluateAmcAnswer } from '../../utils/answerCheck';
 import { amcChapterPath } from '../../utils/seoRoutes';
+import { ReportQuestion } from '../ReportQuestion';
+import { questionAnchor } from '../../utils/reports';
+import { useQuestionHash } from '../../hooks/useQuestionHash';
 
 /**
  * AmcChapterView:
@@ -30,6 +33,7 @@ export function AmcChapterView({
   const [revealedHints, setRevealedHints] = useState({});
   const [revealedSolutions, setRevealedSolutions] = useState({});
   const [studentNotes, setStudentNotes] = useState({});
+  useQuestionHash(chapter?.questions?.length || 0);
 
   if (!chapter) return null;
 
@@ -194,6 +198,7 @@ export function AmcChapterView({
             return (
               <div 
                 key={q.id || idx} 
+                id={questionAnchor(q.id)}
                 className="editorial-card question-card" 
                 style={{ 
                   padding: '1.5rem',
@@ -382,6 +387,16 @@ export function AmcChapterView({
                     </div>
                   </div>
                 )}
+
+                <div className="question-card-foot">
+                  <ReportQuestion
+                    questionId={q.id}
+                    chapterId={chapter.id}
+                    context="amc"
+                    path={`${amcChapterPath(levelMeta?.level || 8, chapter.id)}#${questionAnchor(q.id)}`}
+                    questionNumber={idx + 1}
+                  />
+                </div>
               </div>
             );
           })}

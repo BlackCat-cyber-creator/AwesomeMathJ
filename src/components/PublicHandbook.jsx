@@ -11,6 +11,7 @@ import {
 import { PillarsAccordion } from './handbook/PillarsAccordion';
 import { ChapterQuiz } from './handbook/ChapterQuiz';
 import { AmcChapterView } from './handbook/AmcChapterView';
+import { SiteSearch } from './SiteSearch';
 import { 
   BookOpen, 
   Search, 
@@ -343,6 +344,8 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
             : "Akses bebas rangkuman konsep, rumus penting, miskonsepsi umum, dan latihan diagnostik interaktif untuk seluruh jenjang SD, SMP, hingga SMA."}
         </p>
       </div>
+
+      <SiteSearch />
 
       {/* Mode Selector Segmented Controls (Kurikulum Merdeka vs Olimpiade AMC) */}
       <div className="handbook-mode-selector" style={{ display: 'flex', justifyContent: 'center', marginBottom: '1.25rem' }}>

@@ -11,6 +11,10 @@ import {
 import { MathText } from '../MathRenderer';
 import { QuestionVisual } from '../QuestionVisual';
 import { saveChapterResult } from '../../utils/progress';
+import { ReportQuestion } from '../ReportQuestion';
+import { questionAnchor } from '../../utils/reports';
+import { chapterPath } from '../../utils/seoRoutes';
+import { useQuestionHash } from '../../hooks/useQuestionHash';
 
 export function ChapterQuiz({
   questions = [],
@@ -56,6 +60,8 @@ export function ChapterQuiz({
       [qId]: !prev[qId]
     }));
   };
+
+  useQuestionHash(questions.length);
 
   // Filtered questions based on packet
   const filteredQuestions = useMemo(() => {
@@ -209,7 +215,7 @@ export function ChapterQuiz({
             const isSolOpen = revealedSolutions[q.id];
 
             return (
-              <div key={q.id} className="editorial-card question-card" style={{ padding: '1.5rem' }}>
+              <div key={q.id} id={questionAnchor(q.id)} className="editorial-card question-card" style={{ padding: '1.5rem' }}>
                 {/* Top Question Info */}
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: '0.75rem', flexWrap: 'wrap', gap: '0.5rem' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: '0.5rem' }}>
@@ -306,6 +312,16 @@ export function ChapterQuiz({
                     </div>
                   </div>
                 )}
+
+                <div className="question-card-foot">
+                  <ReportQuestion
+                    questionId={q.id}
+                    chapterId={chapterId}
+                    context="handbook"
+                    path={`${chapterPath(grade, chapterId)}#${questionAnchor(q.id)}`}
+                    questionNumber={qNum}
+                  />
+                </div>
               </div>
             );
           })

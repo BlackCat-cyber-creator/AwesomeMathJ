@@ -8,9 +8,33 @@ import { getQuestById, formatIndonesianDate, getDraftResponses, saveDraftRespons
 import { getQuestByIdCloud, markQuestInProgressCloud, submitQuestAnswersCloud } from '../firebase/firestore';
 import { getQuestionKind, scoreResponses, readAnswers, correctValue } from '../utils/answerCheck';
 import { AnswerText } from './AnswerText';
+import { ReportQuestion } from './ReportQuestion';
+import { questionAnchor } from '../utils/reports';
+import { chapterPath, amcChapterPath } from '../utils/seoRoutes';
 
 function isFilled(value) {
   return value !== undefined && value !== null && String(value).trim() !== '';
+}
+
+/** Alamat soal di buku saku publik, untuk laporan soal salah. */
+function publicQuestionPath(quest, question) {
+  if (!quest.chapterId) return '';
+  const base = quest.source === 'amc' ? amcChapterPath(quest.grade, quest.chapterId) : chapterPath(quest.grade, quest.chapterId);
+  return `${base}#${questionAnchor(question.id)}`;
+}
+
+function QuestReport({ quest, question, index }) {
+  if (!question?.id) return null;
+  return (
+    <ReportQuestion
+      key={question.id}
+      questionId={question.id}
+      chapterId={quest.chapterId}
+      context="quest"
+      path={publicQuestionPath(quest, question)}
+      questionNumber={index + 1}
+    />
+  );
 }
 
 /** Satu soal: pilihan ganda, isian singkat, atau uraian. */
@@ -109,6 +133,9 @@ function QuestResults({ quest, rows, score, correct, gradable, onBack, isPreview
                   )}
                 </>
               )}
+              <div className="question-card-foot">
+                <QuestReport quest={quest} question={q} index={i} />
+              </div>
             </li>
           );
         })}
@@ -288,6 +315,7 @@ export function StudentQuestView({ questId: propQuestId = null, onBackToDashboar
           <button className="btn btn-subtle" onClick={() => setIsScratchpadOpen(true)}>
             <Edit3 size={14} /> Papan coret
           </button>
+          <QuestReport quest={quest} question={question} index={currentIndex} />
         </div>
         {showHint && <div className="quest-hint"><MathText text={question.hint} /></div>}
       </article>

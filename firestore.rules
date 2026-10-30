@@ -35,5 +35,22 @@ service cloud.firestore {
       allow update: if (isAuthenticated() && resource.data.teacherId == request.auth.uid) ||
         request.resource.data.diff(resource.data).affectedKeys().hasOnly(['status', 'lastScore', 'submittedAt', 'answers']);
     }
+
+    // 3. Laporan soal salah dari pengunjung (tanpa login, tanpa data pribadi).
+    // Bentuk data dibatasi ketat; hanya guru yang login yang bisa membaca dan menghapus.
+    match /reports/{reportId} {
+      allow create: if request.resource.data.keys().hasOnly(['questionId', 'chapterId', 'context', 'category', 'note', 'path', 'questionNumber', 'status', 'createdAt'])
+        && request.resource.data.keys().hasAll(['questionId', 'category', 'status', 'createdAt'])
+        && request.resource.data.questionId is string && request.resource.data.questionId.size() > 0 && request.resource.data.questionId.size() <= 120
+        && request.resource.data.get('chapterId', '') is string && request.resource.data.get('chapterId', '').size() <= 120
+        && request.resource.data.get('context', 'handbook') in ['handbook', 'amc', 'quest']
+        && request.resource.data.category in ['gambar', 'kunci', 'kelas', 'soal', 'lainnya']
+        && request.resource.data.get('note', '') is string && request.resource.data.get('note', '').size() <= 500
+        && request.resource.data.get('path', '') is string && request.resource.data.get('path', '').size() <= 300
+        && request.resource.data.get('questionNumber', 0) is int
+        && request.resource.data.status == 'open'
+        && request.resource.data.createdAt is string && request.resource.data.createdAt.size() <= 40;
+      allow read, delete: if isAuthenticated();
+    }
   }
 }

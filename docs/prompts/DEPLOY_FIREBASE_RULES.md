@@ -20,6 +20,10 @@ KONTEKS
      tetapi DAFTAR PR (list/query) hanya untuk guru pemiliknya; murid tanpa login hanya
      boleh mengubah field status, lastScore, submittedAt, answers.
   3) Koleksi lama "submissions" tidak dipakai lagi (tidak ada aturan = tertutup).
+  4) Laporan soal salah (reports/{reportId}): siapa pun boleh MEMBUAT laporan tanpa login,
+     tetapi hanya dengan field yang diizinkan (questionId, chapterId, context, category,
+     note ≤ 500 huruf, path, questionNumber, status = "open", createdAt).
+     Membaca dan menghapus laporan hanya untuk pengguna yang login (guru).
 
 LANGKAH
 1. Pastikan berada di root repo: tampilkan `git log --oneline -1` dan `cat firebase.json`.
@@ -41,6 +45,10 @@ LANGKAH
    b. Simulasi `list` pada /quests TANPA autentikasi → harus Denied.
    c. Simulasi `get` pada /teachers/uid-guru/students/s1 dengan Authenticated UID "uid-lain"
       → harus Denied.
+   d. Simulasi `create` pada /reports/r1 TANPA autentikasi dengan data
+      {"questionId":"sd4-b2-3","category":"gambar","status":"open","createdAt":"2026-10-30T00:00:00Z"}
+      → harus Allowed.
+   e. Simulasi `list` pada /reports TANPA autentikasi → harus Denied.
    Jika kamu tidak bisa membuka console, beri saya petunjuk klik demi klik untuk mengecek sendiri.
 
 PEMERIKSAAN TAMBAHAN DI FIREBASE CONSOLE (tunjukkan caranya, jangan ubah tanpa persetujuan saya)
@@ -54,7 +62,7 @@ PEMERIKSAAN TAMBAHAN DI FIREBASE CONSOLE (tunjukkan caranya, jangan ubah tanpa p
     Google murid bisa dihapus jika saya setuju. Jangan menghapus akun guru (yang memakai email/password).
 
 LAPORAN AKHIR
-Tulis ringkasan singkat: perintah yang berhasil, hasil 3 simulasi Rules Playground,
+Tulis ringkasan singkat: perintah yang berhasil, hasil 5 simulasi Rules Playground,
 status authorized domain, dan hal yang menunggu keputusan saya.
 ```
 
@@ -64,4 +72,6 @@ status authorized domain, dan hal yang menunggu keputusan saya.
 
 Aplikasi sudah memakai aturan baru (`firestore.rules` di repo), tetapi aturan Firestore **tidak ikut ter-deploy oleh Vercel**. Aturan hanya berubah setelah perintah `firebase deploy --only firestore:rules` dijalankan dengan akun Google pemilik proyek Firebase.
 
-Selama belum di-deploy, aturan lama masih berlaku. Akibatnya, siapa pun bisa mengambil **daftar semua PR beserta nama murid**, dan siapa pun bisa mengubah XP murid tanpa login.
+Selama belum di-deploy, aturan lama masih berlaku. Akibatnya, siapa pun bisa mengambil **daftar semua PR beserta nama murid**, dan siapa pun bisa mengubah XP murid tanpa login. Selain itu, tombol **"Laporkan soal"** belum bisa mengirim laporan, karena koleksi `reports` belum diizinkan.
+
+Aturan ini sudah diuji dengan Firestore Emulator: 13 skenario lolos, termasuk laporan dengan field tambahan, kategori asing, catatan lebih dari 500 huruf, serta daftar laporan dan PR tanpa login, yang semuanya ditolak.
