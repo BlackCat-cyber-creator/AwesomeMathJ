@@ -21,10 +21,10 @@ export default bab({
   grade: 7,
   number: 6,
   slug: 'ekologi-keanekaragaman-hayati',
-  title: 'Ekologi dan Keanekaragaman Hayati Indonesia',
+  title: 'Ekologi dan Pelestarian Lingkungan',
   element: 'Makhluk hidup dan lingkungannya: interaksi dan upaya mengatasi perubahan iklim',
   summary: {
-    overview: 'Makhluk hidup tidak dapat hidup sendiri; ia berinteraksi dengan makhluk hidup lain dan lingkungan tak hidupnya. Bab ini membahas komponen ekosistem, aliran energi melalui rantai dan jaring makanan, pola interaksi, keanekaragaman hayati Indonesia, serta upaya pelestariannya di tengah perubahan iklim.',
+    overview: 'Makhluk hidup tidak dapat hidup sendiri; ia berinteraksi dengan makhluk hidup lain dan lingkungan tak hidupnya. Bab ini membahas pengaruh lingkungan terhadap organisme, interaksi antarkomponen ekosistem (rantai dan jaring makanan, pola interaksi), keanekaragaman hayati Indonesia, serta pengaruh manusia terhadap ekosistem dan upaya pelestariannya di tengah perubahan iklim.',
     coreConcepts: [
       'Komponen dan Tingkatan Organisasi Ekosistem: Ekosistem terdiri atas komponen biotik (makhluk hidup) dan abiotik (air, tanah, udara, cahaya, suhu). Tingkatan organisasi: individu (satu makhluk hidup) → populasi (sekelompok individu sejenis di satu tempat) → komunitas (beberapa populasi berbeda) → ekosistem (komunitas + lingkungan abiotiknya) → bioma → biosfer.',
       'Peran Makhluk Hidup dalam Ekosistem: Produsen (tumbuhan hijau) membuat makanan sendiri melalui fotosintesis. Konsumen memakan makhluk hidup lain: konsumen I (herbivor) memakan produsen, konsumen II memakan konsumen I, dan seterusnya. Dekomposer (bakteri, jamur) menguraikan sisa makhluk hidup menjadi zat hara.',

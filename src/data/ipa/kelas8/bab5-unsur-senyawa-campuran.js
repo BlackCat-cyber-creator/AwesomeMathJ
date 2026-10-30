@@ -5,21 +5,21 @@ export default bab({
   number: 5,
   slug: 'unsur-senyawa-campuran',
   title: 'Unsur, Senyawa, dan Campuran',
-  element: 'Zat dan sifatnya: klasifikasi materi',
+  element: 'Zat dan sifatnya: klasifikasi materi (unsur, senyawa, campuran)',
   summary: {
-    overview: 'Air, garam, udara, dan sirup adalah materi yang tersusun dengan cara berbeda. Bab ini membahas pengelompokan materi menjadi unsur, senyawa, dan campuran, cara membaca rumus kimia, jenis-jenis campuran, teknik pemisahan campuran, serta sifat asam, basa, dan garam beserta indikatornya.',
+    overview: 'Air, garam, udara, dan sirup adalah materi yang tersusun dengan cara berbeda. Bab ini membahas pengelompokan materi menjadi unsur, senyawa, dan campuran: unsur logam–nonlogam–metaloid, atom dan tabel periodik, molekul dan rumus kimia, jenis-jenis campuran, serta teknik pemisahan campuran. Asam dan basa dibahas di IPA Kelas 9 Bab 5.',
     coreConcepts: [
       'Unsur: Unsur adalah zat tunggal yang tidak dapat diuraikan lagi menjadi zat lain dengan reaksi kimia biasa. Unsur dikelompokkan menjadi logam (mengilap, menghantarkan listrik dan panas, contoh besi Fe, tembaga Cu, emas Au), nonlogam (contoh oksigen O, karbon C, belerang S), dan metaloid (sifat di antara keduanya, contoh silikon Si). Lambang unsur ditulis dengan satu huruf kapital atau huruf kapital diikuti huruf kecil, misalnya Na (natrium) dan Cl (klorin).',
+      'Atom dan Tabel Periodik: Unsur tersusun atas partikel sangat kecil yang disebut atom. Atom terdiri atas inti atom (berisi proton yang bermuatan positif dan neutron yang tidak bermuatan) yang dikelilingi elektron bermuatan negatif. Jumlah proton (nomor atom) menentukan jenis unsur. Unsur disusun dalam tabel periodik berdasarkan kenaikan nomor atom: baris mendatar disebut periode dan kolom tegak disebut golongan; unsur dalam satu golongan memiliki sifat kimia yang mirip. Logam berada di bagian kiri dan tengah, nonlogam di kanan atas, dan metaloid di perbatasannya.',
       'Senyawa dan Rumus Kimia: Senyawa terbentuk dari dua unsur atau lebih yang bergabung secara kimia dengan perbandingan tetap, dan sifatnya berbeda dari unsur penyusunnya. Contoh: air (H₂O) tersusun atas 2 atom hidrogen dan 1 atom oksigen; garam dapur (NaCl) dari natrium dan klorin; karbon dioksida (CO₂). Senyawa hanya dapat diuraikan dengan reaksi kimia.',
+      'Molekul Unsur dan Molekul Senyawa: Molekul adalah gabungan dua atom atau lebih yang terikat secara kimia. Molekul unsur tersusun atas atom-atom sejenis, misalnya O₂ (oksigen) dan N₂ (nitrogen). Molekul senyawa tersusun atas atom-atom yang berbeda jenis, misalnya H₂O dan CO₂. Unsur penting dalam tubuh antara lain kalsium (tulang dan gigi), besi (hemoglobin darah), dan iodin (hormon tiroid).',
       'Campuran: Campuran terbentuk dari dua zat atau lebih yang bercampur tanpa reaksi kimia, perbandingannya tidak tetap, dan sifat zat penyusunnya masih tampak. Campuran homogen (larutan) tampak seragam, contoh air gula dan udara. Campuran heterogen tidak seragam, contoh air kopi tubruk, pasir dan air. Koloid adalah campuran di antara keduanya, contoh susu dan santan; suspensi mudah mengendap, contoh air sungai keruh.',
-      'Pemisahan Campuran: Filtrasi (penyaringan) memisahkan padatan tak larut dari cairan berdasarkan ukuran partikel. Evaporasi (penguapan) mengambil zat terlarut padat, contoh garam dari air laut. Distilasi (penyulingan) memisahkan cairan berdasarkan perbedaan titik didih, contoh minyak atsiri dan air murni. Kromatografi memisahkan berdasarkan perbedaan kecepatan merambat, contoh komponen warna tinta. Sublimasi untuk zat yang dapat menyublim (kapur barus). Dekantasi menuangkan cairan di atas endapan, sentrifugasi memakai putaran cepat.',
-      'Asam, Basa, dan Garam: Asam berasa masam, pH < 7, memerahkan kertas lakmus biru (contoh cuka, jeruk, asam lambung). Basa berasa pahit, licin, pH > 7, membirukan kertas lakmus merah (contoh sabun, pasta gigi, air kapur). Garam terbentuk dari reaksi asam dan basa (netralisasi), pH = 7 untuk garam netral seperti NaCl. Contoh penerapan: obat maag (basa) menetralkan asam lambung.',
-      'Indikator Asam-Basa: Kertas lakmus merah dan biru, larutan fenolftalein (tidak berwarna dalam asam, merah muda dalam basa), indikator universal yang menunjukkan nilai pH, serta indikator alami seperti kunyit (kuning dalam asam, merah kecokelatan dalam basa), kubis ungu, dan bunga sepatu.'
+      'Pemisahan Campuran: Filtrasi (penyaringan) memisahkan padatan tak larut dari cairan berdasarkan ukuran partikel. Evaporasi (penguapan) mengambil zat terlarut padat, contoh garam dari air laut. Distilasi (penyulingan) memisahkan cairan berdasarkan perbedaan titik didih, contoh minyak atsiri dan air murni. Kromatografi memisahkan berdasarkan perbedaan kecepatan merambat, contoh komponen warna tinta. Sublimasi untuk zat yang dapat menyublim (kapur barus). Dekantasi menuangkan cairan di atas endapan, sentrifugasi memakai putaran cepat.'
     ],
     keyFormulas: [
       { label: 'Contoh rumus kimia', formula: '\\text{H}_2\\text{O},\\ \\text{NaCl},\\ \\text{CO}_2,\\ \\text{C}_6\\text{H}_{12}\\text{O}_6' },
-      { label: 'Netralisasi', formula: '\\text{asam} + \\text{basa} \\to \\text{garam} + \\text{air}' },
-      { label: 'Skala pH', formula: '\\text{asam: pH} < 7 \\quad \\text{netral: pH} = 7 \\quad \\text{basa: pH} > 7' }
+      { label: 'Partikel penyusun atom', formula: '\\text{proton}\\,(+) \\quad \\text{neutron}\\,(0) \\quad \\text{elektron}\\,(-)' },
+      { label: 'Molekul unsur & senyawa', formula: '\\text{O}_2,\\ \\text{N}_2\\ (\\text{unsur}) \\qquad \\text{H}_2\\text{O},\\ \\text{CO}_2\\ (\\text{senyawa})' }
     ],
     workedExamples: [
       {
@@ -33,17 +33,17 @@ export default bab({
         solution: 'Garam dari air laut: **evaporasi** (air diuapkan, garam tertinggal). Air murni dari air keruh: saring dulu (**filtrasi**), lalu **distilasi** untuk memisahkan air dari zat terlarut.'
       },
       {
-        title: 'Menebak sifat larutan',
-        problem: 'Larutan X membirukan lakmus merah dan membuat fenolftalein merah muda. Apa sifat larutan X dan perkiraan pH-nya?',
-        solution: 'Kedua indikator menunjukkan **basa**, sehingga pH larutan X lebih dari 7.'
+        title: 'Membaca tabel periodik',
+        problem: 'Natrium (Na) dan kalium (K) berada dalam golongan yang sama pada tabel periodik. Apa yang dapat disimpulkan tentang sifat keduanya?',
+        solution: 'Unsur dalam satu golongan memiliki **sifat kimia yang mirip**. Natrium dan kalium sama-sama logam yang lunak dan sangat reaktif, misalnya bereaksi hebat dengan air.'
       }
     ],
     misconceptions: [
       'Menganggap air adalah unsur karena sangat umum. Air adalah senyawa (H₂O) yang dapat diuraikan menjadi hidrogen dan oksigen dengan elektrolisis.',
       'Menganggap udara adalah senyawa. Udara adalah campuran homogen berbagai gas (nitrogen, oksigen, argon, karbon dioksida) dengan perbandingan tidak tetap.',
-      'Menganggap semua garam berasa asin dan netral. Garam adalah hasil reaksi asam dan basa; tidak semua garam bersifat netral.'
+      'Menganggap molekul selalu berupa senyawa. Gas oksigen (O₂) adalah molekul, tetapi tetap unsur karena atom penyusunnya sejenis.'
     ],
-    tutorTip: 'Untuk lakmus, ingat "BiMA": Biru → Merah oleh Asam. Kebalikannya, merah → biru oleh basa.'
+    tutorTip: 'Tanyakan dua hal: "Berapa jenis atomnya?" dan "Terikat secara kimia atau hanya dicampur?". Satu jenis atom = unsur; beberapa jenis atom terikat kimia = senyawa; dicampur tanpa reaksi = campuran.'
   },
   questions: [
     soal({
@@ -72,11 +72,11 @@ export default bab({
     }),
     soal({
       level: 'Dasar',
-      q: 'Zat berikut yang akan mengubah kertas lakmus biru menjadi merah adalah...',
-      options: ['air sabun', 'larutan kapur', 'pasta gigi', 'air jeruk nipis'],
+      q: 'Partikel penyusun atom yang bermuatan listrik negatif adalah...',
+      options: ['proton', 'neutron', 'inti atom', 'elektron'],
       answer: 'D',
-      hint: 'Lakmus biru memerah dalam larutan asam.',
-      solution: '**Air jeruk nipis** bersifat asam sehingga memerahkan lakmus biru. Sabun, kapur, dan pasta gigi bersifat basa. Jawaban: **D**.'
+      hint: 'Partikel ini bergerak mengelilingi inti atom.',
+      solution: '**Elektron** bermuatan negatif dan mengelilingi inti atom. Proton bermuatan positif, neutron tidak bermuatan, dan keduanya berada di inti atom. Jawaban: **D**.'
     }),
     soal({
       level: 'Dasar',
@@ -125,16 +125,11 @@ export default bab({
     }),
     soal({
       level: 'Sedang',
-      q: 'Obat maag diminum untuk mengurangi rasa perih di lambung. Obat maag bekerja dengan cara...',
-      options: [
-        'menambah asam lambung',
-        'menetralkan asam lambung karena bersifat basa',
-        'mengubah asam lambung menjadi gula',
-        'membunuh bakteri di lambung'
-      ],
+      q: 'Pada tabel periodik, unsur-unsur yang terletak dalam satu kolom tegak (golongan) memiliki...',
+      options: ['nomor atom yang sama', 'sifat kimia yang mirip', 'massa yang sama', 'wujud yang selalu gas'],
       answer: 'B',
-      hint: 'Asam dapat dinetralkan oleh basa.',
-      solution: 'Asam lambung berlebih menimbulkan perih. Obat maag mengandung **basa** (misalnya magnesium hidroksida) yang **menetralkan asam** melalui reaksi netralisasi. Jawaban: **B**.'
+      hint: 'Kolom tegak disebut golongan, baris mendatar disebut periode.',
+      solution: 'Unsur dalam satu **golongan** memiliki **sifat kimia yang mirip**, misalnya natrium dan kalium yang sama-sama logam reaktif. Nomor atomnya berbeda dan bertambah dari atas ke bawah. Jawaban: **B**.'
     }),
     soal({
       level: 'Tantangan',
@@ -151,11 +146,16 @@ export default bab({
     }),
     soal({
       level: 'Tantangan',
-      q: 'Larutan P memerahkan lakmus biru, larutan Q membirukan lakmus merah, dan larutan R tidak mengubah warna kedua lakmus. Urutan pH dari yang paling kecil adalah...',
-      options: ['P, R, Q', 'Q, R, P', 'R, P, Q', 'P, Q, R'],
+      q: 'Seorang siswa menguji tiga zat. Zat X mengilap dan menghantarkan listrik dengan baik. Zat Y kusam, rapuh, dan tidak menghantarkan listrik. Zat Z agak mengilap, rapuh, dan sedikit menghantarkan listrik. Pengelompokan yang paling tepat adalah...',
+      options: [
+        'X logam, Y nonlogam, Z metaloid',
+        'X nonlogam, Y logam, Z metaloid',
+        'X metaloid, Y logam, Z nonlogam',
+        'X logam, Y metaloid, Z nonlogam'
+      ],
       answer: 'A',
-      hint: 'Asam memiliki pH paling kecil.',
-      solution: 'P asam (pH < 7), R netral (pH = 7), Q basa (pH > 7). Urutan dari pH terkecil: **P, R, Q**. Jawaban: **A**.'
+      hint: 'Metaloid memiliki sifat di antara logam dan nonlogam.',
+      solution: 'X mengilap dan konduktor baik → **logam**. Y kusam, rapuh, isolator → **nonlogam**. Z memiliki sifat campuran (agak mengilap tetapi rapuh, semikonduktor) → **metaloid**, seperti silikon. Jawaban: **A**.'
     }),
     soal({
       level: 'Tantangan',
@@ -172,11 +172,16 @@ export default bab({
     }),
     soal({
       level: 'Tantangan',
-      q: 'Kunyit berwarna kuning dalam larutan asam dan merah kecokelatan dalam larutan basa. Jika parutan kunyit diteteskan ke air sabun, warna yang terbentuk adalah...',
-      options: ['kuning terang', 'tidak berwarna', 'biru', 'merah kecokelatan'],
+      q: 'Gas oksigen (O₂) dan gas karbon dioksida (CO₂) sama-sama tersusun atas molekul. Pernyataan yang benar adalah...',
+      options: [
+        'keduanya molekul senyawa',
+        'keduanya molekul unsur',
+        'O₂ molekul senyawa, sedangkan CO₂ molekul unsur',
+        'O₂ molekul unsur karena atomnya sejenis, sedangkan CO₂ molekul senyawa karena atomnya berbeda jenis'
+      ],
       answer: 'D',
-      hint: 'Tentukan dulu sifat air sabun.',
-      solution: 'Air sabun bersifat **basa**, sehingga kunyit berubah menjadi **merah kecokelatan**. Jawaban: **D**.'
+      hint: 'Perhatikan jenis atom penyusun setiap molekul.',
+      solution: 'O₂ tersusun atas dua atom oksigen (sejenis), sehingga merupakan **molekul unsur**. CO₂ tersusun atas atom karbon dan oksigen (berbeda jenis), sehingga merupakan **molekul senyawa**. Jawaban: **D**.'
     }),
     soal({
       level: 'Tantangan',

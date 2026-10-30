@@ -7,13 +7,15 @@ export default bab({
   title: 'Isu-Isu Lingkungan',
   element: 'Makhluk hidup dan lingkungannya: upaya mencegah dan mengatasi perubahan iklim',
   summary: {
-    overview: 'Sampah plastik di sungai, asap kendaraan, dan cuaca yang makin ekstrem adalah masalah lingkungan yang dekat dengan kehidupan kita. Bab ini membahas pencemaran air, udara, dan tanah, pemanasan global dan perubahan iklim, pengelolaan sampah, serta aksi nyata yang dapat dilakukan pelajar untuk menjaga lingkungan.',
+    overview: 'Sampah plastik di sungai, asap kendaraan, dan cuaca yang makin ekstrem adalah masalah lingkungan yang dekat dengan kehidupan kita. Sesuai urutan buku siswa, bab ini membahas kesehatan lingkungan (pencemaran air, udara, dan tanah serta pengelolaan sampah), pemanasan global, krisis energi, dan ketersediaan pangan, serta aksi nyata yang dapat dilakukan pelajar.',
     coreConcepts: [
-      'Pencemaran Air: Masuknya zat pencemar seperti limbah rumah tangga (deterjen), limbah industri (logam berat seperti merkuri), limbah pertanian (pupuk dan pestisida), serta sampah ke perairan. Pupuk dan deterjen yang berlebihan memicu ledakan pertumbuhan alga dan eceng gondok (eutrofikasi), sehingga oksigen di air berkurang dan ikan mati. Ciri air tercemar: berbau, berwarna, keruh, dan banyak hewan air mati.',
-      'Pencemaran Udara: Sumbernya asap kendaraan, pabrik, pembakaran sampah dan hutan. Karbon monoksida (CO) mengikat hemoglobin lebih kuat daripada oksigen sehingga dapat menyebabkan pingsan hingga kematian. Gas belerang dioksida dan nitrogen oksida bereaksi dengan air hujan membentuk hujan asam yang merusak bangunan dan tumbuhan. CFC (dari freon dan aerosol lama) merusak lapisan ozon yang melindungi bumi dari sinar ultraviolet.',
-      'Pencemaran Tanah: Disebabkan sampah plastik yang sulit terurai (ratusan tahun), limbah B3 seperti baterai, serta penggunaan pupuk kimia dan pestisida berlebihan. Akibatnya tanah kehilangan kesuburan, mikroorganisme tanah mati, dan zat beracun dapat masuk ke rantai makanan.',
-      'Pemanasan Global dan Perubahan Iklim: Gas rumah kaca (karbon dioksida, metana, dinitrogen oksida) menahan panas di atmosfer. Penambahan gas ini dari pembakaran bahan bakar fosil, penggundulan hutan, dan peternakan membuat suhu rata-rata bumi naik. Dampaknya: es kutub mencair, permukaan laut naik, cuaca ekstrem, kekeringan, banjir, dan terancamnya terumbu karang. Upaya mitigasi (mengurangi penyebab): menghemat energi, memakai energi terbarukan, menanam pohon. Upaya adaptasi (menyesuaikan diri): membuat tanggul, menanam varietas tahan kekeringan.',
+      'Kesehatan Lingkungan – Pencemaran Air: Masuknya zat pencemar seperti limbah rumah tangga (deterjen), limbah industri (logam berat seperti merkuri), limbah pertanian (pupuk dan pestisida), serta sampah ke perairan. Pupuk dan deterjen yang berlebihan memicu ledakan pertumbuhan alga dan eceng gondok (eutrofikasi), sehingga oksigen di air berkurang dan ikan mati. Ciri air tercemar: berbau, berwarna, keruh, dan banyak hewan air mati.',
+      'Kesehatan Lingkungan – Pencemaran Udara: Sumbernya asap kendaraan, pabrik, pembakaran sampah dan hutan. Karbon monoksida (CO) mengikat hemoglobin lebih kuat daripada oksigen sehingga dapat menyebabkan pingsan hingga kematian. Gas belerang dioksida dan nitrogen oksida bereaksi dengan air hujan membentuk hujan asam yang merusak bangunan dan tumbuhan. CFC (dari freon dan aerosol lama) merusak lapisan ozon yang melindungi bumi dari sinar ultraviolet.',
+      'Kesehatan Lingkungan – Pencemaran Tanah: Disebabkan sampah plastik yang sulit terurai (ratusan tahun), limbah B3 seperti baterai, serta penggunaan pupuk kimia dan pestisida berlebihan. Akibatnya tanah kehilangan kesuburan, mikroorganisme tanah mati, dan zat beracun dapat masuk ke rantai makanan.',
       'Pengelolaan Sampah: Prinsip 3R: reduce (mengurangi, misalnya membawa tas belanja sendiri), reuse (memakai ulang, misalnya botol sebagai pot), dan recycle (mendaur ulang, misalnya kertas bekas menjadi kertas daur ulang). Sampah organik dapat diolah menjadi kompos atau biogas; sampah dipilah menjadi organik, anorganik, dan B3. Bank sampah memberi nilai ekonomi pada sampah yang sudah dipilah.',
+      'Pemanasan Global dan Perubahan Iklim: Gas rumah kaca (karbon dioksida, metana, dinitrogen oksida) menahan panas di atmosfer. Penambahan gas ini dari pembakaran bahan bakar fosil, penggundulan hutan, dan peternakan membuat suhu rata-rata bumi naik. Dampaknya: es kutub mencair, permukaan laut naik, cuaca ekstrem, kekeringan, banjir, dan terancamnya terumbu karang. Upaya mitigasi (mengurangi penyebab): menghemat energi, memakai energi terbarukan, menanam pohon. Upaya adaptasi (menyesuaikan diri): membuat tanggul, menanam varietas tahan kekeringan.',
+      'Krisis Energi: Sebagian besar listrik dan bahan bakar di Indonesia masih berasal dari batu bara dan minyak bumi yang tidak terbarukan. Cadangannya terus berkurang, sedangkan kebutuhan energi meningkat karena pertambahan penduduk dan industri. Akibatnya harga energi naik dan pasokan terancam. Solusinya adalah menghemat energi, meningkatkan efisiensi, dan beralih ke energi terbarukan seperti surya, angin, air, panas bumi, dan biomassa.',
+      'Ketersediaan Pangan: Pertambahan penduduk, alih fungsi lahan pertanian, dan perubahan iklim (kemarau panjang, banjir, hama) mengancam ketersediaan pangan. Upaya menjaga ketahanan pangan: diversifikasi pangan (tidak hanya beras, tetapi juga jagung, sagu, umbi-umbian), varietas tanaman tahan kekeringan, irigasi hemat air, pertanian organik, memanfaatkan pekarangan, dan tidak membuang-buang makanan.',
       'Aksi Nyata Pelajar: Mematikan lampu dan alat listrik yang tidak dipakai, berjalan kaki atau bersepeda untuk jarak dekat, membawa botol minum sendiri, tidak membakar sampah, membuat lubang biopori untuk resapan air, ikut menanam pohon dan mangrove, serta mengajak keluarga dan teman. Kearifan lokal seperti sasi di Maluku dan subak di Bali juga membantu menjaga kelestarian alam.'
     ],
     keyFormulas: [
@@ -140,11 +142,16 @@ export default bab({
     }),
     soal({
       level: 'Sedang',
-      q: 'Cara paling tepat mengolah sampah daun dan sisa sayuran di rumah adalah...',
-      options: ['membakarnya di halaman', 'membuangnya ke sungai', 'mengolahnya menjadi kompos', 'mencampurnya dengan sampah plastik'],
+      q: 'Sebagian besar listrik di Indonesia masih dihasilkan dari batu bara. Alasan utama hal ini dapat memicu krisis energi adalah...',
+      options: [
+        'batu bara terlalu ringan untuk dibakar',
+        'batu bara hanya ada di luar negeri',
+        'batu bara tidak terbarukan sehingga cadangannya terus berkurang, sedangkan kebutuhan listrik terus meningkat',
+        'pembangkit listrik batu bara tidak menghasilkan panas'
+      ],
       answer: 'C',
-      hint: 'Sampah organik dapat diurai menjadi pupuk.',
-      solution: 'Sampah organik dapat diolah menjadi **kompos** yang menyuburkan tanah. Membakar menimbulkan asap, dan membuang ke sungai mencemari air. Jawaban: **C**.'
+      hint: 'Bandingkan persediaan dan kebutuhan.',
+      solution: 'Batu bara adalah bahan bakar fosil yang **tidak terbarukan**. Cadangannya berkurang setiap kali dipakai, sementara **kebutuhan energi terus naik**. Kesenjangan inilah yang memicu krisis energi, sehingga perlu penghematan dan peralihan ke energi terbarukan. Jawaban: **C**.'
     }),
     soal({
       level: 'Tantangan',
@@ -187,16 +194,16 @@ export default bab({
     }),
     soal({
       level: 'Tantangan',
-      q: 'Lubang biopori dibuat di halaman sekolah dan diisi sampah organik. Manfaat yang paling lengkap dari lubang biopori adalah...',
+      q: 'Kemarau yang makin panjang akibat perubahan iklim menyebabkan banyak sawah gagal panen. Kombinasi upaya yang paling tepat untuk menjaga ketersediaan pangan adalah...',
       options: [
-        'hanya untuk membuang sampah',
-        'memperbanyak nyamuk',
-        'membuat tanah menjadi keras',
-        'menambah resapan air hujan sehingga mengurangi genangan, sekaligus mengolah sampah organik menjadi kompos'
+        'membuka hutan seluas-luasnya untuk sawah baru',
+        'hanya mengonsumsi beras agar petani padi untung',
+        'membakar jerami di sawah agar tanah cepat kering',
+        'diversifikasi pangan, menanam varietas tahan kekeringan, dan memakai irigasi hemat air'
       ],
       answer: 'D',
-      hint: 'Lubang biopori berhubungan dengan air hujan dan sampah organik.',
-      solution: 'Lubang biopori **meningkatkan resapan air hujan** ke dalam tanah sehingga mengurangi genangan dan banjir, menambah cadangan air tanah, dan **mengubah sampah organik menjadi kompos** dengan bantuan organisme tanah. Jawaban: **D**.'
+      hint: 'Cari upaya yang tidak menimbulkan masalah lingkungan baru.',
+      solution: '**Diversifikasi pangan** (jagung, sagu, umbi-umbian) mengurangi ketergantungan pada beras, **varietas tahan kekeringan** tetap dapat dipanen saat kemarau, dan **irigasi hemat air** menjaga pasokan air. Membuka hutan dan membakar jerami justru memperparah perubahan iklim. Jawaban: **D**.'
     }),
     soal({
       level: 'Tantangan',

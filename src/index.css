@@ -2498,17 +2498,6 @@ img, svg {
 
 .chapter-tip strong { display: block; }
 
-.chapter-to-practice {
-  align-self: flex-start;
-  display: inline-flex;
-  align-items: center;
-  gap: 0.4rem;
-  font-weight: 700;
-  font-size: 0.9rem;
-  color: var(--primary-blue);
-  text-decoration: none;
-}
-
 /* ---------- Navigasi bab ---------- */
 .chapter-nav {
   display: grid;

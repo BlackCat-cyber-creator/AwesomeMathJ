@@ -98,7 +98,6 @@ function TkaPacket({ test, packet, onPrintQuest }) {
           grade={test.grades[test.grades.length - 1]}
           onPrintQuest={onPrintQuest}
           reportPath={(q) => `${path}#${questionAnchor(q.id)}`}
-          showPackets={false}
         />
       )}
 

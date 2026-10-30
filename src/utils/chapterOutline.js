@@ -34,13 +34,3 @@ export function articleSections(summary, practiceCount = 0) {
     practiceCount > 0 && { id: 'latihan-soal', label: `Latihan Soal (${practiceCount} soal)` }
   ].filter(Boolean);
 }
-
-/** Paket latihan: potongan 5 soal sesuai urutan bab. */
-export function practicePackets(count, size = 5) {
-  const packets = [];
-  for (let start = 0; start < count; start += size) {
-    const end = Math.min(start + size, count);
-    packets.push({ index: packets.length + 1, start, end, label: `Paket ${packets.length + 1} (Soal ${start + 1}–${end})` });
-  }
-  return packets;
-}

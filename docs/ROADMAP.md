@@ -48,7 +48,17 @@ Katalog Kurikulum Merdeka resmi dibaca langsung lewat API publik situs:
 
 Artinya, ketidaksesuaian kelas (soal Kelas 4 berisi materi Kelas 5) **bukan karena buku lama**. Penyebabnya soal tambahan yang dibuat tanpa dicek ke CP (sudah diperbaiki di Tahap 0). Buku Matematika SD–SMP di katalog resmi belum diganti edisi baru. Yang perlu diselaraskan ulang dengan edisi revisi adalah **Kelas X** dan **Matematika Tingkat Lanjut XI**.
 
-Catatan akses (30 Oktober 2026, setelah akses jaringan penuh dibuka): `static.buku.kemdikbud.go.id` (PDF buku) dan `pusmendik.kemendikdasmen.go.id` tetap gagal dengan error 502 dari server ini. Kemungkinan server pemerintah tersebut membatasi akses dari luar Indonesia. Katalog `api.buku.kemendikdasmen.go.id` tetap bisa dibaca. Mengambil salinan PDF lewat arsip web (web.archive.org) memerlukan izin eksplisit pemilik. Alternatifnya, unggah PDF ke folder `sources/` di repo.
+Catatan akses (30 Oktober 2026): `static.buku.kemdikbud.go.id`, `pusmendik.kemendikdasmen.go.id`, `repositori.kemendikdasmen.go.id`, dan `web.archive.org` tidak dapat dijangkau dari server ini (koneksi ditolak). Salinan buku resmi diambil dari perpustakaan digital sekolah:
+- IPA Kelas VII **Edisi Revisi**: e-Library SMPN 1 Samarinda (Google Drive).
+- IPA Kelas VIII dan IX edisi 2022: e-Library SMPN 1 Samarinda. Edisi revisi Kelas VIII hanya tersedia di Scribd, yang memerlukan login.
+- Matematika Kelas VIII edisi baru (2023): e-Library SMPN 1 Samarinda.
+- Panduan Guru Matematika Kelas X **Edisi Revisi 2023**: perpustakaan SMAN 1 Ciruas.
+
+Hasil penyelarasan:
+- **IPA:** urutan dan isi subbab mengikuti daftar isi buku. Kelas VII Bab 6 berganti judul menjadi "Ekologi dan Pelestarian Lingkungan". Asam–basa dipindah dari Kelas VIII Bab 5 ke Kelas IX Bab 5, dan Kelas VIII Bab 5 kini membahas atom, tabel periodik, dan molekul. Kelas IX Bab 7 ditambah Krisis Energi dan Ketersediaan Pangan. Kelas VIII Bab 1 ditambah Spesialisasi Sel. Sistem gerak dan struktur tumbuhan di Kelas VIII Bab 2 ditandai sebagai pengayaan.
+- **Matematika Kelas X:** buku edisi revisi berisi 7 bab tanpa logaritma dan vektor. Keterangan bab di `src/data/cp2025Mapping.js` kini menyebut isi buku edisi revisi sekaligus posisi bab menurut CP 046/2025.
+- **Matematika Kelas VIII:** 6 bab di buku edisi baru sama dengan bab situs.
+- **Belum didapat:** Matematika Tingkat Lanjut Kelas XI edisi revisi.
 
 ## Tahapan
 

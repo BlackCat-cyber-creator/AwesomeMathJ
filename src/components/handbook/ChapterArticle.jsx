@@ -1,5 +1,5 @@
 import React from 'react';
-import { ListOrdered, Bookmark, FileText, AlertTriangle, Lightbulb, PenTool } from 'lucide-react';
+import { ListOrdered, Bookmark, FileText, AlertTriangle, Lightbulb } from 'lucide-react';
 import { MathText } from '../MathRenderer';
 import { splitSubbab, articleSections } from '../../utils/chapterOutline';
 
@@ -108,11 +108,6 @@ export function ChapterArticle({ summary, practiceCount = 0 }) {
         </aside>
       )}
 
-      {practiceCount > 0 && (
-        <a className="chapter-to-practice" href="#latihan-soal">
-          <PenTool size={15} /> Lanjut ke {practiceCount} latihan soal
-        </a>
-      )}
     </article>
   );
 }

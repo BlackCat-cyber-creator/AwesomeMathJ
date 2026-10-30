@@ -15,7 +15,6 @@ import { ReportQuestion } from '../ReportQuestion';
 import { questionAnchor } from '../../utils/reports';
 import { chapterPath } from '../../utils/seoRoutes';
 import { useQuestionHash } from '../../hooks/useQuestionHash';
-import { practicePackets } from '../../utils/chapterOutline';
 
 export function ChapterQuiz({
   questions = [],
@@ -26,17 +25,14 @@ export function ChapterQuiz({
   onLaunchPractice: _onLaunchPractice,
   onPrintQuest,
   // Alamat soal untuk laporan; bawaan: halaman bab. Paket TKA memakai alamat paketnya.
-  reportPath = (q) => `${chapterPath(grade, chapterId)}#${questionAnchor(q.id)}`,
-  // Paket TKA sudah berupa satu paket utuh; potongan 5 soal tidak ditampilkan
-  showPackets = true
+  reportPath = (q) => `${chapterPath(grade, chapterId)}#${questionAnchor(q.id)}`
 }) {
-  const [selectedPacketFilter, setSelectedPacketFilter] = useState('ALL');
   const [selectedAnswers, setSelectedAnswers] = useState({}); // { [qId]: optionKey }
   const [isQuizSubmitted, setIsQuizSubmitted] = useState(false);
   const [revealedSolutions, setRevealedSolutions] = useState({});
   const [revealedHints, setRevealedHints] = useState({});
 
-  // Reset quiz answers when packet filter or questions change
+  // Mulai ulang latihan
   const handleResetQuiz = () => {
     setSelectedAnswers({});
     setIsQuizSubmitted(false);
@@ -68,14 +64,8 @@ export function ChapterQuiz({
 
   useQuestionHash(questions.length);
 
-  const packets = useMemo(() => (showPackets ? practicePackets(questions.length) : []), [questions.length, showPackets]);
-
-  // Filtered questions based on packet
-  const filteredQuestions = useMemo(() => {
-    if (selectedPacketFilter === 'ALL') return questions;
-    const packet = packets.find((p) => p.index === selectedPacketFilter);
-    return packet ? questions.slice(packet.start, packet.end) : questions;
-  }, [questions, packets, selectedPacketFilter]);
+  // Semua soal bab ditampilkan sekaligus (tanpa pembagian paket)
+  const filteredQuestions = questions;
 
   // Scoring calculation
   const scoreStats = useMemo(() => {
@@ -113,8 +103,7 @@ export function ChapterQuiz({
       saveChapterResult(chapterId, {
         score: finalScore,
         correct: correctCount,
-        total: filteredQuestions.length,
-        packet: selectedPacketFilter
+        total: filteredQuestions.length
       });
     }
   };
@@ -128,36 +117,9 @@ export function ChapterQuiz({
           Latihan Soal
         </h3>
         <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-          {questions.length} soal{packets.length > 0 ? ` · ${packets.length} paket` : ''}
+          {questions.length} soal
         </span>
       </div>
-
-      {/* Packet Filter Tabs */}
-      {packets.length > 0 && (
-      <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
-        <button
-          type="button"
-          id="filter-packet-all"
-          className={`btn ${selectedPacketFilter === 'ALL' ? 'btn-royal' : 'btn-outline'}`}
-          style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
-          onClick={() => { setSelectedPacketFilter('ALL'); handleResetQuiz(); }}
-        >
-          Semua ({questions.length} Soal)
-        </button>
-        {packets.map((p) => (
-          <button
-            key={p.index}
-            type="button"
-            id={`filter-packet-${p.index}`}
-            className={`btn ${selectedPacketFilter === p.index ? 'btn-royal' : 'btn-outline'}`}
-            style={{ fontSize: '0.78rem', padding: '0.35rem 0.75rem' }}
-            onClick={() => { setSelectedPacketFilter(p.index); handleResetQuiz(); }}
-          >
-            {p.label}
-          </button>
-        ))}
-      </div>
-      )}
 
       {/* Score Result Card (if submitted) */}
       {isQuizSubmitted && scoreStats && (

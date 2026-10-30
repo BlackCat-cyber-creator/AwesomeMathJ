@@ -5,13 +5,15 @@ export default bab({
   number: 5,
   slug: 'reaksi-kimia',
   title: 'Reaksi-Reaksi Kimia dan Dinamikanya',
-  element: 'Zat dan sifatnya: perubahan materi dan reaksi kimia',
+  element: 'Zat dan sifatnya: reaksi kimia, asam–basa, dan laju reaksi',
   summary: {
-    overview: 'Kayu terbakar, besi berkarat, dan makanan dicerna di dalam tubuh adalah contoh reaksi kimia. Bab ini membahas ciri-ciri reaksi kimia, persamaan reaksi dan hukum kekekalan massa, jenis-jenis reaksi, reaksi eksoterm dan endoterm, laju reaksi beserta faktor yang memengaruhinya, serta reaksi kimia dalam kehidupan sehari-hari.',
+    overview: 'Kayu terbakar, besi berkarat, dan makanan dicerna di dalam tubuh adalah contoh reaksi kimia. Bab ini membahas ciri-ciri reaksi kimia, persamaan reaksi dan hukum kekekalan massa, jenis-jenis reaksi, asam dan basa beserta indikator dan reaksi netralisasi, reaksi eksoterm dan endoterm, laju reaksi beserta faktor yang memengaruhinya, serta reaksi kimia dalam kehidupan sehari-hari.',
     coreConcepts: [
       'Reaksi Kimia dan Cirinya: Reaksi kimia adalah perubahan zat (pereaksi/reaktan) menjadi zat baru (hasil reaksi/produk). Ciri-cirinya: terbentuk gas (gelembung), terbentuk endapan, terjadi perubahan warna, dan terjadi perubahan suhu. Contoh: cuka dicampur soda kue menghasilkan gelembung gas karbon dioksida.',
       'Persamaan Reaksi dan Hukum Kekekalan Massa: Persamaan reaksi menuliskan pereaksi di kiri tanda panah dan hasil reaksi di kanan, lengkap dengan wujud zat (s padat, l cair, g gas, aq larutan). Hukum Lavoisier: massa zat sebelum dan sesudah reaksi sama. Karena itu jumlah atom setiap unsur di kiri dan kanan harus sama (persamaan setara), misalnya $2\\text{H}_2 + \\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O}$.',
       'Jenis-Jenis Reaksi: Reaksi pembakaran (zat bereaksi dengan oksigen, contoh $\\text{CH}_4 + 2\\text{O}_2 \\rightarrow \\text{CO}_2 + 2\\text{H}_2\\text{O}$), penggabungan (dua zat membentuk satu zat), penguraian (satu zat terurai menjadi beberapa zat, contoh elektrolisis air), dan netralisasi (asam + basa → garam + air).',
+      'Asam dan Basa: Asam berasa masam, pH kurang dari 7, dan memerahkan kertas lakmus biru, contohnya asam klorida (asam lambung), asam sitrat (jeruk), dan asam asetat (cuka). Basa berasa pahit, licin, pH lebih dari 7, dan membirukan kertas lakmus merah, contohnya natrium hidroksida (soda api), magnesium hidroksida (obat maag), dan amonia. Asam dan basa kuat bersifat korosif sehingga harus ditangani dengan hati-hati.',
+      'Indikator dan Reaksi Netralisasi: Sifat asam-basa diuji dengan kertas lakmus, larutan fenolftalein (merah muda dalam basa), indikator universal yang menunjukkan nilai pH, atau indikator alami dari rebusan kunyit, kubis ungu, dan bunga sepatu. Reaksi netralisasi: asam + basa → garam + air, misalnya HCl + NaOH → NaCl + H₂O. Penerapannya: obat maag menetralkan asam lambung dan kapur menetralkan tanah yang terlalu asam.',
       'Reaksi Eksoterm dan Endoterm: Reaksi eksoterm melepaskan kalor ke lingkungan sehingga lingkungan terasa panas, contoh pembakaran, respirasi, dan kapur tohor dicampur air. Reaksi endoterm menyerap kalor dari lingkungan sehingga terasa dingin, contoh fotosintesis dan pelarutan amonium nitrat pada kompres instan dingin.',
       'Laju Reaksi: Laju reaksi menyatakan cepat lambatnya reaksi. Faktor yang mempercepat: konsentrasi pereaksi lebih besar, suhu lebih tinggi, luas permukaan lebih besar (zat dalam bentuk serbuk atau potongan kecil), dan adanya katalis (zat yang mempercepat reaksi tanpa ikut habis, contoh enzim di dalam tubuh). Contoh: daging dicincang lebih cepat matang; makanan di kulkas lebih lambat basi.',
       'Reaksi Kimia dalam Kehidupan: Fotosintesis, respirasi sel, pencernaan makanan oleh enzim, fermentasi (tape, yoghurt, tempe), dan perkaratan besi (besi + oksigen + air). Karat dicegah dengan mengecat, melumuri oli, melapisi logam lain (galvanisasi), atau menjaga besi tetap kering. Bahan kimia rumah tangga (pemutih, pembersih lantai) harus digunakan sesuai label dan tidak dicampur sembarangan.'
@@ -20,6 +22,8 @@ export default bab({
       { label: 'Bentuk umum', formula: '\\text{pereaksi} \\rightarrow \\text{hasil reaksi}' },
       { label: 'Contoh persamaan setara', formula: '2\\text{H}_2(g) + \\text{O}_2(g) \\rightarrow 2\\text{H}_2\\text{O}(l)' },
       { label: 'Hukum kekekalan massa', formula: 'm_{\\text{sebelum}} = m_{\\text{sesudah}}' },
+      { label: 'Netralisasi', formula: '\\text{asam} + \\text{basa} \\rightarrow \\text{garam} + \\text{air}' },
+      { label: 'Skala pH', formula: '\\text{asam: pH} < 7 \\quad \\text{netral: pH} = 7 \\quad \\text{basa: pH} > 7' },
       { label: 'Respirasi', formula: '\\text{C}_6\\text{H}_{12}\\text{O}_6 + 6\\text{O}_2 \\rightarrow 6\\text{CO}_2 + 6\\text{H}_2\\text{O} + \\text{energi}' }
     ],
     workedExamples: [
@@ -65,11 +69,11 @@ export default bab({
     }),
     soal({
       level: 'Dasar',
-      q: 'Hukum kekekalan massa dikemukakan oleh...',
-      options: ['Antoine Lavoisier', 'Isaac Newton', 'Archimedes', 'Gregor Mendel'],
+      q: 'Zat berikut yang akan mengubah warna kertas lakmus biru menjadi merah adalah...',
+      options: ['air jeruk nipis', 'air sabun', 'larutan kapur', 'pasta gigi'],
       answer: 'A',
-      hint: 'Ilmuwan Prancis yang dijuluki Bapak Kimia Modern.',
-      solution: '**Antoine Lavoisier** menyatakan bahwa massa zat sebelum dan sesudah reaksi sama. Jawaban: **A**.'
+      hint: 'Lakmus biru menjadi merah dalam larutan asam.',
+      solution: '**Air jeruk nipis** mengandung asam sitrat sehingga memerahkan lakmus biru. Air sabun, larutan kapur, dan pasta gigi bersifat basa. Jawaban: **A**.'
     }),
     soal({
       level: 'Dasar',
@@ -113,11 +117,16 @@ export default bab({
     }),
     soal({
       level: 'Sedang',
-      q: 'Makanan yang disimpan di lemari es lebih awet daripada yang disimpan di suhu ruang. Faktor laju reaksi yang berperan adalah...',
-      options: ['luas permukaan', 'katalis', 'konsentrasi', 'suhu'],
+      q: 'Obat maag diminum untuk mengurangi rasa perih akibat asam lambung berlebih. Obat maag bekerja dengan cara...',
+      options: [
+        'menambah asam lambung',
+        'membunuh bakteri di lambung',
+        'mengubah asam lambung menjadi gula',
+        'menetralkan asam lambung karena bersifat basa'
+      ],
       answer: 'D',
-      hint: 'Lemari es mengubah satu kondisi lingkungan.',
-      solution: 'Suhu rendah memperlambat reaksi pembusukan dan pertumbuhan mikroorganisme. Faktor yang berperan adalah **suhu**. Jawaban: **D**.'
+      hint: 'Asam dapat dinetralkan oleh basa.',
+      solution: 'Obat maag mengandung **basa** (misalnya magnesium hidroksida) yang bereaksi dengan asam lambung (HCl) membentuk garam dan air. Reaksi netralisasi ini mengurangi keasaman lambung. Jawaban: **D**.'
     }),
     soal({
       level: 'Sedang',
@@ -158,16 +167,11 @@ export default bab({
     }),
     soal({
       level: 'Tantangan',
-      q: 'Fotosintesis dan respirasi sel adalah dua reaksi yang saling berkebalikan. Pernyataan yang benar adalah...',
-      options: [
-        'fotosintesis bersifat eksoterm dan respirasi endoterm',
-        'keduanya bersifat endoterm',
-        'fotosintesis menyerap energi cahaya (endoterm), sedangkan respirasi melepaskan energi (eksoterm)',
-        'keduanya tidak melibatkan energi'
-      ],
+      q: 'Larutan P memerahkan lakmus biru, larutan Q membirukan lakmus merah, dan larutan R tidak mengubah warna kedua lakmus. Urutan pH dari yang paling kecil adalah...',
+      options: ['Q, R, P', 'P, Q, R', 'P, R, Q', 'R, P, Q'],
       answer: 'C',
-      hint: 'Fotosintesis memerlukan cahaya; respirasi menghasilkan energi untuk tubuh.',
-      solution: 'Fotosintesis **menyerap energi cahaya** untuk membentuk glukosa (endoterm). Respirasi **memecah glukosa dan melepaskan energi** (eksoterm). Jawaban: **C**.'
+      hint: 'Asam memiliki pH paling kecil, basa paling besar.',
+      solution: 'P asam (pH < 7), R netral (pH = 7), dan Q basa (pH > 7). Urutan dari pH terkecil: **P, R, Q**. Jawaban: **C**.'
     }),
     soal({
       level: 'Tantangan',

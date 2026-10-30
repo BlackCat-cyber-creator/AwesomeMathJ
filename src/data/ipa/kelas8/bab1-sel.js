@@ -4,16 +4,17 @@ export default bab({
   grade: 8,
   number: 1,
   slug: 'sel',
-  title: 'Sel',
+  title: 'Pengenalan Sel',
   element: 'Makhluk hidup dan lingkungannya: sistem organisasi kehidupan',
   summary: {
-    overview: 'Semua makhluk hidup tersusun atas sel, satuan terkecil yang dapat menjalankan proses kehidupan. Bab ini membahas penggunaan mikroskop, bagian-bagian sel dan fungsinya, perbedaan sel hewan dan sel tumbuhan, transpor zat melalui membran, serta tingkatan organisasi kehidupan dari sel sampai organisme.',
+    overview: 'Semua makhluk hidup tersusun atas sel, satuan terkecil yang dapat menjalankan proses kehidupan. Bab ini membahas penggunaan mikroskop, bagian-bagian sel dan fungsinya, perbedaan sel hewan dan sel tumbuhan, spesialisasi sel, transpor zat melalui membran, serta tingkatan organisasi kehidupan dari sel sampai organisme.',
     coreConcepts: [
       'Sel dan Mikroskop: Robert Hooke (1665) pertama kali melihat "sel" pada gabus menggunakan mikroskop. Teori sel menyatakan bahwa semua makhluk hidup tersusun atas sel dan sel berasal dari sel sebelumnya. Perbesaran mikroskop = perbesaran lensa okuler × perbesaran lensa objektif. Fokus diatur dengan makrometer (kasar) dan mikrometer (halus), cahaya diatur dengan cermin dan diafragma.',
       'Bagian Utama Sel: Membran sel mengatur keluar-masuknya zat (selektif permeabel). Sitoplasma adalah cairan sel tempat organel berada dan tempat banyak reaksi kimia berlangsung. Inti sel (nukleus) berisi materi genetik (DNA) dan mengendalikan seluruh kegiatan sel.',
       'Organel dan Fungsinya: Mitokondria tempat respirasi sel yang menghasilkan energi. Ribosom tempat sintesis protein. Retikulum endoplasma mengangkut zat di dalam sel. Badan Golgi mengemas dan mengirim zat. Lisosom mencerna zat dan bagian sel yang rusak. Vakuola menyimpan cadangan makanan, air, dan zat sisa. Kloroplas (hanya pada sel tumbuhan) tempat fotosintesis karena mengandung klorofil.',
       'Sel Hewan dan Sel Tumbuhan: Sel tumbuhan memiliki dinding sel dari selulosa (bentuk tetap, umumnya kotak), kloroplas, dan vakuola besar. Sel hewan tidak memiliki dinding sel dan kloroplas, bentuknya tidak tetap, vakuolanya kecil atau tidak ada, serta memiliki sentriol untuk pembelahan sel.',
       'Sel Prokariotik dan Eukariotik: Sel prokariotik tidak memiliki membran inti sehingga materi genetiknya tersebar di sitoplasma, contohnya bakteri. Sel eukariotik memiliki inti sel yang dibungkus membran, contohnya sel hewan, tumbuhan, dan jamur.',
+      'Spesialisasi Sel: Pada makhluk hidup bersel banyak, sel memiliki bentuk khusus sesuai fungsinya. Sel saraf panjang dan bercabang untuk menghantarkan rangsang; sel darah merah berbentuk cakram cekung tanpa inti agar dapat mengangkut banyak oksigen; sel otot dapat memendek untuk bergerak; sel sperma berekor agar dapat berenang; sel rambut akar memiliki tonjolan panjang untuk memperluas permukaan penyerapan air.',
       'Transpor Zat dan Organisasi Kehidupan: Difusi adalah perpindahan zat dari konsentrasi tinggi ke rendah (contoh pertukaran oksigen di paru-paru). Osmosis adalah perpindahan air melalui membran selektif permeabel dari larutan encer ke larutan pekat (contoh kentang dalam air garam menjadi lembek). Tingkatan organisasi kehidupan: sel → jaringan → organ → sistem organ → organisme.'
     ],
     keyFormulas: [
@@ -175,16 +176,16 @@ export default bab({
     }),
     soal({
       level: 'Tantangan',
-      q: 'Sayuran yang sudah layu dapat segar kembali bila direndam dalam air bersih selama beberapa saat. Penjelasan yang paling tepat adalah...',
+      q: 'Sel saraf berbentuk panjang dan memiliki banyak cabang, berbeda dengan sel kulit yang pipih. Hubungan bentuk sel saraf dengan fungsinya yang paling tepat adalah...',
       options: [
-        'air melarutkan kotoran pada sayur',
-        'air masuk ke dalam sel sayur secara osmosis sehingga sel kembali menegang',
-        'sayur melakukan fotosintesis di dalam air',
-        'dinding sel sayur memuai karena dingin'
+        'menyimpan cadangan makanan dalam jumlah besar',
+        'menghantarkan rangsang dengan cepat ke bagian tubuh yang jauh dan ke banyak sel lain',
+        'mengangkut oksigen ke seluruh tubuh',
+        'melindungi tubuh dari kuman penyakit'
       ],
       answer: 'B',
-      hint: 'Cairan sel sayur yang layu lebih pekat daripada air bersih.',
-      solution: 'Air bersih lebih encer daripada cairan sel, sehingga **air masuk ke sel secara osmosis**. Vakuola terisi kembali dan sel menegang (turgor), sehingga sayur tampak segar. Jawaban: **B**.'
+      hint: 'Ingat spesialisasi sel: bentuk sel menyesuaikan tugasnya.',
+      solution: 'Bentuk sel saraf yang panjang (akson) dan bercabang (dendrit) memungkinkannya **menghantarkan rangsang dengan cepat ke tempat yang jauh dan ke banyak sel**. Ini contoh spesialisasi sel. Mengangkut oksigen adalah tugas sel darah merah, melawan kuman tugas sel darah putih. Jawaban: **B**.'
     })
   ]
 });
