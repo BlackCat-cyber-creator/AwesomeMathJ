@@ -2579,3 +2579,6 @@ img, svg {
 .tka-muatan summary { cursor: pointer; font-weight: 700; color: var(--primary-navy); }
 .tka-loading { display: flex; align-items: center; gap: 0.5rem; padding: 1.5rem; }
 @media (max-width: 640px) { .tka-table { font-size: 0.8rem; } }
+/* Tombol paket TKA: teks putih di atas biru (mengalahkan warna link .seo-page a) */
+.tka-packets .btn-royal,
+.tka-packets .btn-royal:visited { color: #fff; }
