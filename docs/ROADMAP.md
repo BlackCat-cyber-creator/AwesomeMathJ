@@ -75,18 +75,21 @@ Catatan akses: PDF buku disimpan di domain `static.buku.kemdikbud.go.id` (domain
 - `vercel.json`: alamat rapi di-rewrite eksplisit ke file `.html` hasil prerender, dan rute lain ke `/app.html`. `cleanUrls` tidak dipakai, karena fitur itu mengalihkan file verifikasi Google `googlebd291c9eb4b652d2.html`. Hal ini dijaga oleh `tests/deployConfig.test.js`.
 - Perlu dilakukan pemilik situs: daftarkan `https://awesomemathj.vercel.app` di Google Search Console, lalu kirim `sitemap.xml`.
 
-### Tahap 1 — Fondasi multi-mata pelajaran (berjalan)
-Sudah selesai (Oktober 2026):
-- ✅ Tombol **"Laporkan soal"** di setiap soal buku saku, AMC, dan PR murid. Pelapor memilih jenis masalah (gambar tidak sesuai, kunci salah, bukan materi kelas ini, soal tidak jelas, lainnya) dan bisa menulis catatan; nama dan email tidak disimpan. Laporan masuk ke `reports/{id}` di Firestore dan tampil di Studio Guru → **Laporan soal**, dikelompokkan per soal, dengan link langsung ke soal dan tombol **Selesai**.
-- ✅ **Link per soal**: `/matematika/kelas-4/bab2-pecahan#soal-sd4-b2-3` langsung menggulir ke soal itu (juga di HTML prerender).
-- ✅ **Cari materi di semua kelas** di beranda (Kelas 4–12 dan AMC), misalnya "pecahan", "kelas 5 pecahan", "pythagoras".
-- ✅ Alamat publik sudah memuat mata pelajaran (`/matematika/...`), jadi IPA cukup ditambah sebagai `/ipa/...` tanpa mengubah link lama.
+### Tahap 1 — Fondasi multi-mata pelajaran ✅ (Oktober 2026)
+- Tombol **"Laporkan soal"** di setiap soal buku saku, AMC, dan PR murid. Laporan masuk ke `reports/{id}` di Firestore dan tampil di Studio Guru → **Laporan soal**. Nama dan email pelapor tidak disimpan.
+- **Link per soal**, misalnya `/matematika/kelas-4/bab2-pecahan#soal-sd4-b2-3`.
+- **Cari materi di semua kelas** di beranda: Matematika, IPA, dan AMC.
+- **Mata pelajaran di alamat**: `/matematika/kelas-N/...` dan `/ipa/kelas-N/...`. Tab Matematika / IPA / Olimpiade AMC.
+- **Data IPA satu file per bab** (`src/data/ipa/kelasN/babM-*.js`) dengan penulis ringkas `soal()`/`bab()` di `src/data/ipa/author.js`. Setelah mengedit, jalankan `node pipeline/build_chapter_index.mjs`.
+- Bab IPA diberi label `subject`, `curriculum`, dan `element` (elemen CP); fase berasal dari kelas.
+- Studio Guru: pilihan **IPA Kelas N** saat membuat PR untuk murid Kelas 7–9.
+- **Perlu dilakukan pemilik:** deploy ulang aturan Firestore (`docs/prompts/DEPLOY_FIREBASE_RULES.md`).
 
-Berikutnya:
-- Skema soal ditambah label `subject`, `curriculum`, `phase`, `cpElement`, dan `source` (fase sudah ada per kelas di `chapterIndex.js`).
-- Data per bab (`src/content/<subject>/<curriculum>/<grade>/<chapter>.json`) agar guru bisa mengedit satu bab tanpa coding. Ditunda sampai IPA mulai ditulis: file kelas sekarang sudah berupa JSON murni yang aman diedit lewat `pipeline/migrations/lib.mjs`.
-- Studio Guru: pilihan mata pelajaran IPA dan jalur Cambridge saat membuat PR.
-- **Perlu dilakukan pemilik:** deploy ulang aturan Firestore (`docs/prompts/DEPLOY_FIREBASE_RULES.md`). Sebelum itu, tombol laporan menampilkan "gagal terkirim".
+### Segmentasi materi (Oktober 2026)
+Disusun dengan pola situs belajar populer seperti mathcyber1997 dan defantri: satu halaman per bab, berupa artikel yang bisa dibaca dari atas ke bawah. Situs-situs itu tidak dapat dibuka dari lingkungan kerja, jadi polanya diambil dari pengetahuan umum.
+- **Halaman kelas:** daftar isi berisi semua bab beserta subbabnya, masing-masing dengan link langsung (`#materi-2`).
+- **Halaman bab:** Daftar Isi → Pengantar → Materi (subbab bernomor) → Rumus Kunci → Contoh Soal dan Pembahasan (pembahasan bisa dibuka-tutup) → Kesalahan yang Sering Terjadi → Tips → Latihan Soal per paket 5 soal → Bab sebelumnya / berikutnya.
+- Struktur yang sama dipakai aplikasi (`ChapterArticle`) dan HTML prerender, sehingga isi yang dibaca Google sama dengan yang tampil di browser.
 
 ### Tahap 2 — Matematika Kurikulum Merdeka edisi revisi
 - Selaraskan ulang **Kelas X** dan **Matematika Tingkat Lanjut XI** dengan edisi revisi.
@@ -95,8 +98,15 @@ Berikutnya:
 - **Butuh:** akses ke PDF buku resmi (lihat "Kebutuhan dari Anda").
 
 ### Tahap 3 — IPA Kurikulum Merdeka
-- Mulai dari IPA SMP (Kelas 7–9), lalu IPAS SD (bagian IPA), lalu IPA Kelas 10 dan Fisika/Kimia/Biologi Kelas 11–12.
-- Jenis gambar baru: rangkaian listrik, diagram gaya, sel, sistem organ, tabel periodik, grafik gerak.
+- ✅ **IPA SMP Kelas 7–9 (Oktober 2026):** 20 bab, dengan urutan bab mengikuti buku siswa IPA Kurikulum Merdeka.
+  - Kelas 7: Metode Ilmiah, Zat, Suhu & Kalor, Gerak & Gaya, Klasifikasi, Ekologi, Tata Surya.
+  - Kelas 8: Sel, Struktur & Fungsi Tubuh (termasuk zat aditif), Usaha & Pesawat Sederhana, Getaran–Gelombang–Cahaya, Unsur–Senyawa–Campuran, Struktur Bumi.
+  - Kelas 9: Pertumbuhan, Koordinasi–Reproduksi–Homeostasis (termasuk zat adiktif), Tekanan, Listrik–Magnet–Energi Alternatif, Reaksi Kimia, Pewarisan Sifat & Bioteknologi, Isu Lingkungan.
+  - Setiap bab berisi 6–7 subbab, rumus/istilah kunci, 3 contoh soal dengan pembahasan, kesalahan umum, tips, dan 15 soal (5 Dasar, 5 Sedang, 5 Tantangan).
+  - Gambar baru: termometer, tuas, rangkaian seri/paralel, gelombang, diagram gaya, grafik v–t, jaring makanan, dongkrak hidrolik, bandul.
+  - `tests/ipaContent.test.js` menjaga bentuk bab, kecocokan kunci dengan pembahasan, sebaran kunci jawaban, gambar, dan sinkronisasi indeks.
+- Berikutnya: IPAS SD (bagian IPA) Kelas 4–6, IPA Kelas 10, lalu Fisika/Kimia/Biologi Kelas 11–12.
+- Saat PDF buku resmi bisa diakses, cocokkan ulang subbab IPA dengan buku siswa edisi revisi (daftar bab disusun dari ringkasan pihak ketiga karena PDF diblokir).
 
 ### Tahap 4 — Jalur Cambridge
 - Cambridge Lower Secondary Mathematics & Science (Stage 7–9), lalu Primary (Stage 4–6), lalu IGCSE.

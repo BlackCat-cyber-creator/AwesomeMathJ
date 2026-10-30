@@ -42,7 +42,7 @@ export const HOME_META = {
 
 export const ABOUT_META = {
   title: `Tentang ${SITE_NAME} — ${AUTHOR.name}, ${AUTHOR.jobTitle}`,
-  description: `${SITE_NAME} dibuat dan dikelola oleh ${AUTHOR.name}, guru matematika Kelas 4 SD sampai 12 SMA dan pembina olimpiade AMC. Materi gratis, sesuai Capaian Pembelajaran Kurikulum Merdeka.`,
+  description: `${SITE_NAME} dibuat dan dikelola oleh ${AUTHOR.name}, guru Kelas 4 SD sampai 12 SMA dan pembina olimpiade AMC. Materi Matematika dan IPA gratis, sesuai Capaian Pembelajaran Kurikulum Merdeka.`,
   path: '/tentang'
 };
 

@@ -20,6 +20,9 @@ export function AboutPage() {
         {[4, 5, 6, 7, 8, 9, 10, 11, 12].map((g) => (
           <li key={g}><Link to={gradePath(g)}>Matematika Kelas {g}</Link></li>
         ))}
+        {[7, 8, 9].map((g) => (
+          <li key={`ipa${g}`}><Link to={gradePath(g, 'ipa')}>IPA Kelas {g}</Link></li>
+        ))}
         {[8, 10, 12].map((l) => (
           <li key={`amc${l}`}><Link to={amcLevelPath(l)}>Olimpiade AMC {l}</Link></li>
         ))}

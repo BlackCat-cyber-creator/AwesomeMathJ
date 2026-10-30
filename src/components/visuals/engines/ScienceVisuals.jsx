@@ -459,20 +459,20 @@ export function HydraulicVisual({
   bigForce = 'F₂',
   bigArea = 'A₂'
 }) {
-  const width = 340;
+  const width = 360;
   const height = 190;
   return (
     <SvgContainer width={width} height={height} title={title} caption={caption}>
-      <path d="M60,70 L60,160 L280,160 L280,60 L210,60 L210,145 L100,145 L100,70 Z" fill={T.primarySoft} stroke={T.primary} strokeWidth={1.8} />
-      <rect x={58} y={62} width={44} height={10} fill={T.textSecondary} />
-      <rect x={208} y={52} width={74} height={10} fill={T.textSecondary} />
-      <Arrow x1={80} y1={20} x2={80} y2={58} color={T.accent} />
-      <Label x={88} y={30} anchor="start" size={10.5} color={T.accentDark}>{smallForce}</Label>
-      <Label x={80} y={98} size={10} color={T.primaryDark}>{smallArea}</Label>
-      <Arrow x1={245} y1={48} x2={245} y2={14} color={T.secondary} />
-      <Label x={253} y={26} anchor="start" size={10.5} color={T.secondaryDark}>{bigForce}</Label>
-      <Label x={245} y={98} size={10} color={T.primaryDark}>{bigArea}</Label>
-      <Label x={170} y={178} size={10} weight={600} color={T.textMuted}>zat cair</Label>
+      <path d="M110,70 L110,160 L320,160 L320,60 L230,60 L230,145 L150,145 L150,70 Z" fill={T.primarySoft} stroke={T.primary} strokeWidth={1.8} />
+      <rect x={108} y={62} width={44} height={10} fill={T.textSecondary} />
+      <rect x={228} y={52} width={94} height={10} fill={T.textSecondary} />
+      <Arrow x1={130} y1={20} x2={130} y2={58} color={T.accent} />
+      <Label x={138} y={30} anchor="start" size={10.5} color={T.accentDark}>{smallForce}</Label>
+      <Label x={104} y={105} anchor="end" size={10} color={T.primaryDark}>{smallArea}</Label>
+      <Arrow x1={275} y1={48} x2={275} y2={14} color={T.secondary} />
+      <Label x={283} y={26} anchor="start" size={10.5} color={T.secondaryDark}>{bigForce}</Label>
+      <Label x={275} y={105} size={10} color={T.primaryDark}>{bigArea}</Label>
+      <Label x={215} y={178} size={10} weight={600} color={T.textMuted}>zat cair</Label>
     </SvgContainer>
   );
 }

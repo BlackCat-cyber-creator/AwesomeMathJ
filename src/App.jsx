@@ -170,7 +170,7 @@ export function App() {
                 {isTeacherRoute ? (
                   <>Studio Guru Matematika</>
                 ) : (
-                  <>Buku Panduan & Latihan Matematika Mandiri</>
+                  <>Materi & Latihan Matematika dan IPA</>
                 )}
               </div>
             </div>

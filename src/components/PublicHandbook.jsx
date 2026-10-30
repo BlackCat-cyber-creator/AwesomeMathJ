@@ -586,7 +586,7 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                     </div>
                     <div className="chapter-item-title">{ch.title}</div>
                     <div className="chapter-item-subtitle">
-                      {ch.questionCount || 20} butir latihan & pembahasan
+                      {ch.questionCount || ch.questions?.length || 0} butir latihan & pembahasan
                     </div>
                   </button>
                 );

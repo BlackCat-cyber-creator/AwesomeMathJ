@@ -60,7 +60,7 @@ export function ChapterArticle({ summary, practiceCount = 0 }) {
           <h3><Bookmark size={16} /> Rumus Kunci</h3>
           <div className="chapter-formula-grid">
             {summary.keyFormulas.map((kf, i) => (
-              <div key={i} className="chapter-formula">
+              <div key={i} className={`chapter-formula ${kf.formula.length > 45 ? 'is-wide' : ''}`}>
                 <div className="chapter-formula-label">{kf.label}</div>
                 <MathText text={`$$${kf.formula}$$`} />
               </div>

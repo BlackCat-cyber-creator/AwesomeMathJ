@@ -2376,7 +2376,8 @@ img, svg {
   line-height: 1.6;
 }
 
-.chapter-toc a {
+.chapter-toc a,
+.chapter-toc a * {
   color: var(--primary-blue);
   text-decoration: none;
 }
@@ -2440,6 +2441,8 @@ img, svg {
   background: var(--bg-surface);
   text-align: center;
 }
+
+.chapter-formula.is-wide { grid-column: 1 / -1; }
 
 .chapter-formula-label {
   font-size: 0.75rem;

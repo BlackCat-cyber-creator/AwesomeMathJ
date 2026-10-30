@@ -18,7 +18,7 @@ export const IPA_GRADE_METADATA = [
     "level": "SMP",
     "phase": "Fase D",
     "description": "Sel, Struktur dan Fungsi Tubuh Makhluk Hidup, Usaha dan Pesawat Sederhana, Getaran Gelombang dan Cahaya, Unsur Senyawa Campuran, serta Struktur Bumi",
-    "chaptersCount": 0
+    "chaptersCount": 6
   },
   {
     "subject": "ipa",
@@ -26,7 +26,7 @@ export const IPA_GRADE_METADATA = [
     "level": "SMP",
     "phase": "Fase D",
     "description": "Pertumbuhan dan Perkembangan, Sistem Koordinasi dan Reproduksi, Tekanan, Listrik dan Magnet, Reaksi Kimia, Pewarisan Sifat dan Bioteknologi, serta Isu Lingkungan",
-    "chaptersCount": 0
+    "chaptersCount": 7
   }
 ];
 
@@ -176,6 +176,280 @@ export const ALL_IPA_CHAPTERS_INDEX = [
       "Atmosfer dan Efek Rumah Kaca: Atmosfer melindungi bumi dari radiasi berbahaya dan menjaga suhu. Gas rumah kaca (karbon dioksida, metana, uap air) menahan sebagian panas yang dipantulkan bumi. Pertambahan gas rumah kaca dari pembakaran bahan bakar fosil dan penebangan hutan memperkuat efek ini sehingga suhu rata-rata bumi naik (pemanasan global) dan memicu perubahan iklim."
     ],
     "tutorTip": "Ingat urutan planet dengan kalimat \"Mari Venus Bumi Makan Jambu Sambil Udara Nyaman\" (Merkurius, Venus, Bumi, Mars, Jupiter, Saturnus, Uranus, Neptunus).",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa8-bab1-sel",
+    "subject": "ipa",
+    "grade": 8,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 0,
+    "title": "Bab 1: Sel",
+    "track": null,
+    "element": "Makhluk hidup dan lingkungannya: sistem organisasi kehidupan",
+    "coreConcepts": [
+      "Sel dan Mikroskop: Robert Hooke (1665) pertama kali melihat \"sel\" pada gabus menggunakan mikroskop. Teori sel menyatakan bahwa semua makhluk hidup tersusun atas sel dan sel berasal dari sel sebelumnya. Perbesaran mikroskop = perbesaran lensa okuler × perbesaran lensa objektif. Fokus diatur dengan makrometer (kasar) dan mikrometer (halus), cahaya diatur dengan cermin dan diafragma.",
+      "Bagian Utama Sel: Membran sel mengatur keluar-masuknya zat (selektif permeabel). Sitoplasma adalah cairan sel tempat organel berada dan tempat banyak reaksi kimia berlangsung. Inti sel (nukleus) berisi materi genetik (DNA) dan mengendalikan seluruh kegiatan sel.",
+      "Organel dan Fungsinya: Mitokondria tempat respirasi sel yang menghasilkan energi. Ribosom tempat sintesis protein. Retikulum endoplasma mengangkut zat di dalam sel. Badan Golgi mengemas dan mengirim zat. Lisosom mencerna zat dan bagian sel yang rusak. Vakuola menyimpan cadangan makanan, air, dan zat sisa. Kloroplas (hanya pada sel tumbuhan) tempat fotosintesis karena mengandung klorofil.",
+      "Sel Hewan dan Sel Tumbuhan: Sel tumbuhan memiliki dinding sel dari selulosa (bentuk tetap, umumnya kotak), kloroplas, dan vakuola besar. Sel hewan tidak memiliki dinding sel dan kloroplas, bentuknya tidak tetap, vakuolanya kecil atau tidak ada, serta memiliki sentriol untuk pembelahan sel.",
+      "Sel Prokariotik dan Eukariotik: Sel prokariotik tidak memiliki membran inti sehingga materi genetiknya tersebar di sitoplasma, contohnya bakteri. Sel eukariotik memiliki inti sel yang dibungkus membran, contohnya sel hewan, tumbuhan, dan jamur.",
+      "Transpor Zat dan Organisasi Kehidupan: Difusi adalah perpindahan zat dari konsentrasi tinggi ke rendah (contoh pertukaran oksigen di paru-paru). Osmosis adalah perpindahan air melalui membran selektif permeabel dari larutan encer ke larutan pekat (contoh kentang dalam air garam menjadi lembek). Tingkatan organisasi kehidupan: sel → jaringan → organ → sistem organ → organisme."
+    ],
+    "tutorTip": "Untuk membedakan sel tumbuhan dan hewan, cukup ingat tiga ciri khas tumbuhan: dinding sel, kloroplas, dan vakuola besar (\"DKV\").",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa8-bab2-struktur-fungsi-tubuh",
+    "subject": "ipa",
+    "grade": 8,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 1,
+    "title": "Bab 2: Struktur dan Fungsi Tubuh Makhluk Hidup",
+    "track": null,
+    "element": "Makhluk hidup dan lingkungannya: sistem organ, fungsi, dan gangguannya",
+    "coreConcepts": [
+      "Sistem Gerak: Rangka (tulang) adalah alat gerak pasif yang memberi bentuk tubuh, melindungi organ dalam, dan tempat pembentukan sel darah (sumsum merah). Otot adalah alat gerak aktif yang bekerja berpasangan: antagonis (berlawanan, misalnya bisep dan trisep) atau sinergis (searah). Sendi menghubungkan tulang: sendi engsel (siku, lutut), sendi peluru (bahu, pangkal paha), sendi putar (leher). Gangguan: osteoporosis, skoliosis, lordosis, kifosis.",
+      "Sistem Pencernaan dan Uji Makanan: Saluran pencernaan: mulut → kerongkongan → lambung → usus halus → usus besar → anus. Enzim ptialin (amilase) di mulut mengubah amilum menjadi gula; pepsin di lambung memecah protein; usus halus menyerap sari makanan. Uji makanan: Lugol untuk amilum (biru kehitaman), Benedict untuk glukosa (merah bata setelah dipanaskan), Biuret untuk protein (ungu), dan kertas buram untuk lemak (noda transparan).",
+      "Zat Aditif pada Makanan: Zat yang sengaja ditambahkan untuk memperbaiki warna, rasa, aroma, atau daya tahan makanan. Alami: kunyit dan daun suji (pewarna), garam dan gula (pengawet), daun pandan (pengharum). Buatan: tartrazin, natrium benzoat, aspartam, MSG. Zat yang tidak boleh untuk makanan, misalnya boraks, formalin, dan rhodamin B, berbahaya bagi hati dan ginjal. Bacalah label komposisi dan izin BPOM sebelum membeli.",
+      "Sistem Pernapasan: Udara masuk melalui hidung → faring → laring → trakea → bronkus → bronkiolus → alveolus. Di alveolus terjadi pertukaran gas secara difusi: oksigen masuk ke darah, karbon dioksida keluar. Pernapasan dada dan perut terjadi karena kontraksi otot antartulang rusuk dan diafragma; saat inspirasi rongga dada membesar sehingga tekanan turun dan udara masuk. Gangguan: asma, bronkitis, pneumonia, dan kerusakan paru akibat asap rokok.",
+      "Sistem Peredaran Darah: Jantung memiliki 4 ruang (serambi kanan-kiri, bilik kanan-kiri). Peredaran darah kecil: jantung (bilik kanan) → paru-paru → jantung (serambi kiri). Peredaran darah besar: jantung (bilik kiri) → seluruh tubuh → jantung (serambi kanan). Arteri membawa darah keluar dari jantung, vena membawa darah kembali ke jantung. Komponen darah: sel darah merah (mengangkut oksigen dengan hemoglobin), sel darah putih (melawan kuman), keping darah (pembekuan), dan plasma. Gangguan: anemia, hipertensi, varises.",
+      "Sistem Ekskresi: Ginjal menyaring darah dan menghasilkan urine; kulit mengeluarkan keringat; paru-paru mengeluarkan karbon dioksida dan uap air; hati merombak sel darah merah tua menjadi zat warna empedu. Minum air yang cukup membantu mencegah batu ginjal.",
+      "Struktur dan Fungsi Tumbuhan: Akar menyerap air dan mineral; batang mengangkut zat dan menopang tubuh; daun tempat fotosintesis. Xilem mengangkut air dan mineral dari akar ke daun, floem mengangkut hasil fotosintesis ke seluruh tubuh. Stomata pada daun tempat pertukaran gas dan penguapan air (transpirasi). Fotosintesis: karbon dioksida + air → glukosa + oksigen, dengan bantuan cahaya matahari dan klorofil."
+    ],
+    "tutorTip": "Untuk peredaran darah, ingat \"bilik = keluar, serambi = masuk\": darah selalu KELUAR jantung dari bilik dan MASUK jantung lewat serambi.",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa8-bab3-usaha-energi-pesawat-sederhana",
+    "subject": "ipa",
+    "grade": 8,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 2,
+    "title": "Bab 3: Usaha, Energi, dan Pesawat Sederhana",
+    "track": null,
+    "element": "Energi dan perubahannya: hubungan usaha dan energi",
+    "coreConcepts": [
+      "Usaha: Usaha dilakukan jika gaya menyebabkan benda berpindah searah gaya: $W = F \\times s$, satuannya joule (J). Jika benda tidak berpindah (mendorong tembok) atau gaya tegak lurus perpindahan (membawa tas sambil berjalan mendatar), usaha yang dilakukan gaya itu bernilai nol.",
+      "Energi dan Bentuknya: Energi adalah kemampuan melakukan usaha. Energi kinetik dimiliki benda bergerak: $E_k = \\tfrac{1}{2} m v^2$. Energi potensial gravitasi dimiliki benda pada ketinggian: $E_p = m g h$. Energi mekanik $E_m = E_p + E_k$. Bentuk lain: energi kimia (makanan, baterai), listrik, kalor, cahaya, bunyi, dan nuklir.",
+      "Hukum Kekekalan Energi: Energi tidak dapat diciptakan atau dimusnahkan, hanya berubah bentuk. Contoh: buah jatuh (energi potensial → kinetik), lampu (listrik → cahaya + kalor), fotosintesis (cahaya → kimia). Tanpa gesekan, energi mekanik benda selalu tetap.",
+      "Daya: Daya adalah usaha yang dilakukan setiap satuan waktu: $P = \\dfrac{W}{t}$, satuannya watt (W). Lampu 60 watt memakai energi listrik 60 joule setiap sekon.",
+      "Tuas (Pengungkit): Pada tuas berlaku $w \\times L_b = F \\times L_k$ (beban × lengan beban = kuasa × lengan kuasa). Keuntungan mekanis $KM = \\dfrac{w}{F} = \\dfrac{L_k}{L_b}$. Tuas jenis I: titik tumpu di tengah (gunting, jungkat-jungkit, linggis). Jenis II: beban di tengah (gerobak dorong, pembuka botol). Jenis III: kuasa di tengah (sekop, pinset, lengan bawah manusia).",
+      "Bidang Miring, Katrol, dan Roda Berporos: Bidang miring: $KM = \\dfrac{s}{h}$ (panjang lintasan dibagi tinggi), contoh tangga, jalan berkelok di gunung, sekrup. Katrol tetap mengubah arah gaya, KM = 1; katrol bebas KM = 2; katrol majemuk KM = jumlah tali penahan beban. Roda berporos (setir, gerinda) memudahkan memutar benda. Pesawat sederhana tidak mengurangi usaha; ia mengurangi gaya dengan menambah jarak."
+    ],
+    "tutorTip": "Untuk menentukan jenis tuas, lihat apa yang berada di TENGAH: titik tumpu (jenis I), beban (jenis II), atau kuasa (jenis III). Singkatan \"T-B-K\" = 1-2-3.",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa8-bab4-getaran-gelombang-cahaya",
+    "subject": "ipa",
+    "grade": 8,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 3,
+    "title": "Bab 4: Getaran, Gelombang, dan Cahaya",
+    "track": null,
+    "element": "Gelombang: getaran, bunyi, cahaya, dan pemanfaatannya",
+    "coreConcepts": [
+      "Getaran: Getaran adalah gerak bolak-balik di sekitar titik setimbang. Pada bandul A–B–C, satu getaran adalah A → B → C → B → A. Amplitudo adalah simpangan terjauh dari titik setimbang. Frekuensi $f = \\dfrac{n}{t}$ (hertz, Hz) adalah banyak getaran tiap sekon; periode $T = \\dfrac{t}{n}$ (sekon) adalah waktu satu getaran; $f = \\dfrac{1}{T}$.",
+      "Gelombang: Gelombang adalah getaran yang merambat dan membawa energi. Gelombang transversal arah getarnya tegak lurus arah rambat (gelombang tali, air, cahaya) dan terdiri atas bukit dan lembah. Gelombang longitudinal arah getarnya sejajar arah rambat (slinki, bunyi) dan terdiri atas rapatan dan renggangan. Satu panjang gelombang (λ) = satu bukit + satu lembah atau satu rapatan + satu renggangan. Cepat rambat $v = \\lambda \\times f = \\dfrac{\\lambda}{T}$.",
+      "Bunyi: Bunyi adalah gelombang longitudinal yang memerlukan medium (padat, cair, gas), sehingga tidak dapat merambat di ruang hampa. Cepat rambat bunyi paling besar di zat padat. Berdasarkan frekuensinya: infrasonik (< 20 Hz, didengar gajah dan anjing), audiosonik (20–20.000 Hz, didengar manusia), ultrasonik (> 20.000 Hz, dipakai kelelawar, lumba-lumba, USG). Tinggi nada ditentukan frekuensi; kuat bunyi ditentukan amplitudo. Resonansi adalah ikut bergetarnya benda karena frekuensinya sama.",
+      "Pemantulan Bunyi: Bunyi pantul dapat berupa gaung (mengganggu bunyi asli) atau gema (terdengar jelas setelah bunyi asli). Sonar memanfaatkan pantulan bunyi untuk mengukur kedalaman laut: $d = \\dfrac{v \\times t}{2}$, dibagi dua karena bunyi pergi lalu kembali.",
+      "Cahaya, Cermin, dan Lensa: Cahaya merambat lurus, dapat dipantulkan, dibiaskan, dan diuraikan (pelangi). Cermin datar menghasilkan bayangan maya, tegak, sama besar. Cermin cekung (konkaf) mengumpulkan cahaya, dipakai pada lampu senter; cermin cembung (konveks) menyebarkan cahaya dan bayangannya selalu maya, tegak, diperkecil, dipakai pada spion. Rumus cermin dan lensa: $\\dfrac{1}{f} = \\dfrac{1}{s} + \\dfrac{1}{s'}$, perbesaran $M = \\dfrac{s'}{s}$.",
+      "Mata dan Kacamata: Lensa mata membentuk bayangan nyata, terbalik, diperkecil pada retina; daya akomodasi adalah kemampuan lensa mata mencembung atau memipih. Rabun jauh (miopi) bayangan jatuh di depan retina, ditolong kacamata lensa cekung (negatif). Rabun dekat (hipermetropi) bayangan jatuh di belakang retina, ditolong kacamata lensa cembung (positif)."
+    ],
+    "tutorTip": "Untuk soal gelombang bergambar, hitung dulu ada berapa gelombang (1 bukit + 1 lembah = 1 gelombang), lalu panjang gelombang = jarak total dibagi jumlah gelombang.",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa8-bab5-unsur-senyawa-campuran",
+    "subject": "ipa",
+    "grade": 8,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 4,
+    "title": "Bab 5: Unsur, Senyawa, dan Campuran",
+    "track": null,
+    "element": "Zat dan sifatnya: klasifikasi materi",
+    "coreConcepts": [
+      "Unsur: Unsur adalah zat tunggal yang tidak dapat diuraikan lagi menjadi zat lain dengan reaksi kimia biasa. Unsur dikelompokkan menjadi logam (mengilap, menghantarkan listrik dan panas, contoh besi Fe, tembaga Cu, emas Au), nonlogam (contoh oksigen O, karbon C, belerang S), dan metaloid (sifat di antara keduanya, contoh silikon Si). Lambang unsur ditulis dengan satu huruf kapital atau huruf kapital diikuti huruf kecil, misalnya Na (natrium) dan Cl (klorin).",
+      "Senyawa dan Rumus Kimia: Senyawa terbentuk dari dua unsur atau lebih yang bergabung secara kimia dengan perbandingan tetap, dan sifatnya berbeda dari unsur penyusunnya. Contoh: air (H₂O) tersusun atas 2 atom hidrogen dan 1 atom oksigen; garam dapur (NaCl) dari natrium dan klorin; karbon dioksida (CO₂). Senyawa hanya dapat diuraikan dengan reaksi kimia.",
+      "Campuran: Campuran terbentuk dari dua zat atau lebih yang bercampur tanpa reaksi kimia, perbandingannya tidak tetap, dan sifat zat penyusunnya masih tampak. Campuran homogen (larutan) tampak seragam, contoh air gula dan udara. Campuran heterogen tidak seragam, contoh air kopi tubruk, pasir dan air. Koloid adalah campuran di antara keduanya, contoh susu dan santan; suspensi mudah mengendap, contoh air sungai keruh.",
+      "Pemisahan Campuran: Filtrasi (penyaringan) memisahkan padatan tak larut dari cairan berdasarkan ukuran partikel. Evaporasi (penguapan) mengambil zat terlarut padat, contoh garam dari air laut. Distilasi (penyulingan) memisahkan cairan berdasarkan perbedaan titik didih, contoh minyak atsiri dan air murni. Kromatografi memisahkan berdasarkan perbedaan kecepatan merambat, contoh komponen warna tinta. Sublimasi untuk zat yang dapat menyublim (kapur barus). Dekantasi menuangkan cairan di atas endapan, sentrifugasi memakai putaran cepat.",
+      "Asam, Basa, dan Garam: Asam berasa masam, pH < 7, memerahkan kertas lakmus biru (contoh cuka, jeruk, asam lambung). Basa berasa pahit, licin, pH > 7, membirukan kertas lakmus merah (contoh sabun, pasta gigi, air kapur). Garam terbentuk dari reaksi asam dan basa (netralisasi), pH = 7 untuk garam netral seperti NaCl. Contoh penerapan: obat maag (basa) menetralkan asam lambung.",
+      "Indikator Asam-Basa: Kertas lakmus merah dan biru, larutan fenolftalein (tidak berwarna dalam asam, merah muda dalam basa), indikator universal yang menunjukkan nilai pH, serta indikator alami seperti kunyit (kuning dalam asam, merah kecokelatan dalam basa), kubis ungu, dan bunga sepatu."
+    ],
+    "tutorTip": "Untuk lakmus, ingat \"BiMA\": Biru → Merah oleh Asam. Kebalikannya, merah → biru oleh basa.",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa8-bab6-struktur-bumi",
+    "subject": "ipa",
+    "grade": 8,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 5,
+    "title": "Bab 6: Struktur Bumi dan Perkembangannya",
+    "track": null,
+    "element": "Bumi dan antariksa: struktur bumi, gempa, dan gunung api",
+    "coreConcepts": [
+      "Lapisan Bumi: Dari luar ke dalam: kerak bumi (padat, tipis, tempat hidup), mantel (sangat tebal, sebagian cair kental), inti luar (cair, berisi besi dan nikel), dan inti dalam (padat karena tekanan sangat tinggi, suhu sangat panas). Litosfer adalah kerak dan bagian atas mantel yang padat; di bawahnya ada astenosfer yang plastis sehingga lempeng dapat bergerak di atasnya.",
+      "Lempeng Tektonik: Litosfer terpecah menjadi lempeng-lempeng yang bergerak karena arus konveksi di mantel. Batas lempeng: divergen (saling menjauh, membentuk punggung tengah samudra), konvergen (saling bertumbukan, membentuk palung, gunung, dan jalur gempa), dan transform (saling bergeser mendatar). Indonesia terletak di pertemuan tiga lempeng besar: Indo-Australia, Eurasia, dan Pasifik.",
+      "Gempa Bumi: Gempa tektonik terjadi karena pelepasan energi akibat gerak lempeng; gempa vulkanik karena aktivitas gunung api. Hiposentrum adalah pusat gempa di dalam bumi, episentrum adalah titik di permukaan bumi tepat di atasnya. Getaran gempa dicatat oleh seismograf dan kekuatannya dinyatakan dalam magnitudo. Saat gempa: lindungi kepala, berlindung di bawah meja yang kuat, jauhi kaca, lalu menuju lapangan terbuka.",
+      "Tsunami dan Gunung Api: Tsunami adalah gelombang laut besar akibat gempa dasar laut, letusan gunung api bawah laut, atau longsor bawah laut. Tanda alam: air laut tiba-tiba surut jauh setelah gempa kuat, sehingga harus segera mengungsi ke tempat tinggi. Gunung api terbentuk dari magma yang naik ke permukaan; banyak di jalur pertemuan lempeng (Cincin Api Pasifik). Letusan berbahaya (awan panas, lahar) tetapi abunya menyuburkan tanah.",
+      "Batuan dan Siklus Batuan: Batuan beku terbentuk dari magma yang membeku (granit, basalt, batu apung). Batuan sedimen terbentuk dari endapan hasil pelapukan yang memadat (batu pasir, batu kapur) dan dapat mengandung fosil. Batuan metamorf terbentuk dari batuan lain yang berubah karena suhu dan tekanan tinggi (marmer dari batu kapur, batu sabak). Ketiganya dapat berubah satu sama lain dalam siklus batuan.",
+      "Tanah dan Pelapukan: Tanah terbentuk dari pelapukan batuan dan bahan organik selama ribuan tahun. Pelapukan fisika (perubahan suhu, akar menembus batuan), kimia (batu kapur larut oleh air hujan yang mengandung karbon dioksida), dan biologi (lumut dan mikroorganisme). Lapisan teratas (humus) paling subur. Erosi (pengikisan tanah oleh air atau angin) dicegah dengan reboisasi dan terasering."
+    ],
+    "tutorTip": "Ingat urutan batuan dari cara terbentuknya: BEKU dari magma, SEDIMEN dari endapan, METAMORF dari \"metamorfosis\" batuan lain karena panas dan tekanan.",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa9-bab1-pertumbuhan-perkembangan",
+    "subject": "ipa",
+    "grade": 9,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 0,
+    "title": "Bab 1: Pertumbuhan dan Perkembangan",
+    "track": null,
+    "element": "Makhluk hidup dan lingkungannya: sistem organisasi kehidupan",
+    "coreConcepts": [
+      "Pertumbuhan dan Perkembangan: Pertumbuhan adalah bertambahnya ukuran (tinggi, massa, volume) yang tidak dapat kembali (irreversibel) dan dapat diukur (kuantitatif). Perkembangan adalah proses menuju kedewasaan atau kematangan fungsi organ (kualitatif), misalnya kemampuan berbunga atau berkembang biak.",
+      "Pembelahan Sel: Mitosis menghasilkan 2 sel anak yang jumlah kromosomnya sama dengan sel induk; terjadi pada sel tubuh untuk pertumbuhan dan mengganti sel rusak. Meiosis menghasilkan 4 sel anak dengan jumlah kromosom setengah sel induk; terjadi pada organ reproduksi untuk membentuk sel kelamin (gamet).",
+      "Pertumbuhan pada Tumbuhan: Pertumbuhan primer terjadi di jaringan meristem apikal (ujung akar dan ujung batang) sehingga tumbuhan bertambah panjang. Pertumbuhan sekunder oleh kambium membuat batang bertambah besar dan membentuk lingkaran tahun pada tumbuhan dikotil. Perkecambahan epigeal: kotiledon terangkat ke atas tanah (kacang hijau); hipogeal: kotiledon tetap di dalam tanah (jagung, kacang kapri).",
+      "Faktor yang Memengaruhi Pertumbuhan Tumbuhan: Faktor dalam: gen dan hormon (auksin merangsang pemanjangan sel, giberelin memacu tinggi tanaman dan pembuahan, sitokinin memacu pembelahan sel, etilen mempercepat pematangan buah, asam absisat menghambat pertumbuhan saat kekeringan). Faktor luar: air, nutrisi, suhu, kelembapan, dan cahaya. Tanaman di tempat gelap tumbuh lebih cepat tinggi tetapi pucat dan kurus (etiolasi), karena cahaya menghambat kerja auksin.",
+      "Pertumbuhan dan Perkembangan Hewan: Metamorfosis sempurna melalui tahap telur → larva → pupa → imago (kupu-kupu, nyamuk, lalat). Metamorfosis tidak sempurna: telur → nimfa → imago (belalang, kecoak, capung). Katak mengalami metamorfosis dari telur → berudu (bernapas dengan insang) → katak muda → katak dewasa (bernapas dengan paru-paru dan kulit).",
+      "Pertumbuhan Manusia dan Pubertas: Tahapan: bayi, anak-anak, remaja, dewasa, dan lanjut usia. Masa pubertas ditandai matangnya organ reproduksi akibat hormon (testosteron pada laki-laki, estrogen dan progesteron pada perempuan). Ciri sekunder laki-laki: suara membesar, tumbuh jakun dan kumis; perempuan: payudara membesar, pinggul melebar, menstruasi. Pertumbuhan manusia dipengaruhi gizi, hormon, kesehatan, dan olahraga."
+    ],
+    "tutorTip": "Ingat angka kunci pembelahan sel: Mitosis = 2 sel, kromosom tetap; Meiosis = 4 sel, kromosom setengah. \"MIToSIS untuk tubuh, MEIosis untuk keturunan.\"",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa9-bab2-koordinasi-reproduksi-homeostasis",
+    "subject": "ipa",
+    "grade": 9,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 1,
+    "title": "Bab 2: Sistem Koordinasi, Reproduksi, dan Homeostasis Manusia",
+    "track": null,
+    "element": "Makhluk hidup dan lingkungannya: sistem organ; zat adiktif",
+    "coreConcepts": [
+      "Sistem Saraf: Unit terkecilnya adalah sel saraf (neuron) yang terdiri atas dendrit (menerima rangsang), badan sel, dan akson/neurit (meneruskan impuls). Neuron sensorik membawa impuls dari indra ke pusat saraf, neuron motorik dari pusat saraf ke otot. Sistem saraf pusat terdiri atas otak (otak besar untuk berpikir dan mengatur gerak sadar, otak kecil untuk keseimbangan, batang otak untuk detak jantung dan napas) dan sumsum tulang belakang.",
+      "Gerak Biasa dan Gerak Refleks: Gerak biasa (sadar) melewati otak: rangsang → saraf sensorik → otak → saraf motorik → otot, misalnya menulis. Gerak refleks berlangsung sangat cepat tanpa diolah otak, melalui sumsum tulang belakang atau batang otak, misalnya menarik tangan saat menyentuh benda panas dan berkedip ketika ada debu.",
+      "Sistem Hormon (Endokrin): Kelenjar endokrin mengeluarkan hormon langsung ke darah. Hipofisis menghasilkan hormon pertumbuhan dan mengatur kelenjar lain; tiroid menghasilkan tiroksin (metabolisme); pankreas menghasilkan insulin yang menurunkan kadar gula darah (kekurangan insulin menyebabkan diabetes melitus); kelenjar adrenal menghasilkan adrenalin saat takut atau tegang; testis dan ovarium menghasilkan hormon kelamin.",
+      "Homeostasis: Homeostasis adalah kemampuan tubuh menjaga kondisi dalam tetap stabil. Saat kepanasan, tubuh berkeringat dan pembuluh darah kulit melebar agar panas terbuang; saat kedinginan, tubuh menggigil dan pembuluh darah kulit menyempit. Kadar gula darah dijaga insulin (menurunkan) dan glukagon (menaikkan); kadar air dijaga oleh ginjal.",
+      "Sistem Reproduksi: Organ reproduksi laki-laki: testis (menghasilkan sperma dan testosteron), saluran sperma, dan penis. Perempuan: ovarium (menghasilkan sel telur, estrogen, dan progesteron), tuba falopi (tempat fertilisasi), dan rahim (tempat janin berkembang). Siklus menstruasi sekitar 28 hari: dinding rahim yang menebal luruh jika tidak terjadi pembuahan. Jaga kesehatan reproduksi dengan kebersihan, menghindari pergaulan bebas, dan memeriksakan diri ke tenaga kesehatan.",
+      "Zat Adiktif dan Psikotropika: Zat adiktif menimbulkan ketagihan (nikotin pada rokok, alkohol, kafein berlebihan). Psikotropika dan narkotika memengaruhi kerja otak dan saraf: menekan (depresan), merangsang (stimulan), atau menimbulkan halusinasi. Dampaknya: kerusakan otak, jantung, paru-paru, dan hati, ketergantungan, hingga kematian karena overdosis. Cara menghindari: berani menolak, memilih teman dan kegiatan positif, serta mencari bantuan orang tua, guru, atau konselor."
+    ],
+    "tutorTip": "Untuk soal saraf, cari kata kunci \"tanpa berpikir/spontan/cepat\" → refleks; \"memutuskan/menulis/menjawab\" → gerak biasa.",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa9-bab3-tekanan",
+    "subject": "ipa",
+    "grade": 9,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 2,
+    "title": "Bab 3: Tekanan",
+    "track": null,
+    "element": "Energi dan perubahannya: ragam gerak, gaya, dan tekanan",
+    "coreConcepts": [
+      "Tekanan Zat Padat: Tekanan adalah gaya tekan tiap satuan luas bidang tekan: $P = \\dfrac{F}{A}$, satuannya pascal (Pa) = N/m². Makin kecil luas bidang tekan, makin besar tekanannya. Contoh: pisau tajam dan paku runcing mudah menembus benda; sepatu salju dan roda traktor yang lebar mengurangi tekanan agar tidak terbenam.",
+      "Tekanan Hidrostatis: Tekanan oleh zat cair diam: $P_h = \\rho \\times g \\times h$, dengan $h$ kedalaman dari permukaan. Makin dalam, tekanan makin besar. Karena itu dinding bendungan dibuat makin tebal ke bawah dan penyelam di laut dalam memerlukan pakaian khusus. Tekanan hidrostatis tidak bergantung pada bentuk wadah.",
+      "Hukum Pascal: Tekanan yang diberikan pada zat cair dalam ruang tertutup diteruskan ke segala arah sama besar: $\\dfrac{F_1}{A_1} = \\dfrac{F_2}{A_2}$. Gaya kecil pada pengisap kecil dapat menghasilkan gaya besar pada pengisap besar. Penerapan: dongkrak hidrolik, rem hidrolik, kursi dokter gigi, dan mesin pengepres.",
+      "Hukum Archimedes: Benda yang dicelupkan ke zat cair mendapat gaya ke atas sebesar berat zat cair yang dipindahkan: $F_A = \\rho_{\\text{cair}} \\times g \\times V_{\\text{tercelup}}$. Benda terapung jika $\\rho_{\\text{benda}} < \\rho_{\\text{cair}}$, melayang jika sama, tenggelam jika lebih besar. Penerapan: kapal laut, kapal selam (mengatur air di tangki pemberat), hidrometer, dan balon udara (Archimedes pada gas).",
+      "Tekanan Udara: Udara memiliki berat sehingga menekan permukaan bumi; diukur dengan barometer. Tekanan udara di permukaan laut sekitar 1 atm = 76 cmHg. Makin tinggi tempat, tekanan udara makin kecil (kira-kira turun 1 cmHg setiap naik 100 m). Penerapan: sedotan minuman, alat suntik, dan pompa air.",
+      "Tekanan pada Makhluk Hidup: Jantung memompa darah sehingga timbul tekanan darah, dinyatakan sistol/diastol (normal sekitar 120/80 mmHg). Pengangkutan air pada tumbuhan dibantu daya kapilaritas pembuluh xilem, tekanan akar, dan daya isap daun akibat penguapan (transpirasi). Bernapas juga terjadi karena perbedaan tekanan udara di dalam paru-paru dan di luar tubuh."
+    ],
+    "tutorTip": "Untuk soal Pascal, cukup ingat \"perbandingan\": gaya berbanding lurus dengan luas. Jika luas pengisap besar 50 kali luas pengisap kecil, gaya yang dihasilkan juga 50 kali.",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa9-bab4-listrik-magnet-energi-alternatif",
+    "subject": "ipa",
+    "grade": 9,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 3,
+    "title": "Bab 4: Listrik, Magnet, dan Sumber Energi Alternatif",
+    "track": null,
+    "element": "Energi dan perubahannya: kelistrikan, kemagnetan, dan energi ramah lingkungan",
+    "coreConcepts": [
+      "Listrik Statis: Benda dapat bermuatan listrik karena menangkap atau melepas elektron, misalnya penggaris plastik yang digosok ke rambut. Muatan sejenis tolak-menolak, muatan berlainan jenis tarik-menarik. Elektroskop digunakan untuk mendeteksi muatan. Petir adalah pelepasan muatan listrik statis yang sangat besar dari awan; penangkal petir mengalirkannya dengan aman ke tanah.",
+      "Arus Listrik dan Hukum Ohm: Arus listrik adalah aliran muatan dalam rangkaian tertutup, diukur dengan amperemeter (dipasang seri) dalam ampere (A). Beda potensial (tegangan) diukur dengan voltmeter (dipasang paralel) dalam volt (V). Hukum Ohm: $V = I \\times R$, dengan $R$ hambatan dalam ohm (Ω). Konduktor mudah menghantarkan listrik (tembaga, besi), isolator sulit (plastik, karet, kayu kering).",
+      "Rangkaian Seri dan Paralel: Pada rangkaian seri, arus di setiap hambatan sama dan $R_s = R_1 + R_2 + \\dots$; jika satu lampu putus, semua padam. Pada rangkaian paralel, tegangan di setiap cabang sama dan $\\dfrac{1}{R_p} = \\dfrac{1}{R_1} + \\dfrac{1}{R_2} + \\dots$; jika satu lampu putus, lampu lain tetap menyala. Instalasi listrik rumah memakai rangkaian paralel.",
+      "Energi dan Daya Listrik: Energi listrik $W = V \\times I \\times t$ (joule). Daya listrik $P = V \\times I$ (watt). PLN menghitung pemakaian dalam kilowatt jam (kWh): energi (kWh) = daya (kW) × waktu (jam). Biaya = energi (kWh) × tarif per kWh. Hemat listrik: matikan alat yang tidak dipakai, gunakan lampu LED, dan manfaatkan cahaya matahari.",
+      "Kemagnetan dan Induksi Elektromagnetik: Magnet memiliki kutub utara dan selatan; kutub sejenis tolak-menolak, berlainan tarik-menarik. Benda feromagnetik (besi, baja, nikel) dapat dibuat magnet dengan cara menggosok, induksi, atau dialiri arus listrik (elektromagnet). Bumi bersifat magnet sehingga jarum kompas menunjuk utara–selatan. Elektromagnet makin kuat jika lilitan atau arus diperbesar dan diberi inti besi. Induksi elektromagnetik: perubahan medan magnet di sekitar kumparan menghasilkan arus listrik; prinsip ini dipakai pada generator dan dinamo sepeda.",
+      "Sumber Energi Alternatif: Bahan bakar fosil (minyak bumi, batu bara, gas alam) tidak terbarukan dan menghasilkan gas rumah kaca. Sumber energi terbarukan: energi surya (panel surya), angin (kincir/turbin angin), air (PLTA, mikrohidro), panas bumi (PLTP, banyak di Indonesia karena banyak gunung api), biomassa dan biogas (kotoran ternak, sampah organik), serta gelombang laut. Pemanfaatannya mengurangi polusi dan membantu mengatasi perubahan iklim."
+    ],
+    "tutorTip": "Untuk hukum Ohm, pakai segitiga \"V di atas, I dan R di bawah\": tutup besaran yang dicari. V = I × R, I = V : R, R = V : I.",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa9-bab5-reaksi-kimia",
+    "subject": "ipa",
+    "grade": 9,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 4,
+    "title": "Bab 5: Reaksi-Reaksi Kimia dan Dinamikanya",
+    "track": null,
+    "element": "Zat dan sifatnya: perubahan materi dan reaksi kimia",
+    "coreConcepts": [
+      "Reaksi Kimia dan Cirinya: Reaksi kimia adalah perubahan zat (pereaksi/reaktan) menjadi zat baru (hasil reaksi/produk). Ciri-cirinya: terbentuk gas (gelembung), terbentuk endapan, terjadi perubahan warna, dan terjadi perubahan suhu. Contoh: cuka dicampur soda kue menghasilkan gelembung gas karbon dioksida.",
+      "Persamaan Reaksi dan Hukum Kekekalan Massa: Persamaan reaksi menuliskan pereaksi di kiri tanda panah dan hasil reaksi di kanan, lengkap dengan wujud zat (s padat, l cair, g gas, aq larutan). Hukum Lavoisier: massa zat sebelum dan sesudah reaksi sama. Karena itu jumlah atom setiap unsur di kiri dan kanan harus sama (persamaan setara), misalnya $2\\text{H}_2 + \\text{O}_2 \\rightarrow 2\\text{H}_2\\text{O}$.",
+      "Jenis-Jenis Reaksi: Reaksi pembakaran (zat bereaksi dengan oksigen, contoh $\\text{CH}_4 + 2\\text{O}_2 \\rightarrow \\text{CO}_2 + 2\\text{H}_2\\text{O}$), penggabungan (dua zat membentuk satu zat), penguraian (satu zat terurai menjadi beberapa zat, contoh elektrolisis air), dan netralisasi (asam + basa → garam + air).",
+      "Reaksi Eksoterm dan Endoterm: Reaksi eksoterm melepaskan kalor ke lingkungan sehingga lingkungan terasa panas, contoh pembakaran, respirasi, dan kapur tohor dicampur air. Reaksi endoterm menyerap kalor dari lingkungan sehingga terasa dingin, contoh fotosintesis dan pelarutan amonium nitrat pada kompres instan dingin.",
+      "Laju Reaksi: Laju reaksi menyatakan cepat lambatnya reaksi. Faktor yang mempercepat: konsentrasi pereaksi lebih besar, suhu lebih tinggi, luas permukaan lebih besar (zat dalam bentuk serbuk atau potongan kecil), dan adanya katalis (zat yang mempercepat reaksi tanpa ikut habis, contoh enzim di dalam tubuh). Contoh: daging dicincang lebih cepat matang; makanan di kulkas lebih lambat basi.",
+      "Reaksi Kimia dalam Kehidupan: Fotosintesis, respirasi sel, pencernaan makanan oleh enzim, fermentasi (tape, yoghurt, tempe), dan perkaratan besi (besi + oksigen + air). Karat dicegah dengan mengecat, melumuri oli, melapisi logam lain (galvanisasi), atau menjaga besi tetap kering. Bahan kimia rumah tangga (pemutih, pembersih lantai) harus digunakan sesuai label dan tidak dicampur sembarangan."
+    ],
+    "tutorTip": "Menyetarakan reaksi paling mudah dimulai dari unsur yang hanya muncul di satu zat di setiap sisi, lalu setarakan H dan O paling akhir.",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa9-bab6-pewarisan-sifat-bioteknologi",
+    "subject": "ipa",
+    "grade": 9,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 5,
+    "title": "Bab 6: Pewarisan Sifat dan Bioteknologi",
+    "track": null,
+    "element": "Makhluk hidup dan lingkungannya: pewarisan sifat dan bioteknologi konvensional",
+    "coreConcepts": [
+      "Materi Genetik: Sifat diwariskan melalui gen, yaitu bagian DNA yang terletak pada kromosom di dalam inti sel. Sel tubuh manusia memiliki 46 kromosom (23 pasang): 22 pasang autosom dan 1 pasang kromosom kelamin (XX pada perempuan, XY pada laki-laki). Sel kelamin (sperma dan sel telur) memiliki 23 kromosom.",
+      "Istilah dalam Pewarisan Sifat: Genotipe adalah susunan gen (misalnya TT, Tt, tt); fenotipe adalah sifat yang tampak (tinggi, pendek). Gen dominan (huruf kapital) menutupi gen resesif (huruf kecil). Homozigot: pasangan gen sama (TT, tt); heterozigot: berbeda (Tt). Parental (P) adalah induk, filial (F₁, F₂) adalah keturunan.",
+      "Persilangan Monohibrid: Persilangan dengan satu sifat beda. Contoh Mendel: tinggi (TT) × pendek (tt) → F₁ semua Tt (tinggi). F₁ disilangkan sesamanya (Tt × Tt) → F₂ dengan genotipe TT : Tt : tt = 1 : 2 : 1 dan fenotipe tinggi : pendek = 3 : 1. Pada sifat intermediet (dominansi tidak penuh), misalnya bunga merah × putih → F₁ merah muda, perbandingan fenotipe F₂ menjadi 1 : 2 : 1.",
+      "Persilangan Dihibrid: Persilangan dengan dua sifat beda, misalnya biji bulat-kuning (BBKK) × keriput-hijau (bbkk). F₁ semua BbKk (bulat-kuning). F₂ memiliki perbandingan fenotipe bulat-kuning : bulat-hijau : keriput-kuning : keriput-hijau = 9 : 3 : 3 : 1. Gamet BbKk ada 4 macam: BK, Bk, bK, bk.",
+      "Pewarisan Sifat pada Manusia: Kelainan yang diturunkan antara lain albino (autosom resesif), buta warna dan hemofilia (terpaut kromosom X, resesif). Laki-laki hanya memiliki satu kromosom X sehingga lebih sering menderita buta warna; perempuan dengan satu gen buta warna disebut pembawa (karier) dan penglihatannya normal. Jenis kelamin anak ditentukan oleh kromosom dari ayah (X atau Y), dengan peluang 50% : 50%.",
+      "Bioteknologi: Bioteknologi memanfaatkan makhluk hidup untuk menghasilkan produk. Bioteknologi konvensional memakai mikroorganisme secara langsung: tempe (jamur Rhizopus), tape dan roti (khamir Saccharomyces), yoghurt (bakteri Lactobacillus), kecap dan tauco (jamur Aspergillus), serta nata de coco (bakteri Acetobacter). Bioteknologi modern memakai rekayasa genetika dan teknik laboratorium: kultur jaringan, tanaman transgenik, insulin dari bakteri, dan bayi tabung. Saat membuat produk fermentasi, alat harus bersih agar mikroorganisme lain tidak tumbuh."
+    ],
+    "tutorTip": "Gunakan papan Punnett: tulis gamet induk jantan di atas dan gamet betina di samping, lalu isi kotaknya. Cara ini mencegah salah hitung perbandingan.",
+    "questionCount": 15
+  },
+  {
+    "id": "ipa9-bab7-isu-lingkungan",
+    "subject": "ipa",
+    "grade": 9,
+    "level": "SMP",
+    "phase": "Fase D",
+    "chapterIndex": 6,
+    "title": "Bab 7: Isu-Isu Lingkungan",
+    "track": null,
+    "element": "Makhluk hidup dan lingkungannya: upaya mencegah dan mengatasi perubahan iklim",
+    "coreConcepts": [
+      "Pencemaran Air: Masuknya zat pencemar seperti limbah rumah tangga (deterjen), limbah industri (logam berat seperti merkuri), limbah pertanian (pupuk dan pestisida), serta sampah ke perairan. Pupuk dan deterjen yang berlebihan memicu ledakan pertumbuhan alga dan eceng gondok (eutrofikasi), sehingga oksigen di air berkurang dan ikan mati. Ciri air tercemar: berbau, berwarna, keruh, dan banyak hewan air mati.",
+      "Pencemaran Udara: Sumbernya asap kendaraan, pabrik, pembakaran sampah dan hutan. Karbon monoksida (CO) mengikat hemoglobin lebih kuat daripada oksigen sehingga dapat menyebabkan pingsan hingga kematian. Gas belerang dioksida dan nitrogen oksida bereaksi dengan air hujan membentuk hujan asam yang merusak bangunan dan tumbuhan. CFC (dari freon dan aerosol lama) merusak lapisan ozon yang melindungi bumi dari sinar ultraviolet.",
+      "Pencemaran Tanah: Disebabkan sampah plastik yang sulit terurai (ratusan tahun), limbah B3 seperti baterai, serta penggunaan pupuk kimia dan pestisida berlebihan. Akibatnya tanah kehilangan kesuburan, mikroorganisme tanah mati, dan zat beracun dapat masuk ke rantai makanan.",
+      "Pemanasan Global dan Perubahan Iklim: Gas rumah kaca (karbon dioksida, metana, dinitrogen oksida) menahan panas di atmosfer. Penambahan gas ini dari pembakaran bahan bakar fosil, penggundulan hutan, dan peternakan membuat suhu rata-rata bumi naik. Dampaknya: es kutub mencair, permukaan laut naik, cuaca ekstrem, kekeringan, banjir, dan terancamnya terumbu karang. Upaya mitigasi (mengurangi penyebab): menghemat energi, memakai energi terbarukan, menanam pohon. Upaya adaptasi (menyesuaikan diri): membuat tanggul, menanam varietas tahan kekeringan.",
+      "Pengelolaan Sampah: Prinsip 3R: reduce (mengurangi, misalnya membawa tas belanja sendiri), reuse (memakai ulang, misalnya botol sebagai pot), dan recycle (mendaur ulang, misalnya kertas bekas menjadi kertas daur ulang). Sampah organik dapat diolah menjadi kompos atau biogas; sampah dipilah menjadi organik, anorganik, dan B3. Bank sampah memberi nilai ekonomi pada sampah yang sudah dipilah.",
+      "Aksi Nyata Pelajar: Mematikan lampu dan alat listrik yang tidak dipakai, berjalan kaki atau bersepeda untuk jarak dekat, membawa botol minum sendiri, tidak membakar sampah, membuat lubang biopori untuk resapan air, ikut menanam pohon dan mangrove, serta mengajak keluarga dan teman. Kearifan lokal seperti sasi di Maluku dan subak di Bali juga membantu menjaga kelestarian alam."
+    ],
+    "tutorTip": "Untuk soal dampak lingkungan, telusuri rantai sebab-akibatnya: sumber pencemar → perubahan pada lingkungan → dampak pada makhluk hidup → solusi yang memutus rantai itu.",
     "questionCount": 15
   }
 ];
