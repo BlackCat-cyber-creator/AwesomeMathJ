@@ -31,6 +31,18 @@
       "destination": "/tentang.html"
     },
     {
+      "source": "/daftar-isi",
+      "destination": "/daftar-isi.html"
+    },
+    {
+      "source": "/tka/:paket",
+      "destination": "/tka/:paket.html"
+    },
+    {
+      "source": "/tka",
+      "destination": "/tka.html"
+    },
+    {
       "source": "/(.*)",
       "destination": "/app.html"
     }

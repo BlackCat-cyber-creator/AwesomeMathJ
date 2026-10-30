@@ -24,7 +24,11 @@ export function ChapterQuiz({
   grade,
   isLoadingQuestions = false,
   onLaunchPractice: _onLaunchPractice,
-  onPrintQuest
+  onPrintQuest,
+  // Alamat soal untuk laporan; bawaan: halaman bab. Paket TKA memakai alamat paketnya.
+  reportPath = (q) => `${chapterPath(grade, chapterId)}#${questionAnchor(q.id)}`,
+  // Paket TKA sudah berupa satu paket utuh; potongan 5 soal tidak ditampilkan
+  showPackets = true
 }) {
   const [selectedPacketFilter, setSelectedPacketFilter] = useState('ALL');
   const [selectedAnswers, setSelectedAnswers] = useState({}); // { [qId]: optionKey }
@@ -64,7 +68,7 @@ export function ChapterQuiz({
 
   useQuestionHash(questions.length);
 
-  const packets = useMemo(() => practicePackets(questions.length), [questions.length]);
+  const packets = useMemo(() => (showPackets ? practicePackets(questions.length) : []), [questions.length, showPackets]);
 
   // Filtered questions based on packet
   const filteredQuestions = useMemo(() => {
@@ -124,11 +128,12 @@ export function ChapterQuiz({
           Latihan Soal
         </h3>
         <span style={{ fontSize: '0.8rem', color: 'var(--text-muted)' }}>
-          {questions.length} soal · {packets.length} paket
+          {questions.length} soal{packets.length > 0 ? ` · ${packets.length} paket` : ''}
         </span>
       </div>
 
       {/* Packet Filter Tabs */}
+      {packets.length > 0 && (
       <div style={{ display: 'flex', gap: '0.4rem', flexWrap: 'wrap', marginBottom: '1.25rem' }}>
         <button
           type="button"
@@ -152,6 +157,7 @@ export function ChapterQuiz({
           </button>
         ))}
       </div>
+      )}
 
       {/* Score Result Card (if submitted) */}
       {isQuizSubmitted && scoreStats && (
@@ -204,6 +210,9 @@ export function ChapterQuiz({
                     <span className="badge badge-sd" style={{ fontSize: '0.68rem' }}>
                       {q.difficulty || "Standar"}
                     </span>
+                    {q.tkaElement && (
+                      <span className="badge badge-subtle" style={{ fontSize: '0.68rem' }}>{q.tkaElement}</span>
+                    )}
                   </div>
 
                   <div style={{ display: 'flex', gap: '0.4rem' }}>
@@ -217,15 +226,15 @@ export function ChapterQuiz({
                         {isHintOpen ? "Tutup Petunjuk" : "Petunjuk"}
                       </button>
                     )}
-                    {isQuizSubmitted && (
-                      <button
-                        className="btn btn-subtle"
-                        style={{ padding: '0.25rem 0.55rem', fontSize: '0.75rem' }}
-                        onClick={() => toggleSolution(q.id)}
-                      >
-                        {isSolOpen ? "Tutup Pembahasan" : "Buka Pembahasan"}
-                      </button>
-                    )}
+                    {/* Pembahasan bisa dibuka kapan saja (seperti tombol "Pembahasan" di situs soal populer) */}
+                    <button
+                      className="btn btn-subtle"
+                      style={{ padding: '0.25rem 0.55rem', fontSize: '0.75rem' }}
+                      onClick={() => toggleSolution(q.id)}
+                      aria-expanded={Boolean(isSolOpen)}
+                    >
+                      {isSolOpen ? "Tutup Pembahasan" : "Pembahasan"}
+                    </button>
                   </div>
                 </div>
 
@@ -297,7 +306,7 @@ export function ChapterQuiz({
                     questionId={q.id}
                     chapterId={chapterId}
                     context="handbook"
-                    path={`${chapterPath(grade, chapterId)}#${questionAnchor(q.id)}`}
+                    path={reportPath(q)}
                     questionNumber={qNum}
                   />
                 </div>

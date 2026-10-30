@@ -19,6 +19,8 @@ const PrintableWorksheet = lazy(() => import('./components/PrintableWorksheet').
 const ChapterSolutionView = lazy(() => import('./components/ChapterSolutionView').then(m => ({ default: m.ChapterSolutionView })));
 const PublicHandbook = lazy(() => import('./components/PublicHandbook').then(m => ({ default: m.PublicHandbook })));
 const AboutPage = lazy(() => import('./components/AboutPage').then(m => ({ default: m.AboutPage })));
+const TopicIndexPage = lazy(() => import('./components/TopicIndexPage').then(m => ({ default: m.TopicIndexPage })));
+const TkaPage = lazy(() => import('./components/TkaPage').then(m => ({ default: m.TkaPage })));
 const TeacherLoginView = lazy(() => import('./components/TeacherLoginView').then(m => ({ default: m.TeacherLoginView })));
 
 function RouteFallback() {
@@ -271,6 +273,9 @@ export function App() {
             } />
 
             <Route path="/tentang" element={<AboutPage />} />
+            <Route path="/daftar-isi" element={<TopicIndexPage />} />
+            <Route path="/tka" element={<TkaPage onPrintQuest={handlePrintQuest} />} />
+            <Route path="/tka/:paket" element={<TkaPage onPrintQuest={handlePrintQuest} />} />
 
             {/* 2. Interactive Student Quest Player */}
             <Route path="/quest/:questId" element={
@@ -331,6 +336,7 @@ export function App() {
       {!isTeacherRoute && !isFullScreenView && (
         <footer className="site-footer no-print">
           AwesomeMathJ — dibuat dan dikelola oleh <Link to="/tentang">{AUTHOR.name}</Link>, {AUTHOR.jobTitle}.
+          {' '}· <Link to="/daftar-isi">Daftar isi</Link> · <Link to="/tka">Latihan TKA</Link>
         </footer>
       )}
     </div>

@@ -46,6 +46,29 @@ export const ABOUT_META = {
   path: '/tentang'
 };
 
+export const TOPIC_INDEX_META = {
+  title: `Daftar Isi Materi Matematika, IPA, dan Olimpiade per Topik | ${SITE_NAME}`,
+  description: 'Daftar lengkap materi per topik: bilangan, aljabar, geometri, data dan peluang, kalkulus, fisika, kimia, biologi, bumi dan antariksa, serta olimpiade AMC. Gratis dengan contoh soal dan pembahasan.',
+  path: '/daftar-isi'
+};
+
+export function tkaHomeMeta() {
+  return {
+    title: `Latihan Soal TKA Matematika SD dan SMP + Pembahasan | ${SITE_NAME}`,
+    description: 'Paket latihan TKA (Tes Kemampuan Akademik) Matematika SD/MI Kelas 6 dan SMP/MTs Kelas 9: 30 soal per paket sesuai elemen TKA, dengan kunci jawaban dan pembahasan. Gratis tanpa daftar.',
+    path: '/tka'
+  };
+}
+
+export function tkaPacketMeta(test, packet) {
+  const P = String(packet).toUpperCase();
+  return {
+    title: `30 Soal Latihan ${test.title} Paket ${P} dan Pembahasan | ${SITE_NAME}`,
+    description: `Latihan ${test.title} (${test.audience}) Paket ${P}: 30 soal pilihan ganda per elemen ${test.elements.map((e) => e.name).join(', ')}, lengkap dengan kunci jawaban dan pembahasan.`,
+    path: `/tka/${test.id}-${packet}`
+  };
+}
+
 export function gradeMeta(grade, subject = 'matematika') {
   const lvl = levelLabel(grade);
   const name = SUBJECT_NAME[subject] || SUBJECT_NAME.matematika;

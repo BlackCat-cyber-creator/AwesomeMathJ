@@ -22,6 +22,11 @@ import { AMC_LEVELS_METADATA } from '../src/data/amc/amcMetadata.js';
 import { questionAnchor } from '../src/utils/reports.js';
 import { splitSubbab, articleSections } from '../src/utils/chapterOutline.js';
 import { ipaGrade7Data } from '../src/data/ipa/grade7.js';
+import { TOPIC_GROUPS } from '../src/data/topics.js';
+import { topicChapters, relatedChapters } from '../src/utils/relatedChapters.js';
+import { TKA_TESTS, TKA_PACKETS, tkaPath } from '../src/data/tka.js';
+import { buildTkaPacket, chaptersMap } from '../src/utils/tkaBuilder.js';
+import { ALL_AMC_CHAPTERS_INDEX } from '../src/data/amc/amcMetadata.js';
 import { ipaGrade8Data } from '../src/data/ipa/grade8.js';
 import { ipaGrade9Data } from '../src/data/ipa/grade9.js';
 import { grade4Data } from '../src/data/grades/grade4.js';
@@ -38,7 +43,7 @@ import { amc10Data } from '../src/data/amc/amc10Data.js';
 import { amc12Data } from '../src/data/amc/amc12Data.js';
 import { getCp2025Note } from '../src/data/cp2025Mapping.js';
 import { SITE_URL, SITE_NAME, gradePath, chapterPath, amcLevelPath, amcChapterPath } from '../src/utils/seoRoutes.js';
-import { HOME_META, ABOUT_META, gradeMeta, chapterMeta, amcLevelMeta, amcChapterMeta, levelLabel, SUBJECT_NAME } from '../src/utils/seoMeta.js';
+import { HOME_META, ABOUT_META, TOPIC_INDEX_META, tkaHomeMeta, tkaPacketMeta, gradeMeta, chapterMeta, amcLevelMeta, amcChapterMeta, levelLabel, SUBJECT_NAME } from '../src/utils/seoMeta.js';
 import { AUTHOR, ABOUT } from '../src/data/siteInfo.js';
 
 const DIST = path.resolve(path.dirname(new URL(import.meta.url).pathname), '../dist');
@@ -161,7 +166,15 @@ function questionList(questions) {
     const options = (q.options || []).length
       ? `<ul class="seo-options">${q.options.map((o) => `<li><strong>${escapeHtml(o.key)}.</strong> ${rich(o.text)}</li>`).join('')}</ul>`
       : '';
-    return `<li id="${questionAnchor(q.id)}"><div>${rich(q.question)}</div>${options}</li>`;
+    const key = q.correctAnswer || q.answer;
+    const solution = q.bestSolution || q.conceptualSolution || q.explanation;
+    const answerText = q.correctAnswer
+      ? `${escapeHtml(q.correctAnswer)}. ${rich((q.options || []).find((o) => o.key === q.correctAnswer)?.text || '')}`
+      : rich(String(key ?? ''));
+    const details = key || solution
+      ? `<details class="seo-solution"><summary>Pembahasan</summary>${key ? `<p><strong>Jawaban: ${answerText}</strong></p>` : ''}${solution ? `<div>${rich(solution)}</div>` : ''}</details>`
+      : '';
+    return `<li id="${questionAnchor(q.id)}"><div>${rich(q.question)}</div>${options}${details}</li>`;
   }).join('\n')}</ol>`;
 }
 
@@ -205,6 +218,13 @@ const siblingLinks = (items, currentId, toPath) => `<nav class="seo-chapters"><h
   .map((c) => (c.id === currentId ? `<li><strong>${escapeHtml(c.title)}</strong></li>` : `<li><a href="${toPath(c)}">${escapeHtml(c.title)}</a></li>`))
   .join('')}</ul></nav>`;
 
+const relatedHtml = (chapterId) => {
+  const items = relatedChapters(chapterId);
+  return items.length
+    ? `<aside class="seo-related"><h2>Materi Terkait</h2><ul>${items.map((c) => `<li><a href="${c.path}">${escapeHtml(c.title)}</a> (${escapeHtml(c.label)})</li>`).join('')}</ul></aside>`
+    : '';
+};
+
 const sitemap = [];
 const addToSitemap = (p, priority) => sitemap.push({ loc: `${SITE_URL}${p === '/' ? '/' : p}`, priority });
 
@@ -219,6 +239,7 @@ const addToSitemap = (p, priority) => sitemap.push({ loc: `${SITE_URL}${p === '/
     <h1>Belajar Matematika Kelas 4–12, IPA SMP, dan Olimpiade AMC</h1>
     <p>${escapeHtml(HOME_META.description)}</p>
     <p>Disusun oleh <a href="/tentang">${escapeHtml(AUTHOR.name)}</a>, ${escapeHtml(AUTHOR.jobTitle)}.</p>
+    <p><a href="/daftar-isi">Daftar isi semua materi per topik</a> · <a href="/tka">Latihan TKA Matematika SD &amp; SMP</a></p>
     <section><h2>Matematika Kurikulum Merdeka</h2><ul>${gradeList}</ul></section>
     ${ipaList ? `<section><h2>IPA Kurikulum Merdeka</h2><ul>${ipaList}</ul></section>` : ''}
     <section><h2>Olimpiade Matematika AMC</h2><ul>${amcList}</ul></section>`;
@@ -293,6 +314,7 @@ function renderCurriculum(subject, grades) {
           <p>Kerjakan latihan interaktif di halaman ini untuk melihat nilai dan pembahasan setiap soal.</p>
           ${questionList(ch.questions || [])}
         </section>
+        ${relatedHtml(ch.id)}
         ${siblingLinks(g.chapters, ch.id, (c) => chapterPath(g.grade, c.id))}`;
       const ld = [learningResourceLd({ meta, educationalLevel: `Kelas ${g.grade} ${lvl} (${phase})`, subject: name }), breadcrumbLd(crumbs)];
       writePage(meta.path, renderPage({ meta, body, jsonLd: ld }));
@@ -332,6 +354,58 @@ for (const d of AMC) {
     const ld = [learningResourceLd({ meta, educationalLevel: `Olimpiade AMC ${d.level}` }), breadcrumbLd(crumbs)];
     writePage(meta.path, renderPage({ meta, body, jsonLd: ld }));
     addToSitemap(meta.path, '0.5');
+  }
+}
+
+// ---------------------------------------------------------------------------
+// Daftar isi per topik
+// ---------------------------------------------------------------------------
+{
+  const strip = (t) => escapeHtml(String(t).replace(/^Bab \d+:\s*/, ''));
+  const groups = TOPIC_GROUPS.map((group) => `<section><h2>${group.name}</h2>${group.topics.map((topic) => `
+    <div id="topik-${topic.id}"><h3>${escapeHtml(topic.name)}</h3><p>${escapeHtml(topic.description)}</p>
+    <ul>${topicChapters(topic).map((c) => `<li><a href="${c.path}">${strip(c.title)}</a> — ${escapeHtml(c.label)}</li>`).join('')}</ul></div>`).join('')}</section>`).join('\n');
+  const amc = `<section><h2>Olimpiade AMC</h2>${AMC_LEVELS_METADATA.map((lvl) => `<h3>${escapeHtml(lvl.title)} (${escapeHtml(lvl.targetGrades)})</h3><ul>${ALL_AMC_CHAPTERS_INDEX
+    .filter((c) => c.level === lvl.level).map((c) => `<li><a href="${amcChapterPath(lvl.level, c.id)}">${strip(c.title)}</a> — ${escapeHtml(c.domain)}</li>`).join('')}</ul>`).join('')}</section>`;
+  const crumbs = [['Beranda', '/'], ['Daftar Isi', TOPIC_INDEX_META.path]];
+  const body = `${breadcrumbHtml(crumbs)}<h1>Daftar Isi Materi</h1>
+    <p>Semua bab Matematika (Kelas 4–12), IPA (Kelas 7–9), dan Olimpiade AMC, dikelompokkan per topik.</p>
+    <p><a href="/tka">Latihan TKA Matematika SD dan SMP</a></p>${groups}${amc}`;
+  writePage(TOPIC_INDEX_META.path, renderPage({ meta: TOPIC_INDEX_META, body, jsonLd: [breadcrumbLd(crumbs)] }));
+  addToSitemap(TOPIC_INDEX_META.path, '0.9');
+}
+
+// ---------------------------------------------------------------------------
+// Latihan TKA
+// ---------------------------------------------------------------------------
+{
+  const elementTable = (test) => `<table><thead><tr><th>Elemen</th><th>Cakupan</th><th>Soal</th></tr></thead><tbody>${test.elements
+    .map((el) => `<tr><td><strong>${escapeHtml(el.name)}</strong></td><td>${escapeHtml(el.scope)}</td><td>${el.quota}</td></tr>`).join('')}</tbody></table>`;
+  const homeMeta = tkaHomeMeta();
+  const homeCrumbs = [['Beranda', '/'], ['Latihan TKA', '/tka']];
+  const homeBody = `${breadcrumbHtml(homeCrumbs)}<h1>Latihan TKA Matematika SD dan SMP</h1>
+    <p>${escapeHtml(homeMeta.description)}</p>
+    ${TKA_TESTS.map((test) => `<section><h2>${escapeHtml(test.title)}</h2><p>${escapeHtml(test.audience)}</p><p>${escapeHtml(test.intro)}</p>${elementTable(test)}
+      <ul>${TKA_PACKETS.map((p) => `<li><a href="${tkaPath(test.id, p)}">${escapeHtml(test.title)} Paket ${p.toUpperCase()}</a></li>`).join('')}</ul></section>`).join('')}
+    <p>Muatan dan cakupan elemen mengacu pada kerangka TKA Pusmendik Kemendikdasmen. Paket ini adalah latihan dari ${SITE_NAME}, bukan soal resmi.</p>`;
+  writePage('/tka', renderPage({ meta: homeMeta, body: homeBody, jsonLd: [breadcrumbLd(homeCrumbs)] }));
+  addToSitemap('/tka', '0.9');
+
+  const chapters = chaptersMap(GRADES);
+  for (const test of TKA_TESTS) {
+    for (const packet of TKA_PACKETS) {
+      const meta = tkaPacketMeta(test, packet);
+      const crumbs = [...homeCrumbs, [`${test.title} Paket ${packet.toUpperCase()}`, meta.path]];
+      const questions = buildTkaPacket(test, packet, chapters);
+      const body = `${breadcrumbHtml(crumbs)}<h1>Latihan ${escapeHtml(test.title)} — Paket ${packet.toUpperCase()}</h1>
+        <p>${escapeHtml(test.audience)} · ${questions.length} soal dengan kunci jawaban dan pembahasan.</p>
+        <section><h2>Muatan dan Elemen TKA</h2><p>${escapeHtml(test.intro)}</p>${elementTable(test)}</section>
+        <section id="latihan-soal"><h2>Soal Latihan</h2>${questionList(questions)}</section>
+        <p><a href="${tkaPath(test.id, packet === 'a' ? 'b' : 'a')}">Paket ${packet === 'a' ? 'B' : 'A'}</a> · <a href="/tka">Semua latihan TKA</a></p>`;
+      const ld = [learningResourceLd({ meta, educationalLevel: test.audience }), breadcrumbLd(crumbs)];
+      writePage(meta.path, renderPage({ meta, body, jsonLd: ld }));
+      addToSitemap(meta.path, '0.8');
+    }
   }
 }
 

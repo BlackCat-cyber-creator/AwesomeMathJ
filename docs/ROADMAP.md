@@ -48,7 +48,7 @@ Katalog Kurikulum Merdeka resmi dibaca langsung lewat API publik situs:
 
 Artinya, ketidaksesuaian kelas (soal Kelas 4 berisi materi Kelas 5) **bukan karena buku lama**. Penyebabnya soal tambahan yang dibuat tanpa dicek ke CP (sudah diperbaiki di Tahap 0). Buku Matematika SD–SMP di katalog resmi belum diganti edisi baru. Yang perlu diselaraskan ulang dengan edisi revisi adalah **Kelas X** dan **Matematika Tingkat Lanjut XI**.
 
-Catatan akses: PDF buku disimpan di domain `static.buku.kemdikbud.go.id` (domain lama), yang masih harus diizinkan di pengaturan jaringan agar isi buku bisa dibaca.
+Catatan akses (30 Oktober 2026, setelah akses jaringan penuh dibuka): `static.buku.kemdikbud.go.id` (PDF buku) dan `pusmendik.kemendikdasmen.go.id` tetap gagal dengan error 502 dari server ini. Kemungkinan server pemerintah tersebut membatasi akses dari luar Indonesia. Katalog `api.buku.kemendikdasmen.go.id` tetap bisa dibaca. Mengambil salinan PDF lewat arsip web (web.archive.org) memerlukan izin eksplisit pemilik. Alternatifnya, unggah PDF ke folder `sources/` di repo.
 
 ## Tahapan
 
@@ -86,10 +86,16 @@ Catatan akses: PDF buku disimpan di domain `static.buku.kemdikbud.go.id` (domain
 - **Perlu dilakukan pemilik:** deploy ulang aturan Firestore (`docs/prompts/DEPLOY_FIREBASE_RULES.md`).
 
 ### Segmentasi materi (Oktober 2026)
-Disusun dengan pola situs belajar populer seperti mathcyber1997 dan defantri: satu halaman per bab, berupa artikel yang bisa dibaca dari atas ke bawah. Situs-situs itu tidak dapat dibuka dari lingkungan kerja, jadi polanya diambil dari pengetahuan umum.
-- **Halaman kelas:** daftar isi berisi semua bab beserta subbabnya, masing-masing dengan link langsung (`#materi-2`).
-- **Halaman bab:** Daftar Isi → Pengantar → Materi (subbab bernomor) → Rumus Kunci → Contoh Soal dan Pembahasan (pembahasan bisa dibuka-tutup) → Kesalahan yang Sering Terjadi → Tips → Latihan Soal per paket 5 soal → Bab sebelumnya / berikutnya.
-- Struktur yang sama dipakai aplikasi (`ChapterArticle`) dan HTML prerender, sehingga isi yang dibaca Google sama dengan yang tampil di browser.
+Polanya dibandingkan langsung dengan mathcyber1997.com dan defantri.com setelah akses jaringan dibuka.
+- **mathcyber1997:** beranda berupa "Daftar Isi Blog" yang dikelompokkan per **topik** (Aljabar, Geometri, Peluang, ...). Artikel berpola "Materi, Soal, dan Pembahasan – Topik": materi singkat, lalu Bagian Pilihan Ganda dan Bagian Esai. Setiap soal punya tombol **Pembahasan** yang bisa dibuka-tutup dan membahas tiap pilihan. Ada tautan "Baca Juga" ke materi terkait.
+- **defantri:** lalu lintas besar datang dari **paket soal TKA** (Model A, B, C, ...). Setiap paket memuat muatan dan matriks asesmen resmi Pusmendik, lalu 25–40 soal bernomor dengan kunci jawaban.
+
+Yang diterapkan di AwesomeMathJ:
+- **Halaman kelas:** daftar isi semua bab beserta subbabnya.
+- **Halaman bab:** Daftar Isi → Pengantar → Materi (subbab bernomor) → Rumus Kunci → Contoh Soal dan Pembahasan → Kesalahan yang Sering Terjadi → Tips → Latihan Soal → Materi Terkait → Bab sebelumnya / berikutnya.
+- **Pembahasan per soal** bisa dibuka kapan saja. Di HTML prerender, setiap soal disertai `<details>` berisi kunci dan pembahasan, sehingga terbaca Google.
+- **`/daftar-isi`:** semua bab Matematika, IPA, dan AMC per topik (`src/data/topics.js`), sekaligus sumber "Materi Terkait".
+- **`/tka`:** Latihan TKA Matematika SD/MI (Kelas 6) dan SMP/MTs (Kelas 9), masing-masing Paket A dan B berisi 30 soal per elemen TKA (`src/data/tka.js`, `src/utils/tkaBuilder.js`). Muatan elemen dikutip dari kerangka TKA Pusmendik sebagaimana dimuat defantri.com, karena situs Pusmendik mengembalikan error 502 ke server ini.
 
 ### Tahap 2 — Matematika Kurikulum Merdeka edisi revisi
 - Selaraskan ulang **Kelas X** dan **Matematika Tingkat Lanjut XI** dengan edisi revisi.

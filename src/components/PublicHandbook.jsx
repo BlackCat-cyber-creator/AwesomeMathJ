@@ -1,5 +1,5 @@
 import React, { useState, useMemo, useEffect } from 'react';
-import { useLocation, useNavigate } from 'react-router-dom';
+import { Link, useLocation, useNavigate } from 'react-router-dom';
 import { curriculumFor, SUBJECT_LABELS } from '../data/curriculumData';
 import { useGradeData } from '../hooks/useCurriculum';
 import { 
@@ -10,6 +10,7 @@ import {
 } from '../data/amc';
 import { ChapterArticle } from './handbook/ChapterArticle';
 import { ChapterNav } from './handbook/ChapterNav';
+import { RelatedChapters } from './handbook/RelatedChapters';
 import { ChapterQuiz } from './handbook/ChapterQuiz';
 import { AmcChapterView } from './handbook/AmcChapterView';
 import { SiteSearch } from './SiteSearch';
@@ -345,6 +346,11 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
       </div>
 
       <SiteSearch />
+      <p className="handbook-quicklinks">
+        <Link to="/daftar-isi">Daftar isi semua materi per topik</Link>
+        <span aria-hidden="true">·</span>
+        <Link to="/tka">Latihan TKA SD &amp; SMP</Link>
+      </p>
 
       {/* Pilihan mata pelajaran: Matematika, IPA, Olimpiade AMC */}
       <div className="handbook-mode-selector">
@@ -724,6 +730,8 @@ export function PublicHandbook({ onLaunchPractice, onPrintQuest }) {
                   onLaunchPractice={onLaunchPractice}
                   onPrintQuest={onPrintQuest}
                 />
+
+                <RelatedChapters chapterId={currentChapter.id} />
 
                 <ChapterNav
                   chapters={currentGradeData.chapters || []}
